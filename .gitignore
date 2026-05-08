@@ -1,0 +1,28 @@
+# Environments
+.venv/
+__pycache__/
+*.pyc
+
+# Rendered site (published to gh-pages branch instead)
+/_site/
+
+# Quarto internals
+/.quarto/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+*.swp
+
+# R
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+
+# Duplicate files (Finder/iCloud artefacts)
+* 2.*
+* 2/

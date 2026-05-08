@@ -1,0 +1,434 @@
+---
+title: "Policy Brief: Strengthening Pesticide Poisoning Surveillance"
+subtitle: "Five Short-Term Options for Improving Detection and Response"
+author: "D2P Project Team"
+date: "2025-09-05"
+date-modified: today
+categories: [policy, brief, decision-makers]
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    number-sections: false
+---
+
+::: {.callout-important icon=false}
+## For Decision-Makers
+
+**Target audience:** Ministerial Advisory Committee (MAC), National Department of Health (NDoH), Provincial Health Leadership
+
+**Reading time:** 8 minutes
+
+**Key message:** South Africa has the legal authority to strengthen pesticide poisoning surveillance — we just need to execute better. Five low-cost options can improve detection by 50–85% without new legislation. The economic case is overwhelming: **R0.24M–R1.19M/year of surveillance spend offsets ~R260M/year of avoided burden cost** against a total burden of ~R2.3B/year.
+:::
+
+::: {.callout-tip icon=false}
+## D2P Recommendation
+
+**Adopt Options 3 + 4 + 5 as the Minimum Viable Package; scale to the Full Package within 18 months.**
+
+- **Pilot:** 6 months, 3 provinces (Gauteng, Western Cape, KZN), ~R950,000 total
+- **Lead agency:** NICD as national coordinator
+- **Quick wins (weeks 1–4):** Options 3 + 4 (~R117k/year combined)
+- **Response capacity (weeks 4–12):** Option 5 in pilot provinces
+- **Evaluate Q1 2027** against avoided-burden ratio; scale nationally if it holds
+:::
+
+## The Problem in Plain Language
+
+Three independent surveillance systems each capture part of the picture but never share records:
+
+- **NMC** notifications: ~690 cases/year
+- **NHLS** severe-poisoning laboratory results: ~2,000 cases/year
+- **Poisons Information Helpline (PIH)**: ~9,000 pesticide-related calls/year
+
+In the absence of record linkage we treat these sources as **mutually exclusive**, giving a true annual burden of **~11,690 cases**. Applying the NMC-observed case-fatality rate of 10–15% yields **~1,500–1,800 deaths/year** (the headline uses upper-mid CFR 13–15%; vital-registration data systematically under-codes intentional self-poisoning under ICD-10 default rules, so this is conservative — see the [VR poisoning-deaths analysis](https://bridaybrummer.github.io/MRC_VR/projects/poisoning_deaths/)). Monetised using a per-case morbidity cost of ~R12,000 and a human-capital mortality cost of ~R1.5M, the **total economic burden is ~R2.3 billion/year**.
+
+Most victims are:
+
+- **Young children** (accidental exposure from unsafe storage)
+- **Adolescent girls** (intentional self-harm)
+- **Adult male farm workers** (occupational exposure)
+
+**Why does this matter?**
+
+- **Public health risk:** Clusters of poisonings may signal contaminated food, illegal pesticide sales, or unsafe working conditions — but we detect them too late (or not at all)
+- **Preventable deaths:** Early detection of hotspots could trigger rapid response (source removal, environmental sampling, community warnings)
+- **Wasted resources:** Three government agencies collect pesticide data independently, but they don't talk to each other
+
+## What's Causing the Failure?
+
+A **fishbone analysis** identified five root causes — all fixable without new laws:
+
+```{mermaid}
+%%| label: fig-fishbone
+%%| fig-cap: "Root causes of surveillance failure and the policy options that address them"
+flowchart LR
+    A[Surveillance Failure] --> B[No NHLS-NICD linkage]
+    A --> C[PIH data not used for surveillance]
+    A --> D[Delayed manual reporting]
+    A --> E[No inter-agency MOUs]
+    A --> F[No hotspot detection capacity]
+    
+    B --> G[Option 1: NHLS data sharing MOU]
+    C --> H[Option 4: PIH quarterly reports]
+    D --> I[Option 3: BChE auto-notify]
+    E --> J[Option 2: DALRRD data sharing]
+    F --> K[Option 5: Provincial coordination]
+    
+    style A fill:#f99,stroke:#333
+    style G fill:#9f9,stroke:#333
+    style H fill:#9f9,stroke:#333
+    style I fill:#9f9,stroke:#333
+    style J fill:#9f9,stroke:#333
+    style K fill:#9f9,stroke:#333
+```
+
+## Five Policy Options (All Legally Feasible Today)
+
+### Status Quo: Keep Doing What We're Doing
+
+**What it is:**
+
+- Clinicians manually file NMC notifications (often 2–4 weeks late)
+- NHLS runs ~9,000 BChE tests/year but results don't trigger public health alerts
+- PIH answers ~9,000 calls/year but data aren't analyzed for surveillance
+
+**Performance:**
+
+- Detects ~4.5 of 10 annual hotspots
+- Annual cost: R0 (no change)
+
+**Bottom line:** Cheap, but ineffective.
+
+---
+
+### Option 1: NHLS Data Sharing Agreement
+
+**What it is:**
+
+- Formalize a Memorandum of Understanding (MOU) between NICD and NHLS
+- NHLS shares aggregated BChE data (de-identified) monthly
+- NICD analysts manually review for trends
+
+**Legal basis:** Section 90 of the National Health Act (2003)
+
+**Performance:**
+
+- Detects ~5.2 of 10 annual hotspots
+- Annual cost: ~R40,000 (legal review, MOU development)
+- Implementation time: 8–12 weeks
+
+**Bottom line:** Low cost, modest improvement — but still relies on manual review.
+
+---
+
+### Option 2: DALRRD Pesticide Registration Data Sharing
+
+**What it is:**
+
+- Link pesticide poisoning cases to Department of Agriculture's pesticide registration database
+- Identify which products are most commonly involved in poisonings
+- Target enforcement and labeling improvements
+
+**Legal basis:** Inter-departmental data sharing protocols
+
+**Performance:**
+
+- Detects ~5.8 of 10 annual hotspots
+- Annual cost: ~R40,000 (liaison and data cleaning)
+- Implementation time: 12 weeks
+
+**Bottom line:** Useful for long-term prevention, less immediate impact on surveillance.
+
+---
+
+### Option 3: BChE Auto-Notification (★ Recommended)
+
+**What it is:**
+
+- Configure NHLS Laboratory Information System (LIS) to automatically notify NICD when BChE results show **severe poisoning** (< 50% of normal)
+- Notification sent within **24 hours** of result validation
+- No clinician action required
+
+**Legal basis:** Already permitted under NMC regulations; requires only IT configuration
+
+**Performance:**
+
+- Detects ~6.7 of 10 annual hotspots
+- Annual cost: ~R55,000 (IT staff time)
+- Implementation time: **2–4 weeks**
+
+**Why this is a game-changer:**
+
+- **Fast:** Cuts notification delay from 2–4 weeks to <24 hours
+- **Automated:** Removes reliance on busy clinicians remembering to file paperwork
+- **Scalable:** Once configured, runs indefinitely with minimal ongoing cost
+
+**Bottom line:** Best value for money. **Recommended as first priority.**
+
+---
+
+### Option 4: PIH Quarterly Reports (★ Recommended)
+
+**What it is:**
+
+- Poisons Information Helpline (PIH) generates **quarterly summary reports** of pesticide-related calls
+- Includes age/sex distribution, geographic patterns, and severity
+- Sent to NICD for trend analysis
+
+**Legal basis:** Existing MOU between PIH and NICD
+
+**Performance:**
+
+- Detects ~6.1 of 10 annual hotspots
+- Annual cost: ~R62,000 (PIH analyst time)
+- Implementation time: **1–2 weeks**
+
+**Why this is valuable:**
+
+- **Complements BChE data:** PIH captures cases that never get laboratory testing
+- **Clinical context:** PIH records suspected pesticide type and exposure circumstances
+- **Quick to implement:** Requires only staff time, no IT infrastructure
+
+**Bottom line:** Low-hanging fruit. **Recommended as second priority.**
+
+---
+
+### Option 5: Provincial Hotspot Response Coordination
+
+**What it is:**
+
+- Dedicate provincial surveillance officers to **investigate clusters** within 72 hours
+- Provide training, SOPs, and budget for field investigations
+- Establish clear escalation protocols (when to sample environment, when to involve agriculture/police)
+
+**Legal basis:** Provincial health departments already have outbreak response authority
+
+**Performance:**
+
+- Detects ~7.4 of 10 annual hotspots (when combined with Options 3 or 4)
+- Annual cost: ~R40,000 (training, SOPs, coordination meetings)
+- Implementation time: 12 weeks
+
+**Why this matters:**
+
+- **Closes the loop:** Detection is useless without response capacity
+- **Prevents recurrence:** Field investigations can identify and remove sources
+
+**Bottom line:** Essential for long-term success, but requires Options 3 or 4 to generate timely alerts.
+
+---
+
+### Full Package: All Four Options Combined
+
+**What it is:**
+
+- Combine Options 1–5 into an **integrated surveillance system**
+
+**Performance:**
+
+- Detects ~8.3 of 10 annual hotspots
+- Annual cost: ~R237,000 (< R20,000/month)
+- Implementation time: 12 weeks
+
+**Why this is the best choice:**
+
+- **85% effectiveness:** Dramatically better than status quo (45%)
+- **Redundancy:** Multiple data sources cross-validate each other
+- **Affordable:** Less than the cost of one full-time epidemiologist
+
+**Bottom line:** If budget allows, this is the **gold standard**.
+
+---
+
+## Comparison Table
+
+| Option | Annual Cost | Hotspots Detected | % Improvement vs. Status Quo | Avoided Burden Cost | Implementation |
+|:-------|------------:|------------------:|-----------------------------:|--------------------:|:-------------|
+| **Status Quo** | R0 | 4.5 / 10 | — | — | — |
+| Option 1: NHLS MOU | R40,000 | 5.2 / 10 | +16% | ~R49M/year | 8–12 weeks |
+| Option 2: DALRRD data | R40,000 | 5.8 / 10 | +29% | ~R90M/year | 12 weeks |
+| **Option 3: BChE auto-notify** | **R55,000** | **6.7 / 10** | **+49%** | **~R150M/year** | **2–4 weeks** |
+| **Option 4: PIH reports** | **R62,000** | **6.1 / 10** | **+36%** | **~R110M/year** | **1–2 weeks** |
+| Option 5: Provincial coordination | R40,000 | 7.4 / 10* | +64%* | ~R200M/year | 12 weeks |
+| **Full Package (narrow cost)** | **R237,000** | **8.3 / 10** | **+84%** | **~R260M/year** | **12 weeks** |
+| Full Package (whole-system cost) | R1,193,000 | 8.3 / 10 | +84% | ~R260M/year | 12 weeks |
+
+: Base-case comparison — avoided burden cost uses η = 0.30 against a ~R2.3B/year true burden. See [Decision Model — Economic Analysis](decision_model.qmd#sec-burden-economics). {.striped .hover}
+
+*\* Assumes Option 5 is combined with at least one data-generation option (3 or 4)*
+
+## Sensitivity Analysis: What If We're Wrong?
+
+All cost and effectiveness estimates are based on **placeholder assumptions** (the model will be updated with real data from the pilot). But even under pessimistic scenarios, the recommendations hold:
+
+### Pessimistic Scenario (Low Effectiveness, High Cost)
+
+Assume:
+
+- Options are only 50% as effective as base-case estimates
+- Costs are 2× higher than budgeted
+
+**Result:**
+
+- Option 3 (BChE auto-notify) still improves detection by +12% for ~R110,000/year
+- Full Package still improves detection by +29% for ~R474,000/year
+
+**Conclusion:** Even if we're substantially wrong, the options remain cost-effective.
+
+### Optimistic Scenario (High Effectiveness, Low Cost)
+
+Assume:
+
+- Options are 150% as effective as base-case estimates
+- Costs are 50% lower than budgeted
+
+**Result:**
+
+- Option 3 improves detection by +86% for ~R28,000/year
+- Full Package achieves near-perfect detection (9.5 / 10 hotspots) for ~R119,000/year
+
+**Conclusion:** There's significant upside potential if implementation goes smoothly.
+
+## Decision Framework for MAC/NDoH
+
+::: {.callout-tip icon=false}
+## Three Decision Paths
+
+### Path 1: Minimal Investment, Maximum Speed
+
+**Recommendation:** Implement **Option 4 (PIH quarterly reports)** immediately
+
+**Why:**
+
+- Can be launched in **1–2 weeks**
+- Costs only ~R62,000/year
+- Requires no IT infrastructure or legal reviews
+- Improves detection by +36%
+
+**Who should choose this:** Provinces with limited budget or IT capacity
+
+---
+
+### Path 2: Best Value for Money
+
+**Recommendation:** Implement **Option 3 (BChE auto-notify)**
+
+**Why:**
+
+- Best effectiveness per rand spent (+49% for R55,000/year)
+- Fully automated (minimal ongoing effort)
+- Can be operational in 2–4 weeks
+
+**Who should choose this:** Provinces with NHLS IT support available
+
+---
+
+### Path 3: Comprehensive Solution
+
+**Recommendation:** Implement **Full Package (all four options)**
+
+**Why:**
+
+- Achieves 85% effectiveness (vs. 45% status quo)
+- Multiple data sources provide redundancy and cross-validation
+- Still affordable (~R237,000/year = less than one FTE)
+
+**Who should choose this:** National rollout; provinces with adequate budget
+:::
+
+## Legal and Ethical Considerations
+
+### Is This Legal?
+
+**Yes.** All options can be implemented under existing law:
+
+- **Section 90 of the National Health Act (2003):** Permits inter-agency data sharing for public health purposes
+- **NMC Regulations:** Allow laboratory-triggered notifications (Option 3)
+- **Existing MOUs:** PIH-NICD collaboration already established (Option 4)
+
+**No new legislation required.**
+
+### What About Privacy?
+
+- All data sharing follows **POPIA (Protection of Personal Information Act)** requirements
+- Laboratory auto-notifications include only:
+  - Patient demographics (age, sex, facility)
+  - BChE value
+  - Test date
+- **No names, ID numbers, or contact details** are shared
+- De-identification protocols apply to all aggregated reports
+
+### What If We Do Nothing?
+
+**Risks of maintaining the status quo:**
+
+1. **Ongoing under-detection** of hotspots → preventable deaths continue
+2. **Wasted data:** NHLS and PIH collect valuable information that goes unused
+3. **Missed clusters:** Contaminated food sources, illegal pesticide sales, or occupational hazards remain undetected
+4. **International embarrassment:** South Africa's surveillance system lags behind regional peers (Botswana, Kenya have better pesticide monitoring)
+
+## Next Steps
+
+### For National Leadership (MAC, NDoH)
+
+1. **Review this brief** and the full [decision analysis report](../analysis_report_v2.html)
+2. **Select a preferred option** (or Full Package)
+3. **Approve pilot funding** (~R120,000 for 6-month pilot in 2–3 provinces)
+4. **Designate a lead agency** (recommend NICD as national coordinator)
+
+### For Provincial Leadership
+
+1. **Identify a surveillance focal point** (existing epidemiologist or environmental health officer)
+2. **Assess local NHLS capacity** for BChE auto-notification (Option 3)
+3. **Allocate budget** for pilot participation (~R40,000–R80,000 depending on options selected)
+
+### For NICD/NHLS/PIH
+
+1. **Finalize MOUs** for data sharing (Months 1–2)
+2. **Configure auto-notification** in pilot provinces (Months 2–3)
+3. **Launch pilot** (Month 3)
+4. **Monitor and evaluate** (Months 3–6)
+5. **Report findings to MAC** (Month 6)
+
+## Timeline
+
+```{mermaid}
+%%| label: fig-timeline
+%%| fig-cap: "Proposed implementation timeline for pilot phase"
+gantt
+    title Pesticide Surveillance Pilot Implementation
+    dateFormat YYYY-MM-DD
+    section Phase 1
+    Secure funding           :a1, 2026-06-01, 30d
+    Finalize MOUs            :a2, 2026-06-15, 45d
+    Configure NHLS auto-notify :a3, 2026-07-01, 30d
+    section Phase 2
+    Train provincial staff   :b1, 2026-07-15, 14d
+    Launch pilot             :b2, 2026-08-01, 1d
+    section Phase 3
+    Monitor and collect data :c1, 2026-08-01, 120d
+    Evaluate results         :c2, 2026-11-15, 30d
+    Report to MAC            :milestone, c3, 2026-12-15, 1d
+```
+
+## Conclusion
+
+South Africa's pesticide poisoning surveillance system is failing — but **we can fix it quickly and affordably**. The legal authority exists, the data sources exist, and the technology exists. What's missing is **coordination and execution**.
+
+**Our recommendation:**
+
+1. **Start small:** Pilot Options 3 and 4 in 2–3 provinces (total cost: ~R120,000 for 6 months)
+2. **Measure impact:** Track timeliness, completeness, and hotspot detection rates
+3. **Scale up:** Expand to national rollout if pilot succeeds
+
+**The cost of inaction** — preventable deaths, missed outbreaks, and wasted data — far exceeds the cost of these simple improvements.
+
+---
+
+::: {.footer-cta}
+**Questions or feedback?** Contact the D2P Project team at [contact@example.com](mailto:contact@example.com)
+
+**Download the full policy brief:** [pesticide_poisoning_policy_brief_filled.docx](../pesticide_poisoning_policy_brief_filled.docx)
+:::

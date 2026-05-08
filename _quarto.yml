@@ -1,0 +1,55 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - "*.qmd"
+    - "posts/*.qmd"
+    - "!archive/"
+
+website:
+  title: "D2P Project"
+  description: "Data-Driven Policy for Pesticide Poisoning Surveillance in South Africa"
+  site-url: https://bridaybrummer.github.io/D2P_project/
+  repo-url: https://github.com/bridaybrummer/D2P_project
+  
+  navbar:
+    background: primary
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "One-Pager"
+        href: one_pager.qmd
+      - text: "Research Outputs"
+        href: posts.html
+      - text: "Full Analysis Report"
+        href: analysis_report_v2.html
+    right:
+      - icon: github
+        href: https://github.com/bridaybrummer/D2P_project
+      - icon: envelope
+        href: mailto:contact@example.com
+  
+  page-footer:
+    left: "© 2026 D2P Project Team"
+    right: 
+      - text: "Contact"
+        href: mailto:contact@example.com
+
+format:
+  html:
+    theme: 
+      light: [cosmo, custom.scss]
+    css: styles.css
+    toc: true
+    code-fold: true
+    code-tools: true
+    df-print: paged
+    link-external-newwindow: true
+    link-external-icon: true
+    link-external-filter: '^(?:http:|https:)\/\/(?:[^\/]*\.)?bridaybrummer\.github\.io|^(?!http)'
+
+execute:
+  freeze: auto
+  echo: false
+  warning: false
+  message: false

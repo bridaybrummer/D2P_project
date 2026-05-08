@@ -1,0 +1,367 @@
+---
+title: "Pesticide Poisoning Surveillance Concept Note"
+subtitle: "An Integrated Framework for Detection, Response, and Burden Reduction in South Africa"
+author: "D2P Project Team"
+date: "2025-08-05"
+date-modified: today
+categories: [surveillance, framework, concept-note]
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+---
+
+## Executive Summary
+
+Pesticide poisoning in South Africa is a high-burden, under-detected public health problem. Three surveillance systems each touch part of the burden but never share records:
+
+- **NMC notifications:** ~690 cases/year (clinician-reported)
+- **NHLS severe BChE inhibitions:** ~2,000 cases/year (laboratory-detected)
+- **Poisons Information Helpline (PIH):** ~9,000 pesticide-related calls/year (clinical toxicology)
+
+Treating these sources as **mutually exclusive** (the most defensible position absent record linkage), the **true annual burden is ~11,690 cases and ~1,500–1,800 deaths/year** at CFR 13–15% (headline uses upper-mid CFR; vital registration under-codes intentional self-poisoning under ICD-10 default rules — see the [VR poisoning-deaths analysis](https://bridaybrummer.github.io/MRC_VR/projects/poisoning_deaths/)), translating to a **total economic burden of ~R2.3 billion/year**.
+
+This concept note proposes an **integrated surveillance framework** that links existing data streams, automates notification, enables hotspot detection, and triggers rapid response. Modelling shows that **R0.24M–R1.19M/year of surveillance, coordination, and enforcement spend offsets ~R260M/year of avoided burden cost** — a return on investment of two to three orders of magnitude. See the [Decision Model — Economic Analysis](decision_model.qmd#sec-burden-economics) for parameter detail.
+
+::: {.callout-tip icon=false}
+## D2P Recommendation
+
+**Adopt Options 3 + 4 + 5 as the Minimum Viable Package; scale to the Full Package within 18 months.**
+
+- **Pilot:** 6 months in Gauteng, Western Cape, KwaZulu-Natal (~R950,000)
+- **Lead agency:** NICD as national coordinator
+- **Evaluation point:** Q1 2027, against avoided-burden ratio
+:::
+
+::: {.callout-note}
+## Status
+
+This is a **DRAFT** concept note (Version 4, dated 7 May 2026). Burden, cost, and avoided-burden figures are aligned with the project's [Decision Model](decision_model.qmd) and [Costing Analysis](costing_analysis.qmd). All effectiveness and economic parameters will be refined with pilot data.
+:::
+
+## Background: The Surveillance Gap
+
+### Why Existing Systems Are Insufficient
+
+South Africa has three parallel data streams for pesticide poisoning. Each captures a partial signal; none share records with the others:
+
+```{mermaid}
+%%| label: fig-current-system
+%%| fig-cap: "Current (fragmented) surveillance architecture"
+flowchart LR
+    A[Healthcare Facility] --> B[NMC Notification\n~690/year]
+    A --> C[NHLS BChE Test\n~2,000 severe/year]
+    A --> D[PIH Consultation\n~9,000 calls/year]
+    
+    B --> E[(NICD Database)]
+    C --> F[(NHLS LIS)]
+    D --> G[(PIH Records)]
+    
+    E -.No linkage.-> F
+    F -.No linkage.-> G
+    G -.No linkage.-> E
+    
+    style E fill:#f9f,stroke:#333
+    style F fill:#bbf,stroke:#333
+    style G fill:#bfb,stroke:#333
+```
+
+**Documented failures:**
+
+- **Delayed reporting:** NMC notifications arrive 2–4 weeks after exposure
+- **No laboratory integration:** severe BChE results do not trigger automatic public health notification
+- **Lost clinical signal:** PIH receives ~9,000 calls/year but data are not systematically analysed for surveillance
+- **No spatial analysis:** hotspot detection relies on manual review
+
+### Estimating True Burden Without Record Linkage
+
+Because no patient-level identifier crosses the three systems, deduplication is impossible. The framework therefore treats the streams as **mutually exclusive** and uses the sum as the operating estimate of true burden:
+
+$$
+B_{\text{true}} \;=\; n_{\text{NMC}} + n_{\text{NHLS}} + n_{\text{PIH}} \;\approx\; 690 + 2{,}000 + 9{,}000 \;=\; 11{,}690 \text{ cases/year}
+$$
+
+Mortality is derived from the NMC-observed case fatality rate (10–15%; sensitivity midpoint 12.5%, headline upper-mid 13–15%), giving **~1,460 deaths/year (base case)** or **~1,500–1,800 deaths/year (headline range)**. The upper-mid is preferred for headline communication because vital-registration data systematically under-codes intentional self-poisoning ([VR triangulation](https://bridaybrummer.github.io/MRC_VR/projects/poisoning_deaths/) — applying a 30–50% pesticide share to ~3,200–4,000 all-cause poisoning deaths/year gives an independent estimate of ~960–2,000 pesticide deaths/year, consistent with both anchors). Monetisation (base case shown):
+
+| Component | Per-case cost | Annual cases | Annual cost |
+|:---|---:|---:|---:|
+| Non-fatal poisonings | R12,000 | ~10,230 | ~R123 million |
+| Fatal poisonings (human-capital, ~25 LYL × ~R60k income) | R1,500,000 | ~1,460 | ~R2.19 billion |
+| **Total economic burden** | | **11,690** | **~R2.3 billion/year** |
+
+: Total economic burden of pesticide poisoning, base-case parameters {.striped}
+
+::: {.callout-warning}
+## Caveats on the Mutually-Exclusive Assumption
+
+If overlap exists between systems (e.g., a severe NHLS-detected case also notified to NMC) the true burden is **overstated**. If unreported community cases never reach any system, it is **understated**. The mutually-exclusive sum is the most defensible position absent linkage. A 30% deduplication adjustment lowers total burden by ~30% but leaves the avoided-burden ratio strongly positive across all options.
+:::
+
+## Proposed Framework
+
+### Design Principles
+
+1. **Integration over duplication:** link existing systems rather than building new infrastructure
+2. **Automation over manual reporting:** use laboratory triggers and structured data flows
+3. **Timeliness over completeness:** prioritise rapid detection of actionable hotspots
+4. **Burden reduction, not just detection:** surveillance is the upstream half; response, enforcement, and source removal are how detected hotspots translate into avoided cases
+5. **Scalability:** start with pilot provinces, expand based on evidence
+
+### System Architecture
+
+```{mermaid}
+%%| label: fig-proposed-system
+%%| fig-cap: "Proposed integrated surveillance and response architecture"
+flowchart TB
+    A[Healthcare Facility] --> B[Clinician suspects poisoning]
+    B --> C{BChE test ordered?}
+    C -->|Yes| D[NHLS Laboratory]
+    C -->|No| E[Clinical diagnosis only]
+    
+    D --> F{BChE < 50% normal?}
+    F -->|Yes - Severe| G[Auto-notify NICD\nOption 3]
+    F -->|No| H[Store result]
+    
+    E --> I[Manual NMC notification]
+    
+    G --> J[NICD Surveillance Unit]
+    I --> J
+    
+    B --> K[Call PIH for advice]
+    K --> L[PIH records case]
+    L --> M[Quarterly summary to NICD\nOption 4]
+    M --> J
+    
+    J --> N{Cluster detected?}
+    N -->|Yes| O[Alert provincial team\nOption 5]
+    N -->|No| P[Routine monitoring]
+    
+    O --> Q[Field investigation < 72h]
+    Q --> R[Environmental sampling]
+    Q --> S[Source control / DALRRD enforcement]
+    R --> T[Avoided burden]
+    S --> T
+    
+    style G fill:#ff9,stroke:#333
+    style J fill:#9f9,stroke:#333
+    style O fill:#f99,stroke:#333
+    style T fill:#cfc,stroke:#333
+```
+
+### Burden-Reduction Logic
+
+The framework is built on a simple linear logic linking spend to averted burden:
+
+1. Each option detects a fraction $d_i$ of true hotspots (status quo $d_0 = 0.45$; Full Package $d_{\text{PKG}} = 0.83$).
+2. Each detected hotspot is responded to with response efficacy $\eta$ (base case 0.30, range 0.15–0.50), removing future cases through hazard removal, recall, and enforcement.
+3. **Residual burden** under option $i$: $C_i = C_{\text{burden}} \times (1 - d_i\,\eta)$.
+4. **Net monetary benefit** vs. status quo: $\text{NMB}_i = (C_0 - C_i) - K_i$, where $K_i$ is the surveillance spend.
+
+Detection capacity is therefore a **lever on the cost of the true burden**: every additional rand spent on surveillance, coordination, and enforcement reduces residual burden cost by a far larger margin.
+
+### Key Components
+
+#### 1. Laboratory-Triggered Surveillance (Option 3)
+
+- Configure NHLS Laboratory Information System (LIS) to flag BChE results < 50% of normal
+- Auto-generate notification to NICD within **24 hours** of result validation
+- Data flow: `NHLS LIS → HL7 message → NICD middleware → NMC database → Surveillance dashboard`
+- **Cost:** ~R55,000/year (narrow); contributes ~+22 percentage points to detection rate
+
+#### 2. Poisons Information Helpline Integration (Option 4)
+
+- PIH generates **quarterly reports** of pesticide-related calls (demographics, geography, severity, suspected agent)
+- Sent to NICD for temporal trend analysis
+- **Cost:** ~R62,000/year (PIH analyst time); +16 pp detection
+
+#### 3. Inter-Agency Data Sharing (Options 1–2)
+
+- Formalise MOUs: NICD ↔ NHLS, NICD ↔ PIH, NICD ↔ DALRRD, NICD ↔ SAPS Forensics
+- Data governance framework: minimum dataset, frequency, de-identification, access controls
+- Legal basis: Section 90, National Health Act (2003)
+- **Cost:** ~R80,000/year combined
+
+#### 4. Hotspot Detection Algorithm
+
+- Space-time permutation scan statistic (SaTScan) on aggregated NMC + BChE auto-notifications + PIH reports
+- 2-week rolling window; alert if RR > 2.0, p < 0.05, ≥ 3 cases
+- Weekly automated runs
+
+#### 5. Provincial Hotspot Response (Option 5)
+
+- Provincial surveillance officer investigates within **72 hours**
+- Environmental sampling, source tracing, retailer inspection, DALRRD referral for enforcement
+- **This is the step that converts detection into avoided burden cost.** Without it, $\eta \to 0$ and the economic case collapses.
+- **Cost:** ~R40,000/year per province (training, SOPs, field kit, travel, coordination)
+
+#### 6. Sentinel Toxicology Surveillance {#sec-component-6}
+
+Components 1–5 address **detection** and **response**. They do not tell us **which chemical agent** caused a non-fatal poisoning — and without that, targeted regulation (HHP restriction, recall priorities, Schedule changes) is not possible. Component 6 fills the agent-attribution gap by adding advanced toxicology testing on living, hospitalised patients at sentinel tertiary sites. It is derived from the *Pesticide Poisoning Surveillance Concept Note (DRAFT 3, 11 August 2025)*.
+
+**Rationale.** Forensic toxicology in South Africa is performed almost exclusively post-mortem. For the ~10,000 patients/year who survive an acute pesticide exposure, the agent is recorded as "suspected organophosphate" or "pesticide unknown" in 25–75% of records. Severe butyrylcholinesterase (BChE) inhibition has a hospital case fatality rate of ~30% (Buckley et al., 2021), yet the products driving that morbidity are inferred rather than measured. A 2010–2019 forensic case series in the Western Cape found terbufos, methamidophos, and diazinon as dominant agents in paediatric pesticide deaths (Davies et al., 2023) — but no equivalent denominator exists for survivors.
+
+**Design.**
+
+- **Sentinel sites (phased):**
+  - **Phase 1 (Year 1):** Chris Hani Baragwanath Academic Hospital (CHB) — pilot
+  - **Phase 2 (Years 2–3):** Groote Schuur (WC), Inkosi Albert Luthuli Central (KZN), Universitas (FS), Steve Biko Academic (GP-Tshwane)
+  - **Phase 3 (Years 3–5):** Add Verbal Autopsy + household environmental investigation; long-term household cost capture
+  - **Phase 4:** Mainstream into routine clinical care nationally
+- **Case definition:** NMC "Agricultural or stock remedy poisoning" (suspected or confirmed)
+- **Sample size:** N ≈ 323/year across pilot sites (95% CI ±5% on prevalence p ≈ 0.30 of in-hospital mortality among severe BChE inhibition)
+- **Specimens:** gastric aspirate + urine (timed) for GC-MS / LC-MS/MS multi-residue pesticide screen
+- **Clinical battery:** BChE/cholinesterase activity, LFTs, U&E, FBC, exposure history, time-to-presentation, ICU/ward days, ventilation, atropine/PAM dose, length of stay, in-hospital outcome
+- **Cost capture:** direct medical (fee-schedule), out-of-pocket (transport, lodging), productivity losses (patient + caregiver), funeral/burial — DALYs computed from days at each level of care + StatsSA life-table YLLs and monetised at λ = R38,500/DALY (Edoka & Stacey, 2020)
+
+**Indicative budget** (5-site full rollout): ~R3.6M/year. Pilot (CHB only, 12 months): ~R1.2M. See [Decision Model — Option 6](decision_model.qmd#sec-option-6) for the cost breakdown table.
+
+**Expected outputs.**
+
+1. The first SA distribution of **chemical agents in living survivors** of pesticide poisoning, by season, region, age, sex, and circumstance
+2. Empirical **per-admission ZAR cost** distribution (replaces the R12,000 placeholder $c_m$ in the burden-economics model)
+3. Empirical **DALYs/case** estimate by agent class (organophosphates, carbamates, pyrethroids, phosphides)
+4. Evidence base for **DALRRD targeted regulation** of specific HHPs, including recall priorities and Schedule reclassification
+5. **Validated CFR** by agent class and severity, replacing the literature-derived 10–15% range
+
+**Why this is funded as a parallel research investment, not absorbed into Options 1–5.** Cost is ~5–15× the Full Package and benefits accrue via the **incidence lever** ($B_{\text{true}} \downarrow$ through targeted regulation) rather than the detection × response lever. A 5–10% sustained reduction in $B_{\text{true}}$ from restricting one HHP averts R115M–R230M/year — orders of magnitude above the ~R3.6M annual surveillance cost. Funding routes: NHLS research, SAMRC, Bloomberg Philanthropies, Gates Foundation, NDoH research grants.
+
+## Whole-System Cost vs. Avoided Burden
+
+The narrow surveillance budget understates the true fiscal impact because improved detection induces downstream demand on hospitals, laboratories, Environmental Health Practitioners (EHPs), and DALRRD enforcement. Both perspectives are budgeted in the [Costing Analysis](costing_analysis.qmd):
+
+| Perspective | Annual cost | What it includes |
+|:---|---:|:---|
+| **Narrow** (surveillance coordination) | ~R237,000 | NICD/NHLS/PIH/Provincial DoH liaison only |
+| **Whole-system** (induced demand) | ~R1,193,000 | + hospital workload, lab volume, EHP investigations, DALRRD enforcement |
+| **Avoided burden cost (base case)** | **~R260,000,000** | Reduction in residual burden from $d \uparrow$ |
+
+: Full Package costs vs. avoided burden, base case ($\eta = 0.30$, CFR = 12.5%) {.striped}
+
+**Return on investment** under base case:
+
+- Narrow cost: ~1,100×
+- Whole-system cost: ~220×
+
+The economic case **does not depend on optimistic assumptions**. Across the full plausible CFR (10–15%) × $\eta$ (0.15–0.50) grid, NMB remains positive and large.
+
+## Implementation Roadmap
+
+### Phase 1: Pilot (Months 1–6)
+
+**Pilot provinces:** Gauteng, Western Cape, KwaZulu-Natal
+
+| Week | Activity | Owner |
+|:---|:---|:---|
+| 1–2 | Launch PIH quarterly reports (Option 4) | PIH + NICD |
+| 2–4 | Configure NHLS auto-notifications (Option 3) | NHLS IT + NICD |
+| 4–8 | Finalise inter-agency MOUs (Options 1–2) | NICD legal |
+| 4–12 | Train provincial response teams (Option 5) | Provincial DoH |
+| 12–24 | First quarterly evaluation cycle | NICD analytics |
+
+### Phase 2: National Rollout (Months 7–12)
+
+- Expand auto-notifications to all 9 provinces (no incremental cost — national system)
+- Deploy SaTScan for weekly cluster detection
+- Onboard remaining 6 provinces to Option 5 (~R200k incremental)
+
+### Phase 3: Evaluation (Months 13–24)
+
+Tracked metrics:
+
+1. **Timeliness** — median time from exposure to notification
+2. **Completeness** — % of severe BChE results with corresponding NMC entry
+3. **Sensitivity** — % of known clusters detected by SaTScan
+4. **Response** — % of clusters investigated within 72h
+5. **Avoided burden** — modelled reduction in residual burden cost using empirical $d$ and $\eta$
+
+## Governance and Oversight
+
+| Agency | Role |
+|:-------|:-----|
+| **NICD** | Lead; cluster detection; national coordination |
+| **NHLS** | Laboratory testing; auto-notification; QA |
+| **PIH** | Clinical toxicology; quarterly reporting |
+| **Provincial DoH** | Field investigation; source control; environmental sampling |
+| **DALRRD** | Pesticide registration; compliance enforcement; product recalls |
+| **SAPS Forensics** | Intentional poisoning investigations |
+
+: Agency roles in the proposed framework {.striped}
+
+**Coordination mechanisms:**
+
+1. Quarterly steering committee (NICD, NHLS, PIH, provincial reps, DALRRD)
+2. Monthly technical working group (analysts, IT)
+3. Annual review and planning workshop
+
+## Budget Summary
+
+| Component | Narrow cost | Whole-system cost |
+|:----------|------------:|-------------------:|
+| NHLS auto-notifications (Option 3) | R55,000 | included below |
+| PIH quarterly reports (Option 4) | R62,000 | included below |
+| Inter-agency MOUs (Options 1–2) | R80,000 | included below |
+| Provincial response (Option 5) | R40,000 | included below |
+| **Surveillance coordination subtotal** | **R237,000** | **R237,000** |
+| Hospital workload (induced) | — | R188,000 |
+| Laboratory testing escalation | — | R493,000 |
+| EHP field investigations | — | R154,000 |
+| DALRRD enforcement | — | R121,000 |
+| **Full Package total** | **R237,000** | **R1,193,000** |
+
+: Annual costs for the integrated surveillance framework {.striped .hover}
+
+Multi-sectoral funding split (whole-system): NDoH ~R800k, NHLS ~R300k, Provincial conditional grants ~R200k, DALRRD ~R120k. Pilot setup (~R950k) draws on research/donor funding plus the above streams.
+
+**Component 6 (sentinel toxicology) is funded separately** as a research-surveillance investment: ~R1.2M for the CHB pilot (Year 1) and ~R3.6M/year for full 5-site rollout (Years 2+). Funding routes: SAMRC, NHLS research, Bloomberg Philanthropies, Gates Foundation, NDoH research grants. See [Decision Model — Option 6](decision_model.qmd#sec-option-6).
+
+## Limitations and Risks
+
+::: {.callout-warning}
+## Key Assumptions
+
+1. **NHLS LIS can be configured** for auto-notifications — confirmed technically feasible
+2. **PIH has analyst capacity** for quarterly reporting — to be confirmed in scoping
+3. **Provincial teams have field-investigation resources** — addressed by Option 5 budget
+4. **No new legislation required** — confirmed by legal review
+
+**Residual risks:**
+
+- **Low BChE testing uptake:** if clinicians don't order tests, laboratory triggers won't fire — addressed by clinician awareness programme bundled with Option 3
+- **Data quality:** incomplete demographic data hampers spatial clustering — addressed by minimum-dataset requirement in Options 1–2
+- **Response capacity saturation:** if hotspots cluster geographically or temporally, Option 5 capacity may be exceeded — escalation protocol with NICD national team mitigates
+- **Linkage caveat:** mutually-exclusive assumption may overstate burden by up to ~30%; sensitivity analysis confirms the economic case holds either way (see [Decision Model — Economic Analysis](decision_model.qmd#sec-burden-economics))
+- **Response efficacy ($\eta$) is the single largest uncertainty.** Pilot will measure $\eta$ directly through before/after burden estimates in pilot districts.
+:::
+
+## Next Steps
+
+1. **Secure pilot funding** (~R950,000 over 6 months)
+2. **Finalise MOUs** with NHLS and PIH (Month 1)
+3. **Configure NHLS auto-notifications** for pilot provinces (Months 1–2)
+4. **Train provincial response teams** (Month 2)
+5. **Launch pilot** (Month 3)
+6. **Evaluate against avoided-burden ratio** at Month 6; recommend national rollout
+
+---
+
+## Related Documents
+
+- [Policy Brief](policy_brief.qmd) — plain-language case for decision-makers
+- [Decision Model](decision_model.qmd) — quantitative analysis and economic framework
+- [Costing Analysis](costing_analysis.qmd) — narrow and whole-system cost estimates
+- [One-Pager Synopsis](../one_pager.qmd) — single-page summary for MAC/NDoH
+
+## References
+
+1. National Institute for Communicable Diseases. *National Notifiable Medical Conditions Surveillance System Annual Report 2020–2024.*
+2. NHLS Laboratory Information Services. *Butyrylcholinesterase Testing Data 2020–2024.*
+3. Red Cross War Memorial Children's Hospital. *Poisons Information Helpline Annual Report 2019.*
+4. Kulldorff M. *SaTScan User Guide for Version 10.0.* 2021.
+5. National Health Act No. 61 of 2003, Section 90 (Inter-Agency Data Sharing for Public Health).
+
+---
+
+::: {.footer-cta}
+**Questions about the framework?** Contact the D2P team at [contact@example.com](mailto:contact@example.com)
+:::

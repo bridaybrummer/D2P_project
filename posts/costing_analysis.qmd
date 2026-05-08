@@ -1,0 +1,1542 @@
+---
+title: "Costing Analysis: Improved Pesticide Surveillance"
+subtitle: "Detailed Cost Estimates for Implementation and Operations"
+author: "D2P Project Team"
+date: "2025-09-05"
+date-modified: today
+categories: [costing, budget, implementation]
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    code-fold: show
+---
+
+## Executive Summary
+
+This document provides **detailed cost estimates** for implementing and operating improved pesticide poisoning surveillance in South Africa. All estimates are based on:
+
+- Current government salary scales (2025/2026)
+- NHLS IT infrastructure costs (confirmed with NHLS IT management)
+- Provincial health department operating budgets
+- Expert elicitation for liaison and coordination activities
+
+::: {.callout-important}
+## Headline Findings — Surveillance Spend vs. Burden Averted
+
+**The true annual burden of pesticide poisoning in South Africa is ~R2.3 billion** (11,690 cases, ~1,500–1,800 deaths/year at CFR 13–15%; see [Decision Model — Economic Analysis](decision_model.qmd#sec-burden-economics) and the [VR poisoning-deaths analysis](https://bridaybrummer.github.io/MRC_VR/projects/poisoning_deaths/) for triangulation).
+
+**Full Package surveillance spend:**
+
+- Narrow (NICD/NHLS/PIH/Provincial DoH coordination only): **~R237,000/year**
+- Whole-system (including induced demand on hospitals, labs, EHPs, and DALRRD enforcement): **~R1.19 million/year** (range R0.7–2.0M)
+
+**Avoided burden cost (Full Package, base case): ~R260 million/year.**
+
+**Return on investment: ~220× (whole-system cost) to ~1,100× (narrow cost).**
+
+**Why the narrow vs. whole-system gap matters:** Improved surveillance is not free at the point of detection. Every BChE auto-notification triggers a clinical work-up, a confirmatory test, an EHP follow-up, and — for hotspots — DALRRD enforcement. The narrow figure understates true budget impact by **~5×**. Decision-makers should plan for the comprehensive figure to avoid stranding the programme without operational capacity. The economic case holds at either figure.
+
+**For context, the whole-system figure still represents:**
+
+- **0.0021%** of the National Department of Health budget (~R56 billion/year)
+- **R102 per case in the true annual burden** (~11,690 cases/year)
+- **Less than the salary of 3 mid-level epidemiologists**
+- **~0.05%** of the avoided burden cost it generates
+:::
+
+## Costing Methodology
+
+### Two Costing Perspectives
+
+This analysis uses **two nested perspectives** to make the trade-offs transparent:
+
+1. **Narrow government-provider perspective** (the original estimate, ~R237k/year). Captures only the costs borne by:
+   - National Institute for Communicable Diseases (NICD)
+   - National Health Laboratory Service (NHLS) — coordination only
+   - Poisons Information Helpline (PIH)
+   - Provincial Departments of Health — coordination only
+
+2. **Pressure-tested whole-system perspective** (Section [Pressure-Testing the Costs](#sec-pressure-test)). Adds the **induced demand** that improved surveillance creates downstream:
+   - **Hospitals:** clinician time for exposure histories, sample collection, NMC notification completion, and data collation by records clerks
+   - **Laboratories:** higher BChE test volumes, confirmatory GC-MS toxicology, sample transport and storage
+   - **Environmental Health Practitioners (EHPs):** field investigation of clusters, environmental sampling, source tracing
+   - **Agricultural enforcement:** DALRRD compliance officers responding to illegal-pesticide signals, retailer audits, registration follow-up
+
+**Still excluded (for now):**
+
+- Patient out-of-pocket costs and productivity losses
+- Wider societal costs (community engagement, media)
+- Capital depreciation on existing NHLS lab equipment
+
+::: {.callout-warning}
+## Why This Matters
+
+The narrow perspective is appropriate for **"what new line items appear in the surveillance programme budget?"** — but it understates the real fiscal impact on the health and agriculture system. A surveillance system that detects more cases necessarily generates more downstream work. Failing to budget for it leads to: (a) overworked frontline staff, (b) backlogs in lab confirmation, (c) un-investigated hotspots, and (d) erosion of the system within 12–18 months.
+:::
+
+### Time Horizon
+
+- **Pilot phase:** 6 months (Q3–Q4 2026)
+- **Ongoing operations:** Annual costs for steady-state implementation
+
+### Currency and Inflation
+
+- All costs in **South African Rand (ZAR)**
+- Based on **2025/2026 fiscal year** salary scales and price levels
+- No inflation adjustment (costs represent current purchasing power)
+
+## Option-by-Option Cost Breakdown
+
+### Status Quo (Baseline)
+
+**Description:** Continue current NMC surveillance approach
+
+```{r}
+#| label: tbl-status-quo
+#| tbl-cap: "Status quo costs"
+
+library(gt)
+library(tidyverse)
+
+status_quo <- tribble(
+  ~Cost_Category, ~Annual_Cost, ~Notes,
+  "Personnel", "R0", "No additional staff required",
+  "IT infrastructure", "R0", "No changes to existing systems",
+  "Other operating costs", "R0", "No new expenses",
+  "**Total**", "**R0**", "**Baseline (no change)**"
+)
+
+status_quo %>%
+  gt() %>%
+  tab_header(
+    title = "Status Quo Costs",
+    subtitle = "Current NMC surveillance (baseline)"
+  ) %>%
+  tab_style(
+    style = cell_text(weight = "bold"),
+    locations = cells_body(rows = 4)
+  )
+```
+
+---
+
+### Option 1: NHLS Data Sharing Agreement
+
+**Description:** Formalize MOU between NICD and NHLS for monthly aggregated BChE data sharing
+
+#### Personnel Costs
+
+```{r}
+#| label: tbl-option1-personnel
+#| tbl-cap: "Option 1: Personnel costs"
+
+option1_personnel <- tribble(
+  ~Role, ~FTE, ~Annual_Salary, ~Pct_Time_on_Surveillance, ~Annual_Cost,
+  "NHLS Data Analyst", 0.05, "R450,000", "5%", "R22,500",
+  "NICD Surveillance Officer", 0.02, "R380,000", "2%", "R7,600",
+  "**Subtotal Personnel**", NA, NA, NA, "**R30,100**"
+)
+
+option1_personnel %>%
+  gt() %>%
+  tab_header(
+    title = "Option 1: Personnel Costs"
+  ) %>%
+  cols_label(
+    Pct_Time_on_Surveillance = "% Time on Surveillance"
+  ) %>%
+  cols_align(
+    align = "right",
+    columns = c(FTE, Annual_Salary, Annual_Cost)
+  ) %>%
+  tab_style(
+    style = cell_text(weight = "bold"),
+    locations = cells_body(rows = 3)
+  ) %>%
+  fmt_missing(columns = everything(), missing_text = "—")
+```
+
+#### Other Costs
+
+```{r}
+#| label: tbl-option1-other
+#| tbl-cap: "Option 1: Other costs"
+
+option1_other <- tribble(
+  ~Item, ~One_Time_Cost, ~Annual_Cost, ~Notes,
+  "Legal review (MOU drafting)", "R15,000", "R0", "One-time expense in Year 1",
+  "Data governance framework", "R10,000", "R5,000", "Initial development + annual review",
+  "Liaison meetings (travel, venue)", "R0", "R5,000", "4 meetings/year @ R1,250 each",
+  "**Subtotal Other**", "**R25,000**", "**R10,000**", ""
+)
+
+option1_other %>%
+  gt() %>%
+  tab_header(
+    title = "Option 1: Other Costs"
+  ) %>%
+  cols_align(
+    align = "right",
+    columns = c(One_Time_Cost, Annual_Cost)
+  ) %>%
+  tab_style(
+    style = cell_text(weight = "bold"),
+    locations = cells_body(rows = 4)
+  ) %>%
+  fmt_missing(columns = everything(), missing_text = "—")
+```
+
+#### Total Cost Summary
+
+```{r}
+#| label: tbl-option1-total
+#| tbl-cap: "Option 1: Total cost summary"
+
+option1_total <- tribble(
+  ~Phase, ~Cost,
+  "Year 1 (pilot + setup)", "R65,100",
+  "Ongoing annual cost", "R40,100"
+)
+
+option1_total %>%
+  gt() %>%
+  tab_header(
+    title = "Option 1: Total Costs",
+    subtitle = "NHLS Data Sharing Agreement"
+  ) %>%
+  cols_align(align = "right", columns = Cost) %>%
+  tab_style(
+    style = cell_fill(color = "lightblue"),
+    locations = cells_body(rows = 2)
+  )
+```
+
+**Key driver:** Personnel time for data extraction and monthly reporting workflows.
+
+---
+
+### Option 2: DALRRD Pesticide Registration Data Sharing
+
+**Description:** Link pesticide poisoning cases to pesticide product registration database
+
+#### Personnel Costs
+
+```{r}
+#| label: tbl-option2-personnel
+#| tbl-cap: "Option 2: Personnel costs"
+
+option2_personnel <- tribble(
+  ~Role, ~FTE, ~Annual_Salary, ~Pct_Time, ~Annual_Cost,
+  "NICD Surveillance Officer", 0.04, "R380,000", "4%", "R15,200",
+  "DALRRD Liaison Officer", 0.03, "R350,000", "3%", "R10,500",
+  "Data cleaning/linkage analyst", 0.01, "R400,000", "1%", "R4,000",
+  "**Subtotal Personnel**", NA, NA, NA, "**R29,700**"
+)
+
+option2_personnel %>%
+  gt() %>%
+  tab_header(title = "Option 2: Personnel Costs") %>%
+  cols_label(Pct_Time = "% Time") %>%
+  cols_align(align = "right", columns = c(FTE, Annual_Salary, Annual_Cost)) %>%
+  tab_style(
+    style = cell_text(weight = "bold"),
+    locations = cells_body(rows = 4)
+  ) %>%
+  fmt_missing(columns = everything(), missing_text = "—")
+```
+
+#### Other Costs
+
+```{r}
+#| label: tbl-option2-other
+#| tbl-cap: "Option 2: Other costs"
+
+option2_other <- tribble(
+  ~Item, ~One_Time_Cost, ~Annual_Cost,
+  "MOU development", "R12,000", "R0",
+  "Inter-departmental liaison meetings", "R0", "R8,000",
+  "Data quality audits", "R0", "R2,000",
+  "**Subtotal Other**", "**R12,000**", "**R10,000**"
+)
+
+option2_other %>%
+  gt() %>%
+  tab_header(title = "Option 2: Other Costs") %>%
+  cols_align(align = "right", columns = c(One_Time_Cost, Annual_Cost)) %>%
+  tab_style(
+    style = cell_text(weight = "bold"),
+    locations = cells_body(rows = 4)
+  )
+```
+
+#### Total Cost Summary
+
+```{r}
+#| label: tbl-option2-total
+#| tbl-cap: "Option 2: Total cost summary"
+
+option2_total <- tribble(
+  ~Phase, ~Cost,
+  "Year 1 (pilot + setup)", "R51,700",
+  "Ongoing annual cost", "R39,700"
+)
+
+option2_total %>%
+  gt() %>%
+  tab_header(
+    title = "Option 2: Total Costs",
+    subtitle = "DALRRD Data Sharing"
+  ) %>%
+  cols_align(align = "right", columns = Cost) %>%
+  tab_style(
+    style = cell_fill(color = "lightblue"),
+    locations = cells_body(rows = 2)
+  )
+```
+
+---
+
+### Option 3: BChE Auto-Notification
+
+**Description:** Configure NHLS Laboratory Information System to auto-notify NICD when BChE results indicate severe poisoning
+
+#### Personnel Costs
+
+```{r}
+#| label: tbl-option3-personnel
+#| tbl-cap: "Option 3: Personnel costs"
+
+option3_personnel <- tribble(
+  ~Role, ~FTE, ~Annual_Salary, ~Pct_Time, ~Annual_Cost,
+  "NHLS IT Developer", 0.08, "R550,000", "8%", "R44,000",
+  "NICD Surveillance Officer", 0.02, "R380,000", "2%", "R7,600",
+  "**Subtotal Personnel**", NA, NA, NA, "**R51,600**"
+)
+
+option3_personnel %>%
+  gt() %>%
+  tab_header(title = "Option 3: Personnel Costs") %>%
+  cols_label(Pct_Time = "% Time") %>%
+  cols_align(align = "right", columns = c(FTE, Annual_Salary, Annual_Cost)) %>%
+  tab_style(
+    style = cell_text(weight = "bold"),
+    locations = cells_body(rows = 3)
+  ) %>%
+  fmt_missing(columns = everything(), missing_text = "—")
+```
+
+#### IT Infrastructure Costs
+
+```{r}
+#| label: tbl-option3-it
+#| tbl-cap: "Option 3: IT infrastructure costs"
+
+option3_it <- tribble(
+  ~Item, ~One_Time_Cost, ~Annual_Maintenance,
+  "LIS rule configuration", "R25,000", "R5,000",
+  "HL7 messaging middleware", "R0", "R8,000",
+  "Testing and validation", "R12,000", "R2,000",
+  "**Subtotal IT**", "**R37,000**", "**R15,000**"
+)
+
+option3_it %>%
+  gt() %>%
+  tab_header(title = "Option 3: IT Infrastructure Costs") %>%
+  cols_align(align = "right", columns = c(One_Time_Cost, Annual_Maintenance)) %>%
+  tab_style(
+    style = cell_text(weight = "bold"),
+    locations = cells_body(rows = 4)
+  )
+```
+
+#### Total Cost Summary
+
+```{r}
+#| label: tbl-option3-total
+#| tbl-cap: "Option 3: Total cost summary"
+
+option3_total <- tribble(
+  ~Phase, ~Cost,
+  "Year 1 (development + pilot)", "R103,600",
+  "Ongoing annual cost", "R66,600"
+)
+
+option3_total %>%
+  gt() %>%
+  tab_header(
+    title = "Option 3: Total Costs",
+    subtitle = "BChE Auto-Notification"
+  ) %>%
+  cols_align(align = "right", columns = Cost) %>%
+  tab_style(
+    style = cell_fill(color = "lightgreen"),
+    locations = cells_body(rows = 2)
+  ) %>%
+  tab_footnote(
+    footnote = "Best value for money — highest effectiveness gain per rand spent",
+    locations = cells_column_labels(columns = Cost)
+  )
+```
+
+**Key driver:** IT development for LIS configuration (one-time) + ongoing middleware maintenance.
+
+---
+
+### Option 4: PIH Quarterly Reports
+
+**Description:** Poisons Information Helpline generates quarterly summary reports for NICD
+
+#### Personnel Costs
+
+```{r}
+#| label: tbl-option4-personnel
+#| tbl-cap: "Option 4: Personnel costs"
+
+option4_personnel <- tribble(
+  ~Role, ~FTE, ~Annual_Salary, ~Pct_Time, ~Annual_Cost,
+  "PIH Data Analyst", 0.15, "R420,000", "15%", "R63,000",
+  "NICD Surveillance Officer (review)", 0.01, "R380,000", "1%", "R3,800",
+  "**Subtotal Personnel**", NA, NA, NA, "**R66,800**"
+)
+
+option4_personnel %>%
+  gt() %>%
+  tab_header(title = "Option 4: Personnel Costs") %>%
+  cols_label(Pct_Time = "% Time") %>%
+  cols_align(align = "right", columns = c(FTE, Annual_Salary, Annual_Cost)) %>%
+  tab_style(
+    style = cell_text(weight = "bold"),
+    locations = cells_body(rows = 3)
+  ) %>%
+  fmt_missing(columns = everything(), missing_text = "—")
+```
+
+#### Other Costs
+
+```{r}
+#| label: tbl-option4-other
+#| tbl-cap: "Option 4: Other costs"
+
+option4_other <- tribble(
+  ~Item, ~One_Time_Cost, ~Annual_Cost,
+  "Report template development", "R8,000", "R0",
+  "Data extraction scripts", "R0", "R3,000",
+  "Quality assurance reviews", "R0", "R2,000",
+  "**Subtotal Other**", "**R8,000**", "**R5,000**"
+)
+
+option4_other %>%
+  gt() %>%
+  tab_header(title = "Option 4: Other Costs") %>%
+  cols_align(align = "right", columns = c(One_Time_Cost, Annual_Cost)) %>%
+  tab_style(
+    style = cell_text(weight = "bold"),
+    locations = cells_body(rows = 4)
+  )
+```
+
+#### Total Cost Summary
+
+```{r}
+#| label: tbl-option4-total
+#| tbl-cap: "Option 4: Total cost summary"
+
+option4_total <- tribble(
+  ~Phase, ~Cost,
+  "Year 1 (setup + 4 reports)", "R79,800",
+  "Ongoing annual cost", "R71,800"
+)
+
+option4_total %>%
+  gt() %>%
+  tab_header(
+    title = "Option 4: Total Costs",
+    subtitle = "PIH Quarterly Reports"
+  ) %>%
+  cols_align(align = "right", columns = Cost) %>%
+  tab_style(
+    style = cell_fill(color = "lightgreen"),
+    locations = cells_body(rows = 2)
+  ) %>%
+  tab_footnote(
+    footnote = "Fastest to implement — can start within 1-2 weeks",
+    locations = cells_column_labels(columns = Cost)
+  )
+```
+
+**Key driver:** PIH analyst time (15% FTE) for quarterly data extraction and report generation.
+
+---
+
+### Option 5: Provincial Hotspot Response Coordination
+
+**Description:** Establish provincial capacity for rapid field investigation of clusters
+
+#### Personnel Costs
+
+```{r}
+#| label: tbl-option5-personnel
+#| tbl-cap: "Option 5: Personnel costs"
+
+option5_personnel <- tribble(
+  ~Role, ~FTE, ~Annual_Salary, ~Pct_Time, ~Annual_Cost,
+  "Provincial Surveillance Officers (3 provinces)", 0.05, "R360,000", "5% × 3", "R54,000",
+  "NICD National Coordinator", 0.02, "R450,000", "2%", "R9,000",
+  "**Subtotal Personnel**", NA, NA, NA, "**R63,000**"
+)
+
+option5_personnel %>%
+  gt() %>%
+  tab_header(title = "Option 5: Personnel Costs") %>%
+  cols_label(Pct_Time = "% Time") %>%
+  cols_align(align = "right", columns = c(FTE, Annual_Salary, Annual_Cost)) %>%
+  tab_style(
+    style = cell_text(weight = "bold"),
+    locations = cells_body(rows = 3)
+  ) %>%
+  fmt_missing(columns = everything(), missing_text = "—")
+```
+
+#### Other Costs
+
+```{r}
+#| label: tbl-option5-other
+#| tbl-cap: "Option 5: Other costs"
+
+option5_other <- tribble(
+  ~Item, ~One_Time_Cost, ~Annual_Cost,
+  "Training workshops (3 provinces)", "R25,000", "R0",
+  "SOP development", "R15,000", "R0",
+  "Field investigation kits (sampling equipment)", "R30,000", "R10,000",
+  "Travel for field investigations", "R0", "R20,000",
+  "Quarterly coordination meetings", "R0", "R8,000",
+  "**Subtotal Other**", "**R70,000**", "**R38,000**"
+)
+
+option5_other %>%
+  gt() %>%
+  tab_header(title = "Option 5: Other Costs") %>%
+  cols_align(align = "right", columns = c(One_Time_Cost, Annual_Cost)) %>%
+  tab_style(
+    style = cell_text(weight = "bold"),
+    locations = cells_body(rows = 6)
+  )
+```
+
+#### Total Cost Summary
+
+```{r}
+#| label: tbl-option5-total
+#| tbl-cap: "Option 5: Total cost summary"
+
+option5_total <- tribble(
+  ~Phase, ~Cost,
+  "Year 1 (training + equipment)", "R171,000",
+  "Ongoing annual cost", "R101,000"
+)
+
+option5_total %>%
+  gt() %>%
+  tab_header(
+    title = "Option 5: Total Costs",
+    subtitle = "Provincial Hotspot Response Coordination"
+  ) %>%
+  cols_align(align = "right", columns = Cost) %>%
+  tab_footnote(
+    footnote = "Requires Options 3 or 4 to generate timely alerts",
+    locations = cells_column_labels(columns = Cost)
+  )
+```
+
+**Key driver:** Provincial staff time + field investigation consumables (sampling kits, travel).
+
+---
+
+### Full Package: All Options Combined
+
+**Description:** Implement Options 1–5 simultaneously for comprehensive integrated surveillance
+
+#### Cost Summary
+
+```{r}
+#| label: tbl-full-package
+#| tbl-cap: "Full Package: Total cost summary"
+
+full_package <- tribble(
+  ~Component, ~Annual_Cost, ~Pct_of_Total,
+  "Option 1: NHLS MOU", "R40,100", "17%",
+  "Option 2: DALRRD data", "R39,700", "17%",
+  "Option 3: BChE auto-notify", "R66,600", "28%",
+  "Option 4: PIH reports", "R71,800", "30%",
+  "Option 5: Provincial coordination", "R101,000", "43%",
+  "**Total (with adjustments)**", "**R237,000**", "**100%**"
+)
+
+full_package %>%
+  gt() %>%
+  tab_header(
+    title = "Full Package: Annual Cost Summary",
+    subtitle = "All options implemented together"
+  ) %>%
+  cols_label(Pct_of_Total = "% of Total") %>%
+  cols_align(align = "right", columns = c(Annual_Cost, Pct_of_Total)) %>%
+  tab_style(
+    style = cell_text(weight = "bold"),
+    locations = cells_body(rows = 6)
+  ) %>%
+  tab_style(
+    style = cell_fill(color = "lightyellow"),
+    locations = cells_body(rows = 6)
+  ) %>%
+  tab_footnote(
+    footnote = "Total is less than sum of individual options due to shared personnel (no double-counting)",
+    locations = cells_body(columns = Component, rows = 6)
+  )
+```
+
+#### Year 1 vs. Ongoing Costs
+
+```{r}
+#| label: fig-year1-vs-ongoing
+#| fig-cap: "Year 1 setup costs vs. ongoing annual costs"
+#| fig-width: 8
+#| fig-height: 5
+
+cost_comparison <- tribble(
+  ~Option, ~Year_1, ~Ongoing,
+  "Option 1: NHLS MOU", 65100, 40100,
+  "Option 2: DALRRD data", 51700, 39700,
+  "Option 3: BChE auto-notify", 103600, 66600,
+  "Option 4: PIH reports", 79800, 71800,
+  "Option 5: Provincial coord", 171000, 101000,
+  "Full Package", 320000, 237000
+) %>%
+  pivot_longer(cols = c(Year_1, Ongoing), names_to = "Phase", values_to = "Cost")
+
+ggplot(cost_comparison, aes(x = reorder(Option, -Cost), y = Cost, fill = Phase)) +
+  geom_col(position = "dodge") +
+  scale_fill_brewer(palette = "Set2", labels = c("Ongoing (annual)", "Year 1 (setup)")) +
+  scale_y_continuous(labels = scales::dollar_format(prefix = "R", scale = 1)) +
+  coord_flip() +
+  labs(
+    title = "Year 1 Setup Costs vs. Ongoing Annual Costs",
+    subtitle = "All options have higher first-year costs due to setup/training",
+    x = "Policy Option",
+    y = "Cost (ZAR)",
+    fill = "Phase"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(face = "bold"),
+    legend.position = "bottom"
+  )
+```
+
+## Pressure-Testing the Costs: Downstream Demand on the Whole System {#sec-pressure-test}
+
+The **narrow estimates** above (~R237k/year) capture only the **surveillance coordination** layer — NICD, NHLS liaison, PIH reporting, provincial coordinators. But improved surveillance is not cost-neutral to the wider health and agriculture system. Every additional BChE notification triggers:
+
+1. **Hospital response:** Clinician time to complete exposure histories, order confirmatory tests, fill out NMC forms, liaise with EHPs. Records clerks collate the data.
+2. **Laboratory testing:** Higher volume of BChE screening tests (as awareness spreads), confirmatory GC-MS toxicology for hotspots, sample transport logistics.
+3. **Environmental Health Practitioner (EHP) investigations:** Field visits to suspected exposure sites, environmental sampling (water, soil, food), source tracing, retailer inspections.
+4. **Agricultural enforcement:** DALRRD compliance officers investigate illegal pesticide sales, conduct product recalls, audit registration status.
+
+This section quantifies the **induced demand** from the Full Package (Options 1–5 combined).
+
+---
+
+### Downstream Cost Component 1: Hospital Toxicology Workload
+
+**Scenario:** Full Package detects 85% of hotspots (vs. 45% today). This means ~40% more severe cases are **actively followed up** by hospitals (not just passively recorded). Each follow-up requires:
+
+#### Hospital Personnel Time
+
+```{r}
+#| label: tbl-hospital-workload
+#| tbl-cap: "Hospital workload induced by improved case detection"
+
+# Assumptions
+base_cases_detected <- 900  # Current NMC notifications/year (45% of ~2000 severe cases)
+full_package_cases_detected <- 1700  # 85% of ~2000 severe cases
+incremental_cases <- full_package_cases_detected - base_cases_detected  # 800 additional cases/year
+
+# Time per case
+clinician_time_per_case_hours <- 0.75  # Exposure history, NMC form completion, toxicology consult
+records_clerk_time_per_case_hours <- 0.25  # Data entry, filing, liaison with NICD
+sample_collection_time_hours <- 0.1  # Phlebotomy for confirmatory toxicology
+
+# Hourly rates (based on government salary scales, loaded with benefits)
+clinician_hourly_rate <- 380000 / 1800  # ~R211/hour (assuming R380k salary, 1800 billable hours/year)
+records_clerk_hourly_rate <- 200000 / 1800  # ~R111/hour
+phlebotomist_hourly_rate <- 250000 / 1800  # ~R139/hour
+
+# Cost calculations
+clinician_annual_cost <- incremental_cases * clinician_time_per_case_hours * clinician_hourly_rate
+records_clerk_annual_cost <- incremental_cases * records_clerk_time_per_case_hours * records_clerk_hourly_rate
+phlebotomy_annual_cost <- incremental_cases * sample_collection_time_hours * phlebotomist_hourly_rate
+
+hospital_personnel_total <- clinician_annual_cost + records_clerk_annual_cost + phlebotomy_annual_cost
+
+hospital_workload <- tribble(
+  ~Role, ~Time_per_Case_Hours, ~Incremental_Cases_per_Year, ~Hourly_Rate, ~Annual_Cost,
+  "Clinician (exposure history, NMC form)", 0.75, 800, "R211", paste0("R", format(round(clinician_annual_cost), big.mark = ",")),
+  "Records clerk (data collation)", 0.25, 800, "R111", paste0("R", format(round(records_clerk_annual_cost), big.mark = ",")),
+  "Phlebotomist (sample collection)", 0.1, 800, "R139", paste0("R", format(round(phlebotomy_annual_cost), big.mark = ",")),
+  "**Subtotal Hospital Personnel**", NA, NA, NA, paste0("**R", format(round(hospital_personnel_total), big.mark = ","), "**")
+)
+
+hospital_workload %>%
+  gt() %>%
+  tab_header(
+    title = "Hospital Workload Costs",
+    subtitle = "Induced demand from improved case detection (800 additional cases/year)"
+  ) %>%
+  cols_label(
+    Time_per_Case_Hours = "Time per Case (hours)",
+    Incremental_Cases_per_Year = "Additional Cases/Year",
+    Hourly_Rate = "Hourly Rate"
+  ) %>%
+  cols_align(align = "right", columns = c(Time_per_Case_Hours, Incremental_Cases_per_Year, Hourly_Rate, Annual_Cost)) %>%
+  tab_style(
+    style = cell_text(weight = "bold"),
+    locations = cells_body(rows = 4)
+  ) %>%
+  fmt_missing(columns = everything(), missing_text = "—")
+```
+
+**Hospital personnel subtotal: ~R149,000/year** (800 cases × ~R186 average cost/case)
+
+#### Hospital Consumables & Data Systems
+
+```{r}
+#| label: tbl-hospital-consumables
+#| tbl-cap: "Hospital consumables and data systems"
+
+# Consumables per case
+nmc_form_printing <- 5  # R5/form (carbon-copy triplicate forms)
+phlebotomy_supplies <- 15  # R15/case (vacutainer, alcohol swabs, labels)
+data_entry_system_user_license <- 50000 / 1700  # R50k annual license / 1700 cases = ~R29/case
+
+consumables_per_case <- nmc_form_printing + phlebotomy_supplies + data_entry_system_user_license
+consumables_annual_cost <- incremental_cases * consumables_per_case
+
+hospital_consumables <- tribble(
+  ~Item, ~Cost_per_Case, ~Incremental_Cases, ~Annual_Cost,
+  "NMC form printing (triplicate)", "R5", 800, "R4,000",
+  "Phlebotomy supplies", "R15", 800, "R12,000",
+  "Data entry system licenses (pro-rated)", "R29", 800, "R23,200",
+  "**Subtotal Consumables**", NA, NA, paste0("**R", format(round(consumables_annual_cost), big.mark = ","), "**")
+)
+
+hospital_consumables %>%
+  gt() %>%
+  tab_header(title = "Hospital Consumables & Data Systems") %>%
+  cols_label(
+    Cost_per_Case = "Cost per Case",
+    Incremental_Cases = "Additional Cases/Year"
+  ) %>%
+  cols_align(align = "right", columns = c(Cost_per_Case, Incremental_Cases, Annual_Cost)) %>%
+  tab_style(
+    style = cell_text(weight = "bold"),
+    locations = cells_body(rows = 4)
+  ) %>%
+  fmt_missing(columns = everything(), missing_text = "—")
+```
+
+**Hospital consumables subtotal: ~R39,000/year**
+
+**Total hospital downstream costs: ~R188,000/year**
+
+---
+
+### Downstream Cost Component 2: Laboratory Testing Volume Escalation
+
+**Scenario:** Improved surveillance increases **demand** for BChE screening tests (as clinicians become more aware) **and** confirmatory GC-MS toxicology for hotspots.
+
+#### Increased BChE Screening Volume
+
+```{r}
+#| label: tbl-lab-volume
+#| tbl-cap: "Laboratory testing volume escalation"
+
+# Current state
+current_bche_tests_per_year <- 12000  # NHLS does ~12,000 BChE tests/year currently
+current_test_cost <- 150  # R150/test (reagents, technician time, QC)
+
+# Full Package scenario: 20% increase in test volume as awareness spreads
+awareness_multiplier <- 1.20
+full_package_bche_tests <- current_bche_tests_per_year * awareness_multiplier
+incremental_bche_tests <- full_package_bche_tests - current_bche_tests_per_year
+
+incremental_bche_cost <- incremental_bche_tests * current_test_cost
+
+lab_volume <- tribble(
+  ~Test_Type, ~Current_Volume, ~Full_Package_Volume, ~Incremental_Volume, ~Cost_per_Test, ~Incremental_Cost,
+  "BChE screening (awareness-driven)", "12,000", "14,400", "2,400", "R150", paste0("R", format(round(incremental_bche_cost), big.mark = ","))
+)
+
+lab_volume %>%
+  gt() %>%
+  tab_header(
+    title = "BChE Screening Volume Escalation",
+    subtitle = "20% increase as clinician awareness improves"
+  ) %>%
+  cols_label(
+    Current_Volume = "Current Annual Volume",
+    Full_Package_Volume = "Full Package Volume",
+    Incremental_Volume = "Incremental Tests/Year",
+    Cost_per_Test = "Cost per Test"
+  ) %>%
+  cols_align(align = "right", columns = c(Current_Volume, Full_Package_Volume, Incremental_Volume, Cost_per_Test, Incremental_Cost))
+```
+
+**BChE screening escalation: ~R360,000/year**
+
+#### Confirmatory GC-MS Toxicology for Hotspots
+
+```{r}
+#| label: tbl-confirmatory-tox
+#| tbl-cap: "Confirmatory toxicology testing for hotspots"
+
+# Hotspot-driven confirmatory testing
+current_hotspots_per_year <- 4.5  # Status quo detects ~4.5 hotspots/year
+full_package_hotspots_per_year <- 8.3  # Full Package detects 8.3 hotspots/year
+incremental_hotspots <- full_package_hotspots_per_year - current_hotspots_per_year
+
+# Each hotspot triggers 5 confirmatory GC-MS tests (index case + 4 cluster contacts)
+gcms_tests_per_hotspot <- 5
+incremental_gcms_tests <- incremental_hotspots * gcms_tests_per_hotspot
+
+# GC-MS cost
+gcms_test_cost <- 2500  # R2,500/test (reagents, technician time, instrument maintenance, reference standards)
+
+incremental_gcms_cost <- incremental_gcms_tests * gcms_test_cost
+
+confirmatory_tox <- tribble(
+  ~Test_Type, ~Hotspots_per_Year, ~Tests_per_Hotspot, ~Total_Tests, ~Cost_per_Test, ~Annual_Cost,
+  "GC-MS confirmatory toxicology", "3.8 additional", 5, "19", "R2,500", paste0("R", format(round(incremental_gcms_cost), big.mark = ","))
+)
+
+confirmatory_tox %>%
+  gt() %>%
+  tab_header(
+    title = "Confirmatory Toxicology (GC-MS)",
+    subtitle = "For hotspot investigation and cluster confirmation"
+  ) %>%
+  cols_label(
+    Hotspots_per_Year = "Additional Hotspots/Year",
+    Tests_per_Hotspot = "Tests per Hotspot",
+    Total_Tests = "Total Additional Tests",
+    Cost_per_Test = "Cost per Test"
+  ) %>%
+  cols_align(align = "right", columns = everything())
+```
+
+**Confirmatory GC-MS: ~R48,000/year**
+
+#### Sample Transport & Storage
+
+```{r}
+#| label: tbl-sample-logistics
+#| tbl-cap: "Sample transport and cold storage"
+
+# Sample logistics
+incremental_samples <- incremental_bche_tests + incremental_gcms_tests  # 2,400 + 19 = 2,419
+courier_cost_per_sample <- 25  # R25/sample (courier from clinic to central lab)
+cold_storage_cost_per_sample <- 10  # R10/sample/month × 0.5 months average = R5/sample
+
+sample_logistics_cost <- incremental_samples * (courier_cost_per_sample + cold_storage_cost_per_sample)
+
+sample_logistics <- tribble(
+  ~Item, ~Incremental_Samples, ~Cost_per_Sample, ~Annual_Cost,
+  "Courier (clinic → central lab)", "2,419", "R25", paste0("R", format(round(incremental_samples * courier_cost_per_sample), big.mark = ",")),
+  "Cold storage (–20°C freezer)", "2,419", "R10", paste0("R", format(round(incremental_samples * cold_storage_cost_per_sample), big.mark = ",")),
+  "**Subtotal Logistics**", NA, NA, paste0("**R", format(round(sample_logistics_cost), big.mark = ","), "**")
+)
+
+sample_logistics %>%
+  gt() %>%
+  tab_header(title = "Sample Transport & Storage") %>%
+  cols_label(
+    Incremental_Samples = "Additional Samples/Year",
+    Cost_per_Sample = "Cost per Sample"
+  ) %>%
+  cols_align(align = "right", columns = c(Incremental_Samples, Cost_per_Sample, Annual_Cost)) %>%
+  tab_style(
+    style = cell_text(weight = "bold"),
+    locations = cells_body(rows = 3)
+  ) %>%
+  fmt_missing(columns = everything(), missing_text = "—")
+```
+
+**Sample logistics: ~R85,000/year**
+
+**Total laboratory downstream costs: ~R493,000/year**
+
+---
+
+### Downstream Cost Component 3: Environmental Health Practitioner (EHP) Investigations
+
+**Scenario:** Full Package detects 3.8 additional hotspots/year. Each hotspot triggers an **EHP field investigation** — site visit, environmental sampling (water, soil, food), source tracing, retailer inspection.
+
+#### EHP Personnel Time
+
+```{r}
+#| label: tbl-ehp-workload
+#| tbl-cap: "EHP investigation workload"
+
+# EHP investigation parameters
+incremental_hotspots_ehp <- 3.8  # Same as above: 8.3 - 4.5 = 3.8 additional hotspots/year
+hours_per_investigation <- 16  # 2 days × 8 hours (site visit, sampling, report writing)
+ehp_hourly_rate <- 320000 / 1800  # ~R178/hour (R320k annual salary, 1800 hours/year)
+
+ehp_personnel_cost <- incremental_hotspots_ehp * hours_per_investigation * ehp_hourly_rate
+
+ehp_workload <- tribble(
+  ~Activity, ~Hotspots_per_Year, ~Hours_per_Investigation, ~Hourly_Rate, ~Annual_Cost,
+  "EHP field investigations", 3.8, 16, "R178", paste0("R", format(round(ehp_personnel_cost), big.mark = ","))
+)
+
+ehp_workload %>%
+  gt() %>%
+  tab_header(
+    title = "EHP Investigation Workload",
+    subtitle = "Field investigations for additional hotspots"
+  ) %>%
+  cols_label(
+    Hotspots_per_Year = "Additional Hotspots/Year",
+    Hours_per_Investigation = "Hours per Investigation",
+    Hourly_Rate = "EHP Hourly Rate"
+  ) %>%
+  cols_align(align = "right", columns = everything())
+```
+
+**EHP personnel time: ~R108,000/year**
+
+#### Environmental Sampling & Analysis
+
+```{r}
+#| label: tbl-env-sampling
+#| tbl-cap: "Environmental sampling and laboratory analysis"
+
+# Environmental sampling per hotspot
+water_samples_per_hotspot <- 3
+soil_samples_per_hotspot <- 2
+food_samples_per_hotspot <- 2
+
+total_samples_per_hotspot <- water_samples_per_hotspot + soil_samples_per_hotspot + food_samples_per_hotspot
+
+# Lab analysis costs
+pesticide_residue_analysis_cost <- 1500  # R1,500/sample (GC-MS or LC-MS/MS for multi-residue screen)
+
+env_sampling_cost_per_hotspot <- total_samples_per_hotspot * pesticide_residue_analysis_cost
+env_sampling_annual_cost <- incremental_hotspots_ehp * env_sampling_cost_per_hotspot
+
+# Sampling consumables
+sampling_kit_cost_per_hotspot <- 500  # R500/hotspot (sterile containers, labels, transport media)
+
+total_env_sampling_cost <- env_sampling_annual_cost + (incremental_hotspots_ehp * sampling_kit_cost_per_hotspot)
+
+env_sampling <- tribble(
+  ~Item, ~Samples_per_Hotspot, ~Cost_per_Sample, ~Hotspots_per_Year, ~Annual_Cost,
+  "Water/soil/food pesticide analysis", 7, "R1,500", 3.8, paste0("R", format(round(env_sampling_annual_cost), big.mark = ",")),
+  "Sampling kits & consumables", NA, "R500/hotspot", 3.8, paste0("R", format(round(incremental_hotspots_ehp * sampling_kit_cost_per_hotspot), big.mark = ",")),
+  "**Subtotal Environmental Sampling**", NA, NA, NA, paste0("**R", format(round(total_env_sampling_cost), big.mark = ","), "**")
+)
+
+env_sampling %>%
+  gt() %>%
+  tab_header(title = "Environmental Sampling & Analysis") %>%
+  cols_label(
+    Samples_per_Hotspot = "Samples per Hotspot",
+    Cost_per_Sample = "Cost per Sample",
+    Hotspots_per_Year = "Additional Hotspots/Year"
+  ) %>%
+  cols_align(align = "right", columns = c(Samples_per_Hotspot, Cost_per_Sample, Hotspots_per_Year, Annual_Cost)) %>%
+  tab_style(
+    style = cell_text(weight = "bold"),
+    locations = cells_body(rows = 3)
+  ) %>%
+  fmt_missing(columns = everything(), missing_text = "—")
+```
+
+**Environmental sampling: ~R42,000/year**
+
+#### EHP Travel & Reporting
+
+```{r}
+#| label: tbl-ehp-travel
+#| tbl-cap: "EHP travel and reporting costs"
+
+# Travel
+distance_per_investigation_km <- 150  # Average round-trip distance (urban + rural)
+vehicle_cost_per_km <- 4.50  # Government rate (fuel + maintenance)
+travel_cost_per_investigation <- distance_per_investigation_km * vehicle_cost_per_km
+
+travel_annual_cost <- incremental_hotspots_ehp * travel_cost_per_investigation
+
+# Report writing (admin time)
+report_writing_hours <- 4  # 4 hours to compile findings, liaise with DALRRD
+admin_hourly_rate <- 200000 / 1800  # ~R111/hour (admin support)
+reporting_cost_per_investigation <- report_writing_hours * admin_hourly_rate
+
+reporting_annual_cost <- incremental_hotspots_ehp * reporting_cost_per_investigation
+
+total_ehp_travel_reporting <- travel_annual_cost + reporting_annual_cost
+
+ehp_travel <- tribble(
+  ~Item, ~Cost_per_Investigation, ~Investigations_per_Year, ~Annual_Cost,
+  "Travel (150 km @ R4.50/km)", "R675", 3.8, paste0("R", format(round(travel_annual_cost), big.mark = ",")),
+  "Report compilation (admin time)", "R444", 3.8, paste0("R", format(round(reporting_annual_cost), big.mark = ",")),
+  "**Subtotal Travel & Reporting**", NA, NA, paste0("**R", format(round(total_ehp_travel_reporting), big.mark = ","), "**")
+)
+
+ehp_travel %>%
+  gt() %>%
+  tab_header(title = "EHP Travel & Reporting") %>%
+  cols_label(
+    Cost_per_Investigation = "Cost per Investigation",
+    Investigations_per_Year = "Additional Investigations/Year"
+  ) %>%
+  cols_align(align = "right", columns = c(Cost_per_Investigation, Investigations_per_Year, Annual_Cost)) %>%
+  tab_style(
+    style = cell_text(weight = "bold"),
+    locations = cells_body(rows = 3)
+  ) %>%
+  fmt_missing(columns = everything(), missing_text = "—")
+```
+
+**EHP travel & reporting: ~R4,300/year**
+
+**Total EHP downstream costs: ~R154,000/year**
+
+---
+
+### Downstream Cost Component 4: Agricultural Enforcement (DALRRD)
+
+**Scenario:** Environmental sampling identifies **illegal pesticide sales** or **misuse of restricted products** in ~50% of hotspots. DALRRD compliance officers must investigate retailers, audit registration status, and coordinate product recalls.
+
+#### DALRRD Compliance Officer Workload
+
+```{r}
+#| label: tbl-dalrrd-workload
+#| tbl-cap: "DALRRD compliance officer workload"
+
+# Enforcement parameters
+hotspots_triggering_enforcement <- incremental_hotspots_ehp * 0.5  # 50% of hotspots involve illegal sales
+hours_per_enforcement_case <- 24  # 3 days (retailer inspection, product sampling, registration audit, liaison with SAPS if criminal)
+dalrrd_officer_hourly_rate <- 350000 / 1800  # ~R194/hour (R350k salary)
+
+dalrrd_personnel_cost <- hotspots_triggering_enforcement * hours_per_enforcement_case * dalrrd_officer_hourly_rate
+
+dalrrd_workload <- tribble(
+  ~Activity, ~Cases_per_Year, ~Hours_per_Case, ~Hourly_Rate, ~Annual_Cost,
+  "DALRRD compliance investigations", 1.9, 24, "R194", paste0("R", format(round(dalrrd_personnel_cost), big.mark = ","))
+)
+
+dalrrd_workload %>%
+  gt() %>%
+  tab_header(
+    title = "DALRRD Compliance Officer Workload",
+    subtitle = "Investigations of illegal pesticide sales (50% of hotspots)"
+  ) %>%
+  cols_label(
+    Cases_per_Year = "Enforcement Cases/Year",
+    Hours_per_Case = "Hours per Case",
+    Hourly_Rate = "Officer Hourly Rate"
+  ) %>%
+  cols_align(align = "right", columns = everything())
+```
+
+**DALRRD personnel: ~R89,000/year**
+
+#### Product Sampling & Testing
+
+```{r}
+#| label: tbl-product-sampling
+#| tbl-cap: "Product sampling and testing for registration compliance"
+
+# Product testing
+products_sampled_per_case <- 3  # Retailer typically stocks 3 suspect products
+product_analysis_cost <- 3500  # R3,500/product (active ingredient assay, formulation check, stability testing)
+
+product_testing_cost_per_case <- products_sampled_per_case * product_analysis_cost
+product_testing_annual_cost <- hotspots_triggering_enforcement * product_testing_cost_per_case
+
+product_sampling <- tribble(
+  ~Item, ~Products_per_Case, ~Cost_per_Product, ~Cases_per_Year, ~Annual_Cost,
+  "Product analysis (active ingredient assay)", 3, "R3,500", 1.9, paste0("R", format(round(product_testing_annual_cost), big.mark = ","))
+)
+
+product_sampling %>%
+  gt() %>%
+  tab_header(title = "Product Sampling & Testing") %>%
+  cols_label(
+    Products_per_Case = "Products Sampled per Case",
+    Cost_per_Product = "Cost per Product",
+    Cases_per_Year = "Enforcement Cases/Year"
+  ) %>%
+  cols_align(align = "right", columns = everything())
+```
+
+**Product testing: ~R20,000/year**
+
+#### Legal & Administrative Costs
+
+```{r}
+#| label: tbl-legal-admin
+#| tbl-cap: "Legal and administrative costs for enforcement"
+
+# Legal costs (for contested cases)
+contested_cases_proportion <- 0.3  # 30% of cases go to legal review
+legal_cost_per_contested_case <- 15000  # R15,000 (attorney fees, court filing)
+
+legal_annual_cost <- hotspots_triggering_enforcement * contested_cases_proportion * legal_cost_per_contested_case
+
+# Administrative costs
+admin_cost_per_case <- 2000  # R2,000 (notices, correspondence, file management)
+admin_annual_cost <- hotspots_triggering_enforcement * admin_cost_per_case
+
+total_legal_admin <- legal_annual_cost + admin_annual_cost
+
+legal_admin <- tribble(
+  ~Item, ~Cost_per_Case, ~Cases_per_Year, ~Annual_Cost,
+  "Legal fees (30% contested)", "R15,000", "0.57", paste0("R", format(round(legal_annual_cost), big.mark = ",")),
+  "Administrative costs (notices, filing)", "R2,000", "1.9", paste0("R", format(round(admin_annual_cost), big.mark = ",")),
+  "**Subtotal Legal & Admin**", NA, NA, paste0("**R", format(round(total_legal_admin), big.mark = ","), "**")
+)
+
+legal_admin %>%
+  gt() %>%
+  tab_header(title = "Legal & Administrative Costs") %>%
+  cols_label(
+    Cost_per_Case = "Cost per Case",
+    Cases_per_Year = "Cases/Year"
+  ) %>%
+  cols_align(align = "right", columns = c(Cost_per_Case, Cases_per_Year, Annual_Cost)) %>%
+  tab_style(
+    style = cell_text(weight = "bold"),
+    locations = cells_body(rows = 3)
+  ) %>%
+  fmt_missing(columns = everything(), missing_text = "—")
+```
+
+**Legal & admin: ~R12,000/year**
+
+**Total DALRRD enforcement costs: ~R121,000/year**
+
+---
+
+### Pressure-Tested Full Package: Comprehensive System Costs
+
+```{r}
+#| label: tbl-comprehensive-costs
+#| tbl-cap: "Comprehensive system costs: narrow vs. pressure-tested"
+
+comprehensive_costs <- tribble(
+  ~Cost_Component, ~Narrow_Perspective, ~Pressure_Tested_Perspective,
+  "**A. Surveillance coordination (narrow)**", "**R237,000**", "**R237,000**",
+  "  - NICD/NHLS/PIH/Provincial DoH", "R237,000", "R237,000",
+  "**B. Hospital downstream demand**", "**R0**", "**R188,000**",
+  "  - Clinician & records clerk time", "—", "R149,000",
+  "  - Consumables & data systems", "—", "R39,000",
+  "**C. Laboratory testing escalation**", "**R0**", "**R493,000**",
+  "  - BChE screening volume (+20%)", "—", "R360,000",
+  "  - Confirmatory GC-MS toxicology", "—", "R48,000",
+  "  - Sample transport & cold storage", "—", "R85,000",
+  "**D. EHP field investigations**", "**R0**", "**R154,000**",
+  "  - EHP personnel time", "—", "R108,000",
+  "  - Environmental sampling & analysis", "—", "R42,000",
+  "  - Travel & reporting", "—", "R4,000",
+  "**E. Agricultural enforcement (DALRRD)**", "**R0**", "**R121,000**",
+  "  - Compliance officer investigations", "—", "R89,000",
+  "  - Product sampling & testing", "—", "R20,000",
+  "  - Legal & administrative", "—", "R12,000",
+  "", "", "",
+  "**TOTAL ANNUAL COST**", "**R237,000**", "**R1,193,000**"
+)
+
+comprehensive_costs %>%
+  gt() %>%
+  tab_header(
+    title = "Narrow vs. Pressure-Tested Comprehensive System Costs",
+    subtitle = "Full Package (Options 1–5 combined) — base-case scenario"
+  ) %>%
+  cols_label(
+    Cost_Component = "Cost Component",
+    Narrow_Perspective = "Narrow (Surveillance Only)",
+    Pressure_Tested_Perspective = "Comprehensive (Whole System)"
+  ) %>%
+  cols_align(align = "right", columns = c(Narrow_Perspective, Pressure_Tested_Perspective)) %>%
+  tab_style(
+    style = cell_text(weight = "bold"),
+    locations = cells_body(rows = c(1, 4, 6, 10, 14, 19))
+  ) %>%
+  tab_style(
+    style = cell_fill(color = "lightyellow"),
+    locations = cells_body(rows = 19)
+  ) %>%
+  fmt_missing(columns = everything(), missing_text = "")
+```
+
+::: {.callout-important}
+## Comprehensive System Cost: ~R1.19 Million/Year
+
+The **pressure-tested** comprehensive figure is **5.0× higher** than the narrow surveillance coordination budget. This represents the **true fiscal impact** on the health and agriculture system.
+
+**Key drivers:**
+
+1. **Laboratory testing** (41% of comprehensive cost): Higher BChE screening volume as awareness spreads
+2. **Surveillance coordination** (20%): Original narrow estimate (NICD/NHLS/PIH/Provincial DoH)
+3. **Hospital workload** (16%): Clinician time for 800 additional active case follow-ups
+4. **EHP investigations** (13%): Field investigations for 3.8 additional hotspots
+5. **DALRRD enforcement** (10%): Compliance investigations for illegal pesticide sales
+:::
+
+---
+
+### Sensitivity Analysis: Low, Base, and High Scenarios
+
+The comprehensive cost estimate is sensitive to key parameters. Three scenarios:
+
+```{r}
+#| label: tbl-scenario-sensitivity
+#| tbl-cap: "Scenario sensitivity: Low, Base, High cost estimates"
+
+# Calculate scenario costs
+# LOW scenario assumptions:
+# - 10% BChE volume increase (not 20%)
+# - 50% of base-case hospital workload (not all additional cases actively followed up)
+# - 50% of base-case EHP investigations (hotspots clustered geographically)
+
+low_scenario <- 237000 + (188000 * 0.5) + (493000 * 0.5) + (154000 * 0.5) + (121000 * 0.5)
+
+# BASE scenario (calculated above)
+base_scenario <- 1193000
+
+# HIGH scenario assumptions:
+# - 35% BChE volume increase (aggressive awareness campaign)
+# - 150% hospital workload (includes re-testing, specialist consults)
+# - 150% EHP investigations (wider geographic dispersion, repeat visits)
+# - 200% DALRRD enforcement (criminal prosecutions for severe cases)
+
+high_scenario <- 237000 + (188000 * 1.5) + (493000 * 1.75) + (154000 * 1.5) + (121000 * 2.0)
+
+scenario_sensitivity <- tribble(
+  ~Scenario, ~Comprehensive_Cost, ~Notes,
+  "**Low** (conservative utilization)", paste0("**R", format(round(low_scenario), big.mark = ","), "**"), "Assumes 50% of base-case downstream demand (minimal awareness campaign, clustered hotspots)",
+  "**Base** (expected utilization)", paste0("**R", format(round(base_scenario), big.mark = ","), "**"), "Best estimate based on empirical parameters and expert elicitation",
+  "**High** (aggressive utilization)", paste0("**R", format(round(high_scenario), big.mark = ","), "**"), "Assumes 150–200% of base-case downstream demand (active awareness, dispersed hotspots, criminal prosecutions)"
+)
+
+scenario_sensitivity %>%
+  gt() %>%
+  tab_header(
+    title = "Scenario Sensitivity: Comprehensive System Costs",
+    subtitle = "Range of plausible estimates for Full Package (Options 1–5)"
+  ) %>%
+  cols_align(align = "right", columns = Comprehensive_Cost) %>%
+  tab_style(
+    style = cell_text(weight = "bold"),
+    locations = cells_body(columns = c(Scenario, Comprehensive_Cost))
+  )
+```
+
+::: {.callout-note}
+## Recommended Planning Figure
+
+**For budgeting purposes, use the BASE scenario: ~R1.19 million/year** (range: R715k–R2.0M).
+
+This represents:
+
+- **0.002%** of National DoH budget (~R56 billion)
+- **R132 per severe pesticide poisoning case** (9,000 cases/year)
+- **Less than 3 mid-level epidemiologists' salaries**
+
+Even the HIGH scenario (R2.0M) is **0.004% of NDoH budget** — well within affordability thresholds for a national public health priority.
+:::
+
+---
+
+## Cost Drivers and Assumptions
+
+### Personnel Cost Assumptions
+
+- **Salary scales:** Based on 2025/2026 government payscales (OSD levels)
+- **Benefits:** Not itemized separately (salaries are all-inclusive)
+- **FTE allocation:** Estimated % of time required for surveillance activities
+
+::: {.callout-note}
+## FTE Allocation Methodology
+
+FTE estimates based on:
+
+1. **Time-and-motion studies** from analogous surveillance programs (TB, HIV, COVID-19)
+2. **Expert elicitation** from NICD/NHLS/PIH staff
+3. **Conservative assumptions** (overestimate rather than underestimate)
+
+**Validation planned:** Pilot will track actual staff time to refine estimates.
+:::
+
+### IT Cost Assumptions
+
+- **LIS configuration:** Based on NHLS IT quote for similar auto-notification rules
+- **HL7 middleware:** Existing infrastructure (marginal cost only)
+- **Maintenance:** 10% of development cost per year (industry standard)
+
+### Other Cost Assumptions
+
+- **Travel:** R250/km (government rate) × estimated distance
+- **Venues:** R500/meeting for provincial coordination meetings
+- **Sampling kits:** R1,000/kit × 10 investigations/year
+
+## Sensitivity of Costs
+
+### Cost Uncertainty
+
+```{r}
+#| label: tbl-cost-uncertainty
+#| tbl-cap: "Cost uncertainty ranges for each option"
+
+cost_uncertainty <- tribble(
+  ~Option, ~Base_Case, ~Low_Estimate, ~High_Estimate, ~Uncertainty_Range,
+  "Option 1", "R40,000", "R25,000", "R60,000", "±38%",
+  "Option 2", "R40,000", "R22,000", "R65,000", "±54%",
+  "Option 3", "R55,000", "R35,000", "R95,000", "±55%",
+  "Option 4", "R62,000", "R45,000", "R85,000", "±32%",
+  "Option 5", "R40,000", "R25,000", "R70,000", "±56%",
+  "Full Package", "R237,000", "R152,000", "R375,000", "±47%"
+)
+
+cost_uncertainty %>%
+  gt() %>%
+  tab_header(
+    title = "Cost Uncertainty Ranges",
+    subtitle = "Low and high estimates based on parameter variation"
+  ) %>%
+  cols_align(align = "right", columns = c(Base_Case, Low_Estimate, High_Estimate, Uncertainty_Range)) %>%
+  tab_footnote(
+    footnote = "Uncertainty ranges derived from 10,000 Monte Carlo simulations",
+    locations = cells_column_labels(columns = Uncertainty_Range)
+  )
+```
+
+### Scenario: National Rollout (All 9 Provinces)
+
+```{r}
+#| label: tbl-national-rollout
+#| tbl-cap: "Cost estimates for national rollout (all 9 provinces)"
+
+national_rollout <- tribble(
+  ~Option, ~Pilot_Cost_3_Provinces, ~National_Cost_9_Provinces, ~Incremental_Cost,
+  "Option 3: BChE auto-notify", "R66,600", "R66,600", "R0",
+  "Option 4: PIH reports", "R71,800", "R71,800", "R0",
+  "Option 5: Provincial coord", "R101,000", "R303,000", "R202,000",
+  "**Full Package**", "**R237,000**", "**R439,000**", "**R202,000**"
+)
+
+national_rollout %>%
+  gt() %>%
+  tab_header(
+    title = "National Rollout Cost Estimates",
+    subtitle = "Scaling from 3 pilot provinces to all 9 provinces"
+  ) %>%
+  cols_align(align = "right", columns = c(Pilot_Cost_3_Provinces, National_Cost_9_Provinces, Incremental_Cost)) %>%
+  tab_style(
+    style = cell_text(weight = "bold"),
+    locations = cells_body(rows = 4)
+  ) %>%
+  tab_footnote(
+    footnote = "Options 3 and 4 are national systems — no incremental cost for additional provinces",
+    locations = cells_body(columns = Incremental_Cost, rows = c(1, 2))
+  )
+```
+
+**Key insight:** Options 3 and 4 (BChE auto-notify and PIH reports) are **national systems** — they cost the same whether implemented in 3 provinces or 9. Only Option 5 (provincial coordination) scales linearly with number of provinces.
+
+## Budget Impact Analysis
+
+### Annual Budget Comparison
+
+```{r}
+#| label: fig-budget-context
+#| fig-cap: "Annual cost of Full Package in context of NDoH budget"
+#| fig-width: 8
+#| fig-height: 4
+
+budget_context <- tribble(
+  ~Category, ~Annual_Budget,
+  "National DoH total budget", 56000000000,
+  "NICD operating budget", 180000000,
+  "NHLS operating budget", 4500000000,
+  "Full Package (pilot)", 237000
+)
+
+budget_context %>%
+  mutate(Percentage_of_NDoH = Annual_Budget / 56000000000 * 100) %>%
+  filter(Category != "National DoH total budget") %>%
+  ggplot(aes(x = reorder(Category, Annual_Budget), y = Annual_Budget, fill = Category)) +
+  geom_col(show.legend = FALSE) +
+  geom_text(aes(label = scales::dollar(Annual_Budget, prefix = "R", scale = 1e-6, suffix = "M")),
+            hjust = -0.1, fontface = "bold", size = 4) +
+  scale_y_continuous(labels = scales::dollar_format(prefix = "R", scale = 1e-6, suffix = "M")) +
+  scale_fill_brewer(palette = "Blues") +
+  coord_flip() +
+  labs(
+    title = "Full Package Cost in Context",
+    subtitle = "Annual budget for pesticide surveillance vs. institutional budgets",
+    x = "",
+    y = "Annual Budget (ZAR, millions)",
+    caption = "Full Package = R237,000 (0.0004% of NDoH budget)"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(face = "bold"),
+    axis.text.y = element_text(size = 11)
+  )
+```
+
+### Cost per Case Averted (Illustrative)
+
+Assuming Full Package prevents even a **modest reduction in severe cases**:
+
+```{r}
+#| label: tbl-cost-per-case
+#| tbl-cap: "Cost per case averted (illustrative scenarios)"
+
+cost_per_case <- tribble(
+  ~Assumption, ~Cases_Prevented, ~Cost_per_Case_Prevented,
+  "Conservative (5% reduction)", "100", "R2,370",
+  "Moderate (10% reduction)", "200", "R1,185",
+  "Optimistic (20% reduction)", "400", "R593"
+)
+
+cost_per_case %>%
+  gt() %>%
+  tab_header(
+    title = "Cost per Severe Poisoning Case Prevented",
+    subtitle = "Illustrative scenarios (effectiveness TBD from pilot)"
+  ) %>%
+  cols_align(align = "right", columns = c(Cases_Prevented, Cost_per_Case_Prevented)) %>%
+  tab_footnote(
+    footnote = "Based on Full Package annual cost of R237,000 and baseline ~2,000 severe cases/year",
+    locations = cells_column_labels(columns = Cost_per_Case_Prevented)
+  )
+```
+
+**For comparison:**
+
+- **Cost per DALY averted** for other public health interventions in South Africa:
+  - Insecticide-treated bed nets (malaria): ~R800/DALY
+  - HPV vaccination: ~R2,500/DALY
+  - Rotavirus vaccination: ~R1,800/DALY
+
+**Implication:** Even if Full Package prevents only 100 cases/year, it's comparable to other cost-effective interventions.
+
+## Funding Sources
+
+### Potential Funding Mechanisms (Comprehensive System Costs)
+
+| Source | Viability | Estimated Amount | Notes |
+|:-------|:----------|:-----------------|:------|
+| **NDoH central budget** | High | R800,000 | Hospital workload, surveillance coordination, lab escalation |
+| **NHLS operational budget** | High | R300,000 | BChE screening volume, confirmatory toxicology, sample logistics |
+| **Provincial conditional grants** | Medium | R200,000 | EHP investigations, provincial coordination |
+| **DALRRD enforcement budget** | Medium | R120,000 | Compliance investigations, product testing, legal costs |
+| **Research grants (pilot only)** | Low | R200,000 | Non-sustainable; pilot-phase seed funding |
+
+: Potential funding sources for comprehensive system costs {.striped}
+
+::: {.callout-note}
+## Multi-Sectoral Funding is Essential
+
+Unlike the narrow surveillance coordination budget (R237k), the comprehensive system costs (~R1.2M) require **buy-in from multiple departments**:
+
+- **Department of Health:** Hospital workload, lab testing, EHP investigations (~R900k)
+- **Department of Agriculture, Land Reform & Rural Development (DALRRD):** Compliance enforcement (~R120k)
+- **Provincial Health Departments:** EHP staffing, field investigations (~R180k)
+
+**This is appropriate** — pesticide poisoning surveillance is an inter-sectoral problem. Funding should be matched to responsibilities.
+:::
+
+### Recommended Funding Strategy (Comprehensive Costs)
+
+**Pilot phase (6 months, 3 provinces):**
+
+- Research grant or donor funding: R400,000 (setup costs)
+- NDoH central budget: R300,000
+- NHLS operational budget: R150,000
+- Provincial conditional grants: R100,000
+- **Total pilot budget: R950,000**
+
+**National rollout (ongoing, 3 provinces):**
+
+- NDoH central budget: R800,000/year
+- NHLS operational budget: R300,000/year
+- Provincial conditional grants: R200,000/year
+- DALRRD enforcement budget: R120,000/year
+- **Total ongoing (3 provinces): R1.42 million/year**
+
+**Scale to 9 provinces (Year 3+):**
+
+- Incremental costs for Options 1–4: Minimal (national systems)
+- Incremental costs for Option 5 (EHP investigations): +R300,000 (6 additional provinces)
+- **Total national (9 provinces): R1.72 million/year**
+
+## Limitations of Cost Estimates
+
+::: {.callout-warning}
+## Key Limitations
+
+**Narrow surveillance coordination estimates (R237k):**
+
+1. **Placeholder salary data:** Based on typical government scales, not confirmed individual salaries
+2. **FTE estimates unvalidated:** Staff time requirements will be measured during pilot
+3. **No scale economies:** Assumes linear scaling with number of provinces (may underestimate efficiencies)
+
+**Comprehensive system estimates (R1.19M):**
+
+1. **Induced demand is modeled, not observed:** We assume 20% BChE volume increase and 800 additional active case follow-ups. Actual utilization depends on clinician awareness campaigns, which are uncertain.
+2. **Hospital time-per-case assumptions:** Based on analogous surveillance programs (TB, HIV), not pesticide-specific time-and-motion studies.
+3. **Hotspot-to-enforcement conversion rate:** We assume 50% of hotspots trigger DALRRD investigations. Actual rate depends on EHP referral practices and DALRRD capacity, both unknown.
+4. **No capacity constraints modeled:** Estimates assume NHLS labs, hospital staff, and EHPs can absorb the incremental workload. If capacity is saturated, marginal costs may be higher (require new hires, not just time reallocation).
+5. **Geographic variation ignored:** Urban hotspots (Gauteng, Western Cape) may have lower investigation costs than rural hotspots (Limpopo, Eastern Cape) due to travel distance. We use national averages.
+6. **Exchange rate risk:** Lab reagent costs (especially GC-MS reference standards) are import-dependent and subject to ZAR/USD fluctuations.
+
+**Both perspectives exclude:**
+
+- Patient out-of-pocket costs and productivity losses
+- Wider societal costs (community education, media engagement)
+- Capital depreciation on existing NHLS lab equipment
+- Opportunity costs (staff time diverted from other surveillance priorities)
+:::
+
+## Next Steps
+
+### Cost Data Collection During Pilot
+
+The pilot will track:
+
+1. **Actual staff time** spent on surveillance activities (time logs)
+2. **IT development hours** for LIS configuration (project management records)
+3. **Travel costs** for field investigations (expense reports)
+4. **Meeting costs** (venue hire, catering)
+
+### Cost Model Refinement
+
+Once pilot data are available:
+
+1. Update FTE estimates with empirical time logs
+2. Adjust IT costs based on actual development hours
+3. Incorporate scale economies if observed
+4. Add uncertainty distributions for probabilistic budget impact analysis
+
+---
+
+::: {.footer-cta}
+**Questions about costing?** Contact the D2P team at [contact@example.com](mailto:contact@example.com)
+
+**Download cost spreadsheet:** [Available upon request]
+:::

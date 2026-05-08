@@ -1,0 +1,17 @@
+---
+title: "Research Outputs"
+subtitle: "Concept notes, policy briefs, and analyses produced by the D2P Project"
+listing:
+  contents: posts
+  sort: "date desc"
+  type: default
+  categories: true
+  sort-ui: false
+  filter-ui: true
+  fields: [date, title, subtitle, categories, reading-time]
+  feed: true
+page-layout: full
+title-block-banner: true
+---
+
+The D2P Project has produced a portfolio of complementary outputs — from a high-level **policy brief** for decision-makers, to a **technical surveillance concept note**, a **decision tree model** with sensitivity analyses, and a **detailed costing analysis**. Browse them below.

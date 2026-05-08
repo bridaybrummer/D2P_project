@@ -1,0 +1,292 @@
+---
+title: "Decision Tree Analysis: Pesticide Poisoning Surveillance Policy Options in South Africa"
+subtitle: "Short-term institutional options that can be implemented without major legal reform"
+author: "D2P Project"
+date: today
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    code-fold: true
+    theme: cosmo
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+```{r}
+#| label: setup
+library(tidyverse)
+library(gt)
+library(flextable)
+library(ggplot2)
+library(scales)
+
+tp <- readRDS("tables_and_plots.Rds")
+```
+
+# Executive Summary
+
+This report presents a decision tree analysis comparing four short-term policy options for improving pesticide poisoning surveillance and response in South Africa. The model evaluates the probability that each strategy successfully detects and responds to poisoning hotspots, alongside estimated costs.
+
+::: {.callout-important}
+## Placeholder Parameters
+All probability and cost parameters in this model are **placeholders** derived from expert assumptions and the policy brief. They should be refined using:
+
+- Empirical data from the NMC surveillance system (~`r tp$epi_context$nmc_annual_avg` notifications/year)
+- NHLS butyrylcholinesterase data (~`r format(tp$epi_context$bche_severe_per_year, big.mark = ",")` severe cases/year)
+- Actual programme budgets from the surveillance concept note (R`r format(tp$epi_context$surveillance_budget_low / 1e6, digits = 2)`M – R`r format(tp$epi_context$surveillance_budget_high / 1e6, digits = 2)`M)
+- D2P interview findings on decision-maker needs
+:::
+
+# Background and Problem Statement
+
+## Epidemiological Context
+
+From 2020–2024, South Africa's NMC system recorded `r format(tp$epi_context$nmc_total_2020_2024, big.mark = ",")` pesticide poisoning notifications (approximately `r tp$epi_context$nmc_annual_avg` per year). Key findings from the triangulated analysis of NMC, PIH and BChE data:
+
+- **Seasonal peaks**: `r tp$epi_context$peak_months` each year
+- **Highest burden**: `r tp$epi_context$highest_asr_group` (ASR `r tp$epi_context$highest_asr_bche` per 100,000 person-years for BChE cases)
+- **Under-6 years**: `r tp$epi_context$accidental_under6_pct`% accidental exposures
+- **Adolescents 13–19**: `r tp$epi_context$selfharm_13_19_pct`% intentional self-harm
+
+::: {.callout-note}
+## Data Sources Available for Model Refinement
+Five existing data streams can feed this model:
+
+1. **NMC notifications** — NICD NMC application (~690 cases/year)
+2. **Cholinesterase results** — NHLS laboratory systems (~10,000 tests/year, ~2,000 severe)
+3. **FCL data** — NHLS/TRAK-held toxicology signals
+4. **Forensic data** — Thakadu/Kagiso and forensic pathways
+5. **EHP investigations** — District/provincial environmental health services
+:::
+
+## Institutional Causes (Fishbone Analysis)
+
+The policy brief identifies five root causes addressable without legal reform:
+
+1. **Fragmented surveillance architecture** — no integrated operational picture
+2. **Unclear technical rules** — inconsistent code/test mapping to NMCs
+3. **Weak field investigation feedback** — EHP findings not fed back
+4. **Person-dependent access** — no stable SOPs for data access
+5. **Data not translated into action** — no standing hotspot product
+
+# Policy Options and Decision Tree
+
+## The Four Strategies
+
+```{r}
+#| label: tbl-params
+#| tbl-cap: "Model Parameters"
+tp$tbl_params
+```
+
+::: {.callout-tip}
+## How to Adjust Parameters
+To modify any parameter:
+
+1. Edit `amua_import_parameters.csv` — change the `Expression` column for point estimates
+2. Update the `Notes` column to adjust distributions (e.g., `dist=beta(80,20)` for a higher probability)
+3. Re-run `wrangling.r` to regenerate all outputs
+4. Re-render this document
+
+**Key parameters to refine first:**
+
+- `n_hotspots_baseline`: How many actionable hotspots occur per year? (Currently: 10)
+- `p_sq_hotspot_detected`: What fraction does the current system detect? (Currently: 0.20)
+- `c_pkg_setup` and `c_pkg_operating`: Use actual budget estimates from the concept note
+:::
+
+## Decision Tree Structure
+
+```{r}
+#| label: fig-tree
+#| fig-cap: "Decision tree for pesticide poisoning surveillance policy options"
+#| fig-width: 10
+#| fig-height: 7
+tp$fig_tree
+```
+
+::: {.callout-warning}
+## Model Assumptions
+The decision tree assumes:
+
+1. **Independence**: Each chance node is conditionally independent
+2. **Single period**: Costs and effectiveness are evaluated over one annual cycle
+3. **Linear pathway**: Each strategy has a sequential chain of conditions that must be met
+4. **Hotspot-based outcome**: Effectiveness is measured in hotspots detected and responded to, not individual cases prevented
+
+These are simplifications. A more complex model could incorporate:
+
+- Multi-year time horizon with discounting
+- Markov transitions between surveillance system states
+- Case-level outcomes (DALYs averted, deaths prevented)
+- Dynamic feedback loops (improved detection → better reporting → more detection)
+:::
+
+# Base-Case Results
+
+```{r}
+#| label: tbl-basecase
+#| tbl-cap: "Base-case decision tree results"
+tp$tbl_basecase
+```
+
+**Interpretation:** Under base-case assumptions:
+
+- The **Status Quo** detects and responds to `r round(tp$base_case$effectiveness[1], 1)` hotspots per year at a cost of R`r format(round(tp$base_case$total_cost[1]), big.mark = ",")`
+- The **Full Package** increases this to `r round(tp$base_case$effectiveness[4], 1)` hotspots at R`r format(round(tp$base_case$total_cost[4]), big.mark = ",")`
+- The **ICER** for the Full Package is R`r format(round(tp$base_case$icer[4]), big.mark = ",")` per additional hotspot addressed
+
+::: {.callout-caution}
+## Interpreting the ICER
+The ICER is expressed per **additional hotspot addressed**, not per DALY averted or death prevented. To convert to a standard health-economic threshold:
+
+- Estimate the average DALYs averted per hotspot response (e.g., if each hotspot response prevents 5 poisoning cases and each case = 2 DALYs, then 1 hotspot = 10 DALYs)
+- The SA cost-effectiveness threshold is approximately R`r format(tp$epi_context$ce_threshold_sa, big.mark = ",")` per DALY averted (Edoka & Stacey, 2020)
+- **Action item**: Use D2P interviews and the mortality data workshop to estimate DALYs per hotspot
+:::
+
+# Sensitivity Analysis
+
+## One-Way Sensitivity Analysis (Tornado Diagram)
+
+```{r}
+#| label: fig-tornado
+#| fig-cap: "Tornado diagram showing one-way sensitivity of the Full Package ICER"
+#| fig-width: 9
+#| fig-height: 6
+tp$fig_tornado
+```
+
+::: {.callout-tip}
+## Key Drivers to Investigate
+The parameters with the widest bars are the most influential on the ICER. Focus data collection and expert elicitation on these first. In particular:
+
+- **`n_hotspots_baseline`**: How many actionable hotspots per year? This is the denominator — more hotspots = better value for investment
+- **`p_pkg_implemented`**: Will the full package actually be implemented? Institutional buy-in is critical
+- **`c_pkg_setup`**: Can setup costs be reduced by leveraging existing infrastructure?
+:::
+
+## Probabilistic Sensitivity Analysis
+
+```{r}
+#| label: tbl-psa
+#| tbl-cap: "Probabilistic sensitivity analysis summary (1,000 simulations)"
+tp$tbl_psa
+```
+
+```{r}
+#| label: fig-ce-scatter
+#| fig-cap: "Cost-effectiveness plane (1,000 PSA iterations)"
+#| fig-width: 9
+#| fig-height: 7
+tp$fig_ce_scatter
+```
+
+```{r}
+#| label: fig-ceac
+#| fig-cap: "Cost-effectiveness acceptability curves"
+#| fig-width: 9
+#| fig-height: 6
+tp$fig_ceac
+```
+
+::: {.callout-note}
+## Reading the CEAC
+The CEAC shows the probability that each strategy is the most cost-effective at a given willingness-to-pay (WTP) threshold. At low WTP values, the Status Quo dominates (cheapest). As WTP increases, strategies that detect more hotspots become preferred.
+
+**Decision rule:** At the threshold where the preferred strategy's curve crosses 50%, there is a coin-flip chance it is cost-effective. Higher WTP values give greater confidence.
+:::
+
+# Implementation Timeline
+
+```{r}
+#| label: fig-timeline
+#| fig-cap: "90-day implementation timeline from policy brief recommendations"
+#| fig-width: 10
+#| fig-height: 6
+tp$fig_timeline
+```
+
+::: {.callout-important}
+## Practical Next Steps (from Policy Brief)
+1. **Week 1–2**: MAC meeting — approve package, nominate lead coordinator
+2. **Week 2–4**: Map each dataset against custodian, platform, minimum fields, frequency
+3. **Week 4–6**: Convene technical working group for code/test-set crosswalk
+4. **Week 4–8**: Issue standard EHP investigation template and reporting SOP
+5. **Week 8–12**: Begin integrated POC, produce first hotspot output
+6. **Week 8–14**: D2P interviews to test what outputs decision-makers need
+
+**Use D2P interview findings to update the model parameters in `amua_import_parameters.csv`**
+:::
+
+# Adjusting the Model
+
+::: {.callout-tip}
+## Quick Guide to Model Customisation
+
+### Changing probabilities
+Edit `amua_import_parameters.csv`. Each row has:
+
+- `Name`: Parameter identifier used in the R code
+- `Expression`: Point estimate value
+- `Notes`: Contains the PSA distribution specification (e.g., `dist=beta(60,40)`)
+
+### Adding a new strategy
+1. In `methods.r`, add a new branch to `evaluate_tree()` following the existing pattern
+2. Add corresponding parameters to the CSV
+3. Update `build_tree_structure()` for the diagram
+
+### Changing the outcome measure
+Currently the model measures "hotspots addressed". To change to DALYs:
+
+1. Add a conversion parameter (e.g., `dalys_per_hotspot`) to the CSV
+2. Multiply `effectiveness` by this parameter in `evaluate_tree()`
+3. The ICER will then be in ZAR per DALY averted
+
+### Connecting to Amua
+The `amua_import_parameters.csv` is formatted for import into [Amua](https://github.com/zward/Amua), an open-source decision analysis tool. You can:
+
+1. Build the tree graphically in Amua
+2. Export/import parameters via the CSV
+3. Use this R pipeline for extended analyses (PSA, CEAC) that Amua may not provide
+:::
+
+::: {.callout-warning}
+## Limitations
+
+1. **Placeholder parameters**: All values are expert assumptions pending empirical data
+2. **Single-period model**: Does not capture learning effects, scale-up, or long-term outcomes
+3. **Hotspot-level outcomes**: Does not translate to individual cases prevented or DALYs
+4. **No budget impact analysis**: Total fiscal impact depends on government budget constraints
+5. **No equity weighting**: Does not account for differential burden across provinces, ages, or sexes
+6. **Simplified pathway**: Real-world implementation involves feedback loops and partial success states
+
+These limitations are deliberate — the model is designed as a **proof-of-concept decision support tool** to be refined as data become available from the surveillance pilot.
+:::
+
+# Data Sources and References
+
+## Protocol and Policy Documents
+
+1. **Policy Brief**: "Improving pesticide poisoning surveillance and response in South Africa" — the primary source for the four policy options
+2. **Surveillance Concept Note** (Draft 3): Prospective observational surveillance study design, pilot at Chris Hani Baragwanath, sample size N=323
+3. **Epidemiology Paper** (Draft 5): Triangulated analysis of NMC, PIH and BChE data 2020–2024
+
+## Key References
+
+- Mathee A et al. (2025) New case definitions and thresholds for environmental NMCs in SA. *SAMJ* 115(11):e2565
+- Prinsloo M et al. (2025) Tracking poison ingestion deaths for SA. *SAMJ* 115(5):e2993
+- NDoH (2022) Guideline for investigation and control of human chemical poisoning cases
+- Edoka IP & Stacey NK (2020) Estimating a cost-effectiveness threshold for SA. *Health Policy Plan* 35(5):546–555
+- FAO/WHO (2009) Guidelines on developing a reporting system for health and environmental incidents from pesticide exposure
+
+## R Session Info
+
+```{r}
+#| label: session-info
+sessionInfo()
+```

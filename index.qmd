@@ -1,0 +1,124 @@
+---
+title: "Data-Driven Policy for Pesticide Poisoning Surveillance"
+subtitle: "Strengthening South Africa's Response to Pesticide Poisoning Through Evidence-Based Policy Options"
+date: today
+format:
+  html:
+    toc: false
+---
+
+::: {.hero-banner}
+## Welcome to the D2P Project {.hero-title}
+
+**Data-Driven Policy for Pesticide Poisoning Surveillance in South Africa**
+:::
+
+## Overview
+
+The D2P Project addresses a critical public health challenge: **weak surveillance and response to pesticide poisoning in South Africa**. While the legal framework exists, institutional failures prevent effective detection and coordination. This project provides evidence-based policy options that can be implemented immediately — without new legislation.
+
+::: {.callout-important}
+## The Core Challenge
+
+Three independent data systems each touch part of the burden but never share records: **NMC notifications (~690/year), NHLS severe-poisoning lab results (~2,000/year), and the Poisons Information Helpline (~9,000 calls/year).** Treating them as mutually exclusive (the most defensible position absent record linkage), the **true annual burden is ~11,690 cases and ~1,500–1,800 deaths/year** (CFR 13–15%; the upper-mid range is the headline given known under-coding of intentional poisonings in vital-registration data — see [VR triangulation](https://bridaybrummer.github.io/MRC_VR/projects/poisoning_deaths/)), with a total economic cost on the order of **~R2.3 billion/year**.
+
+The current system captures and acts on **fewer than half** of these cases. The D2P Project shows that **R0.24M–R1.19M/year of surveillance, coordination, and enforcement spend offsets a multi-billion-rand burden** — a return on investment of roughly **1,000×**.
+:::
+
+## Key Questions Addressed
+
+1. **What is the burden?** Epidemiological analysis of 5 years of surveillance data (2020–2024)
+2. **Why is the system failing?** Fishbone analysis of institutional barriers
+3. **What can be done now?** Five policy options targeting specific failures
+4. **What will it cost?** Decision tree model comparing cost-effectiveness
+5. **Who is affected?** Age-specific and gender-specific patterns
+
+## Project Outputs
+
+<div class="card-grid">
+
+::: {.feature-card}
+### [Surveillance Concept Note](posts/surveillance_concept_note.qmd)
+Comprehensive framework for improving pesticide poisoning surveillance, including system design, data flows, and institutional roles.
+:::
+
+::: {.feature-card}
+### [Policy Brief](posts/policy_brief.qmd)
+Plain-language summary for decision-makers at the Ministerial Advisory Committee (MAC) and National Department of Health (NDoH).
+:::
+
+::: {.feature-card}
+### [Decision Tree Model](posts/decision_model.qmd)
+Quantitative analysis comparing five policy options using a decision tree framework. Built in Amua and validated with sensitivity analyses.
+:::
+
+::: {.feature-card}
+### [Costing Analysis](posts/costing_analysis.qmd)
+Detailed cost estimates for each policy option, including personnel, infrastructure, and ongoing operational expenses.
+:::
+
+</div>
+
+## For Policymakers
+
+::: {.callout-tip icon=false}
+## Quick Start
+
+**New to this work?** Start with the **[One-Pager Synopsis](one_pager.qmd)** — a single-page overview designed for busy decision-makers.
+
+**Want the full story?** Read the **[Full Analysis Report](analysis_report_v2.html)** — includes executive summary, technical details, and sensitivity analyses.
+:::
+
+## Key Findings
+
+### The Status Quo is Insufficient
+
+- Current system detects ~45% of estimated hotspots
+- Average delay from exposure to public health response: **2–4 weeks**
+- No systematic linkage between laboratory results (NHLS) and case notifications (NMC)
+- Poisons Information Helpline data not integrated into surveillance workflows
+
+### Low-Cost Options, Large Avoided Burden
+
+| Option | Annual Cost | Hotspots Addressed | Avoided Burden Cost | Implementation Time |
+|:-------|------------:|-------------------:|--------------------:|:-------------------|
+| Status Quo | R0 | 4.5 / 10 | — | — |
+| Option 3: BChE auto-notify | R55,000 | 6.7 / 10 | ~R150M/year | 2–4 weeks |
+| Option 4: Quarterly PIH reports | R62,000 | 6.1 / 10 | ~R110M/year | 1–2 weeks |
+| **Full Package (narrow cost)** | **R237,000** | **8.3 / 10** | **~R260M/year** | **12 weeks** |
+| Full Package (whole-system cost) | R1,193,000 | 8.3 / 10 | ~R260M/year | 12 weeks |
+
+: Base-case results — avoided burden uses η = 0.30 against a true burden of ~R2.3B/year. See [Decision Model — Economic Analysis](posts/decision_model.qmd#sec-burden-economics). {.striped .hover}
+
+### All Options Are Legally Feasible
+
+Every option can be implemented under **existing regulations**:
+
+- Options 1–2: National Health Act authority for inter-agency data sharing
+- Option 3: NHLS laboratory information systems already support auto-notifications
+- Option 4: Existing MOU between PIH and NICD
+- Option 5: Standard operating procedures for provincial-level coordination
+
+## Who We Are
+
+The D2P Project is a collaborative effort between:
+
+- **National Institute for Communicable Diseases (NICD)** — Surveillance and epidemiology
+- **National Health Laboratory Service (NHLS)** — Laboratory diagnostics and data
+- **University of Cape Town, School of Public Health** — Analytical support and modeling
+- **Red Cross War Memorial Children's Hospital Poisons Information Helpline** — Clinical toxicology expertise
+
+## Next Steps
+
+This website serves as a **living repository** for the D2P Project. As new data become available from the surveillance pilot (launched Q3 2026), we will update:
+
+1. Decision tree model parameters (currently placeholders)
+2. Cost estimates based on actual implementation experience
+3. Sensitivity analyses incorporating real-world variability
+4. Impact evaluation results
+
+---
+
+::: {.footer-cta}
+**Questions or feedback?** Contact the project team at [contact@example.com](mailto:contact@example.com)
+:::

@@ -1,0 +1,570 @@
+---
+title: "Pesticide Poisoning Surveillance in South Africa"
+subtitle: "A Decision Analysis of Short-Term Policy Options for Improved Coordination and Response"
+author: "D2P Project"
+date: today
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    code-fold: true
+    theme:
+      light: cosmo
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+```{r}
+#| label: setup
+library(tidyverse)
+library(gt)
+library(flextable)
+library(ggplot2)
+library(scales)
+
+tp <- readRDS("tables_and_plots_v2.Rds")
+```
+
+# Executive Summary {.unnumbered}
+
+::: {.callout-important appearance="simple"}
+## The core question
+
+South Africa already has the legal basis to act on pesticide poisoning — the constraint is **weak execution across existing systems**. Which combination of short-term institutional actions will most efficiently improve hotspot detection and response, and at what cost?
+:::
+
+This report evaluates **five policy options** (plus the status quo) for strengthening pesticide poisoning surveillance in South Africa. Each option targets a specific system failure identified through fishbone analysis and can be implemented **without new legislation**.
+
+**Key findings under base-case assumptions:**
+
+- The **status quo** detects and responds to approximately `r round(tp$base_case$effectiveness[tp$base_case$strategy_code == "SQ"], 1)` of an estimated 10 annual poisoning hotspots
+- The **lowest-cost improvements** (Options 3 and 4) cost under R65,000/year and can be launched within weeks
+- The **Full Package** (all four options) addresses `r round(tp$base_case$effectiveness[tp$base_case$strategy_code == "PKG"], 1)` hotspots — a `r round((tp$base_case$effectiveness[tp$base_case$strategy_code == "PKG"] / tp$base_case$effectiveness[tp$base_case$strategy_code == "SQ"] - 1) * 100)`% improvement over the status quo
+- All parameters are **placeholders** — the model is designed to be updated as real data become available from the surveillance pilot
+
+::: {.callout-tip appearance="simple"}
+## How to use this document
+This report serves three audiences:
+
+1. **Decision-makers** (MAC, NDoH): Read Sections 2–3 for plain-language option comparisons
+2. **Technical team** (NICD, NHLS analysts): Read Sections 4–7 for model details and sensitivity analysis
+3. **Model developers**: Read Section 8 for instructions on updating parameters and extending the model
+:::
+
+# The Problem: Why Act Now?
+
+## Burden of Pesticide Poisoning
+
+From 2020 to 2024, three independent data sources paint a consistent picture:
+
+| Indicator | Value | Source |
+|:---|:---|:---|
+| NMC notifications (total, 5 years) | `r format(tp$epi_context$nmc_total_2020_2024, big.mark = ",")` | NICD NMC system |
+| Average annual NMC notifications | ~`r tp$epi_context$nmc_annual_avg` | NICD NMC system |
+| NHLS BChE tests per year | ~`r format(tp$epi_context$bche_tests_per_year, big.mark = ",")` | NHLS laboratory data |
+| Severe BChE inhibitions per year | ~`r format(tp$epi_context$bche_severe_per_year, big.mark = ",")` | NHLS laboratory data |
+| PIH clinician calls (2019) | `r format(tp$epi_context$pih_calls_2019, big.mark = ",")` | Poisons Information Helpline |
+| Seasonal peak | `r tp$epi_context$peak_months` | All three sources |
+
+: Table: Pesticide poisoning burden in South Africa {.striped}
+
+**Who is affected?**
+
+- **Infants and toddlers (< 6 years)**: `r tp$epi_context$accidental_under6_pct`% of exposures are **accidental** — from environmental contact, contaminated food, or pesticides stored unsafely at home
+- **Adolescent females (15–19 years)**: The highest age-standardised rate (ASR `r tp$epi_context$highest_asr_bche` per 100,000 for BChE cases), with `r tp$epi_context$selfharm_13_19_pct`% classified as **intentional self-harm**
+- **Adult males (30+)**: Occupational exposures in agricultural settings
+
+::: {.callout-warning}
+## True burden far exceeds NMC notifications
+The ~690 NMC notifications per year almost certainly under-represent the true burden. Combining the three data systems as **mutually exclusive** (no patient-level linkage exists across NMC, NHLS, and PIH), the true annual burden is approximately **NMC (~690) + NHLS severe BChE (~2,000) + PIH calls (~9,000) ≈ 11,690 cases/year**. Applying the NMC-observed case fatality rate of **10–15%** yields ~1,500–1,800 deaths/year (headline uses upper-mid CFR 13–15% because vital-registration data systematically under-code intentional self-poisoning under ICD-10 default rules; see the [VR poisoning-deaths analysis](https://bridaybrummer.github.io/MRC_VR/projects/poisoning_deaths/) — pesticide-only deaths derived from a 30–50% pesticide share of all-cause poisoning mortality (3,200–4,000/year) yield an independent triangulation of ~960–2,000 pesticide deaths/year, consistent with the CFR-derived range). Monetised at ~R12,000/non-fatal case and ~R1.5M/death (human-capital approach), the **total economic burden is on the order of R2.3 billion/year**. See the [Decision Model — Economic Analysis](posts/decision_model.qmd#sec-burden-economics) for the linkage between surveillance spend, detection rate, and avoided burden cost.
+:::
+
+## Root Causes: What Can Be Fixed Now?
+
+The policy brief's fishbone analysis identifies five institutional failures — none require new laws to address:
+
+```{r}
+#| label: fig-fishbone
+#| fig-cap: "Root causes of surveillance failure and the policy options that address them"
+#| fig-width: 10
+#| fig-height: 5
+
+fishbone <- tribble(
+  ~cause, ~option, ~x, ~y,
+  "Fragmented data\n(no single picture)", "Option 1", 1, 2,
+  "Weak EHP feedback\n(investigations not returned)", "Option 2", 2, 1,
+  "Unclear technical rules\n(codes/tests not mapped)", "Option 3", 3, 2,
+  "Low awareness &\nvariable data use", "Option 4", 4, 1,
+  "No standing hotspot\nproduct for joint action", "Full Package", 5, 2
+)
+
+ggplot(fishbone, aes(x = x, y = y)) +
+  geom_segment(aes(xend = x, yend = 0), linewidth = 1.2, colour = "grey60") +
+  geom_label(aes(label = cause), size = 2.8, fill = "#fff3e0",
+             label.padding = unit(0.3, "lines")) +
+  geom_label(aes(y = -0.3, label = option), size = 2.5, fontface = "bold",
+             fill = "#e3f2fd", label.padding = unit(0.2, "lines")) +
+  geom_hline(yintercept = 0, linewidth = 2, colour = "#1a237e") +
+  annotate("text", x = 5.8, y = 0, label = "Surveillance\nFailure",
+           fontface = "bold", size = 4, colour = "#b71c1c") +
+  ylim(-0.8, 2.8) + xlim(0.3, 6.2) +
+  theme_void() +
+  theme(plot.margin = margin(5, 10, 5, 10))
+```
+
+# Policy Options: What Is on the Table? {#sec-options}
+
+```{r}
+#| label: tbl-profiles
+#| tbl-cap: "Policy option profiles: what each option does, the problem it solves, and how quickly it can deliver"
+tp$tbl_profiles
+```
+
+## Option 1 — Integrated Data-Sharing and Hotspot Pilot {#sec-opt1}
+
+::: {.callout-note appearance="minimal"}
+**In one sentence:** Combine NMC notifications, cholinesterase lab results, forensic signals and EHP field reports into a single analytic product that shows **where poisoning clusters are happening**.
+:::
+
+**What changes for stakeholders:**
+
+- **For NICD analysts**: A routine (initially manual) process to pull data from NMC, NHLS, forensic pathways, and EHP systems into one dataset
+- **For district health managers**: A periodic hotspot map showing which sub-districts have clustering events — enabling targeted response rather than waiting for individual case reports
+- **For MAC members**: The first evidence product that demonstrates whether integrated surveillance can work before investing in automation
+
+**What this requires:**
+
+- A data-sharing SOP or MoU with each data custodian (NHLS for BChE/FCL, forensic pathology services)
+- One dedicated analyst to run routine extracts and produce outputs
+- Named leads at each custodian organisation
+
+**Key assumptions in the model:**
+
+| Parameter | Value | What it means |
+|:---|:---:|:---|
+| P(data access via SOP) | 0.70 | 70% chance the data-sharing agreements are established |
+| P(data usable once accessed) | 0.65 | 65% chance extracted data is complete enough to analyse |
+| P(hotspot detected) | 0.60 | Given usable data, 60% chance of identifying a real cluster |
+| P(response triggered) | 0.65 | Given detection, 65% chance of follow-up action |
+| Setup cost | R120,000 | SOP development, data mapping, initial analyst time |
+| Annual operating | R70,000 | Ongoing analyst time, routine extracts and reports |
+
+## Option 2 — Standardised EHP Investigation Reporting {#sec-opt2}
+
+::: {.callout-note appearance="minimal"}
+**In one sentence:** Give every Environmental Health Practitioner a **single short template** to report pesticide investigations, and require findings to be **fed back** to the surveillance team.
+:::
+
+**What changes for stakeholders:**
+
+- **For EHPs**: One clear template replaces variable, person-dependent reporting — reduces ambiguity about what to collect
+- **For the surveillance team**: EHP investigation data (source identification, exposure context, packaging information) flows back centrally for the first time
+- **For district managers**: Visibility into what actions EHPs are taking and what they are finding
+
+**What this requires:**
+
+- A one-page investigation template (aligned with the 2022 NDoH guideline)
+- A circular or service standard requiring submission back to the surveillance team
+- Brief training on template completion
+
+**Key assumptions in the model:**
+
+| Parameter | Value | What it means |
+|:---|:---:|:---|
+| P(template adopted) | 0.75 | 75% of districts adopt the template |
+| P(reporting complete) | 0.60 | 60% of investigations completed and fed back |
+| P(hotspot detected from EHP data) | 0.50 | 50% detection rate — lower because EHP data alone covers fewer signals |
+| P(response triggered) | 0.70 | 70% — higher because EHP data provides actionable source information |
+| Setup cost | R80,000 | Template design, training, rollout |
+| Annual operating | R60,000 | Quality assurance, template management |
+
+## Option 3 — Technical Code/Test-Set Crosswalk {#sec-opt3}
+
+::: {.callout-note appearance="minimal"}
+**In one sentence:** A short technical exercise to create a **reference document** mapping lab test codes, ICD codes, and NMC case definitions so the system consistently identifies poisoning cases across platforms.
+:::
+
+**What changes for stakeholders:**
+
+- **For laboratory staff and NMC focal persons**: Clear rules about which test results should trigger a poisoning NMC — reducing the current reliance on individual knowledge
+- **For NICD**: Improved sensitivity and specificity of case identification, and a foundation for future automated queries
+- **For the surveillance system**: Captures the full range of pesticide classes, not just organophosphates
+
+**What this requires:**
+
+- A 2-day working group with representatives from NICD, NHLS, and forensic pathology
+- Documentation of the mapping and dissemination to relevant facilities
+
+**Key assumptions in the model:**
+
+| Parameter | Value | What it means |
+|:---|:---:|:---|
+| P(exercise completed) | 0.90 | Very high — this is a small, bounded technical task |
+| P(rules adopted by NHLS/NMC) | 0.80 | High — institutional buy-in from participants |
+| P(detection improvement alone) | 0.45 | Modest — crosswalk alone doesn't create new data flows |
+| P(response triggered) | 0.55 | Modest — knowledge of correct codes doesn't directly trigger responses |
+| Setup cost | R40,000 | Working group logistics, documentation |
+| Annual operating | R15,000 | Periodic updates as codes change |
+
+::: {.callout-tip}
+## Highest feasibility, lowest cost
+Option 3 scores "Very High" feasibility in the policy brief and has the lowest setup and operating costs. It is also an **enabling condition** for Options 1 and 2 — without agreed technical rules, integrated data and EHP reporting will have inconsistent case identification.
+:::
+
+## Option 4 — Notification and Data-Use Activation Package {#sec-opt4}
+
+::: {.callout-note appearance="minimal"}
+**In one sentence:** Use the next MAC meeting to **approve the pilot**, use D2P interviews to identify what outputs decision-makers need, and hold a mortality workshop to improve data interpretation.
+:::
+
+**What changes for stakeholders:**
+
+- **For MAC members**: A formal decision point — approve the surveillance package, nominate a lead coordinator
+- **For D2P researchers**: Structured interviews to understand what information format and frequency decision-makers actually need
+- **For all stakeholders**: A mortality data analysis workshop to build shared interpretation skills
+
+**What this requires:**
+
+- Preparation of a MAC agenda item and decision memo
+- D2P interview protocol design and execution
+- Workshop logistics (can be combined with existing meetings)
+
+**Key assumptions in the model:**
+
+| Parameter | Value | What it means |
+|:---|:---:|:---|
+| P(awareness raised via MAC) | 0.85 | Very high — the platform already exists |
+| P(D2P outputs actually used) | 0.50 | Uncertain — depends on output relevance and format |
+| P(detection improvement alone) | 0.35 | Weakest standalone — activation without data infrastructure has limited effect |
+| P(response triggered) | 0.60 | Moderate — awareness helps but doesn't replace data |
+| Setup cost | R25,000 | MAC preparation, D2P design |
+| Annual operating | R20,000 | Communication materials, follow-up meetings |
+
+## Full Package — All Four Options Combined {#sec-pkg}
+
+::: {.callout-note appearance="minimal"}
+**In one sentence:** Implement all four options as a **coordinated 6-month package**, using the MAC meeting as the launch mechanism and the proof-of-concept integrated product as the centrepiece.
+:::
+
+The policy brief recommends this approach because the options are **complementary, not competing**:
+
+- Option 3 (Crosswalk) creates the **technical rules** needed by Option 1
+- Option 2 (EHP) provides the **field investigation data** that makes Option 1 actionable
+- Option 4 (Activation) provides the **institutional mandate** and **demand signal** for all other options
+- Option 1 (POC) produces the **integrated surveillance product** that demonstrates value
+
+**Key assumptions in the model:**
+
+| Parameter | Value | What it means |
+|:---|:---:|:---|
+| P(package implemented) | 0.65 | Coordination overhead reduces probability compared to individual options |
+| P(surveillance improved) | 0.75 | Synergies between options amplify the effect |
+| P(hotspot detected) | 0.75 | Highest detection — multiple data streams feeding one product |
+| P(response triggered) | 0.75 | Highest response — clear institutional mandate |
+| Setup cost | R180,000 | All four setup costs plus coordination |
+| Annual operating | R100,000 | All operating costs plus coordinator time |
+
+# Decision-Maker Summary {#sec-summary}
+
+```{r}
+#| label: tbl-stakeholder
+#| tbl-cap: "Plain-language comparison of all options for non-technical decision-makers"
+tp$tbl_stakeholder
+```
+
+::: {.callout-important}
+## What the green rows mean
+Options highlighted in green are estimated to be **cost-effective** — meaning the additional health gains justify the additional cost, measured against South Africa's cost-effectiveness threshold (R48,474 per DALY averted; Edoka & Stacey, 2020). However, all estimates use placeholder parameters and should be interpreted as indicative rather than definitive.
+:::
+
+```{r}
+#| label: fig-frontier
+#| fig-cap: "Cost-effectiveness frontier: strategies on the dashed line offer the best value; those above it are 'dominated' (more expensive for less benefit)"
+#| fig-width: 9
+#| fig-height: 6
+tp$fig_frontier
+```
+
+::: {.callout-tip}
+## Reading the frontier
+The dashed line connects strategies that offer the **best trade-off** between cost and effectiveness. Strategies above this line are "dominated" — another strategy achieves the same or better results at lower cost. This helps identify which individual options are worth pursuing if the full package is not feasible.
+:::
+
+# Technical Model Details {#sec-model}
+
+## Decision Tree Structure
+
+```{r}
+#| label: fig-tree
+#| fig-cap: "Decision tree with six strategies. Each branch shows the probability pathway and expected outcomes."
+#| fig-width: 11
+#| fig-height: 7
+tp$fig_tree
+```
+
+## Model Parameters
+
+```{r}
+#| label: tbl-params
+#| tbl-cap: "All model input parameters with distributions for probabilistic sensitivity analysis"
+tp$tbl_params
+```
+
+::: {.callout-tip}
+## How to update parameters
+Edit [`amua_import_parameters_v3.csv`](amua_import_parameters_v3.csv):
+
+- **`Expression`** column → point estimate (used in base-case)
+- **`Notes`** column → PSA distribution specification (e.g., `dist=beta(80,20)`)
+
+Then run `Rscript wrangling_v2.r` and re-render this report.
+:::
+
+## Base-Case Results
+
+```{r}
+#| label: tbl-basecase
+#| tbl-cap: "Base-case results: expected hotspots addressed and costs per strategy"
+tp$tbl_basecase
+```
+
+## Health Outcomes (DALY Estimates)
+
+```{r}
+#| label: tbl-dalys
+#| tbl-cap: "Estimated health gains assuming 30% case reduction per hotspot response"
+tp$tbl_dalys
+```
+
+::: {.callout-caution}
+## DALY estimates are illustrative
+The conversion from hotspots to DALYs makes several assumptions:
+
+- Each hotspot contains ~69 cases (690 annual cases ÷ 10 hotspots)
+- A successful response prevents 30% of cases in that hotspot
+- Each prevented case averts 2.5 DALYs (placeholder)
+- Case fatality rate among hospitalised cases: 3%
+
+**These should be refined** using data from the prospective surveillance study (concept note target: N = `r tp$epi_context$sample_size_required` patients) and the mortality data workshop.
+:::
+
+## Budget Impact Analysis
+
+```{r}
+#| label: tbl-bia
+#| tbl-cap: "3-year budget impact (discounted at 5% p.a.)"
+tp$tbl_bia
+```
+
+```{r}
+#| label: fig-bia
+#| fig-cap: "Total 3-year cost by strategy"
+#| fig-width: 9
+#| fig-height: 5
+tp$fig_bia
+```
+
+::: {.callout-note}
+## Budget context
+The surveillance concept note estimates R`r format(tp$epi_context$surveillance_budget_low / 1e6, digits = 2)`M – R`r format(tp$epi_context$surveillance_budget_high / 1e6, digits = 2)`M for the full prospective surveillance study. The policy options modelled here are **much less expensive** because they use existing data and infrastructure rather than establishing new data collection.
+:::
+
+# Sensitivity Analysis {#sec-sensitivity}
+
+## Scenario Analysis
+
+```{r}
+#| label: fig-scenarios
+#| fig-cap: "How results change under optimistic and conservative assumptions"
+#| fig-width: 10
+#| fig-height: 7
+tp$fig_scenarios
+```
+
+```{r}
+#| label: tbl-scenarios
+#| tbl-cap: "Results under base-case, optimistic (+20% probabilities, −15% costs) and conservative (−20% probabilities, +20% costs) assumptions"
+tp$tbl_scenarios
+```
+
+::: {.callout-note}
+## What the scenarios tell us
+- **Optimistic**: If institutional buy-in is strong and costs come in low, all options become clearly cost-effective
+- **Conservative**: Even with reduced effectiveness and higher costs, the Full Package still addresses more hotspots than any individual option
+- **The key insight**: The ranking of strategies is stable across scenarios — the Full Package is consistently the most effective
+:::
+
+## Tornado Diagram (One-Way Sensitivity)
+
+```{r}
+#| label: fig-tornado
+#| fig-cap: "Which parameters most influence the Full Package ICER (±25% variation)"
+#| fig-width: 10
+#| fig-height: 6
+tp$fig_tornado
+```
+
+::: {.callout-tip}
+## Priority parameters for investigation
+Focus data collection on the parameters with the **widest bars** — these have the most influence on whether the Full Package represents good value. Specifically:
+
+1. **`n_hotspots_baseline`** — How many actionable hotspots are there per year? The pilot POC will answer this directly
+2. **`p_pkg_implemented`** — Will all four options actually be implemented together? This depends on MAC endorsement and coordinator capacity
+3. **Cost parameters** — What are the actual analyst, EHP, and working group costs? These can be estimated from existing government pay scales
+:::
+
+## Probabilistic Sensitivity Analysis
+
+```{r}
+#| label: tbl-psa
+#| tbl-cap: "PSA summary: mean results with 95% credible intervals from 1,000 simulations"
+tp$tbl_psa
+```
+
+```{r}
+#| label: fig-ce-scatter
+#| fig-cap: "Cost-effectiveness plane showing parameter uncertainty across 1,000 simulations"
+#| fig-width: 10
+#| fig-height: 7
+tp$fig_ce_scatter
+```
+
+```{r}
+#| label: fig-ceac
+#| fig-cap: "Probability each strategy is optimal at varying willingness-to-pay thresholds"
+#| fig-width: 10
+#| fig-height: 6
+tp$fig_ceac
+```
+
+::: {.callout-note}
+## Reading the CEAC
+The vertical dotted line shows South Africa's cost-effectiveness threshold. At this threshold:
+
+- If the **Full Package** line is above 50%, there is more than a coin-flip chance it represents the best value
+- The point where the **Status Quo** line drops below 50% marks the WTP threshold above which doing nothing is no longer the cheapest optimal strategy
+:::
+
+## Strategy Ranking
+
+```{r}
+#| label: tbl-ranking
+#| tbl-cap: "How often each strategy ranks first across 1,000 PSA iterations"
+tp$tbl_ranking
+```
+
+# Implementation Roadmap {#sec-implementation}
+
+```{r}
+#| label: fig-timeline
+#| fig-cap: "24-week implementation timeline showing practical steps by policy option"
+#| fig-width: 11
+#| fig-height: 7
+tp$fig_timeline
+```
+
+::: {.callout-important}
+## Critical path
+The first **12 weeks** are the proof-of-concept phase:
+
+1. **Weeks 1–2**: MAC approval and coordinator nomination (Option 4)
+2. **Weeks 2–5**: Dataset mapping and crosswalk exercise (Options 1 & 3) — these run in parallel
+3. **Weeks 4–9**: EHP template design and rollout (Option 2)
+4. **Weeks 8–12**: Integrated POC begins producing hotspot outputs (Option 1)
+
+**Week 12 milestone**: First hotspot map published. This is the evidence that the package works — and the basis for a scale-up decision.
+:::
+
+## Feedback Loop: Using Pilot Data to Refine the Model
+
+The model parameters are placeholders. The implementation process generates the data to replace them:
+
+| Implementation step | Model parameter updated | How |
+|:---|:---|:---|
+| Integrated POC outputs | `n_hotspots_baseline` | Count actual hotspots identified |
+| EHP template submissions | `p_ehp_reporting_completeness` | Track submission rate |
+| Crosswalk adoption | `p_xwalk_adopted` | Survey facilities on uptake |
+| D2P interviews | `p_act_data_used` | Ask decision-makers if they use the outputs |
+| Response tracking | `p_*_response_triggered` | Record whether detected hotspots are acted on |
+| Budget actuals | All cost parameters | Replace estimates with actual expenditure |
+| Prospective surveillance | `dalys_per_case`, `p_case_fatality` | Clinical data from pilot sites |
+
+::: {.callout-tip}
+## Updating the model
+After the pilot:
+
+1. Update values in [`amua_import_parameters_v3.csv`](amua_import_parameters_v3.csv)
+2. Run `Rscript wrangling_v2.r` in the terminal
+3. Re-render this report: `quarto render analysis_report_v2.qmd`
+4. Compare the updated results with the current placeholder-based estimates
+
+The model is designed to be a **living decision tool**, not a one-off analysis.
+:::
+
+# Extending the Model {#sec-extending}
+
+::: {.callout-tip collapse="true"}
+## Adding a new strategy
+1. Add parameters to `amua_import_parameters_v3.csv` (probability chain + costs)
+2. Add a `make_row()` call in `evaluate_tree()` in `methods_v2.r`
+3. Re-run `wrangling_v2.r` — all tables, figures and sensitivity analyses update automatically
+:::
+
+::: {.callout-tip collapse="true"}
+## Switching to DALY-based ICER
+The model already calculates DALYs (Table 4). To make this the primary outcome:
+
+1. Adjust `dalys_per_case`, `p_case_fatality`, `yld_per_survivor`, `yll_per_death` in the CSV
+2. The ICER per DALY can then be directly compared to the SA threshold of R48,474
+:::
+
+::: {.callout-tip collapse="true"}
+## Connecting to Amua
+The CSV is formatted for direct import into [Amua](https://github.com/zward/Amua). You can:
+
+- Build the decision tree graphically
+- Validate the structure against this R model
+- Use Amua's built-in PSA and then compare results
+:::
+
+::: {.callout-tip collapse="true"}
+## Multi-year Markov extension
+For a dynamic model capturing system learning over time:
+
+1. Define health states: No surveillance ↔ Partial ↔ Full integration
+2. Transition probabilities from implementation success rates
+3. Discounting costs and health outcomes at 5% p.a. (SA Treasury rate)
+4. This would be appropriate once pilot data are available (post-week 24)
+:::
+
+# Limitations
+
+1. **All parameters are placeholders** — derived from policy documents and expert assumptions, not empirical data
+2. **Hotspot-level outcomes** — the primary metric is "hotspots addressed", not individual cases prevented; DALY conversions are illustrative
+3. **Single-period model** — does not capture system learning, capacity building, or scale-up effects over time
+4. **No equity analysis** — does not weight for differential burden across provinces, age groups, or sexes
+5. **Independence assumption** — each chance node is treated as conditionally independent; real-world implementation involves correlated successes and failures
+6. **No dynamic feedback** — improved detection should increase reporting which should improve detection; this virtuous cycle is not modelled
+
+Despite these limitations, **delaying action until a perfect model exists would be a mistake**. The current model provides a structured framework for comparing options and identifying which assumptions matter most — enabling focused data collection during the pilot phase.
+
+# References
+
+1. Mathee A, Stephen C, Nzenze SA, Chandu L. New case definitions and thresholds for environmental NMCs in SA. *SAMJ* 2025;115(11):e2565
+2. Prinsloo M, Roomaney RA, Neethling I, et al. Tracking poison ingestion deaths for SA. *SAMJ* 2025;115(5):e2993
+3. NDoH. Guideline for investigation and control of human chemical poisoning cases. Pretoria: NDoH; 2022
+4. Rother HA. Improving poisoning diagnosis and surveillance of street pesticides. *SAMJ* 2012;102(6):485-488
+5. Kabanda S, Rother HA. Evaluating a SA mobile application for healthcare professionals. *BMC Med Inform Decis Mak* 2019;19:40
+6. Balme KH, et al. Pesticide poisonings at a tertiary children's hospital in SA. *Clin Toxicol* 2010;48(9):928-934
+7. FAO/WHO. Guidelines on developing a reporting system for health and environmental incidents from pesticide exposure. 2009
+8. London L, Bailie R. Challenges for improving surveillance for pesticide poisoning. *Int J Epidemiol* 2001;30(3):564-570
+9. Edoka IP, Stacey NK. Estimating a cost-effectiveness threshold for SA. *Health Policy Plan* 2020;35(5):546-555
+10. Buckley NA, et al. Case fatality of agricultural pesticides after self-poisoning in Sri Lanka. *Lancet Glob Health* 2021;9(6):e854-62
+
+```{r}
+#| label: session-info
+sessionInfo()
+```
