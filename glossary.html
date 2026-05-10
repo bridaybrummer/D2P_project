@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2026-05-10">
+
+<title>Glossary – D2P Project</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-22206e84c2e6f955c0d8fc54fe8645d2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">D2P Project</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./one_pager.html"> 
+<span class="menu-text">One-Pager</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./posts.html"> 
+<span class="menu-text">Research Outputs</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./analysis_report_v2.html"> 
+<span class="menu-text">Full Analysis Report</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./glossary.html" aria-current="page"> 
+<span class="menu-text">Glossary</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/bridaybrummer/D2P_project"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="mailto:contact@example.com"> <i class="bi bi-envelope" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#a.-the-disease-problem" id="toc-a.-the-disease-problem" class="nav-link active" data-scroll-target="#a.-the-disease-problem">A. The disease problem</a></li>
+  <li><a href="#b.-surveillance-terms" id="toc-b.-surveillance-terms" class="nav-link" data-scroll-target="#b.-surveillance-terms">B. Surveillance terms</a></li>
+  <li><a href="#c.-data-sources-used-in-the-d2p-project" id="toc-c.-data-sources-used-in-the-d2p-project" class="nav-link" data-scroll-target="#c.-data-sources-used-in-the-d2p-project">C. Data sources used in the D2P Project</a></li>
+  <li><a href="#d.-burden-estimation" id="toc-d.-burden-estimation" class="nav-link" data-scroll-target="#d.-burden-estimation">D. Burden estimation</a></li>
+  <li><a href="#e.-health-economics" id="toc-e.-health-economics" class="nav-link" data-scroll-target="#e.-health-economics">E. Health economics</a></li>
+  <li><a href="#f.-decision-analytic-methods" id="toc-f.-decision-analytic-methods" class="nav-link" data-scroll-target="#f.-decision-analytic-methods">F. Decision-analytic methods</a></li>
+  <li><a href="#g.-policy-options-in-this-project" id="toc-g.-policy-options-in-this-project" class="nav-link" data-scroll-target="#g.-policy-options-in-this-project">G. Policy options in this project</a></li>
+  <li><a href="#h.-statistical-data-terminology" id="toc-h.-statistical-data-terminology" class="nav-link" data-scroll-target="#h.-statistical-data-terminology">H. Statistical &amp; data terminology</a></li>
+  <li><a href="#i.-tools-software" id="toc-i.-tools-software" class="nav-link" data-scroll-target="#i.-tools-software">I. Tools &amp; software</a></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further reading</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Glossary</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<p class="subtitle lead">Key terms and concepts in pesticide poisoning surveillance and health-economic evaluation</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 10, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>This glossary explains the technical terms used across the D2P Project — surveillance epidemiology, clinical toxicology, health economics, and South African public-health institutions. It is aimed at policymakers, clinicians, and students new to one or more of these fields.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Use the <strong>table of contents</strong> on the right (or the search icon, top right) to jump to a specific term. Terms are grouped by theme rather than alphabetised.</p>
+</div>
+</div>
+<hr>
+<section id="a.-the-disease-problem" class="level2">
+<h2 class="anchored" data-anchor-id="a.-the-disease-problem">A. The disease problem</h2>
+<section id="pesticide-poisoning" class="level3">
+<h3 class="anchored" data-anchor-id="pesticide-poisoning">Pesticide poisoning</h3>
+<p>Acute or chronic illness caused by exposure to pesticide chemicals — most commonly <strong>organophosphates (OPs)</strong> and <strong>carbamates</strong> in South Africa, often through ingestion (intentional self-harm or accidental, particularly in children) or occupational exposure (farmworkers).</p>
+</section>
+<section id="organophosphate-op" class="level3">
+<h3 class="anchored" data-anchor-id="organophosphate-op">Organophosphate (OP)</h3>
+<p>A class of pesticide that inhibits the enzyme <strong>acetylcholinesterase</strong>, causing a build-up of the neurotransmitter acetylcholine. Clinically this produces the <strong>cholinergic toxidrome</strong>: salivation, lacrimation, urination, defecation, GI cramps, emesis (“SLUDGE”), bronchospasm, bradycardia, miosis, muscle fasciculations, weakness, and — in severe cases — respiratory failure, seizures, and coma. Examples seen in SA poisonings: <strong>terbufos</strong>, <strong>methamidophos</strong>, <strong>chlorpyrifos</strong>, <strong>methomyl</strong> (“aldicarb-style street pesticides”, often illegally repackaged).</p>
+</section>
+<section id="carbamate" class="level3">
+<h3 class="anchored" data-anchor-id="carbamate">Carbamate</h3>
+<p>A related class of cholinesterase inhibitors with usually shorter-duration enzyme inhibition than OPs. Treatment is similar (atropine) but pralidoxime is generally <strong>not</strong> indicated.</p>
+</section>
+<section id="cholinesterase-butyrylcholinesterase-bche" class="level3">
+<h3 class="anchored" data-anchor-id="cholinesterase-butyrylcholinesterase-bche">Cholinesterase / Butyrylcholinesterase (BChE)</h3>
+<p>The enzyme inhibited by OPs and carbamates. <strong>BChE</strong> (also called pseudocholinesterase or plasma cholinesterase) is measured in blood as a biomarker of exposure: a level &lt;50% of the patient’s baseline (or &lt;50% of the lab reference range) indicates significant inhibition. The <strong>NHLS BChE assay</strong> is the routine SA test used to detect pesticide poisoning.</p>
+</section>
+<section id="atropine" class="level3">
+<h3 class="anchored" data-anchor-id="atropine">Atropine</h3>
+<p>The first-line antidote for cholinergic toxicity — a competitive muscarinic-receptor antagonist. Given in escalating doses titrated to drying of secretions and resolution of bronchospasm.</p>
+</section>
+<section id="pralidoxime-pam-2-pam" class="level3">
+<h3 class="anchored" data-anchor-id="pralidoxime-pam-2-pam">Pralidoxime (PAM, 2-PAM)</h3>
+<p>An oxime that reactivates acetylcholinesterase if given before the enzyme-OP complex “ages”. Used in OP poisoning (not carbamate). Available in SA but underutilised.</p>
+</section>
+<section id="opidn-organophosphate-induced-delayed-neuropathy" class="level3">
+<h3 class="anchored" data-anchor-id="opidn-organophosphate-induced-delayed-neuropathy">OPIDN (Organophosphate-Induced Delayed Neuropathy)</h3>
+<p>A rare but serious long-term complication of OP poisoning: a peripheral neuropathy that emerges 1–3 weeks after exposure, causing weakness and paraesthesia. Estimated to occur in ~10% of severe OP survivors. Drives most of the long-term <strong>disability burden</strong> (YLD) in our model.</p>
+</section>
+<section id="intermediate-syndrome" class="level3">
+<h3 class="anchored" data-anchor-id="intermediate-syndrome">Intermediate syndrome</h3>
+<p>A neuromuscular weakness syndrome appearing 1–4 days after acute OP poisoning, distinct from initial cholinergic crisis and from OPIDN. Often requires prolonged ventilatory support.</p>
+<hr>
+</section>
+</section>
+<section id="b.-surveillance-terms" class="level2">
+<h2 class="anchored" data-anchor-id="b.-surveillance-terms">B. Surveillance terms</h2>
+<section id="surveillance" class="level3">
+<h3 class="anchored" data-anchor-id="surveillance">Surveillance</h3>
+<p>The ongoing, systematic collection, analysis, and interpretation of health data — for action. The classic Langmuir definition emphasises <strong>“information for action”</strong>: data that doesn’t drive a decision is not surveillance.</p>
+</section>
+<section id="notifiable-medical-condition-nmc" class="level3">
+<h3 class="anchored" data-anchor-id="notifiable-medical-condition-nmc">Notifiable Medical Condition (NMC)</h3>
+<p>A disease that, by law (SA: National Health Act, 2003 and the <strong>NMC Regulations</strong>), must be reported by clinicians and laboratories to the National Department of Health. Pesticide poisoning is a <strong>Category 2 NMC</strong> in South Africa, meaning notification is required within 7 days. The NICD operates the NMC surveillance system.</p>
+</section>
+<section id="hotspot" class="level3">
+<h3 class="anchored" data-anchor-id="hotspot">Hotspot</h3>
+<p>A geographic and/or temporal cluster of cases above the expected background rate. Detection of hotspots — and timely field investigation — is a primary purpose of pesticide-poisoning surveillance. Drives the <strong>detection probability</strong> parameter in our decision model.</p>
+</section>
+<section id="sentinel-surveillance" class="level3">
+<h3 class="anchored" data-anchor-id="sentinel-surveillance">Sentinel surveillance</h3>
+<p>Surveillance that uses a <strong>selected, well-characterised network of reporting sites</strong> (e.g.&nbsp;tertiary hospitals) instead of attempting universal coverage. Trades population representativeness for higher data quality, completeness, and biological depth (e.g.&nbsp;specimen testing). Underpins our <strong>Option 6 (sentinel toxicology)</strong>.</p>
+</section>
+<section id="case-definition" class="level3">
+<h3 class="anchored" data-anchor-id="case-definition">Case definition</h3>
+<p>The standardised criteria used to decide whether a patient counts as a “case” for surveillance. Distinguishes <strong>suspected</strong>, <strong>probable</strong>, and <strong>confirmed</strong> cases (the latter usually requiring laboratory confirmation).</p>
+</section>
+<section id="auto-notification" class="level3">
+<h3 class="anchored" data-anchor-id="auto-notification">Auto-notification</h3>
+<p>Automatic creation of a surveillance notification when a defined laboratory result is generated — without requiring a clinician to file a separate form. Our <strong>Option 3</strong> proposes auto-notification when NHLS BChE drops below 50% of the reference range.</p>
+</section>
+<section id="vital-registration-vr" class="level3">
+<h3 class="anchored" data-anchor-id="vital-registration-vr">Vital Registration (VR)</h3>
+<p>The civil-registration system that records deaths and assigns an underlying cause using <strong>ICD-10 coding</strong>. SA’s VR system is operated by the Department of Home Affairs with cause-of-death coding by Stats SA. Known to <strong>under-code intentional self-poisoning</strong>, which is why our headline death estimate (1,500–1,800/year) sits above the VR-implied lower bound.</p>
+</section>
+<section id="icd-10" class="level3">
+<h3 class="anchored" data-anchor-id="icd-10">ICD-10</h3>
+<p>The 10th revision of the International Classification of Diseases — the standardised cause-of-death and cause-of-disease coding system. Pesticide-related ICD-10 codes (e.g.&nbsp;<strong>T60.0</strong>, <strong>X48</strong>, <strong>X68</strong>, <strong>Y18</strong>) are often miscoded as undetermined-intent or general-poisoning codes, biasing pesticide death counts downward.</p>
+<hr>
+</section>
+</section>
+<section id="c.-data-sources-used-in-the-d2p-project" class="level2">
+<h2 class="anchored" data-anchor-id="c.-data-sources-used-in-the-d2p-project">C. Data sources used in the D2P Project</h2>
+<section id="nicd" class="level3">
+<h3 class="anchored" data-anchor-id="nicd">NICD</h3>
+<p><strong>National Institute for Communicable Diseases.</strong> A division of the NHLS that operates SA’s national surveillance for communicable diseases and selected non-communicable conditions including pesticide poisoning. Hosts the NMC system.</p>
+</section>
+<section id="nhls" class="level3">
+<h3 class="anchored" data-anchor-id="nhls">NHLS</h3>
+<p><strong>National Health Laboratory Service.</strong> The public-sector laboratory network covering ~80% of SA’s population. Source of routine BChE test results that can be used for <strong>laboratory-based surveillance</strong> (Option 1) and <strong>auto-notification</strong> (Option 3).</p>
+</section>
+<section id="pih-poisons-information-helpline" class="level3">
+<h3 class="anchored" data-anchor-id="pih-poisons-information-helpline">PIH (Poisons Information Helpline)</h3>
+<p><strong>Red Cross War Memorial Children’s Hospital Poisons Information Helpline.</strong> A 24-hour clinical-toxicology advice line for clinicians and the public. Receives ~9,000 pesticide-related calls/year — a unique stream of data on <strong>mild and moderate cases that often never reach hospital</strong>.</p>
+</section>
+<section id="dalrrd" class="level3">
+<h3 class="anchored" data-anchor-id="dalrrd">DALRRD</h3>
+<p><strong>Department of Agriculture, Land Reform and Rural Development.</strong> The SA regulator for pesticide registration and product control. Holds product-volume and active-ingredient data relevant to source attribution (Option 2).</p>
+</section>
+<section id="ehp" class="level3">
+<h3 class="anchored" data-anchor-id="ehp">EHP</h3>
+<p><strong>Environmental Health Practitioner.</strong> Local-government public-health staff responsible for environmental investigations including pesticide-incident response. The principal field workforce activated under <strong>Option 5</strong>.</p>
+<hr>
+</section>
+</section>
+<section id="d.-burden-estimation" class="level2">
+<h2 class="anchored" data-anchor-id="d.-burden-estimation">D. Burden estimation</h2>
+<section id="burden-of-disease" class="level3">
+<h3 class="anchored" data-anchor-id="burden-of-disease">Burden of disease</h3>
+<p>The total population-level impact of a condition, expressed in cases, deaths, <strong>DALYs</strong> (see below), or monetary terms. Our headline burden: <strong>~11,690 cases, ~1,500–1,800 deaths, ~R2.3B/year</strong>.</p>
+</section>
+<section id="mutually-exclusive-sum" class="level3">
+<h3 class="anchored" data-anchor-id="mutually-exclusive-sum">Mutually-exclusive sum</h3>
+<p>The assumption that two or more data streams capture <strong>different cases with no overlap</strong>. Used here as the most defensible position when record linkage is not possible. Adding NMC + NHLS + PIH gives an upper bound that is robust if linkage later finds duplicates (one would simply subtract them).</p>
+</section>
+<section id="case-fatality-rate-cfr" class="level3">
+<h3 class="anchored" data-anchor-id="case-fatality-rate-cfr">Case Fatality Rate (CFR)</h3>
+<p>The proportion of cases that die. Stratified in our model by severity:</p>
+<ul>
+<li>PIH-managed (mostly mild): <strong>0.5%</strong></li>
+<li>NHLS-detected severe BChE inhibition: <strong>30%</strong> (Buckley et al.&nbsp;2021)</li>
+<li>NMC-notified hospitalised cases: <strong>15%</strong></li>
+</ul>
+<p>A flat 12.5% CFR applied to the total burden gives ~1,460 deaths; the stratified weighting gives ~830. The headline 1,500–1,800 sits in the upper-mid VR-triangulation range.</p>
+</section>
+<section id="years-of-life-lost-yll" class="level3">
+<h3 class="anchored" data-anchor-id="years-of-life-lost-yll">Years of Life Lost (YLL)</h3>
+<p>A mortality measure — the years between age at death and a reference life expectancy. SA pesticide deaths have a median age of ~30 and a reference e64 ≈ 64, giving ~30 YLL per death.</p>
+</section>
+<section id="years-lived-with-disability-yld" class="level3">
+<h3 class="anchored" data-anchor-id="years-lived-with-disability-yld">Years Lived with Disability (YLD)</h3>
+<p>A morbidity measure — duration of an illness × a <strong>disability weight</strong> (0–1). For pesticide poisoning, most survivors have minimal long-term YLD; the OPIDN sub-group drives the population YLD signal.</p>
+</section>
+<section id="daly-disability-adjusted-life-year" class="level3">
+<h3 class="anchored" data-anchor-id="daly-disability-adjusted-life-year">DALY (Disability-Adjusted Life-Year)</h3>
+<p><strong>DALY = YLL + YLD.</strong> One DALY = one year of healthy life lost. The standard global metric for comparing burden across diseases.</p>
+<hr>
+</section>
+</section>
+<section id="e.-health-economics" class="level2">
+<h2 class="anchored" data-anchor-id="e.-health-economics">E. Health economics</h2>
+<section id="direct-medical-costs" class="level3">
+<h3 class="anchored" data-anchor-id="direct-medical-costs">Direct medical costs</h3>
+<p>Costs incurred by the health system to treat the disease — admissions, drugs, investigations, ICU days. In SA public sector these are anchored to the <strong>UPFS</strong> (Uniform Patient Fee Schedule).</p>
+</section>
+<section id="upfs" class="level3">
+<h3 class="anchored" data-anchor-id="upfs">UPFS</h3>
+<p><strong>Uniform Patient Fee Schedule</strong> — the SA National Department of Health tariff for public-sector services. Used as our cost reference: ward R1,800/day, high-care R5,500/day, ICU R13,500/day, ventilation surcharge +R4,000/day (2024).</p>
+</section>
+<section id="indirect-costs" class="level3">
+<h3 class="anchored" data-anchor-id="indirect-costs">Indirect costs</h3>
+<p>Productivity losses to the patient, family, and economy — lost wages, caregiver time, future earnings forgone for those who die or are disabled. Estimated here using the <strong>human-capital approach</strong>.</p>
+</section>
+<section id="human-capital-approach" class="level3">
+<h3 class="anchored" data-anchor-id="human-capital-approach">Human-capital approach</h3>
+<p>Values a death or disability at the <strong>discounted future earnings</strong> the person would have generated. We use 25 productive years × R60,000/year median income → <strong>~R1.5M per death</strong>.</p>
+</section>
+<section id="value-of-a-statistical-life-vsl" class="level3">
+<h3 class="anchored" data-anchor-id="value-of-a-statistical-life-vsl">Value of a Statistical Life (VSL)</h3>
+<p>An alternative valuation based on revealed/stated preferences for marginal mortality-risk reduction. Typically ~3.3× annual income in LMIC settings. Gives a higher headline figure (~R5M/death) — useful as an advocacy ceiling.</p>
+</section>
+<section id="cost-effectiveness-threshold-λ" class="level3">
+<h3 class="anchored" data-anchor-id="cost-effectiveness-threshold-λ">Cost-effectiveness threshold (λ)</h3>
+<p>The maximum amount a payer will spend per DALY averted. SA’s empirical threshold (Edoka &amp; Stacey, 2020) is <strong>~R38,500/DALY</strong>. An intervention with cost-per-DALY below this is judged cost-effective.</p>
+</section>
+<section id="icer-incremental-cost-effectiveness-ratio" class="level3">
+<h3 class="anchored" data-anchor-id="icer-incremental-cost-effectiveness-ratio">ICER (Incremental Cost-Effectiveness Ratio)</h3>
+<p><span class="math display">\[\text{ICER} = \frac{C_1 - C_0}{E_1 - E_0}\]</span> The extra cost per extra unit of effect (e.g.&nbsp;per DALY averted, per case detected) when moving from a comparator to a new intervention. Compared against λ to decide cost-effectiveness.</p>
+</section>
+<section id="net-monetary-benefit-nmb" class="level3">
+<h3 class="anchored" data-anchor-id="net-monetary-benefit-nmb">Net Monetary Benefit (NMB)</h3>
+<p><span class="math display">\[\text{NMB} = \lambda \cdot \Delta E - \Delta C\]</span> Equivalently for our framework: <span class="math inline">\(\text{NMB}_i = (C_0 - C_i) - K_i\)</span>, where <span class="math inline">\(C_i\)</span> is the residual burden after intervention <span class="math inline">\(i\)</span> and <span class="math inline">\(K_i\)</span> is the intervention’s own cost. <strong>Positive NMB = good value.</strong> Our Full Package gives ~R260M/year NMB.</p>
+</section>
+<section id="return-on-investment-roi" class="level3">
+<h3 class="anchored" data-anchor-id="return-on-investment-roi">Return on Investment (ROI)</h3>
+<p>Avoided burden ÷ intervention cost. Headline: <strong>~220–1,100×</strong> depending on whether costs are counted on the narrow surveillance perspective (R237k) or whole-system (R1.19M).</p>
+</section>
+<section id="avoided-burden" class="level3">
+<h3 class="anchored" data-anchor-id="avoided-burden">Avoided burden</h3>
+<p>The portion of the <strong>status-quo economic burden</strong> that is prevented by an intervention. In our model: <span class="math display">\[C_{\text{avoided},i} = C_{\text{burden}} \cdot d_i \cdot \eta\]</span> where <span class="math inline">\(d_i\)</span> is the option’s incremental detection probability and <span class="math inline">\(\eta\)</span> is the response efficacy (probability that an investigated hotspot leads to a successful intervention preventing further cases).</p>
+</section>
+<section id="response-efficacy-eta" class="level3">
+<h3 class="anchored" data-anchor-id="response-efficacy-eta">Response efficacy (<span class="math inline">\(\eta\)</span>)</h3>
+<p>The probability that, conditional on a hotspot being detected and investigated, the response actually averts further cases. Base case <strong>0.30</strong>; sensitivity range <strong>0.15–0.50</strong>.</p>
+</section>
+<section id="detection-probability-d_i" class="level3">
+<h3 class="anchored" data-anchor-id="detection-probability-d_i">Detection probability (<span class="math inline">\(d_i\)</span>)</h3>
+<p>The proportion of true hotspots that are detected and acted upon under option <span class="math inline">\(i\)</span>. Status quo ≈ 45%; Full Package ≈ 83%.</p>
+</section>
+<section id="induced-demand-whole-system-cost" class="level3">
+<h3 class="anchored" data-anchor-id="induced-demand-whole-system-cost">Induced demand / whole-system cost</h3>
+<p>The additional health-system activity <strong>generated</strong> by improved surveillance — more admissions reaching the surveillance bucket, more lab tests, more EHP investigations. The <strong>narrow</strong> Full Package cost (R237k) covers only surveillance coordination; the <strong>whole-system</strong> cost (R1.19M) adds the induced demand.</p>
+<hr>
+</section>
+</section>
+<section id="f.-decision-analytic-methods" class="level2">
+<h2 class="anchored" data-anchor-id="f.-decision-analytic-methods">F. Decision-analytic methods</h2>
+<section id="decision-tree" class="level3">
+<h3 class="anchored" data-anchor-id="decision-tree">Decision tree</h3>
+<p>A model that maps out the probabilistic consequences of mutually-exclusive choices. Used here to compare Status Quo vs.&nbsp;Options 1–6 vs.&nbsp;Full Package in terms of cost and avoided burden. Built in <strong>Amua</strong> (an open-source decision-modelling tool).</p>
+</section>
+<section id="probabilistic-sensitivity-analysis-psa-monte-carlo" class="level3">
+<h3 class="anchored" data-anchor-id="probabilistic-sensitivity-analysis-psa-monte-carlo">Probabilistic Sensitivity Analysis (PSA) / Monte Carlo</h3>
+<p>Running the model thousands of times, each iteration drawing each parameter from its uncertainty distribution. Produces a <strong>distribution of NMBs</strong> rather than a point estimate.</p>
+</section>
+<section id="cost-effectiveness-acceptability-curve-ceac" class="level3">
+<h3 class="anchored" data-anchor-id="cost-effectiveness-acceptability-curve-ceac">Cost-Effectiveness Acceptability Curve (CEAC)</h3>
+<p>A plot showing, for each candidate strategy and at each value of <span class="math inline">\(\lambda\)</span>, the probability that the strategy is the most cost-effective. The strategy with the highest curve at the SA threshold (R38,500/DALY) is preferred.</p>
+</section>
+<section id="tornado-diagram" class="level3">
+<h3 class="anchored" data-anchor-id="tornado-diagram">Tornado diagram</h3>
+<p>A horizontal-bar plot showing how much the headline result moves when each parameter is varied across its plausible range, holding others fixed. Identifies the parameters that drive the result.</p>
+<hr>
+</section>
+</section>
+<section id="g.-policy-options-in-this-project" class="level2">
+<h2 class="anchored" data-anchor-id="g.-policy-options-in-this-project">G. Policy options in this project</h2>
+<section id="option-1-nhls-data-mou" class="level3">
+<h3 class="anchored" data-anchor-id="option-1-nhls-data-mou">Option 1 — NHLS data MOU</h3>
+<p>A monthly aggregated data feed from NHLS to NICD/NMC for severe BChE-inhibition cases.</p>
+</section>
+<section id="option-2-dalrrd-product-linkage" class="level3">
+<h3 class="anchored" data-anchor-id="option-2-dalrrd-product-linkage">Option 2 — DALRRD product linkage</h3>
+<p>Cross-reference clusters of cases against DALRRD pesticide product-volume data to attribute likely active ingredient and source.</p>
+</section>
+<section id="option-3-bche-auto-notification" class="level3">
+<h3 class="anchored" data-anchor-id="option-3-bche-auto-notification">Option 3 — BChE auto-notification</h3>
+<p>NHLS LIS automatically generates an NMC notification within 24 hours of a severe BChE result. Highest individual-option detection gain in the model.</p>
+</section>
+<section id="option-4-pih-quarterly-reports" class="level3">
+<h3 class="anchored" data-anchor-id="option-4-pih-quarterly-reports">Option 4 — PIH quarterly reports</h3>
+<p>Structured quarterly clinical-toxicology summaries from PIH integrated into NMC review.</p>
+</section>
+<section id="option-5-provincial-response-activation" class="level3">
+<h3 class="anchored" data-anchor-id="option-5-provincial-response-activation">Option 5 — Provincial response activation</h3>
+<p>Standardised protocol for rapid field investigation of detected hotspots. Triggered by Options 3 or 4.</p>
+</section>
+<section id="option-6-sentinel-toxicology" class="level3">
+<h3 class="anchored" data-anchor-id="option-6-sentinel-toxicology">Option 6 — Sentinel toxicology</h3>
+<p>A small network of tertiary hospitals (CHB → Groote Schuur, Albert Luthuli, Universitas, Steve Biko) systematically collecting biological specimens for <strong>GC-MS / LC-MS chemical attribution</strong> in living patients. Enables active product-level intelligence (which active ingredient, which formulation) that the other options cannot provide.</p>
+</section>
+<section id="full-package" class="level3">
+<h3 class="anchored" data-anchor-id="full-package">Full Package</h3>
+<p>All of Options 1–5 implemented together. Detection ≈ 83%. Annual cost: <strong>R237k narrow / R1.19M whole-system</strong>. Option 6 is treated as a parallel research investment, not part of the operational package.</p>
+<hr>
+</section>
+</section>
+<section id="h.-statistical-data-terminology" class="level2">
+<h2 class="anchored" data-anchor-id="h.-statistical-data-terminology">H. Statistical &amp; data terminology</h2>
+<section id="sample-size" class="level3">
+<h3 class="anchored" data-anchor-id="sample-size">Sample size</h3>
+<p>The number of observations needed to estimate a parameter with a given precision. For Option 6 sentinel toxicology, we use <span class="math inline">\(n = 323\)</span> per site for <span class="math inline">\(p = 0.30\)</span>, <span class="math inline">\(d = 0.05\)</span>, <span class="math inline">\(\alpha = 0.05\)</span>.</p>
+</section>
+<section id="confidence-interval-ci" class="level3">
+<h3 class="anchored" data-anchor-id="confidence-interval-ci">Confidence interval (CI)</h3>
+<p>A range that, on repeated sampling, would contain the true parameter the stated proportion of the time (e.g.&nbsp;95%). Wider CIs imply less precise estimates.</p>
+</section>
+<section id="distribution" class="level3">
+<h3 class="anchored" data-anchor-id="distribution">Distribution</h3>
+<p>A description of how a parameter varies. In PSA we use <strong>beta</strong> distributions for proportions (CFR, response efficacy), <strong>gamma</strong> for costs, and <strong>fixed</strong> for deterministic structural assumptions.</p>
+</section>
+<section id="triangulation" class="level3">
+<h3 class="anchored" data-anchor-id="triangulation">Triangulation</h3>
+<p>Cross-checking a finding using independent data sources or methods. The pesticide death estimate is triangulated across NMC × CFR-derived deaths × Vital Registration ICD-10-coded deaths.</p>
+<hr>
+</section>
+</section>
+<section id="i.-tools-software" class="level2">
+<h2 class="anchored" data-anchor-id="i.-tools-software">I. Tools &amp; software</h2>
+<section id="quarto" class="level3">
+<h3 class="anchored" data-anchor-id="quarto">Quarto</h3>
+<p>The publication system used to build this website. Combines code (R, Python, Julia), prose, equations, and interactive elements into static HTML, PDF, or Word output.</p>
+</section>
+<section id="amua" class="level3">
+<h3 class="anchored" data-anchor-id="amua">Amua</h3>
+<p>An open-source decision-modelling tool used to build the decision tree, run PSA, and export results. The CSV at <a href="amua_import_parameters_v3.csv"><code>amua_import_parameters_v3.csv</code></a> is the parameter-import file.</p>
+</section>
+<section id="r-tidyverse" class="level3">
+<h3 class="anchored" data-anchor-id="r-tidyverse">R / tidyverse</h3>
+<p>The statistical-computing environment and the package ecosystem used for data wrangling, tables, and figures across the analysis.</p>
+</section>
+<section id="gc-ms-lc-ms" class="level3">
+<h3 class="anchored" data-anchor-id="gc-ms-lc-ms">GC-MS / LC-MS</h3>
+<p><strong>Gas / Liquid Chromatography – Mass Spectrometry</strong> — laboratory techniques for identifying and quantifying specific chemicals in biological or environmental samples. The technical foundation of Option 6 sentinel toxicology.</p>
+<hr>
+</section>
+</section>
+<section id="further-reading" class="level2">
+<h2 class="anchored" data-anchor-id="further-reading">Further reading</h2>
+<ul>
+<li><strong>Buckley NA et al.&nbsp;(2021)</strong> — Cohort study of severe organophosphate poisoning, Sri Lanka. Source for the 30% severe-case CFR and the response-efficacy literature.</li>
+<li><strong>Davies J et al.&nbsp;(2023)</strong> — Paediatric pesticide deaths in South Africa; documents the dominance of terbufos and methamidophos.</li>
+<li><strong>Edoka I, Stacey N (2020)</strong> — Estimating the cost-effectiveness threshold for South Africa. Source for λ = R38,500/DALY.</li>
+<li><strong>WHO (2020)</strong> — <em>Preventing Suicide: A Resource for Pesticide Registrars and Regulators</em>. Global framing for the pesticide–suicide nexus.</li>
+<li><strong>NICD NMC Annual Reports (2020–2024)</strong> — Source for the 690/year NMC pesticide notifications.</li>
+<li><strong>D2P Project <a href="./parameter_appraisal.html">Parameter Critical Appraisal</a></strong> — Detailed v2 → v3 parameter justification.</li>
+</ul>
+
+
+<!-- -->
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("^(?:http:|https:)\/\/(?:[^\/]*\.)?bridaybrummer\.github\.io|^(?!http)");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+            // default icon
+            link.classList.add("external");
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Glossary"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Key terms and concepts in pesticide poisoning surveillance and health-economic evaluation"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> today</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-depth: 2</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>This glossary explains the technical terms used across the D2P Project — surveillance epidemiology, clinical toxicology, health economics, and South African public-health institutions. It is aimed at policymakers, clinicians, and students new to one or more of these fields.</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>Use the **table of contents** on the right (or the search icon, top right) to jump to a specific term. Terms are grouped by theme rather than alphabetised.</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="fu">## A. The disease problem</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="fu">### Pesticide poisoning</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>Acute or chronic illness caused by exposure to pesticide chemicals — most commonly **organophosphates (OPs)** and **carbamates** in South Africa, often through ingestion (intentional self-harm or accidental, particularly in children) or occupational exposure (farmworkers).</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="fu">### Organophosphate (OP)</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>A class of pesticide that inhibits the enzyme **acetylcholinesterase**, causing a build-up of the neurotransmitter acetylcholine. Clinically this produces the **cholinergic toxidrome**: salivation, lacrimation, urination, defecation, GI cramps, emesis ("SLUDGE"), bronchospasm, bradycardia, miosis, muscle fasciculations, weakness, and — in severe cases — respiratory failure, seizures, and coma. Examples seen in SA poisonings: **terbufos**, **methamidophos**, **chlorpyrifos**, **methomyl** ("aldicarb-style street pesticides", often illegally repackaged).</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="fu">### Carbamate</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>A related class of cholinesterase inhibitors with usually shorter-duration enzyme inhibition than OPs. Treatment is similar (atropine) but pralidoxime is generally **not** indicated.</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="fu">### Cholinesterase / Butyrylcholinesterase (BChE)</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>The enzyme inhibited by OPs and carbamates. **BChE** (also called pseudocholinesterase or plasma cholinesterase) is measured in blood as a biomarker of exposure: a level &lt;50% of the patient's baseline (or &lt;50% of the lab reference range) indicates significant inhibition. The **NHLS BChE assay** is the routine SA test used to detect pesticide poisoning.</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="fu">### Atropine</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>The first-line antidote for cholinergic toxicity — a competitive muscarinic-receptor antagonist. Given in escalating doses titrated to drying of secretions and resolution of bronchospasm.</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="fu">### Pralidoxime (PAM, 2-PAM)</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>An oxime that reactivates acetylcholinesterase if given before the enzyme-OP complex "ages". Used in OP poisoning (not carbamate). Available in SA but underutilised.</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="fu">### OPIDN (Organophosphate-Induced Delayed Neuropathy)</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>A rare but serious long-term complication of OP poisoning: a peripheral neuropathy that emerges 1–3 weeks after exposure, causing weakness and paraesthesia. Estimated to occur in ~10% of severe OP survivors. Drives most of the long-term **disability burden** (YLD) in our model.</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="fu">### Intermediate syndrome</span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>A neuromuscular weakness syndrome appearing 1–4 days after acute OP poisoning, distinct from initial cholinergic crisis and from OPIDN. Often requires prolonged ventilatory support.</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="fu">## B. Surveillance terms</span></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="fu">### Surveillance</span></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>The ongoing, systematic collection, analysis, and interpretation of health data — for action. The classic Langmuir definition emphasises **"information for action"**: data that doesn't drive a decision is not surveillance.</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="fu">### Notifiable Medical Condition (NMC)</span></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>A disease that, by law (SA: National Health Act, 2003 and the **NMC Regulations**), must be reported by clinicians and laboratories to the National Department of Health. Pesticide poisoning is a **Category 2 NMC** in South Africa, meaning notification is required within 7 days. The NICD operates the NMC surveillance system.</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a><span class="fu">### Hotspot</span></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>A geographic and/or temporal cluster of cases above the expected background rate. Detection of hotspots — and timely field investigation — is a primary purpose of pesticide-poisoning surveillance. Drives the **detection probability** parameter in our decision model.</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a><span class="fu">### Sentinel surveillance</span></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>Surveillance that uses a **selected, well-characterised network of reporting sites** (e.g. tertiary hospitals) instead of attempting universal coverage. Trades population representativeness for higher data quality, completeness, and biological depth (e.g. specimen testing). Underpins our **Option 6 (sentinel toxicology)**.</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a><span class="fu">### Case definition</span></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>The standardised criteria used to decide whether a patient counts as a "case" for surveillance. Distinguishes **suspected**, **probable**, and **confirmed** cases (the latter usually requiring laboratory confirmation).</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a><span class="fu">### Auto-notification</span></span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>Automatic creation of a surveillance notification when a defined laboratory result is generated — without requiring a clinician to file a separate form. Our **Option 3** proposes auto-notification when NHLS BChE drops below 50% of the reference range.</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a><span class="fu">### Vital Registration (VR)</span></span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>The civil-registration system that records deaths and assigns an underlying cause using **ICD-10 coding**. SA's VR system is operated by the Department of Home Affairs with cause-of-death coding by Stats SA. Known to **under-code intentional self-poisoning**, which is why our headline death estimate (1,500–1,800/year) sits above the VR-implied lower bound.</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a><span class="fu">### ICD-10</span></span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>The 10th revision of the International Classification of Diseases — the standardised cause-of-death and cause-of-disease coding system. Pesticide-related ICD-10 codes (e.g. **T60.0**, **X48**, **X68**, **Y18**) are often miscoded as undetermined-intent or general-poisoning codes, biasing pesticide death counts downward.</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a><span class="fu">## C. Data sources used in the D2P Project</span></span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a><span class="fu">### NICD</span></span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>**National Institute for Communicable Diseases.** A division of the NHLS that operates SA's national surveillance for communicable diseases and selected non-communicable conditions including pesticide poisoning. Hosts the NMC system.</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a><span class="fu">### NHLS</span></span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>**National Health Laboratory Service.** The public-sector laboratory network covering ~80% of SA's population. Source of routine BChE test results that can be used for **laboratory-based surveillance** (Option 1) and **auto-notification** (Option 3).</span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a><span class="fu">### PIH (Poisons Information Helpline)</span></span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>**Red Cross War Memorial Children's Hospital Poisons Information Helpline.** A 24-hour clinical-toxicology advice line for clinicians and the public. Receives ~9,000 pesticide-related calls/year — a unique stream of data on **mild and moderate cases that often never reach hospital**.</span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a><span class="fu">### DALRRD</span></span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>**Department of Agriculture, Land Reform and Rural Development.** The SA regulator for pesticide registration and product control. Holds product-volume and active-ingredient data relevant to source attribution (Option 2).</span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a><span class="fu">### EHP</span></span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>**Environmental Health Practitioner.** Local-government public-health staff responsible for environmental investigations including pesticide-incident response. The principal field workforce activated under **Option 5**.</span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a><span class="fu">## D. Burden estimation</span></span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a><span class="fu">### Burden of disease</span></span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>The total population-level impact of a condition, expressed in cases, deaths, **DALYs** (see below), or monetary terms. Our headline burden: **~11,690 cases, ~1,500–1,800 deaths, ~R2.3B/year**.</span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a><span class="fu">### Mutually-exclusive sum</span></span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>The assumption that two or more data streams capture **different cases with no overlap**. Used here as the most defensible position when record linkage is not possible. Adding NMC + NHLS + PIH gives an upper bound that is robust if linkage later finds duplicates (one would simply subtract them).</span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a><span class="fu">### Case Fatality Rate (CFR)</span></span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>The proportion of cases that die. Stratified in our model by severity:</span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>PIH-managed (mostly mild): **0.5%**</span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>NHLS-detected severe BChE inhibition: **30%** (Buckley et al. 2021)</span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>NMC-notified hospitalised cases: **15%**</span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>A flat 12.5% CFR applied to the total burden gives ~1,460 deaths; the stratified weighting gives ~830. The headline 1,500–1,800 sits in the upper-mid VR-triangulation range.</span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a><span class="fu">### Years of Life Lost (YLL)</span></span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>A mortality measure — the years between age at death and a reference life expectancy. SA pesticide deaths have a median age of ~30 and a reference e64 ≈ 64, giving ~30 YLL per death.</span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a><span class="fu">### Years Lived with Disability (YLD)</span></span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>A morbidity measure — duration of an illness × a **disability weight** (0–1). For pesticide poisoning, most survivors have minimal long-term YLD; the OPIDN sub-group drives the population YLD signal.</span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a><span class="fu">### DALY (Disability-Adjusted Life-Year)</span></span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>**DALY = YLL + YLD.** One DALY = one year of healthy life lost. The standard global metric for comparing burden across diseases.</span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a><span class="fu">## E. Health economics</span></span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a><span class="fu">### Direct medical costs</span></span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>Costs incurred by the health system to treat the disease — admissions, drugs, investigations, ICU days. In SA public sector these are anchored to the **UPFS** (Uniform Patient Fee Schedule).</span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a><span class="fu">### UPFS</span></span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>**Uniform Patient Fee Schedule** — the SA National Department of Health tariff for public-sector services. Used as our cost reference: ward R1,800/day, high-care R5,500/day, ICU R13,500/day, ventilation surcharge +R4,000/day (2024).</span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a><span class="fu">### Indirect costs</span></span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>Productivity losses to the patient, family, and economy — lost wages, caregiver time, future earnings forgone for those who die or are disabled. Estimated here using the **human-capital approach**.</span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a><span class="fu">### Human-capital approach</span></span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>Values a death or disability at the **discounted future earnings** the person would have generated. We use 25 productive years × R60,000/year median income → **~R1.5M per death**.</span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a><span class="fu">### Value of a Statistical Life (VSL)</span></span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>An alternative valuation based on revealed/stated preferences for marginal mortality-risk reduction. Typically ~3.3× annual income in LMIC settings. Gives a higher headline figure (~R5M/death) — useful as an advocacy ceiling.</span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a><span class="fu">### Cost-effectiveness threshold (λ)</span></span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>The maximum amount a payer will spend per DALY averted. SA's empirical threshold (Edoka &amp; Stacey, 2020) is **~R38,500/DALY**. An intervention with cost-per-DALY below this is judged cost-effective.</span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a><span class="fu">### ICER (Incremental Cost-Effectiveness Ratio)</span></span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>$$\text{ICER} = \frac{C_1 - C_0}{E_1 - E_0}$$</span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>The extra cost per extra unit of effect (e.g. per DALY averted, per case detected) when moving from a comparator to a new intervention. Compared against λ to decide cost-effectiveness.</span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a><span class="fu">### Net Monetary Benefit (NMB)</span></span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>$$\text{NMB} = \lambda \cdot \Delta E - \Delta C$$</span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>Equivalently for our framework: $\text{NMB}_i = (C_0 - C_i) - K_i$, where $C_i$ is the residual burden after intervention $i$ and $K_i$ is the intervention's own cost. **Positive NMB = good value.** Our Full Package gives ~R260M/year NMB.</span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a><span class="fu">### Return on Investment (ROI)</span></span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>Avoided burden ÷ intervention cost. Headline: **~220–1,100×** depending on whether costs are counted on the narrow surveillance perspective (R237k) or whole-system (R1.19M).</span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a><span class="fu">### Avoided burden</span></span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>The portion of the **status-quo economic burden** that is prevented by an intervention. In our model:</span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>$$C_{\text{avoided},i} = C_{\text{burden}} \cdot d_i \cdot \eta$$</span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>where $d_i$ is the option's incremental detection probability and $\eta$ is the response efficacy (probability that an investigated hotspot leads to a successful intervention preventing further cases).</span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a><span class="fu">### Response efficacy ($\eta$)</span></span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>The probability that, conditional on a hotspot being detected and investigated, the response actually averts further cases. Base case **0.30**; sensitivity range **0.15–0.50**.</span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a><span class="fu">### Detection probability ($d_i$)</span></span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>The proportion of true hotspots that are detected and acted upon under option $i$. Status quo ≈ 45%; Full Package ≈ 83%.</span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a><span class="fu">### Induced demand / whole-system cost</span></span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>The additional health-system activity **generated** by improved surveillance — more admissions reaching the surveillance bucket, more lab tests, more EHP investigations. The **narrow** Full Package cost (R237k) covers only surveillance coordination; the **whole-system** cost (R1.19M) adds the induced demand.</span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a><span class="fu">## F. Decision-analytic methods</span></span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a><span class="fu">### Decision tree</span></span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>A model that maps out the probabilistic consequences of mutually-exclusive choices. Used here to compare Status Quo vs. Options 1–6 vs. Full Package in terms of cost and avoided burden. Built in **Amua** (an open-source decision-modelling tool).</span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a><span class="fu">### Probabilistic Sensitivity Analysis (PSA) / Monte Carlo</span></span>
+<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>Running the model thousands of times, each iteration drawing each parameter from its uncertainty distribution. Produces a **distribution of NMBs** rather than a point estimate.</span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a><span class="fu">### Cost-Effectiveness Acceptability Curve (CEAC)</span></span>
+<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>A plot showing, for each candidate strategy and at each value of $\lambda$, the probability that the strategy is the most cost-effective. The strategy with the highest curve at the SA threshold (R38,500/DALY) is preferred.</span>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a><span class="fu">### Tornado diagram</span></span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>A horizontal-bar plot showing how much the headline result moves when each parameter is varied across its plausible range, holding others fixed. Identifies the parameters that drive the result.</span>
+<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a><span class="fu">## G. Policy options in this project</span></span>
+<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a><span class="fu">### Option 1 — NHLS data MOU</span></span>
+<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>A monthly aggregated data feed from NHLS to NICD/NMC for severe BChE-inhibition cases.</span>
+<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a><span class="fu">### Option 2 — DALRRD product linkage</span></span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>Cross-reference clusters of cases against DALRRD pesticide product-volume data to attribute likely active ingredient and source.</span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a><span class="fu">### Option 3 — BChE auto-notification</span></span>
+<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>NHLS LIS automatically generates an NMC notification within 24 hours of a severe BChE result. Highest individual-option detection gain in the model.</span>
+<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a><span class="fu">### Option 4 — PIH quarterly reports</span></span>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>Structured quarterly clinical-toxicology summaries from PIH integrated into NMC review.</span>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a><span class="fu">### Option 5 — Provincial response activation</span></span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>Standardised protocol for rapid field investigation of detected hotspots. Triggered by Options 3 or 4.</span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a><span class="fu">### Option 6 — Sentinel toxicology</span></span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>A small network of tertiary hospitals (CHB → Groote Schuur, Albert Luthuli, Universitas, Steve Biko) systematically collecting biological specimens for **GC-MS / LC-MS chemical attribution** in living patients. Enables active product-level intelligence (which active ingredient, which formulation) that the other options cannot provide.</span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a><span class="fu">### Full Package</span></span>
+<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>All of Options 1–5 implemented together. Detection ≈ 83%. Annual cost: **R237k narrow / R1.19M whole-system**. Option 6 is treated as a parallel research investment, not part of the operational package.</span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a><span class="fu">## H. Statistical &amp; data terminology</span></span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a><span class="fu">### Sample size</span></span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>The number of observations needed to estimate a parameter with a given precision. For Option 6 sentinel toxicology, we use $n = 323$ per site for $p = 0.30$, $d = 0.05$, $\alpha = 0.05$.</span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a><span class="fu">### Confidence interval (CI)</span></span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>A range that, on repeated sampling, would contain the true parameter the stated proportion of the time (e.g. 95%). Wider CIs imply less precise estimates.</span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a><span class="fu">### Distribution</span></span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>A description of how a parameter varies. In PSA we use **beta** distributions for proportions (CFR, response efficacy), **gamma** for costs, and **fixed** for deterministic structural assumptions.</span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a><span class="fu">### Triangulation</span></span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>Cross-checking a finding using independent data sources or methods. The pesticide death estimate is triangulated across NMC × CFR-derived deaths × Vital Registration ICD-10-coded deaths.</span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a><span class="fu">## I. Tools &amp; software</span></span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a><span class="fu">### Quarto</span></span>
+<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>The publication system used to build this website. Combines code (R, Python, Julia), prose, equations, and interactive elements into static HTML, PDF, or Word output.</span>
+<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a><span class="fu">### Amua</span></span>
+<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>An open-source decision-modelling tool used to build the decision tree, run PSA, and export results. The CSV at <span class="co">[</span><span class="ot">`amua_import_parameters_v3.csv`</span><span class="co">](amua_import_parameters_v3.csv)</span> is the parameter-import file.</span>
+<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a><span class="fu">### R / tidyverse</span></span>
+<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>The statistical-computing environment and the package ecosystem used for data wrangling, tables, and figures across the analysis.</span>
+<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a><span class="fu">### GC-MS / LC-MS</span></span>
+<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>**Gas / Liquid Chromatography – Mass Spectrometry** — laboratory techniques for identifying and quantifying specific chemicals in biological or environmental samples. The technical foundation of Option 6 sentinel toxicology.</span>
+<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a><span class="fu">## Further reading</span></span>
+<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Buckley NA et al. (2021)** — Cohort study of severe organophosphate poisoning, Sri Lanka. Source for the 30% severe-case CFR and the response-efficacy literature.</span>
+<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Davies J et al. (2023)** — Paediatric pesticide deaths in South Africa; documents the dominance of terbufos and methamidophos.</span>
+<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Edoka I, Stacey N (2020)** — Estimating the cost-effectiveness threshold for South Africa. Source for λ = R38,500/DALY.</span>
+<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**WHO (2020)** — *Preventing Suicide: A Resource for Pesticide Registrars and Regulators*. Global framing for the pesticide–suicide nexus.</span>
+<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**NICD NMC Annual Reports (2020–2024)** — Source for the 690/year NMC pesticide notifications.</span>
+<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**D2P Project [Parameter Critical Appraisal](parameter_appraisal.qmd)** — Detailed v2 → v3 parameter justification.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 D2P Project Team</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="mailto:contact@example.com">
+<p>Contact</p>
+</a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
