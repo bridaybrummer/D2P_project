@@ -1,0 +1,249 @@
+---
+title: "Glossary"
+subtitle: "Key terms and concepts in pesticide poisoning surveillance and health-economic evaluation"
+date: today
+format:
+  html:
+    toc: true
+    toc-depth: 2
+---
+
+This glossary explains the technical terms used across the D2P Project — surveillance epidemiology, clinical toxicology, health economics, and South African public-health institutions. It is aimed at policymakers, clinicians, and students new to one or more of these fields.
+
+::: {.callout-tip}
+Use the **table of contents** on the right (or the search icon, top right) to jump to a specific term. Terms are grouped by theme rather than alphabetised.
+:::
+
+---
+
+## A. The disease problem
+
+### Pesticide poisoning
+Acute or chronic illness caused by exposure to pesticide chemicals — most commonly **organophosphates (OPs)** and **carbamates** in South Africa, often through ingestion (intentional self-harm or accidental, particularly in children) or occupational exposure (farmworkers).
+
+### Organophosphate (OP)
+A class of pesticide that inhibits the enzyme **acetylcholinesterase**, causing a build-up of the neurotransmitter acetylcholine. Clinically this produces the **cholinergic toxidrome**: salivation, lacrimation, urination, defecation, GI cramps, emesis ("SLUDGE"), bronchospasm, bradycardia, miosis, muscle fasciculations, weakness, and — in severe cases — respiratory failure, seizures, and coma. Examples seen in SA poisonings: **terbufos**, **methamidophos**, **chlorpyrifos**, **methomyl** ("aldicarb-style street pesticides", often illegally repackaged).
+
+### Carbamate
+A related class of cholinesterase inhibitors with usually shorter-duration enzyme inhibition than OPs. Treatment is similar (atropine) but pralidoxime is generally **not** indicated.
+
+### Cholinesterase / Butyrylcholinesterase (BChE)
+The enzyme inhibited by OPs and carbamates. **BChE** (also called pseudocholinesterase or plasma cholinesterase) is measured in blood as a biomarker of exposure: a level <50% of the patient's baseline (or <50% of the lab reference range) indicates significant inhibition. The **NHLS BChE assay** is the routine SA test used to detect pesticide poisoning.
+
+### Atropine
+The first-line antidote for cholinergic toxicity — a competitive muscarinic-receptor antagonist. Given in escalating doses titrated to drying of secretions and resolution of bronchospasm.
+
+### Pralidoxime (PAM, 2-PAM)
+An oxime that reactivates acetylcholinesterase if given before the enzyme-OP complex "ages". Used in OP poisoning (not carbamate). Available in SA but underutilised.
+
+### OPIDN (Organophosphate-Induced Delayed Neuropathy)
+A rare but serious long-term complication of OP poisoning: a peripheral neuropathy that emerges 1–3 weeks after exposure, causing weakness and paraesthesia. Estimated to occur in ~10% of severe OP survivors. Drives most of the long-term **disability burden** (YLD) in our model.
+
+### Intermediate syndrome
+A neuromuscular weakness syndrome appearing 1–4 days after acute OP poisoning, distinct from initial cholinergic crisis and from OPIDN. Often requires prolonged ventilatory support.
+
+---
+
+## B. Surveillance terms
+
+### Surveillance
+The ongoing, systematic collection, analysis, and interpretation of health data — for action. The classic Langmuir definition emphasises **"information for action"**: data that doesn't drive a decision is not surveillance.
+
+### Notifiable Medical Condition (NMC)
+A disease that, by law (SA: National Health Act, 2003 and the **NMC Regulations**), must be reported by clinicians and laboratories to the National Department of Health. Pesticide poisoning is a **Category 2 NMC** in South Africa, meaning notification is required within 7 days. The NICD operates the NMC surveillance system.
+
+### Hotspot
+A geographic and/or temporal cluster of cases above the expected background rate. Detection of hotspots — and timely field investigation — is a primary purpose of pesticide-poisoning surveillance. Drives the **detection probability** parameter in our decision model.
+
+### Sentinel surveillance
+Surveillance that uses a **selected, well-characterised network of reporting sites** (e.g. tertiary hospitals) instead of attempting universal coverage. Trades population representativeness for higher data quality, completeness, and biological depth (e.g. specimen testing). Underpins our **Option 6 (sentinel toxicology)**.
+
+### Case definition
+The standardised criteria used to decide whether a patient counts as a "case" for surveillance. Distinguishes **suspected**, **probable**, and **confirmed** cases (the latter usually requiring laboratory confirmation).
+
+### Auto-notification
+Automatic creation of a surveillance notification when a defined laboratory result is generated — without requiring a clinician to file a separate form. Our **Option 3** proposes auto-notification when NHLS BChE drops below 50% of the reference range.
+
+### Vital Registration (VR)
+The civil-registration system that records deaths and assigns an underlying cause using **ICD-10 coding**. SA's VR system is operated by the Department of Home Affairs with cause-of-death coding by Stats SA. Known to **under-code intentional self-poisoning**, which is why our headline death estimate (1,500–1,800/year) sits above the VR-implied lower bound.
+
+### ICD-10
+The 10th revision of the International Classification of Diseases — the standardised cause-of-death and cause-of-disease coding system. Pesticide-related ICD-10 codes (e.g. **T60.0**, **X48**, **X68**, **Y18**) are often miscoded as undetermined-intent or general-poisoning codes, biasing pesticide death counts downward.
+
+---
+
+## C. Data sources used in the D2P Project
+
+### NICD
+**National Institute for Communicable Diseases.** A division of the NHLS that operates SA's national surveillance for communicable diseases and selected non-communicable conditions including pesticide poisoning. Hosts the NMC system.
+
+### NHLS
+**National Health Laboratory Service.** The public-sector laboratory network covering ~80% of SA's population. Source of routine BChE test results that can be used for **laboratory-based surveillance** (Option 1) and **auto-notification** (Option 3).
+
+### PIH (Poisons Information Helpline)
+**Red Cross War Memorial Children's Hospital Poisons Information Helpline.** A 24-hour clinical-toxicology advice line for clinicians and the public. Receives ~9,000 pesticide-related calls/year — a unique stream of data on **mild and moderate cases that often never reach hospital**.
+
+### DALRRD
+**Department of Agriculture, Land Reform and Rural Development.** The SA regulator for pesticide registration and product control. Holds product-volume and active-ingredient data relevant to source attribution (Option 2).
+
+### EHP
+**Environmental Health Practitioner.** Local-government public-health staff responsible for environmental investigations including pesticide-incident response. The principal field workforce activated under **Option 5**.
+
+---
+
+## D. Burden estimation
+
+### Burden of disease
+The total population-level impact of a condition, expressed in cases, deaths, **DALYs** (see below), or monetary terms. Our headline burden: **~11,690 cases, ~1,500–1,800 deaths, ~R2.3B/year**.
+
+### Mutually-exclusive sum
+The assumption that two or more data streams capture **different cases with no overlap**. Used here as the most defensible position when record linkage is not possible. Adding NMC + NHLS + PIH gives an upper bound that is robust if linkage later finds duplicates (one would simply subtract them).
+
+### Case Fatality Rate (CFR)
+The proportion of cases that die. Stratified in our model by severity:
+
+- PIH-managed (mostly mild): **0.5%**
+- NHLS-detected severe BChE inhibition: **30%** (Buckley et al. 2021)
+- NMC-notified hospitalised cases: **15%**
+
+A flat 12.5% CFR applied to the total burden gives ~1,460 deaths; the stratified weighting gives ~830. The headline 1,500–1,800 sits in the upper-mid VR-triangulation range.
+
+### Years of Life Lost (YLL)
+A mortality measure — the years between age at death and a reference life expectancy. SA pesticide deaths have a median age of ~30 and a reference e64 ≈ 64, giving ~30 YLL per death.
+
+### Years Lived with Disability (YLD)
+A morbidity measure — duration of an illness × a **disability weight** (0–1). For pesticide poisoning, most survivors have minimal long-term YLD; the OPIDN sub-group drives the population YLD signal.
+
+### DALY (Disability-Adjusted Life-Year)
+**DALY = YLL + YLD.** One DALY = one year of healthy life lost. The standard global metric for comparing burden across diseases.
+
+---
+
+## E. Health economics
+
+### Direct medical costs
+Costs incurred by the health system to treat the disease — admissions, drugs, investigations, ICU days. In SA public sector these are anchored to the **UPFS** (Uniform Patient Fee Schedule).
+
+### UPFS
+**Uniform Patient Fee Schedule** — the SA National Department of Health tariff for public-sector services. Used as our cost reference: ward R1,800/day, high-care R5,500/day, ICU R13,500/day, ventilation surcharge +R4,000/day (2024).
+
+### Indirect costs
+Productivity losses to the patient, family, and economy — lost wages, caregiver time, future earnings forgone for those who die or are disabled. Estimated here using the **human-capital approach**.
+
+### Human-capital approach
+Values a death or disability at the **discounted future earnings** the person would have generated. We use 25 productive years × R60,000/year median income → **~R1.5M per death**.
+
+### Value of a Statistical Life (VSL)
+An alternative valuation based on revealed/stated preferences for marginal mortality-risk reduction. Typically ~3.3× annual income in LMIC settings. Gives a higher headline figure (~R5M/death) — useful as an advocacy ceiling.
+
+### Cost-effectiveness threshold (λ)
+The maximum amount a payer will spend per DALY averted. SA's empirical threshold (Edoka & Stacey, 2020) is **~R38,500/DALY**. An intervention with cost-per-DALY below this is judged cost-effective.
+
+### ICER (Incremental Cost-Effectiveness Ratio)
+$$\text{ICER} = \frac{C_1 - C_0}{E_1 - E_0}$$
+The extra cost per extra unit of effect (e.g. per DALY averted, per case detected) when moving from a comparator to a new intervention. Compared against λ to decide cost-effectiveness.
+
+### Net Monetary Benefit (NMB)
+$$\text{NMB} = \lambda \cdot \Delta E - \Delta C$$
+Equivalently for our framework: $\text{NMB}_i = (C_0 - C_i) - K_i$, where $C_i$ is the residual burden after intervention $i$ and $K_i$ is the intervention's own cost. **Positive NMB = good value.** Our Full Package gives ~R260M/year NMB.
+
+### Return on Investment (ROI)
+Avoided burden ÷ intervention cost. Headline: **~220–1,100×** depending on whether costs are counted on the narrow surveillance perspective (R237k) or whole-system (R1.19M).
+
+### Avoided burden
+The portion of the **status-quo economic burden** that is prevented by an intervention. In our model:
+$$C_{\text{avoided},i} = C_{\text{burden}} \cdot d_i \cdot \eta$$
+where $d_i$ is the option's incremental detection probability and $\eta$ is the response efficacy (probability that an investigated hotspot leads to a successful intervention preventing further cases).
+
+### Response efficacy ($\eta$)
+The probability that, conditional on a hotspot being detected and investigated, the response actually averts further cases. Base case **0.30**; sensitivity range **0.15–0.50**.
+
+### Detection probability ($d_i$)
+The proportion of true hotspots that are detected and acted upon under option $i$. Status quo ≈ 45%; Full Package ≈ 83%.
+
+### Induced demand / whole-system cost
+The additional health-system activity **generated** by improved surveillance — more admissions reaching the surveillance bucket, more lab tests, more EHP investigations. The **narrow** Full Package cost (R237k) covers only surveillance coordination; the **whole-system** cost (R1.19M) adds the induced demand.
+
+---
+
+## F. Decision-analytic methods
+
+### Decision tree
+A model that maps out the probabilistic consequences of mutually-exclusive choices. Used here to compare Status Quo vs. Options 1–6 vs. Full Package in terms of cost and avoided burden. Built in **Amua** (an open-source decision-modelling tool).
+
+### Probabilistic Sensitivity Analysis (PSA) / Monte Carlo
+Running the model thousands of times, each iteration drawing each parameter from its uncertainty distribution. Produces a **distribution of NMBs** rather than a point estimate.
+
+### Cost-Effectiveness Acceptability Curve (CEAC)
+A plot showing, for each candidate strategy and at each value of $\lambda$, the probability that the strategy is the most cost-effective. The strategy with the highest curve at the SA threshold (R38,500/DALY) is preferred.
+
+### Tornado diagram
+A horizontal-bar plot showing how much the headline result moves when each parameter is varied across its plausible range, holding others fixed. Identifies the parameters that drive the result.
+
+---
+
+## G. Policy options in this project
+
+### Option 1 — NHLS data MOU
+A monthly aggregated data feed from NHLS to NICD/NMC for severe BChE-inhibition cases.
+
+### Option 2 — DALRRD product linkage
+Cross-reference clusters of cases against DALRRD pesticide product-volume data to attribute likely active ingredient and source.
+
+### Option 3 — BChE auto-notification
+NHLS LIS automatically generates an NMC notification within 24 hours of a severe BChE result. Highest individual-option detection gain in the model.
+
+### Option 4 — PIH quarterly reports
+Structured quarterly clinical-toxicology summaries from PIH integrated into NMC review.
+
+### Option 5 — Provincial response activation
+Standardised protocol for rapid field investigation of detected hotspots. Triggered by Options 3 or 4.
+
+### Option 6 — Sentinel toxicology
+A small network of tertiary hospitals (CHB → Groote Schuur, Albert Luthuli, Universitas, Steve Biko) systematically collecting biological specimens for **GC-MS / LC-MS chemical attribution** in living patients. Enables active product-level intelligence (which active ingredient, which formulation) that the other options cannot provide.
+
+### Full Package
+All of Options 1–5 implemented together. Detection ≈ 83%. Annual cost: **R237k narrow / R1.19M whole-system**. Option 6 is treated as a parallel research investment, not part of the operational package.
+
+---
+
+## H. Statistical & data terminology
+
+### Sample size
+The number of observations needed to estimate a parameter with a given precision. For Option 6 sentinel toxicology, we use $n = 323$ per site for $p = 0.30$, $d = 0.05$, $\alpha = 0.05$.
+
+### Confidence interval (CI)
+A range that, on repeated sampling, would contain the true parameter the stated proportion of the time (e.g. 95%). Wider CIs imply less precise estimates.
+
+### Distribution
+A description of how a parameter varies. In PSA we use **beta** distributions for proportions (CFR, response efficacy), **gamma** for costs, and **fixed** for deterministic structural assumptions.
+
+### Triangulation
+Cross-checking a finding using independent data sources or methods. The pesticide death estimate is triangulated across NMC × CFR-derived deaths × Vital Registration ICD-10-coded deaths.
+
+---
+
+## I. Tools & software
+
+### Quarto
+The publication system used to build this website. Combines code (R, Python, Julia), prose, equations, and interactive elements into static HTML, PDF, or Word output.
+
+### Amua
+An open-source decision-modelling tool used to build the decision tree, run PSA, and export results. The CSV at [`amua_import_parameters_v3.csv`](amua_import_parameters_v3.csv) is the parameter-import file.
+
+### R / tidyverse
+The statistical-computing environment and the package ecosystem used for data wrangling, tables, and figures across the analysis.
+
+### GC-MS / LC-MS
+**Gas / Liquid Chromatography – Mass Spectrometry** — laboratory techniques for identifying and quantifying specific chemicals in biological or environmental samples. The technical foundation of Option 6 sentinel toxicology.
+
+---
+
+## Further reading
+
+- **Buckley NA et al. (2021)** — Cohort study of severe organophosphate poisoning, Sri Lanka. Source for the 30% severe-case CFR and the response-efficacy literature.
+- **Davies J et al. (2023)** — Paediatric pesticide deaths in South Africa; documents the dominance of terbufos and methamidophos.
+- **Edoka I, Stacey N (2020)** — Estimating the cost-effectiveness threshold for South Africa. Source for λ = R38,500/DALY.
+- **WHO (2020)** — *Preventing Suicide: A Resource for Pesticide Registrars and Regulators*. Global framing for the pesticide–suicide nexus.
+- **NICD NMC Annual Reports (2020–2024)** — Source for the 690/year NMC pesticide notifications.
+- **D2P Project [Parameter Critical Appraisal](parameter_appraisal.qmd)** — Detailed v2 → v3 parameter justification.

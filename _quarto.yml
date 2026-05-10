@@ -23,6 +23,8 @@ website:
         href: posts.html
       - text: "Full Analysis Report"
         href: analysis_report_v2.html
+      - text: "Glossary"
+        href: glossary.qmd
     right:
       - icon: github
         href: https://github.com/bridaybrummer/D2P_project

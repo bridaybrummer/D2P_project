@@ -26,3 +26,5 @@ Thumbs.db
 # Duplicate files (Finder/iCloud artefacts)
 * 2.*
 * 2/
+
+**/*.quarto_ipynb
