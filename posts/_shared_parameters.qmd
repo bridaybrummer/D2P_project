@@ -1,46 +1,54 @@
-::: {.callout-note icon=false}
-## Headline numbers used across all D2P policy documents
+::: {.callout-note icon=false collapse="true"}
+## Canonical model parameters (auto-loaded from the [Parameters Hub](../parameters_hub.html))
 
-All three policy documents draw their quantitative claims from this single shared parameter set. To revise an assumption, **edit `posts/_shared_parameters.qmd`** — every document that includes it will update on the next render.
+All numerical claims in this brief draw from a single CSV — [`amua_import_parameters_v3.csv`](../amua_import_parameters_v3.csv) — rendered in full at the [Parameters Hub](../parameters_hub.html). The headline values below are pulled from that file at render time; **do not edit the numbers in this brief — edit the CSV and re-render**.
 
-**Burden (per year, South Africa):**
+```{r}
+#| label: shared-params-pull
+#| echo: false
+#| message: false
+#| warning: false
 
-| Parameter | Value | Source / status |
-|:----------|------:|:----------------|
-| NMC pesticide-poisoning notifications | ~690 | NMC 2020–2024 annual reports |
-| NHLS severe BChE inhibitions (live patients) | ~2,000 | NHLS LIS, 2020–2024 |
-| Poisons Information Helpline pesticide calls | ~9,000 | PIH Annual Report 2019 |
-| Total suspected pesticide-poisoning cases / year | **~11,690** | Sum of three mutually-exclusive streams (placeholder for record-linkage) |
-| Case-fatality rate (CFR, mid-range) | 13 % | NMC observed range 10–15 %; under-counts intentional self-poisoning under ICD-10 default rules |
-| Annual deaths | **~1,500 – 1,800** | 11,690 × CFR |
-| Per-case morbidity cost | R12,000 | Existing decision-model parameter |
-| Per-death mortality cost | R1,500,000 | Human-capital approach, existing model |
-| **Per-case societal cost** | **~R197,000** | R12,000 + 0.13 × R1.5M |
-| **Total annual economic burden** | **~R2.3 billion / year** | 11,690 × R197,000 |
+library(tidyverse)
+library(gt)
 
-**Decision-tree parameters (placeholders — to be re-estimated from pilot):**
+raw <- readr::read_csv("../amua_import_parameters_v3.csv", show_col_types = FALSE)
 
-| Parameter | Symbol | Value | Used in |
-|:----------|:------:|------:|:--------|
-| Loop-closure prevention efficacy | η | 0.30 | Burden-avoided model; outcome subtree |
-| Secondary cases per unaddressed source | ρ | 3.0 | Outcome subtree |
-| P(index death) | p_death | 0.13 | Outcome subtree |
-| P(severe morbidity, ICU/admission) | p_severe | 0.27 | Outcome subtree |
-| P(full recovery) | p_recover | 0.60 | Outcome subtree |
+pick <- function(name) {
+  v <- raw |> dplyr::filter(Name == name) |> dplyr::pull(Expression)
+  if (length(v) == 0) NA_character_ else v[1]
+}
 
-**Status-quo coordination transition probabilities (per suspected case):**
+zar <- function(x) {
+  n <- suppressWarnings(as.numeric(x))
+  if (is.na(n)) return(x)
+  if (n >= 1e9) sprintf("R%.2f billion", n / 1e9)
+  else if (n >= 1e6) sprintf("R%.2f million", n / 1e6)
+  else sprintf("R%s", format(n, big.mark = ",", scientific = FALSE))
+}
 
-| Node | Decision | P(Yes) |
-|:-----|:---------|------:|
-| Q1 | Clinician/PHO files on NMC | 0.30 |
-| Q2 | NMC SMS reaches local EHP | 0.95 |
-| Q3 | EHP investigates | 0.60 |
-| Q4 | Investigation recorded on NMC | 0.05 |
-| Q5 | EHP refers to DALRRD | 0.30 |
-| Q6 | DALRRD acts | 0.50 |
-| Q7 | DALRRD feeds back to NMC + clinician | 0.10 |
+tibble::tribble(
+  ~Parameter,                                         ~Value,
+  "Annual NMC pesticide notifications",                pick("n_nmc_annual"),
+  "Annual NHLS severe BChE inhibitions (live)",        pick("n_nhls_severe_annual"),
+  "Annual PIH pesticide-related calls",                pick("n_pih_annual"),
+  "True annual burden (sum, upper bound)",             pick("n_burden_true"),
+  "Headline annual deaths",                            pick("n_deaths_headline"),
+  "Blended headline morbidity cost per case",          zar(pick("c_morbidity_headline")),
+  "Mortality cost per death (human-capital)",          zar(pick("c_mortality_human_capital")),
+  "Headline annual economic burden",                   zar(pick("C_burden_total_headline")),
+  "Response efficacy η (base case)",                   pick("eta_response_mid"),
+  "Detection probability — status quo",                pick("d_status_quo"),
+  "Detection probability — full package",              pick("d_full_package"),
+  "Full Package narrow operating cost / yr",           zar(pick("c_full_package_narrow_operating")),
+  "Full Package whole-system operating cost / yr",     zar(pick("c_full_package_wholesystem_operating"))
+) |>
+  gt() |>
+  tab_header(title = "Headline parameters used in this brief",
+             subtitle = "Pulled from amua_import_parameters_v3.csv at render time") |>
+  opt_row_striping() |>
+  tab_options(table.font.size = "small")
+```
 
-Joint P(loop fully closes) ≈ **1.1 %** under the status quo.
-
-Full numerical derivations live in the [Decision Model](decision_model.qmd) and the [Costing Analysis](costing_analysis.qmd).
+For the full sourced parameter set (CFR by severity, UPFS tariffs, per-option costs, induced-demand components, DALY monetisation, NMB), see the **[Parameters Hub](../parameters_hub.html)**. For the v2 → v3 critical appraisal, see [`parameter_appraisal.qmd`](../parameter_appraisal.qmd).
 :::

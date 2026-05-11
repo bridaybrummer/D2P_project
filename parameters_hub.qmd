@@ -1,0 +1,230 @@
+---
+title: "Parameters Hub"
+subtitle: "Canonical model parameters — single source of truth"
+author: "D2P Project Team"
+date-modified: today
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    code-fold: true
+    code-summary: "Show parsing code"
+---
+
+::: {.callout-important icon=false}
+## Editing parameters
+
+**The single source of truth is the CSV file [`amua_import_parameters_v3.csv`](amua_import_parameters_v3.csv) at the project root.**
+
+To update or verify a parameter:
+
+1. Open `amua_import_parameters_v3.csv`.
+2. Edit the relevant row. Each row has four logical fields packed into the `Notes` column: short note · `dist=<distribution>(<params>)` · source citation.
+3. Save and re-render the site (`./publish.sh "msg"`). Every place this parameter is used — the [Decision Model](posts/decision_model.qmd), the [Costing Analysis](posts/costing_analysis.qmd), the three policy briefs ([Surveillance](posts/surveillance_policy.qmd) · [Coordination](posts/coordination_policy.qmd) · [Terbufos](posts/terbufos_policy.qmd)), and this hub — updates automatically.
+4. If you change a *value* (not just a note), record the rationale in [`parameter_appraisal.qmd`](parameter_appraisal.qmd) under a dated entry.
+
+**Naming convention.** `n_*` = count; `p_*` / `cfr_*` / `d_*` / `eta_*` = probability; `c_*` / `C_*` = cost (lowercase per-unit; uppercase aggregate); `los_*` = length of stay; `yll_*` / `yld_*` = years lost / disabled.
+:::
+
+```{r}
+#| label: load-params
+#| message: false
+#| warning: false
+
+library(tidyverse)
+library(gt)
+
+raw <- readr::read_csv(
+  "amua_import_parameters_v3.csv",
+  show_col_types = FALSE,
+  comment = ""
+)
+
+# Separate section header rows (start with "#") from parameter rows
+params <- raw |>
+  filter(!is.na(Name)) |>
+  mutate(
+    is_section = str_starts(Name, "#"),
+    section = if_else(is_section,
+                      str_remove_all(Name, "^#\\s*=*\\s*|\\s*=*\\s*$"),
+                      NA_character_)
+  ) |>
+  fill(section, .direction = "down") |>
+  filter(!is_section) |>
+  separate(
+    Notes,
+    into = c("Note", "Distribution", "Source"),
+    sep = "\\s*\\|\\s*",
+    fill = "right",
+    extra = "merge"
+  ) |>
+  mutate(
+    Distribution = str_remove(Distribution, "^dist="),
+    section = str_to_title(str_to_lower(section))
+  ) |>
+  select(Section = section, Parameter = Name, Value = Expression, Note, Distribution, Source)
+
+section_table <- function(df, section_regex) {
+  df |>
+    filter(str_detect(Section, regex(section_regex, ignore_case = TRUE))) |>
+    select(-Section) |>
+    gt() |>
+    cols_label(
+      Parameter = "Name",
+      Value = "Value",
+      Note = "Description",
+      Distribution = "Distribution",
+      Source = "Source / status"
+    ) |>
+    tab_options(table.font.size = "small") |>
+    opt_row_striping()
+}
+```
+
+## 1. Burden parameters
+
+Annual case counts across the three data streams (treated as mutually-exclusive), the true-burden anchor, and the overlap-correction parameter for sensitivity analysis.
+
+```{r}
+#| label: tbl-burden
+#| tbl-cap: "Burden parameters — annual case counts and true-burden anchor."
+section_table(params, "burden parameters")
+```
+
+**Interpretation.** Three administrative streams capture different severities. NMC (~690) counts clinically-notified cases; NHLS (~2,000) counts severe BChE inhibitions on live patients; PIH (~9,000) counts helpline consultations. Each stream is independently sourced; the sum is treated as the upper bound of the true annual burden pending record-linkage.
+
+## 2. Case fatality rate
+
+```{r}
+#| label: tbl-cfr
+#| tbl-cap: "Case fatality rate — stratified by severity, with headline range for advocacy."
+section_table(params, "case fatality rate")
+```
+
+**Stratified vs. headline.** Applying the stratified CFR row-by-row gives **~830 deaths/year**; applying the flat headline 12.5 % gives **~1,460 deaths/year**; the Stats SA Vital Registration triangulation gives **~960–2,000 deaths/year**. The headline range **1,500–1,800** sits in the upper-mid VR range and is what all three policy briefs cite. The full v2 → v3 rationale is in [`parameter_appraisal.qmd`](parameter_appraisal.qmd).
+
+## 3. Per-case costs
+
+UPFS 2024 tariffs, drug costs, and case-mix-weighted blended morbidity cost.
+
+```{r}
+#| label: tbl-per-case-costs
+#| tbl-cap: "Per-case cost components and the blended headline used in the decision model."
+section_table(params, "per-case costs")
+```
+
+## 4. Mortality cost
+
+Human-capital base case plus DALY-threshold and VSL alternatives shown for sensitivity.
+
+```{r}
+#| label: tbl-mortality-cost
+section_table(params, "mortality cost")
+```
+
+## 5. Total economic burden
+
+```{r}
+#| label: tbl-burden-total
+section_table(params, "total economic burden")
+```
+
+The two totals (conservative ~R1.34B vs. headline ~R2.34B) bracket the plausible range. Advocacy products use the headline; academic outputs report both.
+
+## 6. Response efficacy ($\eta$)
+
+```{r}
+#| label: tbl-eta
+section_table(params, "response efficacy")
+```
+
+## 7. Detection probabilities by option
+
+```{r}
+#| label: tbl-detection
+#| tbl-cap: "Per-option detection probability — currently expert-elicited, to be updated from pilot data."
+section_table(params, "detection probabilities")
+```
+
+## 8. Option costs
+
+```{r}
+#| label: tbl-option-costs
+#| tbl-cap: "Setup and operating costs for each surveillance option."
+section_table(params, "option costs")
+```
+
+## 9. Whole-system induced demand
+
+```{r}
+#| label: tbl-induced
+section_table(params, "whole-system")
+```
+
+## 10. Option 3b — sentinel toxicology
+
+Research-surveillance investment, separately funded.
+
+```{r}
+#| label: tbl-opt6
+section_table(params, "sentinel toxicology|option 6")
+```
+
+## 11. DALY monetisation
+
+```{r}
+#| label: tbl-daly
+section_table(params, "daly monetisation")
+```
+
+## 12. Net monetary benefit (NMB) framework
+
+```{r}
+#| label: tbl-nmb
+section_table(params, "net monetary benefit")
+```
+
+---
+
+## Quality and verification status
+
+```{r}
+#| label: tbl-verification
+#| tbl-cap: "Verification status of every parameter, derived from the Source field."
+
+params |>
+  mutate(
+    Verification = case_when(
+      str_detect(Source, regex("NICD|NHLS|StatsSA|Stats SA|UPFS|EML|Edoka|Buckley", ignore_case = TRUE)) ~ "Sourced (named institution / peer-reviewed)",
+      str_detect(Source, regex("Derived", ignore_case = TRUE)) ~ "Derived from other parameters",
+      str_detect(Source, regex("Sensitivity|Sum", ignore_case = TRUE)) ~ "Structural / sensitivity bound",
+      str_detect(Source, regex("Decision model|Concept Note|Costing analysis|Internal", ignore_case = TRUE)) ~ "Internal model assumption",
+      str_detect(Source, regex("Expert elicitation", ignore_case = TRUE)) ~ "Expert elicitation (to be re-estimated from pilot)",
+      str_detect(Source, regex("Estimated", ignore_case = TRUE)) ~ "Estimated (requires verification)",
+      TRUE ~ "Other / unspecified"
+    )
+  ) |>
+  count(Verification, name = "Parameters") |>
+  arrange(desc(Parameters)) |>
+  gt() |>
+  tab_header(title = "Where each parameter's authority comes from") |>
+  opt_row_striping()
+```
+
+**Reading the verification table.** "Sourced" parameters are tied to a named institution or peer-reviewed paper. "Expert elicitation" parameters are placeholders awaiting pilot data. "Derived" parameters are calculated from others and only need to be re-derived when a primary input changes.
+
+## Open items — to be retired into the CSV
+
+The following items are referenced in the policy briefs but do **not yet have a row in `amua_import_parameters_v3.csv`** and should be added once the underlying data is collected:
+
+| ID | Parameter | Used in | Owner |
+|:---|:----------|:--------|:------|
+| TBF-1 | Terbufos annual SA market volume (kg active ingredient) | [Terbufos brief](posts/terbufos_policy.qmd) | DALRRD Pesticide Registrar |
+| TBF-2 | Terbufos attributable fraction of severe pesticide-poisoning cases | [Terbufos brief](posts/terbufos_policy.qmd) | NICD + NHLS toxicology (S3b) |
+| TBF-3 | SA-specific yield impact under leading substitutes (maize) | [Terbufos brief](posts/terbufos_policy.qmd) | ARC + grain industry |
+| TBF-4 | Comparative hazard profile of leading substitutes | [Terbufos brief](posts/terbufos_policy.qmd) | DALRRD registration |
+| COORD-1 | Per-node coordination transition probabilities Q1–Q7 | [Coordination brief](posts/coordination_policy.qmd) | NICD + DALRRD audit |
+| COORD-2 | Joint loop-closure probability under C1–C5 package | [Coordination brief](posts/coordination_policy.qmd) | Pilot evaluation |
+| SURV-1 | Live-patient chemical-toxicology sensitivity / specificity | [Surveillance brief](posts/surveillance_policy.qmd) | NHLS clinical chemistry |
+
+Add each item as a new CSV row when the data becomes available, then remove it from this table.

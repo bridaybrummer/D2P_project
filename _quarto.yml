@@ -21,6 +21,8 @@ website:
         href: one_pager.qmd
       - text: "Research Outputs"
         href: posts.html
+      - text: "Parameters Hub"
+        href: parameters_hub.html
       - text: "Full Analysis Report"
         href: analysis_report_v2.html
     right:

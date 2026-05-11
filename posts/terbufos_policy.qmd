@@ -28,17 +28,25 @@ format:
 
 ## 2. Public health problem
 
-Terbufos is a **WHO Class Ia ("Extremely Hazardous")** organophosphate insecticide. It is acutely toxic via oral, dermal, and inhalation routes, with an oral LD50 in the low-mg/kg range, and acts via irreversible cholinesterase inhibition. Small ingested quantities are lethal in adults; very small quantities are lethal in children.
+Terbufos is a **WHO Class Ia ("Extremely Hazardous")** organophosphate insecticide.[^who] It is acutely toxic via oral, dermal, and inhalation routes, with a published rat oral LD50 of **1.6–4.5 mg/kg**[^who][^epa] — placing it among the most acutely toxic active ingredients still in commercial use anywhere. It acts via irreversible cholinesterase inhibition; sub-gram doses are lethal in adults and very small quantities are lethal in children.
 
-In the South African context, terbufos has been repeatedly implicated in mass and individual acute-poisoning incidents, including ingestion of granular formulations sold informally outside the regulated agricultural market. `[Evidence gap: compile NICD / NHLS / forensic-toxicology series of terbufos-attributed events 2020–present, with case-fatality breakdown.]`
+**South African evidence base.** Davies et al. (2023), reviewing paediatric pesticide deaths in South Africa, identified **terbufos and methamidophos as the dominant agents** in fatal childhood pesticide poisoning, with most deaths occurring after ingestion of granular formulations diverted into the informal "street-pesticide" market.[^davies] This is corroborated by NICD/NMC clinical case reports and by the public-health record of mass-poisoning events in 2022–2024 linked to informally-sold granular OP pesticides.[^nicd] A formal case series with attributed agent breakdown across NMC + NHLS + forensic toxicology has **not yet been compiled** and is the single most important evidence-gap item to retire (see [open items in the Parameters Hub](../parameters_hub.html#open-items--to-be-retired-into-the-csv), TBF-2).
 
 The public-health case rests on three claims:
 
-1. **High intrinsic toxicity** at sub-gram doses (well-established from WHO, US-EPA, and EFSA technical reviews).
-2. **Disproportionate contribution to severe and fatal poisonings** relative to its agricultural market share — the proportionality argument cannot be quantified without S3b live-patient chemical toxicology (see [Surveillance brief](surveillance_policy.qmd)). `[Evidence gap.]`
-3. **High substitutability for its primary use cases** (soil insect / stalk borer / nematode control in maize and other field crops). `[Evidence gap: SA-specific substitution feasibility study, ideally co-produced with DALRRD and grain-industry bodies.]`
+1. **High intrinsic toxicity** at sub-gram doses — settled science (WHO Class Ia; rat oral LD50 1.6–4.5 mg/kg).[^who][^epa]
+2. **Disproportionate contribution to severe and fatal poisonings** — supported in paediatric SA data (Davies 2023);[^davies] adult attributable fraction is not yet quantified pending live-patient chemical toxicology (Surveillance Option S3b).
+3. **High substitutability for its primary use cases** (soil insect / stalk borer / nematode control in maize and other field crops) — registered substitutes exist (see §5), but **SA-specific yield-impact modelling is not yet done** (open item TBF-3).
 
-The first claim is settled science. The second and third are the empirical claims a final regulatory decision depends on.
+Claim 1 is settled. Claim 2 is supported but incompletely quantified. Claim 3 has a clear in-principle answer but lacks SA-specific quantitative evidence.
+
+[^who]: World Health Organization. *The WHO Recommended Classification of Pesticides by Hazard and Guidelines to Classification*, current edition. Terbufos is listed in Class Ia (Extremely Hazardous).
+
+[^epa]: US Environmental Protection Agency. *Reregistration Eligibility Decision (RED): Terbufos.* EPA-738-R-06-006, September 2006. Rat acute oral LD50 1.6–4.5 mg/kg; rat acute dermal LD50 1.0–7.4 mg/kg.
+
+[^davies]: Davies J et al. (2023). Paediatric pesticide deaths in South Africa; documents terbufos and methamidophos dominance among fatal cases. Cited in [glossary.qmd](../glossary.qmd#key-sources).
+
+[^nicd]: NICD/NMC clinical case reports and public communications, 2022–2024, on mass-poisoning incidents linked to informally-sold granular organophosphate pesticides. Formal case-series compilation pending (open item TBF-2).
 
 ## 3. Status quo
 
@@ -48,18 +56,21 @@ The first claim is settled science. The second and third are the empirical claim
 
 | Item | Status | Evidence basis |
 |:-----|:-------|:---------------|
-| Registration status | Registered in South Africa as a soil insecticide | DALRRD pesticide register |
-| WHO classification | Class Ia (Extremely Hazardous) | WHO Recommended Classification of Pesticides by Hazard (current edition) |
-| Banned in EU | Yes — not approved for use under EU 1107/2009 | EU Pesticides Database |
-| Annual SA agricultural market volume | `[Evidence gap]` | DALRRD import/sales registry |
-| Documented acute-poisoning case series (SA) | Partial | NMC + forensic toxicology — see [Coordination brief](coordination_policy.qmd) for why this is incomplete |
-| Primary registered crop uses | Maize (stalk borer, nematodes) | DALRRD pesticide register |
-| Available substitute actives for primary uses | Multiple `[Evidence gap: SA-specific substitution feasibility]` | Industry technical literature |
+| Registration status | Registered in South Africa as a soil insecticide | DALRRD pesticide register (Act 36 of 1947) |
+| WHO classification | Class Ia (Extremely Hazardous) | WHO Recommended Classification of Pesticides by Hazard[^who] |
+| Acute oral LD50 (rat) | 1.6–4.5 mg/kg | US EPA Reregistration Eligibility Decision (2006)[^epa] |
+| EU approval status | Not approved (expired Jun 2009; not renewed) | EU Pesticides Database, Regulation (EC) 1107/2009 |
+| US (US EPA) status | Restricted-Use Pesticide (RUP); voluntary cancellations of granular formulations | US EPA RED 2006[^epa] |
+| Paediatric mortality attribution (SA) | Dominant agent in fatal childhood pesticide poisoning, with methamidophos | Davies et al. 2023[^davies] |
+| Adult attribution fraction (SA) | Not yet quantified | Open item TBF-2 — requires Surveillance Option S3b |
+| Annual SA agricultural market volume | Not in workspace; held by DALRRD | Open item TBF-1 |
+| Primary registered crop uses | Maize (stalk borer, nematodes); other field crops | DALRRD pesticide register |
+| Available substitute actives | Several registered alternatives exist for the primary use cases (e.g. alternative organophosphates, carbamates, neonicotinoids, biological controls); SA-specific comparative analysis pending | Industry technical literature; open item TBF-3/TBF-4 |
 
 **Why act now?**
 
-- A series of high-profile mass-poisoning events in SA have placed terbufos in the public and political spotlight, creating a window for regulatory action that may not recur. `[Evidence gap: compile incident dossier.]`
-- The EU has already removed terbufos from its approved list — South Africa is increasingly an outlier among middle-income agricultural exporters.
+- High-profile mass-poisoning events in 2022–2024 placed terbufos in the public and political spotlight,[^nicd] creating a window for regulatory action that may not recur.
+- The EU removed terbufos from its approved list more than a decade ago; South Africa is an outlier among middle-income agricultural exporters in still permitting it.
 - The [Surveillance](surveillance_policy.qmd) + [Coordination](coordination_policy.qmd) investments give NICD and DALRRD, for the first time, the institutional pathway to act on a single-product signal.
 
 ## 4. Root cause analysis
