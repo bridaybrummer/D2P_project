@@ -58,23 +58,52 @@ Most victims are:
 
 ## What's Causing the Failure?
 
+### Status Quo: A One-Way, Broken Pipeline
+
+Notifications today travel **in one direction only**, and the chain breaks before it reaches the regulator who can act on it:
+
+```{mermaid}
+%%| label: fig-status-quo-flow
+%%| fig-cap: "Current notification pathway. The NMC notification reaches the local Environmental Health Practitioner (EHP), who may informally refer to DALRRD — but there is no structured feed, no feedback loop, and no closing-of-the-loop back to the clinician, NICD, or the laboratory."
+flowchart LR
+    A[Clinician<br/>at facility] -->|Paper / manual<br/>NMC form| B[Local EHP<br/><i>Environmental<br/>Health Practitioner</i>]
+    B -.Informal phone /<br/>email referral.-> C[DALRRD<br/><i>Pesticide Registrar /<br/>Inspectorate</i>]
+    B -.Sometimes.-> D[NICD<br/>NMC database]
+
+    C -.x No feedback.-x B
+    C -.x No feedback.-x A
+    D -.x No feedback.-x A
+
+    style A fill:#fde,stroke:#333
+    style B fill:#ffd,stroke:#333
+    style C fill:#fdd,stroke:#cc0000,stroke-dasharray: 5 5
+    style D fill:#fdd,stroke:#333,stroke-dasharray: 5 5
+```
+
+**What this shows:**
+
+- The NMC notification stops at the **local EHP** — there is no automatic upload to NICD or DALRRD.
+- EHPs **informally** refer matters to DALRRD by phone or email when they have time and contacts; there is no SOP, no register, and no audit trail.
+- **Nothing comes back.** Clinicians do not learn what happened to the case; NICD does not learn whether enforcement followed; DALRRD does not learn whether its regulatory action averted further cases.
+
 A **fishbone analysis** identified five root causes — all fixable without new laws:
 
 ```{mermaid}
 %%| label: fig-fishbone
 %%| fig-cap: "Root causes of surveillance failure and the policy options that address them"
 flowchart LR
-    A[Surveillance Failure] --> B[No NHLS-NICD linkage]
+    A[Surveillance Failure] --> B[No NHLS-NMC linkage]
     A --> C[PIH data not used for surveillance]
     A --> D[Delayed manual reporting]
     A --> E[No inter-agency MOUs]
     A --> F[No hotspot detection capacity]
     
-    B --> G[Option 1: NHLS data sharing MOU]
-    C --> H[Option 4: PIH quarterly reports]
+    B --> G[Option 1: Implement NHLS-NMC data feed]
+    C --> H[Option 4: Minimum viable dataset to integrate into NMC]
     D --> I[Option 3: BChE auto-notify]
-    E --> J[Option 2: DALRRD data sharing]
-    F --> K[Option 5: Provincial coordination]
+    D --> J[Option 3: Chemical/toxicology auto-notify]
+    E --> K[Option 2: DALRRD feedback loop]
+    F --> L[Option 5: Provincial coordination]
     
     style A fill:#f99,stroke:#333
     style G fill:#9f9,stroke:#333
@@ -82,6 +111,7 @@ flowchart LR
     style I fill:#9f9,stroke:#333
     style J fill:#9f9,stroke:#333
     style K fill:#9f9,stroke:#333
+    style L fill:#9f9,stroke:#333
 ```
 
 ## Five Policy Options (All Legally Feasible Today)
@@ -225,6 +255,38 @@ flowchart LR
 **What it is:**
 
 - Combine Options 1–5 into an **integrated surveillance system**
+
+```{mermaid}
+%%| label: fig-feedback-loop
+%%| fig-cap: "Proposed end-state: a closed feedback loop linking clinicians, laboratories, NICD, EHPs, DALRRD, and provincial response teams. Every actor both contributes data and receives back the action taken."
+flowchart LR
+    A[Clinician<br/>at facility] -->|Electronic<br/>NMC notification| D[NICD<br/>Surveillance Unit]
+    L[NHLS Laboratory<br/>BChE + Toxicology] -->|Auto-notify<br/>< 24h| D
+    P[PIH<br/>Quarterly summary] -->|Minimum viable<br/>dataset| D
+
+    D -->|Cluster alert| E[Provincial EHP /<br/>Response Team]
+    E -->|Structured<br/>referral| C[DALRRD<br/>Inspectorate]
+    C -->|Enforcement /<br/>recall outcome| D
+    E -->|Investigation<br/>outcome| D
+
+    D -.Case-status<br/>feedback.-> A
+    D -.Result-use<br/>feedback.-> L
+    D -.Trend<br/>feedback.-> P
+    C -.Regulatory<br/>action feedback.-> A
+
+    style A fill:#cce5ff,stroke:#333
+    style L fill:#cce5ff,stroke:#333
+    style P fill:#cce5ff,stroke:#333
+    style D fill:#9f9,stroke:#333,stroke-width:2px
+    style E fill:#ffd,stroke:#333
+    style C fill:#fcb,stroke:#333
+```
+
+**What changes vs. the status quo:**
+
+- **Two-way flow.** Every solid arrow into NICD is matched by a dotted feedback arrow back out.
+- **EHP → DALRRD becomes structured**, with a written referral and a logged enforcement outcome.
+- **Clinicians close the loop:** they learn whether the case they notified contributed to a cluster and what regulatory action followed.
 
 **Performance:**
 
