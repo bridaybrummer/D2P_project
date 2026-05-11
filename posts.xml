@@ -23032,6 +23032,44 @@ Table&nbsp;10: Sensitivity of Full Package net monetary benefit to CFR and respo
 </section>
 <section id="whats-causing-the-failure" class="level2">
 <h2 class="anchored" data-anchor-id="whats-causing-the-failure">What’s Causing the Failure?</h2>
+<section id="status-quo-a-one-way-broken-pipeline" class="level3">
+<h3 class="anchored" data-anchor-id="status-quo-a-one-way-broken-pipeline">Status Quo: A One-Way, Broken Pipeline</h3>
+<p>Notifications today travel <strong>in one direction only</strong>, and the chain breaks before it reaches the regulator who can act on it:</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div id="fig-status-quo-flow" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-status-quo-flow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-status-quo-flow">flowchart LR
+    A[Clinician&lt;br/&gt;at facility] --&gt;|Paper / manual&lt;br/&gt;NMC form| B[Local EHP&lt;br/&gt;&lt;i&gt;Environmental&lt;br/&gt;Health Practitioner&lt;/i&gt;]
+    B -.Informal phone /&lt;br/&gt;email referral.-&gt; C[DALRRD&lt;br/&gt;&lt;i&gt;Pesticide Registrar /&lt;br/&gt;Inspectorate&lt;/i&gt;]
+    B -.Sometimes.-&gt; D[NICD&lt;br/&gt;NMC database]
+
+    C -.x No feedback.-x B
+    C -.x No feedback.-x A
+    D -.x No feedback.-x A
+
+    style A fill:#fde,stroke:#333
+    style B fill:#ffd,stroke:#333
+    style C fill:#fdd,stroke:#cc0000,stroke-dasharray: 5 5
+    style D fill:#fdd,stroke:#333,stroke-dasharray: 5 5
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-status-quo-flow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Current notification pathway. The NMC notification reaches the local Environmental Health Practitioner (EHP), who may informally refer to DALRRD — but there is no structured feed, no feedback loop, and no closing-of-the-loop back to the clinician, NICD, or the laboratory.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>What this shows:</strong></p>
+<ul>
+<li>The NMC notification stops at the <strong>local EHP</strong> — there is no automatic upload to NICD or DALRRD.</li>
+<li>EHPs <strong>informally</strong> refer matters to DALRRD by phone or email when they have time and contacts; there is no SOP, no register, and no audit trail.</li>
+<li><strong>Nothing comes back.</strong> Clinicians do not learn what happened to the case; NICD does not learn whether enforcement followed; DALRRD does not learn whether its regulatory action averted further cases.</li>
+</ul>
 <p>A <strong>fishbone analysis</strong> identified five root causes — all fixable without new laws:</p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
@@ -23040,17 +23078,18 @@ Table&nbsp;10: Sensitivity of Full Package net monetary benefit to CFR and respo
 <div aria-describedby="fig-fishbone-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
 <pre class="mermaid mermaid-js" data-label="fig-fishbone">flowchart LR
-    A[Surveillance Failure] --&gt; B[No NHLS-NICD linkage]
+    A[Surveillance Failure] --&gt; B[No NHLS-NMC linkage]
     A --&gt; C[PIH data not used for surveillance]
     A --&gt; D[Delayed manual reporting]
     A --&gt; E[No inter-agency MOUs]
     A --&gt; F[No hotspot detection capacity]
     
-    B --&gt; G[Option 1: NHLS data sharing MOU]
-    C --&gt; H[Option 4: PIH quarterly reports]
+    B --&gt; G[Option 1: Implement NHLS-NMC data feed]
+    C --&gt; H[Option 4: Minimum viable dataset to integrate into NMC]
     D --&gt; I[Option 3: BChE auto-notify]
-    E --&gt; J[Option 2: DALRRD data sharing]
-    F --&gt; K[Option 5: Provincial coordination]
+    D --&gt; J[Option 3: Chemical/toxicology auto-notify]
+    E --&gt; K[Option 2: DALRRD feedback loop]
+    F --&gt; L[Option 5: Provincial coordination]
     
     style A fill:#f99,stroke:#333
     style G fill:#9f9,stroke:#333
@@ -23058,16 +23097,18 @@ Table&nbsp;10: Sensitivity of Full Package net monetary benefit to CFR and respo
     style I fill:#9f9,stroke:#333
     style J fill:#9f9,stroke:#333
     style K fill:#9f9,stroke:#333
+    style L fill:#9f9,stroke:#333
 </pre>
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fishbone-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Root causes of surveillance failure and the policy options that address them
+Figure&nbsp;2: Root causes of surveillance failure and the policy options that address them
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
+</section>
 </section>
 <section id="five-policy-options-all-legally-feasible-today" class="level2">
 <h2 class="anchored" data-anchor-id="five-policy-options-all-legally-feasible-today">Five Policy Options (All Legally Feasible Today)</h2>
@@ -23199,6 +23240,49 @@ Figure&nbsp;1: Root causes of surveillance failure and the policy options that a
 <p><strong>What it is:</strong></p>
 <ul>
 <li>Combine Options 1–5 into an <strong>integrated surveillance system</strong></li>
+</ul>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div id="fig-feedback-loop" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-feedback-loop-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-feedback-loop">flowchart LR
+    A[Clinician&lt;br/&gt;at facility] --&gt;|Electronic&lt;br/&gt;NMC notification| D[NICD&lt;br/&gt;Surveillance Unit]
+    L[NHLS Laboratory&lt;br/&gt;BChE + Toxicology] --&gt;|Auto-notify&lt;br/&gt;&lt; 24h| D
+    P[PIH&lt;br/&gt;Quarterly summary] --&gt;|Minimum viable&lt;br/&gt;dataset| D
+
+    D --&gt;|Cluster alert| E[Provincial EHP /&lt;br/&gt;Response Team]
+    E --&gt;|Structured&lt;br/&gt;referral| C[DALRRD&lt;br/&gt;Inspectorate]
+    C --&gt;|Enforcement /&lt;br/&gt;recall outcome| D
+    E --&gt;|Investigation&lt;br/&gt;outcome| D
+
+    D -.Case-status&lt;br/&gt;feedback.-&gt; A
+    D -.Result-use&lt;br/&gt;feedback.-&gt; L
+    D -.Trend&lt;br/&gt;feedback.-&gt; P
+    C -.Regulatory&lt;br/&gt;action feedback.-&gt; A
+
+    style A fill:#cce5ff,stroke:#333
+    style L fill:#cce5ff,stroke:#333
+    style P fill:#cce5ff,stroke:#333
+    style D fill:#9f9,stroke:#333,stroke-width:2px
+    style E fill:#ffd,stroke:#333
+    style C fill:#fcb,stroke:#333
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-feedback-loop-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Proposed end-state: a closed feedback loop linking clinicians, laboratories, NICD, EHPs, DALRRD, and provincial response teams. Every actor both contributes data and receives back the action taken.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>What changes vs.&nbsp;the status quo:</strong></p>
+<ul>
+<li><strong>Two-way flow.</strong> Every solid arrow into NICD is matched by a dotted feedback arrow back out.</li>
+<li><strong>EHP → DALRRD becomes structured</strong>, with a written referral and a logged enforcement outcome.</li>
+<li><strong>Clinicians close the loop:</strong> they learn whether the case they notified contributed to a cluster and what regulatory action followed.</li>
 </ul>
 <p><strong>Performance:</strong></p>
 <ul>
@@ -23475,7 +23559,7 @@ Figure&nbsp;1: Root causes of surveillance failure and the policy options that a
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-timeline-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Proposed implementation timeline for pilot phase
+Figure&nbsp;4: Proposed implementation timeline for pilot phase
 </figcaption>
 </figure>
 </div>
