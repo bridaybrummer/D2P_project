@@ -1,6 +1,11 @@
 project:
   type: website
   output-dir: _site
+  render:
+    - "*.qmd"
+    - "posts/*.qmd"
+    - "!chatbot/"
+    - "!archive/"
 
 website:
   title: "D2P Project"
