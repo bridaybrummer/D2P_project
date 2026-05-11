@@ -106,22 +106,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<!--
-  Chatbot embed slot.
-
-  After signing up at chatbase.co and creating your chatbot, paste the
-  provided <script> tag *between* the two markers below, then run:
-
-      quarto publish gh-pages --no-prompt --no-browser
-
-  The script will then load on every page of the site (bottom-right bubble).
-
-  Until the tag is pasted, this file renders nothing — safe to leave in place.
--->
-
-<!-- BEGIN CHATBOT EMBED -->
-<!-- Paste Chatbase / DocsBot / etc. script tag here -->
-<!-- END CHATBOT EMBED -->
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -189,14 +173,10 @@ window.Quarto = {
     <a class="nav-link" href="./analysis_report_v2.html"> 
 <span class="menu-text">Full Analysis Report</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./glossary.html"> 
-<span class="menu-text">Glossary</span></a>
-  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/bridaybrummer/D2P_project"> <i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/"> <i class="bi bi-github" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -953,7 +933,7 @@ c_{\text{ICU per case}} = 5 \text{ days} \times (R13{,}500 + R4{,}000 \times 0.6
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("^(?:http:|https:)\/\/(?:[^\/]*\.)?bridaybrummer\.github\.io|^(?!http)");
+        var filterRegex = new RegExp("^(?:http:|https:)\/\/(?:[^\/]*\.)?your-site-url\.com|^(?!http)");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

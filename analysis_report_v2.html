@@ -107,22 +107,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<!--
-  Chatbot embed slot.
-
-  After signing up at chatbase.co and creating your chatbot, paste the
-  provided <script> tag *between* the two markers below, then run:
-
-      quarto publish gh-pages --no-prompt --no-browser
-
-  The script will then load on every page of the site (bottom-right bubble).
-
-  Until the tag is pasted, this file renders nothing — safe to leave in place.
--->
-
-<!-- BEGIN CHATBOT EMBED -->
-<!-- Paste Chatbase / DocsBot / etc. script tag here -->
-<!-- END CHATBOT EMBED -->
 <link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
 <script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 
@@ -163,14 +147,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link active" href="./analysis_report_v2.html" aria-current="page"> 
 <span class="menu-text">Full Analysis Report</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./glossary.html"> 
-<span class="menu-text">Glossary</span></a>
-  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/bridaybrummer/D2P_project"> <i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/"> <i class="bi bi-github" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -371,11 +351,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warning</span>True burden far exceeds NMC notifications
+<span class="screen-reader-only">Warning</span>Under-counting is substantial
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The ~690 NMC notifications per year almost certainly under-represent the true burden. Combining the three data systems as <strong>mutually exclusive</strong> (no patient-level linkage exists across NMC, NHLS, and PIH), the true annual burden is approximately <strong>NMC (~690) + NHLS severe BChE (~2,000) + PIH calls (~9,000) ≈ 11,690 cases/year</strong>. Applying the NMC-observed case fatality rate of <strong>10–15%</strong> yields ~1,500–1,800 deaths/year (headline uses upper-mid CFR 13–15% because vital-registration data systematically under-code intentional self-poisoning under ICD-10 default rules; see the <a href="https://bridaybrummer.github.io/MRC_VR/projects/poisoning_deaths/">VR poisoning-deaths analysis</a> — pesticide-only deaths derived from a 30–50% pesticide share of all-cause poisoning mortality (3,200–4,000/year) yield an independent triangulation of ~960–2,000 pesticide deaths/year, consistent with the CFR-derived range). Monetised at ~R12,000/non-fatal case and ~R1.5M/death (human-capital approach), the <strong>total economic burden is on the order of R2.3 billion/year</strong>. See the <a href="./posts/decision_model.html#sec-burden-economics">Decision Model — Economic Analysis</a> for the linkage between surveillance spend, detection rate, and avoided burden cost.</p>
+<p>The ~690 NMC notifications per year almost certainly under-represent the true burden. BChE data alone show ~2,000 severe inhibitions annually. Evaluations of the NMC system describe incomplete reporting, incorrect data, and discrepancies between notification and laboratory records. The real number of poisonings may be <strong>3–5 times higher</strong> than what is currently captured.</p>
 </div>
 </div>
 </section>
@@ -408,23 +388,23 @@ Table&nbsp;1: Policy option profiles: what each option does, the problem it solv
 </figcaption>
 <div aria-describedby="tbl-profiles-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="kxosdfgnkr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#kxosdfgnkr table {
+<div id="gpleblybmi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#gpleblybmi table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#kxosdfgnkr thead, #kxosdfgnkr tbody, #kxosdfgnkr tfoot, #kxosdfgnkr tr, #kxosdfgnkr td, #kxosdfgnkr th {
+#gpleblybmi thead, #gpleblybmi tbody, #gpleblybmi tfoot, #gpleblybmi tr, #gpleblybmi td, #gpleblybmi th {
   border-style: none;
 }
 
-#kxosdfgnkr p {
+#gpleblybmi p {
   margin: 0;
   padding: 0;
 }
 
-#kxosdfgnkr .gt_table {
+#gpleblybmi .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -450,12 +430,12 @@ Table&nbsp;1: Policy option profiles: what each option does, the problem it solv
   border-left-color: #D3D3D3;
 }
 
-#kxosdfgnkr .gt_caption {
+#gpleblybmi .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#kxosdfgnkr .gt_title {
+#gpleblybmi .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -467,7 +447,7 @@ Table&nbsp;1: Policy option profiles: what each option does, the problem it solv
   border-bottom-width: 0;
 }
 
-#kxosdfgnkr .gt_subtitle {
+#gpleblybmi .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -479,7 +459,7 @@ Table&nbsp;1: Policy option profiles: what each option does, the problem it solv
   border-top-width: 0;
 }
 
-#kxosdfgnkr .gt_heading {
+#gpleblybmi .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -491,13 +471,13 @@ Table&nbsp;1: Policy option profiles: what each option does, the problem it solv
   border-right-color: #D3D3D3;
 }
 
-#kxosdfgnkr .gt_bottom_border {
+#gpleblybmi .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#kxosdfgnkr .gt_col_headings {
+#gpleblybmi .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -512,7 +492,7 @@ Table&nbsp;1: Policy option profiles: what each option does, the problem it solv
   border-right-color: #D3D3D3;
 }
 
-#kxosdfgnkr .gt_col_heading {
+#gpleblybmi .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -532,7 +512,7 @@ Table&nbsp;1: Policy option profiles: what each option does, the problem it solv
   overflow-x: hidden;
 }
 
-#kxosdfgnkr .gt_column_spanner_outer {
+#gpleblybmi .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -544,15 +524,15 @@ Table&nbsp;1: Policy option profiles: what each option does, the problem it solv
   padding-right: 4px;
 }
 
-#kxosdfgnkr .gt_column_spanner_outer:first-child {
+#gpleblybmi .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#kxosdfgnkr .gt_column_spanner_outer:last-child {
+#gpleblybmi .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#kxosdfgnkr .gt_column_spanner {
+#gpleblybmi .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -564,11 +544,11 @@ Table&nbsp;1: Policy option profiles: what each option does, the problem it solv
   width: 100%;
 }
 
-#kxosdfgnkr .gt_spanner_row {
+#gpleblybmi .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#kxosdfgnkr .gt_group_heading {
+#gpleblybmi .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -594,7 +574,7 @@ Table&nbsp;1: Policy option profiles: what each option does, the problem it solv
   text-align: left;
 }
 
-#kxosdfgnkr .gt_empty_group_heading {
+#gpleblybmi .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -609,15 +589,15 @@ Table&nbsp;1: Policy option profiles: what each option does, the problem it solv
   vertical-align: middle;
 }
 
-#kxosdfgnkr .gt_from_md > :first-child {
+#gpleblybmi .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#kxosdfgnkr .gt_from_md > :last-child {
+#gpleblybmi .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#kxosdfgnkr .gt_row {
+#gpleblybmi .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -636,7 +616,7 @@ Table&nbsp;1: Policy option profiles: what each option does, the problem it solv
   overflow-x: hidden;
 }
 
-#kxosdfgnkr .gt_stub {
+#gpleblybmi .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -649,7 +629,7 @@ Table&nbsp;1: Policy option profiles: what each option does, the problem it solv
   padding-right: 5px;
 }
 
-#kxosdfgnkr .gt_stub_row_group {
+#gpleblybmi .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -663,15 +643,15 @@ Table&nbsp;1: Policy option profiles: what each option does, the problem it solv
   vertical-align: top;
 }
 
-#kxosdfgnkr .gt_row_group_first td {
+#gpleblybmi .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#kxosdfgnkr .gt_row_group_first th {
+#gpleblybmi .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#kxosdfgnkr .gt_summary_row {
+#gpleblybmi .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -681,16 +661,16 @@ Table&nbsp;1: Policy option profiles: what each option does, the problem it solv
   padding-right: 5px;
 }
 
-#kxosdfgnkr .gt_first_summary_row {
+#gpleblybmi .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#kxosdfgnkr .gt_first_summary_row.thick {
+#gpleblybmi .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#kxosdfgnkr .gt_last_summary_row {
+#gpleblybmi .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -700,7 +680,7 @@ Table&nbsp;1: Policy option profiles: what each option does, the problem it solv
   border-bottom-color: #D3D3D3;
 }
 
-#kxosdfgnkr .gt_grand_summary_row {
+#gpleblybmi .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -710,7 +690,7 @@ Table&nbsp;1: Policy option profiles: what each option does, the problem it solv
   padding-right: 5px;
 }
 
-#kxosdfgnkr .gt_first_grand_summary_row {
+#gpleblybmi .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -720,7 +700,7 @@ Table&nbsp;1: Policy option profiles: what each option does, the problem it solv
   border-top-color: #D3D3D3;
 }
 
-#kxosdfgnkr .gt_last_grand_summary_row_top {
+#gpleblybmi .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -730,11 +710,11 @@ Table&nbsp;1: Policy option profiles: what each option does, the problem it solv
   border-bottom-color: #D3D3D3;
 }
 
-#kxosdfgnkr .gt_striped {
+#gpleblybmi .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#kxosdfgnkr .gt_table_body {
+#gpleblybmi .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -743,7 +723,7 @@ Table&nbsp;1: Policy option profiles: what each option does, the problem it solv
   border-bottom-color: #D3D3D3;
 }
 
-#kxosdfgnkr .gt_footnotes {
+#gpleblybmi .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -757,7 +737,7 @@ Table&nbsp;1: Policy option profiles: what each option does, the problem it solv
   border-right-color: #D3D3D3;
 }
 
-#kxosdfgnkr .gt_footnote {
+#gpleblybmi .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -766,7 +746,7 @@ Table&nbsp;1: Policy option profiles: what each option does, the problem it solv
   padding-right: 5px;
 }
 
-#kxosdfgnkr .gt_sourcenotes {
+#gpleblybmi .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -780,7 +760,7 @@ Table&nbsp;1: Policy option profiles: what each option does, the problem it solv
   border-right-color: #D3D3D3;
 }
 
-#kxosdfgnkr .gt_sourcenote {
+#gpleblybmi .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -788,72 +768,72 @@ Table&nbsp;1: Policy option profiles: what each option does, the problem it solv
   padding-right: 5px;
 }
 
-#kxosdfgnkr .gt_left {
+#gpleblybmi .gt_left {
   text-align: left;
 }
 
-#kxosdfgnkr .gt_center {
+#gpleblybmi .gt_center {
   text-align: center;
 }
 
-#kxosdfgnkr .gt_right {
+#gpleblybmi .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#kxosdfgnkr .gt_font_normal {
+#gpleblybmi .gt_font_normal {
   font-weight: normal;
 }
 
-#kxosdfgnkr .gt_font_bold {
+#gpleblybmi .gt_font_bold {
   font-weight: bold;
 }
 
-#kxosdfgnkr .gt_font_italic {
+#gpleblybmi .gt_font_italic {
   font-style: italic;
 }
 
-#kxosdfgnkr .gt_super {
+#gpleblybmi .gt_super {
   font-size: 65%;
 }
 
-#kxosdfgnkr .gt_footnote_marks {
+#gpleblybmi .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#kxosdfgnkr .gt_asterisk {
+#gpleblybmi .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#kxosdfgnkr .gt_indent_1 {
+#gpleblybmi .gt_indent_1 {
   text-indent: 5px;
 }
 
-#kxosdfgnkr .gt_indent_2 {
+#gpleblybmi .gt_indent_2 {
   text-indent: 10px;
 }
 
-#kxosdfgnkr .gt_indent_3 {
+#gpleblybmi .gt_indent_3 {
   text-indent: 15px;
 }
 
-#kxosdfgnkr .gt_indent_4 {
+#gpleblybmi .gt_indent_4 {
   text-indent: 20px;
 }
 
-#kxosdfgnkr .gt_indent_5 {
+#gpleblybmi .gt_indent_5 {
   text-indent: 25px;
 }
 
-#kxosdfgnkr .katex-display {
+#gpleblybmi .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#kxosdfgnkr div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#gpleblybmi div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1309,23 +1289,23 @@ Table&nbsp;2: Plain-language comparison of all options for non-technical decisio
 </figcaption>
 <div aria-describedby="tbl-stakeholder-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="ophuoywmxm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ophuoywmxm table {
+<div id="wfwetshmmb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#wfwetshmmb table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ophuoywmxm thead, #ophuoywmxm tbody, #ophuoywmxm tfoot, #ophuoywmxm tr, #ophuoywmxm td, #ophuoywmxm th {
+#wfwetshmmb thead, #wfwetshmmb tbody, #wfwetshmmb tfoot, #wfwetshmmb tr, #wfwetshmmb td, #wfwetshmmb th {
   border-style: none;
 }
 
-#ophuoywmxm p {
+#wfwetshmmb p {
   margin: 0;
   padding: 0;
 }
 
-#ophuoywmxm .gt_table {
+#wfwetshmmb .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1351,12 +1331,12 @@ Table&nbsp;2: Plain-language comparison of all options for non-technical decisio
   border-left-color: #D3D3D3;
 }
 
-#ophuoywmxm .gt_caption {
+#wfwetshmmb .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ophuoywmxm .gt_title {
+#wfwetshmmb .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1368,7 +1348,7 @@ Table&nbsp;2: Plain-language comparison of all options for non-technical decisio
   border-bottom-width: 0;
 }
 
-#ophuoywmxm .gt_subtitle {
+#wfwetshmmb .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1380,7 +1360,7 @@ Table&nbsp;2: Plain-language comparison of all options for non-technical decisio
   border-top-width: 0;
 }
 
-#ophuoywmxm .gt_heading {
+#wfwetshmmb .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1392,13 +1372,13 @@ Table&nbsp;2: Plain-language comparison of all options for non-technical decisio
   border-right-color: #D3D3D3;
 }
 
-#ophuoywmxm .gt_bottom_border {
+#wfwetshmmb .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ophuoywmxm .gt_col_headings {
+#wfwetshmmb .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1413,7 +1393,7 @@ Table&nbsp;2: Plain-language comparison of all options for non-technical decisio
   border-right-color: #D3D3D3;
 }
 
-#ophuoywmxm .gt_col_heading {
+#wfwetshmmb .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1433,7 +1413,7 @@ Table&nbsp;2: Plain-language comparison of all options for non-technical decisio
   overflow-x: hidden;
 }
 
-#ophuoywmxm .gt_column_spanner_outer {
+#wfwetshmmb .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1445,15 +1425,15 @@ Table&nbsp;2: Plain-language comparison of all options for non-technical decisio
   padding-right: 4px;
 }
 
-#ophuoywmxm .gt_column_spanner_outer:first-child {
+#wfwetshmmb .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ophuoywmxm .gt_column_spanner_outer:last-child {
+#wfwetshmmb .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ophuoywmxm .gt_column_spanner {
+#wfwetshmmb .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1465,11 +1445,11 @@ Table&nbsp;2: Plain-language comparison of all options for non-technical decisio
   width: 100%;
 }
 
-#ophuoywmxm .gt_spanner_row {
+#wfwetshmmb .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ophuoywmxm .gt_group_heading {
+#wfwetshmmb .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1495,7 +1475,7 @@ Table&nbsp;2: Plain-language comparison of all options for non-technical decisio
   text-align: left;
 }
 
-#ophuoywmxm .gt_empty_group_heading {
+#wfwetshmmb .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1510,15 +1490,15 @@ Table&nbsp;2: Plain-language comparison of all options for non-technical decisio
   vertical-align: middle;
 }
 
-#ophuoywmxm .gt_from_md > :first-child {
+#wfwetshmmb .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ophuoywmxm .gt_from_md > :last-child {
+#wfwetshmmb .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ophuoywmxm .gt_row {
+#wfwetshmmb .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1537,7 +1517,7 @@ Table&nbsp;2: Plain-language comparison of all options for non-technical decisio
   overflow-x: hidden;
 }
 
-#ophuoywmxm .gt_stub {
+#wfwetshmmb .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1550,7 +1530,7 @@ Table&nbsp;2: Plain-language comparison of all options for non-technical decisio
   padding-right: 5px;
 }
 
-#ophuoywmxm .gt_stub_row_group {
+#wfwetshmmb .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1564,15 +1544,15 @@ Table&nbsp;2: Plain-language comparison of all options for non-technical decisio
   vertical-align: top;
 }
 
-#ophuoywmxm .gt_row_group_first td {
+#wfwetshmmb .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ophuoywmxm .gt_row_group_first th {
+#wfwetshmmb .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ophuoywmxm .gt_summary_row {
+#wfwetshmmb .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1582,16 +1562,16 @@ Table&nbsp;2: Plain-language comparison of all options for non-technical decisio
   padding-right: 5px;
 }
 
-#ophuoywmxm .gt_first_summary_row {
+#wfwetshmmb .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ophuoywmxm .gt_first_summary_row.thick {
+#wfwetshmmb .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ophuoywmxm .gt_last_summary_row {
+#wfwetshmmb .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1601,7 +1581,7 @@ Table&nbsp;2: Plain-language comparison of all options for non-technical decisio
   border-bottom-color: #D3D3D3;
 }
 
-#ophuoywmxm .gt_grand_summary_row {
+#wfwetshmmb .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1611,7 +1591,7 @@ Table&nbsp;2: Plain-language comparison of all options for non-technical decisio
   padding-right: 5px;
 }
 
-#ophuoywmxm .gt_first_grand_summary_row {
+#wfwetshmmb .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1621,7 +1601,7 @@ Table&nbsp;2: Plain-language comparison of all options for non-technical decisio
   border-top-color: #D3D3D3;
 }
 
-#ophuoywmxm .gt_last_grand_summary_row_top {
+#wfwetshmmb .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1631,11 +1611,11 @@ Table&nbsp;2: Plain-language comparison of all options for non-technical decisio
   border-bottom-color: #D3D3D3;
 }
 
-#ophuoywmxm .gt_striped {
+#wfwetshmmb .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ophuoywmxm .gt_table_body {
+#wfwetshmmb .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1644,7 +1624,7 @@ Table&nbsp;2: Plain-language comparison of all options for non-technical decisio
   border-bottom-color: #D3D3D3;
 }
 
-#ophuoywmxm .gt_footnotes {
+#wfwetshmmb .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1658,7 +1638,7 @@ Table&nbsp;2: Plain-language comparison of all options for non-technical decisio
   border-right-color: #D3D3D3;
 }
 
-#ophuoywmxm .gt_footnote {
+#wfwetshmmb .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1667,7 +1647,7 @@ Table&nbsp;2: Plain-language comparison of all options for non-technical decisio
   padding-right: 5px;
 }
 
-#ophuoywmxm .gt_sourcenotes {
+#wfwetshmmb .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1681,7 +1661,7 @@ Table&nbsp;2: Plain-language comparison of all options for non-technical decisio
   border-right-color: #D3D3D3;
 }
 
-#ophuoywmxm .gt_sourcenote {
+#wfwetshmmb .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1689,72 +1669,72 @@ Table&nbsp;2: Plain-language comparison of all options for non-technical decisio
   padding-right: 5px;
 }
 
-#ophuoywmxm .gt_left {
+#wfwetshmmb .gt_left {
   text-align: left;
 }
 
-#ophuoywmxm .gt_center {
+#wfwetshmmb .gt_center {
   text-align: center;
 }
 
-#ophuoywmxm .gt_right {
+#wfwetshmmb .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ophuoywmxm .gt_font_normal {
+#wfwetshmmb .gt_font_normal {
   font-weight: normal;
 }
 
-#ophuoywmxm .gt_font_bold {
+#wfwetshmmb .gt_font_bold {
   font-weight: bold;
 }
 
-#ophuoywmxm .gt_font_italic {
+#wfwetshmmb .gt_font_italic {
   font-style: italic;
 }
 
-#ophuoywmxm .gt_super {
+#wfwetshmmb .gt_super {
   font-size: 65%;
 }
 
-#ophuoywmxm .gt_footnote_marks {
+#wfwetshmmb .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ophuoywmxm .gt_asterisk {
+#wfwetshmmb .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ophuoywmxm .gt_indent_1 {
+#wfwetshmmb .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ophuoywmxm .gt_indent_2 {
+#wfwetshmmb .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ophuoywmxm .gt_indent_3 {
+#wfwetshmmb .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ophuoywmxm .gt_indent_4 {
+#wfwetshmmb .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ophuoywmxm .gt_indent_5 {
+#wfwetshmmb .gt_indent_5 {
   text-indent: 25px;
 }
 
-#ophuoywmxm .katex-display {
+#wfwetshmmb .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#ophuoywmxm div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#wfwetshmmb div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1916,23 +1896,23 @@ Table&nbsp;3: All model input parameters with distributions for probabilistic se
 </figcaption>
 <div aria-describedby="tbl-params-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="cvtsoxxaim" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#cvtsoxxaim table {
+<div id="rerzpsmxly" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#rerzpsmxly table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#cvtsoxxaim thead, #cvtsoxxaim tbody, #cvtsoxxaim tfoot, #cvtsoxxaim tr, #cvtsoxxaim td, #cvtsoxxaim th {
+#rerzpsmxly thead, #rerzpsmxly tbody, #rerzpsmxly tfoot, #rerzpsmxly tr, #rerzpsmxly td, #rerzpsmxly th {
   border-style: none;
 }
 
-#cvtsoxxaim p {
+#rerzpsmxly p {
   margin: 0;
   padding: 0;
 }
 
-#cvtsoxxaim .gt_table {
+#rerzpsmxly .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1958,12 +1938,12 @@ Table&nbsp;3: All model input parameters with distributions for probabilistic se
   border-left-color: #D3D3D3;
 }
 
-#cvtsoxxaim .gt_caption {
+#rerzpsmxly .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#cvtsoxxaim .gt_title {
+#rerzpsmxly .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1975,7 +1955,7 @@ Table&nbsp;3: All model input parameters with distributions for probabilistic se
   border-bottom-width: 0;
 }
 
-#cvtsoxxaim .gt_subtitle {
+#rerzpsmxly .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1987,7 +1967,7 @@ Table&nbsp;3: All model input parameters with distributions for probabilistic se
   border-top-width: 0;
 }
 
-#cvtsoxxaim .gt_heading {
+#rerzpsmxly .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1999,13 +1979,13 @@ Table&nbsp;3: All model input parameters with distributions for probabilistic se
   border-right-color: #D3D3D3;
 }
 
-#cvtsoxxaim .gt_bottom_border {
+#rerzpsmxly .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#cvtsoxxaim .gt_col_headings {
+#rerzpsmxly .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2020,7 +2000,7 @@ Table&nbsp;3: All model input parameters with distributions for probabilistic se
   border-right-color: #D3D3D3;
 }
 
-#cvtsoxxaim .gt_col_heading {
+#rerzpsmxly .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2040,7 +2020,7 @@ Table&nbsp;3: All model input parameters with distributions for probabilistic se
   overflow-x: hidden;
 }
 
-#cvtsoxxaim .gt_column_spanner_outer {
+#rerzpsmxly .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2052,15 +2032,15 @@ Table&nbsp;3: All model input parameters with distributions for probabilistic se
   padding-right: 4px;
 }
 
-#cvtsoxxaim .gt_column_spanner_outer:first-child {
+#rerzpsmxly .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#cvtsoxxaim .gt_column_spanner_outer:last-child {
+#rerzpsmxly .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#cvtsoxxaim .gt_column_spanner {
+#rerzpsmxly .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2072,11 +2052,11 @@ Table&nbsp;3: All model input parameters with distributions for probabilistic se
   width: 100%;
 }
 
-#cvtsoxxaim .gt_spanner_row {
+#rerzpsmxly .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#cvtsoxxaim .gt_group_heading {
+#rerzpsmxly .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2102,7 +2082,7 @@ Table&nbsp;3: All model input parameters with distributions for probabilistic se
   text-align: left;
 }
 
-#cvtsoxxaim .gt_empty_group_heading {
+#rerzpsmxly .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2117,15 +2097,15 @@ Table&nbsp;3: All model input parameters with distributions for probabilistic se
   vertical-align: middle;
 }
 
-#cvtsoxxaim .gt_from_md > :first-child {
+#rerzpsmxly .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#cvtsoxxaim .gt_from_md > :last-child {
+#rerzpsmxly .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#cvtsoxxaim .gt_row {
+#rerzpsmxly .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2144,7 +2124,7 @@ Table&nbsp;3: All model input parameters with distributions for probabilistic se
   overflow-x: hidden;
 }
 
-#cvtsoxxaim .gt_stub {
+#rerzpsmxly .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2157,7 +2137,7 @@ Table&nbsp;3: All model input parameters with distributions for probabilistic se
   padding-right: 5px;
 }
 
-#cvtsoxxaim .gt_stub_row_group {
+#rerzpsmxly .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2171,15 +2151,15 @@ Table&nbsp;3: All model input parameters with distributions for probabilistic se
   vertical-align: top;
 }
 
-#cvtsoxxaim .gt_row_group_first td {
+#rerzpsmxly .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#cvtsoxxaim .gt_row_group_first th {
+#rerzpsmxly .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#cvtsoxxaim .gt_summary_row {
+#rerzpsmxly .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2189,16 +2169,16 @@ Table&nbsp;3: All model input parameters with distributions for probabilistic se
   padding-right: 5px;
 }
 
-#cvtsoxxaim .gt_first_summary_row {
+#rerzpsmxly .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#cvtsoxxaim .gt_first_summary_row.thick {
+#rerzpsmxly .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#cvtsoxxaim .gt_last_summary_row {
+#rerzpsmxly .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2208,7 +2188,7 @@ Table&nbsp;3: All model input parameters with distributions for probabilistic se
   border-bottom-color: #D3D3D3;
 }
 
-#cvtsoxxaim .gt_grand_summary_row {
+#rerzpsmxly .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2218,7 +2198,7 @@ Table&nbsp;3: All model input parameters with distributions for probabilistic se
   padding-right: 5px;
 }
 
-#cvtsoxxaim .gt_first_grand_summary_row {
+#rerzpsmxly .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2228,7 +2208,7 @@ Table&nbsp;3: All model input parameters with distributions for probabilistic se
   border-top-color: #D3D3D3;
 }
 
-#cvtsoxxaim .gt_last_grand_summary_row_top {
+#rerzpsmxly .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2238,11 +2218,11 @@ Table&nbsp;3: All model input parameters with distributions for probabilistic se
   border-bottom-color: #D3D3D3;
 }
 
-#cvtsoxxaim .gt_striped {
+#rerzpsmxly .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#cvtsoxxaim .gt_table_body {
+#rerzpsmxly .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2251,7 +2231,7 @@ Table&nbsp;3: All model input parameters with distributions for probabilistic se
   border-bottom-color: #D3D3D3;
 }
 
-#cvtsoxxaim .gt_footnotes {
+#rerzpsmxly .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2265,7 +2245,7 @@ Table&nbsp;3: All model input parameters with distributions for probabilistic se
   border-right-color: #D3D3D3;
 }
 
-#cvtsoxxaim .gt_footnote {
+#rerzpsmxly .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2274,7 +2254,7 @@ Table&nbsp;3: All model input parameters with distributions for probabilistic se
   padding-right: 5px;
 }
 
-#cvtsoxxaim .gt_sourcenotes {
+#rerzpsmxly .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2288,7 +2268,7 @@ Table&nbsp;3: All model input parameters with distributions for probabilistic se
   border-right-color: #D3D3D3;
 }
 
-#cvtsoxxaim .gt_sourcenote {
+#rerzpsmxly .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2296,72 +2276,72 @@ Table&nbsp;3: All model input parameters with distributions for probabilistic se
   padding-right: 5px;
 }
 
-#cvtsoxxaim .gt_left {
+#rerzpsmxly .gt_left {
   text-align: left;
 }
 
-#cvtsoxxaim .gt_center {
+#rerzpsmxly .gt_center {
   text-align: center;
 }
 
-#cvtsoxxaim .gt_right {
+#rerzpsmxly .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#cvtsoxxaim .gt_font_normal {
+#rerzpsmxly .gt_font_normal {
   font-weight: normal;
 }
 
-#cvtsoxxaim .gt_font_bold {
+#rerzpsmxly .gt_font_bold {
   font-weight: bold;
 }
 
-#cvtsoxxaim .gt_font_italic {
+#rerzpsmxly .gt_font_italic {
   font-style: italic;
 }
 
-#cvtsoxxaim .gt_super {
+#rerzpsmxly .gt_super {
   font-size: 65%;
 }
 
-#cvtsoxxaim .gt_footnote_marks {
+#rerzpsmxly .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#cvtsoxxaim .gt_asterisk {
+#rerzpsmxly .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#cvtsoxxaim .gt_indent_1 {
+#rerzpsmxly .gt_indent_1 {
   text-indent: 5px;
 }
 
-#cvtsoxxaim .gt_indent_2 {
+#rerzpsmxly .gt_indent_2 {
   text-indent: 10px;
 }
 
-#cvtsoxxaim .gt_indent_3 {
+#rerzpsmxly .gt_indent_3 {
   text-indent: 15px;
 }
 
-#cvtsoxxaim .gt_indent_4 {
+#rerzpsmxly .gt_indent_4 {
   text-indent: 20px;
 }
 
-#cvtsoxxaim .gt_indent_5 {
+#rerzpsmxly .gt_indent_5 {
   text-indent: 25px;
 }
 
-#cvtsoxxaim .katex-display {
+#rerzpsmxly .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#cvtsoxxaim div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#rerzpsmxly div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2714,23 +2694,23 @@ Table&nbsp;4: Base-case results: expected hotspots addressed and costs per strat
 </figcaption>
 <div aria-describedby="tbl-basecase-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="qvjvkatuid" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#qvjvkatuid table {
+<div id="xkrrjvmoxe" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#xkrrjvmoxe table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#qvjvkatuid thead, #qvjvkatuid tbody, #qvjvkatuid tfoot, #qvjvkatuid tr, #qvjvkatuid td, #qvjvkatuid th {
+#xkrrjvmoxe thead, #xkrrjvmoxe tbody, #xkrrjvmoxe tfoot, #xkrrjvmoxe tr, #xkrrjvmoxe td, #xkrrjvmoxe th {
   border-style: none;
 }
 
-#qvjvkatuid p {
+#xkrrjvmoxe p {
   margin: 0;
   padding: 0;
 }
 
-#qvjvkatuid .gt_table {
+#xkrrjvmoxe .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2756,12 +2736,12 @@ Table&nbsp;4: Base-case results: expected hotspots addressed and costs per strat
   border-left-color: #D3D3D3;
 }
 
-#qvjvkatuid .gt_caption {
+#xkrrjvmoxe .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#qvjvkatuid .gt_title {
+#xkrrjvmoxe .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2773,7 +2753,7 @@ Table&nbsp;4: Base-case results: expected hotspots addressed and costs per strat
   border-bottom-width: 0;
 }
 
-#qvjvkatuid .gt_subtitle {
+#xkrrjvmoxe .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2785,7 +2765,7 @@ Table&nbsp;4: Base-case results: expected hotspots addressed and costs per strat
   border-top-width: 0;
 }
 
-#qvjvkatuid .gt_heading {
+#xkrrjvmoxe .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2797,13 +2777,13 @@ Table&nbsp;4: Base-case results: expected hotspots addressed and costs per strat
   border-right-color: #D3D3D3;
 }
 
-#qvjvkatuid .gt_bottom_border {
+#xkrrjvmoxe .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#qvjvkatuid .gt_col_headings {
+#xkrrjvmoxe .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2818,7 +2798,7 @@ Table&nbsp;4: Base-case results: expected hotspots addressed and costs per strat
   border-right-color: #D3D3D3;
 }
 
-#qvjvkatuid .gt_col_heading {
+#xkrrjvmoxe .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2838,7 +2818,7 @@ Table&nbsp;4: Base-case results: expected hotspots addressed and costs per strat
   overflow-x: hidden;
 }
 
-#qvjvkatuid .gt_column_spanner_outer {
+#xkrrjvmoxe .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2850,15 +2830,15 @@ Table&nbsp;4: Base-case results: expected hotspots addressed and costs per strat
   padding-right: 4px;
 }
 
-#qvjvkatuid .gt_column_spanner_outer:first-child {
+#xkrrjvmoxe .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#qvjvkatuid .gt_column_spanner_outer:last-child {
+#xkrrjvmoxe .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#qvjvkatuid .gt_column_spanner {
+#xkrrjvmoxe .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2870,11 +2850,11 @@ Table&nbsp;4: Base-case results: expected hotspots addressed and costs per strat
   width: 100%;
 }
 
-#qvjvkatuid .gt_spanner_row {
+#xkrrjvmoxe .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#qvjvkatuid .gt_group_heading {
+#xkrrjvmoxe .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2900,7 +2880,7 @@ Table&nbsp;4: Base-case results: expected hotspots addressed and costs per strat
   text-align: left;
 }
 
-#qvjvkatuid .gt_empty_group_heading {
+#xkrrjvmoxe .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2915,15 +2895,15 @@ Table&nbsp;4: Base-case results: expected hotspots addressed and costs per strat
   vertical-align: middle;
 }
 
-#qvjvkatuid .gt_from_md > :first-child {
+#xkrrjvmoxe .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#qvjvkatuid .gt_from_md > :last-child {
+#xkrrjvmoxe .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#qvjvkatuid .gt_row {
+#xkrrjvmoxe .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2942,7 +2922,7 @@ Table&nbsp;4: Base-case results: expected hotspots addressed and costs per strat
   overflow-x: hidden;
 }
 
-#qvjvkatuid .gt_stub {
+#xkrrjvmoxe .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2955,7 +2935,7 @@ Table&nbsp;4: Base-case results: expected hotspots addressed and costs per strat
   padding-right: 5px;
 }
 
-#qvjvkatuid .gt_stub_row_group {
+#xkrrjvmoxe .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2969,15 +2949,15 @@ Table&nbsp;4: Base-case results: expected hotspots addressed and costs per strat
   vertical-align: top;
 }
 
-#qvjvkatuid .gt_row_group_first td {
+#xkrrjvmoxe .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#qvjvkatuid .gt_row_group_first th {
+#xkrrjvmoxe .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#qvjvkatuid .gt_summary_row {
+#xkrrjvmoxe .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2987,16 +2967,16 @@ Table&nbsp;4: Base-case results: expected hotspots addressed and costs per strat
   padding-right: 5px;
 }
 
-#qvjvkatuid .gt_first_summary_row {
+#xkrrjvmoxe .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#qvjvkatuid .gt_first_summary_row.thick {
+#xkrrjvmoxe .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#qvjvkatuid .gt_last_summary_row {
+#xkrrjvmoxe .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3006,7 +2986,7 @@ Table&nbsp;4: Base-case results: expected hotspots addressed and costs per strat
   border-bottom-color: #D3D3D3;
 }
 
-#qvjvkatuid .gt_grand_summary_row {
+#xkrrjvmoxe .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3016,7 +2996,7 @@ Table&nbsp;4: Base-case results: expected hotspots addressed and costs per strat
   padding-right: 5px;
 }
 
-#qvjvkatuid .gt_first_grand_summary_row {
+#xkrrjvmoxe .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3026,7 +3006,7 @@ Table&nbsp;4: Base-case results: expected hotspots addressed and costs per strat
   border-top-color: #D3D3D3;
 }
 
-#qvjvkatuid .gt_last_grand_summary_row_top {
+#xkrrjvmoxe .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3036,11 +3016,11 @@ Table&nbsp;4: Base-case results: expected hotspots addressed and costs per strat
   border-bottom-color: #D3D3D3;
 }
 
-#qvjvkatuid .gt_striped {
+#xkrrjvmoxe .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#qvjvkatuid .gt_table_body {
+#xkrrjvmoxe .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3049,7 +3029,7 @@ Table&nbsp;4: Base-case results: expected hotspots addressed and costs per strat
   border-bottom-color: #D3D3D3;
 }
 
-#qvjvkatuid .gt_footnotes {
+#xkrrjvmoxe .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3063,7 +3043,7 @@ Table&nbsp;4: Base-case results: expected hotspots addressed and costs per strat
   border-right-color: #D3D3D3;
 }
 
-#qvjvkatuid .gt_footnote {
+#xkrrjvmoxe .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3072,7 +3052,7 @@ Table&nbsp;4: Base-case results: expected hotspots addressed and costs per strat
   padding-right: 5px;
 }
 
-#qvjvkatuid .gt_sourcenotes {
+#xkrrjvmoxe .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3086,7 +3066,7 @@ Table&nbsp;4: Base-case results: expected hotspots addressed and costs per strat
   border-right-color: #D3D3D3;
 }
 
-#qvjvkatuid .gt_sourcenote {
+#xkrrjvmoxe .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3094,72 +3074,72 @@ Table&nbsp;4: Base-case results: expected hotspots addressed and costs per strat
   padding-right: 5px;
 }
 
-#qvjvkatuid .gt_left {
+#xkrrjvmoxe .gt_left {
   text-align: left;
 }
 
-#qvjvkatuid .gt_center {
+#xkrrjvmoxe .gt_center {
   text-align: center;
 }
 
-#qvjvkatuid .gt_right {
+#xkrrjvmoxe .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#qvjvkatuid .gt_font_normal {
+#xkrrjvmoxe .gt_font_normal {
   font-weight: normal;
 }
 
-#qvjvkatuid .gt_font_bold {
+#xkrrjvmoxe .gt_font_bold {
   font-weight: bold;
 }
 
-#qvjvkatuid .gt_font_italic {
+#xkrrjvmoxe .gt_font_italic {
   font-style: italic;
 }
 
-#qvjvkatuid .gt_super {
+#xkrrjvmoxe .gt_super {
   font-size: 65%;
 }
 
-#qvjvkatuid .gt_footnote_marks {
+#xkrrjvmoxe .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#qvjvkatuid .gt_asterisk {
+#xkrrjvmoxe .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#qvjvkatuid .gt_indent_1 {
+#xkrrjvmoxe .gt_indent_1 {
   text-indent: 5px;
 }
 
-#qvjvkatuid .gt_indent_2 {
+#xkrrjvmoxe .gt_indent_2 {
   text-indent: 10px;
 }
 
-#qvjvkatuid .gt_indent_3 {
+#xkrrjvmoxe .gt_indent_3 {
   text-indent: 15px;
 }
 
-#qvjvkatuid .gt_indent_4 {
+#xkrrjvmoxe .gt_indent_4 {
   text-indent: 20px;
 }
 
-#qvjvkatuid .gt_indent_5 {
+#xkrrjvmoxe .gt_indent_5 {
   text-indent: 25px;
 }
 
-#qvjvkatuid .katex-display {
+#xkrrjvmoxe .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#qvjvkatuid div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#xkrrjvmoxe div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -3264,23 +3244,23 @@ Table&nbsp;5: Estimated health gains assuming 30% case reduction per hotspot res
 </figcaption>
 <div aria-describedby="tbl-dalys-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="uebwkhjmuz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#uebwkhjmuz table {
+<div id="hqzxzsyamz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#hqzxzsyamz table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#uebwkhjmuz thead, #uebwkhjmuz tbody, #uebwkhjmuz tfoot, #uebwkhjmuz tr, #uebwkhjmuz td, #uebwkhjmuz th {
+#hqzxzsyamz thead, #hqzxzsyamz tbody, #hqzxzsyamz tfoot, #hqzxzsyamz tr, #hqzxzsyamz td, #hqzxzsyamz th {
   border-style: none;
 }
 
-#uebwkhjmuz p {
+#hqzxzsyamz p {
   margin: 0;
   padding: 0;
 }
 
-#uebwkhjmuz .gt_table {
+#hqzxzsyamz .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3306,12 +3286,12 @@ Table&nbsp;5: Estimated health gains assuming 30% case reduction per hotspot res
   border-left-color: #D3D3D3;
 }
 
-#uebwkhjmuz .gt_caption {
+#hqzxzsyamz .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#uebwkhjmuz .gt_title {
+#hqzxzsyamz .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -3323,7 +3303,7 @@ Table&nbsp;5: Estimated health gains assuming 30% case reduction per hotspot res
   border-bottom-width: 0;
 }
 
-#uebwkhjmuz .gt_subtitle {
+#hqzxzsyamz .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3335,7 +3315,7 @@ Table&nbsp;5: Estimated health gains assuming 30% case reduction per hotspot res
   border-top-width: 0;
 }
 
-#uebwkhjmuz .gt_heading {
+#hqzxzsyamz .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3347,13 +3327,13 @@ Table&nbsp;5: Estimated health gains assuming 30% case reduction per hotspot res
   border-right-color: #D3D3D3;
 }
 
-#uebwkhjmuz .gt_bottom_border {
+#hqzxzsyamz .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#uebwkhjmuz .gt_col_headings {
+#hqzxzsyamz .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3368,7 +3348,7 @@ Table&nbsp;5: Estimated health gains assuming 30% case reduction per hotspot res
   border-right-color: #D3D3D3;
 }
 
-#uebwkhjmuz .gt_col_heading {
+#hqzxzsyamz .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3388,7 +3368,7 @@ Table&nbsp;5: Estimated health gains assuming 30% case reduction per hotspot res
   overflow-x: hidden;
 }
 
-#uebwkhjmuz .gt_column_spanner_outer {
+#hqzxzsyamz .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3400,15 +3380,15 @@ Table&nbsp;5: Estimated health gains assuming 30% case reduction per hotspot res
   padding-right: 4px;
 }
 
-#uebwkhjmuz .gt_column_spanner_outer:first-child {
+#hqzxzsyamz .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#uebwkhjmuz .gt_column_spanner_outer:last-child {
+#hqzxzsyamz .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#uebwkhjmuz .gt_column_spanner {
+#hqzxzsyamz .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3420,11 +3400,11 @@ Table&nbsp;5: Estimated health gains assuming 30% case reduction per hotspot res
   width: 100%;
 }
 
-#uebwkhjmuz .gt_spanner_row {
+#hqzxzsyamz .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#uebwkhjmuz .gt_group_heading {
+#hqzxzsyamz .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3450,7 +3430,7 @@ Table&nbsp;5: Estimated health gains assuming 30% case reduction per hotspot res
   text-align: left;
 }
 
-#uebwkhjmuz .gt_empty_group_heading {
+#hqzxzsyamz .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3465,15 +3445,15 @@ Table&nbsp;5: Estimated health gains assuming 30% case reduction per hotspot res
   vertical-align: middle;
 }
 
-#uebwkhjmuz .gt_from_md > :first-child {
+#hqzxzsyamz .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#uebwkhjmuz .gt_from_md > :last-child {
+#hqzxzsyamz .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#uebwkhjmuz .gt_row {
+#hqzxzsyamz .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3492,7 +3472,7 @@ Table&nbsp;5: Estimated health gains assuming 30% case reduction per hotspot res
   overflow-x: hidden;
 }
 
-#uebwkhjmuz .gt_stub {
+#hqzxzsyamz .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3505,7 +3485,7 @@ Table&nbsp;5: Estimated health gains assuming 30% case reduction per hotspot res
   padding-right: 5px;
 }
 
-#uebwkhjmuz .gt_stub_row_group {
+#hqzxzsyamz .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3519,15 +3499,15 @@ Table&nbsp;5: Estimated health gains assuming 30% case reduction per hotspot res
   vertical-align: top;
 }
 
-#uebwkhjmuz .gt_row_group_first td {
+#hqzxzsyamz .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#uebwkhjmuz .gt_row_group_first th {
+#hqzxzsyamz .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#uebwkhjmuz .gt_summary_row {
+#hqzxzsyamz .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3537,16 +3517,16 @@ Table&nbsp;5: Estimated health gains assuming 30% case reduction per hotspot res
   padding-right: 5px;
 }
 
-#uebwkhjmuz .gt_first_summary_row {
+#hqzxzsyamz .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#uebwkhjmuz .gt_first_summary_row.thick {
+#hqzxzsyamz .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#uebwkhjmuz .gt_last_summary_row {
+#hqzxzsyamz .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3556,7 +3536,7 @@ Table&nbsp;5: Estimated health gains assuming 30% case reduction per hotspot res
   border-bottom-color: #D3D3D3;
 }
 
-#uebwkhjmuz .gt_grand_summary_row {
+#hqzxzsyamz .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3566,7 +3546,7 @@ Table&nbsp;5: Estimated health gains assuming 30% case reduction per hotspot res
   padding-right: 5px;
 }
 
-#uebwkhjmuz .gt_first_grand_summary_row {
+#hqzxzsyamz .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3576,7 +3556,7 @@ Table&nbsp;5: Estimated health gains assuming 30% case reduction per hotspot res
   border-top-color: #D3D3D3;
 }
 
-#uebwkhjmuz .gt_last_grand_summary_row_top {
+#hqzxzsyamz .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3586,11 +3566,11 @@ Table&nbsp;5: Estimated health gains assuming 30% case reduction per hotspot res
   border-bottom-color: #D3D3D3;
 }
 
-#uebwkhjmuz .gt_striped {
+#hqzxzsyamz .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#uebwkhjmuz .gt_table_body {
+#hqzxzsyamz .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3599,7 +3579,7 @@ Table&nbsp;5: Estimated health gains assuming 30% case reduction per hotspot res
   border-bottom-color: #D3D3D3;
 }
 
-#uebwkhjmuz .gt_footnotes {
+#hqzxzsyamz .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3613,7 +3593,7 @@ Table&nbsp;5: Estimated health gains assuming 30% case reduction per hotspot res
   border-right-color: #D3D3D3;
 }
 
-#uebwkhjmuz .gt_footnote {
+#hqzxzsyamz .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3622,7 +3602,7 @@ Table&nbsp;5: Estimated health gains assuming 30% case reduction per hotspot res
   padding-right: 5px;
 }
 
-#uebwkhjmuz .gt_sourcenotes {
+#hqzxzsyamz .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3636,7 +3616,7 @@ Table&nbsp;5: Estimated health gains assuming 30% case reduction per hotspot res
   border-right-color: #D3D3D3;
 }
 
-#uebwkhjmuz .gt_sourcenote {
+#hqzxzsyamz .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3644,72 +3624,72 @@ Table&nbsp;5: Estimated health gains assuming 30% case reduction per hotspot res
   padding-right: 5px;
 }
 
-#uebwkhjmuz .gt_left {
+#hqzxzsyamz .gt_left {
   text-align: left;
 }
 
-#uebwkhjmuz .gt_center {
+#hqzxzsyamz .gt_center {
   text-align: center;
 }
 
-#uebwkhjmuz .gt_right {
+#hqzxzsyamz .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#uebwkhjmuz .gt_font_normal {
+#hqzxzsyamz .gt_font_normal {
   font-weight: normal;
 }
 
-#uebwkhjmuz .gt_font_bold {
+#hqzxzsyamz .gt_font_bold {
   font-weight: bold;
 }
 
-#uebwkhjmuz .gt_font_italic {
+#hqzxzsyamz .gt_font_italic {
   font-style: italic;
 }
 
-#uebwkhjmuz .gt_super {
+#hqzxzsyamz .gt_super {
   font-size: 65%;
 }
 
-#uebwkhjmuz .gt_footnote_marks {
+#hqzxzsyamz .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#uebwkhjmuz .gt_asterisk {
+#hqzxzsyamz .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#uebwkhjmuz .gt_indent_1 {
+#hqzxzsyamz .gt_indent_1 {
   text-indent: 5px;
 }
 
-#uebwkhjmuz .gt_indent_2 {
+#hqzxzsyamz .gt_indent_2 {
   text-indent: 10px;
 }
 
-#uebwkhjmuz .gt_indent_3 {
+#hqzxzsyamz .gt_indent_3 {
   text-indent: 15px;
 }
 
-#uebwkhjmuz .gt_indent_4 {
+#hqzxzsyamz .gt_indent_4 {
   text-indent: 20px;
 }
 
-#uebwkhjmuz .gt_indent_5 {
+#hqzxzsyamz .gt_indent_5 {
   text-indent: 25px;
 }
 
-#uebwkhjmuz .katex-display {
+#hqzxzsyamz .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#uebwkhjmuz div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#hqzxzsyamz div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -3818,23 +3798,23 @@ Table&nbsp;6: 3-year budget impact (discounted at 5% p.a.)
 </figcaption>
 <div aria-describedby="tbl-bia-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="azgpvtzoyy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#azgpvtzoyy table {
+<div id="kfaiyapskl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#kfaiyapskl table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#azgpvtzoyy thead, #azgpvtzoyy tbody, #azgpvtzoyy tfoot, #azgpvtzoyy tr, #azgpvtzoyy td, #azgpvtzoyy th {
+#kfaiyapskl thead, #kfaiyapskl tbody, #kfaiyapskl tfoot, #kfaiyapskl tr, #kfaiyapskl td, #kfaiyapskl th {
   border-style: none;
 }
 
-#azgpvtzoyy p {
+#kfaiyapskl p {
   margin: 0;
   padding: 0;
 }
 
-#azgpvtzoyy .gt_table {
+#kfaiyapskl .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3860,12 +3840,12 @@ Table&nbsp;6: 3-year budget impact (discounted at 5% p.a.)
   border-left-color: #D3D3D3;
 }
 
-#azgpvtzoyy .gt_caption {
+#kfaiyapskl .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#azgpvtzoyy .gt_title {
+#kfaiyapskl .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -3877,7 +3857,7 @@ Table&nbsp;6: 3-year budget impact (discounted at 5% p.a.)
   border-bottom-width: 0;
 }
 
-#azgpvtzoyy .gt_subtitle {
+#kfaiyapskl .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3889,7 +3869,7 @@ Table&nbsp;6: 3-year budget impact (discounted at 5% p.a.)
   border-top-width: 0;
 }
 
-#azgpvtzoyy .gt_heading {
+#kfaiyapskl .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3901,13 +3881,13 @@ Table&nbsp;6: 3-year budget impact (discounted at 5% p.a.)
   border-right-color: #D3D3D3;
 }
 
-#azgpvtzoyy .gt_bottom_border {
+#kfaiyapskl .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#azgpvtzoyy .gt_col_headings {
+#kfaiyapskl .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3922,7 +3902,7 @@ Table&nbsp;6: 3-year budget impact (discounted at 5% p.a.)
   border-right-color: #D3D3D3;
 }
 
-#azgpvtzoyy .gt_col_heading {
+#kfaiyapskl .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3942,7 +3922,7 @@ Table&nbsp;6: 3-year budget impact (discounted at 5% p.a.)
   overflow-x: hidden;
 }
 
-#azgpvtzoyy .gt_column_spanner_outer {
+#kfaiyapskl .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3954,15 +3934,15 @@ Table&nbsp;6: 3-year budget impact (discounted at 5% p.a.)
   padding-right: 4px;
 }
 
-#azgpvtzoyy .gt_column_spanner_outer:first-child {
+#kfaiyapskl .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#azgpvtzoyy .gt_column_spanner_outer:last-child {
+#kfaiyapskl .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#azgpvtzoyy .gt_column_spanner {
+#kfaiyapskl .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3974,11 +3954,11 @@ Table&nbsp;6: 3-year budget impact (discounted at 5% p.a.)
   width: 100%;
 }
 
-#azgpvtzoyy .gt_spanner_row {
+#kfaiyapskl .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#azgpvtzoyy .gt_group_heading {
+#kfaiyapskl .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4004,7 +3984,7 @@ Table&nbsp;6: 3-year budget impact (discounted at 5% p.a.)
   text-align: left;
 }
 
-#azgpvtzoyy .gt_empty_group_heading {
+#kfaiyapskl .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4019,15 +3999,15 @@ Table&nbsp;6: 3-year budget impact (discounted at 5% p.a.)
   vertical-align: middle;
 }
 
-#azgpvtzoyy .gt_from_md > :first-child {
+#kfaiyapskl .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#azgpvtzoyy .gt_from_md > :last-child {
+#kfaiyapskl .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#azgpvtzoyy .gt_row {
+#kfaiyapskl .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4046,7 +4026,7 @@ Table&nbsp;6: 3-year budget impact (discounted at 5% p.a.)
   overflow-x: hidden;
 }
 
-#azgpvtzoyy .gt_stub {
+#kfaiyapskl .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4059,7 +4039,7 @@ Table&nbsp;6: 3-year budget impact (discounted at 5% p.a.)
   padding-right: 5px;
 }
 
-#azgpvtzoyy .gt_stub_row_group {
+#kfaiyapskl .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4073,15 +4053,15 @@ Table&nbsp;6: 3-year budget impact (discounted at 5% p.a.)
   vertical-align: top;
 }
 
-#azgpvtzoyy .gt_row_group_first td {
+#kfaiyapskl .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#azgpvtzoyy .gt_row_group_first th {
+#kfaiyapskl .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#azgpvtzoyy .gt_summary_row {
+#kfaiyapskl .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4091,16 +4071,16 @@ Table&nbsp;6: 3-year budget impact (discounted at 5% p.a.)
   padding-right: 5px;
 }
 
-#azgpvtzoyy .gt_first_summary_row {
+#kfaiyapskl .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#azgpvtzoyy .gt_first_summary_row.thick {
+#kfaiyapskl .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#azgpvtzoyy .gt_last_summary_row {
+#kfaiyapskl .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4110,7 +4090,7 @@ Table&nbsp;6: 3-year budget impact (discounted at 5% p.a.)
   border-bottom-color: #D3D3D3;
 }
 
-#azgpvtzoyy .gt_grand_summary_row {
+#kfaiyapskl .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4120,7 +4100,7 @@ Table&nbsp;6: 3-year budget impact (discounted at 5% p.a.)
   padding-right: 5px;
 }
 
-#azgpvtzoyy .gt_first_grand_summary_row {
+#kfaiyapskl .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4130,7 +4110,7 @@ Table&nbsp;6: 3-year budget impact (discounted at 5% p.a.)
   border-top-color: #D3D3D3;
 }
 
-#azgpvtzoyy .gt_last_grand_summary_row_top {
+#kfaiyapskl .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4140,11 +4120,11 @@ Table&nbsp;6: 3-year budget impact (discounted at 5% p.a.)
   border-bottom-color: #D3D3D3;
 }
 
-#azgpvtzoyy .gt_striped {
+#kfaiyapskl .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#azgpvtzoyy .gt_table_body {
+#kfaiyapskl .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4153,7 +4133,7 @@ Table&nbsp;6: 3-year budget impact (discounted at 5% p.a.)
   border-bottom-color: #D3D3D3;
 }
 
-#azgpvtzoyy .gt_footnotes {
+#kfaiyapskl .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4167,7 +4147,7 @@ Table&nbsp;6: 3-year budget impact (discounted at 5% p.a.)
   border-right-color: #D3D3D3;
 }
 
-#azgpvtzoyy .gt_footnote {
+#kfaiyapskl .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -4176,7 +4156,7 @@ Table&nbsp;6: 3-year budget impact (discounted at 5% p.a.)
   padding-right: 5px;
 }
 
-#azgpvtzoyy .gt_sourcenotes {
+#kfaiyapskl .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4190,7 +4170,7 @@ Table&nbsp;6: 3-year budget impact (discounted at 5% p.a.)
   border-right-color: #D3D3D3;
 }
 
-#azgpvtzoyy .gt_sourcenote {
+#kfaiyapskl .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -4198,72 +4178,72 @@ Table&nbsp;6: 3-year budget impact (discounted at 5% p.a.)
   padding-right: 5px;
 }
 
-#azgpvtzoyy .gt_left {
+#kfaiyapskl .gt_left {
   text-align: left;
 }
 
-#azgpvtzoyy .gt_center {
+#kfaiyapskl .gt_center {
   text-align: center;
 }
 
-#azgpvtzoyy .gt_right {
+#kfaiyapskl .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#azgpvtzoyy .gt_font_normal {
+#kfaiyapskl .gt_font_normal {
   font-weight: normal;
 }
 
-#azgpvtzoyy .gt_font_bold {
+#kfaiyapskl .gt_font_bold {
   font-weight: bold;
 }
 
-#azgpvtzoyy .gt_font_italic {
+#kfaiyapskl .gt_font_italic {
   font-style: italic;
 }
 
-#azgpvtzoyy .gt_super {
+#kfaiyapskl .gt_super {
   font-size: 65%;
 }
 
-#azgpvtzoyy .gt_footnote_marks {
+#kfaiyapskl .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#azgpvtzoyy .gt_asterisk {
+#kfaiyapskl .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#azgpvtzoyy .gt_indent_1 {
+#kfaiyapskl .gt_indent_1 {
   text-indent: 5px;
 }
 
-#azgpvtzoyy .gt_indent_2 {
+#kfaiyapskl .gt_indent_2 {
   text-indent: 10px;
 }
 
-#azgpvtzoyy .gt_indent_3 {
+#kfaiyapskl .gt_indent_3 {
   text-indent: 15px;
 }
 
-#azgpvtzoyy .gt_indent_4 {
+#kfaiyapskl .gt_indent_4 {
   text-indent: 20px;
 }
 
-#azgpvtzoyy .gt_indent_5 {
+#kfaiyapskl .gt_indent_5 {
   text-indent: 25px;
 }
 
-#azgpvtzoyy .katex-display {
+#kfaiyapskl .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#azgpvtzoyy div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#kfaiyapskl div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -4405,23 +4385,23 @@ Table&nbsp;7: Results under base-case, optimistic (+20% probabilities, −15% co
 </figcaption>
 <div aria-describedby="tbl-scenarios-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="ikprfsxhks" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ikprfsxhks table {
+<div id="lhcrqkxhyv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#lhcrqkxhyv table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ikprfsxhks thead, #ikprfsxhks tbody, #ikprfsxhks tfoot, #ikprfsxhks tr, #ikprfsxhks td, #ikprfsxhks th {
+#lhcrqkxhyv thead, #lhcrqkxhyv tbody, #lhcrqkxhyv tfoot, #lhcrqkxhyv tr, #lhcrqkxhyv td, #lhcrqkxhyv th {
   border-style: none;
 }
 
-#ikprfsxhks p {
+#lhcrqkxhyv p {
   margin: 0;
   padding: 0;
 }
 
-#ikprfsxhks .gt_table {
+#lhcrqkxhyv .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -4447,12 +4427,12 @@ Table&nbsp;7: Results under base-case, optimistic (+20% probabilities, −15% co
   border-left-color: #D3D3D3;
 }
 
-#ikprfsxhks .gt_caption {
+#lhcrqkxhyv .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ikprfsxhks .gt_title {
+#lhcrqkxhyv .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -4464,7 +4444,7 @@ Table&nbsp;7: Results under base-case, optimistic (+20% probabilities, −15% co
   border-bottom-width: 0;
 }
 
-#ikprfsxhks .gt_subtitle {
+#lhcrqkxhyv .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -4476,7 +4456,7 @@ Table&nbsp;7: Results under base-case, optimistic (+20% probabilities, −15% co
   border-top-width: 0;
 }
 
-#ikprfsxhks .gt_heading {
+#lhcrqkxhyv .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -4488,13 +4468,13 @@ Table&nbsp;7: Results under base-case, optimistic (+20% probabilities, −15% co
   border-right-color: #D3D3D3;
 }
 
-#ikprfsxhks .gt_bottom_border {
+#lhcrqkxhyv .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ikprfsxhks .gt_col_headings {
+#lhcrqkxhyv .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4509,7 +4489,7 @@ Table&nbsp;7: Results under base-case, optimistic (+20% probabilities, −15% co
   border-right-color: #D3D3D3;
 }
 
-#ikprfsxhks .gt_col_heading {
+#lhcrqkxhyv .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4529,7 +4509,7 @@ Table&nbsp;7: Results under base-case, optimistic (+20% probabilities, −15% co
   overflow-x: hidden;
 }
 
-#ikprfsxhks .gt_column_spanner_outer {
+#lhcrqkxhyv .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4541,15 +4521,15 @@ Table&nbsp;7: Results under base-case, optimistic (+20% probabilities, −15% co
   padding-right: 4px;
 }
 
-#ikprfsxhks .gt_column_spanner_outer:first-child {
+#lhcrqkxhyv .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ikprfsxhks .gt_column_spanner_outer:last-child {
+#lhcrqkxhyv .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ikprfsxhks .gt_column_spanner {
+#lhcrqkxhyv .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -4561,11 +4541,11 @@ Table&nbsp;7: Results under base-case, optimistic (+20% probabilities, −15% co
   width: 100%;
 }
 
-#ikprfsxhks .gt_spanner_row {
+#lhcrqkxhyv .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ikprfsxhks .gt_group_heading {
+#lhcrqkxhyv .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4591,7 +4571,7 @@ Table&nbsp;7: Results under base-case, optimistic (+20% probabilities, −15% co
   text-align: left;
 }
 
-#ikprfsxhks .gt_empty_group_heading {
+#lhcrqkxhyv .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4606,15 +4586,15 @@ Table&nbsp;7: Results under base-case, optimistic (+20% probabilities, −15% co
   vertical-align: middle;
 }
 
-#ikprfsxhks .gt_from_md > :first-child {
+#lhcrqkxhyv .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ikprfsxhks .gt_from_md > :last-child {
+#lhcrqkxhyv .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ikprfsxhks .gt_row {
+#lhcrqkxhyv .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4633,7 +4613,7 @@ Table&nbsp;7: Results under base-case, optimistic (+20% probabilities, −15% co
   overflow-x: hidden;
 }
 
-#ikprfsxhks .gt_stub {
+#lhcrqkxhyv .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4646,7 +4626,7 @@ Table&nbsp;7: Results under base-case, optimistic (+20% probabilities, −15% co
   padding-right: 5px;
 }
 
-#ikprfsxhks .gt_stub_row_group {
+#lhcrqkxhyv .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4660,15 +4640,15 @@ Table&nbsp;7: Results under base-case, optimistic (+20% probabilities, −15% co
   vertical-align: top;
 }
 
-#ikprfsxhks .gt_row_group_first td {
+#lhcrqkxhyv .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ikprfsxhks .gt_row_group_first th {
+#lhcrqkxhyv .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ikprfsxhks .gt_summary_row {
+#lhcrqkxhyv .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4678,16 +4658,16 @@ Table&nbsp;7: Results under base-case, optimistic (+20% probabilities, −15% co
   padding-right: 5px;
 }
 
-#ikprfsxhks .gt_first_summary_row {
+#lhcrqkxhyv .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ikprfsxhks .gt_first_summary_row.thick {
+#lhcrqkxhyv .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ikprfsxhks .gt_last_summary_row {
+#lhcrqkxhyv .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4697,7 +4677,7 @@ Table&nbsp;7: Results under base-case, optimistic (+20% probabilities, −15% co
   border-bottom-color: #D3D3D3;
 }
 
-#ikprfsxhks .gt_grand_summary_row {
+#lhcrqkxhyv .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4707,7 +4687,7 @@ Table&nbsp;7: Results under base-case, optimistic (+20% probabilities, −15% co
   padding-right: 5px;
 }
 
-#ikprfsxhks .gt_first_grand_summary_row {
+#lhcrqkxhyv .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4717,7 +4697,7 @@ Table&nbsp;7: Results under base-case, optimistic (+20% probabilities, −15% co
   border-top-color: #D3D3D3;
 }
 
-#ikprfsxhks .gt_last_grand_summary_row_top {
+#lhcrqkxhyv .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4727,11 +4707,11 @@ Table&nbsp;7: Results under base-case, optimistic (+20% probabilities, −15% co
   border-bottom-color: #D3D3D3;
 }
 
-#ikprfsxhks .gt_striped {
+#lhcrqkxhyv .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ikprfsxhks .gt_table_body {
+#lhcrqkxhyv .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4740,7 +4720,7 @@ Table&nbsp;7: Results under base-case, optimistic (+20% probabilities, −15% co
   border-bottom-color: #D3D3D3;
 }
 
-#ikprfsxhks .gt_footnotes {
+#lhcrqkxhyv .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4754,7 +4734,7 @@ Table&nbsp;7: Results under base-case, optimistic (+20% probabilities, −15% co
   border-right-color: #D3D3D3;
 }
 
-#ikprfsxhks .gt_footnote {
+#lhcrqkxhyv .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -4763,7 +4743,7 @@ Table&nbsp;7: Results under base-case, optimistic (+20% probabilities, −15% co
   padding-right: 5px;
 }
 
-#ikprfsxhks .gt_sourcenotes {
+#lhcrqkxhyv .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4777,7 +4757,7 @@ Table&nbsp;7: Results under base-case, optimistic (+20% probabilities, −15% co
   border-right-color: #D3D3D3;
 }
 
-#ikprfsxhks .gt_sourcenote {
+#lhcrqkxhyv .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -4785,72 +4765,72 @@ Table&nbsp;7: Results under base-case, optimistic (+20% probabilities, −15% co
   padding-right: 5px;
 }
 
-#ikprfsxhks .gt_left {
+#lhcrqkxhyv .gt_left {
   text-align: left;
 }
 
-#ikprfsxhks .gt_center {
+#lhcrqkxhyv .gt_center {
   text-align: center;
 }
 
-#ikprfsxhks .gt_right {
+#lhcrqkxhyv .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ikprfsxhks .gt_font_normal {
+#lhcrqkxhyv .gt_font_normal {
   font-weight: normal;
 }
 
-#ikprfsxhks .gt_font_bold {
+#lhcrqkxhyv .gt_font_bold {
   font-weight: bold;
 }
 
-#ikprfsxhks .gt_font_italic {
+#lhcrqkxhyv .gt_font_italic {
   font-style: italic;
 }
 
-#ikprfsxhks .gt_super {
+#lhcrqkxhyv .gt_super {
   font-size: 65%;
 }
 
-#ikprfsxhks .gt_footnote_marks {
+#lhcrqkxhyv .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ikprfsxhks .gt_asterisk {
+#lhcrqkxhyv .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ikprfsxhks .gt_indent_1 {
+#lhcrqkxhyv .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ikprfsxhks .gt_indent_2 {
+#lhcrqkxhyv .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ikprfsxhks .gt_indent_3 {
+#lhcrqkxhyv .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ikprfsxhks .gt_indent_4 {
+#lhcrqkxhyv .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ikprfsxhks .gt_indent_5 {
+#lhcrqkxhyv .gt_indent_5 {
   text-indent: 25px;
 }
 
-#ikprfsxhks .katex-display {
+#lhcrqkxhyv .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#ikprfsxhks div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#lhcrqkxhyv div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -5044,23 +5024,23 @@ Table&nbsp;8: PSA summary: mean results with 95% credible intervals from 1,000 s
 </figcaption>
 <div aria-describedby="tbl-psa-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="hzxdhblhsv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#hzxdhblhsv table {
+<div id="fqiaeouxwz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#fqiaeouxwz table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#hzxdhblhsv thead, #hzxdhblhsv tbody, #hzxdhblhsv tfoot, #hzxdhblhsv tr, #hzxdhblhsv td, #hzxdhblhsv th {
+#fqiaeouxwz thead, #fqiaeouxwz tbody, #fqiaeouxwz tfoot, #fqiaeouxwz tr, #fqiaeouxwz td, #fqiaeouxwz th {
   border-style: none;
 }
 
-#hzxdhblhsv p {
+#fqiaeouxwz p {
   margin: 0;
   padding: 0;
 }
 
-#hzxdhblhsv .gt_table {
+#fqiaeouxwz .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -5086,12 +5066,12 @@ Table&nbsp;8: PSA summary: mean results with 95% credible intervals from 1,000 s
   border-left-color: #D3D3D3;
 }
 
-#hzxdhblhsv .gt_caption {
+#fqiaeouxwz .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#hzxdhblhsv .gt_title {
+#fqiaeouxwz .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -5103,7 +5083,7 @@ Table&nbsp;8: PSA summary: mean results with 95% credible intervals from 1,000 s
   border-bottom-width: 0;
 }
 
-#hzxdhblhsv .gt_subtitle {
+#fqiaeouxwz .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -5115,7 +5095,7 @@ Table&nbsp;8: PSA summary: mean results with 95% credible intervals from 1,000 s
   border-top-width: 0;
 }
 
-#hzxdhblhsv .gt_heading {
+#fqiaeouxwz .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -5127,13 +5107,13 @@ Table&nbsp;8: PSA summary: mean results with 95% credible intervals from 1,000 s
   border-right-color: #D3D3D3;
 }
 
-#hzxdhblhsv .gt_bottom_border {
+#fqiaeouxwz .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#hzxdhblhsv .gt_col_headings {
+#fqiaeouxwz .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5148,7 +5128,7 @@ Table&nbsp;8: PSA summary: mean results with 95% credible intervals from 1,000 s
   border-right-color: #D3D3D3;
 }
 
-#hzxdhblhsv .gt_col_heading {
+#fqiaeouxwz .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5168,7 +5148,7 @@ Table&nbsp;8: PSA summary: mean results with 95% credible intervals from 1,000 s
   overflow-x: hidden;
 }
 
-#hzxdhblhsv .gt_column_spanner_outer {
+#fqiaeouxwz .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5180,15 +5160,15 @@ Table&nbsp;8: PSA summary: mean results with 95% credible intervals from 1,000 s
   padding-right: 4px;
 }
 
-#hzxdhblhsv .gt_column_spanner_outer:first-child {
+#fqiaeouxwz .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#hzxdhblhsv .gt_column_spanner_outer:last-child {
+#fqiaeouxwz .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#hzxdhblhsv .gt_column_spanner {
+#fqiaeouxwz .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -5200,11 +5180,11 @@ Table&nbsp;8: PSA summary: mean results with 95% credible intervals from 1,000 s
   width: 100%;
 }
 
-#hzxdhblhsv .gt_spanner_row {
+#fqiaeouxwz .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#hzxdhblhsv .gt_group_heading {
+#fqiaeouxwz .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5230,7 +5210,7 @@ Table&nbsp;8: PSA summary: mean results with 95% credible intervals from 1,000 s
   text-align: left;
 }
 
-#hzxdhblhsv .gt_empty_group_heading {
+#fqiaeouxwz .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -5245,15 +5225,15 @@ Table&nbsp;8: PSA summary: mean results with 95% credible intervals from 1,000 s
   vertical-align: middle;
 }
 
-#hzxdhblhsv .gt_from_md > :first-child {
+#fqiaeouxwz .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#hzxdhblhsv .gt_from_md > :last-child {
+#fqiaeouxwz .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#hzxdhblhsv .gt_row {
+#fqiaeouxwz .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5272,7 +5252,7 @@ Table&nbsp;8: PSA summary: mean results with 95% credible intervals from 1,000 s
   overflow-x: hidden;
 }
 
-#hzxdhblhsv .gt_stub {
+#fqiaeouxwz .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5285,7 +5265,7 @@ Table&nbsp;8: PSA summary: mean results with 95% credible intervals from 1,000 s
   padding-right: 5px;
 }
 
-#hzxdhblhsv .gt_stub_row_group {
+#fqiaeouxwz .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5299,15 +5279,15 @@ Table&nbsp;8: PSA summary: mean results with 95% credible intervals from 1,000 s
   vertical-align: top;
 }
 
-#hzxdhblhsv .gt_row_group_first td {
+#fqiaeouxwz .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#hzxdhblhsv .gt_row_group_first th {
+#fqiaeouxwz .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#hzxdhblhsv .gt_summary_row {
+#fqiaeouxwz .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5317,16 +5297,16 @@ Table&nbsp;8: PSA summary: mean results with 95% credible intervals from 1,000 s
   padding-right: 5px;
 }
 
-#hzxdhblhsv .gt_first_summary_row {
+#fqiaeouxwz .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#hzxdhblhsv .gt_first_summary_row.thick {
+#fqiaeouxwz .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#hzxdhblhsv .gt_last_summary_row {
+#fqiaeouxwz .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5336,7 +5316,7 @@ Table&nbsp;8: PSA summary: mean results with 95% credible intervals from 1,000 s
   border-bottom-color: #D3D3D3;
 }
 
-#hzxdhblhsv .gt_grand_summary_row {
+#fqiaeouxwz .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5346,7 +5326,7 @@ Table&nbsp;8: PSA summary: mean results with 95% credible intervals from 1,000 s
   padding-right: 5px;
 }
 
-#hzxdhblhsv .gt_first_grand_summary_row {
+#fqiaeouxwz .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5356,7 +5336,7 @@ Table&nbsp;8: PSA summary: mean results with 95% credible intervals from 1,000 s
   border-top-color: #D3D3D3;
 }
 
-#hzxdhblhsv .gt_last_grand_summary_row_top {
+#fqiaeouxwz .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5366,11 +5346,11 @@ Table&nbsp;8: PSA summary: mean results with 95% credible intervals from 1,000 s
   border-bottom-color: #D3D3D3;
 }
 
-#hzxdhblhsv .gt_striped {
+#fqiaeouxwz .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#hzxdhblhsv .gt_table_body {
+#fqiaeouxwz .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5379,7 +5359,7 @@ Table&nbsp;8: PSA summary: mean results with 95% credible intervals from 1,000 s
   border-bottom-color: #D3D3D3;
 }
 
-#hzxdhblhsv .gt_footnotes {
+#fqiaeouxwz .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5393,7 +5373,7 @@ Table&nbsp;8: PSA summary: mean results with 95% credible intervals from 1,000 s
   border-right-color: #D3D3D3;
 }
 
-#hzxdhblhsv .gt_footnote {
+#fqiaeouxwz .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -5402,7 +5382,7 @@ Table&nbsp;8: PSA summary: mean results with 95% credible intervals from 1,000 s
   padding-right: 5px;
 }
 
-#hzxdhblhsv .gt_sourcenotes {
+#fqiaeouxwz .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5416,7 +5396,7 @@ Table&nbsp;8: PSA summary: mean results with 95% credible intervals from 1,000 s
   border-right-color: #D3D3D3;
 }
 
-#hzxdhblhsv .gt_sourcenote {
+#fqiaeouxwz .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -5424,72 +5404,72 @@ Table&nbsp;8: PSA summary: mean results with 95% credible intervals from 1,000 s
   padding-right: 5px;
 }
 
-#hzxdhblhsv .gt_left {
+#fqiaeouxwz .gt_left {
   text-align: left;
 }
 
-#hzxdhblhsv .gt_center {
+#fqiaeouxwz .gt_center {
   text-align: center;
 }
 
-#hzxdhblhsv .gt_right {
+#fqiaeouxwz .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#hzxdhblhsv .gt_font_normal {
+#fqiaeouxwz .gt_font_normal {
   font-weight: normal;
 }
 
-#hzxdhblhsv .gt_font_bold {
+#fqiaeouxwz .gt_font_bold {
   font-weight: bold;
 }
 
-#hzxdhblhsv .gt_font_italic {
+#fqiaeouxwz .gt_font_italic {
   font-style: italic;
 }
 
-#hzxdhblhsv .gt_super {
+#fqiaeouxwz .gt_super {
   font-size: 65%;
 }
 
-#hzxdhblhsv .gt_footnote_marks {
+#fqiaeouxwz .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#hzxdhblhsv .gt_asterisk {
+#fqiaeouxwz .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#hzxdhblhsv .gt_indent_1 {
+#fqiaeouxwz .gt_indent_1 {
   text-indent: 5px;
 }
 
-#hzxdhblhsv .gt_indent_2 {
+#fqiaeouxwz .gt_indent_2 {
   text-indent: 10px;
 }
 
-#hzxdhblhsv .gt_indent_3 {
+#fqiaeouxwz .gt_indent_3 {
   text-indent: 15px;
 }
 
-#hzxdhblhsv .gt_indent_4 {
+#fqiaeouxwz .gt_indent_4 {
   text-indent: 20px;
 }
 
-#hzxdhblhsv .gt_indent_5 {
+#fqiaeouxwz .gt_indent_5 {
   text-indent: 25px;
 }
 
-#hzxdhblhsv .katex-display {
+#fqiaeouxwz .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#hzxdhblhsv div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#fqiaeouxwz div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -5618,23 +5598,23 @@ Table&nbsp;9: How often each strategy ranks first across 1,000 PSA iterations
 </figcaption>
 <div aria-describedby="tbl-ranking-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="wdpefhabee" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#wdpefhabee table {
+<div id="fwhbnateim" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#fwhbnateim table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#wdpefhabee thead, #wdpefhabee tbody, #wdpefhabee tfoot, #wdpefhabee tr, #wdpefhabee td, #wdpefhabee th {
+#fwhbnateim thead, #fwhbnateim tbody, #fwhbnateim tfoot, #fwhbnateim tr, #fwhbnateim td, #fwhbnateim th {
   border-style: none;
 }
 
-#wdpefhabee p {
+#fwhbnateim p {
   margin: 0;
   padding: 0;
 }
 
-#wdpefhabee .gt_table {
+#fwhbnateim .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -5660,12 +5640,12 @@ Table&nbsp;9: How often each strategy ranks first across 1,000 PSA iterations
   border-left-color: #D3D3D3;
 }
 
-#wdpefhabee .gt_caption {
+#fwhbnateim .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#wdpefhabee .gt_title {
+#fwhbnateim .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -5677,7 +5657,7 @@ Table&nbsp;9: How often each strategy ranks first across 1,000 PSA iterations
   border-bottom-width: 0;
 }
 
-#wdpefhabee .gt_subtitle {
+#fwhbnateim .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -5689,7 +5669,7 @@ Table&nbsp;9: How often each strategy ranks first across 1,000 PSA iterations
   border-top-width: 0;
 }
 
-#wdpefhabee .gt_heading {
+#fwhbnateim .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -5701,13 +5681,13 @@ Table&nbsp;9: How often each strategy ranks first across 1,000 PSA iterations
   border-right-color: #D3D3D3;
 }
 
-#wdpefhabee .gt_bottom_border {
+#fwhbnateim .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#wdpefhabee .gt_col_headings {
+#fwhbnateim .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5722,7 +5702,7 @@ Table&nbsp;9: How often each strategy ranks first across 1,000 PSA iterations
   border-right-color: #D3D3D3;
 }
 
-#wdpefhabee .gt_col_heading {
+#fwhbnateim .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5742,7 +5722,7 @@ Table&nbsp;9: How often each strategy ranks first across 1,000 PSA iterations
   overflow-x: hidden;
 }
 
-#wdpefhabee .gt_column_spanner_outer {
+#fwhbnateim .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5754,15 +5734,15 @@ Table&nbsp;9: How often each strategy ranks first across 1,000 PSA iterations
   padding-right: 4px;
 }
 
-#wdpefhabee .gt_column_spanner_outer:first-child {
+#fwhbnateim .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#wdpefhabee .gt_column_spanner_outer:last-child {
+#fwhbnateim .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#wdpefhabee .gt_column_spanner {
+#fwhbnateim .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -5774,11 +5754,11 @@ Table&nbsp;9: How often each strategy ranks first across 1,000 PSA iterations
   width: 100%;
 }
 
-#wdpefhabee .gt_spanner_row {
+#fwhbnateim .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#wdpefhabee .gt_group_heading {
+#fwhbnateim .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5804,7 +5784,7 @@ Table&nbsp;9: How often each strategy ranks first across 1,000 PSA iterations
   text-align: left;
 }
 
-#wdpefhabee .gt_empty_group_heading {
+#fwhbnateim .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -5819,15 +5799,15 @@ Table&nbsp;9: How often each strategy ranks first across 1,000 PSA iterations
   vertical-align: middle;
 }
 
-#wdpefhabee .gt_from_md > :first-child {
+#fwhbnateim .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#wdpefhabee .gt_from_md > :last-child {
+#fwhbnateim .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#wdpefhabee .gt_row {
+#fwhbnateim .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5846,7 +5826,7 @@ Table&nbsp;9: How often each strategy ranks first across 1,000 PSA iterations
   overflow-x: hidden;
 }
 
-#wdpefhabee .gt_stub {
+#fwhbnateim .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5859,7 +5839,7 @@ Table&nbsp;9: How often each strategy ranks first across 1,000 PSA iterations
   padding-right: 5px;
 }
 
-#wdpefhabee .gt_stub_row_group {
+#fwhbnateim .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5873,15 +5853,15 @@ Table&nbsp;9: How often each strategy ranks first across 1,000 PSA iterations
   vertical-align: top;
 }
 
-#wdpefhabee .gt_row_group_first td {
+#fwhbnateim .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#wdpefhabee .gt_row_group_first th {
+#fwhbnateim .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#wdpefhabee .gt_summary_row {
+#fwhbnateim .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5891,16 +5871,16 @@ Table&nbsp;9: How often each strategy ranks first across 1,000 PSA iterations
   padding-right: 5px;
 }
 
-#wdpefhabee .gt_first_summary_row {
+#fwhbnateim .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#wdpefhabee .gt_first_summary_row.thick {
+#fwhbnateim .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#wdpefhabee .gt_last_summary_row {
+#fwhbnateim .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5910,7 +5890,7 @@ Table&nbsp;9: How often each strategy ranks first across 1,000 PSA iterations
   border-bottom-color: #D3D3D3;
 }
 
-#wdpefhabee .gt_grand_summary_row {
+#fwhbnateim .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5920,7 +5900,7 @@ Table&nbsp;9: How often each strategy ranks first across 1,000 PSA iterations
   padding-right: 5px;
 }
 
-#wdpefhabee .gt_first_grand_summary_row {
+#fwhbnateim .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5930,7 +5910,7 @@ Table&nbsp;9: How often each strategy ranks first across 1,000 PSA iterations
   border-top-color: #D3D3D3;
 }
 
-#wdpefhabee .gt_last_grand_summary_row_top {
+#fwhbnateim .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5940,11 +5920,11 @@ Table&nbsp;9: How often each strategy ranks first across 1,000 PSA iterations
   border-bottom-color: #D3D3D3;
 }
 
-#wdpefhabee .gt_striped {
+#fwhbnateim .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#wdpefhabee .gt_table_body {
+#fwhbnateim .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5953,7 +5933,7 @@ Table&nbsp;9: How often each strategy ranks first across 1,000 PSA iterations
   border-bottom-color: #D3D3D3;
 }
 
-#wdpefhabee .gt_footnotes {
+#fwhbnateim .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5967,7 +5947,7 @@ Table&nbsp;9: How often each strategy ranks first across 1,000 PSA iterations
   border-right-color: #D3D3D3;
 }
 
-#wdpefhabee .gt_footnote {
+#fwhbnateim .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -5976,7 +5956,7 @@ Table&nbsp;9: How often each strategy ranks first across 1,000 PSA iterations
   padding-right: 5px;
 }
 
-#wdpefhabee .gt_sourcenotes {
+#fwhbnateim .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5990,7 +5970,7 @@ Table&nbsp;9: How often each strategy ranks first across 1,000 PSA iterations
   border-right-color: #D3D3D3;
 }
 
-#wdpefhabee .gt_sourcenote {
+#fwhbnateim .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -5998,72 +5978,72 @@ Table&nbsp;9: How often each strategy ranks first across 1,000 PSA iterations
   padding-right: 5px;
 }
 
-#wdpefhabee .gt_left {
+#fwhbnateim .gt_left {
   text-align: left;
 }
 
-#wdpefhabee .gt_center {
+#fwhbnateim .gt_center {
   text-align: center;
 }
 
-#wdpefhabee .gt_right {
+#fwhbnateim .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#wdpefhabee .gt_font_normal {
+#fwhbnateim .gt_font_normal {
   font-weight: normal;
 }
 
-#wdpefhabee .gt_font_bold {
+#fwhbnateim .gt_font_bold {
   font-weight: bold;
 }
 
-#wdpefhabee .gt_font_italic {
+#fwhbnateim .gt_font_italic {
   font-style: italic;
 }
 
-#wdpefhabee .gt_super {
+#fwhbnateim .gt_super {
   font-size: 65%;
 }
 
-#wdpefhabee .gt_footnote_marks {
+#fwhbnateim .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#wdpefhabee .gt_asterisk {
+#fwhbnateim .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#wdpefhabee .gt_indent_1 {
+#fwhbnateim .gt_indent_1 {
   text-indent: 5px;
 }
 
-#wdpefhabee .gt_indent_2 {
+#fwhbnateim .gt_indent_2 {
   text-indent: 10px;
 }
 
-#wdpefhabee .gt_indent_3 {
+#fwhbnateim .gt_indent_3 {
   text-indent: 15px;
 }
 
-#wdpefhabee .gt_indent_4 {
+#fwhbnateim .gt_indent_4 {
   text-indent: 20px;
 }
 
-#wdpefhabee .gt_indent_5 {
+#fwhbnateim .gt_indent_5 {
   text-indent: 25px;
 }
 
-#wdpefhabee .katex-display {
+#fwhbnateim .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#wdpefhabee div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#fwhbnateim div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -6539,7 +6519,7 @@ loaded via a namespace (and not attached):
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("^(?:http:|https:)\/\/(?:[^\/]*\.)?bridaybrummer\.github\.io|^(?!http)");
+        var filterRegex = new RegExp("^(?:http:|https:)\/\/(?:[^\/]*\.)?your-site-url\.com|^(?!http)");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -6953,8 +6933,8 @@ loaded via a namespace (and not attached):
 <span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Adult males (30+)**: Occupational exposures in agricultural settings</span>
 <span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a>::: {.callout-warning}</span>
-<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a><span class="fu">## True burden far exceeds NMC notifications</span></span>
-<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>The ~690 NMC notifications per year almost certainly under-represent the true burden. Combining the three data systems as **mutually exclusive** (no patient-level linkage exists across NMC, NHLS, and PIH), the true annual burden is approximately **NMC (~690) + NHLS severe BChE (~2,000) + PIH calls (~9,000) ≈ 11,690 cases/year**. Applying the NMC-observed case fatality rate of **10–15%** yields ~1,500–1,800 deaths/year (headline uses upper-mid CFR 13–15% because vital-registration data systematically under-code intentional self-poisoning under ICD-10 default rules; see the [VR poisoning-deaths analysis](https://bridaybrummer.github.io/MRC_VR/projects/poisoning_deaths/) — pesticide-only deaths derived from a 30–50% pesticide share of all-cause poisoning mortality (3,200–4,000/year) yield an independent triangulation of ~960–2,000 pesticide deaths/year, consistent with the CFR-derived range). Monetised at ~R12,000/non-fatal case and ~R1.5M/death (human-capital approach), the **total economic burden is on the order of R2.3 billion/year**. See the <span class="co">[</span><span class="ot">Decision Model — Economic Analysis</span><span class="co">](posts/decision_model.qmd#sec-burden-economics)</span> for the linkage between surveillance spend, detection rate, and avoided burden cost.</span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a><span class="fu">## Under-counting is substantial</span></span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>The ~690 NMC notifications per year almost certainly under-represent the true burden. BChE data alone show ~2,000 severe inhibitions annually. Evaluations of the NMC system describe incomplete reporting, incorrect data, and discrepancies between notification and laboratory records. The real number of poisonings may be **3–5 times higher** than what is currently captured.</span>
 <span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a><span class="fu">## Root Causes: What Can Be Fixed Now?</span></span>
@@ -7190,7 +7170,7 @@ loaded via a namespace (and not attached):
 <span id="cb2-329"><a href="#cb2-329" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-330"><a href="#cb2-330" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
 <span id="cb2-331"><a href="#cb2-331" aria-hidden="true" tabindex="-1"></a><span class="fu">## How to update parameters</span></span>
-<span id="cb2-332"><a href="#cb2-332" aria-hidden="true" tabindex="-1"></a>Edit <span class="co">[</span><span class="ot">`amua_import_parameters_v3.csv`</span><span class="co">](amua_import_parameters_v3.csv)</span>:</span>
+<span id="cb2-332"><a href="#cb2-332" aria-hidden="true" tabindex="-1"></a>Edit <span class="co">[</span><span class="ot">`amua_import_parameters_v2.csv`</span><span class="co">](amua_import_parameters_v2.csv)</span>:</span>
 <span id="cb2-333"><a href="#cb2-333" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-334"><a href="#cb2-334" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**`Expression`** column → point estimate (used in base-case)</span>
 <span id="cb2-335"><a href="#cb2-335" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**`Notes`** column → PSA distribution specification (e.g., <span class="in">`dist=beta(80,20)`</span>)</span>
@@ -7371,7 +7351,7 @@ loaded via a namespace (and not attached):
 <span id="cb2-534"><a href="#cb2-534" aria-hidden="true" tabindex="-1"></a><span class="fu">## Updating the model</span></span>
 <span id="cb2-535"><a href="#cb2-535" aria-hidden="true" tabindex="-1"></a>After the pilot:</span>
 <span id="cb2-536"><a href="#cb2-536" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-537"><a href="#cb2-537" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Update values in <span class="co">[</span><span class="ot">`amua_import_parameters_v3.csv`</span><span class="co">](amua_import_parameters_v3.csv)</span></span>
+<span id="cb2-537"><a href="#cb2-537" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Update values in <span class="co">[</span><span class="ot">`amua_import_parameters_v2.csv`</span><span class="co">](amua_import_parameters_v2.csv)</span></span>
 <span id="cb2-538"><a href="#cb2-538" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Run <span class="in">`Rscript wrangling_v2.r`</span> in the terminal</span>
 <span id="cb2-539"><a href="#cb2-539" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Re-render this report: <span class="in">`quarto render analysis_report_v2.qmd`</span></span>
 <span id="cb2-540"><a href="#cb2-540" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Compare the updated results with the current placeholder-based estimates</span>
@@ -7383,7 +7363,7 @@ loaded via a namespace (and not attached):
 <span id="cb2-546"><a href="#cb2-546" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-547"><a href="#cb2-547" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip collapse="true"}</span>
 <span id="cb2-548"><a href="#cb2-548" aria-hidden="true" tabindex="-1"></a><span class="fu">## Adding a new strategy</span></span>
-<span id="cb2-549"><a href="#cb2-549" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Add parameters to <span class="in">`amua_import_parameters_v3.csv`</span> (probability chain + costs)</span>
+<span id="cb2-549"><a href="#cb2-549" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Add parameters to <span class="in">`amua_import_parameters_v2.csv`</span> (probability chain + costs)</span>
 <span id="cb2-550"><a href="#cb2-550" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Add a <span class="in">`make_row()`</span> call in <span class="in">`evaluate_tree()`</span> in <span class="in">`methods_v2.r`</span></span>
 <span id="cb2-551"><a href="#cb2-551" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Re-run <span class="in">`wrangling_v2.r`</span> — all tables, figures and sensitivity analyses update automatically</span>
 <span id="cb2-552"><a href="#cb2-552" aria-hidden="true" tabindex="-1"></a>:::</span>

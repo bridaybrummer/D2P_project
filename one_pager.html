@@ -107,22 +107,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<!--
-  Chatbot embed slot.
-
-  After signing up at chatbase.co and creating your chatbot, paste the
-  provided <script> tag *between* the two markers below, then run:
-
-      quarto publish gh-pages --no-prompt --no-browser
-
-  The script will then load on every page of the site (bottom-right bubble).
-
-  Until the tag is pasted, this file renders nothing — safe to leave in place.
--->
-
-<!-- BEGIN CHATBOT EMBED -->
-<!-- Paste Chatbase / DocsBot / etc. script tag here -->
-<!-- END CHATBOT EMBED -->
 
 
 <link rel="stylesheet" href="styles.css">
@@ -161,14 +145,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link" href="./analysis_report_v2.html"> 
 <span class="menu-text">Full Analysis Report</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./glossary.html"> 
-<span class="menu-text">Glossary</span></a>
-  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/bridaybrummer/D2P_project"> <i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/"> <i class="bi bi-github" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -233,7 +213,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="the-problem-were-solving" class="level2">
 <h2 class="anchored" data-anchor-id="the-problem-were-solving">The Problem We’re Solving</h2>
 <div class="key-stat">
-<p><strong>~11,690 South Africans</strong> are poisoned by pesticides every year (NMC + NHLS + PIH, treated as mutually exclusive in the absence of record linkage). At a case fatality rate of 10–15%, that is <strong>~1,500–1,800 deaths/year</strong> (headline uses upper-mid CFR 13–15%; vital-registration under-codes intentional poisonings, so this is conservative — see the <a href="https://bridaybrummer.github.io/MRC_VR/projects/poisoning_deaths/">VR analysis</a>) and a total economic burden of <strong>~R2.3 billion/year</strong>. Our surveillance system captures and acts on <strong>fewer than half</strong> of these cases.</p>
+<p><strong>10,000+ South Africans</strong> are severely poisoned by pesticides every year — but our surveillance system captures <strong>fewer than half</strong> of these cases.</p>
 </div>
 <p><strong>Who is affected?</strong></p>
 <ul>
@@ -335,10 +315,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <hr>
 </section>
-<section id="what-this-costs-vs.-what-it-saves" class="level2">
-<h2 class="anchored" data-anchor-id="what-this-costs-vs.-what-it-saves">What This Costs vs.&nbsp;What It Saves</h2>
+<section id="what-this-costs-in-context" class="level2">
+<h2 class="anchored" data-anchor-id="what-this-costs-in-context">What This Costs in Context</h2>
 <table class="table-striped caption-top table">
-<caption>Base-case parameters: response efficacy η = 0.30, CFR = 12.5%. See <a href="./posts/decision_model.html#sec-burden-economics">Decision Model — Economic Analysis</a>.</caption>
+<colgroup>
+<col style="width: 57%">
+<col style="width: 42%">
+</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;"><strong>Comparison</strong></th>
@@ -347,36 +330,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">True annual burden of pesticide poisoning</td>
-<td style="text-align: left;"><strong>~R2.3 billion</strong></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Full Package annual cost (narrow)</td>
+<td style="text-align: left;">Full Package annual cost</td>
 <td style="text-align: left;">R237,000</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">Full Package annual cost (whole-system, including induced demand)</td>
-<td style="text-align: left;">R1.19 million</td>
-</tr>
 <tr class="even">
-<td style="text-align: left;">Avoided burden cost (Full Package, base case)</td>
-<td style="text-align: left;"><strong>~R260 million/year</strong></td>
+<td style="text-align: left;">Cost per severe poisoning case</td>
+<td style="text-align: left;">R26</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Return on investment (avoided ÷ spend)</td>
-<td style="text-align: left;"><strong>~220–1,100×</strong></td>
-</tr>
-<tr class="even">
 <td style="text-align: left;">% of National DoH budget</td>
-<td style="text-align: left;">0.0004 – 0.002%</td>
+<td style="text-align: left;">0.0004%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Cost per additional hotspot detected</td>
+<td style="text-align: left;">R23,700</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><strong>Cost if we do nothing</strong></td>
-<td style="text-align: left;"><strong>~R2.3B/year burden, preventable deaths, ongoing under-detection</strong></td>
+<td style="text-align: left;"><strong>Preventable deaths, ongoing under-detection</strong></td>
 </tr>
 </tbody>
 </table>
-<p><strong>For comparison:</strong> South Africa’s TB surveillance system costs ~R15 million/year. Pesticide surveillance would be <strong>1.6–8%</strong> of that investment, against a comparable annual burden.</p>
+<p><strong>For comparison:</strong> South Africa’s TB surveillance system costs ~R15 million/year. Pesticide surveillance would be <strong>1.6%</strong> of that investment.</p>
 <hr>
 </section>
 <section id="legal-basis-we-have-authority-to-act-today" class="level2">
@@ -414,69 +389,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <hr>
 </section>
 </section>
-<section id="the-d2p-recommendation" class="level2">
-<h2 class="anchored" data-anchor-id="the-d2p-recommendation">The D2P Recommendation</h2>
-<section id="adopt-options-3-4-5-as-the-minimum-viable-package-scale-to-full-package-within-18-months" class="level3 recommendation-box">
-<h3 class="anchored" data-anchor-id="adopt-options-3-4-5-as-the-minimum-viable-package-scale-to-full-package-within-18-months">Adopt Options 3 + 4 + 5 as the Minimum Viable Package; scale to Full Package within 18 months</h3>
-<p><strong>Rationale:</strong> Options 3 (BChE auto-notify) and 4 (PIH quarterly reports) generate the data; Option 5 (provincial response) closes the loop. Together they capture ~80% of the Full Package’s effectiveness at ~40% of its narrow cost.</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Decision</th>
-<th style="text-align: left;">Action</th>
-<th style="text-align: left;">Owner</th>
-<th style="text-align: left;">Timeline</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><strong>1. Approve pilot</strong></td>
-<td style="text-align: left;">R950,000 over 6 months in Gauteng, Western Cape, KZN</td>
-<td style="text-align: left;">NDoH + MAC</td>
-<td style="text-align: left;">Q3 2026</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>2. Designate lead</strong></td>
-<td style="text-align: left;">NICD as national coordinator</td>
-<td style="text-align: left;">NDoH</td>
-<td style="text-align: left;">Q3 2026</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>3. Launch quick wins</strong></td>
-<td style="text-align: left;">Options 3 + 4 (cost ~R117k/year)</td>
-<td style="text-align: left;">NICD + NHLS + PIH</td>
-<td style="text-align: left;">Weeks 1–4</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>4. Build response capacity</strong></td>
-<td style="text-align: left;">Option 5 in 3 pilot provinces</td>
-<td style="text-align: left;">Provincial DoH</td>
-<td style="text-align: left;">Weeks 4–12</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>5. Evaluate and scale</strong></td>
-<td style="text-align: left;">National rollout if avoided-burden ratio holds</td>
-<td style="text-align: left;">MAC</td>
-<td style="text-align: left;">Q1 2027</td>
-</tr>
-</tbody>
-</table>
-</section>
-</section>
 <section id="the-bottom-line" class="level2">
 <h2 class="anchored" data-anchor-id="the-bottom-line">The Bottom Line</h2>
 <div class="key-stat">
-<p><strong>We know the problem. We know the solutions. We have the legal authority. The economic case is overwhelming. We can start today.</strong></p>
+<p><strong>We know the problem. We know the solutions. We have the legal authority. We can start today.</strong></p>
 </div>
-<p><strong>The cost of action:</strong> R237k–R1.19M/year (narrow vs.&nbsp;whole-system)</p>
-<p><strong>The cost of inaction:</strong> ~R2.3 billion/year in unaddressed burden, ~1,500–1,800 preventable deaths, missed outbreaks</p>
-<p><strong>Return on investment:</strong> Avoided burden cost exceeds programme cost by <strong>two to three orders of magnitude</strong> under all plausible parameter combinations.</p>
+<p><strong>The cost of action:</strong> R237,000/year (affordable, evidence-based, legally feasible)</p>
+<p><strong>The cost of inaction:</strong> Preventable deaths, missed outbreaks, wasted data, and international embarrassment</p>
+<p><strong>What we’re asking for:</strong></p>
+<ol type="1">
+<li><strong>Approval</strong> to pilot the Full Package in 3 provinces (6 months, R120,000)</li>
+<li><strong>Commitment</strong> to scale nationally if pilot succeeds</li>
+<li><strong>Leadership</strong> from MAC and NDoH to coordinate across NICD, NHLS, PIH, and provinces</li>
+</ol>
 <hr>
 </section>
 <section id="contact-and-resources" class="level2">
@@ -639,7 +564,7 @@ University of Cape Town, School of Public Health</p>
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("^(?:http:|https:)\/\/(?:[^\/]*\.)?bridaybrummer\.github\.io|^(?!http)");
+        var filterRegex = new RegExp("^(?:http:|https:)\/\/(?:[^\/]*\.)?your-site-url\.com|^(?!http)");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -999,7 +924,7 @@ University of Cape Town, School of Public Health</p>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Problem We're Solving</span></span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>::: {.key-stat}</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>**~11,690 South Africans** are poisoned by pesticides every year (NMC + NHLS + PIH, treated as mutually exclusive in the absence of record linkage). At a case fatality rate of 10–15%, that is **~1,500–1,800 deaths/year** (headline uses upper-mid CFR 13–15%; vital-registration under-codes intentional poisonings, so this is conservative — see the [VR analysis](https://bridaybrummer.github.io/MRC_VR/projects/poisoning_deaths/)) and a total economic burden of **~R2.3 billion/year**. Our surveillance system captures and acts on **fewer than half** of these cases.</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>**10,000+ South Africans** are severely poisoned by pesticides every year — but our surveillance system captures **fewer than half** of these cases.</span>
 <span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>**Who is affected?**</span>
@@ -1125,121 +1050,107 @@ University of Cape Town, School of Public Health</p>
 <span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>---</span>
 <span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a><span class="fu">## What This Costs vs. What It Saves</span></span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a><span class="fu">## What This Costs in Context</span></span>
 <span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Comparison** | **Amount** <span class="pp">|</span></span>
 <span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a><span class="pp">|:---------------|:-----------|</span></span>
-<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> True annual burden of pesticide poisoning <span class="pp">|</span> **~R2.3 billion** <span class="pp">|</span></span>
-<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Full Package annual cost (narrow) <span class="pp">|</span> R237,000 <span class="pp">|</span></span>
-<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Full Package annual cost (whole-system, including induced demand) <span class="pp">|</span> R1.19 million <span class="pp">|</span></span>
-<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Avoided burden cost (Full Package, base case) <span class="pp">|</span> **~R260 million/year** <span class="pp">|</span></span>
-<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Return on investment (avoided ÷ spend) <span class="pp">|</span> **~220–1,100×** <span class="pp">|</span></span>
-<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> % of National DoH budget <span class="pp">|</span> 0.0004 – 0.002% <span class="pp">|</span></span>
-<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Cost if we do nothing** | **~R2.3B/year burden, preventable deaths, ongoing under-detection** <span class="pp">|</span></span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Full Package annual cost <span class="pp">|</span> R237,000 <span class="pp">|</span></span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Cost per severe poisoning case <span class="pp">|</span> R26 <span class="pp">|</span></span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> % of National DoH budget <span class="pp">|</span> 0.0004% <span class="pp">|</span></span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Cost per additional hotspot detected <span class="pp">|</span> R23,700 <span class="pp">|</span></span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Cost if we do nothing** | **Preventable deaths, ongoing under-detection** <span class="pp">|</span></span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>: {.striped}</span>
 <span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>: Base-case parameters: response efficacy η = 0.30, CFR = 12.5%. See <span class="co">[</span><span class="ot">Decision Model — Economic Analysis</span><span class="co">](posts/decision_model.qmd#sec-burden-economics)</span>. {.striped}</span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>**For comparison:** South Africa's TB surveillance system costs ~R15 million/year. Pesticide surveillance would be **1.6%** of that investment.</span>
 <span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>**For comparison:** South Africa's TB surveillance system costs ~R15 million/year. Pesticide surveillance would be **1.6–8%** of that investment, against a comparable annual burden.</span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>---</span>
 <span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a><span class="fu">## Legal Basis: We Have Authority to Act Today</span></span>
 <span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a><span class="fu">## Legal Basis: We Have Authority to Act Today</span></span>
-<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>::: {.key-stat}</span>
-<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>**All options are legally feasible under existing law — no new legislation required.**</span>
-<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**National Health Act (2003), Section 90**: Permits inter-agency data sharing for public health</span>
-<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**NMC Regulations**: Already allow laboratory-triggered notifications</span>
-<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Existing MOUs**: PIH-NICD collaboration established; NHLS-NICD can be formalized</span>
-<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Provincial outbreak authority**: Provincial health departments can investigate clusters</span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>::: {.key-stat}</span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>**All options are legally feasible under existing law — no new legislation required.**</span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**National Health Act (2003), Section 90**: Permits inter-agency data sharing for public health</span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**NMC Regulations**: Already allow laboratory-triggered notifications</span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Existing MOUs**: PIH-NICD collaboration established; NHLS-NICD can be formalized</span>
+<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Provincial outbreak authority**: Provincial health departments can investigate clusters</span>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>**Privacy:** All data sharing complies with POPIA (Protection of Personal Information Act) — no names or ID numbers shared.</span>
 <span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>**Privacy:** All data sharing complies with POPIA (Protection of Personal Information Act) — no names or ID numbers shared.</span>
+<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>---</span>
 <span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a><span class="fu">## Next Steps for Decision-Makers</span></span>
 <span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a><span class="fu">## Next Steps for Decision-Makers</span></span>
+<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a><span class="fu">### For Ministerial Advisory Committee (MAC) and NDoH Leadership:</span></span>
 <span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a><span class="fu">### For Ministerial Advisory Committee (MAC) and NDoH Leadership:</span></span>
-<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Review this synopsis** and the full <span class="co">[</span><span class="ot">policy brief</span><span class="co">](posts/policy_brief.qmd)</span></span>
-<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Approve pilot funding**: R120,000 for 6-month pilot (3 provinces)</span>
-<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Designate lead agency**: NICD as national coordinator</span>
-<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Set timeline**: Launch pilot Q3 2026, evaluate Q1 2027</span>
+<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Review this synopsis** and the full <span class="co">[</span><span class="ot">policy brief</span><span class="co">](posts/policy_brief.qmd)</span></span>
+<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Approve pilot funding**: R120,000 for 6-month pilot (3 provinces)</span>
+<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Designate lead agency**: NICD as national coordinator</span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Set timeline**: Launch pilot Q3 2026, evaluate Q1 2027</span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a><span class="fu">### For Provincial Health Leadership:</span></span>
 <span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a><span class="fu">### For Provincial Health Leadership:</span></span>
-<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Identify surveillance focal point** (existing epidemiologist or environmental health officer)</span>
-<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Assess local capacity** for BChE auto-notification (liaise with NHLS IT)</span>
-<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Allocate pilot budget**: R40,000–R80,000 depending on options selected</span>
+<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Identify surveillance focal point** (existing epidemiologist or environmental health officer)</span>
+<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Assess local capacity** for BChE auto-notification (liaise with NHLS IT)</span>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Allocate pilot budget**: R40,000–R80,000 depending on options selected</span>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>---</span>
 <span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Bottom Line</span></span>
 <span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a><span class="fu">## The D2P Recommendation</span></span>
-<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>::: {.recommendation-box}</span>
-<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a><span class="fu">### Adopt Options 3 + 4 + 5 as the Minimum Viable Package; scale to Full Package within 18 months</span></span>
-<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>**Rationale:** Options 3 (BChE auto-notify) and 4 (PIH quarterly reports) generate the data; Option 5 (provincial response) closes the loop. Together they capture ~80% of the Full Package's effectiveness at ~40% of its narrow cost.</span>
-<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Decision <span class="pp">|</span> Action <span class="pp">|</span> Owner <span class="pp">|</span> Timeline <span class="pp">|</span></span>
-<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a><span class="pp">|:---|:---|:---|:---|</span></span>
-<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **1. Approve pilot** <span class="pp">|</span> R950,000 over 6 months in Gauteng, Western Cape, KZN <span class="pp">|</span> NDoH + MAC <span class="pp">|</span> Q3 2026 <span class="pp">|</span></span>
-<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **2. Designate lead** <span class="pp">|</span> NICD as national coordinator <span class="pp">|</span> NDoH <span class="pp">|</span> Q3 2026 <span class="pp">|</span></span>
-<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **3. Launch quick wins** <span class="pp">|</span> Options 3 + 4 (cost ~R117k/year) <span class="pp">|</span> NICD + NHLS + PIH <span class="pp">|</span> Weeks 1–4 <span class="pp">|</span></span>
-<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **4. Build response capacity** <span class="pp">|</span> Option 5 in 3 pilot provinces <span class="pp">|</span> Provincial DoH <span class="pp">|</span> Weeks 4–12 <span class="pp">|</span></span>
-<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **5. Evaluate and scale** <span class="pp">|</span> National rollout if avoided-burden ratio holds <span class="pp">|</span> MAC <span class="pp">|</span> Q1 2027 <span class="pp">|</span></span>
-<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>::: {.key-stat}</span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>**We know the problem. We know the solutions. We have the legal authority. We can start today.**</span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>**The cost of action:** R237,000/year (affordable, evidence-based, legally feasible)</span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>**The cost of inaction:** Preventable deaths, missed outbreaks, wasted data, and international embarrassment</span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>**What we're asking for:**</span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Approval** to pilot the Full Package in 3 provinces (6 months, R120,000)</span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Commitment** to scale nationally if pilot succeeds</span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Leadership** from MAC and NDoH to coordinate across NICD, NHLS, PIH, and provinces</span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>---</span>
 <span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Bottom Line</span></span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a><span class="fu">## Contact and Resources</span></span>
 <span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>::: {.key-stat}</span>
-<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>**We know the problem. We know the solutions. We have the legal authority. The economic case is overwhelming. We can start today.**</span>
-<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>::: {.grid-2col}</span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>::: {.option-summary}</span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>**Project Team**</span>
 <span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>**The cost of action:** R237k–R1.19M/year (narrow vs. whole-system)</span>
-<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>**The cost of inaction:** ~R2.3 billion/year in unaddressed burden, ~1,500–1,800 preventable deaths, missed outbreaks</span>
-<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>**Return on investment:** Avoided burden cost exceeds programme cost by **two to three orders of magnitude** under all plausible parameter combinations.</span>
-<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>National Institute for Communicable Diseases (NICD)  </span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>National Health Laboratory Service (NHLS)  </span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>Poisons Information Helpline (PIH)  </span>
+<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>University of Cape Town, School of Public Health</span>
+<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>**Email:** contact@example.com</span>
+<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a><span class="fu">## Contact and Resources</span></span>
-<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>::: {.grid-2col}</span>
-<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>::: {.option-summary}</span>
-<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>**Project Team**</span>
-<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>National Institute for Communicable Diseases (NICD)  </span>
-<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>National Health Laboratory Service (NHLS)  </span>
-<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>Poisons Information Helpline (PIH)  </span>
-<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>University of Cape Town, School of Public Health</span>
+<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>::: {.option-summary}</span>
+<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>**Full Documentation**</span>
+<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Full Analysis Report</span><span class="co">](analysis_report_v2.html)</span></span>
+<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Policy Brief</span><span class="co">](posts/policy_brief.qmd)</span></span>
+<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Decision Tree Model</span><span class="co">](posts/decision_model.qmd)</span></span>
+<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Costing Analysis</span><span class="co">](posts/costing_analysis.qmd)</span></span>
+<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Surveillance Concept Note</span><span class="co">](posts/surveillance_concept_note.qmd)</span></span>
+<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>**Email:** contact@example.com</span>
-<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>::: {.option-summary}</span>
-<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>**Full Documentation**</span>
-<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Full Analysis Report</span><span class="co">](analysis_report_v2.html)</span></span>
-<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Policy Brief</span><span class="co">](posts/policy_brief.qmd)</span></span>
-<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Decision Tree Model</span><span class="co">](posts/decision_model.qmd)</span></span>
-<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Costing Analysis</span><span class="co">](posts/costing_analysis.qmd)</span></span>
-<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Surveillance Concept Note</span><span class="co">](posts/surveillance_concept_note.qmd)</span></span>
-<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>::: {style="text-align: center; margin-top: 2em; padding: 1em; background: #f0f0f0; border-radius: 6px;"}</span>
-<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>**This one-pager summarizes the D2P Project's evidence-based recommendations for strengthening pesticide poisoning surveillance in South Africa.**</span>
-<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>*For detailed technical information, please consult the full analysis report and supporting documents.*</span>
-<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>**Date:** May 6, 2026 | **Version:** 1.0</span>
-<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>::: {style="text-align: center; margin-top: 2em; padding: 1em; background: #f0f0f0; border-radius: 6px;"}</span>
+<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>**This one-pager summarizes the D2P Project's evidence-based recommendations for strengthening pesticide poisoning surveillance in South Africa.**</span>
+<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>*For detailed technical information, please consult the full analysis report and supporting documents.*</span>
+<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>**Date:** May 6, 2026 | **Version:** 1.0</span>
+<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
