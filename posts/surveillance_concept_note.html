@@ -287,38 +287,53 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div aria-describedby="fig-current-system-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
 <pre class="mermaid mermaid-js" data-label="fig-current-system">flowchart LR
-    A[Healthcare Facility] --&gt; B[NMC Notification]
-    A --&gt; C[NHLS BChE Test]
-    A --&gt; D[PIH Consultation]
-    
-    B --&gt; E[(NICD Database)]
-    C --&gt; F[(NHLS LIS)]
-    D --&gt; G[(PIH Records)]
-    
-    E -.No linkage.-&gt; F
-    F -.No linkage.-&gt; G
-    G -.No linkage.-&gt; E
-    
-    style E fill:#f9f,stroke:#333
-    style F fill:#bbf,stroke:#333
-    style G fill:#bfb,stroke:#333
+    A[Healthcare Facility&lt;br/&gt;Clinician / PHO] --&gt;|NMC notification| E[("NICD / NMC&lt;br/&gt;&lt;b&gt;Source of truth&lt;/b&gt;")]
+    A --&gt; N[NHLS Laboratory]
+
+    subgraph N[NHLS Laboratory]
+        direction TB
+        C1[BChE Assay&lt;br/&gt;~2,000 severe/year&lt;br/&gt;&lt;i&gt;Live patients&lt;/i&gt;]
+        C2[Chemical Toxicology&lt;br/&gt;&lt;i&gt;Post-mortem only —&lt;br/&gt;not yet done on&lt;br/&gt;live patients&lt;/i&gt;]
+    end
+
+    A --&gt; D[PIH Consultation&lt;br/&gt;~9,000 calls/year&lt;br/&gt;&lt;i&gt;No minimum dataset&lt;/i&gt;]
+
+    E --&gt;|SMS notification| H[Local EHP&lt;br/&gt;&lt;i&gt;mandated to&lt;br/&gt;investigate&lt;/i&gt;]
+    H -.Investigation NOT&lt;br/&gt;recorded on NMC.-x E
+    H -.Informal referral.-&gt; I[DALRRD&lt;br/&gt;&lt;i&gt;Pesticide Registrar /&lt;br/&gt;Inspectorate&lt;/i&gt;]
+    H -.Referral NOT&lt;br/&gt;recorded on NMC.-x E
+    I -.Feedback to EHP&lt;br/&gt;at best.-&gt; H
+    I -.x No feedback to NMC.-x E
+
+    C1 -.No structured feed.-&gt; E
+    C2 -.x Not available for&lt;br/&gt;live-patient surveillance.-x E
+    D -.No minimum viable&lt;br/&gt;dataset defined.-&gt; E
+
+    style E fill:#9f9,stroke:#060,stroke-width:2px
+    style A fill:#fde,stroke:#333
+    style C1 fill:#bbf,stroke:#333
+    style C2 fill:#ffd9b3,stroke:#cc8800,stroke-dasharray: 5 5
+    style D fill:#bfb,stroke:#333
+    style H fill:#ffd,stroke:#333
+    style I fill:#fdd,stroke:#cc0000,stroke-dasharray: 5 5
 </pre>
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-current-system-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Current (fragmented) surveillance architecture
+Figure&nbsp;1: Current (fragmented) surveillance architecture. NICD is the de facto source-of-truth for case notifications. Notifications on the NMC platform trigger an SMS to the local EHP (mandated to investigate) but the investigation outcome is not recorded back on NMC. EHP→DALRRD referral is informal and likewise unrecorded. NHLS holds two distinct laboratory streams — BChE (live patients, ~2,000/yr severe) and Chemical Toxicology (post-mortem only — not yet done on live patients) — neither of which feeds NICD in a structured way. PIH consultations are not captured against a minimum viable dataset.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p><strong>Key problems:</strong></p>
-<ul>
-<li><strong>Delayed reporting</strong>: NMC notifications arrive 2–4 weeks after exposure</li>
-<li><strong>No laboratory integration</strong>: BChE results (which indicate poisoning) don’t trigger automatic notifications</li>
-<li><strong>Lost clinical data</strong>: PIH receives ~9,000 calls/year but data aren’t systematically analyzed for surveillance</li>
-<li><strong>No spatial analysis</strong>: Hotspot detection relies on manual review</li>
-</ul>
+<p><strong>What this diagram shows.</strong> Five gaps in the current state:</p>
+<ol type="1">
+<li><strong>NICD/NMC is the source of truth</strong> for case notifications but receives only the clinician-completed NMC stream (~690/year) — a fraction of the true burden.</li>
+<li><strong>The NHLS laboratory holds two distinct streams</strong>: (a) <strong>BChE assays</strong> on live patients (~2,000 severe results/year, capability exists) and (b) <strong>Chemical toxicology</strong> — qualitative/quantitative pesticide assays which <strong>NHLS currently performs post-mortem only</strong>. Live-patient chemical toxicology is not yet available (see <a href="#sec-component-6">Component 6</a>).</li>
+<li><strong>Neither NHLS stream feeds NICD in a structured way.</strong> BChE has no automated notification; chemical toxicology is not yet generated on living patients at all.</li>
+<li><strong>The EHP arm exists but does not close the loop.</strong> When an NMC notification is filed, an SMS reaches the local EHP, who is mandated to investigate — but neither the investigation outcome nor the informal DALRRD referral is recorded back on NMC, and DALRRD’s regulatory action (if any) is fed back to the EHP at best, never to NICD or the clinician.</li>
+<li><strong>PIH consultations are not captured against a minimum viable dataset</strong>, so the ~9,000 calls/year cannot be aggregated, geocoded, or matched to NICD cases.</li>
+</ol>
 </section>
 <section id="missed-opportunities" class="level3" data-number="2.2">
 <h3 data-number="2.2" class="anchored" data-anchor-id="missed-opportunities"><span class="header-section-number">2.2</span> Missed Opportunities</h3>
@@ -1178,293 +1193,309 @@ Figure&nbsp;2: Proposed integrated surveillance architecture
 <span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid}</span></span>
 <span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>%%| label: fig-current-<span class="fu">system</span></span>
-<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>%%| fig-cap: <span class="ot">"</span><span class="st">Current (fragmented) surveillance architecture</span><span class="ot">"</span></span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>%%| fig-cap: <span class="ot">"</span><span class="st">Current (fragmented) surveillance architecture. NICD is the de facto source-of-truth for case notifications. Notifications on the NMC platform trigger an SMS to the local EHP (mandated to investigate) but the investigation outcome is not recorded back on NMC. EHP→DALRRD referral is informal and likewise unrecorded. NHLS holds two distinct laboratory streams — BChE (live patients, ~2,000/yr severe) and Chemical Toxicology (post-mortem only — not yet done on live patients) — neither of which feeds NICD in a structured way. PIH consultations are not captured against a minimum viable dataset.</span><span class="ot">"</span></span>
 <span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>flowchart LR</span>
-<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>    A[Healthcare Facility] --&gt; B[NMC Notification]</span>
-<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>    A --&gt; C[NHLS BChE Test]</span>
-<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>    A --&gt; D[PIH Consultation]</span>
-<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>    B --&gt; E[(NICD Database)]</span>
-<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>    C --&gt; F[(NHLS LIS)]</span>
-<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>    D --&gt; G[(PIH Records)]</span>
-<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>    E -.No linkage.-&gt; F</span>
-<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>    F -.No linkage.-&gt; G</span>
-<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>    G -.No linkage.-&gt; E</span>
-<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>    style E fill:<span class="co">#f9f,stroke:#333</span></span>
-<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>    style F fill:<span class="co">#bbf,stroke:#333</span></span>
-<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>    style G fill:<span class="co">#bfb,stroke:#333</span></span>
-<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a>**Key problems:**</span>
-<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Delayed reporting**: NMC notifications arrive 2–4 weeks after exposure</span>
-<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**No laboratory integration**: BChE results (which indicate poisoning) don't trigger automatic notifications</span>
-<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Lost clinical data**: PIH receives ~9,000 calls/year but data aren't systematically analyzed for surveillance</span>
-<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**No spatial analysis**: Hotspot detection relies on manual review</span>
-<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a><span class="fu">### Missed Opportunities</span></span>
-<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a>From 2020–2024:</span>
-<span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**~3,450 NMC notifications** were filed, but at least **~10,000 severe BChE inhibitions** were detected in NHLS labs</span>
-<span id="cb3-70"><a href="#cb3-70" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Gap of ~6,550 cases** that should have triggered public health investigation</span>
-<span id="cb3-71"><a href="#cb3-71" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**No clustering analysis** to identify hotspots (e.g., contaminated food sources, illegal pesticide sales)</span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>    A[Healthcare Facility&lt;br/&gt;Clinician / PHO] --&gt;|NMC notification| E[(<span class="ot">"</span><span class="st">NICD / NMC&lt;br/&gt;&lt;b&gt;Source of truth&lt;/b&gt;</span><span class="ot">"</span>)]</span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>    A --&gt; N[NHLS Laboratory]</span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>    subgraph N[NHLS Laboratory]</span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>        direction TB</span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>        C1[BChE Assay&lt;br/&gt;~<span class="dv">2</span>,<span class="dv">000</span> severe/year&lt;br/&gt;&lt;i&gt;Live patients&lt;/i&gt;]</span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>        C2[Chemical Toxicology&lt;br/&gt;&lt;i&gt;Post-mortem only —&lt;br/&gt;<span class="ot">not</span> yet done on&lt;br/&gt;live patients&lt;/i&gt;]</span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>    end</span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>    A --&gt; D[PIH Consultation&lt;br/&gt;~<span class="dv">9</span>,<span class="dv">000</span> calls/year&lt;br/&gt;&lt;i&gt;No minimum dataset&lt;/i&gt;]</span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>    E --&gt;|SMS notification| H[Local EHP&lt;br/&gt;&lt;i&gt;mandated to&lt;br/&gt;investigate&lt;/i&gt;]</span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>    H -.Investigation NOT&lt;br/&gt;recorded on NMC.<span class="ot">-x</span> E</span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>    H -.Informal referral.-&gt; I[DALRRD&lt;br/&gt;&lt;i&gt;Pesticide Registrar /&lt;br/&gt;Inspectorate&lt;/i&gt;]</span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>    H -.Referral NOT&lt;br/&gt;recorded on NMC.<span class="ot">-x</span> E</span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a>    I -.Feedback to EHP&lt;br/&gt;at best.-&gt; H</span>
+<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>    I -.x No feedback to NMC.<span class="ot">-x</span> E</span>
+<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a>    C1 -.No structured feed.-&gt; E</span>
+<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a>    C2 -.x Not available <span class="cf">for</span>&lt;br/&gt;live-patient surveillance.<span class="ot">-x</span> E</span>
+<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a>    D -.No minimum viable&lt;br/&gt;dataset <span class="fu">defined</span>.-&gt; E</span>
+<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a>    style E fill:<span class="co">#9f9,stroke:#060,stroke-width:2px</span></span>
+<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a>    style A fill:<span class="co">#fde,stroke:#333</span></span>
+<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a>    style C1 fill:<span class="co">#bbf,stroke:#333</span></span>
+<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a>    style C2 fill:<span class="co">#ffd9b3,stroke:#cc8800,stroke-dasharray: 5 5</span></span>
+<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a>    style D fill:<span class="co">#bfb,stroke:#333</span></span>
+<span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a>    style H fill:<span class="co">#ffd,stroke:#333</span></span>
+<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a>    style I fill:<span class="co">#fdd,stroke:#cc0000,stroke-dasharray: 5 5</span></span>
+<span id="cb3-70"><a href="#cb3-70" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-71"><a href="#cb3-71" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-72"><a href="#cb3-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-73"><a href="#cb3-73" aria-hidden="true" tabindex="-1"></a><span class="fu">## Proposed Framework</span></span>
+<span id="cb3-73"><a href="#cb3-73" aria-hidden="true" tabindex="-1"></a>**What this diagram shows.** Five gaps in the current state:</span>
 <span id="cb3-74"><a href="#cb3-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-75"><a href="#cb3-75" aria-hidden="true" tabindex="-1"></a><span class="fu">### Design Principles</span></span>
-<span id="cb3-76"><a href="#cb3-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-77"><a href="#cb3-77" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Integration over duplication**: Link existing systems rather than building new infrastructure</span>
-<span id="cb3-78"><a href="#cb3-78" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Automation over manual reporting**: Use laboratory triggers and structured data flows</span>
-<span id="cb3-79"><a href="#cb3-79" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Timeliness over completeness**: Prioritize rapid detection for actionable hotspots</span>
-<span id="cb3-80"><a href="#cb3-80" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Scalability**: Start with pilot provinces, expand based on evidence</span>
-<span id="cb3-81"><a href="#cb3-81" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-82"><a href="#cb3-82" aria-hidden="true" tabindex="-1"></a><span class="fu">### System Architecture</span></span>
-<span id="cb3-83"><a href="#cb3-83" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-86"><a href="#cb3-86" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid}</span></span>
-<span id="cb3-87"><a href="#cb3-87" aria-hidden="true" tabindex="-1"></a>%%| label: fig-proposed-<span class="fu">system</span></span>
-<span id="cb3-88"><a href="#cb3-88" aria-hidden="true" tabindex="-1"></a>%%| fig-cap: <span class="ot">"</span><span class="st">Proposed integrated surveillance architecture</span><span class="ot">"</span></span>
-<span id="cb3-89"><a href="#cb3-89" aria-hidden="true" tabindex="-1"></a>flowchart TB</span>
-<span id="cb3-90"><a href="#cb3-90" aria-hidden="true" tabindex="-1"></a>    A[Healthcare Facility] --&gt; B[Clinician suspects poisoning]</span>
-<span id="cb3-91"><a href="#cb3-91" aria-hidden="true" tabindex="-1"></a>    B --&gt; C{BChE test ordered?}</span>
-<span id="cb3-92"><a href="#cb3-92" aria-hidden="true" tabindex="-1"></a>    C --&gt;|Yes| D[NHLS Laboratory]</span>
-<span id="cb3-93"><a href="#cb3-93" aria-hidden="true" tabindex="-1"></a>    C --&gt;|No| E[Clinical diagnosis only]</span>
-<span id="cb3-94"><a href="#cb3-94" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb3-95"><a href="#cb3-95" aria-hidden="true" tabindex="-1"></a>    D --&gt; F{BChE &lt; <span class="dv">50</span>% normal?}</span>
-<span id="cb3-96"><a href="#cb3-96" aria-hidden="true" tabindex="-1"></a>    F --&gt;|Yes - Severe| G[Auto-notify NICD]</span>
-<span id="cb3-97"><a href="#cb3-97" aria-hidden="true" tabindex="-1"></a>    F --&gt;|No| H[Store result]</span>
-<span id="cb3-98"><a href="#cb3-98" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb3-99"><a href="#cb3-99" aria-hidden="true" tabindex="-1"></a>    E --&gt; I[Manual NMC notification]</span>
-<span id="cb3-100"><a href="#cb3-100" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb3-101"><a href="#cb3-101" aria-hidden="true" tabindex="-1"></a>    G --&gt; J[NICD Surveillance Unit]</span>
-<span id="cb3-102"><a href="#cb3-102" aria-hidden="true" tabindex="-1"></a>    I --&gt; J</span>
-<span id="cb3-103"><a href="#cb3-103" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb3-104"><a href="#cb3-104" aria-hidden="true" tabindex="-1"></a>    B --&gt; K[Call PIH <span class="cf">for</span> advice]</span>
-<span id="cb3-105"><a href="#cb3-105" aria-hidden="true" tabindex="-1"></a>    K --&gt; L[PIH records case]</span>
-<span id="cb3-106"><a href="#cb3-106" aria-hidden="true" tabindex="-1"></a>    L --&gt; M[Quarterly summary to NICD]</span>
-<span id="cb3-107"><a href="#cb3-107" aria-hidden="true" tabindex="-1"></a>    M --&gt; J</span>
-<span id="cb3-108"><a href="#cb3-108" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb3-109"><a href="#cb3-109" aria-hidden="true" tabindex="-1"></a>    J --&gt; N{Cluster detected?}</span>
-<span id="cb3-110"><a href="#cb3-110" aria-hidden="true" tabindex="-1"></a>    N --&gt;|Yes| O[Alert provincial team]</span>
-<span id="cb3-111"><a href="#cb3-111" aria-hidden="true" tabindex="-1"></a>    N --&gt;|No| P[Routine monitoring]</span>
-<span id="cb3-112"><a href="#cb3-112" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb3-113"><a href="#cb3-113" aria-hidden="true" tabindex="-1"></a>    O --&gt; Q[Field investigation]</span>
-<span id="cb3-114"><a href="#cb3-114" aria-hidden="true" tabindex="-1"></a>    Q --&gt; R[Environmental sampling]</span>
-<span id="cb3-115"><a href="#cb3-115" aria-hidden="true" tabindex="-1"></a>    Q --&gt; S[Source control]</span>
+<span id="cb3-75"><a href="#cb3-75" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**NICD/NMC is the source of truth** for case notifications but receives only the clinician-completed NMC stream (~690/year) — a fraction of the true burden.</span>
+<span id="cb3-76"><a href="#cb3-76" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**The NHLS laboratory holds two distinct streams**: (a) **BChE assays** on live patients (~2,000 severe results/year, capability exists) and (b) **Chemical toxicology** — qualitative/quantitative pesticide assays which **NHLS currently performs post-mortem only**. Live-patient chemical toxicology is not yet available (see <span class="co">[</span><span class="ot">Component 6</span><span class="co">](#sec-component-6)</span>).</span>
+<span id="cb3-77"><a href="#cb3-77" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Neither NHLS stream feeds NICD in a structured way.** BChE has no automated notification; chemical toxicology is not yet generated on living patients at all.</span>
+<span id="cb3-78"><a href="#cb3-78" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**The EHP arm exists but does not close the loop.** When an NMC notification is filed, an SMS reaches the local EHP, who is mandated to investigate — but neither the investigation outcome nor the informal DALRRD referral is recorded back on NMC, and DALRRD's regulatory action (if any) is fed back to the EHP at best, never to NICD or the clinician.</span>
+<span id="cb3-79"><a href="#cb3-79" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>**PIH consultations are not captured against a minimum viable dataset**, so the ~9,000 calls/year cannot be aggregated, geocoded, or matched to NICD cases.</span>
+<span id="cb3-80"><a href="#cb3-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-81"><a href="#cb3-81" aria-hidden="true" tabindex="-1"></a><span class="fu">### Missed Opportunities</span></span>
+<span id="cb3-82"><a href="#cb3-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-83"><a href="#cb3-83" aria-hidden="true" tabindex="-1"></a>From 2020–2024:</span>
+<span id="cb3-84"><a href="#cb3-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-85"><a href="#cb3-85" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**~3,450 NMC notifications** were filed, but at least **~10,000 severe BChE inhibitions** were detected in NHLS labs</span>
+<span id="cb3-86"><a href="#cb3-86" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Gap of ~6,550 cases** that should have triggered public health investigation</span>
+<span id="cb3-87"><a href="#cb3-87" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**No clustering analysis** to identify hotspots (e.g., contaminated food sources, illegal pesticide sales)</span>
+<span id="cb3-88"><a href="#cb3-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-89"><a href="#cb3-89" aria-hidden="true" tabindex="-1"></a><span class="fu">## Proposed Framework</span></span>
+<span id="cb3-90"><a href="#cb3-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-91"><a href="#cb3-91" aria-hidden="true" tabindex="-1"></a><span class="fu">### Design Principles</span></span>
+<span id="cb3-92"><a href="#cb3-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-93"><a href="#cb3-93" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Integration over duplication**: Link existing systems rather than building new infrastructure</span>
+<span id="cb3-94"><a href="#cb3-94" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Automation over manual reporting**: Use laboratory triggers and structured data flows</span>
+<span id="cb3-95"><a href="#cb3-95" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Timeliness over completeness**: Prioritize rapid detection for actionable hotspots</span>
+<span id="cb3-96"><a href="#cb3-96" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Scalability**: Start with pilot provinces, expand based on evidence</span>
+<span id="cb3-97"><a href="#cb3-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-98"><a href="#cb3-98" aria-hidden="true" tabindex="-1"></a><span class="fu">### System Architecture</span></span>
+<span id="cb3-99"><a href="#cb3-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-102"><a href="#cb3-102" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid}</span></span>
+<span id="cb3-103"><a href="#cb3-103" aria-hidden="true" tabindex="-1"></a>%%| label: fig-proposed-<span class="fu">system</span></span>
+<span id="cb3-104"><a href="#cb3-104" aria-hidden="true" tabindex="-1"></a>%%| fig-cap: <span class="ot">"</span><span class="st">Proposed integrated surveillance architecture</span><span class="ot">"</span></span>
+<span id="cb3-105"><a href="#cb3-105" aria-hidden="true" tabindex="-1"></a>flowchart TB</span>
+<span id="cb3-106"><a href="#cb3-106" aria-hidden="true" tabindex="-1"></a>    A[Healthcare Facility] --&gt; B[Clinician suspects poisoning]</span>
+<span id="cb3-107"><a href="#cb3-107" aria-hidden="true" tabindex="-1"></a>    B --&gt; C{BChE test ordered?}</span>
+<span id="cb3-108"><a href="#cb3-108" aria-hidden="true" tabindex="-1"></a>    C --&gt;|Yes| D[NHLS Laboratory]</span>
+<span id="cb3-109"><a href="#cb3-109" aria-hidden="true" tabindex="-1"></a>    C --&gt;|No| E[Clinical diagnosis only]</span>
+<span id="cb3-110"><a href="#cb3-110" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-111"><a href="#cb3-111" aria-hidden="true" tabindex="-1"></a>    D --&gt; F{BChE &lt; <span class="dv">50</span>% normal?}</span>
+<span id="cb3-112"><a href="#cb3-112" aria-hidden="true" tabindex="-1"></a>    F --&gt;|Yes - Severe| G[Auto-notify NICD]</span>
+<span id="cb3-113"><a href="#cb3-113" aria-hidden="true" tabindex="-1"></a>    F --&gt;|No| H[Store result]</span>
+<span id="cb3-114"><a href="#cb3-114" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-115"><a href="#cb3-115" aria-hidden="true" tabindex="-1"></a>    E --&gt; I[Manual NMC notification]</span>
 <span id="cb3-116"><a href="#cb3-116" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb3-117"><a href="#cb3-117" aria-hidden="true" tabindex="-1"></a>    style G fill:<span class="co">#ff9,stroke:#333</span></span>
-<span id="cb3-118"><a href="#cb3-118" aria-hidden="true" tabindex="-1"></a>    style J fill:<span class="co">#9f9,stroke:#333</span></span>
-<span id="cb3-119"><a href="#cb3-119" aria-hidden="true" tabindex="-1"></a>    style O fill:<span class="co">#f99,stroke:#333</span></span>
-<span id="cb3-120"><a href="#cb3-120" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb3-121"><a href="#cb3-121" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-122"><a href="#cb3-122" aria-hidden="true" tabindex="-1"></a><span class="fu">### Key Components</span></span>
-<span id="cb3-123"><a href="#cb3-123" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-124"><a href="#cb3-124" aria-hidden="true" tabindex="-1"></a><span class="fu">#### 1. Laboratory-Triggered Surveillance (Option 3)</span></span>
-<span id="cb3-125"><a href="#cb3-125" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-126"><a href="#cb3-126" aria-hidden="true" tabindex="-1"></a>**Implementation:**</span>
-<span id="cb3-127"><a href="#cb3-127" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-128"><a href="#cb3-128" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Configure NHLS Laboratory Information System (LIS) to flag BChE results &lt; 50% of normal</span>
-<span id="cb3-129"><a href="#cb3-129" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Auto-generate notification to NICD with:</span>
-<span id="cb3-130"><a href="#cb3-130" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Patient demographics (age, sex, facility)</span>
-<span id="cb3-131"><a href="#cb3-131" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>BChE value and normal range</span>
-<span id="cb3-132"><a href="#cb3-132" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Test date and time</span>
-<span id="cb3-133"><a href="#cb3-133" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Notification sent within **24 hours** of result validation</span>
-<span id="cb3-134"><a href="#cb3-134" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-135"><a href="#cb3-135" aria-hidden="true" tabindex="-1"></a>**Data flow:**</span>
-<span id="cb3-136"><a href="#cb3-136" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-137"><a href="#cb3-137" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb3-138"><a href="#cb3-138" aria-hidden="true" tabindex="-1"></a><span class="in">NHLS LIS → HL7 message → NICD middleware → NMC database → Surveillance dashboard</span></span>
-<span id="cb3-139"><a href="#cb3-139" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb3-140"><a href="#cb3-140" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-141"><a href="#cb3-141" aria-hidden="true" tabindex="-1"></a>**Cost:** ~R55,000/year (mostly IT staff time for configuration)</span>
-<span id="cb3-142"><a href="#cb3-142" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-143"><a href="#cb3-143" aria-hidden="true" tabindex="-1"></a><span class="fu">#### 2. Poisons Information Helpline Integration (Option 4)</span></span>
-<span id="cb3-144"><a href="#cb3-144" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-145"><a href="#cb3-145" aria-hidden="true" tabindex="-1"></a>**Implementation:**</span>
-<span id="cb3-146"><a href="#cb3-146" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-147"><a href="#cb3-147" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>PIH generates **quarterly reports** summarizing:</span>
-<span id="cb3-148"><a href="#cb3-148" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Total pesticide-related calls</span>
-<span id="cb3-149"><a href="#cb3-149" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Age/sex distribution</span>
-<span id="cb3-150"><a href="#cb3-150" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Geographic distribution (by referring facility)</span>
-<span id="cb3-151"><a href="#cb3-151" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Severity classification (minor, moderate, severe)</span>
-<span id="cb3-152"><a href="#cb3-152" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Suspected pesticide type</span>
-<span id="cb3-153"><a href="#cb3-153" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Reports sent to NICD for temporal trend analysis</span>
-<span id="cb3-154"><a href="#cb3-154" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-155"><a href="#cb3-155" aria-hidden="true" tabindex="-1"></a>**Data flow:**</span>
+<span id="cb3-117"><a href="#cb3-117" aria-hidden="true" tabindex="-1"></a>    G --&gt; J[NICD Surveillance Unit]</span>
+<span id="cb3-118"><a href="#cb3-118" aria-hidden="true" tabindex="-1"></a>    I --&gt; J</span>
+<span id="cb3-119"><a href="#cb3-119" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-120"><a href="#cb3-120" aria-hidden="true" tabindex="-1"></a>    B --&gt; K[Call PIH <span class="cf">for</span> advice]</span>
+<span id="cb3-121"><a href="#cb3-121" aria-hidden="true" tabindex="-1"></a>    K --&gt; L[PIH records case]</span>
+<span id="cb3-122"><a href="#cb3-122" aria-hidden="true" tabindex="-1"></a>    L --&gt; M[Quarterly summary to NICD]</span>
+<span id="cb3-123"><a href="#cb3-123" aria-hidden="true" tabindex="-1"></a>    M --&gt; J</span>
+<span id="cb3-124"><a href="#cb3-124" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-125"><a href="#cb3-125" aria-hidden="true" tabindex="-1"></a>    J --&gt; N{Cluster detected?}</span>
+<span id="cb3-126"><a href="#cb3-126" aria-hidden="true" tabindex="-1"></a>    N --&gt;|Yes| O[Alert provincial team]</span>
+<span id="cb3-127"><a href="#cb3-127" aria-hidden="true" tabindex="-1"></a>    N --&gt;|No| P[Routine monitoring]</span>
+<span id="cb3-128"><a href="#cb3-128" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-129"><a href="#cb3-129" aria-hidden="true" tabindex="-1"></a>    O --&gt; Q[Field investigation]</span>
+<span id="cb3-130"><a href="#cb3-130" aria-hidden="true" tabindex="-1"></a>    Q --&gt; R[Environmental sampling]</span>
+<span id="cb3-131"><a href="#cb3-131" aria-hidden="true" tabindex="-1"></a>    Q --&gt; S[Source control]</span>
+<span id="cb3-132"><a href="#cb3-132" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-133"><a href="#cb3-133" aria-hidden="true" tabindex="-1"></a>    style G fill:<span class="co">#ff9,stroke:#333</span></span>
+<span id="cb3-134"><a href="#cb3-134" aria-hidden="true" tabindex="-1"></a>    style J fill:<span class="co">#9f9,stroke:#333</span></span>
+<span id="cb3-135"><a href="#cb3-135" aria-hidden="true" tabindex="-1"></a>    style O fill:<span class="co">#f99,stroke:#333</span></span>
+<span id="cb3-136"><a href="#cb3-136" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-137"><a href="#cb3-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-138"><a href="#cb3-138" aria-hidden="true" tabindex="-1"></a><span class="fu">### Key Components</span></span>
+<span id="cb3-139"><a href="#cb3-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-140"><a href="#cb3-140" aria-hidden="true" tabindex="-1"></a><span class="fu">#### 1. Laboratory-Triggered Surveillance (Option 3)</span></span>
+<span id="cb3-141"><a href="#cb3-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-142"><a href="#cb3-142" aria-hidden="true" tabindex="-1"></a>**Implementation:**</span>
+<span id="cb3-143"><a href="#cb3-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-144"><a href="#cb3-144" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Configure NHLS Laboratory Information System (LIS) to flag BChE results &lt; 50% of normal</span>
+<span id="cb3-145"><a href="#cb3-145" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Auto-generate notification to NICD with:</span>
+<span id="cb3-146"><a href="#cb3-146" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Patient demographics (age, sex, facility)</span>
+<span id="cb3-147"><a href="#cb3-147" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>BChE value and normal range</span>
+<span id="cb3-148"><a href="#cb3-148" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Test date and time</span>
+<span id="cb3-149"><a href="#cb3-149" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Notification sent within **24 hours** of result validation</span>
+<span id="cb3-150"><a href="#cb3-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-151"><a href="#cb3-151" aria-hidden="true" tabindex="-1"></a>**Data flow:**</span>
+<span id="cb3-152"><a href="#cb3-152" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-153"><a href="#cb3-153" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-154"><a href="#cb3-154" aria-hidden="true" tabindex="-1"></a><span class="in">NHLS LIS → HL7 message → NICD middleware → NMC database → Surveillance dashboard</span></span>
+<span id="cb3-155"><a href="#cb3-155" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb3-156"><a href="#cb3-156" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-157"><a href="#cb3-157" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb3-158"><a href="#cb3-158" aria-hidden="true" tabindex="-1"></a><span class="in">PIH call log → Quarterly extraction → Excel/CSV → Email to NICD → Manual review</span></span>
-<span id="cb3-159"><a href="#cb3-159" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-157"><a href="#cb3-157" aria-hidden="true" tabindex="-1"></a>**Cost:** ~R55,000/year (mostly IT staff time for configuration)</span>
+<span id="cb3-158"><a href="#cb3-158" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-159"><a href="#cb3-159" aria-hidden="true" tabindex="-1"></a><span class="fu">#### 2. Poisons Information Helpline Integration (Option 4)</span></span>
 <span id="cb3-160"><a href="#cb3-160" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-161"><a href="#cb3-161" aria-hidden="true" tabindex="-1"></a>**Cost:** ~R62,000/year (PIH analyst time)</span>
+<span id="cb3-161"><a href="#cb3-161" aria-hidden="true" tabindex="-1"></a>**Implementation:**</span>
 <span id="cb3-162"><a href="#cb3-162" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-163"><a href="#cb3-163" aria-hidden="true" tabindex="-1"></a><span class="fu">#### 3. Inter-Agency Data Sharing (Options 1–2)</span></span>
-<span id="cb3-164"><a href="#cb3-164" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-165"><a href="#cb3-165" aria-hidden="true" tabindex="-1"></a>**Implementation:**</span>
-<span id="cb3-166"><a href="#cb3-166" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-167"><a href="#cb3-167" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Formalize Memoranda of Understanding (MOUs) between:</span>
-<span id="cb3-168"><a href="#cb3-168" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>NICD ↔ NHLS (laboratory data sharing)</span>
-<span id="cb3-169"><a href="#cb3-169" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>NICD ↔ PIH (clinical toxicology data)</span>
-<span id="cb3-170"><a href="#cb3-170" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>NICD ↔ DALRRD (pesticide registration and use data)</span>
-<span id="cb3-171"><a href="#cb3-171" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>NICD ↔ SAPS (forensic toxicology for intentional poisonings)</span>
-<span id="cb3-172"><a href="#cb3-172" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Establish **data governance framework**:</span>
-<span id="cb3-173"><a href="#cb3-173" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>What data are shared (minimum dataset)</span>
-<span id="cb3-174"><a href="#cb3-174" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>How often (weekly, monthly, on-demand)</span>
-<span id="cb3-175"><a href="#cb3-175" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Privacy safeguards (de-identification, access controls)</span>
+<span id="cb3-163"><a href="#cb3-163" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>PIH generates **quarterly reports** summarizing:</span>
+<span id="cb3-164"><a href="#cb3-164" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Total pesticide-related calls</span>
+<span id="cb3-165"><a href="#cb3-165" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Age/sex distribution</span>
+<span id="cb3-166"><a href="#cb3-166" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Geographic distribution (by referring facility)</span>
+<span id="cb3-167"><a href="#cb3-167" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Severity classification (minor, moderate, severe)</span>
+<span id="cb3-168"><a href="#cb3-168" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Suspected pesticide type</span>
+<span id="cb3-169"><a href="#cb3-169" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Reports sent to NICD for temporal trend analysis</span>
+<span id="cb3-170"><a href="#cb3-170" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-171"><a href="#cb3-171" aria-hidden="true" tabindex="-1"></a>**Data flow:**</span>
+<span id="cb3-172"><a href="#cb3-172" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-173"><a href="#cb3-173" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-174"><a href="#cb3-174" aria-hidden="true" tabindex="-1"></a><span class="in">PIH call log → Quarterly extraction → Excel/CSV → Email to NICD → Manual review</span></span>
+<span id="cb3-175"><a href="#cb3-175" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb3-176"><a href="#cb3-176" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-177"><a href="#cb3-177" aria-hidden="true" tabindex="-1"></a>**Legal basis:** Section 90 of the National Health Act (2003) allows inter-agency sharing for public health purposes</span>
+<span id="cb3-177"><a href="#cb3-177" aria-hidden="true" tabindex="-1"></a>**Cost:** ~R62,000/year (PIH analyst time)</span>
 <span id="cb3-178"><a href="#cb3-178" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-179"><a href="#cb3-179" aria-hidden="true" tabindex="-1"></a>**Cost:** ~R80,000/year (legal review, MOU development, ongoing liaison)</span>
+<span id="cb3-179"><a href="#cb3-179" aria-hidden="true" tabindex="-1"></a><span class="fu">#### 3. Inter-Agency Data Sharing (Options 1–2)</span></span>
 <span id="cb3-180"><a href="#cb3-180" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-181"><a href="#cb3-181" aria-hidden="true" tabindex="-1"></a><span class="fu">#### 4. Hotspot Detection Algorithm</span></span>
+<span id="cb3-181"><a href="#cb3-181" aria-hidden="true" tabindex="-1"></a>**Implementation:**</span>
 <span id="cb3-182"><a href="#cb3-182" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-183"><a href="#cb3-183" aria-hidden="true" tabindex="-1"></a>**Method:**</span>
-<span id="cb3-184"><a href="#cb3-184" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-185"><a href="#cb3-185" aria-hidden="true" tabindex="-1"></a>Use **space-time permutation scan statistic** (SaTScan software) to detect clusters of:</span>
-<span id="cb3-186"><a href="#cb3-186" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-187"><a href="#cb3-187" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Higher-than-expected case counts</span>
-<span id="cb3-188"><a href="#cb3-188" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>In defined geographic areas (district or sub-district level)</span>
-<span id="cb3-189"><a href="#cb3-189" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Within defined time windows (2-week rolling window)</span>
-<span id="cb3-190"><a href="#cb3-190" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-191"><a href="#cb3-191" aria-hidden="true" tabindex="-1"></a>**Implementation:**</span>
+<span id="cb3-183"><a href="#cb3-183" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Formalize Memoranda of Understanding (MOUs) between:</span>
+<span id="cb3-184"><a href="#cb3-184" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>NICD ↔ NHLS (laboratory data sharing)</span>
+<span id="cb3-185"><a href="#cb3-185" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>NICD ↔ PIH (clinical toxicology data)</span>
+<span id="cb3-186"><a href="#cb3-186" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>NICD ↔ DALRRD (pesticide registration and use data)</span>
+<span id="cb3-187"><a href="#cb3-187" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>NICD ↔ SAPS (forensic toxicology for intentional poisonings)</span>
+<span id="cb3-188"><a href="#cb3-188" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Establish **data governance framework**:</span>
+<span id="cb3-189"><a href="#cb3-189" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>What data are shared (minimum dataset)</span>
+<span id="cb3-190"><a href="#cb3-190" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>How often (weekly, monthly, on-demand)</span>
+<span id="cb3-191"><a href="#cb3-191" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Privacy safeguards (de-identification, access controls)</span>
 <span id="cb3-192"><a href="#cb3-192" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-193"><a href="#cb3-193" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Run weekly on aggregated case data (NMC + BChE auto-notifications + PIH reports)</span>
-<span id="cb3-194"><a href="#cb3-194" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Generate alerts when:</span>
-<span id="cb3-195"><a href="#cb3-195" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Relative risk &gt; 2.0 (cluster has 2× expected cases)</span>
-<span id="cb3-196"><a href="#cb3-196" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>P-value &lt; 0.05</span>
-<span id="cb3-197"><a href="#cb3-197" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Cluster includes ≥3 cases</span>
+<span id="cb3-193"><a href="#cb3-193" aria-hidden="true" tabindex="-1"></a>**Legal basis:** Section 90 of the National Health Act (2003) allows inter-agency sharing for public health purposes</span>
+<span id="cb3-194"><a href="#cb3-194" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-195"><a href="#cb3-195" aria-hidden="true" tabindex="-1"></a>**Cost:** ~R80,000/year (legal review, MOU development, ongoing liaison)</span>
+<span id="cb3-196"><a href="#cb3-196" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-197"><a href="#cb3-197" aria-hidden="true" tabindex="-1"></a><span class="fu">#### 4. Hotspot Detection Algorithm</span></span>
 <span id="cb3-198"><a href="#cb3-198" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-199"><a href="#cb3-199" aria-hidden="true" tabindex="-1"></a>**Response protocol:**</span>
+<span id="cb3-199"><a href="#cb3-199" aria-hidden="true" tabindex="-1"></a>**Method:**</span>
 <span id="cb3-200"><a href="#cb3-200" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-201"><a href="#cb3-201" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Alert sent to provincial surveillance officer</span>
-<span id="cb3-202"><a href="#cb3-202" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Officer reviews cluster for plausibility (ruling out data artifacts)</span>
-<span id="cb3-203"><a href="#cb3-203" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>If plausible, initiate field investigation within **72 hours**</span>
-<span id="cb3-204"><a href="#cb3-204" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-205"><a href="#cb3-205" aria-hidden="true" tabindex="-1"></a>**Cost:** Included in Option 5 (~R40,000/year for analyst time)</span>
+<span id="cb3-201"><a href="#cb3-201" aria-hidden="true" tabindex="-1"></a>Use **space-time permutation scan statistic** (SaTScan software) to detect clusters of:</span>
+<span id="cb3-202"><a href="#cb3-202" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-203"><a href="#cb3-203" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Higher-than-expected case counts</span>
+<span id="cb3-204"><a href="#cb3-204" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>In defined geographic areas (district or sub-district level)</span>
+<span id="cb3-205"><a href="#cb3-205" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Within defined time windows (2-week rolling window)</span>
 <span id="cb3-206"><a href="#cb3-206" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-207"><a href="#cb3-207" aria-hidden="true" tabindex="-1"></a><span class="fu">## Implementation Roadmap</span></span>
+<span id="cb3-207"><a href="#cb3-207" aria-hidden="true" tabindex="-1"></a>**Implementation:**</span>
 <span id="cb3-208"><a href="#cb3-208" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-209"><a href="#cb3-209" aria-hidden="true" tabindex="-1"></a><span class="fu">### Phase 1: Pilot (Months 1–6)</span></span>
-<span id="cb3-210"><a href="#cb3-210" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-211"><a href="#cb3-211" aria-hidden="true" tabindex="-1"></a>**Pilot provinces:** Gauteng, Western Cape, KwaZulu-Natal</span>
-<span id="cb3-212"><a href="#cb3-212" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-213"><a href="#cb3-213" aria-hidden="true" tabindex="-1"></a>**Activities:**</span>
+<span id="cb3-209"><a href="#cb3-209" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Run weekly on aggregated case data (NMC + BChE auto-notifications + PIH reports)</span>
+<span id="cb3-210"><a href="#cb3-210" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Generate alerts when:</span>
+<span id="cb3-211"><a href="#cb3-211" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Relative risk &gt; 2.0 (cluster has 2× expected cases)</span>
+<span id="cb3-212"><a href="#cb3-212" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>P-value &lt; 0.05</span>
+<span id="cb3-213"><a href="#cb3-213" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Cluster includes ≥3 cases</span>
 <span id="cb3-214"><a href="#cb3-214" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-215"><a href="#cb3-215" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Configure NHLS auto-notifications for pilot provinces</span>
-<span id="cb3-216"><a href="#cb3-216" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Establish PIH quarterly reporting workflow</span>
-<span id="cb3-217"><a href="#cb3-217" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Train provincial surveillance officers on hotspot response</span>
-<span id="cb3-218"><a href="#cb3-218" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Develop standard operating procedures (SOPs)</span>
-<span id="cb3-219"><a href="#cb3-219" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-220"><a href="#cb3-220" aria-hidden="true" tabindex="-1"></a>**Milestones:**</span>
-<span id="cb3-221"><a href="#cb3-221" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-222"><a href="#cb3-222" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Month 2: First auto-notification sent</span>
-<span id="cb3-223"><a href="#cb3-223" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Month 3: First PIH quarterly report delivered</span>
-<span id="cb3-224"><a href="#cb3-224" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Month 4: First cluster alert (if any)</span>
-<span id="cb3-225"><a href="#cb3-225" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Month 6: Pilot evaluation and refinement</span>
+<span id="cb3-215"><a href="#cb3-215" aria-hidden="true" tabindex="-1"></a>**Response protocol:**</span>
+<span id="cb3-216"><a href="#cb3-216" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-217"><a href="#cb3-217" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Alert sent to provincial surveillance officer</span>
+<span id="cb3-218"><a href="#cb3-218" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Officer reviews cluster for plausibility (ruling out data artifacts)</span>
+<span id="cb3-219"><a href="#cb3-219" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>If plausible, initiate field investigation within **72 hours**</span>
+<span id="cb3-220"><a href="#cb3-220" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-221"><a href="#cb3-221" aria-hidden="true" tabindex="-1"></a>**Cost:** Included in Option 5 (~R40,000/year for analyst time)</span>
+<span id="cb3-222"><a href="#cb3-222" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-223"><a href="#cb3-223" aria-hidden="true" tabindex="-1"></a><span class="fu">## Implementation Roadmap</span></span>
+<span id="cb3-224"><a href="#cb3-224" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-225"><a href="#cb3-225" aria-hidden="true" tabindex="-1"></a><span class="fu">### Phase 1: Pilot (Months 1–6)</span></span>
 <span id="cb3-226"><a href="#cb3-226" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-227"><a href="#cb3-227" aria-hidden="true" tabindex="-1"></a><span class="fu">### Phase 2: National Rollout (Months 7–12)</span></span>
+<span id="cb3-227"><a href="#cb3-227" aria-hidden="true" tabindex="-1"></a>**Pilot provinces:** Gauteng, Western Cape, KwaZulu-Natal</span>
 <span id="cb3-228"><a href="#cb3-228" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-229"><a href="#cb3-229" aria-hidden="true" tabindex="-1"></a>**Activities:**</span>
 <span id="cb3-230"><a href="#cb3-230" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-231"><a href="#cb3-231" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Expand NHLS auto-notifications to all provinces</span>
-<span id="cb3-232"><a href="#cb3-232" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Finalize MOUs for inter-agency data sharing</span>
-<span id="cb3-233"><a href="#cb3-233" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Deploy SaTScan algorithm for weekly cluster detection</span>
-<span id="cb3-234"><a href="#cb3-234" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Conduct national training for provincial teams</span>
+<span id="cb3-231"><a href="#cb3-231" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Configure NHLS auto-notifications for pilot provinces</span>
+<span id="cb3-232"><a href="#cb3-232" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Establish PIH quarterly reporting workflow</span>
+<span id="cb3-233"><a href="#cb3-233" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Train provincial surveillance officers on hotspot response</span>
+<span id="cb3-234"><a href="#cb3-234" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Develop standard operating procedures (SOPs)</span>
 <span id="cb3-235"><a href="#cb3-235" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-236"><a href="#cb3-236" aria-hidden="true" tabindex="-1"></a>**Milestones:**</span>
 <span id="cb3-237"><a href="#cb3-237" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-238"><a href="#cb3-238" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Month 9: All provinces receiving auto-notifications</span>
-<span id="cb3-239"><a href="#cb3-239" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Month 10: First national clustering analysis</span>
-<span id="cb3-240"><a href="#cb3-240" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Month 12: System fully operational</span>
-<span id="cb3-241"><a href="#cb3-241" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-242"><a href="#cb3-242" aria-hidden="true" tabindex="-1"></a><span class="fu">### Phase 3: Evaluation (Months 13–24)</span></span>
-<span id="cb3-243"><a href="#cb3-243" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-244"><a href="#cb3-244" aria-hidden="true" tabindex="-1"></a>**Metrics:**</span>
-<span id="cb3-245"><a href="#cb3-245" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-246"><a href="#cb3-246" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Timeliness**: Median time from exposure to notification</span>
-<span id="cb3-247"><a href="#cb3-247" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Completeness**: % of severe BChE inhibitions with corresponding NMC notifications</span>
-<span id="cb3-248"><a href="#cb3-248" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Sensitivity**: % of known outbreaks detected by cluster algorithm</span>
-<span id="cb3-249"><a href="#cb3-249" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Response**: % of clusters investigated within 72 hours</span>
-<span id="cb3-250"><a href="#cb3-250" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>**Impact**: Change in hospitalization rates in hotspot areas</span>
+<span id="cb3-238"><a href="#cb3-238" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Month 2: First auto-notification sent</span>
+<span id="cb3-239"><a href="#cb3-239" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Month 3: First PIH quarterly report delivered</span>
+<span id="cb3-240"><a href="#cb3-240" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Month 4: First cluster alert (if any)</span>
+<span id="cb3-241"><a href="#cb3-241" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Month 6: Pilot evaluation and refinement</span>
+<span id="cb3-242"><a href="#cb3-242" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-243"><a href="#cb3-243" aria-hidden="true" tabindex="-1"></a><span class="fu">### Phase 2: National Rollout (Months 7–12)</span></span>
+<span id="cb3-244"><a href="#cb3-244" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-245"><a href="#cb3-245" aria-hidden="true" tabindex="-1"></a>**Activities:**</span>
+<span id="cb3-246"><a href="#cb3-246" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-247"><a href="#cb3-247" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Expand NHLS auto-notifications to all provinces</span>
+<span id="cb3-248"><a href="#cb3-248" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Finalize MOUs for inter-agency data sharing</span>
+<span id="cb3-249"><a href="#cb3-249" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Deploy SaTScan algorithm for weekly cluster detection</span>
+<span id="cb3-250"><a href="#cb3-250" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Conduct national training for provincial teams</span>
 <span id="cb3-251"><a href="#cb3-251" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-252"><a href="#cb3-252" aria-hidden="true" tabindex="-1"></a><span class="fu">## Governance and Oversight</span></span>
+<span id="cb3-252"><a href="#cb3-252" aria-hidden="true" tabindex="-1"></a>**Milestones:**</span>
 <span id="cb3-253"><a href="#cb3-253" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-254"><a href="#cb3-254" aria-hidden="true" tabindex="-1"></a><span class="fu">### Roles and Responsibilities</span></span>
-<span id="cb3-255"><a href="#cb3-255" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-256"><a href="#cb3-256" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Agency <span class="pp">|</span> Role <span class="pp">|</span></span>
-<span id="cb3-257"><a href="#cb3-257" aria-hidden="true" tabindex="-1"></a><span class="pp">|:-------|:-----|</span></span>
-<span id="cb3-258"><a href="#cb3-258" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **NICD** <span class="pp">|</span> Lead surveillance agency; cluster detection; national coordination <span class="pp">|</span></span>
-<span id="cb3-259"><a href="#cb3-259" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **NHLS** <span class="pp">|</span> Laboratory testing; auto-notification configuration; quality assurance <span class="pp">|</span></span>
-<span id="cb3-260"><a href="#cb3-260" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **PIH** <span class="pp">|</span> Clinical toxicology advice; quarterly reporting <span class="pp">|</span></span>
-<span id="cb3-261"><a href="#cb3-261" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Provincial DoH** <span class="pp">|</span> Field investigation; source control; environmental sampling <span class="pp">|</span></span>
-<span id="cb3-262"><a href="#cb3-262" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **DALRRD** <span class="pp">|</span> Pesticide registration data; agricultural extension liaison <span class="pp">|</span></span>
-<span id="cb3-263"><a href="#cb3-263" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **SAPS Forensics** <span class="pp">|</span> Intentional poisoning investigations; evidence collection <span class="pp">|</span></span>
-<span id="cb3-264"><a href="#cb3-264" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-265"><a href="#cb3-265" aria-hidden="true" tabindex="-1"></a>: Agency roles in the proposed framework {.striped}</span>
-<span id="cb3-266"><a href="#cb3-266" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-267"><a href="#cb3-267" aria-hidden="true" tabindex="-1"></a><span class="fu">### Coordination Mechanisms</span></span>
-<span id="cb3-268"><a href="#cb3-268" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-269"><a href="#cb3-269" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Quarterly steering committee meetings** (NICD, NHLS, PIH, provincial representatives)</span>
-<span id="cb3-270"><a href="#cb3-270" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Monthly technical working group calls** (analysts and IT staff)</span>
-<span id="cb3-271"><a href="#cb3-271" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Annual review and planning workshop**</span>
-<span id="cb3-272"><a href="#cb3-272" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-273"><a href="#cb3-273" aria-hidden="true" tabindex="-1"></a><span class="fu">## Budget Summary</span></span>
-<span id="cb3-274"><a href="#cb3-274" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-275"><a href="#cb3-275" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Component <span class="pp">|</span> Annual Cost (ZAR) <span class="pp">|</span> Notes <span class="pp">|</span></span>
-<span id="cb3-276"><a href="#cb3-276" aria-hidden="true" tabindex="-1"></a><span class="pp">|:----------|------------------:|:------|</span></span>
-<span id="cb3-277"><a href="#cb3-277" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> NHLS auto-notifications <span class="pp">|</span> 55,000 <span class="pp">|</span> IT staff time for LIS configuration <span class="pp">|</span></span>
-<span id="cb3-278"><a href="#cb3-278" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> PIH quarterly reports <span class="pp">|</span> 62,000 <span class="pp">|</span> Analyst time for data extraction <span class="pp">|</span></span>
-<span id="cb3-279"><a href="#cb3-279" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Inter-agency MOUs <span class="pp">|</span> 80,000 <span class="pp">|</span> Legal review and liaison <span class="pp">|</span></span>
-<span id="cb3-280"><a href="#cb3-280" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Cluster detection <span class="pp">|</span> 40,000 <span class="pp">|</span> Analyst time for SaTScan runs <span class="pp">|</span></span>
-<span id="cb3-281"><a href="#cb3-281" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Total (Full Package)** | **237,000** | **All four options combined** <span class="pp">|</span></span>
+<span id="cb3-254"><a href="#cb3-254" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Month 9: All provinces receiving auto-notifications</span>
+<span id="cb3-255"><a href="#cb3-255" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Month 10: First national clustering analysis</span>
+<span id="cb3-256"><a href="#cb3-256" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Month 12: System fully operational</span>
+<span id="cb3-257"><a href="#cb3-257" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-258"><a href="#cb3-258" aria-hidden="true" tabindex="-1"></a><span class="fu">### Phase 3: Evaluation (Months 13–24)</span></span>
+<span id="cb3-259"><a href="#cb3-259" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-260"><a href="#cb3-260" aria-hidden="true" tabindex="-1"></a>**Metrics:**</span>
+<span id="cb3-261"><a href="#cb3-261" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-262"><a href="#cb3-262" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Timeliness**: Median time from exposure to notification</span>
+<span id="cb3-263"><a href="#cb3-263" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Completeness**: % of severe BChE inhibitions with corresponding NMC notifications</span>
+<span id="cb3-264"><a href="#cb3-264" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Sensitivity**: % of known outbreaks detected by cluster algorithm</span>
+<span id="cb3-265"><a href="#cb3-265" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Response**: % of clusters investigated within 72 hours</span>
+<span id="cb3-266"><a href="#cb3-266" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>**Impact**: Change in hospitalization rates in hotspot areas</span>
+<span id="cb3-267"><a href="#cb3-267" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-268"><a href="#cb3-268" aria-hidden="true" tabindex="-1"></a><span class="fu">## Governance and Oversight</span></span>
+<span id="cb3-269"><a href="#cb3-269" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-270"><a href="#cb3-270" aria-hidden="true" tabindex="-1"></a><span class="fu">### Roles and Responsibilities</span></span>
+<span id="cb3-271"><a href="#cb3-271" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-272"><a href="#cb3-272" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Agency <span class="pp">|</span> Role <span class="pp">|</span></span>
+<span id="cb3-273"><a href="#cb3-273" aria-hidden="true" tabindex="-1"></a><span class="pp">|:-------|:-----|</span></span>
+<span id="cb3-274"><a href="#cb3-274" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **NICD** <span class="pp">|</span> Lead surveillance agency; cluster detection; national coordination <span class="pp">|</span></span>
+<span id="cb3-275"><a href="#cb3-275" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **NHLS** <span class="pp">|</span> Laboratory testing; auto-notification configuration; quality assurance <span class="pp">|</span></span>
+<span id="cb3-276"><a href="#cb3-276" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **PIH** <span class="pp">|</span> Clinical toxicology advice; quarterly reporting <span class="pp">|</span></span>
+<span id="cb3-277"><a href="#cb3-277" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Provincial DoH** <span class="pp">|</span> Field investigation; source control; environmental sampling <span class="pp">|</span></span>
+<span id="cb3-278"><a href="#cb3-278" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **DALRRD** <span class="pp">|</span> Pesticide registration data; agricultural extension liaison <span class="pp">|</span></span>
+<span id="cb3-279"><a href="#cb3-279" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **SAPS Forensics** <span class="pp">|</span> Intentional poisoning investigations; evidence collection <span class="pp">|</span></span>
+<span id="cb3-280"><a href="#cb3-280" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-281"><a href="#cb3-281" aria-hidden="true" tabindex="-1"></a>: Agency roles in the proposed framework {.striped}</span>
 <span id="cb3-282"><a href="#cb3-282" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-283"><a href="#cb3-283" aria-hidden="true" tabindex="-1"></a>: Estimated annual costs for integrated surveillance framework {.striped .hover}</span>
+<span id="cb3-283"><a href="#cb3-283" aria-hidden="true" tabindex="-1"></a><span class="fu">### Coordination Mechanisms</span></span>
 <span id="cb3-284"><a href="#cb3-284" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-285"><a href="#cb3-285" aria-hidden="true" tabindex="-1"></a><span class="fu">## Limitations and Risks</span></span>
-<span id="cb3-286"><a href="#cb3-286" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-287"><a href="#cb3-287" aria-hidden="true" tabindex="-1"></a>::: {.callout-warning}</span>
-<span id="cb3-288"><a href="#cb3-288" aria-hidden="true" tabindex="-1"></a><span class="fu">## Key Assumptions</span></span>
-<span id="cb3-289"><a href="#cb3-289" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-290"><a href="#cb3-290" aria-hidden="true" tabindex="-1"></a>This framework assumes:</span>
-<span id="cb3-291"><a href="#cb3-291" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-292"><a href="#cb3-292" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**NHLS LIS can be configured** for auto-notifications (confirmed as technically feasible)</span>
-<span id="cb3-293"><a href="#cb3-293" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**PIH has capacity** to generate quarterly reports (requires dedicated analyst time)</span>
-<span id="cb3-294"><a href="#cb3-294" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Provincial teams have resources** for field investigations (may require additional funding)</span>
-<span id="cb3-295"><a href="#cb3-295" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Legal basis is sufficient** — no new legislation required (confirmed by legal review)</span>
-<span id="cb3-296"><a href="#cb3-296" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-297"><a href="#cb3-297" aria-hidden="true" tabindex="-1"></a>**Risks:**</span>
+<span id="cb3-285"><a href="#cb3-285" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Quarterly steering committee meetings** (NICD, NHLS, PIH, provincial representatives)</span>
+<span id="cb3-286"><a href="#cb3-286" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Monthly technical working group calls** (analysts and IT staff)</span>
+<span id="cb3-287"><a href="#cb3-287" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Annual review and planning workshop**</span>
+<span id="cb3-288"><a href="#cb3-288" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-289"><a href="#cb3-289" aria-hidden="true" tabindex="-1"></a><span class="fu">## Budget Summary</span></span>
+<span id="cb3-290"><a href="#cb3-290" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-291"><a href="#cb3-291" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Component <span class="pp">|</span> Annual Cost (ZAR) <span class="pp">|</span> Notes <span class="pp">|</span></span>
+<span id="cb3-292"><a href="#cb3-292" aria-hidden="true" tabindex="-1"></a><span class="pp">|:----------|------------------:|:------|</span></span>
+<span id="cb3-293"><a href="#cb3-293" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> NHLS auto-notifications <span class="pp">|</span> 55,000 <span class="pp">|</span> IT staff time for LIS configuration <span class="pp">|</span></span>
+<span id="cb3-294"><a href="#cb3-294" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> PIH quarterly reports <span class="pp">|</span> 62,000 <span class="pp">|</span> Analyst time for data extraction <span class="pp">|</span></span>
+<span id="cb3-295"><a href="#cb3-295" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Inter-agency MOUs <span class="pp">|</span> 80,000 <span class="pp">|</span> Legal review and liaison <span class="pp">|</span></span>
+<span id="cb3-296"><a href="#cb3-296" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Cluster detection <span class="pp">|</span> 40,000 <span class="pp">|</span> Analyst time for SaTScan runs <span class="pp">|</span></span>
+<span id="cb3-297"><a href="#cb3-297" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Total (Full Package)** | **237,000** | **All four options combined** <span class="pp">|</span></span>
 <span id="cb3-298"><a href="#cb3-298" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-299"><a href="#cb3-299" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Low uptake of BChE testing**: If clinicians don't order tests, laboratory triggers won't fire</span>
-<span id="cb3-300"><a href="#cb3-300" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Data quality issues**: Incomplete or incorrect demographic data may hinder hotspot detection</span>
-<span id="cb3-301"><a href="#cb3-301" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Response capacity constraints**: Provincial teams may lack vehicles, sampling equipment, or staff time</span>
-<span id="cb3-302"><a href="#cb3-302" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb3-303"><a href="#cb3-303" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-304"><a href="#cb3-304" aria-hidden="true" tabindex="-1"></a><span class="fu">## Next Steps</span></span>
+<span id="cb3-299"><a href="#cb3-299" aria-hidden="true" tabindex="-1"></a>: Estimated annual costs for integrated surveillance framework {.striped .hover}</span>
+<span id="cb3-300"><a href="#cb3-300" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-301"><a href="#cb3-301" aria-hidden="true" tabindex="-1"></a><span class="fu">## Limitations and Risks</span></span>
+<span id="cb3-302"><a href="#cb3-302" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-303"><a href="#cb3-303" aria-hidden="true" tabindex="-1"></a>::: {.callout-warning}</span>
+<span id="cb3-304"><a href="#cb3-304" aria-hidden="true" tabindex="-1"></a><span class="fu">## Key Assumptions</span></span>
 <span id="cb3-305"><a href="#cb3-305" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-306"><a href="#cb3-306" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Secure funding** for pilot phase (~R120,000 for 6 months)</span>
-<span id="cb3-307"><a href="#cb3-307" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Finalize MOUs** with NHLS and PIH (Month 1)</span>
-<span id="cb3-308"><a href="#cb3-308" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Configure NHLS auto-notifications** for pilot provinces (Months 1–2)</span>
-<span id="cb3-309"><a href="#cb3-309" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Train provincial surveillance officers** (Month 2)</span>
-<span id="cb3-310"><a href="#cb3-310" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>**Launch pilot** (Month 3)</span>
-<span id="cb3-311"><a href="#cb3-311" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>**Evaluate and refine** (Month 6)</span>
+<span id="cb3-306"><a href="#cb3-306" aria-hidden="true" tabindex="-1"></a>This framework assumes:</span>
+<span id="cb3-307"><a href="#cb3-307" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-308"><a href="#cb3-308" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**NHLS LIS can be configured** for auto-notifications (confirmed as technically feasible)</span>
+<span id="cb3-309"><a href="#cb3-309" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**PIH has capacity** to generate quarterly reports (requires dedicated analyst time)</span>
+<span id="cb3-310"><a href="#cb3-310" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Provincial teams have resources** for field investigations (may require additional funding)</span>
+<span id="cb3-311"><a href="#cb3-311" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Legal basis is sufficient** — no new legislation required (confirmed by legal review)</span>
 <span id="cb3-312"><a href="#cb3-312" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-313"><a href="#cb3-313" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb3-313"><a href="#cb3-313" aria-hidden="true" tabindex="-1"></a>**Risks:**</span>
 <span id="cb3-314"><a href="#cb3-314" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-315"><a href="#cb3-315" aria-hidden="true" tabindex="-1"></a><span class="fu">## References</span></span>
-<span id="cb3-316"><a href="#cb3-316" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-317"><a href="#cb3-317" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>National Institute for Communicable Diseases. *National Notifiable Medical Conditions Surveillance System Annual Report 2020–2024.*</span>
-<span id="cb3-318"><a href="#cb3-318" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>NHLS Laboratory Information Services. *Butyrylcholinesterase Testing Data 2020–2024.*</span>
-<span id="cb3-319"><a href="#cb3-319" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Red Cross War Memorial Children's Hospital. *Poisons Information Helpline Annual Report 2019.*</span>
-<span id="cb3-320"><a href="#cb3-320" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Kulldorff M. *SaTScan User Guide for Version 10.0.* 2021.</span>
-<span id="cb3-321"><a href="#cb3-321" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>National Health Act No. 61 of 2003, Section 90 (Inter-Agency Data Sharing for Public Health).</span>
-<span id="cb3-322"><a href="#cb3-322" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-323"><a href="#cb3-323" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb3-324"><a href="#cb3-324" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-325"><a href="#cb3-325" aria-hidden="true" tabindex="-1"></a>::: {.footer-cta}</span>
-<span id="cb3-326"><a href="#cb3-326" aria-hidden="true" tabindex="-1"></a>**Download the full concept note:** <span class="co">[</span><span class="ot">Pesticide_Poisoning_Surveillance_Concept_Note_DRAFT_3.docx</span><span class="co">](../Pesticide_Poisoning_Surveillance_Concept_Note_DRAFT_3_11082025_LL_BB05092025.docx)</span></span>
-<span id="cb3-327"><a href="#cb3-327" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb3-315"><a href="#cb3-315" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Low uptake of BChE testing**: If clinicians don't order tests, laboratory triggers won't fire</span>
+<span id="cb3-316"><a href="#cb3-316" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Data quality issues**: Incomplete or incorrect demographic data may hinder hotspot detection</span>
+<span id="cb3-317"><a href="#cb3-317" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Response capacity constraints**: Provincial teams may lack vehicles, sampling equipment, or staff time</span>
+<span id="cb3-318"><a href="#cb3-318" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb3-319"><a href="#cb3-319" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-320"><a href="#cb3-320" aria-hidden="true" tabindex="-1"></a><span class="fu">## Next Steps</span></span>
+<span id="cb3-321"><a href="#cb3-321" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-322"><a href="#cb3-322" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Secure funding** for pilot phase (~R120,000 for 6 months)</span>
+<span id="cb3-323"><a href="#cb3-323" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Finalize MOUs** with NHLS and PIH (Month 1)</span>
+<span id="cb3-324"><a href="#cb3-324" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Configure NHLS auto-notifications** for pilot provinces (Months 1–2)</span>
+<span id="cb3-325"><a href="#cb3-325" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Train provincial surveillance officers** (Month 2)</span>
+<span id="cb3-326"><a href="#cb3-326" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>**Launch pilot** (Month 3)</span>
+<span id="cb3-327"><a href="#cb3-327" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>**Evaluate and refine** (Month 6)</span>
+<span id="cb3-328"><a href="#cb3-328" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-329"><a href="#cb3-329" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb3-330"><a href="#cb3-330" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-331"><a href="#cb3-331" aria-hidden="true" tabindex="-1"></a><span class="fu">## References</span></span>
+<span id="cb3-332"><a href="#cb3-332" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-333"><a href="#cb3-333" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>National Institute for Communicable Diseases. *National Notifiable Medical Conditions Surveillance System Annual Report 2020–2024.*</span>
+<span id="cb3-334"><a href="#cb3-334" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>NHLS Laboratory Information Services. *Butyrylcholinesterase Testing Data 2020–2024.*</span>
+<span id="cb3-335"><a href="#cb3-335" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Red Cross War Memorial Children's Hospital. *Poisons Information Helpline Annual Report 2019.*</span>
+<span id="cb3-336"><a href="#cb3-336" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Kulldorff M. *SaTScan User Guide for Version 10.0.* 2021.</span>
+<span id="cb3-337"><a href="#cb3-337" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>National Health Act No. 61 of 2003, Section 90 (Inter-Agency Data Sharing for Public Health).</span>
+<span id="cb3-338"><a href="#cb3-338" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-339"><a href="#cb3-339" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb3-340"><a href="#cb3-340" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-341"><a href="#cb3-341" aria-hidden="true" tabindex="-1"></a>::: {.footer-cta}</span>
+<span id="cb3-342"><a href="#cb3-342" aria-hidden="true" tabindex="-1"></a>**Download the full concept note:** <span class="co">[</span><span class="ot">Pesticide_Poisoning_Surveillance_Concept_Note_DRAFT_3.docx</span><span class="co">](../Pesticide_Poisoning_Surveillance_Concept_Note_DRAFT_3_11082025_LL_BB05092025.docx)</span></span>
+<span id="cb3-343"><a href="#cb3-343" aria-hidden="true" tabindex="-1"></a>:::</span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
