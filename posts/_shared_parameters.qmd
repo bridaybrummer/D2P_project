@@ -50,5 +50,49 @@ tibble::tribble(
   tab_options(table.font.size = "small")
 ```
 
+### Who bears the R2.34B annual burden?
+
+```{r}
+#| label: shared-params-stakeholder
+#| echo: false
+#| message: false
+#| warning: false
+
+total <- as.numeric(pick("C_burden_total_headline"))
+
+stakeholder <- tibble::tribble(
+  ~Stakeholder,                                                ~Name,
+  "NDoH — public hospitals (UPFS ward + ICU + drugs)",         "share_doh_morbidity",
+  "NHLS — laboratory (BChE, GC-MS, repeat clinical chemistry)","share_nhls_morbidity",
+  "DALRRD — regulator (no burden-side share by construction)", "share_dalrrd_burden",
+  "Individuals / households — out-of-pocket + lost wages",     "share_individual_oop_morbidity",
+  "Households / wider society — lost lifetime earnings",       "share_household_mortality",
+  "TOTAL",                                                     "share_total_check"
+) |>
+  dplyr::mutate(
+    raw   = vapply(Name, function(n) suppressWarnings(as.numeric(pick(n))), numeric(1)),
+    Value = vapply(raw, zar, character(1)),
+    Share = ifelse(is.na(raw) | total == 0,
+                   "—",
+                   scales::percent(raw / total, accuracy = 1))
+  ) |>
+  dplyr::select(Stakeholder, Value, Share)
+
+stakeholder |>
+  gt() |>
+  tab_header(title = "Annual burden by stakeholder (headline scenario, ZAR 2025)",
+             subtitle = "Each rand of the R2.34B falls on exactly one bearer") |>
+  cols_align("right", c(Value, Share)) |>
+  tab_style(
+    style = cell_text(weight = "bold"),
+    locations = cells_body(rows = Stakeholder == "TOTAL")
+  ) |>
+  opt_row_striping() |>
+  tab_options(table.font.size = "small")
+```
+
+**Reading the table.** ~96 % of the R2.34B is **mortality, borne by households and the wider economy** as lost lifetime earnings (1,500 deaths × R1.5M human-capital, undiscounted; sensitivity: R1.05M at 3 % discount). The directly-budgeted health-sector share is **R80M** (NDoH ~R70M hospital + NHLS ~R10M lab) — modest in absolute terms, but it is the only column that appears on a departmental budget line. DALRRD bears **R0** of the *burden* side by construction: their cost sits on the *intervention* side (enforcement, recalls, registration action).
+
+
 For the full sourced parameter set (CFR by severity, UPFS tariffs, per-option costs, induced-demand components, DALY monetisation, NMB), see the **[Parameters Hub](../parameters_hub.html)**. For the v2 → v3 critical appraisal, see [`parameter_appraisal.qmd`](../parameter_appraisal.qmd).
 :::

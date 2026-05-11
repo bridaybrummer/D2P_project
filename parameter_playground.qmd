@@ -183,6 +183,22 @@ NMB_wholesystem     = burden_avoided - c_full_package_wholesystem_operating
 ROI_narrow          = burden_avoided / c_full_package_narrow_operating
 ROI_wholesystem     = burden_avoided / c_full_package_wholesystem_operating
 
+// ---------- Stakeholder split of avoided burden ----------
+// Apply the canonical share table (NDoH ~R70M, NHLS ~R10M, OOP ~R10M,
+// household mortality ~R2.25B of the R2.34B headline burden) proportionally
+// to whatever total burden the user has built with the sliders.
+share_doh_frac     = 70e6  / 2340e6   // ~3.0%
+share_nhls_frac    = 10e6  / 2340e6   // ~0.4%
+share_oop_frac     = 10e6  / 2340e6   // ~0.4%
+share_hh_mort_frac = 2250e6 / 2340e6  // ~96.2%
+
+avoided_doh        = burden_avoided * share_doh_frac
+avoided_nhls       = burden_avoided * share_nhls_frac
+avoided_oop        = burden_avoided * share_oop_frac
+avoided_hh_mort    = burden_avoided * share_hh_mort_frac
+avoided_health_sys = avoided_doh + avoided_nhls
+avoided_household  = avoided_oop + avoided_hh_mort
+
 fmtR = (x) => {
   if (Math.abs(x) >= 1e9) return "R" + (x/1e9).toFixed(2) + " bn";
   if (Math.abs(x) >= 1e6) return "R" + (x/1e6).toFixed(2) + " M";
@@ -241,6 +257,28 @@ Plot.plot({
 //| echo: false
 outcomesTable
 ```
+
+### Who bears the cost / who gains?
+
+```{ojs}
+//| echo: false
+
+stakeholderTable = Inputs.table([
+  {Stakeholder: "NDoH — public hospitals",                    "Annual burden borne": fmtR(C_burden_total * share_doh_frac),     "Burden avoided / yr": fmtR(avoided_doh),       Share: "~3.0%"},
+  {Stakeholder: "NHLS — laboratory",                          "Annual burden borne": fmtR(C_burden_total * share_nhls_frac),    "Burden avoided / yr": fmtR(avoided_nhls),      Share: "~0.4%"},
+  {Stakeholder: "DALRRD — regulator",                         "Annual burden borne": "R0",                                       "Burden avoided / yr": "R0",                     Share: "0% (lever-holder)"},
+  {Stakeholder: "Individuals — OOP + lost wages",             "Annual burden borne": fmtR(C_burden_total * share_oop_frac),     "Burden avoided / yr": fmtR(avoided_oop),       Share: "~0.4%"},
+  {Stakeholder: "Households / society — lost lifetime earnings","Annual burden borne": fmtR(C_burden_total * share_hh_mort_frac), "Burden avoided / yr": fmtR(avoided_hh_mort),   Share: "~96.2%"},
+  {Stakeholder: "── Health sector subtotal (NDoH + NHLS)",     "Annual burden borne": fmtR(C_burden_total * (share_doh_frac + share_nhls_frac)),  "Burden avoided / yr": fmtR(avoided_health_sys), Share: "~3.4%"},
+  {Stakeholder: "── Households + society subtotal",            "Annual burden borne": fmtR(C_burden_total * (share_oop_frac + share_hh_mort_frac)), "Burden avoided / yr": fmtR(avoided_household),  Share: "~96.6%"},
+  {Stakeholder: "TOTAL",                                       "Annual burden borne": fmtR(C_burden_total),                       "Burden avoided / yr": fmtR(burden_avoided),    Share: "100%"}
+], {
+  rows: 9,
+  width: {Stakeholder: 360, "Annual burden borne": 160, "Burden avoided / yr": 160, Share: 130}
+})
+```
+
+*Shares are applied proportionally from the canonical v3 stakeholder table (NDoH ~R70M, NHLS ~R10M, individuals OOP ~R10M, households mortality ~R2.25B of the R2.34B headline). Change any slider above to see how the same shares apply to a different total.*
 
 ### What changed from canonical v3?
 

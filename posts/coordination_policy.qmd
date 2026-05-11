@@ -32,6 +32,12 @@ Better detection (see the [Surveillance brief](surveillance_policy.qmd)) is wast
 
 {{< include _shared_parameters.qmd >}}
 
+::: {.callout-note}
+## Who bears the R2.34B — the whole-of-government picture
+
+The burden is split asymmetrically across government and society: **NDoH ~R70M (3 %), NHLS ~R10M (<1 %), individuals/households ~R10M out-of-pocket (<1 %), and ~R2.25B in lost lifetime earnings (96 %) borne by households and the wider economy**. DALRRD bears no direct burden-side cost — but they hold **the only legal lever that prevents the underlying exposure**. That asymmetry is exactly why the coordination loop must terminate in DALRRD action, not just in EHP investigation: the agency carrying the lowest share of the burden controls the highest-leverage intervention, so closing the NICD → EHP → DALRRD loop is the cheapest cross-departmental coordination available to government.
+:::
+
 ### The notification pathway — one-way and broken
 
 ```{mermaid}
@@ -203,13 +209,22 @@ flowchart TD
 
 ### 6c. What changes under each coordination scenario
 
-| Scenario | P(loop closed) | Deaths averted / year | Burden avoided / year |
-|:---------|---------------:|---------------------:|----------------------:|
-| Status quo | 1.1 % | 15 | — |
-| + C3 (NICD→DALRRD feed) | ~40 % | ~547 | ~R835M |
-| **Coordination Full Package (C1–C5)** | **~70 %** | **~957** | **~R1.45B** |
+Burden avoided is split by **who would otherwise have borne it**, so each agency sees the share of the win that flows back to its own budget line or constituency. The avoided-burden split uses the same shares as the canonical stakeholder table above: ~3.4 % health sector (NDoH + NHLS), ~96.6 % households (mortality + OOP).
 
-: Modelled coordination outcomes at national scale (× 11,690 suspected cases/year). Probabilities are placeholders aligned with the surveillance detection-rate ranges in the [Surveillance brief](surveillance_policy.qmd). {.striped .hover}
+| Scenario | P(loop closed) | Deaths averted / yr | Avoided — health system (NDoH + NHLS) | Avoided — households (mortality + OOP) | Total avoided |
+|:---------|---------------:|--------------------:|-------------------------------------:|---------------------------------------:|--------------:|
+| Status quo | 1.1 % | 15 | — | — | — |
+| + C3 (NICD→DALRRD feed) | ~40 % | ~547 | ~R29M | ~R806M | ~R835M |
+| **Coordination Full Package (C1–C5)** | **~70 %** | **~957** | **~R50M** | **~R1,400M** | **~R1,450M** |
+
+: Modelled coordination outcomes at national scale (× 11,690 suspected cases/year). Stakeholder columns apply the canonical share table (NDoH+NHLS = R80M of R2.34B; households = R2.26B of R2.34B) to the total avoided burden in each scenario. Probabilities are placeholders aligned with the surveillance detection-rate ranges in the [Surveillance brief](surveillance_policy.qmd). {.striped .hover}
+
+**Reading by audience.**
+
+- **NDoH / NHLS:** the R50M avoided on your budget line is ~330× the R145k Full-Package operating cost — a credible business case even before counting household mortality.
+- **DALRRD:** you do not bear the R2.34B, but C3 is the lowest-cost route to the evidence base you need for product-specific action (see [Terbufos brief](terbufos_policy.qmd)).
+- **Treasury / Presidency:** ~R1.4B/yr of household and societal cost is structurally retired; this is the cross-departmental coordination return that justifies the joint DG circular.
+
 
 ## 7. Implementation considerations
 

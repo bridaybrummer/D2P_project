@@ -52,6 +52,12 @@ Claim 1 is settled. Claim 2 is supported but incompletely quantified. Claim 3 ha
 
 {{< include _shared_parameters.qmd >}}
 
+::: {.callout-note}
+## What DALRRD action delivers — and to whom
+
+DALRRD itself bears **~R0 of the R2.34B annual burden**. That cost is carried by NDoH (~R70M hospital), NHLS (~R10M lab), and most heavily by **households (~R2.26B in out-of-pocket costs and lost lifetime earnings)**. DALRRD nevertheless holds the only lever — registration, restriction, recall — that prevents the underlying exposure in the first place. A regulatory action borne by DALRRD (~R1–3M/year of additional enforcement and inspectorate capacity) therefore retires household-borne mortality cost at a leverage ratio of roughly **1 : 500**: one rand of regulatory spend averts five hundred rand of household income loss. For DALRRD this is not a cost — it is the single highest-impact use of regulatory authority on the SADC pesticide-poisoning portfolio.
+:::
+
 **Terbufos-specific status quo:**
 
 | Item | Status | Evidence basis |

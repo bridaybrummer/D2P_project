@@ -38,6 +38,12 @@ The consequences are operational, not theoretical: hotspots are detected late or
 
 {{< include _shared_parameters.qmd >}}
 
+::: {.callout-note}
+## Health-sector share of the burden — what surveillance unlocks
+
+The public health system bears **~R80M of the R2.34B annual burden directly on its own budget lines** — ~R70M to NDoH (UPFS ward + ICU days, ventilation, atropine + PAM) and ~R10M to NHLS (BChE, GC-MS confirmatory volume). Every percentage point of additional detection (Options 1–5 below) reduces ward-days, ICU-days, and repeat lab workload *before* any mortality benefit is counted — so the surveillance investment pays back **on the NDoH and NHLS budget lines first**, and on household / societal mortality (~R2.25B) second.
+:::
+
 **Architecturally, the three streams are unlinked:**
 
 ```{mermaid}
