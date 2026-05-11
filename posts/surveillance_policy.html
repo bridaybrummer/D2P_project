@@ -110,6 +110,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
 <script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
 <link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+<link href="../site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+<script src="../site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 
 
 <link rel="stylesheet" href="../styles.css">
@@ -143,6 +145,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li class="nav-item">
     <a class="nav-link" href="../posts.html"> 
 <span class="menu-text">Research Outputs</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../parameters_hub.html"> 
+<span class="menu-text">Parameters Hub</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../analysis_report_v2.html"> 
@@ -264,181 +270,544 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="status-quo" class="level2">
 <h2 class="anchored" data-anchor-id="status-quo">3. Status quo</h2>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Headline numbers used across all D2P policy documents
+<span class="screen-reader-only">Note</span>Canonical model parameters (auto-loaded from the <a href="../parameters_hub.html">Parameters Hub</a>)
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>All three policy documents draw their quantitative claims from this single shared parameter set. To revise an assumption, <strong>edit <code>posts/_shared_parameters.qmd</code></strong> — every document that includes it will update on the next render.</p>
-<p><strong>Burden (per year, South Africa):</strong></p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 31%">
-<col style="width: 20%">
-<col style="width: 48%">
-</colgroup>
+<p>All numerical claims in this brief draw from a single CSV — <a href="../amua_import_parameters_v3.csv"><code>amua_import_parameters_v3.csv</code></a> — rendered in full at the <a href="../parameters_hub.html">Parameters Hub</a>. The headline values below are pulled from that file at render time; <strong>do not edit the numbers in this brief — edit the CSV and re-render</strong>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="zwqrannjlw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#zwqrannjlw table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#zwqrannjlw thead, #zwqrannjlw tbody, #zwqrannjlw tfoot, #zwqrannjlw tr, #zwqrannjlw td, #zwqrannjlw th {
+  border-style: none;
+}
+
+#zwqrannjlw p {
+  margin: 0;
+  padding: 0;
+}
+
+#zwqrannjlw .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: small;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#zwqrannjlw .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#zwqrannjlw .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#zwqrannjlw .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#zwqrannjlw .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#zwqrannjlw .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#zwqrannjlw .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#zwqrannjlw .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#zwqrannjlw .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#zwqrannjlw .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#zwqrannjlw .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#zwqrannjlw .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#zwqrannjlw .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#zwqrannjlw .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#zwqrannjlw .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#zwqrannjlw .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#zwqrannjlw .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#zwqrannjlw .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#zwqrannjlw .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zwqrannjlw .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#zwqrannjlw .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#zwqrannjlw .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#zwqrannjlw .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zwqrannjlw .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#zwqrannjlw .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#zwqrannjlw .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#zwqrannjlw .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zwqrannjlw .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#zwqrannjlw .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#zwqrannjlw .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#zwqrannjlw .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#zwqrannjlw .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#zwqrannjlw .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zwqrannjlw .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#zwqrannjlw .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zwqrannjlw .gt_left {
+  text-align: left;
+}
+
+#zwqrannjlw .gt_center {
+  text-align: center;
+}
+
+#zwqrannjlw .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#zwqrannjlw .gt_font_normal {
+  font-weight: normal;
+}
+
+#zwqrannjlw .gt_font_bold {
+  font-weight: bold;
+}
+
+#zwqrannjlw .gt_font_italic {
+  font-style: italic;
+}
+
+#zwqrannjlw .gt_super {
+  font-size: 65%;
+}
+
+#zwqrannjlw .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#zwqrannjlw .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#zwqrannjlw .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#zwqrannjlw .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#zwqrannjlw .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#zwqrannjlw .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#zwqrannjlw .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#zwqrannjlw .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#zwqrannjlw div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <thead>
-<tr class="header">
-<th style="text-align: left;">Parameter</th>
-<th style="text-align: right;">Value</th>
-<th style="text-align: left;">Source / status</th>
+<tr class="gt_heading header">
+<td colspan="2" class="gt_heading gt_title gt_font_normal">Headline parameters used in this brief</td>
+</tr>
+<tr class="gt_heading even">
+<td colspan="2" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border">Pulled from amua_import_parameters_v3.csv at render time</td>
+</tr>
+<tr class="gt_col_headings header">
+<th id="Parameter" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Parameter</th>
+<th id="Value" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Value</th>
 </tr>
 </thead>
-<tbody>
+<tbody class="gt_table_body">
 <tr class="odd">
-<td style="text-align: left;">NMC pesticide-poisoning notifications</td>
-<td style="text-align: right;">~690</td>
-<td style="text-align: left;">NMC 2020–2024 annual reports</td>
+<td class="gt_row gt_left" headers="Parameter">Annual NMC pesticide notifications</td>
+<td class="gt_row gt_left" headers="Value">690</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">NHLS severe BChE inhibitions (live patients)</td>
-<td style="text-align: right;">~2,000</td>
-<td style="text-align: left;">NHLS LIS, 2020–2024</td>
+<td class="gt_row gt_left gt_striped" headers="Parameter">Annual NHLS severe BChE inhibitions (live)</td>
+<td class="gt_row gt_left gt_striped" headers="Value">2000</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Poisons Information Helpline pesticide calls</td>
-<td style="text-align: right;">~9,000</td>
-<td style="text-align: left;">PIH Annual Report 2019</td>
+<td class="gt_row gt_left" headers="Parameter">Annual PIH pesticide-related calls</td>
+<td class="gt_row gt_left" headers="Value">9000</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Total suspected pesticide-poisoning cases / year</td>
-<td style="text-align: right;"><strong>~11,690</strong></td>
-<td style="text-align: left;">Sum of three mutually-exclusive streams (placeholder for record-linkage)</td>
+<td class="gt_row gt_left gt_striped" headers="Parameter">True annual burden (sum, upper bound)</td>
+<td class="gt_row gt_left gt_striped" headers="Value">11690</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Case-fatality rate (CFR, mid-range)</td>
-<td style="text-align: right;">13 %</td>
-<td style="text-align: left;">NMC observed range 10–15 %; under-counts intentional self-poisoning under ICD-10 default rules</td>
+<td class="gt_row gt_left" headers="Parameter">Headline annual deaths</td>
+<td class="gt_row gt_left" headers="Value">1500</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Annual deaths</td>
-<td style="text-align: right;"><strong>~1,500 – 1,800</strong></td>
-<td style="text-align: left;">11,690 × CFR</td>
+<td class="gt_row gt_left gt_striped" headers="Parameter">Blended headline morbidity cost per case</td>
+<td class="gt_row gt_left gt_striped" headers="Value">R12,000</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Per-case morbidity cost</td>
-<td style="text-align: right;">R12,000</td>
-<td style="text-align: left;">Existing decision-model parameter</td>
+<td class="gt_row gt_left" headers="Parameter">Mortality cost per death (human-capital)</td>
+<td class="gt_row gt_left" headers="Value">R1.50 million</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Per-death mortality cost</td>
-<td style="text-align: right;">R1,500,000</td>
-<td style="text-align: left;">Human-capital approach, existing model</td>
+<td class="gt_row gt_left gt_striped" headers="Parameter">Headline annual economic burden</td>
+<td class="gt_row gt_left gt_striped" headers="Value">R2.34 billion</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><strong>Per-case societal cost</strong></td>
-<td style="text-align: right;"><strong>~R197,000</strong></td>
-<td style="text-align: left;">R12,000 + 0.13 × R1.5M</td>
+<td class="gt_row gt_left" headers="Parameter">Response efficacy η (base case)</td>
+<td class="gt_row gt_left" headers="Value">0.30</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><strong>Total annual economic burden</strong></td>
-<td style="text-align: right;"><strong>~R2.3 billion / year</strong></td>
-<td style="text-align: left;">11,690 × R197,000</td>
+<td class="gt_row gt_left gt_striped" headers="Parameter">Detection probability — status quo</td>
+<td class="gt_row gt_left gt_striped" headers="Value">0.45</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Parameter">Detection probability — full package</td>
+<td class="gt_row gt_left" headers="Value">0.83</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="Parameter">Full Package narrow operating cost / yr</td>
+<td class="gt_row gt_left gt_striped" headers="Value">R237,000</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Parameter">Full Package whole-system operating cost / yr</td>
+<td class="gt_row gt_left" headers="Value">R1.19 million</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Decision-tree parameters (placeholders — to be re-estimated from pilot):</strong></p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 31%">
-<col style="width: 22%">
-<col style="width: 20%">
-<col style="width: 25%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Parameter</th>
-<th style="text-align: center;">Symbol</th>
-<th style="text-align: right;">Value</th>
-<th style="text-align: left;">Used in</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Loop-closure prevention efficacy</td>
-<td style="text-align: center;">η</td>
-<td style="text-align: right;">0.30</td>
-<td style="text-align: left;">Burden-avoided model; outcome subtree</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Secondary cases per unaddressed source</td>
-<td style="text-align: center;">ρ</td>
-<td style="text-align: right;">3.0</td>
-<td style="text-align: left;">Outcome subtree</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P(index death)</td>
-<td style="text-align: center;">p_death</td>
-<td style="text-align: right;">0.13</td>
-<td style="text-align: left;">Outcome subtree</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P(severe morbidity, ICU/admission)</td>
-<td style="text-align: center;">p_severe</td>
-<td style="text-align: right;">0.27</td>
-<td style="text-align: left;">Outcome subtree</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P(full recovery)</td>
-<td style="text-align: center;">p_recover</td>
-<td style="text-align: right;">0.60</td>
-<td style="text-align: left;">Outcome subtree</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Status-quo coordination transition probabilities (per suspected case):</strong></p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Node</th>
-<th style="text-align: left;">Decision</th>
-<th style="text-align: right;">P(Yes)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Q1</td>
-<td style="text-align: left;">Clinician/PHO files on NMC</td>
-<td style="text-align: right;">0.30</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Q2</td>
-<td style="text-align: left;">NMC SMS reaches local EHP</td>
-<td style="text-align: right;">0.95</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Q3</td>
-<td style="text-align: left;">EHP investigates</td>
-<td style="text-align: right;">0.60</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Q4</td>
-<td style="text-align: left;">Investigation recorded on NMC</td>
-<td style="text-align: right;">0.05</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Q5</td>
-<td style="text-align: left;">EHP refers to DALRRD</td>
-<td style="text-align: right;">0.30</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Q6</td>
-<td style="text-align: left;">DALRRD acts</td>
-<td style="text-align: right;">0.50</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Q7</td>
-<td style="text-align: left;">DALRRD feeds back to NMC + clinician</td>
-<td style="text-align: right;">0.10</td>
-</tr>
-</tbody>
-</table>
-<p>Joint P(loop fully closes) ≈ <strong>1.1 %</strong> under the status quo.</p>
-<p>Full numerical derivations live in the <a href="../posts/decision_model.html">Decision Model</a> and the <a href="../posts/costing_analysis.html">Costing Analysis</a>.</p>
+
+</div>
+</div>
+</div>
+<p>For the full sourced parameter set (CFR by severity, UPFS tariffs, per-option costs, induced-demand components, DALY monetisation, NMB), see the <strong><a href="../parameters_hub.html">Parameters Hub</a></strong>. For the v2 → v3 critical appraisal, see <a href="../parameter_appraisal.html"><code>parameter_appraisal.qmd</code></a>.</p>
+</div>
 </div>
 </div>
 <p><strong>Architecturally, the three streams are unlinked:</strong></p>

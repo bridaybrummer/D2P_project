@@ -45,181 +45,544 @@
 <section id="status-quo" class="level2">
 <h2 class="anchored" data-anchor-id="status-quo">3. Status quo</h2>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Headline numbers used across all D2P policy documents
+<span class="screen-reader-only">Note</span>Canonical model parameters (auto-loaded from the <a href="../parameters_hub.html">Parameters Hub</a>)
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>All three policy documents draw their quantitative claims from this single shared parameter set. To revise an assumption, <strong>edit <code>posts/_shared_parameters.qmd</code></strong> — every document that includes it will update on the next render.</p>
-<p><strong>Burden (per year, South Africa):</strong></p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 31%">
-<col style="width: 20%">
-<col style="width: 48%">
-</colgroup>
+<p>All numerical claims in this brief draw from a single CSV — <a href="../amua_import_parameters_v3.csv"><code>amua_import_parameters_v3.csv</code></a> — rendered in full at the <a href="../parameters_hub.html">Parameters Hub</a>. The headline values below are pulled from that file at render time; <strong>do not edit the numbers in this brief — edit the CSV and re-render</strong>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="wdksaihyzq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#wdksaihyzq table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#wdksaihyzq thead, #wdksaihyzq tbody, #wdksaihyzq tfoot, #wdksaihyzq tr, #wdksaihyzq td, #wdksaihyzq th {
+  border-style: none;
+}
+
+#wdksaihyzq p {
+  margin: 0;
+  padding: 0;
+}
+
+#wdksaihyzq .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: small;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#wdksaihyzq .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#wdksaihyzq .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#wdksaihyzq .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#wdksaihyzq .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#wdksaihyzq .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#wdksaihyzq .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#wdksaihyzq .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#wdksaihyzq .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#wdksaihyzq .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#wdksaihyzq .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#wdksaihyzq .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#wdksaihyzq .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#wdksaihyzq .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#wdksaihyzq .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#wdksaihyzq .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#wdksaihyzq .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#wdksaihyzq .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#wdksaihyzq .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#wdksaihyzq .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#wdksaihyzq .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#wdksaihyzq .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#wdksaihyzq .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#wdksaihyzq .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#wdksaihyzq .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#wdksaihyzq .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#wdksaihyzq .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#wdksaihyzq .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#wdksaihyzq .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#wdksaihyzq .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#wdksaihyzq .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#wdksaihyzq .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#wdksaihyzq .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#wdksaihyzq .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#wdksaihyzq .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#wdksaihyzq .gt_left {
+  text-align: left;
+}
+
+#wdksaihyzq .gt_center {
+  text-align: center;
+}
+
+#wdksaihyzq .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#wdksaihyzq .gt_font_normal {
+  font-weight: normal;
+}
+
+#wdksaihyzq .gt_font_bold {
+  font-weight: bold;
+}
+
+#wdksaihyzq .gt_font_italic {
+  font-style: italic;
+}
+
+#wdksaihyzq .gt_super {
+  font-size: 65%;
+}
+
+#wdksaihyzq .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#wdksaihyzq .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#wdksaihyzq .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#wdksaihyzq .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#wdksaihyzq .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#wdksaihyzq .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#wdksaihyzq .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#wdksaihyzq .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#wdksaihyzq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <thead>
-<tr class="header">
-<th style="text-align: left;">Parameter</th>
-<th style="text-align: right;">Value</th>
-<th style="text-align: left;">Source / status</th>
+<tr class="gt_heading header">
+<td colspan="2" class="gt_heading gt_title gt_font_normal">Headline parameters used in this brief</td>
+</tr>
+<tr class="gt_heading even">
+<td colspan="2" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border">Pulled from amua_import_parameters_v3.csv at render time</td>
+</tr>
+<tr class="gt_col_headings header">
+<th id="Parameter" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Parameter</th>
+<th id="Value" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Value</th>
 </tr>
 </thead>
-<tbody>
+<tbody class="gt_table_body">
 <tr class="odd">
-<td style="text-align: left;">NMC pesticide-poisoning notifications</td>
-<td style="text-align: right;">~690</td>
-<td style="text-align: left;">NMC 2020–2024 annual reports</td>
+<td class="gt_row gt_left" headers="Parameter">Annual NMC pesticide notifications</td>
+<td class="gt_row gt_left" headers="Value">690</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">NHLS severe BChE inhibitions (live patients)</td>
-<td style="text-align: right;">~2,000</td>
-<td style="text-align: left;">NHLS LIS, 2020–2024</td>
+<td class="gt_row gt_left gt_striped" headers="Parameter">Annual NHLS severe BChE inhibitions (live)</td>
+<td class="gt_row gt_left gt_striped" headers="Value">2000</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Poisons Information Helpline pesticide calls</td>
-<td style="text-align: right;">~9,000</td>
-<td style="text-align: left;">PIH Annual Report 2019</td>
+<td class="gt_row gt_left" headers="Parameter">Annual PIH pesticide-related calls</td>
+<td class="gt_row gt_left" headers="Value">9000</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Total suspected pesticide-poisoning cases / year</td>
-<td style="text-align: right;"><strong>~11,690</strong></td>
-<td style="text-align: left;">Sum of three mutually-exclusive streams (placeholder for record-linkage)</td>
+<td class="gt_row gt_left gt_striped" headers="Parameter">True annual burden (sum, upper bound)</td>
+<td class="gt_row gt_left gt_striped" headers="Value">11690</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Case-fatality rate (CFR, mid-range)</td>
-<td style="text-align: right;">13 %</td>
-<td style="text-align: left;">NMC observed range 10–15 %; under-counts intentional self-poisoning under ICD-10 default rules</td>
+<td class="gt_row gt_left" headers="Parameter">Headline annual deaths</td>
+<td class="gt_row gt_left" headers="Value">1500</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Annual deaths</td>
-<td style="text-align: right;"><strong>~1,500 – 1,800</strong></td>
-<td style="text-align: left;">11,690 × CFR</td>
+<td class="gt_row gt_left gt_striped" headers="Parameter">Blended headline morbidity cost per case</td>
+<td class="gt_row gt_left gt_striped" headers="Value">R12,000</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Per-case morbidity cost</td>
-<td style="text-align: right;">R12,000</td>
-<td style="text-align: left;">Existing decision-model parameter</td>
+<td class="gt_row gt_left" headers="Parameter">Mortality cost per death (human-capital)</td>
+<td class="gt_row gt_left" headers="Value">R1.50 million</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Per-death mortality cost</td>
-<td style="text-align: right;">R1,500,000</td>
-<td style="text-align: left;">Human-capital approach, existing model</td>
+<td class="gt_row gt_left gt_striped" headers="Parameter">Headline annual economic burden</td>
+<td class="gt_row gt_left gt_striped" headers="Value">R2.34 billion</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><strong>Per-case societal cost</strong></td>
-<td style="text-align: right;"><strong>~R197,000</strong></td>
-<td style="text-align: left;">R12,000 + 0.13 × R1.5M</td>
+<td class="gt_row gt_left" headers="Parameter">Response efficacy η (base case)</td>
+<td class="gt_row gt_left" headers="Value">0.30</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><strong>Total annual economic burden</strong></td>
-<td style="text-align: right;"><strong>~R2.3 billion / year</strong></td>
-<td style="text-align: left;">11,690 × R197,000</td>
+<td class="gt_row gt_left gt_striped" headers="Parameter">Detection probability — status quo</td>
+<td class="gt_row gt_left gt_striped" headers="Value">0.45</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Parameter">Detection probability — full package</td>
+<td class="gt_row gt_left" headers="Value">0.83</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="Parameter">Full Package narrow operating cost / yr</td>
+<td class="gt_row gt_left gt_striped" headers="Value">R237,000</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Parameter">Full Package whole-system operating cost / yr</td>
+<td class="gt_row gt_left" headers="Value">R1.19 million</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Decision-tree parameters (placeholders — to be re-estimated from pilot):</strong></p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 31%">
-<col style="width: 22%">
-<col style="width: 20%">
-<col style="width: 25%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Parameter</th>
-<th style="text-align: center;">Symbol</th>
-<th style="text-align: right;">Value</th>
-<th style="text-align: left;">Used in</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Loop-closure prevention efficacy</td>
-<td style="text-align: center;">η</td>
-<td style="text-align: right;">0.30</td>
-<td style="text-align: left;">Burden-avoided model; outcome subtree</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Secondary cases per unaddressed source</td>
-<td style="text-align: center;">ρ</td>
-<td style="text-align: right;">3.0</td>
-<td style="text-align: left;">Outcome subtree</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P(index death)</td>
-<td style="text-align: center;">p_death</td>
-<td style="text-align: right;">0.13</td>
-<td style="text-align: left;">Outcome subtree</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P(severe morbidity, ICU/admission)</td>
-<td style="text-align: center;">p_severe</td>
-<td style="text-align: right;">0.27</td>
-<td style="text-align: left;">Outcome subtree</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P(full recovery)</td>
-<td style="text-align: center;">p_recover</td>
-<td style="text-align: right;">0.60</td>
-<td style="text-align: left;">Outcome subtree</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Status-quo coordination transition probabilities (per suspected case):</strong></p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Node</th>
-<th style="text-align: left;">Decision</th>
-<th style="text-align: right;">P(Yes)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Q1</td>
-<td style="text-align: left;">Clinician/PHO files on NMC</td>
-<td style="text-align: right;">0.30</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Q2</td>
-<td style="text-align: left;">NMC SMS reaches local EHP</td>
-<td style="text-align: right;">0.95</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Q3</td>
-<td style="text-align: left;">EHP investigates</td>
-<td style="text-align: right;">0.60</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Q4</td>
-<td style="text-align: left;">Investigation recorded on NMC</td>
-<td style="text-align: right;">0.05</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Q5</td>
-<td style="text-align: left;">EHP refers to DALRRD</td>
-<td style="text-align: right;">0.30</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Q6</td>
-<td style="text-align: left;">DALRRD acts</td>
-<td style="text-align: right;">0.50</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Q7</td>
-<td style="text-align: left;">DALRRD feeds back to NMC + clinician</td>
-<td style="text-align: right;">0.10</td>
-</tr>
-</tbody>
-</table>
-<p>Joint P(loop fully closes) ≈ <strong>1.1 %</strong> under the status quo.</p>
-<p>Full numerical derivations live in the <a href="../posts/decision_model.html">Decision Model</a> and the <a href="../posts/costing_analysis.html">Costing Analysis</a>.</p>
+
+</div>
+</div>
+</div>
+<p>For the full sourced parameter set (CFR by severity, UPFS tariffs, per-option costs, induced-demand components, DALY monetisation, NMB), see the <strong><a href="../parameters_hub.html">Parameters Hub</a></strong>. For the v2 → v3 critical appraisal, see <a href="../parameter_appraisal.html"><code>parameter_appraisal.qmd</code></a>.</p>
+</div>
 </div>
 </div>
 <section id="the-notification-pathway-one-way-and-broken" class="level3">
@@ -21370,181 +21733,544 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
 <section id="status-quo" class="level2">
 <h2 class="anchored" data-anchor-id="status-quo">3. Status quo</h2>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Headline numbers used across all D2P policy documents
+<span class="screen-reader-only">Note</span>Canonical model parameters (auto-loaded from the <a href="../parameters_hub.html">Parameters Hub</a>)
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>All three policy documents draw their quantitative claims from this single shared parameter set. To revise an assumption, <strong>edit <code>posts/_shared_parameters.qmd</code></strong> — every document that includes it will update on the next render.</p>
-<p><strong>Burden (per year, South Africa):</strong></p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 31%">
-<col style="width: 20%">
-<col style="width: 48%">
-</colgroup>
+<p>All numerical claims in this brief draw from a single CSV — <a href="../amua_import_parameters_v3.csv"><code>amua_import_parameters_v3.csv</code></a> — rendered in full at the <a href="../parameters_hub.html">Parameters Hub</a>. The headline values below are pulled from that file at render time; <strong>do not edit the numbers in this brief — edit the CSV and re-render</strong>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="zwqrannjlw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#zwqrannjlw table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#zwqrannjlw thead, #zwqrannjlw tbody, #zwqrannjlw tfoot, #zwqrannjlw tr, #zwqrannjlw td, #zwqrannjlw th {
+  border-style: none;
+}
+
+#zwqrannjlw p {
+  margin: 0;
+  padding: 0;
+}
+
+#zwqrannjlw .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: small;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#zwqrannjlw .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#zwqrannjlw .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#zwqrannjlw .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#zwqrannjlw .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#zwqrannjlw .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#zwqrannjlw .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#zwqrannjlw .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#zwqrannjlw .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#zwqrannjlw .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#zwqrannjlw .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#zwqrannjlw .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#zwqrannjlw .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#zwqrannjlw .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#zwqrannjlw .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#zwqrannjlw .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#zwqrannjlw .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#zwqrannjlw .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#zwqrannjlw .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zwqrannjlw .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#zwqrannjlw .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#zwqrannjlw .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#zwqrannjlw .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zwqrannjlw .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#zwqrannjlw .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#zwqrannjlw .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#zwqrannjlw .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zwqrannjlw .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#zwqrannjlw .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#zwqrannjlw .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#zwqrannjlw .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#zwqrannjlw .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#zwqrannjlw .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zwqrannjlw .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#zwqrannjlw .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zwqrannjlw .gt_left {
+  text-align: left;
+}
+
+#zwqrannjlw .gt_center {
+  text-align: center;
+}
+
+#zwqrannjlw .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#zwqrannjlw .gt_font_normal {
+  font-weight: normal;
+}
+
+#zwqrannjlw .gt_font_bold {
+  font-weight: bold;
+}
+
+#zwqrannjlw .gt_font_italic {
+  font-style: italic;
+}
+
+#zwqrannjlw .gt_super {
+  font-size: 65%;
+}
+
+#zwqrannjlw .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#zwqrannjlw .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#zwqrannjlw .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#zwqrannjlw .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#zwqrannjlw .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#zwqrannjlw .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#zwqrannjlw .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#zwqrannjlw .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#zwqrannjlw div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <thead>
-<tr class="header">
-<th style="text-align: left;">Parameter</th>
-<th style="text-align: right;">Value</th>
-<th style="text-align: left;">Source / status</th>
+<tr class="gt_heading header">
+<td colspan="2" class="gt_heading gt_title gt_font_normal">Headline parameters used in this brief</td>
+</tr>
+<tr class="gt_heading even">
+<td colspan="2" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border">Pulled from amua_import_parameters_v3.csv at render time</td>
+</tr>
+<tr class="gt_col_headings header">
+<th id="Parameter" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Parameter</th>
+<th id="Value" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Value</th>
 </tr>
 </thead>
-<tbody>
+<tbody class="gt_table_body">
 <tr class="odd">
-<td style="text-align: left;">NMC pesticide-poisoning notifications</td>
-<td style="text-align: right;">~690</td>
-<td style="text-align: left;">NMC 2020–2024 annual reports</td>
+<td class="gt_row gt_left" headers="Parameter">Annual NMC pesticide notifications</td>
+<td class="gt_row gt_left" headers="Value">690</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">NHLS severe BChE inhibitions (live patients)</td>
-<td style="text-align: right;">~2,000</td>
-<td style="text-align: left;">NHLS LIS, 2020–2024</td>
+<td class="gt_row gt_left gt_striped" headers="Parameter">Annual NHLS severe BChE inhibitions (live)</td>
+<td class="gt_row gt_left gt_striped" headers="Value">2000</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Poisons Information Helpline pesticide calls</td>
-<td style="text-align: right;">~9,000</td>
-<td style="text-align: left;">PIH Annual Report 2019</td>
+<td class="gt_row gt_left" headers="Parameter">Annual PIH pesticide-related calls</td>
+<td class="gt_row gt_left" headers="Value">9000</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Total suspected pesticide-poisoning cases / year</td>
-<td style="text-align: right;"><strong>~11,690</strong></td>
-<td style="text-align: left;">Sum of three mutually-exclusive streams (placeholder for record-linkage)</td>
+<td class="gt_row gt_left gt_striped" headers="Parameter">True annual burden (sum, upper bound)</td>
+<td class="gt_row gt_left gt_striped" headers="Value">11690</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Case-fatality rate (CFR, mid-range)</td>
-<td style="text-align: right;">13 %</td>
-<td style="text-align: left;">NMC observed range 10–15 %; under-counts intentional self-poisoning under ICD-10 default rules</td>
+<td class="gt_row gt_left" headers="Parameter">Headline annual deaths</td>
+<td class="gt_row gt_left" headers="Value">1500</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Annual deaths</td>
-<td style="text-align: right;"><strong>~1,500 – 1,800</strong></td>
-<td style="text-align: left;">11,690 × CFR</td>
+<td class="gt_row gt_left gt_striped" headers="Parameter">Blended headline morbidity cost per case</td>
+<td class="gt_row gt_left gt_striped" headers="Value">R12,000</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Per-case morbidity cost</td>
-<td style="text-align: right;">R12,000</td>
-<td style="text-align: left;">Existing decision-model parameter</td>
+<td class="gt_row gt_left" headers="Parameter">Mortality cost per death (human-capital)</td>
+<td class="gt_row gt_left" headers="Value">R1.50 million</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Per-death mortality cost</td>
-<td style="text-align: right;">R1,500,000</td>
-<td style="text-align: left;">Human-capital approach, existing model</td>
+<td class="gt_row gt_left gt_striped" headers="Parameter">Headline annual economic burden</td>
+<td class="gt_row gt_left gt_striped" headers="Value">R2.34 billion</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><strong>Per-case societal cost</strong></td>
-<td style="text-align: right;"><strong>~R197,000</strong></td>
-<td style="text-align: left;">R12,000 + 0.13 × R1.5M</td>
+<td class="gt_row gt_left" headers="Parameter">Response efficacy η (base case)</td>
+<td class="gt_row gt_left" headers="Value">0.30</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><strong>Total annual economic burden</strong></td>
-<td style="text-align: right;"><strong>~R2.3 billion / year</strong></td>
-<td style="text-align: left;">11,690 × R197,000</td>
+<td class="gt_row gt_left gt_striped" headers="Parameter">Detection probability — status quo</td>
+<td class="gt_row gt_left gt_striped" headers="Value">0.45</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Parameter">Detection probability — full package</td>
+<td class="gt_row gt_left" headers="Value">0.83</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="Parameter">Full Package narrow operating cost / yr</td>
+<td class="gt_row gt_left gt_striped" headers="Value">R237,000</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Parameter">Full Package whole-system operating cost / yr</td>
+<td class="gt_row gt_left" headers="Value">R1.19 million</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Decision-tree parameters (placeholders — to be re-estimated from pilot):</strong></p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 31%">
-<col style="width: 22%">
-<col style="width: 20%">
-<col style="width: 25%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Parameter</th>
-<th style="text-align: center;">Symbol</th>
-<th style="text-align: right;">Value</th>
-<th style="text-align: left;">Used in</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Loop-closure prevention efficacy</td>
-<td style="text-align: center;">η</td>
-<td style="text-align: right;">0.30</td>
-<td style="text-align: left;">Burden-avoided model; outcome subtree</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Secondary cases per unaddressed source</td>
-<td style="text-align: center;">ρ</td>
-<td style="text-align: right;">3.0</td>
-<td style="text-align: left;">Outcome subtree</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P(index death)</td>
-<td style="text-align: center;">p_death</td>
-<td style="text-align: right;">0.13</td>
-<td style="text-align: left;">Outcome subtree</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P(severe morbidity, ICU/admission)</td>
-<td style="text-align: center;">p_severe</td>
-<td style="text-align: right;">0.27</td>
-<td style="text-align: left;">Outcome subtree</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P(full recovery)</td>
-<td style="text-align: center;">p_recover</td>
-<td style="text-align: right;">0.60</td>
-<td style="text-align: left;">Outcome subtree</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Status-quo coordination transition probabilities (per suspected case):</strong></p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Node</th>
-<th style="text-align: left;">Decision</th>
-<th style="text-align: right;">P(Yes)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Q1</td>
-<td style="text-align: left;">Clinician/PHO files on NMC</td>
-<td style="text-align: right;">0.30</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Q2</td>
-<td style="text-align: left;">NMC SMS reaches local EHP</td>
-<td style="text-align: right;">0.95</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Q3</td>
-<td style="text-align: left;">EHP investigates</td>
-<td style="text-align: right;">0.60</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Q4</td>
-<td style="text-align: left;">Investigation recorded on NMC</td>
-<td style="text-align: right;">0.05</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Q5</td>
-<td style="text-align: left;">EHP refers to DALRRD</td>
-<td style="text-align: right;">0.30</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Q6</td>
-<td style="text-align: left;">DALRRD acts</td>
-<td style="text-align: right;">0.50</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Q7</td>
-<td style="text-align: left;">DALRRD feeds back to NMC + clinician</td>
-<td style="text-align: right;">0.10</td>
-</tr>
-</tbody>
-</table>
-<p>Joint P(loop fully closes) ≈ <strong>1.1 %</strong> under the status quo.</p>
-<p>Full numerical derivations live in the <a href="../posts/decision_model.html">Decision Model</a> and the <a href="../posts/costing_analysis.html">Costing Analysis</a>.</p>
+
+</div>
+</div>
+</div>
+<p>For the full sourced parameter set (CFR by severity, UPFS tariffs, per-option costs, induced-demand components, DALY monetisation, NMB), see the <strong><a href="../parameters_hub.html">Parameters Hub</a></strong>. For the v2 → v3 critical appraisal, see <a href="../parameter_appraisal.html"><code>parameter_appraisal.qmd</code></a>.</p>
+</div>
 </div>
 </div>
 <p><strong>Architecturally, the three streams are unlinked:</strong></p>
@@ -21905,194 +22631,557 @@ Figure&nbsp;3: Surveillance investment decision tree. Each option raises detecti
 </section>
 <section id="public-health-problem" class="level2">
 <h2 class="anchored" data-anchor-id="public-health-problem">2. Public health problem</h2>
-<p>Terbufos is a <strong>WHO Class Ia (“Extremely Hazardous”)</strong> organophosphate insecticide. It is acutely toxic via oral, dermal, and inhalation routes, with an oral LD50 in the low-mg/kg range, and acts via irreversible cholinesterase inhibition. Small ingested quantities are lethal in adults; very small quantities are lethal in children.</p>
-<p>In the South African context, terbufos has been repeatedly implicated in mass and individual acute-poisoning incidents, including ingestion of granular formulations sold informally outside the regulated agricultural market. <code>[Evidence gap: compile NICD / NHLS / forensic-toxicology series of terbufos-attributed events 2020–present, with case-fatality breakdown.]</code></p>
+<p>Terbufos is a <strong>WHO Class Ia (“Extremely Hazardous”)</strong> organophosphate insecticide.<sup>1</sup> It is acutely toxic via oral, dermal, and inhalation routes, with a published rat oral LD50 of <strong>1.6–4.5 mg/kg</strong><sup>2</sup><sup>3</sup> — placing it among the most acutely toxic active ingredients still in commercial use anywhere. It acts via irreversible cholinesterase inhibition; sub-gram doses are lethal in adults and very small quantities are lethal in children.</p>
+<p><strong>South African evidence base.</strong> Davies et al.&nbsp;(2023), reviewing paediatric pesticide deaths in South Africa, identified <strong>terbufos and methamidophos as the dominant agents</strong> in fatal childhood pesticide poisoning, with most deaths occurring after ingestion of granular formulations diverted into the informal “street-pesticide” market.<sup>4</sup> This is corroborated by NICD/NMC clinical case reports and by the public-health record of mass-poisoning events in 2022–2024 linked to informally-sold granular OP pesticides.<sup>5</sup> A formal case series with attributed agent breakdown across NMC + NHLS + forensic toxicology has <strong>not yet been compiled</strong> and is the single most important evidence-gap item to retire (see <a href="../parameters_hub.html#open-items--to-be-retired-into-the-csv">open items in the Parameters Hub</a>, TBF-2).</p>
 <p>The public-health case rests on three claims:</p>
 <ol type="1">
-<li><strong>High intrinsic toxicity</strong> at sub-gram doses (well-established from WHO, US-EPA, and EFSA technical reviews).</li>
-<li><strong>Disproportionate contribution to severe and fatal poisonings</strong> relative to its agricultural market share — the proportionality argument cannot be quantified without S3b live-patient chemical toxicology (see <a href="../posts/surveillance_policy.html">Surveillance brief</a>). <code>[Evidence gap.]</code></li>
-<li><strong>High substitutability for its primary use cases</strong> (soil insect / stalk borer / nematode control in maize and other field crops). <code>[Evidence gap: SA-specific substitution feasibility study, ideally co-produced with DALRRD and grain-industry bodies.]</code></li>
+<li><strong>High intrinsic toxicity</strong> at sub-gram doses — settled science (WHO Class Ia; rat oral LD50 1.6–4.5 mg/kg).<sup>6</sup><sup>7</sup></li>
+<li><strong>Disproportionate contribution to severe and fatal poisonings</strong> — supported in paediatric SA data (Davies 2023);<sup>8</sup> adult attributable fraction is not yet quantified pending live-patient chemical toxicology (Surveillance Option S3b).</li>
+<li><strong>High substitutability for its primary use cases</strong> (soil insect / stalk borer / nematode control in maize and other field crops) — registered substitutes exist (see §5), but <strong>SA-specific yield-impact modelling is not yet done</strong> (open item TBF-3).</li>
 </ol>
-<p>The first claim is settled science. The second and third are the empirical claims a final regulatory decision depends on.</p>
+<p>Claim 1 is settled. Claim 2 is supported but incompletely quantified. Claim 3 has a clear in-principle answer but lacks SA-specific quantitative evidence.</p>
 </section>
 <section id="status-quo" class="level2">
 <h2 class="anchored" data-anchor-id="status-quo">3. Status quo</h2>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Headline numbers used across all D2P policy documents
+<span class="screen-reader-only">Note</span>Canonical model parameters (auto-loaded from the <a href="../parameters_hub.html">Parameters Hub</a>)
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>All three policy documents draw their quantitative claims from this single shared parameter set. To revise an assumption, <strong>edit <code>posts/_shared_parameters.qmd</code></strong> — every document that includes it will update on the next render.</p>
-<p><strong>Burden (per year, South Africa):</strong></p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 31%">
-<col style="width: 20%">
-<col style="width: 48%">
-</colgroup>
+<p>All numerical claims in this brief draw from a single CSV — <a href="../amua_import_parameters_v3.csv"><code>amua_import_parameters_v3.csv</code></a> — rendered in full at the <a href="../parameters_hub.html">Parameters Hub</a>. The headline values below are pulled from that file at render time; <strong>do not edit the numbers in this brief — edit the CSV and re-render</strong>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="zbvomjavtk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#zbvomjavtk table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#zbvomjavtk thead, #zbvomjavtk tbody, #zbvomjavtk tfoot, #zbvomjavtk tr, #zbvomjavtk td, #zbvomjavtk th {
+  border-style: none;
+}
+
+#zbvomjavtk p {
+  margin: 0;
+  padding: 0;
+}
+
+#zbvomjavtk .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: small;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#zbvomjavtk .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#zbvomjavtk .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#zbvomjavtk .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#zbvomjavtk .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#zbvomjavtk .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#zbvomjavtk .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#zbvomjavtk .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#zbvomjavtk .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#zbvomjavtk .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#zbvomjavtk .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#zbvomjavtk .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#zbvomjavtk .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#zbvomjavtk .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#zbvomjavtk .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#zbvomjavtk .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#zbvomjavtk .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#zbvomjavtk .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#zbvomjavtk .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zbvomjavtk .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#zbvomjavtk .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#zbvomjavtk .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#zbvomjavtk .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zbvomjavtk .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#zbvomjavtk .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#zbvomjavtk .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#zbvomjavtk .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zbvomjavtk .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#zbvomjavtk .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#zbvomjavtk .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#zbvomjavtk .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#zbvomjavtk .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#zbvomjavtk .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zbvomjavtk .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#zbvomjavtk .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zbvomjavtk .gt_left {
+  text-align: left;
+}
+
+#zbvomjavtk .gt_center {
+  text-align: center;
+}
+
+#zbvomjavtk .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#zbvomjavtk .gt_font_normal {
+  font-weight: normal;
+}
+
+#zbvomjavtk .gt_font_bold {
+  font-weight: bold;
+}
+
+#zbvomjavtk .gt_font_italic {
+  font-style: italic;
+}
+
+#zbvomjavtk .gt_super {
+  font-size: 65%;
+}
+
+#zbvomjavtk .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#zbvomjavtk .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#zbvomjavtk .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#zbvomjavtk .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#zbvomjavtk .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#zbvomjavtk .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#zbvomjavtk .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#zbvomjavtk .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#zbvomjavtk div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <thead>
-<tr class="header">
-<th style="text-align: left;">Parameter</th>
-<th style="text-align: right;">Value</th>
-<th style="text-align: left;">Source / status</th>
+<tr class="gt_heading header">
+<td colspan="2" class="gt_heading gt_title gt_font_normal">Headline parameters used in this brief</td>
+</tr>
+<tr class="gt_heading even">
+<td colspan="2" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border">Pulled from amua_import_parameters_v3.csv at render time</td>
+</tr>
+<tr class="gt_col_headings header">
+<th id="Parameter" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Parameter</th>
+<th id="Value" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Value</th>
 </tr>
 </thead>
-<tbody>
+<tbody class="gt_table_body">
 <tr class="odd">
-<td style="text-align: left;">NMC pesticide-poisoning notifications</td>
-<td style="text-align: right;">~690</td>
-<td style="text-align: left;">NMC 2020–2024 annual reports</td>
+<td class="gt_row gt_left" headers="Parameter">Annual NMC pesticide notifications</td>
+<td class="gt_row gt_left" headers="Value">690</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">NHLS severe BChE inhibitions (live patients)</td>
-<td style="text-align: right;">~2,000</td>
-<td style="text-align: left;">NHLS LIS, 2020–2024</td>
+<td class="gt_row gt_left gt_striped" headers="Parameter">Annual NHLS severe BChE inhibitions (live)</td>
+<td class="gt_row gt_left gt_striped" headers="Value">2000</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Poisons Information Helpline pesticide calls</td>
-<td style="text-align: right;">~9,000</td>
-<td style="text-align: left;">PIH Annual Report 2019</td>
+<td class="gt_row gt_left" headers="Parameter">Annual PIH pesticide-related calls</td>
+<td class="gt_row gt_left" headers="Value">9000</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Total suspected pesticide-poisoning cases / year</td>
-<td style="text-align: right;"><strong>~11,690</strong></td>
-<td style="text-align: left;">Sum of three mutually-exclusive streams (placeholder for record-linkage)</td>
+<td class="gt_row gt_left gt_striped" headers="Parameter">True annual burden (sum, upper bound)</td>
+<td class="gt_row gt_left gt_striped" headers="Value">11690</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Case-fatality rate (CFR, mid-range)</td>
-<td style="text-align: right;">13 %</td>
-<td style="text-align: left;">NMC observed range 10–15 %; under-counts intentional self-poisoning under ICD-10 default rules</td>
+<td class="gt_row gt_left" headers="Parameter">Headline annual deaths</td>
+<td class="gt_row gt_left" headers="Value">1500</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Annual deaths</td>
-<td style="text-align: right;"><strong>~1,500 – 1,800</strong></td>
-<td style="text-align: left;">11,690 × CFR</td>
+<td class="gt_row gt_left gt_striped" headers="Parameter">Blended headline morbidity cost per case</td>
+<td class="gt_row gt_left gt_striped" headers="Value">R12,000</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Per-case morbidity cost</td>
-<td style="text-align: right;">R12,000</td>
-<td style="text-align: left;">Existing decision-model parameter</td>
+<td class="gt_row gt_left" headers="Parameter">Mortality cost per death (human-capital)</td>
+<td class="gt_row gt_left" headers="Value">R1.50 million</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Per-death mortality cost</td>
-<td style="text-align: right;">R1,500,000</td>
-<td style="text-align: left;">Human-capital approach, existing model</td>
+<td class="gt_row gt_left gt_striped" headers="Parameter">Headline annual economic burden</td>
+<td class="gt_row gt_left gt_striped" headers="Value">R2.34 billion</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><strong>Per-case societal cost</strong></td>
-<td style="text-align: right;"><strong>~R197,000</strong></td>
-<td style="text-align: left;">R12,000 + 0.13 × R1.5M</td>
+<td class="gt_row gt_left" headers="Parameter">Response efficacy η (base case)</td>
+<td class="gt_row gt_left" headers="Value">0.30</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><strong>Total annual economic burden</strong></td>
-<td style="text-align: right;"><strong>~R2.3 billion / year</strong></td>
-<td style="text-align: left;">11,690 × R197,000</td>
+<td class="gt_row gt_left gt_striped" headers="Parameter">Detection probability — status quo</td>
+<td class="gt_row gt_left gt_striped" headers="Value">0.45</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Parameter">Detection probability — full package</td>
+<td class="gt_row gt_left" headers="Value">0.83</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="Parameter">Full Package narrow operating cost / yr</td>
+<td class="gt_row gt_left gt_striped" headers="Value">R237,000</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Parameter">Full Package whole-system operating cost / yr</td>
+<td class="gt_row gt_left" headers="Value">R1.19 million</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Decision-tree parameters (placeholders — to be re-estimated from pilot):</strong></p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 31%">
-<col style="width: 22%">
-<col style="width: 20%">
-<col style="width: 25%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Parameter</th>
-<th style="text-align: center;">Symbol</th>
-<th style="text-align: right;">Value</th>
-<th style="text-align: left;">Used in</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Loop-closure prevention efficacy</td>
-<td style="text-align: center;">η</td>
-<td style="text-align: right;">0.30</td>
-<td style="text-align: left;">Burden-avoided model; outcome subtree</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Secondary cases per unaddressed source</td>
-<td style="text-align: center;">ρ</td>
-<td style="text-align: right;">3.0</td>
-<td style="text-align: left;">Outcome subtree</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P(index death)</td>
-<td style="text-align: center;">p_death</td>
-<td style="text-align: right;">0.13</td>
-<td style="text-align: left;">Outcome subtree</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P(severe morbidity, ICU/admission)</td>
-<td style="text-align: center;">p_severe</td>
-<td style="text-align: right;">0.27</td>
-<td style="text-align: left;">Outcome subtree</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P(full recovery)</td>
-<td style="text-align: center;">p_recover</td>
-<td style="text-align: right;">0.60</td>
-<td style="text-align: left;">Outcome subtree</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Status-quo coordination transition probabilities (per suspected case):</strong></p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Node</th>
-<th style="text-align: left;">Decision</th>
-<th style="text-align: right;">P(Yes)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Q1</td>
-<td style="text-align: left;">Clinician/PHO files on NMC</td>
-<td style="text-align: right;">0.30</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Q2</td>
-<td style="text-align: left;">NMC SMS reaches local EHP</td>
-<td style="text-align: right;">0.95</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Q3</td>
-<td style="text-align: left;">EHP investigates</td>
-<td style="text-align: right;">0.60</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Q4</td>
-<td style="text-align: left;">Investigation recorded on NMC</td>
-<td style="text-align: right;">0.05</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Q5</td>
-<td style="text-align: left;">EHP refers to DALRRD</td>
-<td style="text-align: right;">0.30</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Q6</td>
-<td style="text-align: left;">DALRRD acts</td>
-<td style="text-align: right;">0.50</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Q7</td>
-<td style="text-align: left;">DALRRD feeds back to NMC + clinician</td>
-<td style="text-align: right;">0.10</td>
-</tr>
-</tbody>
-</table>
-<p>Joint P(loop fully closes) ≈ <strong>1.1 %</strong> under the status quo.</p>
-<p>Full numerical derivations live in the <a href="../posts/decision_model.html">Decision Model</a> and the <a href="../posts/costing_analysis.html">Costing Analysis</a>.</p>
+
+</div>
+</div>
+</div>
+<p>For the full sourced parameter set (CFR by severity, UPFS tariffs, per-option costs, induced-demand components, DALY monetisation, NMB), see the <strong><a href="../parameters_hub.html">Parameters Hub</a></strong>. For the v2 → v3 critical appraisal, see <a href="../parameter_appraisal.html"><code>parameter_appraisal.qmd</code></a>.</p>
+</div>
 </div>
 </div>
 <p><strong>Terbufos-specific status quo:</strong></p>
@@ -22108,44 +23197,59 @@ Figure&nbsp;3: Surveillance investment decision tree. Each option raises detecti
 <tr class="odd">
 <td style="text-align: left;">Registration status</td>
 <td style="text-align: left;">Registered in South Africa as a soil insecticide</td>
-<td style="text-align: left;">DALRRD pesticide register</td>
+<td style="text-align: left;">DALRRD pesticide register (Act 36 of 1947)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">WHO classification</td>
 <td style="text-align: left;">Class Ia (Extremely Hazardous)</td>
-<td style="text-align: left;">WHO Recommended Classification of Pesticides by Hazard (current edition)</td>
+<td style="text-align: left;">WHO Recommended Classification of Pesticides by Hazard<sup>9</sup></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Banned in EU</td>
-<td style="text-align: left;">Yes — not approved for use under EU 1107/2009</td>
-<td style="text-align: left;">EU Pesticides Database</td>
+<td style="text-align: left;">Acute oral LD50 (rat)</td>
+<td style="text-align: left;">1.6–4.5 mg/kg</td>
+<td style="text-align: left;">US EPA Reregistration Eligibility Decision (2006)<sup>10</sup></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">EU approval status</td>
+<td style="text-align: left;">Not approved (expired Jun 2009; not renewed)</td>
+<td style="text-align: left;">EU Pesticides Database, Regulation (EC) 1107/2009</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">US (US EPA) status</td>
+<td style="text-align: left;">Restricted-Use Pesticide (RUP); voluntary cancellations of granular formulations</td>
+<td style="text-align: left;">US EPA RED 2006<sup>11</sup></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Paediatric mortality attribution (SA)</td>
+<td style="text-align: left;">Dominant agent in fatal childhood pesticide poisoning, with methamidophos</td>
+<td style="text-align: left;">Davies et al.&nbsp;2023<sup>12</sup></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Adult attribution fraction (SA)</td>
+<td style="text-align: left;">Not yet quantified</td>
+<td style="text-align: left;">Open item TBF-2 — requires Surveillance Option S3b</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Annual SA agricultural market volume</td>
-<td style="text-align: left;"><code>[Evidence gap]</code></td>
-<td style="text-align: left;">DALRRD import/sales registry</td>
+<td style="text-align: left;">Not in workspace; held by DALRRD</td>
+<td style="text-align: left;">Open item TBF-1</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Documented acute-poisoning case series (SA)</td>
-<td style="text-align: left;">Partial</td>
-<td style="text-align: left;">NMC + forensic toxicology — see <a href="../posts/coordination_policy.html">Coordination brief</a> for why this is incomplete</td>
-</tr>
-<tr class="even">
 <td style="text-align: left;">Primary registered crop uses</td>
-<td style="text-align: left;">Maize (stalk borer, nematodes)</td>
+<td style="text-align: left;">Maize (stalk borer, nematodes); other field crops</td>
 <td style="text-align: left;">DALRRD pesticide register</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">Available substitute actives for primary uses</td>
-<td style="text-align: left;">Multiple <code>[Evidence gap: SA-specific substitution feasibility]</code></td>
-<td style="text-align: left;">Industry technical literature</td>
+<tr class="even">
+<td style="text-align: left;">Available substitute actives</td>
+<td style="text-align: left;">Several registered alternatives exist for the primary use cases (e.g.&nbsp;alternative organophosphates, carbamates, neonicotinoids, biological controls); SA-specific comparative analysis pending</td>
+<td style="text-align: left;">Industry technical literature; open item TBF-3/TBF-4</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Why act now?</strong></p>
 <ul>
-<li>A series of high-profile mass-poisoning events in SA have placed terbufos in the public and political spotlight, creating a window for regulatory action that may not recur. <code>[Evidence gap: compile incident dossier.]</code></li>
-<li>The EU has already removed terbufos from its approved list — South Africa is increasingly an outlier among middle-income agricultural exporters.</li>
+<li>High-profile mass-poisoning events in 2022–2024 placed terbufos in the public and political spotlight,<sup>13</sup> creating a window for regulatory action that may not recur.</li>
+<li>The EU removed terbufos from its approved list more than a decade ago; South Africa is an outlier among middle-income agricultural exporters in still permitting it.</li>
 <li>The <a href="../posts/surveillance_policy.html">Surveillance</a> + <a href="../posts/coordination_policy.html">Coordination</a> investments give NICD and DALRRD, for the first time, the institutional pathway to act on a single-product signal.</li>
 </ul>
 </section>
@@ -22418,7 +23522,25 @@ Figure&nbsp;2: Terbufos regulatory decision tree. Each branch shows the expected
 
 </section>
 
- ]]></description>
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>World Health Organization. <em>The WHO Recommended Classification of Pesticides by Hazard and Guidelines to Classification</em>, current edition. Terbufos is listed in Class Ia (Extremely Hazardous).↩︎</p></li>
+<li id="fn2"><p>World Health Organization. <em>The WHO Recommended Classification of Pesticides by Hazard and Guidelines to Classification</em>, current edition. Terbufos is listed in Class Ia (Extremely Hazardous).↩︎</p></li>
+<li id="fn3"><p>US Environmental Protection Agency. <em>Reregistration Eligibility Decision (RED): Terbufos.</em> EPA-738-R-06-006, September 2006. Rat acute oral LD50 1.6–4.5 mg/kg; rat acute dermal LD50 1.0–7.4 mg/kg.↩︎</p></li>
+<li id="fn4"><p>Davies J et al.&nbsp;(2023). Paediatric pesticide deaths in South Africa; documents terbufos and methamidophos dominance among fatal cases. Cited in <a href="../glossary.html#key-sources">glossary.qmd</a>.↩︎</p></li>
+<li id="fn5"><p>NICD/NMC clinical case reports and public communications, 2022–2024, on mass-poisoning incidents linked to informally-sold granular organophosphate pesticides. Formal case-series compilation pending (open item TBF-2).↩︎</p></li>
+<li id="fn6"><p>World Health Organization. <em>The WHO Recommended Classification of Pesticides by Hazard and Guidelines to Classification</em>, current edition. Terbufos is listed in Class Ia (Extremely Hazardous).↩︎</p></li>
+<li id="fn7"><p>US Environmental Protection Agency. <em>Reregistration Eligibility Decision (RED): Terbufos.</em> EPA-738-R-06-006, September 2006. Rat acute oral LD50 1.6–4.5 mg/kg; rat acute dermal LD50 1.0–7.4 mg/kg.↩︎</p></li>
+<li id="fn8"><p>Davies J et al.&nbsp;(2023). Paediatric pesticide deaths in South Africa; documents terbufos and methamidophos dominance among fatal cases. Cited in <a href="../glossary.html#key-sources">glossary.qmd</a>.↩︎</p></li>
+<li id="fn9"><p>World Health Organization. <em>The WHO Recommended Classification of Pesticides by Hazard and Guidelines to Classification</em>, current edition. Terbufos is listed in Class Ia (Extremely Hazardous).↩︎</p></li>
+<li id="fn10"><p>US Environmental Protection Agency. <em>Reregistration Eligibility Decision (RED): Terbufos.</em> EPA-738-R-06-006, September 2006. Rat acute oral LD50 1.6–4.5 mg/kg; rat acute dermal LD50 1.0–7.4 mg/kg.↩︎</p></li>
+<li id="fn11"><p>US Environmental Protection Agency. <em>Reregistration Eligibility Decision (RED): Terbufos.</em> EPA-738-R-06-006, September 2006. Rat acute oral LD50 1.6–4.5 mg/kg; rat acute dermal LD50 1.0–7.4 mg/kg.↩︎</p></li>
+<li id="fn12"><p>Davies J et al.&nbsp;(2023). Paediatric pesticide deaths in South Africa; documents terbufos and methamidophos dominance among fatal cases. Cited in <a href="../glossary.html#key-sources">glossary.qmd</a>.↩︎</p></li>
+<li id="fn13"><p>NICD/NMC clinical case reports and public communications, 2022–2024, on mass-poisoning incidents linked to informally-sold granular organophosphate pesticides. Formal case-series compilation pending (open item TBF-2).↩︎</p></li>
+</ol>
+</section></div> ]]></description>
   <category>policy</category>
   <category>regulation</category>
   <category>terbufos</category>
