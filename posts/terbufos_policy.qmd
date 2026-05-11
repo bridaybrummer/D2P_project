@@ -38,8 +38,6 @@ The public-health case rests on three claims:
 2. **Disproportionate contribution to severe and fatal poisonings** — supported in paediatric SA data (Davies 2023);[^davies] adult attributable fraction is not yet quantified pending live-patient chemical toxicology (Surveillance Option S3b).
 3. **High substitutability for its primary use cases** (soil insect / stalk borer / nematode control in maize and other field crops) — registered substitutes exist (see §5), but **SA-specific yield-impact modelling is not yet done** (open item TBF-3).
 
-Claim 1 is settled. Claim 2 is supported but incompletely quantified. Claim 3 has a clear in-principle answer but lacks SA-specific quantitative evidence.
-
 [^who]: World Health Organization. *The WHO Recommended Classification of Pesticides by Hazard and Guidelines to Classification*, current edition. Terbufos is listed in Class Ia (Extremely Hazardous).
 
 [^epa]: US Environmental Protection Agency. *Reregistration Eligibility Decision (RED): Terbufos.* EPA-738-R-06-006, September 2006. Rat acute oral LD50 1.6–4.5 mg/kg; rat acute dermal LD50 1.0–7.4 mg/kg.
@@ -75,9 +73,9 @@ DALRRD itself bears **~R0 of the R2.34B annual burden**. That cost is carried by
 
 **Why act now?**
 
-- High-profile mass-poisoning events in 2022–2024 placed terbufos in the public and political spotlight,[^nicd] creating a window for regulatory action that may not recur.
+- 2022–2024 mass-poisoning events placed terbufos in the public and political spotlight,[^nicd] creating a window for regulatory action that may not recur.
 - The EU removed terbufos from its approved list more than a decade ago; South Africa is an outlier among middle-income agricultural exporters in still permitting it.
-- The [Surveillance](surveillance_policy.qmd) + [Coordination](coordination_policy.qmd) investments give NICD and DALRRD, for the first time, the institutional pathway to act on a single-product signal.
+- The [Surveillance](surveillance_policy.qmd) + [Coordination](coordination_policy.qmd) investments give DALRRD, for the first time, the institutional pathway to act on a single-product signal.
 
 ## 4. Root cause analysis
 
@@ -105,7 +103,7 @@ flowchart LR
     style O5 fill:#9f9,stroke:#333
 ```
 
-The drivers cluster into intrinsic-hazard, formulation-pathway, market-pathway, attribution-evidence, and substitution-readiness causes. Three of the five are addressed by regulatory action on terbufos itself; one (R4) is addressed by the surveillance brief; one (R5) is a co-dependency with DALRRD and the grain industry.
+The drivers cluster into intrinsic-hazard, formulation, market, attribution-evidence, and substitution-readiness causes. Three of five are addressed by regulatory action on terbufos itself; R4 by the [Surveillance brief](surveillance_policy.qmd); R5 by DALRRD–grain industry co-design.
 
 ## 5. Policy options
 

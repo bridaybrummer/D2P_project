@@ -1,6 +1,6 @@
 ---
-title: "D2P Project One-Pager"
-subtitle: "Data-Driven Policy for Pesticide Poisoning Surveillance in South Africa"
+title: "D2P One-Pager"
+subtitle: "Detect → Act → Restrict — three asks, one system, R300k/year"
 author: "D2P Project Team"
 date: today
 format:
@@ -14,240 +14,117 @@ execute:
 ::: {.one-pager}
 
 ::: {.header-box}
-# Strengthening Pesticide Poisoning Surveillance in South Africa
+# Pesticide poisoning in South Africa
 
-**A Call to Action for Policymakers**
+**11,690 cases · 1,500 deaths · R2.34 billion · per year.**
 
-*Ministerial Advisory Committee | National Department of Health | Provincial Leadership*
+*Three coordinated policy actions retire most of it at ~R300k/year — no new legislation required.*
 :::
 
-## The Problem We're Solving
+## The problem in one line
 
 ::: {.key-stat}
-**10,000+ South Africans** are severely poisoned by pesticides every year — but our surveillance system captures **fewer than half** of these cases.
+**Detection is incomplete, the response loop is broken, and the worst single product is still freely registered.** Three problems → three briefs → one integrated system.
 :::
 
-**Who is affected?**
-
-- **Young children** (< 6 years): Accidental exposure from unsafe storage
-- **Adolescent girls** (15-19 years): Intentional self-harm (highest rate in the country)
-- **Adult farm workers** (30+ years): Occupational exposure in agricultural settings
-
-**Why this matters:**
-
-Clusters of poisonings signal **preventable public health threats**:
-
-- Contaminated food or water sources
-- Illegal pesticide sales
-- Unsafe working conditions
-- Inadequate product labeling
-
-**But we're detecting these hotspots too late — or missing them entirely.**
-
----
-
-## Why Is the System Failing?
-
-South Africa has **three independent data sources** for pesticide poisoning:
-
-1. **National Notifiable Medical Conditions (NMC)**: ~690 notifications/year (clinician-reported, often 2–4 weeks late)
-2. **NHLS Laboratory Data**: ~2,000 severe cases/year detected via blood tests (BChE inhibition) — **but results don't trigger public health alerts**
-3. **Poisons Information Helpline (PIH)**: ~9,000 calls/year — **but data aren't analyzed for surveillance**
-
-**The core problem:** No coordination between these systems.
-
-**Root causes (all fixable without new laws):**
-
-- No automatic notification from laboratories to surveillance teams
-- No data sharing agreements between agencies
-- No capacity for rapid field investigation of clusters
-- No systematic analysis of PIH clinical toxicology data
-
----
-
-## What We Can Do About It
-
-We identified **five policy options** that can be implemented **immediately** (no new legislation required):
+## Three briefs, three asks
 
 ::: {.grid-2col}
+
 ::: {.option-summary}
-### Option 3: BChE Auto-Notify ★
-
-**What:** NHLS laboratories automatically notify NICD when blood tests show severe poisoning
-
-**Cost:** R55,000/year  
-**Impact:** +49% more hotspots detected  
-**Timeline:** 2–4 weeks to launch
-
-**Why:** Fastest, most automated, best value for money
+### 1 · Detect — Surveillance ★
+**Ask:** Adopt the Surveillance MVP — NHLS→NMC feed + BChE auto-notify + PIH dashboard/MVD.
+**Cost:** R157,000/yr (+ R80k IT setup)
+**Impact:** +73 % hotspot detection; ~150 deaths averted/yr
+**Time:** 12 weeks
+**Owner:** NICD · NHLS · PIH
 :::
 
 ::: {.option-summary}
-### Option 4: PIH Quarterly Reports ★
-
-**What:** Poisons Information Helpline sends quarterly summary reports to NICD
-
-**Cost:** R62,000/year  
-**Impact:** +36% more hotspots detected  
-**Timeline:** 1–2 weeks to launch
-
-**Why:** Quickest to implement, no IT infrastructure needed
+### 2 · Act — Coordination ★
+**Ask:** Joint NDoH–DALRRD DG circular adopting the Coordination Full Package — closure-of-loop NMC field, structured DALRRD referral, NICD→DALRRD intelligence feed, clinician feedback, joint KPI dashboard.
+**Cost:** R145,000/yr
+**Impact:** P(loop closed) 1.1 % → ~70 %; ~957 deaths averted/yr at scale
+**Time:** 12 weeks for MVP (C1+C3), 12 months for full package
+**Owner:** NICD-led, DALRRD partner
 :::
+
 :::
 
 ::: {.grid-2col}
+
 ::: {.option-summary}
-### Options 1–2: Data Sharing MOUs
-
-**What:** Formalize agreements between NICD, NHLS, and DALRRD
-
-**Cost:** R40,000/year each  
-**Impact:** +16–29% more hotspots detected  
-**Timeline:** 8–12 weeks
-
-**Why:** Legal foundation for inter-agency coordination
+### 3 · Restrict — Terbufos ★
+**Ask:** DALRRD adopt Option T2 (formulation restriction + RUP designation + distributor audit), with a hard-coded 24-month evaluation gate to Option T3 (full ban) if attributable serious cases do not fall by a pre-agreed margin.
+**Cost:** ~R1–3M/yr DALRRD enforcement
+**Impact:** Removes the dominant agent in fatal SA paediatric pesticide poisoning; leverage ratio ~1 : 500 on household mortality.
+**Time:** Gazette T2 within 3 months; T3 decision at 24 months.
+**Owner:** DALRRD Pesticide Registrar
 :::
 
 ::: {.option-summary}
-### Option 5: Provincial Field Response
-
-**What:** Train provincial teams to investigate clusters within 72 hours
-
-**Cost:** R40,000/year  
-**Impact:** +64% more hotspots detected*  
-**Timeline:** 12 weeks
-
-**Why:** Closes the loop from detection to action  
-*Requires Options 3 or 4 to work
+### How the three connect
+**Detect** generates the evidence the **Act** loop needs.
+The closed loop terminates in **Restrict** decisions (starting with terbufos).
+Outcomes of those decisions feed back into the surveillance system.
+**Each ask stands alone; together they are strictly more valuable.**
 :::
+
 :::
 
 ---
 
-## Our Recommendation: The Full Package
+## Who bears the R2.34 billion
+
+| Stakeholder | Annual burden borne | Share |
+|:------------|---------------------:|------:|
+| NDoH — public hospitals (UPFS ward + ICU + drugs) | ~R70M | 3.0 % |
+| NHLS — laboratory (BChE + GC-MS + repeat chem) | ~R10M | 0.4 % |
+| DALRRD — regulator | R0 (lever-holder) | 0 % |
+| Individuals — OOP + lost wages | ~R10M | 0.4 % |
+| Households / wider society — lost lifetime earnings | ~R2.25B | 96.2 % |
+| **Total** | **R2.34B** | **100 %** |
+
+: Audited decomposition. Mortality (~96 %) falls on households via lost lifetime earnings (25 productive yr × R60k median income, undiscounted). Health-sector share is modest in absolute terms but it is the only column on a departmental budget line. {.striped}
+
+---
+
+## The economics
 
 ::: {.recommendation-box}
-### Implement All Four Options for Comprehensive Surveillance
+### ~R300k of operating spend retires ~R1.5B of preventable burden
 
-**Total annual cost:** **R237,000** (less than one additional epidemiologist salary)
-
-**Impact:**
-
-- Detect **85% of hotspots** (vs. 45% today)
-- Cut notification delay from **2–4 weeks to <24 hours**
-- Enable **rapid response** to prevent recurrence
-- Create **redundant data streams** for cross-validation
-
-**Implementation timeline:**
-
-- **Week 1–2:** Launch PIH quarterly reports (Option 4)
-- **Week 2–4:** Configure NHLS auto-notifications (Option 3)
-- **Week 4–8:** Finalize data sharing MOUs (Options 1–2)
-- **Week 8–12:** Train provincial response teams (Option 5)
-
-**Pilot in 3 provinces (Gauteng, Western Cape, KZN), then scale nationally based on results.**
+**Total annual operating cost (Detect + Act):** ~R300,000 (less than one additional epidemiologist's salary).
+**Modelled burden avoided at scale:** ~R1.45 billion / year (Coordination Full Package; see [Coordination brief §6c](posts/coordination_policy.qmd#what-changes-under-each-coordination-scenario)).
+**Stakeholder split of that avoided burden:** ~R50M to NDoH+NHLS budget lines; ~R1.4B to households.
+**ROI:** ~1,000× on narrow surveillance cost; ~220× on whole-system cost.
+**Legal basis:** NHA §90 + existing NMC regulations + Act 36 of 1947.
 :::
 
 ---
 
-## What This Costs in Context
+## What we are *not* asking for
 
-| **Comparison** | **Amount** |
-|:---------------|:-----------|
-| Full Package annual cost | R237,000 |
-| Cost per severe poisoning case | R26 |
-| % of National DoH budget | 0.0004% |
-| Cost per additional hotspot detected | R23,700 |
-| **Cost if we do nothing** | **Preventable deaths, ongoing under-detection** |
-
-: {.striped}
-
-**For comparison:** South Africa's TB surveillance system costs ~R15 million/year. Pesticide surveillance would be **1.6%** of that investment.
+- No new legislation.
+- No new test, no new reagent contract (S3a is an LIS configuration).
+- No new agency.
+- No single point-estimate masquerading as certainty — every figure traces back to [`amua_import_parameters_v3.csv`](amua_import_parameters_v3.csv); open evidence gaps are listed in the [Parameters Hub](parameters_hub.qmd).
 
 ---
 
-## Legal Basis: We Have Authority to Act Today
+## Decision required
 
-::: {.key-stat}
-**All options are legally feasible under existing law — no new legislation required.**
-:::
-
-- **National Health Act (2003), Section 90**: Permits inter-agency data sharing for public health
-- **NMC Regulations**: Already allow laboratory-triggered notifications
-- **Existing MOUs**: PIH-NICD collaboration established; NHLS-NICD can be formalized
-- **Provincial outbreak authority**: Provincial health departments can investigate clusters
-
-**Privacy:** All data sharing complies with POPIA (Protection of Personal Information Act) — no names or ID numbers shared.
+| From | Action | By when |
+|:-----|:-------|:--------|
+| MAC + NDoH | Approve Surveillance MVP pilot (3 provinces, R157k + R80k setup) | Q3 2026 |
+| NDoH + DALRRD DGs | Issue joint circular adopting Coordination Full Package | Q3 2026 |
+| DALRRD Pesticide Registrar | Gazette Terbufos Option T2 with 24-month evaluation gate | Q4 2026 |
+| MAC | Stand up the Joint Coordination Forum (quarterly, NICD chair) | Q3 2026 |
 
 ---
 
-## Next Steps for Decision-Makers
+## Read more
 
-### For Ministerial Advisory Committee (MAC) and NDoH Leadership:
+[Surveillance brief](posts/surveillance_policy.qmd) · [Coordination brief](posts/coordination_policy.qmd) · [Terbufos brief](posts/terbufos_policy.qmd) · [Parameters Hub](parameters_hub.qmd) · [Parameter Playground](parameter_playground.qmd) · [Full Analysis Report](analysis_report_v2.html)
 
-1. **Review this synopsis** and the full [policy brief](posts/policy_brief.qmd)
-2. **Approve pilot funding**: R120,000 for 6-month pilot (3 provinces)
-3. **Designate lead agency**: NICD as national coordinator
-4. **Set timeline**: Launch pilot Q3 2026, evaluate Q1 2027
-
-### For Provincial Health Leadership:
-
-1. **Identify surveillance focal point** (existing epidemiologist or environmental health officer)
-2. **Assess local capacity** for BChE auto-notification (liaise with NHLS IT)
-3. **Allocate pilot budget**: R40,000–R80,000 depending on options selected
-
----
-
-## The Bottom Line
-
-::: {.key-stat}
-**We know the problem. We know the solutions. We have the legal authority. We can start today.**
-:::
-
-**The cost of action:** R237,000/year (affordable, evidence-based, legally feasible)
-
-**The cost of inaction:** Preventable deaths, missed outbreaks, wasted data, and international embarrassment
-
-**What we're asking for:**
-
-1. **Approval** to pilot the Full Package in 3 provinces (6 months, R120,000)
-2. **Commitment** to scale nationally if pilot succeeds
-3. **Leadership** from MAC and NDoH to coordinate across NICD, NHLS, PIH, and provinces
-
----
-
-## Contact and Resources
-
-::: {.grid-2col}
-::: {.option-summary}
-**Project Team**
-
-National Institute for Communicable Diseases (NICD)  
-National Health Laboratory Service (NHLS)  
-Poisons Information Helpline (PIH)  
-University of Cape Town, School of Public Health
-
-**Email:** contact@example.com
-:::
-
-::: {.option-summary}
-**Full Documentation**
-
-- [Full Analysis Report](analysis_report_v2.html)
-- [Policy Brief](posts/policy_brief.qmd)
-- [Decision Tree Model](posts/decision_model.qmd)
-- [Costing Analysis](posts/costing_analysis.qmd)
-- [Surveillance Concept Note](posts/surveillance_concept_note.qmd)
-:::
-:::
-
----
-
-::: {style="text-align: center; margin-top: 2em; padding: 1em; background: #f0f0f0; border-radius: 6px;"}
-**This one-pager summarizes the D2P Project's evidence-based recommendations for strengthening pesticide poisoning surveillance in South Africa.**
-
-*For detailed technical information, please consult the full analysis report and supporting documents.*
-
-**Date:** May 6, 2026 | **Version:** 1.0
-:::
 :::

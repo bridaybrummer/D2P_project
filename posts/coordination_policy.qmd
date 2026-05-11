@@ -26,7 +26,7 @@ format:
 
 ## 2. Public health problem
 
-Better detection (see the [Surveillance brief](surveillance_policy.qmd)) is wasted if the system does not **act** on what it detects. South Africa's pesticide-poisoning response chain currently has **eight sequential decision points** between "case suspected" and "regulatory action closes the loop", and **six of those eight default to a broken-loop terminal**. The result is that a case which is correctly notified can still produce no investigation, no source removal, no regulatory follow-up, and no feedback to the notifier — leaving the underlying hazard in place and producing predictable secondary cases.
+Better detection (see the [Surveillance brief](surveillance_policy.qmd)) is wasted if the system does not **act** on what it detects. South Africa's pesticide-poisoning response chain has **eight sequential decision points** between "case suspected" and "regulatory action closes the loop", and **six of those eight default to a broken-loop terminal**. A correctly-notified case can still produce no investigation, no source removal, and no regulatory follow-up — leaving the underlying hazard in place and producing predictable secondary cases.
 
 ## 3. Status quo
 

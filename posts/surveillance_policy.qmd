@@ -26,13 +26,13 @@ format:
 
 ## 2. Public health problem
 
-South Africa under-detects pesticide poisoning. Three data streams each see a fraction of the problem, and none of them sees the whole picture:
+South Africa under-detects pesticide poisoning. Three data streams each see a fraction of the problem; none sees the whole:
 
 - Most cases never appear in NMC.
 - Severe laboratory results do not trigger a public-health alert.
 - The country's largest single source of clinical signal — the Poisons Information Helpline — is not used for surveillance at all.
 
-The consequences are operational, not theoretical: hotspots are detected late or not at all; clusters caused by contaminated food, illegal pesticide sales, or unsafe occupational exposure run their course before any agency responds; and the country has no real-time view of which products are causing harm.
+Hotspots are detected late or not at all; clusters from contaminated food, illegal sales, or unsafe occupational exposure run their course before any agency responds; and the country has no real-time view of which products are causing harm.
 
 ## 3. Status quo
 

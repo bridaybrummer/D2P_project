@@ -15,7 +15,7 @@ format:
 ::: {.callout-important icon=false}
 ## What this page is
 
-The original single combined policy brief has been restructured into **three focused, decision-maker-facing documents**, each addressing a distinct policy question. They share a common evidence base — defined in a single iterable parameter set — and reference each other where their actions interact.
+Three decision-maker-facing briefs, each addressing a distinct policy question, all drawing on a single canonical parameter set. Read in order: **Detect → Act → Restrict.**
 :::
 
 ## The three policy briefs
