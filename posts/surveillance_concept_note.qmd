@@ -48,24 +48,29 @@ South Africa has three parallel data streams for pesticide poisoning. Each captu
 
 ```{mermaid}
 %%| label: fig-current-system
-%%| fig-cap: "Current (fragmented) surveillance architecture"
+%%| fig-cap: "Current (fragmented) surveillance architecture. NICD is the de facto source-of-truth for case notifications, but the laboratory (BChE + chemical toxicology) and PIH streams do not flow into it in a structured way."
 flowchart LR
-    A[Healthcare Facility] --> B[NMC Notification\n~690/year]
-    A --> C[NHLS BChE Test\n~2,000 severe/year]
-    A --> D[PIH Consultation\n~9,000 calls/year]
-    
-    B --> E[(NICD Database)]
+    A[Healthcare Facility] --> B[NMC Notification<br/>~690/year]
+    A --> C[NHLS Laboratory<br/>BChE + Chemical Toxicology<br/>~2,000 severe/year]
+    A --> D[PIH Consultation<br/>~9,000 calls/year<br/><i>No minimum dataset</i>]
+
+    B --> E[("NICD Database<br/><b>Source of truth</b>")]
     C --> F[(NHLS LIS)]
     D --> G[(PIH Records)]
-    
-    E -.No linkage.-> F
-    F -.No linkage.-> G
-    G -.No linkage.-> E
-    
-    style E fill:#f9f,stroke:#333
+
+    F -.No structured feed.-> E
+    G -.No minimum viable<br/>dataset defined.-> E
+
+    style E fill:#9f9,stroke:#333,stroke-width:2px
     style F fill:#bbf,stroke:#333
     style G fill:#bfb,stroke:#333
 ```
+
+**What this diagram shows.** Three gaps in the current state:
+
+1. **NICD database is the source of truth** for case notifications but receives only the clinician-completed NMC stream (~690/year) — a fraction of the true burden.
+2. **The NHLS laboratory holds two relevant data streams** — routine **BChE** activity assays and **chemical toxicology** (qualitative/quantitative pesticide assays) — neither of which feeds NICD in a structured, automated way.
+3. **PIH consultations are not captured against a minimum viable dataset**, so the ~9,000 calls/year cannot be aggregated, geocoded, or matched to NICD cases.
 
 **Documented failures:**
 
