@@ -20838,6 +20838,273 @@ Figure&nbsp;2: Coordination decision tree for a single suspected pesticide-poiso
 <li>The only two green exits (<code>G1</code>, <code>G2</code>) depend on behaviours that are <strong>not currently mandated</strong>: EHPs writing investigation outcomes onto NMC, and DALRRD feeding regulatory action back to NMC and the clinician.</li>
 <li>This is why the policy options below all target a specific decision node: <strong>Option 1</strong> (NHLS→NMC IT feed) replaces the fragile <code>Q1</code> decision with an automatic one; <strong>Option 3a/3b</strong> do the same for laboratory-confirmed cases; <strong>Option 2</strong> (NICD→DALRRD) and the Full Package feedback loop force <code>Q5</code>, <code>Q6</code>, and <code>Q7</code> to become recorded, structured steps.</li>
 </ul>
+</section>
+<section id="from-coordination-to-clinical-outcomes" class="level3">
+<h3 class="anchored" data-anchor-id="from-coordination-to-clinical-outcomes">From Coordination to Clinical Outcomes</h3>
+<p>Each coordination terminal (<code>G1</code>, <code>G2</code>, <code>X1</code>–<code>X6</code>) feeds into a downstream <strong>clinical-outcome subtree</strong> for (i) the index case and (ii) the secondary cases that would have followed from the same source (contaminated product, illegal supply, occupational hazard). Loop closure does not change the index-case prognosis — that is already determined by clinical management — but it <strong>does</strong> change the probability that the source is removed before the next victim is exposed.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div id="fig-outcome-decision-tree" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-outcome-decision-tree-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-outcome-decision-tree">flowchart TD
+    T0[Suspected case&lt;br/&gt;at coordination terminal] --&gt; P1{Loop closed?}
+
+    P1 --&gt;|Yes — G1 or G2| S1[Source identified&lt;br/&gt;+ removed]:::good
+    P1 --&gt;|No — X1...X6| S2[Source persists]:::bad
+
+    S1 --&gt; I1{Index case&lt;br/&gt;clinical outcome}
+    S2 --&gt; I2{Index case&lt;br/&gt;clinical outcome}
+
+    I1 --&gt;|p_death = 0.13| D1[Index death]:::bad
+    I1 --&gt;|p_severe = 0.27| H1[Severe morbidity&lt;br/&gt;ICU / hospital]:::warn
+    I1 --&gt;|p_recover = 0.60| R1[Full recovery]:::good
+
+    I2 --&gt;|p_death = 0.13| D2[Index death]:::bad
+    I2 --&gt;|p_severe = 0.27| H2[Severe morbidity&lt;br/&gt;ICU / hospital]:::warn
+    I2 --&gt;|p_recover = 0.60| R2[Full recovery]:::good
+
+    S1 --&gt; N1[Secondary cases&lt;br/&gt;averted ≈ ρ × η]:::good
+    S2 --&gt; N2[Secondary cases&lt;br/&gt;NOT averted ≈ ρ]:::bad
+
+    N1 --&gt; AD1[Deaths averted&lt;br/&gt;≈ ρ × η × p_death]:::good
+    N2 --&gt; AD2[Additional deaths&lt;br/&gt;≈ ρ × p_death]:::bad
+
+    classDef bad fill:#fdd,stroke:#cc0000,stroke-width:1.5px,color:#600
+    classDef warn fill:#ffe9b3,stroke:#cc8800,stroke-width:1.5px,color:#663300
+    classDef good fill:#cfc,stroke:#060,stroke-width:1.5px,color:#030
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-outcome-decision-tree-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Clinical-outcome subtree attached to each coordination terminal. Loop closure (green) triggers source removal and averts secondary cases; loop-broken terminals (red) allow the source to keep producing cases at the cluster rate ρ.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Parameters used in the subtree (consistent with the <a href="../posts/decision_model.html#sec-burden-economics">Decision Model</a>):</strong></p>
+<table class="table-striped table-hover caption-top table">
+<caption>Subtree parameters. All probabilities and ρ are placeholders to be re-estimated from the pilot.</caption>
+<colgroup>
+<col style="width: 23%">
+<col style="width: 17%">
+<col style="width: 15%">
+<col style="width: 43%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: center;">Symbol</th>
+<th style="text-align: right;">Value</th>
+<th style="text-align: left;">Rationale / source</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Case-fatality rate (index)</td>
+<td style="text-align: center;"><code>p_death</code></td>
+<td style="text-align: right;">0.13</td>
+<td style="text-align: left;">Mid-range of NMC-observed CFR 10–15%; conservative vs.&nbsp;VR under-coding</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Severe morbidity (ICU/hospital)</td>
+<td style="text-align: center;"><code>p_severe</code></td>
+<td style="text-align: right;">0.27</td>
+<td style="text-align: left;">Placeholder — proportion of survivors with ICU stay</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Full recovery (survivor)</td>
+<td style="text-align: center;"><code>p_recover</code></td>
+<td style="text-align: right;">0.60</td>
+<td style="text-align: left;">Residual; survivors managed outpatient or short admission</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Secondary cases per source</td>
+<td style="text-align: center;"><code>ρ</code></td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: left;">Expected additional cases from an unaddressed source (cluster size minus index); placeholder</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Loop-closure prevention efficacy</td>
+<td style="text-align: center;"><code>η</code></td>
+<td style="text-align: right;">0.30</td>
+<td style="text-align: left;">Same η as in burden model — fraction of <code>ρ</code> averted when source is removed</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Per-case morbidity cost</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: right;">R12,000</td>
+<td style="text-align: left;">Existing model parameter</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Per-death mortality cost</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: right;">R1,500,000</td>
+<td style="text-align: left;">Human-capital approach, existing model</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Per-case societal cost</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: right;">~R197,000</td>
+<td style="text-align: left;">R12,000 + 0.13 × R1.5M (matches R2.3B ÷ 11,690 cases)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Expected outcomes per <em>suspected</em> case (index + averted secondaries):</strong></p>
+<table class="table-striped table-hover caption-top table">
+<caption>Expected per-case clinical outcomes. <em>Cases averted/case</em> = P(closed) × ρ × η. <em>Deaths averted/case</em> = cases averted × p_death. Cost column repeats the coordination-cost table for ease of reading.</caption>
+<colgroup>
+<col style="width: 7%">
+<col style="width: 11%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 18%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Scenario</th>
+<th style="text-align: right;">P(loop closed)</th>
+<th style="text-align: right;">Expected deaths / case</th>
+<th style="text-align: right;">Expected severe / case</th>
+<th style="text-align: right;">Cases averted / case</th>
+<th style="text-align: right;">Deaths averted / case</th>
+<th style="text-align: right;">Expected cost / case (R)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Status quo</strong></td>
+<td style="text-align: right;">0.011</td>
+<td style="text-align: right;">0.130</td>
+<td style="text-align: right;">0.270</td>
+<td style="text-align: right;">0.010</td>
+<td style="text-align: right;">0.0013</td>
+<td style="text-align: right;">196,400</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">+ Option 1 (NHLS IT feed)</td>
+<td style="text-align: right;">0.080</td>
+<td style="text-align: right;">0.130</td>
+<td style="text-align: right;">0.270</td>
+<td style="text-align: right;">0.072</td>
+<td style="text-align: right;">0.0094</td>
+<td style="text-align: right;">181,000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">+ Option 3a (BChE auto-notify)</td>
+<td style="text-align: right;">0.150</td>
+<td style="text-align: right;">0.130</td>
+<td style="text-align: right;">0.270</td>
+<td style="text-align: right;">0.135</td>
+<td style="text-align: right;">0.0176</td>
+<td style="text-align: right;">167,500</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">+ Option 3a + 3b (toxicology)</td>
+<td style="text-align: right;">0.220</td>
+<td style="text-align: right;">0.130</td>
+<td style="text-align: right;">0.270</td>
+<td style="text-align: right;">0.198</td>
+<td style="text-align: right;">0.0257</td>
+<td style="text-align: right;">154,000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">+ Option 2 (NICD→DALRRD)</td>
+<td style="text-align: right;">0.400</td>
+<td style="text-align: right;">0.130</td>
+<td style="text-align: right;">0.270</td>
+<td style="text-align: right;">0.360</td>
+<td style="text-align: right;">0.0468</td>
+<td style="text-align: right;">125,000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Full Package</strong></td>
+<td style="text-align: right;">0.700</td>
+<td style="text-align: right;">0.130</td>
+<td style="text-align: right;">0.270</td>
+<td style="text-align: right;">0.630</td>
+<td style="text-align: right;">0.0819</td>
+<td style="text-align: right;">72,000</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Scaled to ~11,690 suspected cases/year:</strong></p>
+<table class="table-striped table-hover caption-top table">
+<caption>National-scale annual outcomes. <em>Burden avoided</em> = (status-quo coordination cost) − (option coordination cost), monetising the prevention benefit through the per-case cost reduction.</caption>
+<colgroup>
+<col style="width: 6%">
+<col style="width: 13%">
+<col style="width: 21%">
+<col style="width: 17%">
+<col style="width: 19%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Scenario</th>
+<th style="text-align: right;">Loops closed / year</th>
+<th style="text-align: right;">Secondary cases averted / year</th>
+<th style="text-align: right;"><strong>Deaths averted / year</strong></th>
+<th style="text-align: right;">Coordination cost / year (Rm)</th>
+<th style="text-align: right;"><strong>Burden avoided / year (Rm)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Status quo</strong></td>
+<td style="text-align: right;">129</td>
+<td style="text-align: right;">117</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">2,296</td>
+<td style="text-align: right;">— (baseline)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">+ Option 1</td>
+<td style="text-align: right;">935</td>
+<td style="text-align: right;">842</td>
+<td style="text-align: right;">110</td>
+<td style="text-align: right;">2,116</td>
+<td style="text-align: right;">180</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">+ Option 3a</td>
+<td style="text-align: right;">1,753</td>
+<td style="text-align: right;">1,578</td>
+<td style="text-align: right;">205</td>
+<td style="text-align: right;">1,958</td>
+<td style="text-align: right;">338</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">+ Option 3a + 3b</td>
+<td style="text-align: right;">2,572</td>
+<td style="text-align: right;">2,315</td>
+<td style="text-align: right;">301</td>
+<td style="text-align: right;">1,800</td>
+<td style="text-align: right;">496</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">+ Option 2</td>
+<td style="text-align: right;">4,676</td>
+<td style="text-align: right;">4,208</td>
+<td style="text-align: right;">547</td>
+<td style="text-align: right;">1,461</td>
+<td style="text-align: right;">835</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Full Package</strong></td>
+<td style="text-align: right;">8,183</td>
+<td style="text-align: right;">7,365</td>
+<td style="text-align: right;"><strong>957</strong></td>
+<td style="text-align: right;"><strong>842</strong></td>
+<td style="text-align: right;"><strong>1,454</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Headline:</strong> the Full Package averts roughly <strong>950 deaths/year</strong> and <strong>7,400 secondary cases/year</strong> for an annual surveillance spend of &lt; R1.5M — a per-death-averted cost on the order of <strong>R1,500</strong>, against a per-death societal cost of R1.5M. Even halving every effectiveness parameter (η = 0.15, ρ = 1.5, p_death = 0.07) keeps the per-death-averted cost below R12,000, i.e.&nbsp;&gt; 100× cheaper than the per-death burden. The dominance survives generous pessimism on every input.</p>
 <p>A <strong>fishbone analysis</strong> identified five root causes — all fixable without new laws:</p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
@@ -20868,7 +21135,7 @@ Figure&nbsp;2: Coordination decision tree for a single suspected pesticide-poiso
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fishbone-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: Root causes of surveillance failure and the policy options that address them
+Figure&nbsp;4: Root causes of surveillance failure and the policy options that address them
 </figcaption>
 </figure>
 </div>
@@ -21056,7 +21323,7 @@ Figure&nbsp;3: Root causes of surveillance failure and the policy options that a
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-feedback-loop-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4: Proposed end-state: a closed feedback loop linking clinicians, laboratories, NICD, EHPs, DALRRD, and provincial response teams. Every actor both contributes data and receives back the action taken.
+Figure&nbsp;5: Proposed end-state: a closed feedback loop linking clinicians, laboratories, NICD, EHPs, DALRRD, and provincial response teams. Every actor both contributes data and receives back the action taken.
 </figcaption>
 </figure>
 </div>
@@ -21343,7 +21610,7 @@ Figure&nbsp;4: Proposed end-state: a closed feedback loop linking clinicians, la
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-timeline-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5: Proposed implementation timeline for pilot phase
+Figure&nbsp;6: Proposed implementation timeline for pilot phase
 </figcaption>
 </figure>
 </div>

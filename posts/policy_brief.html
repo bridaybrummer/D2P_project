@@ -390,6 +390,273 @@ Figure&nbsp;2: Coordination decision tree for a single suspected pesticide-poiso
 <li>The only two green exits (<code>G1</code>, <code>G2</code>) depend on behaviours that are <strong>not currently mandated</strong>: EHPs writing investigation outcomes onto NMC, and DALRRD feeding regulatory action back to NMC and the clinician.</li>
 <li>This is why the policy options below all target a specific decision node: <strong>Option 1</strong> (NHLS→NMC IT feed) replaces the fragile <code>Q1</code> decision with an automatic one; <strong>Option 3a/3b</strong> do the same for laboratory-confirmed cases; <strong>Option 2</strong> (NICD→DALRRD) and the Full Package feedback loop force <code>Q5</code>, <code>Q6</code>, and <code>Q7</code> to become recorded, structured steps.</li>
 </ul>
+</section>
+<section id="from-coordination-to-clinical-outcomes" class="level3">
+<h3 class="anchored" data-anchor-id="from-coordination-to-clinical-outcomes">From Coordination to Clinical Outcomes</h3>
+<p>Each coordination terminal (<code>G1</code>, <code>G2</code>, <code>X1</code>–<code>X6</code>) feeds into a downstream <strong>clinical-outcome subtree</strong> for (i) the index case and (ii) the secondary cases that would have followed from the same source (contaminated product, illegal supply, occupational hazard). Loop closure does not change the index-case prognosis — that is already determined by clinical management — but it <strong>does</strong> change the probability that the source is removed before the next victim is exposed.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div id="fig-outcome-decision-tree" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-outcome-decision-tree-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-outcome-decision-tree">flowchart TD
+    T0[Suspected case&lt;br/&gt;at coordination terminal] --&gt; P1{Loop closed?}
+
+    P1 --&gt;|Yes — G1 or G2| S1[Source identified&lt;br/&gt;+ removed]:::good
+    P1 --&gt;|No — X1...X6| S2[Source persists]:::bad
+
+    S1 --&gt; I1{Index case&lt;br/&gt;clinical outcome}
+    S2 --&gt; I2{Index case&lt;br/&gt;clinical outcome}
+
+    I1 --&gt;|p_death = 0.13| D1[Index death]:::bad
+    I1 --&gt;|p_severe = 0.27| H1[Severe morbidity&lt;br/&gt;ICU / hospital]:::warn
+    I1 --&gt;|p_recover = 0.60| R1[Full recovery]:::good
+
+    I2 --&gt;|p_death = 0.13| D2[Index death]:::bad
+    I2 --&gt;|p_severe = 0.27| H2[Severe morbidity&lt;br/&gt;ICU / hospital]:::warn
+    I2 --&gt;|p_recover = 0.60| R2[Full recovery]:::good
+
+    S1 --&gt; N1[Secondary cases&lt;br/&gt;averted ≈ ρ × η]:::good
+    S2 --&gt; N2[Secondary cases&lt;br/&gt;NOT averted ≈ ρ]:::bad
+
+    N1 --&gt; AD1[Deaths averted&lt;br/&gt;≈ ρ × η × p_death]:::good
+    N2 --&gt; AD2[Additional deaths&lt;br/&gt;≈ ρ × p_death]:::bad
+
+    classDef bad fill:#fdd,stroke:#cc0000,stroke-width:1.5px,color:#600
+    classDef warn fill:#ffe9b3,stroke:#cc8800,stroke-width:1.5px,color:#663300
+    classDef good fill:#cfc,stroke:#060,stroke-width:1.5px,color:#030
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-outcome-decision-tree-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Clinical-outcome subtree attached to each coordination terminal. Loop closure (green) triggers source removal and averts secondary cases; loop-broken terminals (red) allow the source to keep producing cases at the cluster rate ρ.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Parameters used in the subtree (consistent with the <a href="../posts/decision_model.html#sec-burden-economics">Decision Model</a>):</strong></p>
+<table class="table-striped table-hover caption-top table">
+<caption>Subtree parameters. All probabilities and ρ are placeholders to be re-estimated from the pilot.</caption>
+<colgroup>
+<col style="width: 23%">
+<col style="width: 17%">
+<col style="width: 15%">
+<col style="width: 43%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: center;">Symbol</th>
+<th style="text-align: right;">Value</th>
+<th style="text-align: left;">Rationale / source</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Case-fatality rate (index)</td>
+<td style="text-align: center;"><code>p_death</code></td>
+<td style="text-align: right;">0.13</td>
+<td style="text-align: left;">Mid-range of NMC-observed CFR 10–15%; conservative vs.&nbsp;VR under-coding</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Severe morbidity (ICU/hospital)</td>
+<td style="text-align: center;"><code>p_severe</code></td>
+<td style="text-align: right;">0.27</td>
+<td style="text-align: left;">Placeholder — proportion of survivors with ICU stay</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Full recovery (survivor)</td>
+<td style="text-align: center;"><code>p_recover</code></td>
+<td style="text-align: right;">0.60</td>
+<td style="text-align: left;">Residual; survivors managed outpatient or short admission</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Secondary cases per source</td>
+<td style="text-align: center;"><code>ρ</code></td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: left;">Expected additional cases from an unaddressed source (cluster size minus index); placeholder</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Loop-closure prevention efficacy</td>
+<td style="text-align: center;"><code>η</code></td>
+<td style="text-align: right;">0.30</td>
+<td style="text-align: left;">Same η as in burden model — fraction of <code>ρ</code> averted when source is removed</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Per-case morbidity cost</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: right;">R12,000</td>
+<td style="text-align: left;">Existing model parameter</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Per-death mortality cost</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: right;">R1,500,000</td>
+<td style="text-align: left;">Human-capital approach, existing model</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Per-case societal cost</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: right;">~R197,000</td>
+<td style="text-align: left;">R12,000 + 0.13 × R1.5M (matches R2.3B ÷ 11,690 cases)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Expected outcomes per <em>suspected</em> case (index + averted secondaries):</strong></p>
+<table class="table-striped table-hover caption-top table">
+<caption>Expected per-case clinical outcomes. <em>Cases averted/case</em> = P(closed) × ρ × η. <em>Deaths averted/case</em> = cases averted × p_death. Cost column repeats the coordination-cost table for ease of reading.</caption>
+<colgroup>
+<col style="width: 7%">
+<col style="width: 11%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 18%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Scenario</th>
+<th style="text-align: right;">P(loop closed)</th>
+<th style="text-align: right;">Expected deaths / case</th>
+<th style="text-align: right;">Expected severe / case</th>
+<th style="text-align: right;">Cases averted / case</th>
+<th style="text-align: right;">Deaths averted / case</th>
+<th style="text-align: right;">Expected cost / case (R)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Status quo</strong></td>
+<td style="text-align: right;">0.011</td>
+<td style="text-align: right;">0.130</td>
+<td style="text-align: right;">0.270</td>
+<td style="text-align: right;">0.010</td>
+<td style="text-align: right;">0.0013</td>
+<td style="text-align: right;">196,400</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">+ Option 1 (NHLS IT feed)</td>
+<td style="text-align: right;">0.080</td>
+<td style="text-align: right;">0.130</td>
+<td style="text-align: right;">0.270</td>
+<td style="text-align: right;">0.072</td>
+<td style="text-align: right;">0.0094</td>
+<td style="text-align: right;">181,000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">+ Option 3a (BChE auto-notify)</td>
+<td style="text-align: right;">0.150</td>
+<td style="text-align: right;">0.130</td>
+<td style="text-align: right;">0.270</td>
+<td style="text-align: right;">0.135</td>
+<td style="text-align: right;">0.0176</td>
+<td style="text-align: right;">167,500</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">+ Option 3a + 3b (toxicology)</td>
+<td style="text-align: right;">0.220</td>
+<td style="text-align: right;">0.130</td>
+<td style="text-align: right;">0.270</td>
+<td style="text-align: right;">0.198</td>
+<td style="text-align: right;">0.0257</td>
+<td style="text-align: right;">154,000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">+ Option 2 (NICD→DALRRD)</td>
+<td style="text-align: right;">0.400</td>
+<td style="text-align: right;">0.130</td>
+<td style="text-align: right;">0.270</td>
+<td style="text-align: right;">0.360</td>
+<td style="text-align: right;">0.0468</td>
+<td style="text-align: right;">125,000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Full Package</strong></td>
+<td style="text-align: right;">0.700</td>
+<td style="text-align: right;">0.130</td>
+<td style="text-align: right;">0.270</td>
+<td style="text-align: right;">0.630</td>
+<td style="text-align: right;">0.0819</td>
+<td style="text-align: right;">72,000</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Scaled to ~11,690 suspected cases/year:</strong></p>
+<table class="table-striped table-hover caption-top table">
+<caption>National-scale annual outcomes. <em>Burden avoided</em> = (status-quo coordination cost) − (option coordination cost), monetising the prevention benefit through the per-case cost reduction.</caption>
+<colgroup>
+<col style="width: 6%">
+<col style="width: 13%">
+<col style="width: 21%">
+<col style="width: 17%">
+<col style="width: 19%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Scenario</th>
+<th style="text-align: right;">Loops closed / year</th>
+<th style="text-align: right;">Secondary cases averted / year</th>
+<th style="text-align: right;"><strong>Deaths averted / year</strong></th>
+<th style="text-align: right;">Coordination cost / year (Rm)</th>
+<th style="text-align: right;"><strong>Burden avoided / year (Rm)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Status quo</strong></td>
+<td style="text-align: right;">129</td>
+<td style="text-align: right;">117</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">2,296</td>
+<td style="text-align: right;">— (baseline)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">+ Option 1</td>
+<td style="text-align: right;">935</td>
+<td style="text-align: right;">842</td>
+<td style="text-align: right;">110</td>
+<td style="text-align: right;">2,116</td>
+<td style="text-align: right;">180</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">+ Option 3a</td>
+<td style="text-align: right;">1,753</td>
+<td style="text-align: right;">1,578</td>
+<td style="text-align: right;">205</td>
+<td style="text-align: right;">1,958</td>
+<td style="text-align: right;">338</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">+ Option 3a + 3b</td>
+<td style="text-align: right;">2,572</td>
+<td style="text-align: right;">2,315</td>
+<td style="text-align: right;">301</td>
+<td style="text-align: right;">1,800</td>
+<td style="text-align: right;">496</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">+ Option 2</td>
+<td style="text-align: right;">4,676</td>
+<td style="text-align: right;">4,208</td>
+<td style="text-align: right;">547</td>
+<td style="text-align: right;">1,461</td>
+<td style="text-align: right;">835</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Full Package</strong></td>
+<td style="text-align: right;">8,183</td>
+<td style="text-align: right;">7,365</td>
+<td style="text-align: right;"><strong>957</strong></td>
+<td style="text-align: right;"><strong>842</strong></td>
+<td style="text-align: right;"><strong>1,454</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Headline:</strong> the Full Package averts roughly <strong>950 deaths/year</strong> and <strong>7,400 secondary cases/year</strong> for an annual surveillance spend of &lt; R1.5M — a per-death-averted cost on the order of <strong>R1,500</strong>, against a per-death societal cost of R1.5M. Even halving every effectiveness parameter (η = 0.15, ρ = 1.5, p_death = 0.07) keeps the per-death-averted cost below R12,000, i.e.&nbsp;&gt; 100× cheaper than the per-death burden. The dominance survives generous pessimism on every input.</p>
 <p>A <strong>fishbone analysis</strong> identified five root causes — all fixable without new laws:</p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
@@ -420,7 +687,7 @@ Figure&nbsp;2: Coordination decision tree for a single suspected pesticide-poiso
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fishbone-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: Root causes of surveillance failure and the policy options that address them
+Figure&nbsp;4: Root causes of surveillance failure and the policy options that address them
 </figcaption>
 </figure>
 </div>
@@ -608,7 +875,7 @@ Figure&nbsp;3: Root causes of surveillance failure and the policy options that a
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-feedback-loop-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4: Proposed end-state: a closed feedback loop linking clinicians, laboratories, NICD, EHPs, DALRRD, and provincial response teams. Every actor both contributes data and receives back the action taken.
+Figure&nbsp;5: Proposed end-state: a closed feedback loop linking clinicians, laboratories, NICD, EHPs, DALRRD, and provincial response teams. Every actor both contributes data and receives back the action taken.
 </figcaption>
 </figure>
 </div>
@@ -895,7 +1162,7 @@ Figure&nbsp;4: Proposed end-state: a closed feedback loop linking clinicians, la
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-timeline-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5: Proposed implementation timeline for pilot phase
+Figure&nbsp;6: Proposed implementation timeline for pilot phase
 </figcaption>
 </figure>
 </div>
@@ -1517,422 +1784,500 @@ Figure&nbsp;5: Proposed implementation timeline for pilot phase
 <span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>The only two green exits (<span class="in">`G1`</span>, <span class="in">`G2`</span>) depend on behaviours that are **not currently mandated**: EHPs writing investigation outcomes onto NMC, and DALRRD feeding regulatory action back to NMC and the clinician.</span>
 <span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>This is why the policy options below all target a specific decision node: **Option 1** (NHLS→NMC IT feed) replaces the fragile `Q1` decision with an automatic one; **Option 3a/3b** do the same for laboratory-confirmed cases; **Option 2** (NICD→DALRRD) and the Full Package feedback loop force <span class="in">`Q5`</span>, <span class="in">`Q6`</span>, and <span class="in">`Q7`</span> to become recorded, structured steps.</span>
 <span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>A **fishbone analysis** identified five root causes — all fixable without new laws:</span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a><span class="fu">### From Coordination to Clinical Outcomes</span></span>
 <span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid}</span></span>
-<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>%%| label: fig-fishbone</span>
-<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>%%| fig-cap: <span class="ot">"</span><span class="st">Root causes of surveillance failure and the policy options that address them</span><span class="ot">"</span></span>
-<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>flowchart LR</span>
-<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>    A[Surveillance Failure] --&gt; B[NHLS–NMC MOU <span class="ot">not</span>&lt;br/&gt;IT-implemented]</span>
-<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>    A --&gt; C[PIH data <span class="ot">not</span> used&lt;br/&gt;<span class="cf">for</span> surveillance]</span>
-<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>    A --&gt; D[Delayed manual reporting]</span>
-<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>    A --&gt; E[NICD→DALRRD feed&lt;br/&gt;does <span class="ot">not</span> exist]</span>
-<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>    A --&gt; F[No live toxicology&lt;br/&gt;on survivors]</span>
-<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>    B --&gt; G[Option <span class="dv">1</span>: Activate NHLS–NMC&lt;br/&gt;data feed in IT]</span>
-<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>    C --&gt; H[Option <span class="dv">4</span>: PIH minimum viable&lt;br/&gt;dataset + live dashboard]</span>
-<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>    D --&gt; I[Option <span class="dv">3</span>a: BChE auto-notify&lt;br/&gt;&lt;i&gt;capability <span class="fu">exists</span>&lt;/i&gt;]</span>
-<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>    F --&gt; J[Option <span class="dv">3</span>b: Chemical toxicology&lt;br/&gt;auto-notify &lt;i&gt;new build&lt;/i&gt;]</span>
-<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>    E --&gt; K[Option <span class="dv">2</span>: NICD→DALRRD&lt;br/&gt;poisoning intelligence feed]</span>
-<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>    style A fill:<span class="co">#f99,stroke:#333</span></span>
-<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>    style G fill:<span class="co">#9f9,stroke:#333</span></span>
-<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>    style H fill:<span class="co">#9f9,stroke:#333</span></span>
-<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>    style I fill:<span class="co">#9f9,stroke:#333</span></span>
-<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>    style J fill:<span class="co">#9f9,stroke:#333</span></span>
-<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>    style K fill:<span class="co">#9f9,stroke:#333</span></span>
-<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a><span class="fu">## Five Policy Options (All Legally Feasible Today)</span></span>
-<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a><span class="fu">### Status Quo: Keep Doing What We're Doing</span></span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>Each coordination terminal (<span class="in">`G1`</span>, <span class="in">`G2`</span>, <span class="in">`X1`</span>–<span class="in">`X6`</span>) feeds into a downstream **clinical-outcome subtree** for (i) the index case and (ii) the secondary cases that would have followed from the same source (contaminated product, illegal supply, occupational hazard). Loop closure does not change the index-case prognosis — that is already determined by clinical management — but it **does** change the probability that the source is removed before the next victim is exposed.</span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid}</span></span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>%%| label: fig-outcome-decision-tree</span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>%%| fig-cap: <span class="ot">"</span><span class="st">Clinical-outcome subtree attached to each coordination terminal. Loop closure (green) triggers source removal and averts secondary cases; loop-broken terminals (red) allow the source to keep producing cases at the cluster rate ρ.</span><span class="ot">"</span></span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>flowchart TD</span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>    T0[Suspected case&lt;br/&gt;at coordination terminal] --&gt; P1{Loop closed?}</span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>    P1 --&gt;|Yes — G1 <span class="ot">or</span> G2| S1[Source identified&lt;br/&gt;+ removed]:::good</span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>    P1 --&gt;|No — X1...X6| S2[Source persists]:::bad</span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>    S1 --&gt; I1{Index case&lt;br/&gt;clinical outcome}</span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>    S2 --&gt; I2{Index case&lt;br/&gt;clinical outcome}</span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>    I1 --&gt;|p_death = <span class="fl">0.13</span>| D1[Index death]:::bad</span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>    I1 --&gt;|p_severe = <span class="fl">0.27</span>| H1[Severe morbidity&lt;br/&gt;ICU / hospital]:::<span class="fu">warn</span></span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>    I1 --&gt;|p_recover = <span class="fl">0.60</span>| R1[Full recovery]:::good</span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>    I2 --&gt;|p_death = <span class="fl">0.13</span>| D2[Index death]:::bad</span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>    I2 --&gt;|p_severe = <span class="fl">0.27</span>| H2[Severe morbidity&lt;br/&gt;ICU / hospital]:::<span class="fu">warn</span></span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>    I2 --&gt;|p_recover = <span class="fl">0.60</span>| R2[Full recovery]:::good</span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>    S1 --&gt; N1[Secondary cases&lt;br/&gt;averted ≈ ρ × η]:::good</span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>    S2 --&gt; N2[Secondary cases&lt;br/&gt;NOT averted ≈ ρ]:::bad</span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>    N1 --&gt; AD1[Deaths averted&lt;br/&gt;≈ ρ × η × p_death]:::good</span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>    N2 --&gt; AD2[Additional deaths&lt;br/&gt;≈ ρ × p_death]:::bad</span>
 <span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>**What it is:**</span>
-<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Clinicians manually file NMC notifications (often 2–4 weeks late)</span>
-<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>NHLS runs ~9,000 BChE tests/year but results don't trigger public health alerts</span>
-<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>PIH answers ~9,000 calls/year but data aren't analyzed for surveillance</span>
-<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>**Performance:**</span>
-<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Detects ~4.5 of 10 annual hotspots</span>
-<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Annual cost: R0 (no change)</span>
-<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>**Bottom line:** Cheap, but ineffective.</span>
-<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a><span class="fu">### Option 1: Activate the NHLS–NMC Data Feed (IT Implementation)</span></span>
-<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>**What it is:**</span>
-<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>An **NHLS–NICD MOU for routine BChE data sharing already exists** on paper. What is missing is the **IT implementation** — a working LIS-to-NMC pipe.</span>
-<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Stand up the technical connector (HL7 / flat-file export from NHLS LIS → NMC ingest), governance, and a monthly QA review.</span>
-<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>De-identified, aggregated BChE data flows into NMC for trend analysis.</span>
-<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>**Legal basis:** Existing MOU under Section 90 of the National Health Act (2003). **No new legal instrument required.**</span>
-<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>**Performance:**</span>
-<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Detects ~5.2 of 10 annual hotspots</span>
-<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Annual cost: ~R40,000 ongoing (QA + liaison); one-off IT setup ~R80,000</span>
-<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Implementation time: 8–12 weeks</span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>    classDef bad fill:<span class="co">#fdd,stroke:#cc0000,stroke-width:1.5px,color:#600</span></span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>    classDef <span class="fu">warn</span> fill:<span class="co">#ffe9b3,stroke:#cc8800,stroke-width:1.5px,color:#663300</span></span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>    classDef good fill:<span class="co">#cfc,stroke:#060,stroke-width:1.5px,color:#030</span></span>
+<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>**Parameters used in the subtree (consistent with the [Decision Model](decision_model.qmd#sec-burden-economics)):**</span>
+<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Parameter <span class="pp">|</span> Symbol <span class="pp">|</span> Value <span class="pp">|</span> Rationale / source <span class="pp">|</span></span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a><span class="pp">|:----------|:------:|------:|:-------------------|</span></span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Case-fatality rate (index) <span class="pp">|</span> <span class="in">`p_death`</span> <span class="pp">|</span> 0.13 <span class="pp">|</span> Mid-range of NMC-observed CFR 10–15%; conservative vs. VR under-coding <span class="pp">|</span></span>
+<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Severe morbidity (ICU/hospital) <span class="pp">|</span> <span class="in">`p_severe`</span> <span class="pp">|</span> 0.27 <span class="pp">|</span> Placeholder — proportion of survivors with ICU stay <span class="pp">|</span></span>
+<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Full recovery (survivor) <span class="pp">|</span> <span class="in">`p_recover`</span> <span class="pp">|</span> 0.60 <span class="pp">|</span> Residual; survivors managed outpatient or short admission <span class="pp">|</span></span>
+<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Secondary cases per source <span class="pp">|</span> <span class="in">`ρ`</span> <span class="pp">|</span> 3.0 <span class="pp">|</span> Expected additional cases from an unaddressed source (cluster size minus index); placeholder <span class="pp">|</span></span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Loop-closure prevention efficacy <span class="pp">|</span> <span class="in">`η`</span> <span class="pp">|</span> 0.30 <span class="pp">|</span> Same η as in burden model — fraction of <span class="in">`ρ`</span> averted when source is removed <span class="pp">|</span></span>
+<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Per-case morbidity cost <span class="pp">|</span> — <span class="pp">|</span> R12,000 <span class="pp">|</span> Existing model parameter <span class="pp">|</span></span>
+<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Per-death mortality cost <span class="pp">|</span> — <span class="pp">|</span> R1,500,000 <span class="pp">|</span> Human-capital approach, existing model <span class="pp">|</span></span>
+<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Per-case societal cost <span class="pp">|</span> — <span class="pp">|</span> ~R197,000 <span class="pp">|</span> R12,000 + 0.13 × R1.5M (matches R2.3B ÷ 11,690 cases) <span class="pp">|</span></span>
+<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>: Subtree parameters. All probabilities and ρ are placeholders to be re-estimated from the pilot. {.striped .hover}</span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>**Expected outcomes per *suspected* case (index + averted secondaries):**</span>
+<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Scenario <span class="pp">|</span> P(loop closed) <span class="pp">|</span> Expected deaths / case <span class="pp">|</span> Expected severe / case <span class="pp">|</span> Cases averted / case <span class="pp">|</span> Deaths averted / case <span class="pp">|</span> Expected cost / case (R) <span class="pp">|</span></span>
+<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a><span class="pp">|:---------|---------------:|----------------------:|----------------------:|---------------------:|---------------------:|-------------------------:|</span></span>
+<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Status quo** <span class="pp">|</span> 0.011 <span class="pp">|</span> 0.130 <span class="pp">|</span> 0.270 <span class="pp">|</span> 0.010 <span class="pp">|</span> 0.0013 <span class="pp">|</span> 196,400 <span class="pp">|</span></span>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> + Option 1 (NHLS IT feed) <span class="pp">|</span> 0.080 <span class="pp">|</span> 0.130 <span class="pp">|</span> 0.270 <span class="pp">|</span> 0.072 <span class="pp">|</span> 0.0094 <span class="pp">|</span> 181,000 <span class="pp">|</span></span>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> + Option 3a (BChE auto-notify) <span class="pp">|</span> 0.150 <span class="pp">|</span> 0.130 <span class="pp">|</span> 0.270 <span class="pp">|</span> 0.135 <span class="pp">|</span> 0.0176 <span class="pp">|</span> 167,500 <span class="pp">|</span></span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> + Option 3a + 3b (toxicology) <span class="pp">|</span> 0.220 <span class="pp">|</span> 0.130 <span class="pp">|</span> 0.270 <span class="pp">|</span> 0.198 <span class="pp">|</span> 0.0257 <span class="pp">|</span> 154,000 <span class="pp">|</span></span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> + Option 2 (NICD→DALRRD) <span class="pp">|</span> 0.400 <span class="pp">|</span> 0.130 <span class="pp">|</span> 0.270 <span class="pp">|</span> 0.360 <span class="pp">|</span> 0.0468 <span class="pp">|</span> 125,000 <span class="pp">|</span></span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Full Package** <span class="pp">|</span> 0.700 <span class="pp">|</span> 0.130 <span class="pp">|</span> 0.270 <span class="pp">|</span> 0.630 <span class="pp">|</span> 0.0819 <span class="pp">|</span> 72,000 <span class="pp">|</span></span>
 <span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>**Bottom line:** The cheapest fix on the menu — the agreement exists, the data exists, only the IT plumbing is missing.</span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>: Expected per-case clinical outcomes. *Cases averted/case* = P(closed) × ρ × η. *Deaths averted/case* = cases averted × p_death. Cost column repeats the coordination-cost table for ease of reading. {.striped .hover}</span>
 <span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>**Scaled to ~11,690 suspected cases/year:**</span>
 <span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a><span class="fu">### Option 2: NICD→DALRRD Poisoning Intelligence Feed</span></span>
-<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>**What it is:**</span>
-<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**DALRRD has formally requested** the poisoning intelligence held by NICD/NMC so that pesticide registration, labelling, and inspectorate priorities can be informed by real-world morbidity and mortality.</span>
-<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>The flow is **NICD/NMC → DALRRD** (poisoning cases by suspected product, geography, season), not the other way round.</span>
-<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Output: a quarterly NICD→DALRRD brief plus an ad-hoc cluster alert channel.</span>
-<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>**Legal basis:** Inter-departmental data sharing protocols; de-identified aggregate data.</span>
-<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>**Performance:**</span>
-<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Detects ~5.8 of 10 annual hotspots (via downstream regulatory action reducing supply)</span>
-<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Annual cost: ~R40,000 (NICD analyst time + DALRRD liaison)</span>
-<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Implementation time: 12 weeks</span>
-<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>**Bottom line:** Closes the regulator-feedback gap. DALRRD is asking for this — the cost of *not* sending it is regulatory blindness.</span>
-<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a><span class="fu">### Option 3a: BChE Auto-Notification — *Capability Exists* (★ Recommended)</span></span>
-<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>**What it is:**</span>
-<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Configure the existing NHLS Laboratory Information System (LIS) to automatically notify NICD when **BChE results show severe poisoning** (&lt; 50% of normal).</span>
-<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Notification within **24 hours** of result validation; no clinician action required.</span>
-<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**The laboratory capability already exists** — NHLS performs ~9,000 BChE tests/year. Only the auto-notification rule and message handler need to be configured.</span>
-<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>**Legal basis:** Already permitted under NMC regulations; requires only IT configuration.</span>
-<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>**Performance:**</span>
-<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Detects ~6.7 of 10 annual hotspots</span>
-<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Annual cost: ~R55,000 (IT staff time)</span>
-<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Implementation time: **2–4 weeks**</span>
-<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>**Why this is a game-changer:**</span>
-<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Fast:** cuts notification delay from 2–4 weeks to &lt;24 hours</span>
-<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Automated:** removes reliance on clinicians filing paperwork</span>
-<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Building on existing capability:** no new lab test, no new reagent contract</span>
-<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>**Bottom line:** Best value for money. **Recommended first priority.**</span>
-<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a><span class="fu">### Option 3b: Chemical Toxicology Auto-Notification — *New Capability* (★ Recommended, medium term)</span></span>
-<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>**What it is:**</span>
-<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Extend auto-notification to **chemical toxicology results** (qualitative/quantitative pesticide assays).</span>
-<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**This capability does not yet exist on live patients** — NHLS currently performs chemical toxicology *post-mortem only* (see <span class="co">[</span><span class="ot">Surveillance Concept Note — Component 6</span><span class="co">](surveillance_concept_note.qmd#sec-component-6)</span>).</span>
-<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Phase 1: stand up live-patient toxicology at a sentinel tertiary site (CHB). Phase 2–3: expand to 4–5 sites with auto-notification wired in.</span>
-<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>**Legal basis:** NMC regulations permit lab-triggered notification; no new instrument required.</span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Scenario <span class="pp">|</span> Loops closed / year <span class="pp">|</span> Secondary cases averted / year <span class="pp">|</span> **Deaths averted / year** | Coordination cost / year (Rm) | **Burden avoided / year (Rm)** <span class="pp">|</span></span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a><span class="pp">|:---------|--------------------:|-------------------------------:|--------------------------:|-----------------------------:|-------------------------------:|</span></span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Status quo** <span class="pp">|</span> 129 <span class="pp">|</span> 117 <span class="pp">|</span> 15 <span class="pp">|</span> 2,296 <span class="pp">|</span> — (baseline) <span class="pp">|</span></span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> + Option 1 <span class="pp">|</span> 935 <span class="pp">|</span> 842 <span class="pp">|</span> 110 <span class="pp">|</span> 2,116 <span class="pp">|</span> 180 <span class="pp">|</span></span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> + Option 3a <span class="pp">|</span> 1,753 <span class="pp">|</span> 1,578 <span class="pp">|</span> 205 <span class="pp">|</span> 1,958 <span class="pp">|</span> 338 <span class="pp">|</span></span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> + Option 3a + 3b <span class="pp">|</span> 2,572 <span class="pp">|</span> 2,315 <span class="pp">|</span> 301 <span class="pp">|</span> 1,800 <span class="pp">|</span> 496 <span class="pp">|</span></span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> + Option 2 <span class="pp">|</span> 4,676 <span class="pp">|</span> 4,208 <span class="pp">|</span> 547 <span class="pp">|</span> 1,461 <span class="pp">|</span> 835 <span class="pp">|</span></span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Full Package** | 8,183 | 7,365 | **957** | **842** | **1,454** <span class="pp">|</span></span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>: National-scale annual outcomes. *Burden avoided* = (status-quo coordination cost) − (option coordination cost), monetising the prevention benefit through the per-case cost reduction. {.striped .hover}</span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>**Headline:** the Full Package averts roughly **950 deaths/year** and **7,400 secondary cases/year** for an annual surveillance spend of &lt; R1.5M — a per-death-averted cost on the order of **R1,500**, against a per-death societal cost of R1.5M. Even halving every effectiveness parameter (η = 0.15, ρ = 1.5, p_death = 0.07) keeps the per-death-averted cost below R12,000, i.e. &gt; 100× cheaper than the per-death burden. The dominance survives generous pessimism on every input.</span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>A **fishbone analysis** identified five root causes — all fixable without new laws:</span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid}</span></span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>%%| label: fig-fishbone</span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>%%| fig-cap: <span class="ot">"</span><span class="st">Root causes of surveillance failure and the policy options that address them</span><span class="ot">"</span></span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>flowchart LR</span>
+<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>    A[Surveillance Failure] --&gt; B[NHLS–NMC MOU <span class="ot">not</span>&lt;br/&gt;IT-implemented]</span>
+<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>    A --&gt; C[PIH data <span class="ot">not</span> used&lt;br/&gt;<span class="cf">for</span> surveillance]</span>
+<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>    A --&gt; D[Delayed manual reporting]</span>
+<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>    A --&gt; E[NICD→DALRRD feed&lt;br/&gt;does <span class="ot">not</span> exist]</span>
+<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>    A --&gt; F[No live toxicology&lt;br/&gt;on survivors]</span>
+<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>    B --&gt; G[Option <span class="dv">1</span>: Activate NHLS–NMC&lt;br/&gt;data feed in IT]</span>
+<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>    C --&gt; H[Option <span class="dv">4</span>: PIH minimum viable&lt;br/&gt;dataset + live dashboard]</span>
+<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>    D --&gt; I[Option <span class="dv">3</span>a: BChE auto-notify&lt;br/&gt;&lt;i&gt;capability <span class="fu">exists</span>&lt;/i&gt;]</span>
+<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>    F --&gt; J[Option <span class="dv">3</span>b: Chemical toxicology&lt;br/&gt;auto-notify &lt;i&gt;new build&lt;/i&gt;]</span>
+<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>    E --&gt; K[Option <span class="dv">2</span>: NICD→DALRRD&lt;br/&gt;poisoning intelligence feed]</span>
+<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>    style A fill:<span class="co">#f99,stroke:#333</span></span>
+<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>    style G fill:<span class="co">#9f9,stroke:#333</span></span>
+<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>    style H fill:<span class="co">#9f9,stroke:#333</span></span>
+<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>    style I fill:<span class="co">#9f9,stroke:#333</span></span>
+<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>    style J fill:<span class="co">#9f9,stroke:#333</span></span>
+<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>    style K fill:<span class="co">#9f9,stroke:#333</span></span>
+<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a><span class="fu">## Five Policy Options (All Legally Feasible Today)</span></span>
+<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a><span class="fu">### Status Quo: Keep Doing What We're Doing</span></span>
+<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>**What it is:**</span>
+<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Clinicians manually file NMC notifications (often 2–4 weeks late)</span>
+<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>NHLS runs ~9,000 BChE tests/year but results don't trigger public health alerts</span>
+<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>PIH answers ~9,000 calls/year but data aren't analyzed for surveillance</span>
+<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>**Performance:**</span>
+<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Detects ~4.5 of 10 annual hotspots</span>
+<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Annual cost: R0 (no change)</span>
 <span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>**Performance:**</span>
+<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>**Bottom line:** Cheap, but ineffective.</span>
 <span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Detects an additional ~10–15 percentage points on top of Option 3a, by capturing non-cholinesterase agents (pyrethroids, phosphides, paraquat, carbamates at high doses) and confirming the specific compound.</span>
-<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Annual cost: ~R1.2M (pilot site) scaling to ~R3.6M (5-site full rollout) — funded as research-surveillance investment.</span>
-<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Implementation time: 6–12 months for pilot site build.</span>
+<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a><span class="fu">### Option 1: Activate the NHLS–NMC Data Feed (IT Implementation)</span></span>
 <span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a>**Why this matters:**</span>
+<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a>**What it is:**</span>
 <span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Agent attribution.** Option 3a tells us a poisoning happened; Option 3b tells us *which product caused it* — the prerequisite for targeted DALRRD action under Option 2.</span>
-<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Survivor evidence base.** ~10,000 survivors/year currently have agent recorded as "suspected/unknown".</span>
-<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a>**Bottom line:** Higher cost, but the only route to product-specific regulation. Funded via research streams (SAMRC, Bloomberg, Gates), not the surveillance budget.</span>
-<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a><span class="fu">### Option 4: PIH Minimum Viable Dataset + Live Dashboard (★ Recommended)</span></span>
-<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a>**What it is:**</span>
-<span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Short term (weeks 1–2):** Poisons Information Helpline (PIH) publishes a **live dashboard** of pesticide-related calls (counts, geography, suspected agent, severity, demographics) updated daily/weekly.</span>
-<span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Medium term (months 3–9):** Agree a **minimum viable dataset (MVD)** between PIH and NICD so that PIH call records can be ingested into NMC as a routine, structured data stream.</span>
-<span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Currently, PIH receives ~9,000 pesticide-related calls/year with rich clinical context but no agreed data spec for surveillance use.</span>
-<span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a>**Legal basis:** Existing PIH–NICD MOU.</span>
-<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a>**Performance:**</span>
-<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Detects ~6.1 of 10 annual hotspots (rises further once MVD integration is live)</span>
-<span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Annual cost: ~R62,000 (PIH analyst time + dashboard hosting)</span>
-<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Implementation time: **1–2 weeks** for dashboard; 3–9 months for MVD/NMC integration</span>
-<span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>**Why this is valuable:**</span>
-<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Dashboard ships in days, not months** — immediate visibility for NICD and provinces while the MVD is negotiated.</span>
-<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Complements BChE data:** PIH captures cases that never reach a laboratory.</span>
-<span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Clinical context:** PIH records suspected product, route, intent, and time-to-call — fields a BChE result cannot provide.</span>
-<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a>**Bottom line:** Lowest-hanging fruit. **Recommended joint first priority with Option 3a.**</span>
-<span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
-<span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a><span class="fu">## Why is there no "Option 5" any more?</span></span>
+<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>An **NHLS–NICD MOU for routine BChE data sharing already exists** on paper. What is missing is the **IT implementation** — a working LIS-to-NMC pipe.</span>
+<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Stand up the technical connector (HL7 / flat-file export from NHLS LIS → NMC ingest), governance, and a monthly QA review.</span>
+<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>De-identified, aggregated BChE data flows into NMC for trend analysis.</span>
+<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>**Legal basis:** Existing MOU under Section 90 of the National Health Act (2003). **No new legal instrument required.**</span>
+<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a>**Performance:**</span>
+<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Detects ~5.2 of 10 annual hotspots</span>
+<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Annual cost: ~R40,000 ongoing (QA + liaison); one-off IT setup ~R80,000</span>
+<span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Implementation time: 8–12 weeks</span>
+<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a>**Bottom line:** The cheapest fix on the menu — the agreement exists, the data exists, only the IT plumbing is missing.</span>
+<span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a><span class="fu">### Option 2: NICD→DALRRD Poisoning Intelligence Feed</span></span>
+<span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a>**What it is:**</span>
+<span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**DALRRD has formally requested** the poisoning intelligence held by NICD/NMC so that pesticide registration, labelling, and inspectorate priorities can be informed by real-world morbidity and mortality.</span>
+<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>The flow is **NICD/NMC → DALRRD** (poisoning cases by suspected product, geography, season), not the other way round.</span>
+<span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Output: a quarterly NICD→DALRRD brief plus an ad-hoc cluster alert channel.</span>
+<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a>**Legal basis:** Inter-departmental data sharing protocols; de-identified aggregate data.</span>
+<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a>**Performance:**</span>
+<span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Detects ~5.8 of 10 annual hotspots (via downstream regulatory action reducing supply)</span>
+<span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Annual cost: ~R40,000 (NICD analyst time + DALRRD liaison)</span>
+<span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Implementation time: 12 weeks</span>
+<span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a>**Bottom line:** Closes the regulator-feedback gap. DALRRD is asking for this — the cost of *not* sending it is regulatory blindness.</span>
+<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a>---</span>
 <span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>Earlier drafts bundled **provincial response coordination** into the surveillance package. The current framing separates the two:</span>
+<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a><span class="fu">### Option 3a: BChE Auto-Notification — *Capability Exists* (★ Recommended)</span></span>
 <span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Options 1–4** are the **surveillance-improvement** layer (data flows, detection, agent attribution).</span>
-<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Response, coordination, and field investigation** are handled in the parallel coordination-mechanism workstream (NICD outbreak response, provincial DoH, EHP/DALRRD inspectorate) and budgeted separately in the <span class="co">[</span><span class="ot">Costing Analysis</span><span class="co">](costing_analysis.qmd)</span>.</span>
-<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a>This avoids double-counting and lets each workstream be commissioned, funded, and evaluated on its own terms.</span>
-<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>**What it is:**</span>
+<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Configure the existing NHLS Laboratory Information System (LIS) to automatically notify NICD when **BChE results show severe poisoning** (&lt; 50% of normal).</span>
+<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Notification within **24 hours** of result validation; no clinician action required.</span>
+<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**The laboratory capability already exists** — NHLS performs ~9,000 BChE tests/year. Only the auto-notification rule and message handler need to be configured.</span>
 <span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a><span class="fu">### Full Package: All Surveillance Options Combined</span></span>
+<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>**Legal basis:** Already permitted under NMC regulations; requires only IT configuration.</span>
 <span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a>**What it is:**</span>
+<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a>**Performance:**</span>
 <span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Combine Options 1, 2, 3a, 3b, and 4 into an **integrated surveillance system** (response coordination is delivered separately).</span>
-<span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid}</span></span>
-<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a>%%| label: fig-feedback-loop</span>
-<span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a>%%| fig-cap: <span class="ot">"</span><span class="st">Proposed end-state: a closed feedback loop linking clinicians, laboratories, NICD, EHPs, DALRRD, and provincial response teams. Every actor both contributes data and receives back the action taken.</span><span class="ot">"</span></span>
-<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a>flowchart LR</span>
-<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a>    A[Clinician&lt;br/&gt;at facility] --&gt;|Electronic&lt;br/&gt;NMC notification| D[NICD&lt;br/&gt;Surveillance Unit]</span>
-<span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a>    L[NHLS Laboratory&lt;br/&gt;BChE + Toxicology] --&gt;|Auto-notify&lt;br/&gt;&lt; <span class="dv">24</span>h| D</span>
-<span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a>    P[PIH&lt;br/&gt;Quarterly summary] --&gt;|Minimum viable&lt;br/&gt;dataset| D</span>
+<span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Detects ~6.7 of 10 annual hotspots</span>
+<span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Annual cost: ~R55,000 (IT staff time)</span>
+<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Implementation time: **2–4 weeks**</span>
+<span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a>**Why this is a game-changer:**</span>
+<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Fast:** cuts notification delay from 2–4 weeks to &lt;24 hours</span>
+<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Automated:** removes reliance on clinicians filing paperwork</span>
+<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Building on existing capability:** no new lab test, no new reagent contract</span>
+<span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a>**Bottom line:** Best value for money. **Recommended first priority.**</span>
 <span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-331"><a href="#cb1-331" aria-hidden="true" tabindex="-1"></a>    D --&gt;|Cluster alert| E[Provincial EHP /&lt;br/&gt;Response Team]</span>
-<span id="cb1-332"><a href="#cb1-332" aria-hidden="true" tabindex="-1"></a>    E --&gt;|Structured&lt;br/&gt;referral| C[DALRRD&lt;br/&gt;Inspectorate]</span>
-<span id="cb1-333"><a href="#cb1-333" aria-hidden="true" tabindex="-1"></a>    C --&gt;|Enforcement /&lt;br/&gt;recall outcome| D</span>
-<span id="cb1-334"><a href="#cb1-334" aria-hidden="true" tabindex="-1"></a>    E --&gt;|Investigation&lt;br/&gt;outcome| D</span>
-<span id="cb1-335"><a href="#cb1-335" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-336"><a href="#cb1-336" aria-hidden="true" tabindex="-1"></a>    D -.Case-status&lt;br/&gt;feedback.-&gt; A</span>
-<span id="cb1-337"><a href="#cb1-337" aria-hidden="true" tabindex="-1"></a>    D -.Result-<span class="fu">use</span>&lt;br/&gt;feedback.-&gt; L</span>
-<span id="cb1-338"><a href="#cb1-338" aria-hidden="true" tabindex="-1"></a>    D -.Trend&lt;br/&gt;feedback.-&gt; P</span>
-<span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a>    C -.Regulatory&lt;br/&gt;action feedback.-&gt; A</span>
+<span id="cb1-331"><a href="#cb1-331" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb1-332"><a href="#cb1-332" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-333"><a href="#cb1-333" aria-hidden="true" tabindex="-1"></a><span class="fu">### Option 3b: Chemical Toxicology Auto-Notification — *New Capability* (★ Recommended, medium term)</span></span>
+<span id="cb1-334"><a href="#cb1-334" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-335"><a href="#cb1-335" aria-hidden="true" tabindex="-1"></a>**What it is:**</span>
+<span id="cb1-336"><a href="#cb1-336" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-337"><a href="#cb1-337" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Extend auto-notification to **chemical toxicology results** (qualitative/quantitative pesticide assays).</span>
+<span id="cb1-338"><a href="#cb1-338" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**This capability does not yet exist on live patients** — NHLS currently performs chemical toxicology *post-mortem only* (see <span class="co">[</span><span class="ot">Surveillance Concept Note — Component 6</span><span class="co">](surveillance_concept_note.qmd#sec-component-6)</span>).</span>
+<span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Phase 1: stand up live-patient toxicology at a sentinel tertiary site (CHB). Phase 2–3: expand to 4–5 sites with auto-notification wired in.</span>
 <span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a>    style A fill:<span class="co">#cce5ff,stroke:#333</span></span>
-<span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a>    style L fill:<span class="co">#cce5ff,stroke:#333</span></span>
-<span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a>    style P fill:<span class="co">#cce5ff,stroke:#333</span></span>
-<span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a>    style D fill:<span class="co">#9f9,stroke:#333,stroke-width:2px</span></span>
-<span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a>    style E fill:<span class="co">#ffd,stroke:#333</span></span>
-<span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a>    style C fill:<span class="co">#fcb,stroke:#333</span></span>
-<span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a>**Legal basis:** NMC regulations permit lab-triggered notification; no new instrument required.</span>
+<span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a>**Performance:**</span>
+<span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Detects an additional ~10–15 percentage points on top of Option 3a, by capturing non-cholinesterase agents (pyrethroids, phosphides, paraquat, carbamates at high doses) and confirming the specific compound.</span>
+<span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Annual cost: ~R1.2M (pilot site) scaling to ~R3.6M (5-site full rollout) — funded as research-surveillance investment.</span>
+<span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Implementation time: 6–12 months for pilot site build.</span>
 <span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a>**What changes vs. the status quo:**</span>
+<span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a>**Why this matters:**</span>
 <span id="cb1-350"><a href="#cb1-350" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-351"><a href="#cb1-351" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Two-way flow.** Every solid arrow into NICD is matched by a dotted feedback arrow back out.</span>
-<span id="cb1-352"><a href="#cb1-352" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**EHP → DALRRD becomes structured**, with a written referral and a logged enforcement outcome.</span>
-<span id="cb1-353"><a href="#cb1-353" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Clinicians close the loop:** they learn whether the case they notified contributed to a cluster and what regulatory action followed.</span>
-<span id="cb1-354"><a href="#cb1-354" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-355"><a href="#cb1-355" aria-hidden="true" tabindex="-1"></a>**Performance:**</span>
-<span id="cb1-356"><a href="#cb1-356" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-357"><a href="#cb1-357" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Detects ~8.3 of 10 annual hotspots</span>
-<span id="cb1-358"><a href="#cb1-358" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Annual cost: ~R237,000 (&lt; R20,000/month)</span>
-<span id="cb1-359"><a href="#cb1-359" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Implementation time: 12 weeks</span>
-<span id="cb1-360"><a href="#cb1-360" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-361"><a href="#cb1-361" aria-hidden="true" tabindex="-1"></a>**Why this is the best choice:**</span>
-<span id="cb1-362"><a href="#cb1-362" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-363"><a href="#cb1-363" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**85% effectiveness:** Dramatically better than status quo (45%)</span>
-<span id="cb1-364"><a href="#cb1-364" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Redundancy:** Multiple data sources cross-validate each other</span>
-<span id="cb1-365"><a href="#cb1-365" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Affordable:** Less than the cost of one full-time epidemiologist</span>
-<span id="cb1-366"><a href="#cb1-366" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-367"><a href="#cb1-367" aria-hidden="true" tabindex="-1"></a>**Bottom line:** If budget allows, this is the **gold standard**.</span>
-<span id="cb1-368"><a href="#cb1-368" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-369"><a href="#cb1-369" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb1-370"><a href="#cb1-370" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-371"><a href="#cb1-371" aria-hidden="true" tabindex="-1"></a><span class="fu">## Comparison Table</span></span>
-<span id="cb1-372"><a href="#cb1-372" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-373"><a href="#cb1-373" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Option <span class="pp">|</span> Annual Cost <span class="pp">|</span> Hotspots Detected <span class="pp">|</span> % Improvement vs. Status Quo <span class="pp">|</span> Avoided Burden Cost <span class="pp">|</span> Implementation <span class="pp">|</span></span>
-<span id="cb1-374"><a href="#cb1-374" aria-hidden="true" tabindex="-1"></a><span class="pp">|:-------|------------:|------------------:|-----------------------------:|--------------------:|:-------------|</span></span>
-<span id="cb1-375"><a href="#cb1-375" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Status Quo** <span class="pp">|</span> R0 <span class="pp">|</span> 4.5 / 10 <span class="pp">|</span> — <span class="pp">|</span> — <span class="pp">|</span> — <span class="pp">|</span></span>
-<span id="cb1-376"><a href="#cb1-376" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Option 1: Activate NHLS–NMC IT feed (MOU exists) <span class="pp">|</span> R40,000 ongoing + R80k one-off <span class="pp">|</span> 5.2 / 10 <span class="pp">|</span> +16% <span class="pp">|</span> ~R49M/year <span class="pp">|</span> 8–12 weeks <span class="pp">|</span></span>
-<span id="cb1-377"><a href="#cb1-377" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Option 2: NICD→DALRRD intelligence feed <span class="pp">|</span> R40,000 <span class="pp">|</span> 5.8 / 10 <span class="pp">|</span> +29% <span class="pp">|</span> ~R90M/year <span class="pp">|</span> 12 weeks <span class="pp">|</span></span>
-<span id="cb1-378"><a href="#cb1-378" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Option 3a: BChE auto-notify (capability exists)** | **R55,000** | **6.7 / 10** | **+49%** | **~R150M/year** | **2–4 weeks** <span class="pp">|</span></span>
-<span id="cb1-379"><a href="#cb1-379" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Option 3b: Toxicology auto-notify (new build, sentinel) <span class="pp">|</span> R1.2M pilot → R3.6M full <span class="pp">|</span> +10–15pp on top of 3a <span class="pp">|</span> additional <span class="pp">|</span> additional <span class="pp">|</span> 6–12 months pilot <span class="pp">|</span></span>
-<span id="cb1-380"><a href="#cb1-380" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Option 4: PIH live dashboard + MVD** | **R62,000** | **6.1 / 10** | **+36%** | **~R110M/year** | **1–2 weeks (dashboard) / 3–9 months (MVD)** <span class="pp">|</span></span>
-<span id="cb1-381"><a href="#cb1-381" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Full Surveillance Package (1+2+3a+4)** | **~R197,000** | **~8.0 / 10** | **+78%** | **~R245M/year** | **12 weeks** <span class="pp">|</span></span>
-<span id="cb1-382"><a href="#cb1-382" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Full Package + 3b (with sentinel toxicology) <span class="pp">|</span> ~R1.4M <span class="pp">|</span> ~8.5 / 10 <span class="pp">|</span> +89% <span class="pp">|</span> ~R270M/year <span class="pp">|</span> 6–12 months <span class="pp">|</span></span>
+<span id="cb1-351"><a href="#cb1-351" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Agent attribution.** Option 3a tells us a poisoning happened; Option 3b tells us *which product caused it* — the prerequisite for targeted DALRRD action under Option 2.</span>
+<span id="cb1-352"><a href="#cb1-352" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Survivor evidence base.** ~10,000 survivors/year currently have agent recorded as "suspected/unknown".</span>
+<span id="cb1-353"><a href="#cb1-353" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-354"><a href="#cb1-354" aria-hidden="true" tabindex="-1"></a>**Bottom line:** Higher cost, but the only route to product-specific regulation. Funded via research streams (SAMRC, Bloomberg, Gates), not the surveillance budget.</span>
+<span id="cb1-355"><a href="#cb1-355" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-356"><a href="#cb1-356" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb1-357"><a href="#cb1-357" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-358"><a href="#cb1-358" aria-hidden="true" tabindex="-1"></a><span class="fu">### Option 4: PIH Minimum Viable Dataset + Live Dashboard (★ Recommended)</span></span>
+<span id="cb1-359"><a href="#cb1-359" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-360"><a href="#cb1-360" aria-hidden="true" tabindex="-1"></a>**What it is:**</span>
+<span id="cb1-361"><a href="#cb1-361" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-362"><a href="#cb1-362" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Short term (weeks 1–2):** Poisons Information Helpline (PIH) publishes a **live dashboard** of pesticide-related calls (counts, geography, suspected agent, severity, demographics) updated daily/weekly.</span>
+<span id="cb1-363"><a href="#cb1-363" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Medium term (months 3–9):** Agree a **minimum viable dataset (MVD)** between PIH and NICD so that PIH call records can be ingested into NMC as a routine, structured data stream.</span>
+<span id="cb1-364"><a href="#cb1-364" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Currently, PIH receives ~9,000 pesticide-related calls/year with rich clinical context but no agreed data spec for surveillance use.</span>
+<span id="cb1-365"><a href="#cb1-365" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-366"><a href="#cb1-366" aria-hidden="true" tabindex="-1"></a>**Legal basis:** Existing PIH–NICD MOU.</span>
+<span id="cb1-367"><a href="#cb1-367" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-368"><a href="#cb1-368" aria-hidden="true" tabindex="-1"></a>**Performance:**</span>
+<span id="cb1-369"><a href="#cb1-369" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-370"><a href="#cb1-370" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Detects ~6.1 of 10 annual hotspots (rises further once MVD integration is live)</span>
+<span id="cb1-371"><a href="#cb1-371" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Annual cost: ~R62,000 (PIH analyst time + dashboard hosting)</span>
+<span id="cb1-372"><a href="#cb1-372" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Implementation time: **1–2 weeks** for dashboard; 3–9 months for MVD/NMC integration</span>
+<span id="cb1-373"><a href="#cb1-373" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-374"><a href="#cb1-374" aria-hidden="true" tabindex="-1"></a>**Why this is valuable:**</span>
+<span id="cb1-375"><a href="#cb1-375" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-376"><a href="#cb1-376" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Dashboard ships in days, not months** — immediate visibility for NICD and provinces while the MVD is negotiated.</span>
+<span id="cb1-377"><a href="#cb1-377" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Complements BChE data:** PIH captures cases that never reach a laboratory.</span>
+<span id="cb1-378"><a href="#cb1-378" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Clinical context:** PIH records suspected product, route, intent, and time-to-call — fields a BChE result cannot provide.</span>
+<span id="cb1-379"><a href="#cb1-379" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-380"><a href="#cb1-380" aria-hidden="true" tabindex="-1"></a>**Bottom line:** Lowest-hanging fruit. **Recommended joint first priority with Option 3a.**</span>
+<span id="cb1-381"><a href="#cb1-381" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-382"><a href="#cb1-382" aria-hidden="true" tabindex="-1"></a>---</span>
 <span id="cb1-383"><a href="#cb1-383" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-384"><a href="#cb1-384" aria-hidden="true" tabindex="-1"></a>: Base-case comparison — avoided burden cost uses η = 0.30 against a ~R2.3B/year true burden. Response and coordination costs are budgeted separately. See <span class="co">[</span><span class="ot">Decision Model — Economic Analysis</span><span class="co">](decision_model.qmd#sec-burden-economics)</span>. {.striped .hover}</span>
-<span id="cb1-385"><a href="#cb1-385" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-386"><a href="#cb1-386" aria-hidden="true" tabindex="-1"></a><span class="fu">## Sensitivity Analysis: What If We're Wrong?</span></span>
-<span id="cb1-387"><a href="#cb1-387" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-388"><a href="#cb1-388" aria-hidden="true" tabindex="-1"></a>All cost and effectiveness estimates are based on **placeholder assumptions** (the model will be updated with real data from the pilot). But even under pessimistic scenarios, the recommendations hold:</span>
-<span id="cb1-389"><a href="#cb1-389" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-390"><a href="#cb1-390" aria-hidden="true" tabindex="-1"></a><span class="fu">### Pessimistic Scenario (Low Effectiveness, High Cost)</span></span>
+<span id="cb1-384"><a href="#cb1-384" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
+<span id="cb1-385"><a href="#cb1-385" aria-hidden="true" tabindex="-1"></a><span class="fu">## Why is there no "Option 5" any more?</span></span>
+<span id="cb1-386"><a href="#cb1-386" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-387"><a href="#cb1-387" aria-hidden="true" tabindex="-1"></a>Earlier drafts bundled **provincial response coordination** into the surveillance package. The current framing separates the two:</span>
+<span id="cb1-388"><a href="#cb1-388" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-389"><a href="#cb1-389" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Options 1–4** are the **surveillance-improvement** layer (data flows, detection, agent attribution).</span>
+<span id="cb1-390"><a href="#cb1-390" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Response, coordination, and field investigation** are handled in the parallel coordination-mechanism workstream (NICD outbreak response, provincial DoH, EHP/DALRRD inspectorate) and budgeted separately in the <span class="co">[</span><span class="ot">Costing Analysis</span><span class="co">](costing_analysis.qmd)</span>.</span>
 <span id="cb1-391"><a href="#cb1-391" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-392"><a href="#cb1-392" aria-hidden="true" tabindex="-1"></a>Assume:</span>
-<span id="cb1-393"><a href="#cb1-393" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-394"><a href="#cb1-394" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Options are only 50% as effective as base-case estimates</span>
-<span id="cb1-395"><a href="#cb1-395" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Costs are 2× higher than budgeted</span>
+<span id="cb1-392"><a href="#cb1-392" aria-hidden="true" tabindex="-1"></a>This avoids double-counting and lets each workstream be commissioned, funded, and evaluated on its own terms.</span>
+<span id="cb1-393"><a href="#cb1-393" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-394"><a href="#cb1-394" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-395"><a href="#cb1-395" aria-hidden="true" tabindex="-1"></a><span class="fu">### Full Package: All Surveillance Options Combined</span></span>
 <span id="cb1-396"><a href="#cb1-396" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-397"><a href="#cb1-397" aria-hidden="true" tabindex="-1"></a>**Result:**</span>
+<span id="cb1-397"><a href="#cb1-397" aria-hidden="true" tabindex="-1"></a>**What it is:**</span>
 <span id="cb1-398"><a href="#cb1-398" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-399"><a href="#cb1-399" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Option 3 (BChE auto-notify) still improves detection by +12% for ~R110,000/year</span>
-<span id="cb1-400"><a href="#cb1-400" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Full Package still improves detection by +29% for ~R474,000/year</span>
-<span id="cb1-401"><a href="#cb1-401" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-402"><a href="#cb1-402" aria-hidden="true" tabindex="-1"></a>**Conclusion:** Even if we're substantially wrong, the options remain cost-effective.</span>
-<span id="cb1-403"><a href="#cb1-403" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-404"><a href="#cb1-404" aria-hidden="true" tabindex="-1"></a><span class="fu">### Optimistic Scenario (High Effectiveness, Low Cost)</span></span>
-<span id="cb1-405"><a href="#cb1-405" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-406"><a href="#cb1-406" aria-hidden="true" tabindex="-1"></a>Assume:</span>
-<span id="cb1-407"><a href="#cb1-407" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-408"><a href="#cb1-408" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Options are 150% as effective as base-case estimates</span>
-<span id="cb1-409"><a href="#cb1-409" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Costs are 50% lower than budgeted</span>
+<span id="cb1-399"><a href="#cb1-399" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Combine Options 1, 2, 3a, 3b, and 4 into an **integrated surveillance system** (response coordination is delivered separately).</span>
+<span id="cb1-400"><a href="#cb1-400" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-403"><a href="#cb1-403" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid}</span></span>
+<span id="cb1-404"><a href="#cb1-404" aria-hidden="true" tabindex="-1"></a>%%| label: fig-feedback-loop</span>
+<span id="cb1-405"><a href="#cb1-405" aria-hidden="true" tabindex="-1"></a>%%| fig-cap: <span class="ot">"</span><span class="st">Proposed end-state: a closed feedback loop linking clinicians, laboratories, NICD, EHPs, DALRRD, and provincial response teams. Every actor both contributes data and receives back the action taken.</span><span class="ot">"</span></span>
+<span id="cb1-406"><a href="#cb1-406" aria-hidden="true" tabindex="-1"></a>flowchart LR</span>
+<span id="cb1-407"><a href="#cb1-407" aria-hidden="true" tabindex="-1"></a>    A[Clinician&lt;br/&gt;at facility] --&gt;|Electronic&lt;br/&gt;NMC notification| D[NICD&lt;br/&gt;Surveillance Unit]</span>
+<span id="cb1-408"><a href="#cb1-408" aria-hidden="true" tabindex="-1"></a>    L[NHLS Laboratory&lt;br/&gt;BChE + Toxicology] --&gt;|Auto-notify&lt;br/&gt;&lt; <span class="dv">24</span>h| D</span>
+<span id="cb1-409"><a href="#cb1-409" aria-hidden="true" tabindex="-1"></a>    P[PIH&lt;br/&gt;Quarterly summary] --&gt;|Minimum viable&lt;br/&gt;dataset| D</span>
 <span id="cb1-410"><a href="#cb1-410" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-411"><a href="#cb1-411" aria-hidden="true" tabindex="-1"></a>**Result:**</span>
-<span id="cb1-412"><a href="#cb1-412" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-413"><a href="#cb1-413" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Option 3 improves detection by +86% for ~R28,000/year</span>
-<span id="cb1-414"><a href="#cb1-414" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Full Package achieves near-perfect detection (9.5 / 10 hotspots) for ~R119,000/year</span>
+<span id="cb1-411"><a href="#cb1-411" aria-hidden="true" tabindex="-1"></a>    D --&gt;|Cluster alert| E[Provincial EHP /&lt;br/&gt;Response Team]</span>
+<span id="cb1-412"><a href="#cb1-412" aria-hidden="true" tabindex="-1"></a>    E --&gt;|Structured&lt;br/&gt;referral| C[DALRRD&lt;br/&gt;Inspectorate]</span>
+<span id="cb1-413"><a href="#cb1-413" aria-hidden="true" tabindex="-1"></a>    C --&gt;|Enforcement /&lt;br/&gt;recall outcome| D</span>
+<span id="cb1-414"><a href="#cb1-414" aria-hidden="true" tabindex="-1"></a>    E --&gt;|Investigation&lt;br/&gt;outcome| D</span>
 <span id="cb1-415"><a href="#cb1-415" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-416"><a href="#cb1-416" aria-hidden="true" tabindex="-1"></a>**Conclusion:** There's significant upside potential if implementation goes smoothly.</span>
-<span id="cb1-417"><a href="#cb1-417" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-418"><a href="#cb1-418" aria-hidden="true" tabindex="-1"></a><span class="fu">## Decision Framework for MAC/NDoH</span></span>
-<span id="cb1-419"><a href="#cb1-419" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-420"><a href="#cb1-420" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip icon=false}</span>
-<span id="cb1-421"><a href="#cb1-421" aria-hidden="true" tabindex="-1"></a><span class="fu">## Three Decision Paths</span></span>
-<span id="cb1-422"><a href="#cb1-422" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-423"><a href="#cb1-423" aria-hidden="true" tabindex="-1"></a><span class="fu">### Path 1: Minimal Investment, Maximum Speed</span></span>
-<span id="cb1-424"><a href="#cb1-424" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-425"><a href="#cb1-425" aria-hidden="true" tabindex="-1"></a>**Recommendation:** Stand up the **Option 4 PIH live dashboard** immediately</span>
-<span id="cb1-426"><a href="#cb1-426" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-427"><a href="#cb1-427" aria-hidden="true" tabindex="-1"></a>**Why:**</span>
+<span id="cb1-416"><a href="#cb1-416" aria-hidden="true" tabindex="-1"></a>    D -.Case-status&lt;br/&gt;feedback.-&gt; A</span>
+<span id="cb1-417"><a href="#cb1-417" aria-hidden="true" tabindex="-1"></a>    D -.Result-<span class="fu">use</span>&lt;br/&gt;feedback.-&gt; L</span>
+<span id="cb1-418"><a href="#cb1-418" aria-hidden="true" tabindex="-1"></a>    D -.Trend&lt;br/&gt;feedback.-&gt; P</span>
+<span id="cb1-419"><a href="#cb1-419" aria-hidden="true" tabindex="-1"></a>    C -.Regulatory&lt;br/&gt;action feedback.-&gt; A</span>
+<span id="cb1-420"><a href="#cb1-420" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-421"><a href="#cb1-421" aria-hidden="true" tabindex="-1"></a>    style A fill:<span class="co">#cce5ff,stroke:#333</span></span>
+<span id="cb1-422"><a href="#cb1-422" aria-hidden="true" tabindex="-1"></a>    style L fill:<span class="co">#cce5ff,stroke:#333</span></span>
+<span id="cb1-423"><a href="#cb1-423" aria-hidden="true" tabindex="-1"></a>    style P fill:<span class="co">#cce5ff,stroke:#333</span></span>
+<span id="cb1-424"><a href="#cb1-424" aria-hidden="true" tabindex="-1"></a>    style D fill:<span class="co">#9f9,stroke:#333,stroke-width:2px</span></span>
+<span id="cb1-425"><a href="#cb1-425" aria-hidden="true" tabindex="-1"></a>    style E fill:<span class="co">#ffd,stroke:#333</span></span>
+<span id="cb1-426"><a href="#cb1-426" aria-hidden="true" tabindex="-1"></a>    style C fill:<span class="co">#fcb,stroke:#333</span></span>
+<span id="cb1-427"><a href="#cb1-427" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb1-428"><a href="#cb1-428" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-429"><a href="#cb1-429" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Can be launched in **1–2 weeks**</span>
-<span id="cb1-430"><a href="#cb1-430" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Costs only ~R62,000/year</span>
-<span id="cb1-431"><a href="#cb1-431" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>No new IT infrastructure or legal review</span>
-<span id="cb1-432"><a href="#cb1-432" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Improves detection by +36%</span>
-<span id="cb1-433"><a href="#cb1-433" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-434"><a href="#cb1-434" aria-hidden="true" tabindex="-1"></a>**Who should choose this:** Provinces or sponsors with limited budget or IT capacity</span>
-<span id="cb1-435"><a href="#cb1-435" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-436"><a href="#cb1-436" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb1-437"><a href="#cb1-437" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-438"><a href="#cb1-438" aria-hidden="true" tabindex="-1"></a><span class="fu">### Path 2: Best Value for Money</span></span>
-<span id="cb1-439"><a href="#cb1-439" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-440"><a href="#cb1-440" aria-hidden="true" tabindex="-1"></a>**Recommendation:** Implement **Option 3a (BChE auto-notify)** — capability already exists, only IT config needed</span>
-<span id="cb1-441"><a href="#cb1-441" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-442"><a href="#cb1-442" aria-hidden="true" tabindex="-1"></a>**Why:**</span>
-<span id="cb1-443"><a href="#cb1-443" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-444"><a href="#cb1-444" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Best effectiveness per rand spent (+49% for R55,000/year)</span>
-<span id="cb1-445"><a href="#cb1-445" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Fully automated once configured</span>
-<span id="cb1-446"><a href="#cb1-446" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Operational in 2–4 weeks</span>
-<span id="cb1-447"><a href="#cb1-447" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-448"><a href="#cb1-448" aria-hidden="true" tabindex="-1"></a>**Who should choose this:** Provinces with NHLS IT support available</span>
-<span id="cb1-449"><a href="#cb1-449" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-450"><a href="#cb1-450" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb1-451"><a href="#cb1-451" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-452"><a href="#cb1-452" aria-hidden="true" tabindex="-1"></a><span class="fu">### Path 3: Comprehensive Surveillance Solution</span></span>
-<span id="cb1-453"><a href="#cb1-453" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-454"><a href="#cb1-454" aria-hidden="true" tabindex="-1"></a>**Recommendation:** Implement **Full Surveillance Package (Options 1 + 2 + 3a + 4)**</span>
-<span id="cb1-455"><a href="#cb1-455" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-456"><a href="#cb1-456" aria-hidden="true" tabindex="-1"></a>**Why:**</span>
-<span id="cb1-457"><a href="#cb1-457" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-458"><a href="#cb1-458" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Achieves ~80% effectiveness (vs. 45% status quo)</span>
-<span id="cb1-459"><a href="#cb1-459" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Multiple data sources cross-validate; DALRRD closes the regulatory loop</span>
-<span id="cb1-460"><a href="#cb1-460" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Still affordable (~R197,000/year ongoing)</span>
-<span id="cb1-461"><a href="#cb1-461" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Option 3b (sentinel toxicology) added later via research funding</span>
-<span id="cb1-462"><a href="#cb1-462" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-463"><a href="#cb1-463" aria-hidden="true" tabindex="-1"></a>**Who should choose this:** National rollout; provinces with adequate budget</span>
-<span id="cb1-464"><a href="#cb1-464" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-429"><a href="#cb1-429" aria-hidden="true" tabindex="-1"></a>**What changes vs. the status quo:**</span>
+<span id="cb1-430"><a href="#cb1-430" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-431"><a href="#cb1-431" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Two-way flow.** Every solid arrow into NICD is matched by a dotted feedback arrow back out.</span>
+<span id="cb1-432"><a href="#cb1-432" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**EHP → DALRRD becomes structured**, with a written referral and a logged enforcement outcome.</span>
+<span id="cb1-433"><a href="#cb1-433" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Clinicians close the loop:** they learn whether the case they notified contributed to a cluster and what regulatory action followed.</span>
+<span id="cb1-434"><a href="#cb1-434" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-435"><a href="#cb1-435" aria-hidden="true" tabindex="-1"></a>**Performance:**</span>
+<span id="cb1-436"><a href="#cb1-436" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-437"><a href="#cb1-437" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Detects ~8.3 of 10 annual hotspots</span>
+<span id="cb1-438"><a href="#cb1-438" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Annual cost: ~R237,000 (&lt; R20,000/month)</span>
+<span id="cb1-439"><a href="#cb1-439" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Implementation time: 12 weeks</span>
+<span id="cb1-440"><a href="#cb1-440" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-441"><a href="#cb1-441" aria-hidden="true" tabindex="-1"></a>**Why this is the best choice:**</span>
+<span id="cb1-442"><a href="#cb1-442" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-443"><a href="#cb1-443" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**85% effectiveness:** Dramatically better than status quo (45%)</span>
+<span id="cb1-444"><a href="#cb1-444" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Redundancy:** Multiple data sources cross-validate each other</span>
+<span id="cb1-445"><a href="#cb1-445" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Affordable:** Less than the cost of one full-time epidemiologist</span>
+<span id="cb1-446"><a href="#cb1-446" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-447"><a href="#cb1-447" aria-hidden="true" tabindex="-1"></a>**Bottom line:** If budget allows, this is the **gold standard**.</span>
+<span id="cb1-448"><a href="#cb1-448" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-449"><a href="#cb1-449" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb1-450"><a href="#cb1-450" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-451"><a href="#cb1-451" aria-hidden="true" tabindex="-1"></a><span class="fu">## Comparison Table</span></span>
+<span id="cb1-452"><a href="#cb1-452" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-453"><a href="#cb1-453" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Option <span class="pp">|</span> Annual Cost <span class="pp">|</span> Hotspots Detected <span class="pp">|</span> % Improvement vs. Status Quo <span class="pp">|</span> Avoided Burden Cost <span class="pp">|</span> Implementation <span class="pp">|</span></span>
+<span id="cb1-454"><a href="#cb1-454" aria-hidden="true" tabindex="-1"></a><span class="pp">|:-------|------------:|------------------:|-----------------------------:|--------------------:|:-------------|</span></span>
+<span id="cb1-455"><a href="#cb1-455" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Status Quo** <span class="pp">|</span> R0 <span class="pp">|</span> 4.5 / 10 <span class="pp">|</span> — <span class="pp">|</span> — <span class="pp">|</span> — <span class="pp">|</span></span>
+<span id="cb1-456"><a href="#cb1-456" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Option 1: Activate NHLS–NMC IT feed (MOU exists) <span class="pp">|</span> R40,000 ongoing + R80k one-off <span class="pp">|</span> 5.2 / 10 <span class="pp">|</span> +16% <span class="pp">|</span> ~R49M/year <span class="pp">|</span> 8–12 weeks <span class="pp">|</span></span>
+<span id="cb1-457"><a href="#cb1-457" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Option 2: NICD→DALRRD intelligence feed <span class="pp">|</span> R40,000 <span class="pp">|</span> 5.8 / 10 <span class="pp">|</span> +29% <span class="pp">|</span> ~R90M/year <span class="pp">|</span> 12 weeks <span class="pp">|</span></span>
+<span id="cb1-458"><a href="#cb1-458" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Option 3a: BChE auto-notify (capability exists)** | **R55,000** | **6.7 / 10** | **+49%** | **~R150M/year** | **2–4 weeks** <span class="pp">|</span></span>
+<span id="cb1-459"><a href="#cb1-459" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Option 3b: Toxicology auto-notify (new build, sentinel) <span class="pp">|</span> R1.2M pilot → R3.6M full <span class="pp">|</span> +10–15pp on top of 3a <span class="pp">|</span> additional <span class="pp">|</span> additional <span class="pp">|</span> 6–12 months pilot <span class="pp">|</span></span>
+<span id="cb1-460"><a href="#cb1-460" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Option 4: PIH live dashboard + MVD** | **R62,000** | **6.1 / 10** | **+36%** | **~R110M/year** | **1–2 weeks (dashboard) / 3–9 months (MVD)** <span class="pp">|</span></span>
+<span id="cb1-461"><a href="#cb1-461" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Full Surveillance Package (1+2+3a+4)** | **~R197,000** | **~8.0 / 10** | **+78%** | **~R245M/year** | **12 weeks** <span class="pp">|</span></span>
+<span id="cb1-462"><a href="#cb1-462" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Full Package + 3b (with sentinel toxicology) <span class="pp">|</span> ~R1.4M <span class="pp">|</span> ~8.5 / 10 <span class="pp">|</span> +89% <span class="pp">|</span> ~R270M/year <span class="pp">|</span> 6–12 months <span class="pp">|</span></span>
+<span id="cb1-463"><a href="#cb1-463" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-464"><a href="#cb1-464" aria-hidden="true" tabindex="-1"></a>: Base-case comparison — avoided burden cost uses η = 0.30 against a ~R2.3B/year true burden. Response and coordination costs are budgeted separately. See <span class="co">[</span><span class="ot">Decision Model — Economic Analysis</span><span class="co">](decision_model.qmd#sec-burden-economics)</span>. {.striped .hover}</span>
 <span id="cb1-465"><a href="#cb1-465" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-466"><a href="#cb1-466" aria-hidden="true" tabindex="-1"></a><span class="fu">## Legal and Ethical Considerations</span></span>
+<span id="cb1-466"><a href="#cb1-466" aria-hidden="true" tabindex="-1"></a><span class="fu">## Sensitivity Analysis: What If We're Wrong?</span></span>
 <span id="cb1-467"><a href="#cb1-467" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-468"><a href="#cb1-468" aria-hidden="true" tabindex="-1"></a><span class="fu">### Is This Legal?</span></span>
+<span id="cb1-468"><a href="#cb1-468" aria-hidden="true" tabindex="-1"></a>All cost and effectiveness estimates are based on **placeholder assumptions** (the model will be updated with real data from the pilot). But even under pessimistic scenarios, the recommendations hold:</span>
 <span id="cb1-469"><a href="#cb1-469" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-470"><a href="#cb1-470" aria-hidden="true" tabindex="-1"></a>**Yes.** All options can be implemented under existing law:</span>
+<span id="cb1-470"><a href="#cb1-470" aria-hidden="true" tabindex="-1"></a><span class="fu">### Pessimistic Scenario (Low Effectiveness, High Cost)</span></span>
 <span id="cb1-471"><a href="#cb1-471" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-472"><a href="#cb1-472" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Section 90 of the National Health Act (2003):** Permits inter-agency data sharing for public health purposes</span>
-<span id="cb1-473"><a href="#cb1-473" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**NMC Regulations:** Allow laboratory-triggered notifications (Option 3)</span>
-<span id="cb1-474"><a href="#cb1-474" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Existing MOUs:** PIH-NICD collaboration already established (Option 4)</span>
-<span id="cb1-475"><a href="#cb1-475" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-476"><a href="#cb1-476" aria-hidden="true" tabindex="-1"></a>**No new legislation required.**</span>
-<span id="cb1-477"><a href="#cb1-477" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-478"><a href="#cb1-478" aria-hidden="true" tabindex="-1"></a><span class="fu">### What About Privacy?</span></span>
-<span id="cb1-479"><a href="#cb1-479" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-480"><a href="#cb1-480" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>All data sharing follows **POPIA (Protection of Personal Information Act)** requirements</span>
-<span id="cb1-481"><a href="#cb1-481" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Laboratory auto-notifications include only:</span>
-<span id="cb1-482"><a href="#cb1-482" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Patient demographics (age, sex, facility)</span>
-<span id="cb1-483"><a href="#cb1-483" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>BChE value</span>
-<span id="cb1-484"><a href="#cb1-484" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Test date</span>
-<span id="cb1-485"><a href="#cb1-485" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**No names, ID numbers, or contact details** are shared</span>
-<span id="cb1-486"><a href="#cb1-486" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>De-identification protocols apply to all aggregated reports</span>
+<span id="cb1-472"><a href="#cb1-472" aria-hidden="true" tabindex="-1"></a>Assume:</span>
+<span id="cb1-473"><a href="#cb1-473" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-474"><a href="#cb1-474" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Options are only 50% as effective as base-case estimates</span>
+<span id="cb1-475"><a href="#cb1-475" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Costs are 2× higher than budgeted</span>
+<span id="cb1-476"><a href="#cb1-476" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-477"><a href="#cb1-477" aria-hidden="true" tabindex="-1"></a>**Result:**</span>
+<span id="cb1-478"><a href="#cb1-478" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-479"><a href="#cb1-479" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Option 3 (BChE auto-notify) still improves detection by +12% for ~R110,000/year</span>
+<span id="cb1-480"><a href="#cb1-480" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Full Package still improves detection by +29% for ~R474,000/year</span>
+<span id="cb1-481"><a href="#cb1-481" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-482"><a href="#cb1-482" aria-hidden="true" tabindex="-1"></a>**Conclusion:** Even if we're substantially wrong, the options remain cost-effective.</span>
+<span id="cb1-483"><a href="#cb1-483" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-484"><a href="#cb1-484" aria-hidden="true" tabindex="-1"></a><span class="fu">### Optimistic Scenario (High Effectiveness, Low Cost)</span></span>
+<span id="cb1-485"><a href="#cb1-485" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-486"><a href="#cb1-486" aria-hidden="true" tabindex="-1"></a>Assume:</span>
 <span id="cb1-487"><a href="#cb1-487" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-488"><a href="#cb1-488" aria-hidden="true" tabindex="-1"></a><span class="fu">### What If We Do Nothing?</span></span>
-<span id="cb1-489"><a href="#cb1-489" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-490"><a href="#cb1-490" aria-hidden="true" tabindex="-1"></a>**Risks of maintaining the status quo:**</span>
-<span id="cb1-491"><a href="#cb1-491" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-492"><a href="#cb1-492" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Ongoing under-detection** of hotspots → preventable deaths continue</span>
-<span id="cb1-493"><a href="#cb1-493" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Wasted data:** NHLS and PIH collect valuable information that goes unused</span>
-<span id="cb1-494"><a href="#cb1-494" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Missed clusters:** Contaminated food sources, illegal pesticide sales, or occupational hazards remain undetected</span>
-<span id="cb1-495"><a href="#cb1-495" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**International embarrassment:** South Africa's surveillance system lags behind regional peers (Botswana, Kenya have better pesticide monitoring)</span>
-<span id="cb1-496"><a href="#cb1-496" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-497"><a href="#cb1-497" aria-hidden="true" tabindex="-1"></a><span class="fu">## Next Steps</span></span>
-<span id="cb1-498"><a href="#cb1-498" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-499"><a href="#cb1-499" aria-hidden="true" tabindex="-1"></a><span class="fu">### For National Leadership (MAC, NDoH)</span></span>
-<span id="cb1-500"><a href="#cb1-500" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-501"><a href="#cb1-501" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Review this brief** and the full <span class="co">[</span><span class="ot">decision analysis report</span><span class="co">](../analysis_report_v2.html)</span></span>
-<span id="cb1-502"><a href="#cb1-502" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Select a preferred option** (or Full Package)</span>
-<span id="cb1-503"><a href="#cb1-503" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Approve pilot funding** (~R120,000 for 6-month pilot in 2–3 provinces)</span>
-<span id="cb1-504"><a href="#cb1-504" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Designate a lead agency** (recommend NICD as national coordinator)</span>
-<span id="cb1-505"><a href="#cb1-505" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-506"><a href="#cb1-506" aria-hidden="true" tabindex="-1"></a><span class="fu">### For Provincial Leadership</span></span>
-<span id="cb1-507"><a href="#cb1-507" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-508"><a href="#cb1-508" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Identify a surveillance focal point** (existing epidemiologist or environmental health officer)</span>
-<span id="cb1-509"><a href="#cb1-509" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Assess local NHLS capacity** for BChE auto-notification (Option 3)</span>
-<span id="cb1-510"><a href="#cb1-510" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Allocate budget** for pilot participation (~R40,000–R80,000 depending on options selected)</span>
-<span id="cb1-511"><a href="#cb1-511" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-512"><a href="#cb1-512" aria-hidden="true" tabindex="-1"></a><span class="fu">### For NICD/NHLS/PIH</span></span>
+<span id="cb1-488"><a href="#cb1-488" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Options are 150% as effective as base-case estimates</span>
+<span id="cb1-489"><a href="#cb1-489" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Costs are 50% lower than budgeted</span>
+<span id="cb1-490"><a href="#cb1-490" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-491"><a href="#cb1-491" aria-hidden="true" tabindex="-1"></a>**Result:**</span>
+<span id="cb1-492"><a href="#cb1-492" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-493"><a href="#cb1-493" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Option 3 improves detection by +86% for ~R28,000/year</span>
+<span id="cb1-494"><a href="#cb1-494" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Full Package achieves near-perfect detection (9.5 / 10 hotspots) for ~R119,000/year</span>
+<span id="cb1-495"><a href="#cb1-495" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-496"><a href="#cb1-496" aria-hidden="true" tabindex="-1"></a>**Conclusion:** There's significant upside potential if implementation goes smoothly.</span>
+<span id="cb1-497"><a href="#cb1-497" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-498"><a href="#cb1-498" aria-hidden="true" tabindex="-1"></a><span class="fu">## Decision Framework for MAC/NDoH</span></span>
+<span id="cb1-499"><a href="#cb1-499" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-500"><a href="#cb1-500" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip icon=false}</span>
+<span id="cb1-501"><a href="#cb1-501" aria-hidden="true" tabindex="-1"></a><span class="fu">## Three Decision Paths</span></span>
+<span id="cb1-502"><a href="#cb1-502" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-503"><a href="#cb1-503" aria-hidden="true" tabindex="-1"></a><span class="fu">### Path 1: Minimal Investment, Maximum Speed</span></span>
+<span id="cb1-504"><a href="#cb1-504" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-505"><a href="#cb1-505" aria-hidden="true" tabindex="-1"></a>**Recommendation:** Stand up the **Option 4 PIH live dashboard** immediately</span>
+<span id="cb1-506"><a href="#cb1-506" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-507"><a href="#cb1-507" aria-hidden="true" tabindex="-1"></a>**Why:**</span>
+<span id="cb1-508"><a href="#cb1-508" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-509"><a href="#cb1-509" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Can be launched in **1–2 weeks**</span>
+<span id="cb1-510"><a href="#cb1-510" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Costs only ~R62,000/year</span>
+<span id="cb1-511"><a href="#cb1-511" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>No new IT infrastructure or legal review</span>
+<span id="cb1-512"><a href="#cb1-512" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Improves detection by +36%</span>
 <span id="cb1-513"><a href="#cb1-513" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-514"><a href="#cb1-514" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Finalize MOUs** for data sharing (Months 1–2)</span>
-<span id="cb1-515"><a href="#cb1-515" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Configure auto-notification** in pilot provinces (Months 2–3)</span>
-<span id="cb1-516"><a href="#cb1-516" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Launch pilot** (Month 3)</span>
-<span id="cb1-517"><a href="#cb1-517" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Monitor and evaluate** (Months 3–6)</span>
-<span id="cb1-518"><a href="#cb1-518" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>**Report findings to MAC** (Month 6)</span>
+<span id="cb1-514"><a href="#cb1-514" aria-hidden="true" tabindex="-1"></a>**Who should choose this:** Provinces or sponsors with limited budget or IT capacity</span>
+<span id="cb1-515"><a href="#cb1-515" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-516"><a href="#cb1-516" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb1-517"><a href="#cb1-517" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-518"><a href="#cb1-518" aria-hidden="true" tabindex="-1"></a><span class="fu">### Path 2: Best Value for Money</span></span>
 <span id="cb1-519"><a href="#cb1-519" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-520"><a href="#cb1-520" aria-hidden="true" tabindex="-1"></a><span class="fu">## Timeline</span></span>
+<span id="cb1-520"><a href="#cb1-520" aria-hidden="true" tabindex="-1"></a>**Recommendation:** Implement **Option 3a (BChE auto-notify)** — capability already exists, only IT config needed</span>
 <span id="cb1-521"><a href="#cb1-521" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-524"><a href="#cb1-524" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid}</span></span>
-<span id="cb1-525"><a href="#cb1-525" aria-hidden="true" tabindex="-1"></a>%%| label: fig-timeline</span>
-<span id="cb1-526"><a href="#cb1-526" aria-hidden="true" tabindex="-1"></a>%%| fig-cap: <span class="ot">"</span><span class="st">Proposed implementation timeline for pilot phase</span><span class="ot">"</span></span>
-<span id="cb1-527"><a href="#cb1-527" aria-hidden="true" tabindex="-1"></a>gantt</span>
-<span id="cb1-528"><a href="#cb1-528" aria-hidden="true" tabindex="-1"></a>    title Pesticide Surveillance Pilot Implementation</span>
-<span id="cb1-529"><a href="#cb1-529" aria-hidden="true" tabindex="-1"></a>    dateFormat YYYY-MM-DD</span>
-<span id="cb1-530"><a href="#cb1-530" aria-hidden="true" tabindex="-1"></a>    section Phase <span class="dv">1</span></span>
-<span id="cb1-531"><a href="#cb1-531" aria-hidden="true" tabindex="-1"></a>    Secure funding           :a1, <span class="dv">2026</span><span class="bn">-06-01</span>, <span class="dv">30</span>d</span>
-<span id="cb1-532"><a href="#cb1-532" aria-hidden="true" tabindex="-1"></a>    Finalize MOUs            :a2, <span class="dv">2026</span><span class="bn">-06</span><span class="dv">-15</span>, <span class="dv">45</span>d</span>
-<span id="cb1-533"><a href="#cb1-533" aria-hidden="true" tabindex="-1"></a>    Configure NHLS auto-notify :a3, <span class="dv">2026</span><span class="bn">-07-01</span>, <span class="dv">30</span>d</span>
-<span id="cb1-534"><a href="#cb1-534" aria-hidden="true" tabindex="-1"></a>    section Phase <span class="dv">2</span></span>
-<span id="cb1-535"><a href="#cb1-535" aria-hidden="true" tabindex="-1"></a>    Train provincial staff   :b1, <span class="dv">2026</span><span class="bn">-07</span><span class="dv">-15</span>, <span class="dv">14</span>d</span>
-<span id="cb1-536"><a href="#cb1-536" aria-hidden="true" tabindex="-1"></a>    Launch pilot             :b2, <span class="dv">2026-0</span>8<span class="bn">-01</span>, <span class="dv">1</span>d</span>
-<span id="cb1-537"><a href="#cb1-537" aria-hidden="true" tabindex="-1"></a>    section Phase <span class="dv">3</span></span>
-<span id="cb1-538"><a href="#cb1-538" aria-hidden="true" tabindex="-1"></a>    Monitor <span class="ot">and</span> collect data :c1, <span class="dv">2026-0</span>8<span class="bn">-01</span>, <span class="dv">120</span>d</span>
-<span id="cb1-539"><a href="#cb1-539" aria-hidden="true" tabindex="-1"></a>    Evaluate results         :c2, <span class="dv">2026-11-15</span>, <span class="dv">30</span>d</span>
-<span id="cb1-540"><a href="#cb1-540" aria-hidden="true" tabindex="-1"></a>    Report to MAC            :milestone, c3, <span class="dv">2026-12-15</span>, <span class="dv">1</span>d</span>
-<span id="cb1-541"><a href="#cb1-541" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-522"><a href="#cb1-522" aria-hidden="true" tabindex="-1"></a>**Why:**</span>
+<span id="cb1-523"><a href="#cb1-523" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-524"><a href="#cb1-524" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Best effectiveness per rand spent (+49% for R55,000/year)</span>
+<span id="cb1-525"><a href="#cb1-525" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Fully automated once configured</span>
+<span id="cb1-526"><a href="#cb1-526" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Operational in 2–4 weeks</span>
+<span id="cb1-527"><a href="#cb1-527" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-528"><a href="#cb1-528" aria-hidden="true" tabindex="-1"></a>**Who should choose this:** Provinces with NHLS IT support available</span>
+<span id="cb1-529"><a href="#cb1-529" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-530"><a href="#cb1-530" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb1-531"><a href="#cb1-531" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-532"><a href="#cb1-532" aria-hidden="true" tabindex="-1"></a><span class="fu">### Path 3: Comprehensive Surveillance Solution</span></span>
+<span id="cb1-533"><a href="#cb1-533" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-534"><a href="#cb1-534" aria-hidden="true" tabindex="-1"></a>**Recommendation:** Implement **Full Surveillance Package (Options 1 + 2 + 3a + 4)**</span>
+<span id="cb1-535"><a href="#cb1-535" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-536"><a href="#cb1-536" aria-hidden="true" tabindex="-1"></a>**Why:**</span>
+<span id="cb1-537"><a href="#cb1-537" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-538"><a href="#cb1-538" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Achieves ~80% effectiveness (vs. 45% status quo)</span>
+<span id="cb1-539"><a href="#cb1-539" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Multiple data sources cross-validate; DALRRD closes the regulatory loop</span>
+<span id="cb1-540"><a href="#cb1-540" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Still affordable (~R197,000/year ongoing)</span>
+<span id="cb1-541"><a href="#cb1-541" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Option 3b (sentinel toxicology) added later via research funding</span>
 <span id="cb1-542"><a href="#cb1-542" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-543"><a href="#cb1-543" aria-hidden="true" tabindex="-1"></a><span class="fu">## Conclusion</span></span>
-<span id="cb1-544"><a href="#cb1-544" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-545"><a href="#cb1-545" aria-hidden="true" tabindex="-1"></a>South Africa's pesticide poisoning surveillance system is failing — but **we can fix it quickly and affordably**. The legal authority exists, the data sources exist, and the technology exists. What's missing is **coordination and execution**.</span>
-<span id="cb1-546"><a href="#cb1-546" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-547"><a href="#cb1-547" aria-hidden="true" tabindex="-1"></a>**Our recommendation:**</span>
-<span id="cb1-548"><a href="#cb1-548" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-549"><a href="#cb1-549" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Start small:** Pilot Options 3 and 4 in 2–3 provinces (total cost: ~R120,000 for 6 months)</span>
-<span id="cb1-550"><a href="#cb1-550" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Measure impact:** Track timeliness, completeness, and hotspot detection rates</span>
-<span id="cb1-551"><a href="#cb1-551" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Scale up:** Expand to national rollout if pilot succeeds</span>
-<span id="cb1-552"><a href="#cb1-552" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-553"><a href="#cb1-553" aria-hidden="true" tabindex="-1"></a>**The cost of inaction** — preventable deaths, missed outbreaks, and wasted data — far exceeds the cost of these simple improvements.</span>
-<span id="cb1-554"><a href="#cb1-554" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-555"><a href="#cb1-555" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb1-556"><a href="#cb1-556" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-557"><a href="#cb1-557" aria-hidden="true" tabindex="-1"></a>::: {.footer-cta}</span>
-<span id="cb1-558"><a href="#cb1-558" aria-hidden="true" tabindex="-1"></a>**Questions or feedback?** Contact the D2P Project team at <span class="co">[</span><span class="ot">contact@example.com</span><span class="co">](mailto:contact@example.com)</span></span>
+<span id="cb1-543"><a href="#cb1-543" aria-hidden="true" tabindex="-1"></a>**Who should choose this:** National rollout; provinces with adequate budget</span>
+<span id="cb1-544"><a href="#cb1-544" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-545"><a href="#cb1-545" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-546"><a href="#cb1-546" aria-hidden="true" tabindex="-1"></a><span class="fu">## Legal and Ethical Considerations</span></span>
+<span id="cb1-547"><a href="#cb1-547" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-548"><a href="#cb1-548" aria-hidden="true" tabindex="-1"></a><span class="fu">### Is This Legal?</span></span>
+<span id="cb1-549"><a href="#cb1-549" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-550"><a href="#cb1-550" aria-hidden="true" tabindex="-1"></a>**Yes.** All options can be implemented under existing law:</span>
+<span id="cb1-551"><a href="#cb1-551" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-552"><a href="#cb1-552" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Section 90 of the National Health Act (2003):** Permits inter-agency data sharing for public health purposes</span>
+<span id="cb1-553"><a href="#cb1-553" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**NMC Regulations:** Allow laboratory-triggered notifications (Option 3)</span>
+<span id="cb1-554"><a href="#cb1-554" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Existing MOUs:** PIH-NICD collaboration already established (Option 4)</span>
+<span id="cb1-555"><a href="#cb1-555" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-556"><a href="#cb1-556" aria-hidden="true" tabindex="-1"></a>**No new legislation required.**</span>
+<span id="cb1-557"><a href="#cb1-557" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-558"><a href="#cb1-558" aria-hidden="true" tabindex="-1"></a><span class="fu">### What About Privacy?</span></span>
 <span id="cb1-559"><a href="#cb1-559" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-560"><a href="#cb1-560" aria-hidden="true" tabindex="-1"></a>**Download the full policy brief:** <span class="co">[</span><span class="ot">pesticide_poisoning_policy_brief_filled.docx</span><span class="co">](../pesticide_poisoning_policy_brief_filled.docx)</span></span>
-<span id="cb1-561"><a href="#cb1-561" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-560"><a href="#cb1-560" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>All data sharing follows **POPIA (Protection of Personal Information Act)** requirements</span>
+<span id="cb1-561"><a href="#cb1-561" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Laboratory auto-notifications include only:</span>
+<span id="cb1-562"><a href="#cb1-562" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Patient demographics (age, sex, facility)</span>
+<span id="cb1-563"><a href="#cb1-563" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>BChE value</span>
+<span id="cb1-564"><a href="#cb1-564" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Test date</span>
+<span id="cb1-565"><a href="#cb1-565" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**No names, ID numbers, or contact details** are shared</span>
+<span id="cb1-566"><a href="#cb1-566" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>De-identification protocols apply to all aggregated reports</span>
+<span id="cb1-567"><a href="#cb1-567" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-568"><a href="#cb1-568" aria-hidden="true" tabindex="-1"></a><span class="fu">### What If We Do Nothing?</span></span>
+<span id="cb1-569"><a href="#cb1-569" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-570"><a href="#cb1-570" aria-hidden="true" tabindex="-1"></a>**Risks of maintaining the status quo:**</span>
+<span id="cb1-571"><a href="#cb1-571" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-572"><a href="#cb1-572" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Ongoing under-detection** of hotspots → preventable deaths continue</span>
+<span id="cb1-573"><a href="#cb1-573" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Wasted data:** NHLS and PIH collect valuable information that goes unused</span>
+<span id="cb1-574"><a href="#cb1-574" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Missed clusters:** Contaminated food sources, illegal pesticide sales, or occupational hazards remain undetected</span>
+<span id="cb1-575"><a href="#cb1-575" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**International embarrassment:** South Africa's surveillance system lags behind regional peers (Botswana, Kenya have better pesticide monitoring)</span>
+<span id="cb1-576"><a href="#cb1-576" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-577"><a href="#cb1-577" aria-hidden="true" tabindex="-1"></a><span class="fu">## Next Steps</span></span>
+<span id="cb1-578"><a href="#cb1-578" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-579"><a href="#cb1-579" aria-hidden="true" tabindex="-1"></a><span class="fu">### For National Leadership (MAC, NDoH)</span></span>
+<span id="cb1-580"><a href="#cb1-580" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-581"><a href="#cb1-581" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Review this brief** and the full <span class="co">[</span><span class="ot">decision analysis report</span><span class="co">](../analysis_report_v2.html)</span></span>
+<span id="cb1-582"><a href="#cb1-582" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Select a preferred option** (or Full Package)</span>
+<span id="cb1-583"><a href="#cb1-583" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Approve pilot funding** (~R120,000 for 6-month pilot in 2–3 provinces)</span>
+<span id="cb1-584"><a href="#cb1-584" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Designate a lead agency** (recommend NICD as national coordinator)</span>
+<span id="cb1-585"><a href="#cb1-585" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-586"><a href="#cb1-586" aria-hidden="true" tabindex="-1"></a><span class="fu">### For Provincial Leadership</span></span>
+<span id="cb1-587"><a href="#cb1-587" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-588"><a href="#cb1-588" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Identify a surveillance focal point** (existing epidemiologist or environmental health officer)</span>
+<span id="cb1-589"><a href="#cb1-589" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Assess local NHLS capacity** for BChE auto-notification (Option 3)</span>
+<span id="cb1-590"><a href="#cb1-590" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Allocate budget** for pilot participation (~R40,000–R80,000 depending on options selected)</span>
+<span id="cb1-591"><a href="#cb1-591" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-592"><a href="#cb1-592" aria-hidden="true" tabindex="-1"></a><span class="fu">### For NICD/NHLS/PIH</span></span>
+<span id="cb1-593"><a href="#cb1-593" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-594"><a href="#cb1-594" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Finalize MOUs** for data sharing (Months 1–2)</span>
+<span id="cb1-595"><a href="#cb1-595" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Configure auto-notification** in pilot provinces (Months 2–3)</span>
+<span id="cb1-596"><a href="#cb1-596" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Launch pilot** (Month 3)</span>
+<span id="cb1-597"><a href="#cb1-597" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Monitor and evaluate** (Months 3–6)</span>
+<span id="cb1-598"><a href="#cb1-598" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>**Report findings to MAC** (Month 6)</span>
+<span id="cb1-599"><a href="#cb1-599" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-600"><a href="#cb1-600" aria-hidden="true" tabindex="-1"></a><span class="fu">## Timeline</span></span>
+<span id="cb1-601"><a href="#cb1-601" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-604"><a href="#cb1-604" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid}</span></span>
+<span id="cb1-605"><a href="#cb1-605" aria-hidden="true" tabindex="-1"></a>%%| label: fig-timeline</span>
+<span id="cb1-606"><a href="#cb1-606" aria-hidden="true" tabindex="-1"></a>%%| fig-cap: <span class="ot">"</span><span class="st">Proposed implementation timeline for pilot phase</span><span class="ot">"</span></span>
+<span id="cb1-607"><a href="#cb1-607" aria-hidden="true" tabindex="-1"></a>gantt</span>
+<span id="cb1-608"><a href="#cb1-608" aria-hidden="true" tabindex="-1"></a>    title Pesticide Surveillance Pilot Implementation</span>
+<span id="cb1-609"><a href="#cb1-609" aria-hidden="true" tabindex="-1"></a>    dateFormat YYYY-MM-DD</span>
+<span id="cb1-610"><a href="#cb1-610" aria-hidden="true" tabindex="-1"></a>    section Phase <span class="dv">1</span></span>
+<span id="cb1-611"><a href="#cb1-611" aria-hidden="true" tabindex="-1"></a>    Secure funding           :a1, <span class="dv">2026</span><span class="bn">-06-01</span>, <span class="dv">30</span>d</span>
+<span id="cb1-612"><a href="#cb1-612" aria-hidden="true" tabindex="-1"></a>    Finalize MOUs            :a2, <span class="dv">2026</span><span class="bn">-06</span><span class="dv">-15</span>, <span class="dv">45</span>d</span>
+<span id="cb1-613"><a href="#cb1-613" aria-hidden="true" tabindex="-1"></a>    Configure NHLS auto-notify :a3, <span class="dv">2026</span><span class="bn">-07-01</span>, <span class="dv">30</span>d</span>
+<span id="cb1-614"><a href="#cb1-614" aria-hidden="true" tabindex="-1"></a>    section Phase <span class="dv">2</span></span>
+<span id="cb1-615"><a href="#cb1-615" aria-hidden="true" tabindex="-1"></a>    Train provincial staff   :b1, <span class="dv">2026</span><span class="bn">-07</span><span class="dv">-15</span>, <span class="dv">14</span>d</span>
+<span id="cb1-616"><a href="#cb1-616" aria-hidden="true" tabindex="-1"></a>    Launch pilot             :b2, <span class="dv">2026-0</span>8<span class="bn">-01</span>, <span class="dv">1</span>d</span>
+<span id="cb1-617"><a href="#cb1-617" aria-hidden="true" tabindex="-1"></a>    section Phase <span class="dv">3</span></span>
+<span id="cb1-618"><a href="#cb1-618" aria-hidden="true" tabindex="-1"></a>    Monitor <span class="ot">and</span> collect data :c1, <span class="dv">2026-0</span>8<span class="bn">-01</span>, <span class="dv">120</span>d</span>
+<span id="cb1-619"><a href="#cb1-619" aria-hidden="true" tabindex="-1"></a>    Evaluate results         :c2, <span class="dv">2026-11-15</span>, <span class="dv">30</span>d</span>
+<span id="cb1-620"><a href="#cb1-620" aria-hidden="true" tabindex="-1"></a>    Report to MAC            :milestone, c3, <span class="dv">2026-12-15</span>, <span class="dv">1</span>d</span>
+<span id="cb1-621"><a href="#cb1-621" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-622"><a href="#cb1-622" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-623"><a href="#cb1-623" aria-hidden="true" tabindex="-1"></a><span class="fu">## Conclusion</span></span>
+<span id="cb1-624"><a href="#cb1-624" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-625"><a href="#cb1-625" aria-hidden="true" tabindex="-1"></a>South Africa's pesticide poisoning surveillance system is failing — but **we can fix it quickly and affordably**. The legal authority exists, the data sources exist, and the technology exists. What's missing is **coordination and execution**.</span>
+<span id="cb1-626"><a href="#cb1-626" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-627"><a href="#cb1-627" aria-hidden="true" tabindex="-1"></a>**Our recommendation:**</span>
+<span id="cb1-628"><a href="#cb1-628" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-629"><a href="#cb1-629" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Start small:** Pilot Options 3 and 4 in 2–3 provinces (total cost: ~R120,000 for 6 months)</span>
+<span id="cb1-630"><a href="#cb1-630" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Measure impact:** Track timeliness, completeness, and hotspot detection rates</span>
+<span id="cb1-631"><a href="#cb1-631" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Scale up:** Expand to national rollout if pilot succeeds</span>
+<span id="cb1-632"><a href="#cb1-632" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-633"><a href="#cb1-633" aria-hidden="true" tabindex="-1"></a>**The cost of inaction** — preventable deaths, missed outbreaks, and wasted data — far exceeds the cost of these simple improvements.</span>
+<span id="cb1-634"><a href="#cb1-634" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-635"><a href="#cb1-635" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb1-636"><a href="#cb1-636" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-637"><a href="#cb1-637" aria-hidden="true" tabindex="-1"></a>::: {.footer-cta}</span>
+<span id="cb1-638"><a href="#cb1-638" aria-hidden="true" tabindex="-1"></a>**Questions or feedback?** Contact the D2P Project team at <span class="co">[</span><span class="ot">contact@example.com</span><span class="co">](mailto:contact@example.com)</span></span>
+<span id="cb1-639"><a href="#cb1-639" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-640"><a href="#cb1-640" aria-hidden="true" tabindex="-1"></a>**Download the full policy brief:** <span class="co">[</span><span class="ot">pesticide_poisoning_policy_brief_filled.docx</span><span class="co">](../pesticide_poisoning_policy_brief_filled.docx)</span></span>
+<span id="cb1-641"><a href="#cb1-641" aria-hidden="true" tabindex="-1"></a>:::</span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
