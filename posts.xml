@@ -23574,18 +23574,22 @@ Figure&nbsp;2: Proposed implementation timeline for pilot phase
 <div>
 <pre class="mermaid mermaid-js" data-label="fig-current-system">flowchart LR
     A[Healthcare Facility] --&gt; B[NMC Notification&lt;br/&gt;~690/year]
-    A --&gt; C[NHLS Laboratory&lt;br/&gt;BChE + Chemical Toxicology&lt;br/&gt;~2,000 severe/year]
+    A --&gt; C1[NHLS — BChE Assay&lt;br/&gt;~2,000 severe/year]
+    A --&gt; C2[NHLS — Chemical Toxicology&lt;br/&gt;qualitative/quantitative&lt;br/&gt;pesticide assays]
     A --&gt; D[PIH Consultation&lt;br/&gt;~9,000 calls/year&lt;br/&gt;&lt;i&gt;No minimum dataset&lt;/i&gt;]
 
     B --&gt; E[("NICD Database&lt;br/&gt;&lt;b&gt;Source of truth&lt;/b&gt;")]
-    C --&gt; F[(NHLS LIS)]
+    C1 --&gt; F1[(NHLS LIS — BChE)]
+    C2 --&gt; F2[(NHLS LIS — Toxicology)]
     D --&gt; G[(PIH Records)]
 
-    F -.No structured feed.-&gt; E
+    F1 -.No structured feed.-&gt; E
+    F2 -.No structured feed.-&gt; E
     G -.No minimum viable&lt;br/&gt;dataset defined.-&gt; E
 
     style E fill:#9f9,stroke:#333,stroke-width:2px
-    style F fill:#bbf,stroke:#333
+    style F1 fill:#bbf,stroke:#333
+    style F2 fill:#bbf,stroke:#333
     style G fill:#bfb,stroke:#333
 </pre>
 </div>
