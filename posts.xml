@@ -23573,31 +23573,36 @@ Figure&nbsp;2: Proposed implementation timeline for pilot phase
 <div aria-describedby="fig-current-system-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
 <pre class="mermaid mermaid-js" data-label="fig-current-system">flowchart LR
-    A[Healthcare Facility] --&gt; B[NMC Notification\n~690/year]
-    A --&gt; C[NHLS BChE Test\n~2,000 severe/year]
-    A --&gt; D[PIH Consultation\n~9,000 calls/year]
-    
-    B --&gt; E[(NICD Database)]
+    A[Healthcare Facility] --&gt; B[NMC Notification&lt;br/&gt;~690/year]
+    A --&gt; C[NHLS Laboratory&lt;br/&gt;BChE + Chemical Toxicology&lt;br/&gt;~2,000 severe/year]
+    A --&gt; D[PIH Consultation&lt;br/&gt;~9,000 calls/year&lt;br/&gt;&lt;i&gt;No minimum dataset&lt;/i&gt;]
+
+    B --&gt; E[("NICD Database&lt;br/&gt;&lt;b&gt;Source of truth&lt;/b&gt;")]
     C --&gt; F[(NHLS LIS)]
     D --&gt; G[(PIH Records)]
-    
-    E -.No linkage.-&gt; F
-    F -.No linkage.-&gt; G
-    G -.No linkage.-&gt; E
-    
-    style E fill:#f9f,stroke:#333
+
+    F -.No structured feed.-&gt; E
+    G -.No minimum viable&lt;br/&gt;dataset defined.-&gt; E
+
+    style E fill:#9f9,stroke:#333,stroke-width:2px
     style F fill:#bbf,stroke:#333
     style G fill:#bfb,stroke:#333
 </pre>
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-current-system-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Current (fragmented) surveillance architecture
+Figure&nbsp;1: Current (fragmented) surveillance architecture. NICD is the de facto source-of-truth for case notifications, but the laboratory (BChE + chemical toxicology) and PIH streams do not flow into it in a structured way.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
+<p><strong>What this diagram shows.</strong> Three gaps in the current state:</p>
+<ol type="1">
+<li><strong>NICD database is the source of truth</strong> for case notifications but receives only the clinician-completed NMC stream (~690/year) — a fraction of the true burden.</li>
+<li><strong>The NHLS laboratory holds two relevant data streams</strong> — routine <strong>BChE</strong> activity assays and <strong>chemical toxicology</strong> (qualitative/quantitative pesticide assays) — neither of which feeds NICD in a structured, automated way.</li>
+<li><strong>PIH consultations are not captured against a minimum viable dataset</strong>, so the ~9,000 calls/year cannot be aggregated, geocoded, or matched to NICD cases.</li>
+</ol>
 <p><strong>Documented failures:</strong></p>
 <ul>
 <li><strong>Delayed reporting:</strong> NMC notifications arrive 2–4 weeks after exposure</li>
