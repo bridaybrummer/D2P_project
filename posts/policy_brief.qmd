@@ -90,6 +90,49 @@ flowchart LR
 - EHPs **may informally** refer the matter to DALRRD (phone, email, personal contact). This referral is **not recorded on NMC** either.
 - **Nothing closes the loop back to NMC or the clinician.** DALRRD may give feedback to the EHP at best — but the clinician, NICD, and the surveillance dashboard never learn what (if anything) happened.
 
+### Coordination Decision Tree: Where the Chain Breaks
+
+The same pathway, viewed as a sequence of decisions, makes it obvious **where coordination fails by default** — not because anyone refuses to act, but because no decision node has a mandatory "record it on NMC" branch.
+
+```{mermaid}
+%%| label: fig-coordination-decision-tree
+%%| fig-cap: "Coordination decision tree for a single suspected pesticide-poisoning case under the status quo. Green = decision that closes the loop; red = decision that breaks the chain. Most cases exit through red nodes because no step is mandated to write back to NMC."
+flowchart TD
+    Q0{Case suspected by<br/>clinician / PHO?} -->|Yes| Q1{Notified on<br/>NMC platform?}
+    Q0 -->|No| X0[Case invisible<br/>to surveillance]:::bad
+
+    Q1 -->|Yes| Q2{NMC SMS<br/>reaches local EHP?}
+    Q1 -->|No| X1[No notification<br/>filed]:::bad
+
+    Q2 -->|Yes| Q3{EHP investigates?}
+    Q2 -->|No SMS / wrong contact| X2[Notification dies<br/>at NMC]:::bad
+
+    Q3 -->|Yes| Q4{Investigation<br/>recorded on NMC?}
+    Q3 -->|No / no capacity| X3[No field response]:::bad
+
+    Q4 -->|Yes — rare| G1[Loop closed<br/>to NMC]:::good
+    Q4 -->|No — default| Q5{EHP refers<br/>to DALRRD?}
+
+    Q5 -->|Informally<br/>phone / email| Q6{DALRRD<br/>acts?}
+    Q5 -->|No| X4[Regulator never<br/>hears about it]:::bad
+
+    Q6 -->|Yes| Q7{DALRRD feeds<br/>outcome back?}
+    Q6 -->|No| X5[Product / source<br/>not addressed]:::bad
+
+    Q7 -->|To EHP only| X6[NMC + clinician<br/>still blind]:::bad
+    Q7 -->|To NMC + clinician| G2[Loop fully closed]:::good
+
+    classDef bad fill:#fdd,stroke:#cc0000,stroke-width:1.5px,color:#600
+    classDef good fill:#cfc,stroke:#060,stroke-width:1.5px,color:#030
+```
+
+**Reading the tree:**
+
+- There are **eight decision nodes** between "case suspected" and "loop fully closed". A case must clear **all eight** for coordination to actually work.
+- **Six of the eight** have a default branch that exits to a red (loop-broken) terminal — usually because no system *requires* the actor to record what they did.
+- The only two green exits (`G1`, `G2`) depend on behaviours that are **not currently mandated**: EHPs writing investigation outcomes onto NMC, and DALRRD feeding regulatory action back to NMC and the clinician.
+- This is why the policy options below all target a specific decision node: **Option 1** (NHLS→NMC IT feed) replaces the fragile `Q1` decision with an automatic one; **Option 3a/3b** do the same for laboratory-confirmed cases; **Option 2** (NICD→DALRRD) and the Full Package feedback loop force `Q5`, `Q6`, and `Q7` to become recorded, structured steps.
+
 A **fishbone analysis** identified five root causes — all fixable without new laws:
 
 ```{mermaid}
