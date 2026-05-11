@@ -51,18 +51,22 @@ South Africa has three parallel data streams for pesticide poisoning. Each captu
 %%| fig-cap: "Current (fragmented) surveillance architecture. NICD is the de facto source-of-truth for case notifications, but the laboratory (BChE + chemical toxicology) and PIH streams do not flow into it in a structured way."
 flowchart LR
     A[Healthcare Facility] --> B[NMC Notification<br/>~690/year]
-    A --> C[NHLS Laboratory<br/>BChE + Chemical Toxicology<br/>~2,000 severe/year]
+    A --> C1[NHLS — BChE Assay<br/>~2,000 severe/year]
+    A --> C2[NHLS — Chemical Toxicology<br/>qualitative/quantitative<br/>pesticide assays]
     A --> D[PIH Consultation<br/>~9,000 calls/year<br/><i>No minimum dataset</i>]
 
     B --> E[("NICD Database<br/><b>Source of truth</b>")]
-    C --> F[(NHLS LIS)]
+    C1 --> F1[(NHLS LIS — BChE)]
+    C2 --> F2[(NHLS LIS — Toxicology)]
     D --> G[(PIH Records)]
 
-    F -.No structured feed.-> E
+    F1 -.No structured feed.-> E
+    F2 -.No structured feed.-> E
     G -.No minimum viable<br/>dataset defined.-> E
 
     style E fill:#9f9,stroke:#333,stroke-width:2px
-    style F fill:#bbf,stroke:#333
+    style F1 fill:#bbf,stroke:#333
+    style F2 fill:#bbf,stroke:#333
     style G fill:#bfb,stroke:#333
 ```
 
