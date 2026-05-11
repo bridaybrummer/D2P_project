@@ -23,6 +23,8 @@ website:
         href: posts.html
       - text: "Parameters Hub"
         href: parameters_hub.html
+      - text: "Playground"
+        href: parameter_playground.html
       - text: "Full Analysis Report"
         href: analysis_report_v2.html
     right:

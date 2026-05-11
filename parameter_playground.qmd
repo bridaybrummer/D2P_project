@@ -1,0 +1,336 @@
+---
+title: "Parameter Playground"
+subtitle: "Adjust model parameters live, see outcomes update, export your scenario as a CSV"
+date-modified: today
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    page-layout: full
+---
+
+::: {.callout-tip icon=false}
+## How to use this page
+
+1. **Adjust** any of the model parameters using the sliders / inputs below. The headline outcomes (deaths averted, burden avoided, net monetary benefit, ROI) update **live in your browser** — nothing is sent to any server.
+2. **Export** your scenario by clicking *Download my scenario CSV*. Save the file with a meaningful name (e.g. `scenario_low_eta.csv`).
+3. **Reload later** by clicking *Import a saved scenario* and selecting your saved CSV — the inputs will repopulate from the file.
+4. **Reset** at any time using the *Reset to canonical v3* button.
+
+The starting values are loaded from the canonical [`amua_import_parameters_v3.csv`](amua_import_parameters_v3.csv). For provenance and source citations on every parameter, see the [Parameters Hub](parameters_hub.html).
+:::
+
+```{ojs}
+//| echo: false
+
+// ---------- Load canonical CSV ----------
+csvText = FileAttachment("amua_import_parameters_v3.csv").text()
+
+canonical = {
+  const lines = csvText.split("\n").filter(l => l && !l.startsWith("#") && !l.startsWith("Name,"));
+  const out = {};
+  for (const line of lines) {
+    const m = line.match(/^([^,]+),([^,]+),(.*)$/);
+    if (!m) continue;
+    const [, name, expr, notes] = m;
+    const v = parseFloat(expr);
+    if (!isNaN(v)) out[name.trim()] = { value: v, notes };
+  }
+  return out;
+}
+```
+
+```{ojs}
+//| echo: false
+
+// ---------- Imported-scenario state ----------
+mutable importedScenario = null
+
+viewof importFile = Inputs.file({
+  label: "Import a saved scenario",
+  accept: ".csv",
+  multiple: false
+})
+```
+
+```{ojs}
+//| echo: false
+
+handleImport = {
+  if (importFile) {
+    const text = await importFile.text();
+    const lines = text.split("\n").filter(l => l && !l.startsWith("#") && !l.startsWith("Name,"));
+    const obj = {};
+    for (const line of lines) {
+      const m = line.match(/^([^,]+),([^,]+),(.*)$/);
+      if (!m) continue;
+      const v = parseFloat(m[2]);
+      if (!isNaN(v)) obj[m[1].trim()] = v;
+    }
+    mutable importedScenario = obj;
+    return html`<div class="alert alert-success" style="padding:8px;background:#cfc;border-left:4px solid #060;margin:8px 0;">
+      ✓ Imported ${Object.keys(obj).length} parameters. Adjust below or export again.
+    </div>`;
+  }
+  return html``;
+}
+```
+
+## Editable parameters
+
+```{ojs}
+//| echo: false
+
+// Helper: starting value picks (a) imported scenario, (b) canonical v3
+function start(name) {
+  if (importedScenario && importedScenario[name] !== undefined) return importedScenario[name];
+  return canonical[name]?.value ?? 0;
+}
+```
+
+### Burden
+
+```{ojs}
+//| echo: false
+
+viewof n_burden_true = Inputs.range([5000, 25000], {
+  step: 100,
+  value: start("n_burden_true"),
+  label: "Total annual burden (cases) — n_burden_true"
+})
+viewof cfr_headline_mid = Inputs.range([0.05, 0.20], {
+  step: 0.005,
+  value: start("cfr_headline_mid"),
+  label: "Headline case-fatality rate — cfr_headline_mid"
+})
+```
+
+### Costs (per case / per death)
+
+```{ojs}
+//| echo: false
+
+viewof c_morbidity_headline = Inputs.range([5000, 30000], {
+  step: 500,
+  value: start("c_morbidity_headline"),
+  label: "Morbidity cost per case (ZAR) — c_morbidity_headline"
+})
+viewof c_mortality_human_capital = Inputs.range([500000, 5000000], {
+  step: 50000,
+  value: start("c_mortality_human_capital"),
+  label: "Mortality cost per death (ZAR) — c_mortality_human_capital"
+})
+```
+
+### Detection probabilities and response efficacy
+
+```{ojs}
+//| echo: false
+
+viewof d_status_quo = Inputs.range([0.20, 0.70], {
+  step: 0.01,
+  value: start("d_status_quo"),
+  label: "Detection probability — status quo"
+})
+viewof d_full_package = Inputs.range([0.50, 0.95], {
+  step: 0.01,
+  value: start("d_full_package"),
+  label: "Detection probability — full package"
+})
+viewof eta_response_mid = Inputs.range([0.05, 0.70], {
+  step: 0.01,
+  value: start("eta_response_mid"),
+  label: "Response efficacy η (base case)"
+})
+```
+
+### Programme costs
+
+```{ojs}
+//| echo: false
+
+viewof c_full_package_narrow_operating = Inputs.range([100000, 500000], {
+  step: 5000,
+  value: start("c_full_package_narrow_operating"),
+  label: "Full Package — narrow operating cost (ZAR/yr)"
+})
+viewof c_full_package_wholesystem_operating = Inputs.range([500000, 3000000], {
+  step: 25000,
+  value: start("c_full_package_wholesystem_operating"),
+  label: "Full Package — whole-system cost (ZAR/yr)"
+})
+```
+
+## Live outcomes
+
+```{ojs}
+//| echo: false
+
+// ---------- Derived calculations ----------
+n_deaths            = n_burden_true * cfr_headline_mid
+C_morbidity         = n_burden_true * c_morbidity_headline
+C_mortality         = n_deaths * c_mortality_human_capital
+C_burden_total      = C_morbidity + C_mortality
+
+// Detection × efficacy
+deaths_averted      = n_deaths * (d_full_package - d_status_quo) * eta_response_mid
+cases_averted       = n_burden_true * (d_full_package - d_status_quo) * eta_response_mid
+burden_avoided      = C_burden_total * (d_full_package - d_status_quo) * eta_response_mid
+
+// NMB and ROI
+NMB_narrow          = burden_avoided - c_full_package_narrow_operating
+NMB_wholesystem     = burden_avoided - c_full_package_wholesystem_operating
+ROI_narrow          = burden_avoided / c_full_package_narrow_operating
+ROI_wholesystem     = burden_avoided / c_full_package_wholesystem_operating
+
+fmtR = (x) => {
+  if (Math.abs(x) >= 1e9) return "R" + (x/1e9).toFixed(2) + " bn";
+  if (Math.abs(x) >= 1e6) return "R" + (x/1e6).toFixed(2) + " M";
+  if (Math.abs(x) >= 1e3) return "R" + (x/1e3).toFixed(0) + "k";
+  return "R" + x.toFixed(0);
+}
+fmtN = (x) => x.toLocaleString("en-ZA", {maximumFractionDigits: 0});
+
+outcomesTable = Inputs.table([
+  {Outcome: "Annual deaths (modelled)",                   Value: fmtN(n_deaths)},
+  {Outcome: "Total economic burden / year",               Value: fmtR(C_burden_total)},
+  {Outcome: "Cases averted / year (Full Package)",        Value: fmtN(cases_averted)},
+  {Outcome: "Deaths averted / year (Full Package)",       Value: fmtN(deaths_averted)},
+  {Outcome: "Burden avoided / year",                      Value: fmtR(burden_avoided)},
+  {Outcome: "NMB — narrow perspective",                   Value: fmtR(NMB_narrow)},
+  {Outcome: "NMB — whole-system perspective",             Value: fmtR(NMB_wholesystem)},
+  {Outcome: "ROI — narrow (× per R1 spent)",              Value: ROI_narrow.toFixed(1) + "×"},
+  {Outcome: "ROI — whole-system (× per R1 spent)",        Value: ROI_wholesystem.toFixed(1) + "×"}
+], {
+  rows: 10,
+  width: {Outcome: 360, Value: 200}
+})
+```
+
+```{ojs}
+//| echo: false
+
+// Bar chart of key outcomes
+Plot.plot({
+  marginLeft: 220,
+  marginRight: 60,
+  height: 280,
+  x: {label: "ZAR (millions)"},
+  y: {label: null},
+  marks: [
+    Plot.barX([
+      {label: "Burden avoided", value: burden_avoided / 1e6, color: "#060"},
+      {label: "Burden — total", value: C_burden_total / 1e6, color: "#900"},
+      {label: "Cost — narrow", value: c_full_package_narrow_operating / 1e6, color: "#04a"},
+      {label: "Cost — whole-system", value: c_full_package_wholesystem_operating / 1e6, color: "#04a"}
+    ], {x: "value", y: "label", fill: "color", sort: {y: "x", reverse: true}}),
+    Plot.text([
+      {label: "Burden avoided", value: burden_avoided / 1e6},
+      {label: "Burden — total", value: C_burden_total / 1e6},
+      {label: "Cost — narrow", value: c_full_package_narrow_operating / 1e6},
+      {label: "Cost — whole-system", value: c_full_package_wholesystem_operating / 1e6}
+    ], {x: "value", y: "label", text: d => d.value.toFixed(0), dx: 5, textAnchor: "start"})
+  ]
+})
+```
+
+::: {.panel-tabset}
+### Outcomes table
+
+```{ojs}
+//| echo: false
+outcomesTable
+```
+
+### What changed from canonical v3?
+
+```{ojs}
+//| echo: false
+
+editedKeys = [
+  ["n_burden_true", n_burden_true],
+  ["cfr_headline_mid", cfr_headline_mid],
+  ["c_morbidity_headline", c_morbidity_headline],
+  ["c_mortality_human_capital", c_mortality_human_capital],
+  ["d_status_quo", d_status_quo],
+  ["d_full_package", d_full_package],
+  ["eta_response_mid", eta_response_mid],
+  ["c_full_package_narrow_operating", c_full_package_narrow_operating],
+  ["c_full_package_wholesystem_operating", c_full_package_wholesystem_operating]
+]
+
+deltaTable = Inputs.table(
+  editedKeys.map(([k, v]) => {
+    const base = canonical[k]?.value;
+    const delta = base ? ((v - base) / base * 100) : 0;
+    return {
+      Parameter: k,
+      "Canonical (v3)": base,
+      "Your value": v,
+      "Δ %": (delta >= 0 ? "+" : "") + delta.toFixed(1) + "%"
+    };
+  }),
+  {width: {Parameter: 320, "Canonical (v3)": 130, "Your value": 130, "Δ %": 80}}
+)
+```
+:::
+
+## Export / reset
+
+```{ojs}
+//| echo: false
+
+// Build a CSV that mirrors the canonical structure for the edited parameters
+exportCSV = {
+  const header = "Name,Expression,Notes\n";
+  const note = (k) => canonical[k]?.notes ?? "User-edited via Parameter Playground";
+  const rows = editedKeys.map(([k, v]) => `${k},${v},${note(k)}`).join("\n");
+  const timestamp = new Date().toISOString().split(".")[0];
+  return header
+    + `# Scenario exported from Parameter Playground at ${timestamp},,\n`
+    + `# Canonical baseline: amua_import_parameters_v3.csv,,\n`
+    + rows + "\n";
+}
+
+downloadLink = {
+  const blob = new Blob([exportCSV], {type: "text/csv"});
+  const url = URL.createObjectURL(blob);
+  return html`<a href="${url}" download="d2p_scenario_${new Date().toISOString().split("T")[0]}.csv"
+                 style="display:inline-block;padding:10px 18px;background:#04a;color:white;
+                        text-decoration:none;border-radius:4px;font-weight:bold;margin:8px 4px;">
+    ⬇ Download my scenario CSV
+  </a>`;
+}
+
+resetButton = html`<button onclick="window.location.reload()"
+  style="display:inline-block;padding:10px 18px;background:#666;color:white;
+         border:none;border-radius:4px;font-weight:bold;cursor:pointer;margin:8px 4px;">
+  ↺ Reset to canonical v3
+</button>`
+```
+
+```{ojs}
+//| echo: false
+html`<div>${downloadLink}${resetButton}</div>`
+```
+
+```{ojs}
+//| echo: false
+
+// Show CSV preview
+htl.html`<details style="margin-top:16px;">
+  <summary style="cursor:pointer;font-weight:bold;">Preview the CSV you would export</summary>
+  <pre style="background:#f6f6f6;padding:12px;border-radius:4px;font-size:0.85em;overflow-x:auto;">${exportCSV}</pre>
+</details>`
+```
+
+---
+
+::: {.callout-note icon=false}
+## How does this differ from the [Parameters Hub](parameters_hub.html)?
+
+- **Parameters Hub** is the **read-only canonical record** of every parameter with sources. It always reflects the committed `amua_import_parameters_v3.csv`.
+- **Parameter Playground** (this page) is a **what-if sandbox**. Edits live only in your browser session, never touch the canonical file, and can be exported / re-imported as CSVs for sharing with colleagues.
+
+To make a scenario *canonical*, share the exported CSV with the project maintainer for review and incorporation into `amua_import_parameters_v3.csv` via a tracked commit.
+:::
