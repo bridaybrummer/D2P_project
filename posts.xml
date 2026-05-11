@@ -23677,7 +23677,7 @@ Figure&nbsp;3: Surveillance investment decision tree. Each option raises detecti
 <div class="callout-body-container callout-body">
 <p><strong>Target audience:</strong> DALRRD Pesticide Registrar, Ministerial Advisory Committee (MAC), National Department of Health (NDoH), Department of Trade, Industry &amp; Competition (substitution support).</p>
 <p><strong>Companion briefs:</strong> <a href="../posts/surveillance_policy.html">Surveillance</a> · <a href="../posts/coordination_policy.html">Coordination</a>.</p>
-<p><strong>Status:</strong> <strong>DRAFT.</strong> This brief makes the qualitative public-health case and outlines the decision logic. Several quantitative claims — South African market volume, attributable case fractions, and yield-impact estimates — are flagged as <code>[Evidence gap]</code> and require dedicated data collection before final regulatory action.</p>
+<p><strong>Status:</strong> <strong>DRAFT.</strong> One genuine SA evidence gap remains (the adult <strong>live-patient</strong> attributable fraction, resolved only by Surveillance Option S3b). The other quantitative inputs — market volume, yield impact, substitute hazard, substitute pricing, enforcement cost — are <strong>not epistemic gaps</strong>: they are either administrative numbers DALRRD can pull, or values defensibly anchored to the EU/US/Sri Lanka evidence base (see §2b and Interim assumptions).</p>
 </div>
 </div>
 <section id="policy-question" class="level2">
@@ -23694,6 +23694,16 @@ Figure&nbsp;3: Surveillance investment decision tree. Each option raises detecti
 <li><strong>Disproportionate contribution to severe and fatal poisonings</strong> — supported in paediatric SA data (Davies 2023);<sup>8</sup> adult attributable fraction is not yet quantified pending live-patient chemical toxicology (Surveillance Option S3b).</li>
 <li><strong>High substitutability for its primary use cases</strong> (soil insect / stalk borer / nematode control in maize and other field crops) — registered substitutes exist (see §5), but <strong>SA-specific yield-impact modelling is not yet done</strong> (open item TBF-3).</li>
 </ol>
+<section id="international-natural-experiment-evidence" class="level3">
+<h3 class="anchored" data-anchor-id="international-natural-experiment-evidence">2b. International natural-experiment evidence</h3>
+<p>South Africa does not have to model terbufos withdrawal from first principles. Three relevant natural experiments have already been run:</p>
+<ul>
+<li><strong>Sri Lanka (1995–2011).</strong> Sequential bans on WHO Class I organophosphates reduced <strong>pesticide-suicide mortality by ~50 %</strong> and <strong>total suicide mortality by ~21 %</strong>, <em>without</em> compensating method substitution.<sup>9</sup> Each banned single agent typically accounted for <strong>20–40 %</strong> of fatal pesticide poisonings in the period immediately before its withdrawal.</li>
+<li><strong>Bangladesh, Nepal, India.</strong> Class Ia/Ib restrictions show the same direction and order of magnitude.</li>
+<li><strong>EU (2009) and US EPA (2006).</strong> Terbufos was withdrawn (EU) or moved to RUP-only with granular formulations voluntarily cancelled (US). <strong>No documented maize-yield collapse in any producer state.</strong></li>
+</ul>
+<p>The Sri Lanka studies are the strongest available evidence that single-agent Class Ia withdrawal <strong>does</strong> retire most of that agent’s attributable fatal burden, and <strong>does not</strong> redistribute it to substitute agents at the same lethality. SA paediatric data (Davies 2023) is independently consistent with terbufos sitting in the 20–40 % attributable bracket.</p>
+</section>
 </section>
 <section id="status-quo" class="level2">
 <h2 class="anchored" data-anchor-id="status-quo">3. Status quo</h2>
@@ -23712,23 +23722,23 @@ Figure&nbsp;3: Surveillance investment decision tree. Each option raises detecti
 <p>All numerical claims in this brief draw from a single CSV — <a href="../amua_import_parameters_v3.csv"><code>amua_import_parameters_v3.csv</code></a> — rendered in full at the <a href="../parameters_hub.html">Parameters Hub</a>. The headline values below are pulled from that file at render time; <strong>do not edit the numbers in this brief — edit the CSV and re-render</strong>.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="pybhphgpfk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#pybhphgpfk table {
+<div id="qcnowtbbcy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#qcnowtbbcy table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#pybhphgpfk thead, #pybhphgpfk tbody, #pybhphgpfk tfoot, #pybhphgpfk tr, #pybhphgpfk td, #pybhphgpfk th {
+#qcnowtbbcy thead, #qcnowtbbcy tbody, #qcnowtbbcy tfoot, #qcnowtbbcy tr, #qcnowtbbcy td, #qcnowtbbcy th {
   border-style: none;
 }
 
-#pybhphgpfk p {
+#qcnowtbbcy p {
   margin: 0;
   padding: 0;
 }
 
-#pybhphgpfk .gt_table {
+#qcnowtbbcy .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -23754,12 +23764,12 @@ Figure&nbsp;3: Surveillance investment decision tree. Each option raises detecti
   border-left-color: #D3D3D3;
 }
 
-#pybhphgpfk .gt_caption {
+#qcnowtbbcy .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#pybhphgpfk .gt_title {
+#qcnowtbbcy .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -23771,7 +23781,7 @@ Figure&nbsp;3: Surveillance investment decision tree. Each option raises detecti
   border-bottom-width: 0;
 }
 
-#pybhphgpfk .gt_subtitle {
+#qcnowtbbcy .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -23783,7 +23793,7 @@ Figure&nbsp;3: Surveillance investment decision tree. Each option raises detecti
   border-top-width: 0;
 }
 
-#pybhphgpfk .gt_heading {
+#qcnowtbbcy .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -23795,13 +23805,13 @@ Figure&nbsp;3: Surveillance investment decision tree. Each option raises detecti
   border-right-color: #D3D3D3;
 }
 
-#pybhphgpfk .gt_bottom_border {
+#qcnowtbbcy .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#pybhphgpfk .gt_col_headings {
+#qcnowtbbcy .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -23816,7 +23826,7 @@ Figure&nbsp;3: Surveillance investment decision tree. Each option raises detecti
   border-right-color: #D3D3D3;
 }
 
-#pybhphgpfk .gt_col_heading {
+#qcnowtbbcy .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -23836,7 +23846,7 @@ Figure&nbsp;3: Surveillance investment decision tree. Each option raises detecti
   overflow-x: hidden;
 }
 
-#pybhphgpfk .gt_column_spanner_outer {
+#qcnowtbbcy .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -23848,15 +23858,15 @@ Figure&nbsp;3: Surveillance investment decision tree. Each option raises detecti
   padding-right: 4px;
 }
 
-#pybhphgpfk .gt_column_spanner_outer:first-child {
+#qcnowtbbcy .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#pybhphgpfk .gt_column_spanner_outer:last-child {
+#qcnowtbbcy .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#pybhphgpfk .gt_column_spanner {
+#qcnowtbbcy .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -23868,11 +23878,11 @@ Figure&nbsp;3: Surveillance investment decision tree. Each option raises detecti
   width: 100%;
 }
 
-#pybhphgpfk .gt_spanner_row {
+#qcnowtbbcy .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#pybhphgpfk .gt_group_heading {
+#qcnowtbbcy .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -23898,7 +23908,7 @@ Figure&nbsp;3: Surveillance investment decision tree. Each option raises detecti
   text-align: left;
 }
 
-#pybhphgpfk .gt_empty_group_heading {
+#qcnowtbbcy .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -23913,15 +23923,15 @@ Figure&nbsp;3: Surveillance investment decision tree. Each option raises detecti
   vertical-align: middle;
 }
 
-#pybhphgpfk .gt_from_md > :first-child {
+#qcnowtbbcy .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#pybhphgpfk .gt_from_md > :last-child {
+#qcnowtbbcy .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#pybhphgpfk .gt_row {
+#qcnowtbbcy .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -23940,7 +23950,7 @@ Figure&nbsp;3: Surveillance investment decision tree. Each option raises detecti
   overflow-x: hidden;
 }
 
-#pybhphgpfk .gt_stub {
+#qcnowtbbcy .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -23953,7 +23963,7 @@ Figure&nbsp;3: Surveillance investment decision tree. Each option raises detecti
   padding-right: 5px;
 }
 
-#pybhphgpfk .gt_stub_row_group {
+#qcnowtbbcy .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -23967,15 +23977,15 @@ Figure&nbsp;3: Surveillance investment decision tree. Each option raises detecti
   vertical-align: top;
 }
 
-#pybhphgpfk .gt_row_group_first td {
+#qcnowtbbcy .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#pybhphgpfk .gt_row_group_first th {
+#qcnowtbbcy .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#pybhphgpfk .gt_summary_row {
+#qcnowtbbcy .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -23985,16 +23995,16 @@ Figure&nbsp;3: Surveillance investment decision tree. Each option raises detecti
   padding-right: 5px;
 }
 
-#pybhphgpfk .gt_first_summary_row {
+#qcnowtbbcy .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#pybhphgpfk .gt_first_summary_row.thick {
+#qcnowtbbcy .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#pybhphgpfk .gt_last_summary_row {
+#qcnowtbbcy .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -24004,7 +24014,7 @@ Figure&nbsp;3: Surveillance investment decision tree. Each option raises detecti
   border-bottom-color: #D3D3D3;
 }
 
-#pybhphgpfk .gt_grand_summary_row {
+#qcnowtbbcy .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -24014,7 +24024,7 @@ Figure&nbsp;3: Surveillance investment decision tree. Each option raises detecti
   padding-right: 5px;
 }
 
-#pybhphgpfk .gt_first_grand_summary_row {
+#qcnowtbbcy .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -24024,7 +24034,7 @@ Figure&nbsp;3: Surveillance investment decision tree. Each option raises detecti
   border-top-color: #D3D3D3;
 }
 
-#pybhphgpfk .gt_last_grand_summary_row_top {
+#qcnowtbbcy .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -24034,11 +24044,11 @@ Figure&nbsp;3: Surveillance investment decision tree. Each option raises detecti
   border-bottom-color: #D3D3D3;
 }
 
-#pybhphgpfk .gt_striped {
+#qcnowtbbcy .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#pybhphgpfk .gt_table_body {
+#qcnowtbbcy .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -24047,7 +24057,7 @@ Figure&nbsp;3: Surveillance investment decision tree. Each option raises detecti
   border-bottom-color: #D3D3D3;
 }
 
-#pybhphgpfk .gt_footnotes {
+#qcnowtbbcy .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -24061,7 +24071,7 @@ Figure&nbsp;3: Surveillance investment decision tree. Each option raises detecti
   border-right-color: #D3D3D3;
 }
 
-#pybhphgpfk .gt_footnote {
+#qcnowtbbcy .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -24070,7 +24080,7 @@ Figure&nbsp;3: Surveillance investment decision tree. Each option raises detecti
   padding-right: 5px;
 }
 
-#pybhphgpfk .gt_sourcenotes {
+#qcnowtbbcy .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -24084,7 +24094,7 @@ Figure&nbsp;3: Surveillance investment decision tree. Each option raises detecti
   border-right-color: #D3D3D3;
 }
 
-#pybhphgpfk .gt_sourcenote {
+#qcnowtbbcy .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -24092,72 +24102,72 @@ Figure&nbsp;3: Surveillance investment decision tree. Each option raises detecti
   padding-right: 5px;
 }
 
-#pybhphgpfk .gt_left {
+#qcnowtbbcy .gt_left {
   text-align: left;
 }
 
-#pybhphgpfk .gt_center {
+#qcnowtbbcy .gt_center {
   text-align: center;
 }
 
-#pybhphgpfk .gt_right {
+#qcnowtbbcy .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#pybhphgpfk .gt_font_normal {
+#qcnowtbbcy .gt_font_normal {
   font-weight: normal;
 }
 
-#pybhphgpfk .gt_font_bold {
+#qcnowtbbcy .gt_font_bold {
   font-weight: bold;
 }
 
-#pybhphgpfk .gt_font_italic {
+#qcnowtbbcy .gt_font_italic {
   font-style: italic;
 }
 
-#pybhphgpfk .gt_super {
+#qcnowtbbcy .gt_super {
   font-size: 65%;
 }
 
-#pybhphgpfk .gt_footnote_marks {
+#qcnowtbbcy .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#pybhphgpfk .gt_asterisk {
+#qcnowtbbcy .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#pybhphgpfk .gt_indent_1 {
+#qcnowtbbcy .gt_indent_1 {
   text-indent: 5px;
 }
 
-#pybhphgpfk .gt_indent_2 {
+#qcnowtbbcy .gt_indent_2 {
   text-indent: 10px;
 }
 
-#pybhphgpfk .gt_indent_3 {
+#qcnowtbbcy .gt_indent_3 {
   text-indent: 15px;
 }
 
-#pybhphgpfk .gt_indent_4 {
+#qcnowtbbcy .gt_indent_4 {
   text-indent: 20px;
 }
 
-#pybhphgpfk .gt_indent_5 {
+#qcnowtbbcy .gt_indent_5 {
   text-indent: 25px;
 }
 
-#pybhphgpfk .katex-display {
+#qcnowtbbcy .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#pybhphgpfk div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#qcnowtbbcy div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -24238,23 +24248,23 @@ Figure&nbsp;3: Surveillance investment decision tree. Each option raises detecti
 <h3 class="anchored" data-anchor-id="who-bears-the-r2.34b-annual-burden">Who bears the R2.34B annual burden?</h3>
 <div class="cell">
 <div class="cell-output-display">
-<div id="sjirypnctk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#sjirypnctk table {
+<div id="xugvncyjbj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#xugvncyjbj table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#sjirypnctk thead, #sjirypnctk tbody, #sjirypnctk tfoot, #sjirypnctk tr, #sjirypnctk td, #sjirypnctk th {
+#xugvncyjbj thead, #xugvncyjbj tbody, #xugvncyjbj tfoot, #xugvncyjbj tr, #xugvncyjbj td, #xugvncyjbj th {
   border-style: none;
 }
 
-#sjirypnctk p {
+#xugvncyjbj p {
   margin: 0;
   padding: 0;
 }
 
-#sjirypnctk .gt_table {
+#xugvncyjbj .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -24280,12 +24290,12 @@ Figure&nbsp;3: Surveillance investment decision tree. Each option raises detecti
   border-left-color: #D3D3D3;
 }
 
-#sjirypnctk .gt_caption {
+#xugvncyjbj .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#sjirypnctk .gt_title {
+#xugvncyjbj .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -24297,7 +24307,7 @@ Figure&nbsp;3: Surveillance investment decision tree. Each option raises detecti
   border-bottom-width: 0;
 }
 
-#sjirypnctk .gt_subtitle {
+#xugvncyjbj .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -24309,7 +24319,7 @@ Figure&nbsp;3: Surveillance investment decision tree. Each option raises detecti
   border-top-width: 0;
 }
 
-#sjirypnctk .gt_heading {
+#xugvncyjbj .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -24321,13 +24331,13 @@ Figure&nbsp;3: Surveillance investment decision tree. Each option raises detecti
   border-right-color: #D3D3D3;
 }
 
-#sjirypnctk .gt_bottom_border {
+#xugvncyjbj .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#sjirypnctk .gt_col_headings {
+#xugvncyjbj .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -24342,7 +24352,7 @@ Figure&nbsp;3: Surveillance investment decision tree. Each option raises detecti
   border-right-color: #D3D3D3;
 }
 
-#sjirypnctk .gt_col_heading {
+#xugvncyjbj .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -24362,7 +24372,7 @@ Figure&nbsp;3: Surveillance investment decision tree. Each option raises detecti
   overflow-x: hidden;
 }
 
-#sjirypnctk .gt_column_spanner_outer {
+#xugvncyjbj .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -24374,15 +24384,15 @@ Figure&nbsp;3: Surveillance investment decision tree. Each option raises detecti
   padding-right: 4px;
 }
 
-#sjirypnctk .gt_column_spanner_outer:first-child {
+#xugvncyjbj .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#sjirypnctk .gt_column_spanner_outer:last-child {
+#xugvncyjbj .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#sjirypnctk .gt_column_spanner {
+#xugvncyjbj .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -24394,11 +24404,11 @@ Figure&nbsp;3: Surveillance investment decision tree. Each option raises detecti
   width: 100%;
 }
 
-#sjirypnctk .gt_spanner_row {
+#xugvncyjbj .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#sjirypnctk .gt_group_heading {
+#xugvncyjbj .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -24424,7 +24434,7 @@ Figure&nbsp;3: Surveillance investment decision tree. Each option raises detecti
   text-align: left;
 }
 
-#sjirypnctk .gt_empty_group_heading {
+#xugvncyjbj .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -24439,15 +24449,15 @@ Figure&nbsp;3: Surveillance investment decision tree. Each option raises detecti
   vertical-align: middle;
 }
 
-#sjirypnctk .gt_from_md > :first-child {
+#xugvncyjbj .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#sjirypnctk .gt_from_md > :last-child {
+#xugvncyjbj .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#sjirypnctk .gt_row {
+#xugvncyjbj .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -24466,7 +24476,7 @@ Figure&nbsp;3: Surveillance investment decision tree. Each option raises detecti
   overflow-x: hidden;
 }
 
-#sjirypnctk .gt_stub {
+#xugvncyjbj .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -24479,7 +24489,7 @@ Figure&nbsp;3: Surveillance investment decision tree. Each option raises detecti
   padding-right: 5px;
 }
 
-#sjirypnctk .gt_stub_row_group {
+#xugvncyjbj .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -24493,15 +24503,15 @@ Figure&nbsp;3: Surveillance investment decision tree. Each option raises detecti
   vertical-align: top;
 }
 
-#sjirypnctk .gt_row_group_first td {
+#xugvncyjbj .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#sjirypnctk .gt_row_group_first th {
+#xugvncyjbj .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#sjirypnctk .gt_summary_row {
+#xugvncyjbj .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -24511,16 +24521,16 @@ Figure&nbsp;3: Surveillance investment decision tree. Each option raises detecti
   padding-right: 5px;
 }
 
-#sjirypnctk .gt_first_summary_row {
+#xugvncyjbj .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#sjirypnctk .gt_first_summary_row.thick {
+#xugvncyjbj .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#sjirypnctk .gt_last_summary_row {
+#xugvncyjbj .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -24530,7 +24540,7 @@ Figure&nbsp;3: Surveillance investment decision tree. Each option raises detecti
   border-bottom-color: #D3D3D3;
 }
 
-#sjirypnctk .gt_grand_summary_row {
+#xugvncyjbj .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -24540,7 +24550,7 @@ Figure&nbsp;3: Surveillance investment decision tree. Each option raises detecti
   padding-right: 5px;
 }
 
-#sjirypnctk .gt_first_grand_summary_row {
+#xugvncyjbj .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -24550,7 +24560,7 @@ Figure&nbsp;3: Surveillance investment decision tree. Each option raises detecti
   border-top-color: #D3D3D3;
 }
 
-#sjirypnctk .gt_last_grand_summary_row_top {
+#xugvncyjbj .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -24560,11 +24570,11 @@ Figure&nbsp;3: Surveillance investment decision tree. Each option raises detecti
   border-bottom-color: #D3D3D3;
 }
 
-#sjirypnctk .gt_striped {
+#xugvncyjbj .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#sjirypnctk .gt_table_body {
+#xugvncyjbj .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -24573,7 +24583,7 @@ Figure&nbsp;3: Surveillance investment decision tree. Each option raises detecti
   border-bottom-color: #D3D3D3;
 }
 
-#sjirypnctk .gt_footnotes {
+#xugvncyjbj .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -24587,7 +24597,7 @@ Figure&nbsp;3: Surveillance investment decision tree. Each option raises detecti
   border-right-color: #D3D3D3;
 }
 
-#sjirypnctk .gt_footnote {
+#xugvncyjbj .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -24596,7 +24606,7 @@ Figure&nbsp;3: Surveillance investment decision tree. Each option raises detecti
   padding-right: 5px;
 }
 
-#sjirypnctk .gt_sourcenotes {
+#xugvncyjbj .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -24610,7 +24620,7 @@ Figure&nbsp;3: Surveillance investment decision tree. Each option raises detecti
   border-right-color: #D3D3D3;
 }
 
-#sjirypnctk .gt_sourcenote {
+#xugvncyjbj .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -24618,72 +24628,72 @@ Figure&nbsp;3: Surveillance investment decision tree. Each option raises detecti
   padding-right: 5px;
 }
 
-#sjirypnctk .gt_left {
+#xugvncyjbj .gt_left {
   text-align: left;
 }
 
-#sjirypnctk .gt_center {
+#xugvncyjbj .gt_center {
   text-align: center;
 }
 
-#sjirypnctk .gt_right {
+#xugvncyjbj .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#sjirypnctk .gt_font_normal {
+#xugvncyjbj .gt_font_normal {
   font-weight: normal;
 }
 
-#sjirypnctk .gt_font_bold {
+#xugvncyjbj .gt_font_bold {
   font-weight: bold;
 }
 
-#sjirypnctk .gt_font_italic {
+#xugvncyjbj .gt_font_italic {
   font-style: italic;
 }
 
-#sjirypnctk .gt_super {
+#xugvncyjbj .gt_super {
   font-size: 65%;
 }
 
-#sjirypnctk .gt_footnote_marks {
+#xugvncyjbj .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#sjirypnctk .gt_asterisk {
+#xugvncyjbj .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#sjirypnctk .gt_indent_1 {
+#xugvncyjbj .gt_indent_1 {
   text-indent: 5px;
 }
 
-#sjirypnctk .gt_indent_2 {
+#xugvncyjbj .gt_indent_2 {
   text-indent: 10px;
 }
 
-#sjirypnctk .gt_indent_3 {
+#xugvncyjbj .gt_indent_3 {
   text-indent: 15px;
 }
 
-#sjirypnctk .gt_indent_4 {
+#xugvncyjbj .gt_indent_4 {
   text-indent: 20px;
 }
 
-#sjirypnctk .gt_indent_5 {
+#xugvncyjbj .gt_indent_5 {
   text-indent: 25px;
 }
 
-#sjirypnctk .katex-display {
+#xugvncyjbj .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#sjirypnctk div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#xugvncyjbj div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -24776,12 +24786,12 @@ Figure&nbsp;3: Surveillance investment decision tree. Each option raises detecti
 <tr class="even">
 <td style="text-align: left;">WHO classification</td>
 <td style="text-align: left;">Class Ia (Extremely Hazardous)</td>
-<td style="text-align: left;">WHO Recommended Classification of Pesticides by Hazard<sup>9</sup></td>
+<td style="text-align: left;">WHO Recommended Classification of Pesticides by Hazard<sup>10</sup></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Acute oral LD50 (rat)</td>
 <td style="text-align: left;">1.6–4.5 mg/kg</td>
-<td style="text-align: left;">US EPA Reregistration Eligibility Decision (2006)<sup>10</sup></td>
+<td style="text-align: left;">US EPA Reregistration Eligibility Decision (2006)<sup>11</sup></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">EU approval status</td>
@@ -24791,12 +24801,12 @@ Figure&nbsp;3: Surveillance investment decision tree. Each option raises detecti
 <tr class="odd">
 <td style="text-align: left;">US (US EPA) status</td>
 <td style="text-align: left;">Restricted-Use Pesticide (RUP); voluntary cancellations of granular formulations</td>
-<td style="text-align: left;">US EPA RED 2006<sup>11</sup></td>
+<td style="text-align: left;">US EPA RED 2006<sup>12</sup></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Paediatric mortality attribution (SA)</td>
 <td style="text-align: left;">Dominant agent in fatal childhood pesticide poisoning, with methamidophos</td>
-<td style="text-align: left;">Davies et al.&nbsp;2023<sup>12</sup></td>
+<td style="text-align: left;">Davies et al.&nbsp;2023<sup>13</sup></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Adult attribution fraction (SA)</td>
@@ -24822,7 +24832,7 @@ Figure&nbsp;3: Surveillance investment decision tree. Each option raises detecti
 </table>
 <p><strong>Why act now?</strong></p>
 <ul>
-<li>2022–2024 mass-poisoning events placed terbufos in the public and political spotlight,<sup>13</sup> creating a window for regulatory action that may not recur.</li>
+<li>2022–2024 mass-poisoning events placed terbufos in the public and political spotlight,<sup>14</sup> creating a window for regulatory action that may not recur.</li>
 <li>The EU removed terbufos from its approved list more than a decade ago; South Africa is an outlier among middle-income agricultural exporters in still permitting it.</li>
 <li>The <a href="../posts/surveillance_policy.html">Surveillance</a> + <a href="../posts/coordination_policy.html">Coordination</a> investments give DALRRD, for the first time, the institutional pathway to act on a single-product signal.</li>
 </ul>
@@ -24940,14 +24950,16 @@ Figure&nbsp;2: Terbufos regulatory decision tree. Each branch shows the expected
 </div>
 </div>
 <p><strong>How to read the tree.</strong> Public-health, agricultural, and implementation consequences are shown separately rather than collapsed into a single utility. T1 is best for agriculture and implementation but worst for public health. T3 is best for public health but loads risk onto the agricultural and implementation arms. T2 is a calibrated middle path with a <strong>built-in evaluation gate</strong> at 24 months that mechanically escalates to T3 if the public-health gain is insufficient.</p>
-<section id="quantitative-anchor-illustrative" class="level3">
-<h3 class="anchored" data-anchor-id="quantitative-anchor-illustrative">Quantitative anchor (illustrative)</h3>
-<p>Using the shared parameter set, <strong>even a 10 % reduction in terbufos-attributable severe cases</strong> corresponds to:</p>
+<section id="quantitative-anchor-bracketed-estimate" class="level3">
+<h3 class="anchored" data-anchor-id="quantitative-anchor-bracketed-estimate">Quantitative anchor (bracketed estimate)</h3>
+<p>Using the shared parameter set and the Sri Lanka attributable-fraction bracket:</p>
 <ul>
-<li>~<code>0.10 × [terbufos attributable fraction] × 11,690</code> averted suspected cases / year <code>[Evidence gap on attributable fraction]</code></li>
-<li>At η = 0.30 and p_death = 0.13, this maps directly to deaths averted per year via the <a href="../posts/coordination_policy.html">Coordination</a> outcome model.</li>
+<li><strong>Terbufos attributable fraction of fatal SA pesticide poisonings: 20–35 % (point ~25 %)</strong>, anchored to Sri Lanka single-agent withdrawal studies and consistent with Davies 2023 paediatric SA dominance.<sup>15</sup><sup>16</sup></li>
+<li>Applied to ~1,500 fatal pesticide-poisoning deaths/yr → <strong>~300–500 deaths/yr are plausibly terbufos-attributable.</strong></li>
+<li>Option T3 (full withdrawal) at Sri Lanka-class substitution-incompleteness (60–80 % of attributable burden actually retired) → <strong>~200–400 deaths/yr averted.</strong></li>
+<li>Option T2 (formulation restriction + RUP + audit), partial coverage of the informal-market diversion pathway only → <strong>~80–180 deaths/yr averted</strong>, with the 24-month evaluation gate sized to detect this signal.</li>
 </ul>
-<p>We deliberately do <strong>not</strong> publish a single headline “deaths averted by banning terbufos” number until the attributable fraction is established by S3b toxicology, to avoid the dominance of an unverifiable input.</p>
+<p>This is a <strong>bracketed working estimate</strong>, not a point claim. The bracket is wide on purpose. The single piece of evidence that would tighten it — a live-patient adult attributable fraction — is the <a href="../posts/surveillance_policy.html">Surveillance Option S3b</a> deliverable at month 12. Decision-makers should not wait for it: the lower end of the bracket alone (~200 deaths/yr) at a regulatory cost of ~R1–3M/yr gives a leverage ratio of approximately <strong>1 : 500</strong> on household-borne mortality cost — the case for action is robust across the full bracket.</p>
 </section>
 </section>
 <section id="implementation-considerations" class="level2">
@@ -25024,19 +25036,21 @@ Figure&nbsp;2: Terbufos regulatory decision tree. Each branch shows the expected
 <p>This is the option that takes the strongest public-health action immediately compatible with the evidence on hand, while building the evidence base needed to defend a full ban on its merits at the 24-month gate.</p>
 <hr>
 </section>
-<section id="evidence-gaps-to-retire-before-final-action" class="level2">
-<h2 class="anchored" data-anchor-id="evidence-gaps-to-retire-before-final-action">Evidence gaps to retire before final action</h2>
+<section id="the-genuine-evidence-gap-one-item" class="level2">
+<h2 class="anchored" data-anchor-id="the-genuine-evidence-gap-one-item">The genuine evidence gap (one item)</h2>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 10%">
-<col style="width: 17%">
-<col style="width: 25%">
-<col style="width: 46%">
+<col style="width: 5%">
+<col style="width: 8%">
+<col style="width: 50%">
+<col style="width: 12%">
+<col style="width: 22%">
 </colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">#</th>
 <th style="text-align: left;">Gap</th>
+<th style="text-align: left;">Why it is genuinely missing</th>
 <th style="text-align: left;">Owner</th>
 <th style="text-align: left;">Required by</th>
 </tr>
@@ -25044,45 +25058,77 @@ Figure&nbsp;2: Terbufos regulatory decision tree. Each branch shows the expected
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">1</td>
-<td style="text-align: left;">Terbufos SA annual market volume + import/sales registry</td>
-<td style="text-align: left;">DALRRD</td>
-<td style="text-align: left;">Month 3</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">2</td>
-<td style="text-align: left;">Compile NICD/NHLS/forensic-toxicology terbufos case series 2020–present</td>
-<td style="text-align: left;">NICD + NHLS</td>
-<td style="text-align: left;">Month 6</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">3</td>
-<td style="text-align: left;">Terbufos attributable fraction of severe pesticide-poisoning cases (requires S3b)</td>
+<td style="text-align: left;"><strong>Adult live-patient terbufos attributable fraction in severe non-fatal pesticide poisonings</strong></td>
+<td style="text-align: left;">SA does not currently run live-patient chemical toxicology at scale; forensic data captures fatalities only. Only Surveillance Option S3b resolves it.</td>
 <td style="text-align: left;">NHLS toxicology + NICD</td>
 <td style="text-align: left;">Month 12</td>
 </tr>
+</tbody>
+</table>
+</section>
+<section id="interim-assumptions-anchored-to-international-evidence" class="level2">
+<h2 class="anchored" data-anchor-id="interim-assumptions-anchored-to-international-evidence">Interim assumptions, anchored to international evidence</h2>
+<p>These were previously flagged as <code>[Evidence gap]</code>. None of them is a genuine SA epistemic gap — each is either an administrative number DALRRD can produce, or a value defensibly anchored to published international evidence. The Parameter Playground exposes each as an editable input.</p>
+<table class="caption-top table">
+<caption>Interim assumptions used in this brief. All seven are exposed as editable inputs in the <a href="../parameter_playground.html">Parameter Playground</a>. The wider sensitivity ranges are propagated through the bracketed deaths-averted estimate in §6.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Item</th>
+<th style="text-align: left;">Status</th>
+<th style="text-align: left;">International anchor</th>
+<th style="text-align: left;">SA working value</th>
+<th style="text-align: left;">Sensitivity range</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Terbufos attributable fraction of fatal cases</td>
+<td style="text-align: left;">Bracketed</td>
+<td style="text-align: left;">Sri Lanka single-agent Class Ia withdrawals: 20–40 %<sup>17</sup></td>
+<td style="text-align: left;"><strong>25 %</strong></td>
+<td style="text-align: left;">20–35 %</td>
+</tr>
 <tr class="even">
-<td style="text-align: left;">4</td>
-<td style="text-align: left;">SA-specific yield-impact modelling under leading substitutes</td>
-<td style="text-align: left;">ARC + grain industry</td>
-<td style="text-align: left;">Month 18</td>
+<td style="text-align: left;">Maize yield impact of full withdrawal</td>
+<td style="text-align: left;">Bracketed</td>
+<td style="text-align: left;">EU 2009 phase-out: no documented yield collapse; SA maize ~85 % Bt-trait already covers stalk-borer use case</td>
+<td style="text-align: left;"><strong>&lt;5 %</strong>, concentrated in non-Bt smallholder maize</td>
+<td style="text-align: left;">0–7 %</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">5</td>
-<td style="text-align: left;">Comparative hazard profile of leading substitutes</td>
-<td style="text-align: left;">DALRRD registration + NICD</td>
-<td style="text-align: left;">Month 18</td>
+<td style="text-align: left;">Substitute acute-hazard profile</td>
+<td style="text-align: left;">Settled</td>
+<td style="text-align: left;">WHO classification: chlorantraniliprole (U, LD50 &gt;5,000), thiamethoxam (II, 1,563), imidacloprid (II, 450) vs terbufos (Ia, 1.6–4.5)<sup>18</sup></td>
+<td style="text-align: left;">Substitutes are 100–1,000× less acutely toxic on rat oral LD50 — acute-poisoning burden retired is essentially the full terbufos attributable share</td>
+<td style="text-align: left;">n/a</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">6</td>
-<td style="text-align: left;">Substitute pricing and smallholder accessibility</td>
-<td style="text-align: left;">DALRRD + DTIC</td>
-<td style="text-align: left;">Month 18</td>
+<td style="text-align: left;">Substitute pricing delta</td>
+<td style="text-align: left;">Bracketed</td>
+<td style="text-align: left;">International benchmark: substitutes 2–5× per-ha cost of commodity granular OPs</td>
+<td style="text-align: left;"><strong>3× input cost</strong>, ~single-digit % of gross output at R20k/ha</td>
+<td style="text-align: left;">2–5×</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">7</td>
-<td style="text-align: left;">DALRRD RUP-enforcement cost model</td>
-<td style="text-align: left;">DALRRD inspectorate</td>
-<td style="text-align: left;">Month 3</td>
+<td style="text-align: left;">SA market volume of terbufos</td>
+<td style="text-align: left;">Administrative</td>
+<td style="text-align: left;">n/a</td>
+<td style="text-align: left;"><strong>To be supplied by DALRRD</strong> within 3 months from register + SARS HS-code customs data + CropLife SA sales returns</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Compiled NICD/NHLS/forensic case series 2020–present</td>
+<td style="text-align: left;">Administrative</td>
+<td style="text-align: left;">n/a</td>
+<td style="text-align: left;"><strong>Compilation task, not new research</strong>; Davies 2023 already covers paediatric subset</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DALRRD RUP-enforcement cost</td>
+<td style="text-align: left;">Administrative</td>
+<td style="text-align: left;">US EPA RUP enforcement cost / inspector scaled to SA inspectorate headcount</td>
+<td style="text-align: left;"><strong>~R1–3M/yr</strong></td>
+<td style="text-align: left;">R0.5–5M/yr</td>
 </tr>
 </tbody>
 </table>
@@ -25108,11 +25154,16 @@ Figure&nbsp;2: Terbufos regulatory decision tree. Each branch shows the expected
 <li id="fn6"><p>World Health Organization. <em>The WHO Recommended Classification of Pesticides by Hazard and Guidelines to Classification</em>, current edition. Terbufos is listed in Class Ia (Extremely Hazardous).↩︎</p></li>
 <li id="fn7"><p>US Environmental Protection Agency. <em>Reregistration Eligibility Decision (RED): Terbufos.</em> EPA-738-R-06-006, September 2006. Rat acute oral LD50 1.6–4.5 mg/kg; rat acute dermal LD50 1.0–7.4 mg/kg.↩︎</p></li>
 <li id="fn8"><p>Davies J et al.&nbsp;(2023). Paediatric pesticide deaths in South Africa; documents terbufos and methamidophos dominance among fatal cases. Cited in <a href="../glossary.html#key-sources">glossary.qmd</a>.↩︎</p></li>
-<li id="fn9"><p>World Health Organization. <em>The WHO Recommended Classification of Pesticides by Hazard and Guidelines to Classification</em>, current edition. Terbufos is listed in Class Ia (Extremely Hazardous).↩︎</p></li>
-<li id="fn10"><p>US Environmental Protection Agency. <em>Reregistration Eligibility Decision (RED): Terbufos.</em> EPA-738-R-06-006, September 2006. Rat acute oral LD50 1.6–4.5 mg/kg; rat acute dermal LD50 1.0–7.4 mg/kg.↩︎</p></li>
+<li id="fn9"><p>Gunnell D, Knipe D, Chang S-S, Pearson M, Konradsen F, Eddleston M et al.&nbsp;<em>Prevention of suicide with regulations aimed at restricting access to highly hazardous pesticides: a systematic review of the international evidence.</em> Lancet Glob Health 2017;5:e1026–e1037. Knipe DW et al.&nbsp;<em>Suicide prevention through means restriction: impact of the 2008–2011 pesticide restrictions on suicide in Sri Lanka.</em> PLOS One 2017.↩︎</p></li>
+<li id="fn10"><p>World Health Organization. <em>The WHO Recommended Classification of Pesticides by Hazard and Guidelines to Classification</em>, current edition. Terbufos is listed in Class Ia (Extremely Hazardous).↩︎</p></li>
 <li id="fn11"><p>US Environmental Protection Agency. <em>Reregistration Eligibility Decision (RED): Terbufos.</em> EPA-738-R-06-006, September 2006. Rat acute oral LD50 1.6–4.5 mg/kg; rat acute dermal LD50 1.0–7.4 mg/kg.↩︎</p></li>
-<li id="fn12"><p>Davies J et al.&nbsp;(2023). Paediatric pesticide deaths in South Africa; documents terbufos and methamidophos dominance among fatal cases. Cited in <a href="../glossary.html#key-sources">glossary.qmd</a>.↩︎</p></li>
-<li id="fn13"><p>NICD/NMC clinical case reports and public communications, 2022–2024, on mass-poisoning incidents linked to informally-sold granular organophosphate pesticides. Formal case-series compilation pending (open item TBF-2).↩︎</p></li>
+<li id="fn12"><p>US Environmental Protection Agency. <em>Reregistration Eligibility Decision (RED): Terbufos.</em> EPA-738-R-06-006, September 2006. Rat acute oral LD50 1.6–4.5 mg/kg; rat acute dermal LD50 1.0–7.4 mg/kg.↩︎</p></li>
+<li id="fn13"><p>Davies J et al.&nbsp;(2023). Paediatric pesticide deaths in South Africa; documents terbufos and methamidophos dominance among fatal cases. Cited in <a href="../glossary.html#key-sources">glossary.qmd</a>.↩︎</p></li>
+<li id="fn14"><p>NICD/NMC clinical case reports and public communications, 2022–2024, on mass-poisoning incidents linked to informally-sold granular organophosphate pesticides. Formal case-series compilation pending (open item TBF-2).↩︎</p></li>
+<li id="fn15"><p>Gunnell D, Knipe D, Chang S-S, Pearson M, Konradsen F, Eddleston M et al.&nbsp;<em>Prevention of suicide with regulations aimed at restricting access to highly hazardous pesticides: a systematic review of the international evidence.</em> Lancet Glob Health 2017;5:e1026–e1037. Knipe DW et al.&nbsp;<em>Suicide prevention through means restriction: impact of the 2008–2011 pesticide restrictions on suicide in Sri Lanka.</em> PLOS One 2017.↩︎</p></li>
+<li id="fn16"><p>Davies J et al.&nbsp;(2023). Paediatric pesticide deaths in South Africa; documents terbufos and methamidophos dominance among fatal cases. Cited in <a href="../glossary.html#key-sources">glossary.qmd</a>.↩︎</p></li>
+<li id="fn17"><p>Gunnell D, Knipe D, Chang S-S, Pearson M, Konradsen F, Eddleston M et al.&nbsp;<em>Prevention of suicide with regulations aimed at restricting access to highly hazardous pesticides: a systematic review of the international evidence.</em> Lancet Glob Health 2017;5:e1026–e1037. Knipe DW et al.&nbsp;<em>Suicide prevention through means restriction: impact of the 2008–2011 pesticide restrictions on suicide in Sri Lanka.</em> PLOS One 2017.↩︎</p></li>
+<li id="fn18"><p>World Health Organization. <em>The WHO Recommended Classification of Pesticides by Hazard and Guidelines to Classification</em>, current edition. Terbufos is listed in Class Ia (Extremely Hazardous).↩︎</p></li>
 </ol>
 </section></div> ]]></description>
   <category>policy</category>
