@@ -19,32 +19,12 @@ format:
 
 **Reading time:** 8 minutes
 
-**Key message:** South Africa has the legal authority to strengthen pesticide poisoning surveillance — we just need to execute better. Five low-cost options can improve detection by 50–85% without new legislation. The economic case is overwhelming: **R0.24M–R1.19M/year of surveillance spend offsets ~R260M/year of avoided burden cost** against a total burden of ~R2.3B/year.
-:::
-
-::: {.callout-tip icon=false}
-## D2P Recommendation
-
-**Adopt Options 3a + 3b + 4 as the Minimum Viable Package; scale to the Full Package within 18 months.**
-
-- **Pilot:** 6 months, 3 provinces (Gauteng, Western Cape, KZN), ~R950,000 total
-- **Lead agency:** NICD as national coordinator
-- **Quick wins (weeks 1–4):** Option 3a (BChE IT activation under existing MOU) + Option 4 (PIH live dashboard)
-- **Medium term (months 3–12):** Option 3b (toxicology auto-notify — build new) + Option 2 (NICD→DALRRD feed) + Option 4 MVD integration into NMC
-- **Evaluate Q1 2027** against avoided-burden ratio; scale nationally if it holds
+**Key message:** South Africa has the legal authority to strengthen pesticide poisoning surveillance — we just need to execute better. Five low-cost options can improve detection by 50–85% without new legislation.
 :::
 
 ## The Problem in Plain Language
 
-Three independent surveillance systems each capture part of the picture but never share records:
-
-- **NMC** notifications: ~690 cases/year
-- **NHLS** severe-poisoning laboratory results: ~2,000 cases/year
-- **Poisons Information Helpline (PIH)**: ~9,000 pesticide-related calls/year
-
-In the absence of record linkage we treat these sources as **mutually exclusive**, giving a true annual burden of **~11,690 cases**. Applying the NMC-observed case-fatality rate of 10–15% yields **~1,500–1,800 deaths/year** (the headline uses upper-mid CFR 13–15%; vital-registration data systematically under-codes intentional self-poisoning under ICD-10 default rules, so this is conservative — see the [VR poisoning-deaths analysis](https://bridaybrummer.github.io/MRC_VR/projects/poisoning_deaths/)). Monetised using a per-case morbidity cost of ~R12,000 and a human-capital mortality cost of ~R1.5M, the **total economic burden is ~R2.3 billion/year**.
-
-Most victims are:
+Every year, an estimated **10,000+ South Africans** are poisoned by pesticides — yet our surveillance system captures fewer than half of these cases. Most victims are:
 
 - **Young children** (accidental exposure from unsafe storage)
 - **Adolescent girls** (intentional self-harm)
@@ -58,177 +38,24 @@ Most victims are:
 
 ## What's Causing the Failure?
 
-### Status Quo: A One-Way, Broken Pipeline
-
-Notifications today travel **in one direction only**, and the chain breaks before it reaches the regulator who can act on it:
-
-```{mermaid}
-%%| label: fig-status-quo-flow
-%%| fig-cap: "Current notification pathway. Clinicians and public-health officials notify on the NMC platform; NMC sends an SMS to the local EHP, who is mandated to investigate but does not record the investigation back on NMC. The EHP may informally refer to DALRRD, but this is not captured on NMC and DALRRD's action (if any) is not fed back to NMC or the clinician."
-flowchart LR
-    A[Clinician /<br/>Public-health official] -->|Notification on<br/>NMC platform| D[NMC platform<br/><i>NICD</i>]
-    D -->|SMS notification| B[Local EHP<br/><i>mandated to investigate</i>]
-    B -.Investigation NOT<br/>recorded on NMC.-x D
-    B -.Informal phone /<br/>email referral.-> C[DALRRD<br/><i>Pesticide Registrar /<br/>Inspectorate</i>]
-    B -.Referral NOT<br/>recorded on NMC.-x D
-
-    C -.Feedback to EHP<br/>at best.-> B
-    C -.x No feedback to NMC.-x D
-    C -.x No feedback to clinician.-x A
-    D -.x No case-status<br/>feedback.-x A
-
-    style A fill:#fde,stroke:#333
-    style B fill:#ffd,stroke:#333
-    style C fill:#fdd,stroke:#cc0000,stroke-dasharray: 5 5
-    style D fill:#cfc,stroke:#333,stroke-width:2px
-```
-
-**What this shows:**
-
-- Clinicians and public-health officials **do** notify on the NMC platform — that is the formal entry point. The NMC platform then **sends an SMS to the local EHP**, who is mandated to investigate.
-- **EHPs do not update NMC** with the outcome of their investigation. There is no field, no workflow, and no requirement to do so.
-- EHPs **may informally** refer the matter to DALRRD (phone, email, personal contact). This referral is **not recorded on NMC** either.
-- **Nothing closes the loop back to NMC or the clinician.** DALRRD may give feedback to the EHP at best — but the clinician, NICD, and the surveillance dashboard never learn what (if anything) happened.
-
-### Coordination Decision Tree: Where the Chain Breaks
-
-The same pathway, viewed as a sequence of decisions, makes it obvious **where coordination fails by default** — not because anyone refuses to act, but because no decision node has a mandatory "record it on NMC" branch.
-
-```{mermaid}
-%%| label: fig-coordination-decision-tree
-%%| fig-cap: "Coordination decision tree for a single suspected pesticide-poisoning case under the status quo. Green = decision that closes the loop; red = decision that breaks the chain. Most cases exit through red nodes because no step is mandated to write back to NMC."
-flowchart TD
-    Q0{Case suspected by<br/>clinician / PHO?} -->|Yes| Q1{Notified on<br/>NMC platform?}
-    Q0 -->|No| X0[Case invisible<br/>to surveillance]:::bad
-
-    Q1 -->|Yes| Q2{NMC SMS<br/>reaches local EHP?}
-    Q1 -->|No| X1[No notification<br/>filed]:::bad
-
-    Q2 -->|Yes| Q3{EHP investigates?}
-    Q2 -->|No SMS / wrong contact| X2[Notification dies<br/>at NMC]:::bad
-
-    Q3 -->|Yes| Q4{Investigation<br/>recorded on NMC?}
-    Q3 -->|No / no capacity| X3[No field response]:::bad
-
-    Q4 -->|Yes — rare| G1[Loop closed<br/>to NMC]:::good
-    Q4 -->|No — default| Q5{EHP refers<br/>to DALRRD?}
-
-    Q5 -->|Informally<br/>phone / email| Q6{DALRRD<br/>acts?}
-    Q5 -->|No| X4[Regulator never<br/>hears about it]:::bad
-
-    Q6 -->|Yes| Q7{DALRRD feeds<br/>outcome back?}
-    Q6 -->|No| X5[Product / source<br/>not addressed]:::bad
-
-    Q7 -->|To EHP only| X6[NMC + clinician<br/>still blind]:::bad
-    Q7 -->|To NMC + clinician| G2[Loop fully closed]:::good
-
-    classDef bad fill:#fdd,stroke:#cc0000,stroke-width:1.5px,color:#600
-    classDef good fill:#cfc,stroke:#060,stroke-width:1.5px,color:#030
-```
-
-**Reading the tree:**
-
-- There are **eight decision nodes** between "case suspected" and "loop fully closed". A case must clear **all eight** for coordination to actually work.
-- **Six of the eight** have a default branch that exits to a red (loop-broken) terminal — usually because no system *requires* the actor to record what they did.
-- The only two green exits (`G1`, `G2`) depend on behaviours that are **not currently mandated**: EHPs writing investigation outcomes onto NMC, and DALRRD feeding regulatory action back to NMC and the clinician.
-- This is why the policy options below all target a specific decision node: **Option 1** (NHLS→NMC IT feed) replaces the fragile `Q1` decision with an automatic one; **Option 3a/3b** do the same for laboratory-confirmed cases; **Option 2** (NICD→DALRRD) and the Full Package feedback loop force `Q5`, `Q6`, and `Q7` to become recorded, structured steps.
-
-### From Coordination to Clinical Outcomes
-
-Each coordination terminal (`G1`, `G2`, `X1`–`X6`) feeds into a downstream **clinical-outcome subtree** for (i) the index case and (ii) the secondary cases that would have followed from the same source (contaminated product, illegal supply, occupational hazard). Loop closure does not change the index-case prognosis — that is already determined by clinical management — but it **does** change the probability that the source is removed before the next victim is exposed.
-
-```{mermaid}
-%%| label: fig-outcome-decision-tree
-%%| fig-cap: "Clinical-outcome subtree attached to each coordination terminal. Loop closure (green) triggers source removal and averts secondary cases; loop-broken terminals (red) allow the source to keep producing cases at the cluster rate ρ."
-flowchart TD
-    T0[Suspected case<br/>at coordination terminal] --> P1{Loop closed?}
-
-    P1 -->|Yes — G1 or G2| S1[Source identified<br/>+ removed]:::good
-    P1 -->|No — X1...X6| S2[Source persists]:::bad
-
-    S1 --> I1{Index case<br/>clinical outcome}
-    S2 --> I2{Index case<br/>clinical outcome}
-
-    I1 -->|p_death = 0.13| D1[Index death]:::bad
-    I1 -->|p_severe = 0.27| H1[Severe morbidity<br/>ICU / hospital]:::warn
-    I1 -->|p_recover = 0.60| R1[Full recovery]:::good
-
-    I2 -->|p_death = 0.13| D2[Index death]:::bad
-    I2 -->|p_severe = 0.27| H2[Severe morbidity<br/>ICU / hospital]:::warn
-    I2 -->|p_recover = 0.60| R2[Full recovery]:::good
-
-    S1 --> N1[Secondary cases<br/>averted ≈ ρ × η]:::good
-    S2 --> N2[Secondary cases<br/>NOT averted ≈ ρ]:::bad
-
-    N1 --> AD1[Deaths averted<br/>≈ ρ × η × p_death]:::good
-    N2 --> AD2[Additional deaths<br/>≈ ρ × p_death]:::bad
-
-    classDef bad fill:#fdd,stroke:#cc0000,stroke-width:1.5px,color:#600
-    classDef warn fill:#ffe9b3,stroke:#cc8800,stroke-width:1.5px,color:#663300
-    classDef good fill:#cfc,stroke:#060,stroke-width:1.5px,color:#030
-```
-
-**Parameters used in the subtree (consistent with the [Decision Model](decision_model.qmd#sec-burden-economics)):**
-
-| Parameter | Symbol | Value | Rationale / source |
-|:----------|:------:|------:|:-------------------|
-| Case-fatality rate (index) | `p_death` | 0.13 | Mid-range of NMC-observed CFR 10–15%; conservative vs. VR under-coding |
-| Severe morbidity (ICU/hospital) | `p_severe` | 0.27 | Placeholder — proportion of survivors with ICU stay |
-| Full recovery (survivor) | `p_recover` | 0.60 | Residual; survivors managed outpatient or short admission |
-| Secondary cases per source | `ρ` | 3.0 | Expected additional cases from an unaddressed source (cluster size minus index); placeholder |
-| Loop-closure prevention efficacy | `η` | 0.30 | Same η as in burden model — fraction of `ρ` averted when source is removed |
-| Per-case morbidity cost | — | R12,000 | Existing model parameter |
-| Per-death mortality cost | — | R1,500,000 | Human-capital approach, existing model |
-| Per-case societal cost | — | ~R197,000 | R12,000 + 0.13 × R1.5M (matches R2.3B ÷ 11,690 cases) |
-
-: Subtree parameters. All probabilities and ρ are placeholders to be re-estimated from the pilot. {.striped .hover}
-
-**Expected outcomes per *suspected* case (index + averted secondaries):**
-
-| Scenario | P(loop closed) | Expected deaths / case | Expected severe / case | Cases averted / case | Deaths averted / case | Expected cost / case (R) |
-|:---------|---------------:|----------------------:|----------------------:|---------------------:|---------------------:|-------------------------:|
-| **Status quo** | 0.011 | 0.130 | 0.270 | 0.010 | 0.0013 | 196,400 |
-| + Option 1 (NHLS IT feed) | 0.080 | 0.130 | 0.270 | 0.072 | 0.0094 | 181,000 |
-| + Option 3a (BChE auto-notify) | 0.150 | 0.130 | 0.270 | 0.135 | 0.0176 | 167,500 |
-| + Option 3a + 3b (toxicology) | 0.220 | 0.130 | 0.270 | 0.198 | 0.0257 | 154,000 |
-| + Option 2 (NICD→DALRRD) | 0.400 | 0.130 | 0.270 | 0.360 | 0.0468 | 125,000 |
-| **Full Package** | 0.700 | 0.130 | 0.270 | 0.630 | 0.0819 | 72,000 |
-
-: Expected per-case clinical outcomes. *Cases averted/case* = P(closed) × ρ × η. *Deaths averted/case* = cases averted × p_death. Cost column repeats the coordination-cost table for ease of reading. {.striped .hover}
-
-**Scaled to ~11,690 suspected cases/year:**
-
-| Scenario | Loops closed / year | Secondary cases averted / year | **Deaths averted / year** | Coordination cost / year (Rm) | **Burden avoided / year (Rm)** |
-|:---------|--------------------:|-------------------------------:|--------------------------:|-----------------------------:|-------------------------------:|
-| **Status quo** | 129 | 117 | 15 | 2,296 | — (baseline) |
-| + Option 1 | 935 | 842 | 110 | 2,116 | 180 |
-| + Option 3a | 1,753 | 1,578 | 205 | 1,958 | 338 |
-| + Option 3a + 3b | 2,572 | 2,315 | 301 | 1,800 | 496 |
-| + Option 2 | 4,676 | 4,208 | 547 | 1,461 | 835 |
-| **Full Package** | 8,183 | 7,365 | **957** | **842** | **1,454** |
-
-: National-scale annual outcomes. *Burden avoided* = (status-quo coordination cost) − (option coordination cost), monetising the prevention benefit through the per-case cost reduction. {.striped .hover}
-
-**Headline:** the Full Package averts roughly **950 deaths/year** and **7,400 secondary cases/year** for an annual surveillance spend of < R1.5M — a per-death-averted cost on the order of **R1,500**, against a per-death societal cost of R1.5M. Even halving every effectiveness parameter (η = 0.15, ρ = 1.5, p_death = 0.07) keeps the per-death-averted cost below R12,000, i.e. > 100× cheaper than the per-death burden. The dominance survives generous pessimism on every input.
-
 A **fishbone analysis** identified five root causes — all fixable without new laws:
 
 ```{mermaid}
 %%| label: fig-fishbone
 %%| fig-cap: "Root causes of surveillance failure and the policy options that address them"
 flowchart LR
-    A[Surveillance Failure] --> B[NHLS–NMC MOU not<br/>IT-implemented]
-    A --> C[PIH data not used<br/>for surveillance]
+    A[Surveillance Failure] --> B[No NHLS-NICD linkage]
+    A --> C[PIH data not used for surveillance]
     A --> D[Delayed manual reporting]
-    A --> E[NICD→DALRRD feed<br/>does not exist]
-    A --> F[No live toxicology<br/>on survivors]
-
-    B --> G[Option 1: Activate NHLS–NMC<br/>data feed in IT]
-    C --> H[Option 4: PIH minimum viable<br/>dataset + live dashboard]
-    D --> I[Option 3a: BChE auto-notify<br/><i>capability exists</i>]
-    F --> J[Option 3b: Chemical toxicology<br/>auto-notify <i>new build</i>]
-    E --> K[Option 2: NICD→DALRRD<br/>poisoning intelligence feed]
-
+    A --> E[No inter-agency MOUs]
+    A --> F[No hotspot detection capacity]
+    
+    B --> G[Option 1: NHLS data sharing MOU]
+    C --> H[Option 4: PIH quarterly reports]
+    D --> I[Option 3: BChE auto-notify]
+    E --> J[Option 2: DALRRD data sharing]
+    F --> K[Option 5: Provincial coordination]
+    
     style A fill:#f99,stroke:#333
     style G fill:#9f9,stroke:#333
     style H fill:#9f9,stroke:#333
@@ -256,55 +83,55 @@ flowchart LR
 
 ---
 
-### Option 1: Activate the NHLS–NMC Data Feed (IT Implementation)
+### Option 1: NHLS Data Sharing Agreement
 
 **What it is:**
 
-- An **NHLS–NICD MOU for routine BChE data sharing already exists** on paper. What is missing is the **IT implementation** — a working LIS-to-NMC pipe.
-- Stand up the technical connector (HL7 / flat-file export from NHLS LIS → NMC ingest), governance, and a monthly QA review.
-- De-identified, aggregated BChE data flows into NMC for trend analysis.
+- Formalize a Memorandum of Understanding (MOU) between NICD and NHLS
+- NHLS shares aggregated BChE data (de-identified) monthly
+- NICD analysts manually review for trends
 
-**Legal basis:** Existing MOU under Section 90 of the National Health Act (2003). **No new legal instrument required.**
+**Legal basis:** Section 90 of the National Health Act (2003)
 
 **Performance:**
 
 - Detects ~5.2 of 10 annual hotspots
-- Annual cost: ~R40,000 ongoing (QA + liaison); one-off IT setup ~R80,000
+- Annual cost: ~R40,000 (legal review, MOU development)
 - Implementation time: 8–12 weeks
 
-**Bottom line:** The cheapest fix on the menu — the agreement exists, the data exists, only the IT plumbing is missing.
+**Bottom line:** Low cost, modest improvement — but still relies on manual review.
 
 ---
 
-### Option 2: NICD→DALRRD Poisoning Intelligence Feed
+### Option 2: DALRRD Pesticide Registration Data Sharing
 
 **What it is:**
 
-- **DALRRD has formally requested** the poisoning intelligence held by NICD/NMC so that pesticide registration, labelling, and inspectorate priorities can be informed by real-world morbidity and mortality.
-- The flow is **NICD/NMC → DALRRD** (poisoning cases by suspected product, geography, season), not the other way round.
-- Output: a quarterly NICD→DALRRD brief plus an ad-hoc cluster alert channel.
+- Link pesticide poisoning cases to Department of Agriculture's pesticide registration database
+- Identify which products are most commonly involved in poisonings
+- Target enforcement and labeling improvements
 
-**Legal basis:** Inter-departmental data sharing protocols; de-identified aggregate data.
+**Legal basis:** Inter-departmental data sharing protocols
 
 **Performance:**
 
-- Detects ~5.8 of 10 annual hotspots (via downstream regulatory action reducing supply)
-- Annual cost: ~R40,000 (NICD analyst time + DALRRD liaison)
+- Detects ~5.8 of 10 annual hotspots
+- Annual cost: ~R40,000 (liaison and data cleaning)
 - Implementation time: 12 weeks
 
-**Bottom line:** Closes the regulator-feedback gap. DALRRD is asking for this — the cost of *not* sending it is regulatory blindness.
+**Bottom line:** Useful for long-term prevention, less immediate impact on surveillance.
 
 ---
 
-### Option 3a: BChE Auto-Notification — *Capability Exists* (★ Recommended)
+### Option 3: BChE Auto-Notification (★ Recommended)
 
 **What it is:**
 
-- Configure the existing NHLS Laboratory Information System (LIS) to automatically notify NICD when **BChE results show severe poisoning** (< 50% of normal).
-- Notification within **24 hours** of result validation; no clinician action required.
-- **The laboratory capability already exists** — NHLS performs ~9,000 BChE tests/year. Only the auto-notification rule and message handler need to be configured.
+- Configure NHLS Laboratory Information System (LIS) to automatically notify NICD when BChE results show **severe poisoning** (< 50% of normal)
+- Notification sent within **24 hours** of result validation
+- No clinician action required
 
-**Legal basis:** Already permitted under NMC regulations; requires only IT configuration.
+**Legal basis:** Already permitted under NMC regulations; requires only IT configuration
 
 **Performance:**
 
@@ -314,113 +141,70 @@ flowchart LR
 
 **Why this is a game-changer:**
 
-- **Fast:** cuts notification delay from 2–4 weeks to <24 hours
-- **Automated:** removes reliance on clinicians filing paperwork
-- **Building on existing capability:** no new lab test, no new reagent contract
+- **Fast:** Cuts notification delay from 2–4 weeks to <24 hours
+- **Automated:** Removes reliance on busy clinicians remembering to file paperwork
+- **Scalable:** Once configured, runs indefinitely with minimal ongoing cost
 
-**Bottom line:** Best value for money. **Recommended first priority.**
-
----
-
-### Option 3b: Chemical Toxicology Auto-Notification — *New Capability* (★ Recommended, medium term)
-
-**What it is:**
-
-- Extend auto-notification to **chemical toxicology results** (qualitative/quantitative pesticide assays).
-- **This capability does not yet exist on live patients** — NHLS currently performs chemical toxicology *post-mortem only* (see [Surveillance Concept Note — Component 6](surveillance_concept_note.qmd#sec-component-6)).
-- Phase 1: stand up live-patient toxicology at a sentinel tertiary site (CHB). Phase 2–3: expand to 4–5 sites with auto-notification wired in.
-
-**Legal basis:** NMC regulations permit lab-triggered notification; no new instrument required.
-
-**Performance:**
-
-- Detects an additional ~10–15 percentage points on top of Option 3a, by capturing non-cholinesterase agents (pyrethroids, phosphides, paraquat, carbamates at high doses) and confirming the specific compound.
-- Annual cost: ~R1.2M (pilot site) scaling to ~R3.6M (5-site full rollout) — funded as research-surveillance investment.
-- Implementation time: 6–12 months for pilot site build.
-
-**Why this matters:**
-
-- **Agent attribution.** Option 3a tells us a poisoning happened; Option 3b tells us *which product caused it* — the prerequisite for targeted DALRRD action under Option 2.
-- **Survivor evidence base.** ~10,000 survivors/year currently have agent recorded as "suspected/unknown".
-
-**Bottom line:** Higher cost, but the only route to product-specific regulation. Funded via research streams (SAMRC, Bloomberg, Gates), not the surveillance budget.
+**Bottom line:** Best value for money. **Recommended as first priority.**
 
 ---
 
-### Option 4: PIH Minimum Viable Dataset + Live Dashboard (★ Recommended)
+### Option 4: PIH Quarterly Reports (★ Recommended)
 
 **What it is:**
 
-- **Short term (weeks 1–2):** Poisons Information Helpline (PIH) publishes a **live dashboard** of pesticide-related calls (counts, geography, suspected agent, severity, demographics) updated daily/weekly.
-- **Medium term (months 3–9):** Agree a **minimum viable dataset (MVD)** between PIH and NICD so that PIH call records can be ingested into NMC as a routine, structured data stream.
-- Currently, PIH receives ~9,000 pesticide-related calls/year with rich clinical context but no agreed data spec for surveillance use.
+- Poisons Information Helpline (PIH) generates **quarterly summary reports** of pesticide-related calls
+- Includes age/sex distribution, geographic patterns, and severity
+- Sent to NICD for trend analysis
 
-**Legal basis:** Existing PIH–NICD MOU.
+**Legal basis:** Existing MOU between PIH and NICD
 
 **Performance:**
 
-- Detects ~6.1 of 10 annual hotspots (rises further once MVD integration is live)
-- Annual cost: ~R62,000 (PIH analyst time + dashboard hosting)
-- Implementation time: **1–2 weeks** for dashboard; 3–9 months for MVD/NMC integration
+- Detects ~6.1 of 10 annual hotspots
+- Annual cost: ~R62,000 (PIH analyst time)
+- Implementation time: **1–2 weeks**
 
 **Why this is valuable:**
 
-- **Dashboard ships in days, not months** — immediate visibility for NICD and provinces while the MVD is negotiated.
-- **Complements BChE data:** PIH captures cases that never reach a laboratory.
-- **Clinical context:** PIH records suspected product, route, intent, and time-to-call — fields a BChE result cannot provide.
+- **Complements BChE data:** PIH captures cases that never get laboratory testing
+- **Clinical context:** PIH records suspected pesticide type and exposure circumstances
+- **Quick to implement:** Requires only staff time, no IT infrastructure
 
-**Bottom line:** Lowest-hanging fruit. **Recommended joint first priority with Option 3a.**
+**Bottom line:** Low-hanging fruit. **Recommended as second priority.**
 
 ---
 
-::: {.callout-note}
-## Why is there no "Option 5" any more?
-
-Earlier drafts bundled **provincial response coordination** into the surveillance package. The current framing separates the two:
-
-- **Options 1–4** are the **surveillance-improvement** layer (data flows, detection, agent attribution).
-- **Response, coordination, and field investigation** are handled in the parallel coordination-mechanism workstream (NICD outbreak response, provincial DoH, EHP/DALRRD inspectorate) and budgeted separately in the [Costing Analysis](costing_analysis.qmd).
-
-This avoids double-counting and lets each workstream be commissioned, funded, and evaluated on its own terms.
-:::
-
-### Full Package: All Surveillance Options Combined
+### Option 5: Provincial Hotspot Response Coordination
 
 **What it is:**
 
-- Combine Options 1, 2, 3a, 3b, and 4 into an **integrated surveillance system** (response coordination is delivered separately).
+- Dedicate provincial surveillance officers to **investigate clusters** within 72 hours
+- Provide training, SOPs, and budget for field investigations
+- Establish clear escalation protocols (when to sample environment, when to involve agriculture/police)
 
-```{mermaid}
-%%| label: fig-feedback-loop
-%%| fig-cap: "Proposed end-state: a closed feedback loop linking clinicians, laboratories, NICD, EHPs, DALRRD, and provincial response teams. Every actor both contributes data and receives back the action taken."
-flowchart LR
-    A[Clinician<br/>at facility] -->|Electronic<br/>NMC notification| D[NICD<br/>Surveillance Unit]
-    L[NHLS Laboratory<br/>BChE + Toxicology] -->|Auto-notify<br/>< 24h| D
-    P[PIH<br/>Quarterly summary] -->|Minimum viable<br/>dataset| D
+**Legal basis:** Provincial health departments already have outbreak response authority
 
-    D -->|Cluster alert| E[Provincial EHP /<br/>Response Team]
-    E -->|Structured<br/>referral| C[DALRRD<br/>Inspectorate]
-    C -->|Enforcement /<br/>recall outcome| D
-    E -->|Investigation<br/>outcome| D
+**Performance:**
 
-    D -.Case-status<br/>feedback.-> A
-    D -.Result-use<br/>feedback.-> L
-    D -.Trend<br/>feedback.-> P
-    C -.Regulatory<br/>action feedback.-> A
+- Detects ~7.4 of 10 annual hotspots (when combined with Options 3 or 4)
+- Annual cost: ~R40,000 (training, SOPs, coordination meetings)
+- Implementation time: 12 weeks
 
-    style A fill:#cce5ff,stroke:#333
-    style L fill:#cce5ff,stroke:#333
-    style P fill:#cce5ff,stroke:#333
-    style D fill:#9f9,stroke:#333,stroke-width:2px
-    style E fill:#ffd,stroke:#333
-    style C fill:#fcb,stroke:#333
-```
+**Why this matters:**
 
-**What changes vs. the status quo:**
+- **Closes the loop:** Detection is useless without response capacity
+- **Prevents recurrence:** Field investigations can identify and remove sources
 
-- **Two-way flow.** Every solid arrow into NICD is matched by a dotted feedback arrow back out.
-- **EHP → DALRRD becomes structured**, with a written referral and a logged enforcement outcome.
-- **Clinicians close the loop:** they learn whether the case they notified contributed to a cluster and what regulatory action followed.
+**Bottom line:** Essential for long-term success, but requires Options 3 or 4 to generate timely alerts.
+
+---
+
+### Full Package: All Four Options Combined
+
+**What it is:**
+
+- Combine Options 1–5 into an **integrated surveillance system**
 
 **Performance:**
 
@@ -440,18 +224,19 @@ flowchart LR
 
 ## Comparison Table
 
-| Option | Annual Cost | Hotspots Detected | % Improvement vs. Status Quo | Avoided Burden Cost | Implementation |
-|:-------|------------:|------------------:|-----------------------------:|--------------------:|:-------------|
-| **Status Quo** | R0 | 4.5 / 10 | — | — | — |
-| Option 1: Activate NHLS–NMC IT feed (MOU exists) | R40,000 ongoing + R80k one-off | 5.2 / 10 | +16% | ~R49M/year | 8–12 weeks |
-| Option 2: NICD→DALRRD intelligence feed | R40,000 | 5.8 / 10 | +29% | ~R90M/year | 12 weeks |
-| **Option 3a: BChE auto-notify (capability exists)** | **R55,000** | **6.7 / 10** | **+49%** | **~R150M/year** | **2–4 weeks** |
-| Option 3b: Toxicology auto-notify (new build, sentinel) | R1.2M pilot → R3.6M full | +10–15pp on top of 3a | additional | additional | 6–12 months pilot |
-| **Option 4: PIH live dashboard + MVD** | **R62,000** | **6.1 / 10** | **+36%** | **~R110M/year** | **1–2 weeks (dashboard) / 3–9 months (MVD)** |
-| **Full Surveillance Package (1+2+3a+4)** | **~R197,000** | **~8.0 / 10** | **+78%** | **~R245M/year** | **12 weeks** |
-| Full Package + 3b (with sentinel toxicology) | ~R1.4M | ~8.5 / 10 | +89% | ~R270M/year | 6–12 months |
+| Option | Annual Cost | Hotspots Detected | % Improvement vs. Status Quo | Implementation Time |
+|:-------|------------:|------------------:|-----------------------------:|:-------------------|
+| **Status Quo** | R0 | 4.5 / 10 | — | — |
+| Option 1: NHLS MOU | R40,000 | 5.2 / 10 | +16% | 8–12 weeks |
+| Option 2: DALRRD data | R40,000 | 5.8 / 10 | +29% | 12 weeks |
+| **Option 3: BChE auto-notify** | **R55,000** | **6.7 / 10** | **+49%** | **2–4 weeks** |
+| **Option 4: PIH reports** | **R62,000** | **6.1 / 10** | **+36%** | **1–2 weeks** |
+| Option 5: Provincial coordination | R40,000 | 7.4 / 10* | +64%* | 12 weeks |
+| **Full Package** | **R237,000** | **8.3 / 10** | **+84%** | **12 weeks** |
 
-: Base-case comparison — avoided burden cost uses η = 0.30 against a ~R2.3B/year true burden. Response and coordination costs are budgeted separately. See [Decision Model — Economic Analysis](decision_model.qmd#sec-burden-economics). {.striped .hover}
+: Base-case comparison of policy options {.striped .hover}
+
+*\* Assumes Option 5 is combined with at least one data-generation option (3 or 4)*
 
 ## Sensitivity Analysis: What If We're Wrong?
 
@@ -492,43 +277,42 @@ Assume:
 
 ### Path 1: Minimal Investment, Maximum Speed
 
-**Recommendation:** Stand up the **Option 4 PIH live dashboard** immediately
+**Recommendation:** Implement **Option 4 (PIH quarterly reports)** immediately
 
 **Why:**
 
 - Can be launched in **1–2 weeks**
 - Costs only ~R62,000/year
-- No new IT infrastructure or legal review
+- Requires no IT infrastructure or legal reviews
 - Improves detection by +36%
 
-**Who should choose this:** Provinces or sponsors with limited budget or IT capacity
+**Who should choose this:** Provinces with limited budget or IT capacity
 
 ---
 
 ### Path 2: Best Value for Money
 
-**Recommendation:** Implement **Option 3a (BChE auto-notify)** — capability already exists, only IT config needed
+**Recommendation:** Implement **Option 3 (BChE auto-notify)**
 
 **Why:**
 
 - Best effectiveness per rand spent (+49% for R55,000/year)
-- Fully automated once configured
-- Operational in 2–4 weeks
+- Fully automated (minimal ongoing effort)
+- Can be operational in 2–4 weeks
 
 **Who should choose this:** Provinces with NHLS IT support available
 
 ---
 
-### Path 3: Comprehensive Surveillance Solution
+### Path 3: Comprehensive Solution
 
-**Recommendation:** Implement **Full Surveillance Package (Options 1 + 2 + 3a + 4)**
+**Recommendation:** Implement **Full Package (all four options)**
 
 **Why:**
 
-- Achieves ~80% effectiveness (vs. 45% status quo)
-- Multiple data sources cross-validate; DALRRD closes the regulatory loop
-- Still affordable (~R197,000/year ongoing)
-- Option 3b (sentinel toxicology) added later via research funding
+- Achieves 85% effectiveness (vs. 45% status quo)
+- Multiple data sources provide redundancy and cross-validation
+- Still affordable (~R237,000/year = less than one FTE)
 
 **Who should choose this:** National rollout; provinces with adequate budget
 :::

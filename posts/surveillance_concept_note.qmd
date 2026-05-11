@@ -34,31 +34,47 @@ South Africa has three parallel data sources for pesticide poisoning, but they o
 
 ```{mermaid}
 %%| label: fig-current-system
-%%| fig-cap: "Current (fragmented) surveillance architecture"
+%%| fig-cap: "Current (fragmented) surveillance architecture. NICD is the de facto source-of-truth for case notifications. Notifications on the NMC platform trigger an SMS to the local EHP (mandated to investigate) but the investigation outcome is not recorded back on NMC. EHP→DALRRD referral is informal and likewise unrecorded. NHLS holds two distinct laboratory streams — BChE (live patients, ~2,000/yr severe) and Chemical Toxicology (post-mortem only — not yet done on live patients) — neither of which feeds NICD in a structured way. PIH consultations are not captured against a minimum viable dataset."
 flowchart LR
-    A[Healthcare Facility] --> B[NMC Notification]
-    A --> C[NHLS BChE Test]
-    A --> D[PIH Consultation]
-    
-    B --> E[(NICD Database)]
-    C --> F[(NHLS LIS)]
-    D --> G[(PIH Records)]
-    
-    E -.No linkage.-> F
-    F -.No linkage.-> G
-    G -.No linkage.-> E
-    
-    style E fill:#f9f,stroke:#333
-    style F fill:#bbf,stroke:#333
-    style G fill:#bfb,stroke:#333
+    A[Healthcare Facility<br/>Clinician / PHO] -->|NMC notification| E[("NICD / NMC<br/><b>Source of truth</b>")]
+    A --> N[NHLS Laboratory]
+
+    subgraph N[NHLS Laboratory]
+        direction TB
+        C1[BChE Assay<br/>~2,000 severe/year<br/><i>Live patients</i>]
+        C2[Chemical Toxicology<br/><i>Post-mortem only —<br/>not yet done on<br/>live patients</i>]
+    end
+
+    A --> D[PIH Consultation<br/>~9,000 calls/year<br/><i>No minimum dataset</i>]
+
+    E -->|SMS notification| H[Local EHP<br/><i>mandated to<br/>investigate</i>]
+    H -.Investigation NOT<br/>recorded on NMC.-x E
+    H -.Informal referral.-> I[DALRRD<br/><i>Pesticide Registrar /<br/>Inspectorate</i>]
+    H -.Referral NOT<br/>recorded on NMC.-x E
+    I -.Feedback to EHP<br/>at best.-> H
+    I -.x No feedback to NMC.-x E
+
+    C1 -.No structured feed.-> E
+    C2 -.x Not available for<br/>live-patient surveillance.-x E
+    D -.No minimum viable<br/>dataset defined.-> E
+
+    style E fill:#9f9,stroke:#060,stroke-width:2px
+    style A fill:#fde,stroke:#333
+    style C1 fill:#bbf,stroke:#333
+    style C2 fill:#ffd9b3,stroke:#cc8800,stroke-dasharray: 5 5
+    style D fill:#bfb,stroke:#333
+    style H fill:#ffd,stroke:#333
+    style I fill:#fdd,stroke:#cc0000,stroke-dasharray: 5 5
 ```
 
-**Key problems:**
 
-- **Delayed reporting**: NMC notifications arrive 2–4 weeks after exposure
-- **No laboratory integration**: BChE results (which indicate poisoning) don't trigger automatic notifications
-- **Lost clinical data**: PIH receives ~9,000 calls/year but data aren't systematically analyzed for surveillance
-- **No spatial analysis**: Hotspot detection relies on manual review
+**What this diagram shows.** Five gaps in the current state:
+
+1. **NICD/NMC is the source of truth** for case notifications but receives only the clinician-completed NMC stream (~690/year) — a fraction of the true burden.
+2. **The NHLS laboratory holds two distinct streams**: (a) **BChE assays** on live patients (~2,000 severe results/year, capability exists) and (b) **Chemical toxicology** — qualitative/quantitative pesticide assays which **NHLS currently performs post-mortem only**. Live-patient chemical toxicology is not yet available (see [Component 6](#sec-component-6)).
+3. **Neither NHLS stream feeds NICD in a structured way.** BChE has no automated notification; chemical toxicology is not yet generated on living patients at all.
+4. **The EHP arm exists but does not close the loop.** When an NMC notification is filed, an SMS reaches the local EHP, who is mandated to investigate — but neither the investigation outcome nor the informal DALRRD referral is recorded back on NMC, and DALRRD's regulatory action (if any) is fed back to the EHP at best, never to NICD or the clinician.
+5. **PIH consultations are not captured against a minimum viable dataset**, so the ~9,000 calls/year cannot be aggregated, geocoded, or matched to NICD cases.
 
 ### Missed Opportunities
 
