@@ -1,0 +1,248 @@
+---
+title: "Policy Brief 2: Closing the Coordination Loop"
+subtitle: "Making NMC, EHPs, DALRRD, and provincial response work as one system"
+author: "D2P Project Team"
+date: "2025-09-05"
+date-modified: today
+categories: [policy, coordination, decision-makers]
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    number-sections: false
+---
+
+::: {.callout-important icon=false}
+## For Decision-Makers
+
+**Target audience:** Ministerial Advisory Committee (MAC), National Department of Health (NDoH), DALRRD Pesticide Registrar, Provincial Health Leadership.
+
+**Companion briefs:** [Surveillance](surveillance_policy.qmd) · [Terbufos restriction](terbufos_policy.qmd).
+:::
+
+## 1. Policy question
+
+**Should NDoH and DALRRD mandate a closed-loop coordination workflow — where every NMC notification triggers an investigation that is recorded on NMC, every EHP→DALRRD referral is structured, and every DALRRD action is fed back to NICD and the clinician?**
+
+## 2. Public health problem
+
+Better detection (see the [Surveillance brief](surveillance_policy.qmd)) is wasted if the system does not **act** on what it detects. South Africa's pesticide-poisoning response chain currently has **eight sequential decision points** between "case suspected" and "regulatory action closes the loop", and **six of those eight default to a broken-loop terminal**. The result is that a case which is correctly notified can still produce no investigation, no source removal, no regulatory follow-up, and no feedback to the notifier — leaving the underlying hazard in place and producing predictable secondary cases.
+
+## 3. Status quo
+
+{{< include _shared_parameters.qmd >}}
+
+### The notification pathway — one-way and broken
+
+```{mermaid}
+%%| label: fig-coord-status-quo-flow
+%%| fig-cap: "Current notification pathway. Clinicians and public-health officials notify on the NMC platform; NMC sends an SMS to the local EHP, who is mandated to investigate but does not record the investigation back on NMC. The EHP may informally refer to DALRRD, but this is not captured on NMC and DALRRD's action (if any) is not fed back to NMC or the clinician."
+flowchart LR
+    A[Clinician /<br/>Public-health official] -->|Notification on<br/>NMC platform| D[NMC platform<br/><i>NICD</i>]
+    D -->|SMS notification| B[Local EHP<br/><i>mandated to investigate</i>]
+    B -.Investigation NOT<br/>recorded on NMC.-x D
+    B -.Informal phone /<br/>email referral.-> C[DALRRD<br/><i>Pesticide Registrar /<br/>Inspectorate</i>]
+    B -.Referral NOT<br/>recorded on NMC.-x D
+
+    C -.Feedback to EHP<br/>at best.-> B
+    C -.x No feedback to NMC.-x D
+    C -.x No feedback to clinician.-x A
+    D -.x No case-status<br/>feedback.-x A
+
+    style A fill:#fde,stroke:#333
+    style B fill:#ffd,stroke:#333
+    style C fill:#fdd,stroke:#cc0000,stroke-dasharray: 5 5
+    style D fill:#cfc,stroke:#333,stroke-width:2px
+```
+
+**Reading the diagram.** Clinicians *do* file on NMC — that is the formal entry point. NMC *does* SMS the local EHP, who *is* mandated to investigate. The chain breaks at two specific places: (a) the EHP investigation outcome is **never written back to NMC** because no NMC field requires it; and (b) the EHP→DALRRD referral, when it happens, is informal and likewise unrecorded. DALRRD action — if any — flows back to the EHP at best, and never to NICD or the originating clinician.
+
+## 4. Root cause analysis
+
+```{mermaid}
+%%| label: fig-coord-fishbone
+%%| fig-cap: "Root causes of coordination failure across the NMC–EHP–DALRRD chain."
+flowchart LR
+    A[Coordination failure] --> R1[NMC has no field for<br/>EHP investigation outcome]
+    A --> R2[EHP→DALRRD referral<br/>has no SOP, no audit trail]
+    A --> R3[DALRRD has no inbound<br/>NICD intelligence feed]
+    A --> R4[Clinicians never receive<br/>case-status feedback]
+    A --> R5[No KPI / accountability<br/>at any node]
+
+    R1 --> O1[Option C1: Mandate EHP<br/>NMC closure-of-loop field]
+    R2 --> O2[Option C2: Structured<br/>EHP→DALRRD referral form on NMC]
+    R3 --> O3[Option C3: NICD→DALRRD<br/>intelligence feed]
+    R4 --> O4[Option C4: NMC auto-feedback<br/>to notifier on case status]
+    R5 --> O5[Option C5: Joint KPI dashboard<br/>NICD + DALRRD + Provinces]
+
+    style A fill:#f99,stroke:#333
+    style O1 fill:#9f9,stroke:#333
+    style O2 fill:#9f9,stroke:#333
+    style O3 fill:#9f9,stroke:#333
+    style O4 fill:#9f9,stroke:#333
+    style O5 fill:#9f9,stroke:#333
+```
+
+The five drivers are: (1) NMC schema lacks a closure-of-loop field; (2) EHP→DALRRD referral has no SOP; (3) DALRRD has no inbound NICD intelligence feed despite a formal request for one; (4) clinicians get no case-status feedback so the notification has no perceived value; (5) **no decision node in the chain has an accountable owner with a KPI**, so nothing fails loudly when the loop breaks.
+
+## 5. Policy options
+
+### Option C1 — Mandate an NMC closure-of-loop field for EHPs
+
+Add a structured "investigation outcome" field to NMC against every notification: visited/not visited, source identified/not, environmental sampling done/not, referral made/not. Make completion within 14 days an EHP performance KPI. **No new legislation; an NMC schema change and circular from NDoH.** Annual cost: **~R30,000** (schema update + training material).
+
+### Option C2 — Structured EHP→DALRRD referral form on NMC
+
+Add a referral form to NMC that auto-emails the DALRRD Pesticide Registrar/Inspectorate when an EHP suspects an unsafe product, illegal sale, or occupational source. Captures product, location, suspected agent, severity, and EHP contact. Replaces today's informal phone/email referral. Annual cost: **~R25,000**.
+
+### Option C3 — NICD→DALRRD poisoning intelligence feed *(★ recommended)*
+
+DALRRD has formally requested poisoning intelligence to inform registration, labelling, and inspectorate priorities. Output: a quarterly NICD brief by suspected product / geography / season, plus an ad-hoc cluster-alert channel. **Closes the regulator-feedback gap and gives DALRRD the evidence base for product-specific action (the explicit prerequisite for the [Terbufos brief](terbufos_policy.qmd) recommendation).** Annual cost: **~R40,000** (NICD analyst + DALRRD liaison), 12 weeks.
+
+### Option C4 — Auto-feedback to notifying clinician
+
+NMC sends the notifying clinician a quarterly case-status summary: outcome of EHP investigation, regulatory action taken, whether their case contributed to a detected cluster. Removes the "I notify into a black hole" disincentive. Annual cost: **~R20,000** (templating + email integration).
+
+### Option C5 — Joint KPI dashboard
+
+A small public dashboard tracking: median time from notification to EHP investigation; % of notifications with a recorded outcome; % of clusters with documented DALRRD action; % of notifying clinicians who received feedback. Co-owned by NICD, DALRRD, and provincial DoHs. Annual cost: **~R30,000**.
+
+### Coordination Full Package (C1 + C2 + C3 + C4 + C5)
+
+```{mermaid}
+%%| label: fig-coord-feedback-loop
+%%| fig-cap: "Proposed end-state: a closed feedback loop linking clinicians, laboratories, NICD, EHPs, DALRRD, and provincial response teams. Every actor both contributes data and receives back the action taken."
+flowchart LR
+    A[Clinician<br/>at facility] -->|Electronic<br/>NMC notification| D[NICD<br/>Surveillance Unit]
+    L[NHLS Laboratory<br/>BChE + Toxicology] -->|Auto-notify<br/>< 24h| D
+    P[PIH<br/>Quarterly summary] -->|Minimum viable<br/>dataset| D
+
+    D -->|Cluster alert| E[Provincial EHP /<br/>Response Team]
+    E -->|Structured<br/>referral| C[DALRRD<br/>Inspectorate]
+    C -->|Enforcement /<br/>recall outcome| D
+    E -->|Investigation<br/>outcome| D
+
+    D -.Case-status<br/>feedback.-> A
+    D -.Result-use<br/>feedback.-> L
+    D -.Trend<br/>feedback.-> P
+    C -.Regulatory<br/>action feedback.-> A
+
+    style A fill:#cce5ff,stroke:#333
+    style L fill:#cce5ff,stroke:#333
+    style P fill:#cce5ff,stroke:#333
+    style D fill:#9f9,stroke:#333,stroke-width:2px
+    style E fill:#ffd,stroke:#333
+    style C fill:#fcb,stroke:#333
+```
+
+Total annual cost of the Coordination Full Package: **~R145,000**. No new legislation required.
+
+## 6. Decision tree — coordination outcomes per suspected case
+
+### 6a. Where the chain breaks today
+
+```{mermaid}
+%%| label: fig-coord-decision-tree
+%%| fig-cap: "Coordination decision tree for a single suspected case under the status quo. Eight decision nodes; six default to a red (broken-loop) terminal."
+flowchart TD
+    Q0{Case suspected?} -->|Yes| Q1{Notified on<br/>NMC?}
+    Q0 -->|No| X0[Case invisible]:::bad
+
+    Q1 -->|Yes 0.30| Q2{SMS reaches<br/>EHP?}
+    Q1 -->|No 0.70| X1[No notification]:::bad
+
+    Q2 -->|Yes 0.95| Q3{EHP<br/>investigates?}
+    Q2 -->|No 0.05| X2[Dies at NMC]:::bad
+
+    Q3 -->|Yes 0.60| Q4{Recorded<br/>on NMC?}
+    Q3 -->|No 0.40| X3[No response]:::bad
+
+    Q4 -->|Yes 0.05| G1[Loop closed<br/>to NMC]:::good
+    Q4 -->|No 0.95| Q5{Refer to<br/>DALRRD?}
+
+    Q5 -->|Yes 0.30| Q6{DALRRD<br/>acts?}
+    Q5 -->|No 0.70| X4[Regulator<br/>never hears]:::bad
+
+    Q6 -->|Yes 0.50| Q7{Feedback to<br/>NMC + clinician?}
+    Q6 -->|No 0.50| X5[Source persists]:::bad
+
+    Q7 -->|To EHP only 0.90| X6[NMC + clinician<br/>still blind]:::bad
+    Q7 -->|To NMC + clinician 0.10| G2[Loop fully closed]:::good
+
+    classDef bad fill:#fdd,stroke:#cc0000,stroke-width:1.5px
+    classDef good fill:#cfc,stroke:#060,stroke-width:1.5px
+```
+
+**Joint P(loop fully closes) ≈ 1.1 %** under the status quo. Expected coordination cost per suspected case ≈ **R196,400** — virtually the full per-case societal burden of R197,000, because the loop almost never closes.
+
+### 6b. Clinical-outcome subtree
+
+Each coordination terminal feeds into a clinical-outcome subtree for the index case *and* for the secondary cases that would otherwise follow from the same source:
+
+```{mermaid}
+%%| label: fig-coord-outcome-tree
+%%| fig-cap: "Clinical-outcome subtree attached to each coordination terminal. Loop closure (green) triggers source removal and averts ρ × η secondary cases; loop-broken terminals (red) allow ρ secondary cases to follow."
+flowchart TD
+    T0[Suspected case] --> P1{Loop closed?}
+
+    P1 -->|Yes — G1 or G2| S1[Source removed]:::good
+    P1 -->|No — X1..X6| S2[Source persists]:::bad
+
+    S1 --> I1[Index case:<br/>p_death 0.13<br/>p_severe 0.27<br/>p_recover 0.60]
+    S2 --> I2[Index case:<br/>p_death 0.13<br/>p_severe 0.27<br/>p_recover 0.60]
+
+    S1 --> N1[Averted secondary cases<br/>≈ ρ × η = 0.9]:::good
+    S2 --> N2[Secondary cases<br/>≈ ρ = 3.0]:::bad
+
+    N1 --> AD1[Deaths averted<br/>≈ 0.117]:::good
+    N2 --> AD2[Extra deaths<br/>≈ 0.39]:::bad
+
+    classDef bad fill:#fdd,stroke:#cc0000,stroke-width:1.5px
+    classDef good fill:#cfc,stroke:#060,stroke-width:1.5px
+```
+
+### 6c. What changes under each coordination scenario
+
+| Scenario | P(loop closed) | Deaths averted / year | Burden avoided / year |
+|:---------|---------------:|---------------------:|----------------------:|
+| Status quo | 1.1 % | 15 | — |
+| + C3 (NICD→DALRRD feed) | ~40 % | ~547 | ~R835M |
+| **Coordination Full Package (C1–C5)** | **~70 %** | **~957** | **~R1.45B** |
+
+: Modelled coordination outcomes at national scale (× 11,690 suspected cases/year). Probabilities are placeholders aligned with the surveillance detection-rate ranges in the [Surveillance brief](surveillance_policy.qmd). {.striped .hover}
+
+## 7. Implementation considerations
+
+| Component | Lead agency | Year-1 cost | Critical path |
+|:----------|:------------|------------:|:--------------|
+| C1: NMC closure-of-loop field | NICD NMC team + NDoH circular | R30k | NMC schema change; EHP training |
+| C2: Structured DALRRD referral form on NMC | NICD + DALRRD Pesticide Registrar | R25k | DALRRD inbox + workflow |
+| C3: NICD→DALRRD intelligence feed | NICD analyst + DALRRD liaison | R40k | Quarterly brief template; cluster alert SOP |
+| C4: Notifier auto-feedback | NICD NMC team | R20k | Email templating |
+| C5: Joint KPI dashboard | NICD + DALRRD + Provinces | R30k | KPI definitions; public hosting |
+| **Total** | NICD-led | **~R145k** | All within existing legal authority |
+
+**Institutional mechanism.** A **quarterly Joint Coordination Forum** (NICD chair; DALRRD, NHLS, PIH, and one rotating provincial DoH representative) reviews the KPI dashboard, signs off cluster-alert escalations, and resolves cross-departmental blockers. Mandated by joint NDoH–DALRRD Director-General circular. **No new legislation required.**
+
+**Risks and mitigations.**
+
+- *EHP non-compliance with new NMC field.* Mitigation: 14-day completion KPI tied to provincial performance reviews; circular from NDoH DG.
+- *DALRRD capacity to act on referrals.* Mitigation: C3 quarterly brief lets DALRRD prioritise by burden rather than respond reactively.
+- *Privacy concerns on clinician auto-feedback.* Mitigation: feedback is aggregate at clinician level, not patient-identifying.
+
+## 8. Recommended next step
+
+**Adopt C1 + C3 as the Coordination MVP, and the Full Package within 12 months.**
+
+- **Weeks 1–4:** NDoH–DALRRD joint DG circular committing to the closed-loop model; standing up the Joint Coordination Forum.
+- **Weeks 4–12:** C1 NMC schema change + EHP training; C3 NICD→DALRRD quarterly brief begins on the existing NMC data.
+- **Months 3–12:** C2 referral form, C4 auto-feedback, C5 KPI dashboard go live.
+- **Month 12:** Evaluate against (i) median notification-to-investigation time, (ii) % of notifications with recorded outcome, (iii) DALRRD-reported regulatory actions per quarter.
+
+The surveillance signal that flows *into* this loop is covered in the [Surveillance brief](surveillance_policy.qmd). The first product-specific regulatory action the loop should be designed to deliver is the subject of the [Terbufos brief](terbufos_policy.qmd).
+
+---
+
+::: {.footer-cta}
+**Companion briefs:** [Surveillance](surveillance_policy.qmd) · [Terbufos restriction](terbufos_policy.qmd) · [Decision Model](decision_model.qmd) · [Costing Analysis](costing_analysis.qmd)
+:::

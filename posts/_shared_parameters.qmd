@@ -1,0 +1,46 @@
+::: {.callout-note icon=false}
+## Headline numbers used across all D2P policy documents
+
+All three policy documents draw their quantitative claims from this single shared parameter set. To revise an assumption, **edit `posts/_shared_parameters.qmd`** — every document that includes it will update on the next render.
+
+**Burden (per year, South Africa):**
+
+| Parameter | Value | Source / status |
+|:----------|------:|:----------------|
+| NMC pesticide-poisoning notifications | ~690 | NMC 2020–2024 annual reports |
+| NHLS severe BChE inhibitions (live patients) | ~2,000 | NHLS LIS, 2020–2024 |
+| Poisons Information Helpline pesticide calls | ~9,000 | PIH Annual Report 2019 |
+| Total suspected pesticide-poisoning cases / year | **~11,690** | Sum of three mutually-exclusive streams (placeholder for record-linkage) |
+| Case-fatality rate (CFR, mid-range) | 13 % | NMC observed range 10–15 %; under-counts intentional self-poisoning under ICD-10 default rules |
+| Annual deaths | **~1,500 – 1,800** | 11,690 × CFR |
+| Per-case morbidity cost | R12,000 | Existing decision-model parameter |
+| Per-death mortality cost | R1,500,000 | Human-capital approach, existing model |
+| **Per-case societal cost** | **~R197,000** | R12,000 + 0.13 × R1.5M |
+| **Total annual economic burden** | **~R2.3 billion / year** | 11,690 × R197,000 |
+
+**Decision-tree parameters (placeholders — to be re-estimated from pilot):**
+
+| Parameter | Symbol | Value | Used in |
+|:----------|:------:|------:|:--------|
+| Loop-closure prevention efficacy | η | 0.30 | Burden-avoided model; outcome subtree |
+| Secondary cases per unaddressed source | ρ | 3.0 | Outcome subtree |
+| P(index death) | p_death | 0.13 | Outcome subtree |
+| P(severe morbidity, ICU/admission) | p_severe | 0.27 | Outcome subtree |
+| P(full recovery) | p_recover | 0.60 | Outcome subtree |
+
+**Status-quo coordination transition probabilities (per suspected case):**
+
+| Node | Decision | P(Yes) |
+|:-----|:---------|------:|
+| Q1 | Clinician/PHO files on NMC | 0.30 |
+| Q2 | NMC SMS reaches local EHP | 0.95 |
+| Q3 | EHP investigates | 0.60 |
+| Q4 | Investigation recorded on NMC | 0.05 |
+| Q5 | EHP refers to DALRRD | 0.30 |
+| Q6 | DALRRD acts | 0.50 |
+| Q7 | DALRRD feeds back to NMC + clinician | 0.10 |
+
+Joint P(loop fully closes) ≈ **1.1 %** under the status quo.
+
+Full numerical derivations live in the [Decision Model](decision_model.qmd) and the [Costing Analysis](costing_analysis.qmd).
+:::

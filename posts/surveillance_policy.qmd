@@ -1,0 +1,209 @@
+---
+title: "Policy Brief 1: Strengthening Pesticide Poisoning Surveillance"
+subtitle: "Closing the detection gap between NMC, NHLS, and PIH"
+author: "D2P Project Team"
+date: "2025-09-05"
+date-modified: today
+categories: [policy, surveillance, decision-makers]
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    number-sections: false
+---
+
+::: {.callout-important icon=false}
+## For Decision-Makers
+
+**Target audience:** Ministerial Advisory Committee (MAC), National Department of Health (NDoH), Provincial Health Leadership, NICD/NHLS leadership.
+
+**Companion briefs:** [Coordination](coordination_policy.qmd) · [Terbufos restriction](terbufos_policy.qmd).
+:::
+
+## 1. Policy question
+
+**Should NDoH invest in automated, multi-source pesticide-poisoning surveillance to close the detection gap between the NMC, NHLS laboratory, and PIH data streams?**
+
+## 2. Public health problem
+
+South Africa under-detects pesticide poisoning. Three data streams each see a fraction of the problem, and none of them sees the whole picture:
+
+- Most cases never appear in NMC.
+- Severe laboratory results do not trigger a public-health alert.
+- The country's largest single source of clinical signal — the Poisons Information Helpline — is not used for surveillance at all.
+
+The consequences are operational, not theoretical: hotspots are detected late or not at all; clusters caused by contaminated food, illegal pesticide sales, or unsafe occupational exposure run their course before any agency responds; and the country has no real-time view of which products are causing harm.
+
+## 3. Status quo
+
+{{< include _shared_parameters.qmd >}}
+
+**Architecturally, the three streams are unlinked:**
+
+```{mermaid}
+%%| label: fig-surv-current-system
+%%| fig-cap: "Current surveillance architecture. NICD/NMC is the source of truth, but the NHLS laboratory streams (BChE on live patients; chemical toxicology — post-mortem only) and PIH consultations do not feed into NMC in a structured way."
+flowchart LR
+    A[Healthcare Facility<br/>Clinician / PHO] -->|NMC notification| E[("NICD / NMC<br/><b>Source of truth</b>")]
+    A --> N[NHLS Laboratory]
+
+    subgraph N[NHLS Laboratory]
+        direction TB
+        C1[BChE Assay<br/>~2,000 severe/year<br/><i>Live patients</i>]
+        C2[Chemical Toxicology<br/><i>Post-mortem only —<br/>not yet done on<br/>live patients</i>]
+    end
+
+    A --> D[PIH Consultation<br/>~9,000 calls/year<br/><i>No minimum dataset</i>]
+
+    C1 -.No structured feed.-> E
+    C2 -.x Not available for<br/>live-patient surveillance.-x E
+    D -.No minimum viable<br/>dataset defined.-> E
+
+    style E fill:#9f9,stroke:#060,stroke-width:2px
+    style A fill:#fde,stroke:#333
+    style C1 fill:#bbf,stroke:#333
+    style C2 fill:#ffd9b3,stroke:#cc8800,stroke-dasharray: 5 5
+    style D fill:#bfb,stroke:#333
+```
+
+**What this means in plain numbers.** NMC sees ~690 cases/year. NHLS sees ~2,000 severe BChE results/year on live patients but does not auto-notify. PIH receives ~9,000 calls/year that are never aggregated to a surveillance dataset. The true annual burden of ~11,690 cases is therefore **observed at < 6 % completeness** by NMC alone.
+
+### Detection vs. true burden — a critical distinction
+
+Better surveillance has **two opposite numerical effects** that decision-makers must not confuse:
+
+| Effect | Direction | Driver | Interpretation |
+|:-------|:---------:|:-------|:---------------|
+| **Observed** burden | ↑ | Better case-finding (auto-notify, MVD ingest) | The headline "case count" will rise as detection improves — this is success, not failure. |
+| **True** burden | ↓ | Faster source removal, targeted regulation, prevention | Number of actual poisonings falls as hotspots are addressed earlier. |
+
+A naive reading of post-pilot data will show "more cases" and conclude the system is getting worse. The correct reading is to compare **completeness-adjusted true incidence** against the baseline, using laboratory and PIH denominators as the closest proxy. This needs to be agreed up front with NDoH and the MAC.
+
+## 4. Root cause analysis
+
+```{mermaid}
+%%| label: fig-surv-fishbone
+%%| fig-cap: "Root causes of surveillance under-detection and the surveillance-improvement options that address each one."
+flowchart LR
+    A[Surveillance under-detection] --> B[NHLS–NMC MOU not<br/>IT-implemented]
+    A --> C[PIH data not used<br/>for surveillance]
+    A --> D[Delayed manual reporting]
+    A --> F[No live-patient<br/>chemical toxicology]
+
+    B --> G[Option S1: Activate<br/>NHLS→NMC IT feed]
+    C --> H[Option S4: PIH minimum<br/>viable dataset + dashboard]
+    D --> I[Option S3a: BChE<br/>auto-notify <i>capability exists</i>]
+    F --> J[Option S3b: Live-patient<br/>chemical toxicology + auto-notify]
+
+    style A fill:#f99,stroke:#333
+    style G fill:#9f9,stroke:#333
+    style H fill:#9f9,stroke:#333
+    style I fill:#9f9,stroke:#333
+    style J fill:#9f9,stroke:#333
+```
+
+The four root causes are all **executional, not legislative**. Each one is already legally permissible under Section 90 of the National Health Act (2003) and the existing NMC regulations.
+
+## 5. Policy options
+
+### Option S1 — Activate the NHLS→NMC IT feed *(MOU exists)*
+
+The NHLS–NICD MOU for routine BChE data sharing already exists on paper. What is missing is the **IT implementation** — a working LIS-to-NMC connector (HL7 / structured flat-file export), QA governance, and a monthly reconciliation. Detection rises from ~4.5 to ~5.2 hotspots / 10 (annual cost ~R40k ongoing + ~R80k one-off, 8–12 weeks).
+
+### Option S3a — BChE auto-notification *(★ recommended — capability exists)*
+
+Configure the NHLS LIS to fire an automatic NICD notification when a BChE result shows severe inhibition (< 50 % of normal), within 24 hours of validation. **No new test, no new reagent contract** — only an IT configuration on top of the ~9,000 BChE tests/year already performed. Detection rises to ~6.7 / 10 for **R55k/year** in 2–4 weeks. This is the highest-value, fastest option on the menu.
+
+### Option S3b — Live-patient chemical toxicology + auto-notification *(★ recommended, medium term)*
+
+NHLS currently performs chemical toxicology (qualitative/quantitative pesticide assays) **post-mortem only**. There is no live-patient toxicology capability. Option S3b funds:
+
+- Phase 1: a sentinel tertiary site (e.g. CHB) to perform live-patient chemical toxicology.
+- Phase 2–3: 4–5 site rollout with auto-notification wired in.
+
+The clinical-surveillance value is **agent attribution**: S3a tells us a poisoning happened; S3b tells us *which product*. Without S3b, ~10,000 survivors/year are recorded with agent "unknown / suspected", which makes targeted regulation (see [Terbufos brief](terbufos_policy.qmd)) impossible. Cost: ~R1.2M pilot site → ~R3.6M for 5-site rollout, 6–12 months. Funded from research-surveillance streams (SAMRC, Bloomberg, Gates), not the surveillance operating budget.
+
+### Option S4 — PIH live dashboard + Minimum Viable Dataset *(★ recommended)*
+
+Two layers:
+
+- **Short term (1–2 weeks):** PIH publishes a live dashboard of pesticide-related calls (counts, geography, agent, severity, demographics). No new data; just a daily extract from existing call records.
+- **Medium term (3–9 months):** PIH and NICD agree a **Minimum Viable Dataset (MVD)** so the ~9,000 calls/year can be ingested into NMC as a structured surveillance stream.
+
+Detection rises to ~6.1 / 10 for **R62k/year**. The dashboard is the lowest-hanging fruit in the whole portfolio: it ships in days.
+
+### Summary comparison
+
+| Option | Annual cost | Hotspots detected / 10 | Δ vs. status quo | Time |
+|:-------|------------:|---------------------:|----------------:|:-----|
+| Status quo | R0 | 4.5 | — | — |
+| S1: NHLS→NMC IT feed | R40k + R80k one-off | 5.2 | +16 % | 8–12 wks |
+| S3a: BChE auto-notify | R55k | 6.7 | +49 % | 2–4 wks |
+| S3b: Live toxicology + auto-notify | R1.2M pilot → R3.6M | +10–15 pp on S3a | additional | 6–12 mo pilot |
+| S4: PIH dashboard + MVD | R62k | 6.1 | +36 % | 1–2 wks dash / 3–9 mo MVD |
+| **S1 + S3a + S4 (Surveillance MVP)** | **~R157k** | **~7.8** | **+73 %** | **12 weeks** |
+| Full S1 + S3a + S3b + S4 | ~R1.4M | ~8.5 | +89 % | 6–12 months |
+
+: Surveillance options — base-case. Detection improvements feed directly into the [Decision Model](decision_model.qmd) burden-avoidance calculation (η = 0.30). {.striped .hover}
+
+## 6. Decision tree — from surveillance investment to averted burden
+
+```{mermaid}
+%%| label: fig-surv-decision-tree
+%%| fig-cap: "Surveillance investment decision tree. Each option raises detection probability; loop-closure efficacy η = 0.30 translates detection into avoided cases and deaths. Per-case societal cost R197,000 applies the monetary value."
+flowchart TD
+    INV{Surveillance<br/>investment?} -->|None| SQ[Status quo<br/>P_detect = 0.45]:::bad
+    INV -->|S4 only<br/>R62k| O4[+ PIH MVD<br/>P_detect = 0.61]:::warn
+    INV -->|S3a only<br/>R55k| O3a[+ BChE auto-notify<br/>P_detect = 0.67]:::warn
+    INV -->|S1 + S3a + S4<br/>~R157k| MVP[Surveillance MVP<br/>P_detect = 0.78]:::good
+    INV -->|+ S3b<br/>~R1.4M| FULL[Full + toxicology<br/>P_detect = 0.85]:::good
+
+    SQ --> BSQ[Cases averted<br/>≈ 117 / year]
+    O4  --> B4[Cases averted<br/>≈ 561 / year]
+    O3a --> B3a[Cases averted<br/>≈ 772 / year]
+    MVP --> BMVP[Cases averted<br/>≈ 1,158 / year]
+    FULL --> BFULL[Cases averted<br/>≈ 1,403 / year]
+
+    BSQ --> DSQ[Deaths averted<br/>≈ 15]
+    B4 --> D4[Deaths averted<br/>≈ 73]
+    B3a --> D3a[Deaths averted<br/>≈ 100]
+    BMVP --> DMVP[Deaths averted<br/>≈ 151]
+    BFULL --> DFULL[Deaths averted<br/>≈ 182]
+
+    classDef bad fill:#fdd,stroke:#cc0000,stroke-width:1.5px
+    classDef warn fill:#ffe9b3,stroke:#cc8800,stroke-width:1.5px
+    classDef good fill:#cfc,stroke:#060,stroke-width:1.5px
+```
+
+Cases averted = (P_detect − 0.45) × η × 11,690. Deaths averted = cases averted × p_death (0.13). The MVP package averts ≈ 150 deaths/year for ≈ R157,000 spend — **~R1,000 per death averted** against a per-death societal cost of R1.5M.
+
+## 7. Implementation considerations
+
+| Component | Lead agency | Year-1 cost | Critical path |
+|:----------|:------------|------------:|:--------------|
+| S1 IT feed | NHLS IT + NICD middleware | R40k + R80k one-off | LIS-to-NMC HL7 connector spec |
+| S3a BChE auto-notify | NHLS LIS team | R55k | LIS rule configuration; QA review |
+| S3b Live toxicology | NHLS clinical chemistry + sentinel hospital | R1.2M pilot | Lab method validation; sample logistics |
+| S4 PIH dashboard | PIH (Tygerberg) + NICD | R62k | Daily extract + hosting; MVD workshop |
+| Hotspot detection (SaTScan) | NICD epi analyst | R40k | Geocoding of NMC + MVD ingest |
+
+**Privacy & legal.** All flows are de-identified (age, sex, facility, result, date). POPIA-compliant under existing Section 90 NHA authority. **No new legislation required.**
+
+**Risks.** (i) Low BChE testing uptake by clinicians — S3a fires only on tests ordered. (ii) Data-quality drift if facility metadata is incomplete (geocoding will fail). (iii) Capacity bottleneck at provincial response level — the [Coordination brief](coordination_policy.qmd) addresses this.
+
+## 8. Recommended next step
+
+**Adopt the Surveillance MVP (S1 + S3a + S4) and pilot in 3 provinces (Gauteng, Western Cape, KZN) for 6 months.** Approximate pilot budget: **~R157,000 operating + ~R80,000 IT setup**. Lead agency: NICD as national coordinator.
+
+- **Weeks 1–2:** S4 dashboard live; S3a LIS configuration begins.
+- **Months 1–3:** S1 IT connector built and tested; S4 MVD workshop with PIH.
+- **Month 6:** Evaluate against (a) completeness of NHLS severe results in NMC and (b) cluster-detection latency.
+- **Month 9:** Add S3b sentinel toxicology site, funded from a separate research-surveillance stream.
+
+The coordination side of the same system — how NICD, EHPs, DALRRD, and provincial response teams act on the improved signal — is covered in the [Coordination brief](coordination_policy.qmd). The product-specific regulatory action that S3b makes possible is the subject of the [Terbufos brief](terbufos_policy.qmd).
+
+---
+
+::: {.footer-cta}
+**Companion briefs:** [Coordination](coordination_policy.qmd) · [Terbufos restriction](terbufos_policy.qmd) · [Decision Model](decision_model.qmd) · [Costing Analysis](costing_analysis.qmd)
+:::

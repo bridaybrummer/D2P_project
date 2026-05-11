@@ -1,0 +1,213 @@
+---
+title: "Policy Brief 3: Restricting or Banning Terbufos in South Africa"
+subtitle: "A priority-product action under the surveillance + coordination framework"
+author: "D2P Project Team"
+date: "2025-09-05"
+date-modified: today
+categories: [policy, regulation, terbufos, decision-makers]
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    number-sections: false
+---
+
+::: {.callout-important icon=false}
+## For Decision-Makers
+
+**Target audience:** DALRRD Pesticide Registrar, Ministerial Advisory Committee (MAC), National Department of Health (NDoH), Department of Trade, Industry & Competition (substitution support).
+
+**Companion briefs:** [Surveillance](surveillance_policy.qmd) · [Coordination](coordination_policy.qmd).
+
+**Status:** **DRAFT.** This brief makes the qualitative public-health case and outlines the decision logic. Several quantitative claims — South African market volume, attributable case fractions, and yield-impact estimates — are flagged as `[Evidence gap]` and require dedicated data collection before final regulatory action.
+:::
+
+## 1. Policy question
+
+**Should South Africa restrict the use of terbufos, or ban it outright as a registered agricultural pesticide?**
+
+## 2. Public health problem
+
+Terbufos is a **WHO Class Ia ("Extremely Hazardous")** organophosphate insecticide. It is acutely toxic via oral, dermal, and inhalation routes, with an oral LD50 in the low-mg/kg range, and acts via irreversible cholinesterase inhibition. Small ingested quantities are lethal in adults; very small quantities are lethal in children.
+
+In the South African context, terbufos has been repeatedly implicated in mass and individual acute-poisoning incidents, including ingestion of granular formulations sold informally outside the regulated agricultural market. `[Evidence gap: compile NICD / NHLS / forensic-toxicology series of terbufos-attributed events 2020–present, with case-fatality breakdown.]`
+
+The public-health case rests on three claims:
+
+1. **High intrinsic toxicity** at sub-gram doses (well-established from WHO, US-EPA, and EFSA technical reviews).
+2. **Disproportionate contribution to severe and fatal poisonings** relative to its agricultural market share — the proportionality argument cannot be quantified without S3b live-patient chemical toxicology (see [Surveillance brief](surveillance_policy.qmd)). `[Evidence gap.]`
+3. **High substitutability for its primary use cases** (soil insect / stalk borer / nematode control in maize and other field crops). `[Evidence gap: SA-specific substitution feasibility study, ideally co-produced with DALRRD and grain-industry bodies.]`
+
+The first claim is settled science. The second and third are the empirical claims a final regulatory decision depends on.
+
+## 3. Status quo
+
+{{< include _shared_parameters.qmd >}}
+
+**Terbufos-specific status quo:**
+
+| Item | Status | Evidence basis |
+|:-----|:-------|:---------------|
+| Registration status | Registered in South Africa as a soil insecticide | DALRRD pesticide register |
+| WHO classification | Class Ia (Extremely Hazardous) | WHO Recommended Classification of Pesticides by Hazard (current edition) |
+| Banned in EU | Yes — not approved for use under EU 1107/2009 | EU Pesticides Database |
+| Annual SA agricultural market volume | `[Evidence gap]` | DALRRD import/sales registry |
+| Documented acute-poisoning case series (SA) | Partial | NMC + forensic toxicology — see [Coordination brief](coordination_policy.qmd) for why this is incomplete |
+| Primary registered crop uses | Maize (stalk borer, nematodes) | DALRRD pesticide register |
+| Available substitute actives for primary uses | Multiple `[Evidence gap: SA-specific substitution feasibility]` | Industry technical literature |
+
+**Why act now?**
+
+- A series of high-profile mass-poisoning events in SA have placed terbufos in the public and political spotlight, creating a window for regulatory action that may not recur. `[Evidence gap: compile incident dossier.]`
+- The EU has already removed terbufos from its approved list — South Africa is increasingly an outlier among middle-income agricultural exporters.
+- The [Surveillance](surveillance_policy.qmd) + [Coordination](coordination_policy.qmd) investments give NICD and DALRRD, for the first time, the institutional pathway to act on a single-product signal.
+
+## 4. Root cause analysis
+
+```{mermaid}
+%%| label: fig-terb-fishbone
+%%| fig-cap: "Root causes that make terbufos a disproportionate public-health hazard in South Africa."
+flowchart LR
+    A[Disproportionate<br/>terbufos-related harm] --> R1[High intrinsic toxicity<br/>WHO Class Ia]
+    A --> R2[Granular formulation<br/>resembles food / seed]
+    A --> R3[Diversion into informal<br/>retail / pest-control use]
+    A --> R4[Limited live-patient<br/>agent attribution]
+    A --> R5[Substitutes available but<br/>switching not mandated]
+
+    R1 --> O1[Option T2/T3: Class Ia<br/>phase-out aligned with WHO]
+    R2 --> O2[Option T2: Formulation restriction<br/>e.g. only encapsulated, no granular]
+    R3 --> O3[Option T2: Restricted-use<br/>permitting + traceability]
+    R4 --> O4[Surveillance S3b<br/><i>see Surveillance brief</i>]
+    R5 --> O5[Option T2/T3: DALRRD substitution<br/>support + grower advisory]
+
+    style A fill:#f99,stroke:#333
+    style O1 fill:#9f9,stroke:#333
+    style O2 fill:#9f9,stroke:#333
+    style O3 fill:#9f9,stroke:#333
+    style O4 fill:#bbf,stroke:#333
+    style O5 fill:#9f9,stroke:#333
+```
+
+The drivers cluster into intrinsic-hazard, formulation-pathway, market-pathway, attribution-evidence, and substitution-readiness causes. Three of the five are addressed by regulatory action on terbufos itself; one (R4) is addressed by the surveillance brief; one (R5) is a co-dependency with DALRRD and the grain industry.
+
+## 5. Policy options
+
+### Option T1 — No change *(status quo)*
+
+Terbufos remains registered under existing conditions. Relies on general pesticide-handling regulations and clinician/EHP-led NMC notifications to detect harm. **This is the implicit decision if no regulatory action is taken.**
+
+### Option T2 — Tighter restriction *(★ recommended interim)*
+
+A bundle of measures short of an outright ban:
+
+- **Formulation restriction.** Withdraw granular formulations that visually resemble food/seed; allow only encapsulated or liquid formulations dispensed via licensed agricultural distributors.
+- **Restricted-use product (RUP) designation.** Sales only to certified applicators against a logged transaction; no informal-market sales.
+- **Mandatory point-of-sale labelling and lockable container requirement.**
+- **Quarterly DALRRD audit** of distributor records, with NICD→DALRRD intelligence feed (see Coordination brief Option C3) flagging geographies of concern.
+- **Sunset clause.** Conditional 24-month re-registration; if NICD-attributed serious-poisoning cases (from S3b toxicology, once operational) do not decline by a pre-agreed margin, automatic transition to Option T3.
+
+Cost: principally regulatory and enforcement. `[Evidence gap: DALRRD inspectorate cost model for RUP enforcement.]` Implementation: 6–12 months.
+
+### Option T3 — Full ban / phase-out
+
+Cancel terbufos product registrations under the Fertilizers, Farm Feeds, Agricultural Remedies and Stock Remedies Act. Phase-out window (12–24 months) to allow substitute uptake and product clearance. Aligns South Africa with the EU position.
+
+**Trade-offs to manage:**
+
+- *Crop-yield impact on maize.* `[Evidence gap: SA-specific yield modelling under leading substitute actives; requires DALRRD + grain-industry collaboration.]`
+- *Substitute toxicity profile.* Some substitutes (e.g. fipronil, certain neonicotinoids) carry their own ecological and human-health concerns. `[Evidence gap: SA-specific comparative hazard assessment.]`
+- *Smallholder access.* Substitutes may be more expensive or harder to access at smallholder scale. `[Evidence gap: substitute pricing and accessibility.]`
+- *Compliance / black-market risk.* A poorly-enforced ban can drive demand to unregulated supply. Mitigated by DALRRD inspectorate capacity (Coordination C3) and by Option T2 acting as a 24-month stepping stone.
+
+Cost: regulatory cost low; market-transition cost concentrated on growers and distributors. `[Evidence gap.]` Implementation: 12–24 months.
+
+## 6. Decision tree — terbufos regulatory choices
+
+```{mermaid}
+%%| label: fig-terb-decision-tree
+%%| fig-cap: "Terbufos regulatory decision tree. Each branch shows the expected public-health, agricultural, and implementation consequences. Quantitative values where shown are illustrative — see Evidence gaps."
+flowchart TD
+    Q{Regulatory action<br/>on terbufos?} -->|T1: No change| T1[Status quo]:::bad
+    Q -->|T2: Tighter restriction| T2[RUP + formulation +<br/>distributor audit]:::warn
+    Q -->|T3: Full ban / phase-out| T3[Cancel registration<br/>12–24 month phase-out]:::good
+
+    T1 --> H1[Public health<br/>Continued mass-poisoning<br/>events possible]:::bad
+    T1 --> A1[Agriculture<br/>No change]:::good
+    T1 --> I1[Implementation<br/>Nothing required]:::good
+
+    T2 --> H2[Public health<br/>Reduced informal-market<br/>diversion; partial impact]:::warn
+    T2 --> A2[Agriculture<br/>Continued use under<br/>RUP conditions]:::warn
+    T2 --> I2[Implementation<br/>DALRRD inspectorate<br/>capacity required]:::warn
+
+    T3 --> H3[Public health<br/>Removes the source<br/>of harm]:::good
+    T3 --> A3[Agriculture<br/>Substitution required<br/>~Evidence gap on yield~]:::warn
+    T3 --> I3[Implementation<br/>Cancellation +<br/>24-month phase-out]:::warn
+
+    H2 --> E2{Re-evaluate at<br/>24 months}
+    E2 -->|Sufficient reduction| T2K[Keep T2]:::good
+    E2 -->|Insufficient reduction| T3F[Escalate to T3]:::warn
+
+    classDef bad fill:#fdd,stroke:#cc0000,stroke-width:1.5px
+    classDef warn fill:#ffe9b3,stroke:#cc8800,stroke-width:1.5px
+    classDef good fill:#cfc,stroke:#060,stroke-width:1.5px
+```
+
+**How to read the tree.** Public-health, agricultural, and implementation consequences are shown separately rather than collapsed into a single utility. T1 is best for agriculture and implementation but worst for public health. T3 is best for public health but loads risk onto the agricultural and implementation arms. T2 is a calibrated middle path with a **built-in evaluation gate** at 24 months that mechanically escalates to T3 if the public-health gain is insufficient.
+
+### Quantitative anchor (illustrative)
+
+Using the shared parameter set, **even a 10 % reduction in terbufos-attributable severe cases** corresponds to:
+
+- ~`0.10 × [terbufos attributable fraction] × 11,690` averted suspected cases / year `[Evidence gap on attributable fraction]`
+- At η = 0.30 and p_death = 0.13, this maps directly to deaths averted per year via the [Coordination](coordination_policy.qmd) outcome model.
+
+We deliberately do **not** publish a single headline "deaths averted by banning terbufos" number until the attributable fraction is established by S3b toxicology, to avoid the dominance of an unverifiable input.
+
+## 7. Implementation considerations
+
+| Issue | Status | Mitigation |
+|:------|:-------|:-----------|
+| Regulatory authority | DALRRD has full authority under the Act | None required |
+| Pesticide registration cancellation process | Established administrative pathway | Standard DALRRD process |
+| Attributable-fraction evidence | `[Evidence gap]` | Stand up Surveillance Option S3b at 1 sentinel site within 12 months |
+| Yield-impact evidence | `[Evidence gap]` | Commission grain-industry / ARC modelling alongside Option T2 |
+| Substitute hazard profile | `[Evidence gap]` | DALRRD comparative hazard review at registration |
+| Smallholder access to substitutes | `[Evidence gap]` | Grower advisory + transition subsidy via DALRRD |
+| Compliance / black-market risk | High under T3 if poorly enforced | T2 as a 24-month stepping stone; Coordination C3 intelligence feed |
+| Stakeholder consultation | Required | DALRRD + grain industry + civil-society public-comment process |
+
+**Institutional responsibilities.** DALRRD leads regulatory action. NDoH/NICD supplies the attributable-harm evidence base (via [Surveillance](surveillance_policy.qmd) S3b and [Coordination](coordination_policy.qmd) C3). DTIC and Agriculture sector bodies lead substitution support. Civil-society and grower organisations participate in formal consultation.
+
+## 8. Recommended next step
+
+**Adopt Option T2 immediately as an interim measure, with a hard-coded 24-month evaluation gate that escalates to Option T3 unless a pre-agreed reduction in attributable serious-poisoning cases is demonstrated.**
+
+Concretely:
+
+1. **Within 3 months.** DALRRD gazette the formulation restriction, RUP designation, distributor audit, and lockable-container requirement.
+2. **Within 6 months.** NICD operationalises the [Coordination Option C3](coordination_policy.qmd) NICD→DALRRD intelligence feed with quarterly terbufos-specific reporting.
+3. **Within 12 months.** [Surveillance Option S3b](surveillance_policy.qmd) sentinel live-patient chemical toxicology site operational, producing the attributable-fraction evidence base.
+4. **Within 24 months.** Joint NDoH–DALRRD review against pre-agreed reduction target → escalate to Option T3 if target missed, retain Option T2 if met.
+5. **In parallel.** Commission the four explicit `[Evidence gap]` work items (market volume, attributable fraction, yield-impact, substitute hazard) to retire the uncertainty that today prevents a clean cost–benefit calculation.
+
+This is the option that takes the strongest public-health action immediately compatible with the evidence on hand, while building the evidence base needed to defend a full ban on its merits at the 24-month gate.
+
+---
+
+## Evidence gaps to retire before final action
+
+| # | Gap | Owner | Required by |
+|:--|:----|:------|:------------|
+| 1 | Terbufos SA annual market volume + import/sales registry | DALRRD | Month 3 |
+| 2 | Compile NICD/NHLS/forensic-toxicology terbufos case series 2020–present | NICD + NHLS | Month 6 |
+| 3 | Terbufos attributable fraction of severe pesticide-poisoning cases (requires S3b) | NHLS toxicology + NICD | Month 12 |
+| 4 | SA-specific yield-impact modelling under leading substitutes | ARC + grain industry | Month 18 |
+| 5 | Comparative hazard profile of leading substitutes | DALRRD registration + NICD | Month 18 |
+| 6 | Substitute pricing and smallholder accessibility | DALRRD + DTIC | Month 18 |
+| 7 | DALRRD RUP-enforcement cost model | DALRRD inspectorate | Month 3 |
+
+---
+
+::: {.footer-cta}
+**Companion briefs:** [Surveillance](surveillance_policy.qmd) · [Coordination](coordination_policy.qmd) · [Decision Model](decision_model.qmd) · [Costing Analysis](costing_analysis.qmd)
+:::
