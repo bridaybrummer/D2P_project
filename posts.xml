@@ -12,6 +12,569 @@
 <generator>quarto-1.9.36</generator>
 <lastBuildDate>Thu, 04 Sep 2025 22:00:00 GMT</lastBuildDate>
 <item>
+  <title>Policy Brief 2: Closing the Coordination Loop</title>
+  <dc:creator>D2P Project Team</dc:creator>
+  <link>https://your-site-url.com/posts/coordination_policy.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>For Decision-Makers
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Target audience:</strong> Ministerial Advisory Committee (MAC), National Department of Health (NDoH), DALRRD Pesticide Registrar, Provincial Health Leadership.</p>
+<p><strong>Companion briefs:</strong> <a href="../posts/surveillance_policy.html">Surveillance</a> · <a href="../posts/terbufos_policy.html">Terbufos restriction</a>.</p>
+</div>
+</div>
+<section id="policy-question" class="level2">
+<h2 class="anchored" data-anchor-id="policy-question">1. Policy question</h2>
+<p><strong>Should NDoH and DALRRD mandate a closed-loop coordination workflow — where every NMC notification triggers an investigation that is recorded on NMC, every EHP→DALRRD referral is structured, and every DALRRD action is fed back to NICD and the clinician?</strong></p>
+</section>
+<section id="public-health-problem" class="level2">
+<h2 class="anchored" data-anchor-id="public-health-problem">2. Public health problem</h2>
+<p>Better detection (see the <a href="../posts/surveillance_policy.html">Surveillance brief</a>) is wasted if the system does not <strong>act</strong> on what it detects. South Africa’s pesticide-poisoning response chain currently has <strong>eight sequential decision points</strong> between “case suspected” and “regulatory action closes the loop”, and <strong>six of those eight default to a broken-loop terminal</strong>. The result is that a case which is correctly notified can still produce no investigation, no source removal, no regulatory follow-up, and no feedback to the notifier — leaving the underlying hazard in place and producing predictable secondary cases.</p>
+</section>
+<section id="status-quo" class="level2">
+<h2 class="anchored" data-anchor-id="status-quo">3. Status quo</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Headline numbers used across all D2P policy documents
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>All three policy documents draw their quantitative claims from this single shared parameter set. To revise an assumption, <strong>edit <code>posts/_shared_parameters.qmd</code></strong> — every document that includes it will update on the next render.</p>
+<p><strong>Burden (per year, South Africa):</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 31%">
+<col style="width: 20%">
+<col style="width: 48%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: right;">Value</th>
+<th style="text-align: left;">Source / status</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">NMC pesticide-poisoning notifications</td>
+<td style="text-align: right;">~690</td>
+<td style="text-align: left;">NMC 2020–2024 annual reports</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NHLS severe BChE inhibitions (live patients)</td>
+<td style="text-align: right;">~2,000</td>
+<td style="text-align: left;">NHLS LIS, 2020–2024</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Poisons Information Helpline pesticide calls</td>
+<td style="text-align: right;">~9,000</td>
+<td style="text-align: left;">PIH Annual Report 2019</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Total suspected pesticide-poisoning cases / year</td>
+<td style="text-align: right;"><strong>~11,690</strong></td>
+<td style="text-align: left;">Sum of three mutually-exclusive streams (placeholder for record-linkage)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Case-fatality rate (CFR, mid-range)</td>
+<td style="text-align: right;">13 %</td>
+<td style="text-align: left;">NMC observed range 10–15 %; under-counts intentional self-poisoning under ICD-10 default rules</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Annual deaths</td>
+<td style="text-align: right;"><strong>~1,500 – 1,800</strong></td>
+<td style="text-align: left;">11,690 × CFR</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Per-case morbidity cost</td>
+<td style="text-align: right;">R12,000</td>
+<td style="text-align: left;">Existing decision-model parameter</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Per-death mortality cost</td>
+<td style="text-align: right;">R1,500,000</td>
+<td style="text-align: left;">Human-capital approach, existing model</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Per-case societal cost</strong></td>
+<td style="text-align: right;"><strong>~R197,000</strong></td>
+<td style="text-align: left;">R12,000 + 0.13 × R1.5M</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Total annual economic burden</strong></td>
+<td style="text-align: right;"><strong>~R2.3 billion / year</strong></td>
+<td style="text-align: left;">11,690 × R197,000</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Decision-tree parameters (placeholders — to be re-estimated from pilot):</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 31%">
+<col style="width: 22%">
+<col style="width: 20%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: center;">Symbol</th>
+<th style="text-align: right;">Value</th>
+<th style="text-align: left;">Used in</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Loop-closure prevention efficacy</td>
+<td style="text-align: center;">η</td>
+<td style="text-align: right;">0.30</td>
+<td style="text-align: left;">Burden-avoided model; outcome subtree</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Secondary cases per unaddressed source</td>
+<td style="text-align: center;">ρ</td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: left;">Outcome subtree</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">P(index death)</td>
+<td style="text-align: center;">p_death</td>
+<td style="text-align: right;">0.13</td>
+<td style="text-align: left;">Outcome subtree</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">P(severe morbidity, ICU/admission)</td>
+<td style="text-align: center;">p_severe</td>
+<td style="text-align: right;">0.27</td>
+<td style="text-align: left;">Outcome subtree</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">P(full recovery)</td>
+<td style="text-align: center;">p_recover</td>
+<td style="text-align: right;">0.60</td>
+<td style="text-align: left;">Outcome subtree</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Status-quo coordination transition probabilities (per suspected case):</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Node</th>
+<th style="text-align: left;">Decision</th>
+<th style="text-align: right;">P(Yes)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Q1</td>
+<td style="text-align: left;">Clinician/PHO files on NMC</td>
+<td style="text-align: right;">0.30</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Q2</td>
+<td style="text-align: left;">NMC SMS reaches local EHP</td>
+<td style="text-align: right;">0.95</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Q3</td>
+<td style="text-align: left;">EHP investigates</td>
+<td style="text-align: right;">0.60</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Q4</td>
+<td style="text-align: left;">Investigation recorded on NMC</td>
+<td style="text-align: right;">0.05</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Q5</td>
+<td style="text-align: left;">EHP refers to DALRRD</td>
+<td style="text-align: right;">0.30</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Q6</td>
+<td style="text-align: left;">DALRRD acts</td>
+<td style="text-align: right;">0.50</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Q7</td>
+<td style="text-align: left;">DALRRD feeds back to NMC + clinician</td>
+<td style="text-align: right;">0.10</td>
+</tr>
+</tbody>
+</table>
+<p>Joint P(loop fully closes) ≈ <strong>1.1 %</strong> under the status quo.</p>
+<p>Full numerical derivations live in the <a href="../posts/decision_model.html">Decision Model</a> and the <a href="../posts/costing_analysis.html">Costing Analysis</a>.</p>
+</div>
+</div>
+<section id="the-notification-pathway-one-way-and-broken" class="level3">
+<h3 class="anchored" data-anchor-id="the-notification-pathway-one-way-and-broken">The notification pathway — one-way and broken</h3>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div id="fig-coord-status-quo-flow" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-coord-status-quo-flow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-coord-status-quo-flow">flowchart LR
+    A[Clinician /&lt;br/&gt;Public-health official] --&gt;|Notification on&lt;br/&gt;NMC platform| D[NMC platform&lt;br/&gt;&lt;i&gt;NICD&lt;/i&gt;]
+    D --&gt;|SMS notification| B[Local EHP&lt;br/&gt;&lt;i&gt;mandated to investigate&lt;/i&gt;]
+    B -.Investigation NOT&lt;br/&gt;recorded on NMC.-x D
+    B -.Informal phone /&lt;br/&gt;email referral.-&gt; C[DALRRD&lt;br/&gt;&lt;i&gt;Pesticide Registrar /&lt;br/&gt;Inspectorate&lt;/i&gt;]
+    B -.Referral NOT&lt;br/&gt;recorded on NMC.-x D
+
+    C -.Feedback to EHP&lt;br/&gt;at best.-&gt; B
+    C -.x No feedback to NMC.-x D
+    C -.x No feedback to clinician.-x A
+    D -.x No case-status&lt;br/&gt;feedback.-x A
+
+    style A fill:#fde,stroke:#333
+    style B fill:#ffd,stroke:#333
+    style C fill:#fdd,stroke:#cc0000,stroke-dasharray: 5 5
+    style D fill:#cfc,stroke:#333,stroke-width:2px
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-coord-status-quo-flow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Current notification pathway. Clinicians and public-health officials notify on the NMC platform; NMC sends an SMS to the local EHP, who is mandated to investigate but does not record the investigation back on NMC. The EHP may informally refer to DALRRD, but this is not captured on NMC and DALRRD’s action (if any) is not fed back to NMC or the clinician.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Reading the diagram.</strong> Clinicians <em>do</em> file on NMC — that is the formal entry point. NMC <em>does</em> SMS the local EHP, who <em>is</em> mandated to investigate. The chain breaks at two specific places: (a) the EHP investigation outcome is <strong>never written back to NMC</strong> because no NMC field requires it; and (b) the EHP→DALRRD referral, when it happens, is informal and likewise unrecorded. DALRRD action — if any — flows back to the EHP at best, and never to NICD or the originating clinician.</p>
+</section>
+</section>
+<section id="root-cause-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="root-cause-analysis">4. Root cause analysis</h2>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div id="fig-coord-fishbone" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-coord-fishbone-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-coord-fishbone">flowchart LR
+    A[Coordination failure] --&gt; R1[NMC has no field for&lt;br/&gt;EHP investigation outcome]
+    A --&gt; R2[EHP→DALRRD referral&lt;br/&gt;has no SOP, no audit trail]
+    A --&gt; R3[DALRRD has no inbound&lt;br/&gt;NICD intelligence feed]
+    A --&gt; R4[Clinicians never receive&lt;br/&gt;case-status feedback]
+    A --&gt; R5[No KPI / accountability&lt;br/&gt;at any node]
+
+    R1 --&gt; O1[Option C1: Mandate EHP&lt;br/&gt;NMC closure-of-loop field]
+    R2 --&gt; O2[Option C2: Structured&lt;br/&gt;EHP→DALRRD referral form on NMC]
+    R3 --&gt; O3[Option C3: NICD→DALRRD&lt;br/&gt;intelligence feed]
+    R4 --&gt; O4[Option C4: NMC auto-feedback&lt;br/&gt;to notifier on case status]
+    R5 --&gt; O5[Option C5: Joint KPI dashboard&lt;br/&gt;NICD + DALRRD + Provinces]
+
+    style A fill:#f99,stroke:#333
+    style O1 fill:#9f9,stroke:#333
+    style O2 fill:#9f9,stroke:#333
+    style O3 fill:#9f9,stroke:#333
+    style O4 fill:#9f9,stroke:#333
+    style O5 fill:#9f9,stroke:#333
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-coord-fishbone-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Root causes of coordination failure across the NMC–EHP–DALRRD chain.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The five drivers are: (1) NMC schema lacks a closure-of-loop field; (2) EHP→DALRRD referral has no SOP; (3) DALRRD has no inbound NICD intelligence feed despite a formal request for one; (4) clinicians get no case-status feedback so the notification has no perceived value; (5) <strong>no decision node in the chain has an accountable owner with a KPI</strong>, so nothing fails loudly when the loop breaks.</p>
+</section>
+<section id="policy-options" class="level2">
+<h2 class="anchored" data-anchor-id="policy-options">5. Policy options</h2>
+<section id="option-c1-mandate-an-nmc-closure-of-loop-field-for-ehps" class="level3">
+<h3 class="anchored" data-anchor-id="option-c1-mandate-an-nmc-closure-of-loop-field-for-ehps">Option C1 — Mandate an NMC closure-of-loop field for EHPs</h3>
+<p>Add a structured “investigation outcome” field to NMC against every notification: visited/not visited, source identified/not, environmental sampling done/not, referral made/not. Make completion within 14 days an EHP performance KPI. <strong>No new legislation; an NMC schema change and circular from NDoH.</strong> Annual cost: <strong>~R30,000</strong> (schema update + training material).</p>
+</section>
+<section id="option-c2-structured-ehpdalrrd-referral-form-on-nmc" class="level3">
+<h3 class="anchored" data-anchor-id="option-c2-structured-ehpdalrrd-referral-form-on-nmc">Option C2 — Structured EHP→DALRRD referral form on NMC</h3>
+<p>Add a referral form to NMC that auto-emails the DALRRD Pesticide Registrar/Inspectorate when an EHP suspects an unsafe product, illegal sale, or occupational source. Captures product, location, suspected agent, severity, and EHP contact. Replaces today’s informal phone/email referral. Annual cost: <strong>~R25,000</strong>.</p>
+</section>
+<section id="option-c3-nicddalrrd-poisoning-intelligence-feed-recommended" class="level3">
+<h3 class="anchored" data-anchor-id="option-c3-nicddalrrd-poisoning-intelligence-feed-recommended">Option C3 — NICD→DALRRD poisoning intelligence feed <em>(★ recommended)</em></h3>
+<p>DALRRD has formally requested poisoning intelligence to inform registration, labelling, and inspectorate priorities. Output: a quarterly NICD brief by suspected product / geography / season, plus an ad-hoc cluster-alert channel. <strong>Closes the regulator-feedback gap and gives DALRRD the evidence base for product-specific action (the explicit prerequisite for the <a href="../posts/terbufos_policy.html">Terbufos brief</a> recommendation).</strong> Annual cost: <strong>~R40,000</strong> (NICD analyst + DALRRD liaison), 12 weeks.</p>
+</section>
+<section id="option-c4-auto-feedback-to-notifying-clinician" class="level3">
+<h3 class="anchored" data-anchor-id="option-c4-auto-feedback-to-notifying-clinician">Option C4 — Auto-feedback to notifying clinician</h3>
+<p>NMC sends the notifying clinician a quarterly case-status summary: outcome of EHP investigation, regulatory action taken, whether their case contributed to a detected cluster. Removes the “I notify into a black hole” disincentive. Annual cost: <strong>~R20,000</strong> (templating + email integration).</p>
+</section>
+<section id="option-c5-joint-kpi-dashboard" class="level3">
+<h3 class="anchored" data-anchor-id="option-c5-joint-kpi-dashboard">Option C5 — Joint KPI dashboard</h3>
+<p>A small public dashboard tracking: median time from notification to EHP investigation; % of notifications with a recorded outcome; % of clusters with documented DALRRD action; % of notifying clinicians who received feedback. Co-owned by NICD, DALRRD, and provincial DoHs. Annual cost: <strong>~R30,000</strong>.</p>
+</section>
+<section id="coordination-full-package-c1-c2-c3-c4-c5" class="level3">
+<h3 class="anchored" data-anchor-id="coordination-full-package-c1-c2-c3-c4-c5">Coordination Full Package (C1 + C2 + C3 + C4 + C5)</h3>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div id="fig-coord-feedback-loop" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-coord-feedback-loop-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-coord-feedback-loop">flowchart LR
+    A[Clinician&lt;br/&gt;at facility] --&gt;|Electronic&lt;br/&gt;NMC notification| D[NICD&lt;br/&gt;Surveillance Unit]
+    L[NHLS Laboratory&lt;br/&gt;BChE + Toxicology] --&gt;|Auto-notify&lt;br/&gt;&lt; 24h| D
+    P[PIH&lt;br/&gt;Quarterly summary] --&gt;|Minimum viable&lt;br/&gt;dataset| D
+
+    D --&gt;|Cluster alert| E[Provincial EHP /&lt;br/&gt;Response Team]
+    E --&gt;|Structured&lt;br/&gt;referral| C[DALRRD&lt;br/&gt;Inspectorate]
+    C --&gt;|Enforcement /&lt;br/&gt;recall outcome| D
+    E --&gt;|Investigation&lt;br/&gt;outcome| D
+
+    D -.Case-status&lt;br/&gt;feedback.-&gt; A
+    D -.Result-use&lt;br/&gt;feedback.-&gt; L
+    D -.Trend&lt;br/&gt;feedback.-&gt; P
+    C -.Regulatory&lt;br/&gt;action feedback.-&gt; A
+
+    style A fill:#cce5ff,stroke:#333
+    style L fill:#cce5ff,stroke:#333
+    style P fill:#cce5ff,stroke:#333
+    style D fill:#9f9,stroke:#333,stroke-width:2px
+    style E fill:#ffd,stroke:#333
+    style C fill:#fcb,stroke:#333
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-coord-feedback-loop-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Proposed end-state: a closed feedback loop linking clinicians, laboratories, NICD, EHPs, DALRRD, and provincial response teams. Every actor both contributes data and receives back the action taken.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Total annual cost of the Coordination Full Package: <strong>~R145,000</strong>. No new legislation required.</p>
+</section>
+</section>
+<section id="decision-tree-coordination-outcomes-per-suspected-case" class="level2">
+<h2 class="anchored" data-anchor-id="decision-tree-coordination-outcomes-per-suspected-case">6. Decision tree — coordination outcomes per suspected case</h2>
+<section id="a.-where-the-chain-breaks-today" class="level3">
+<h3 class="anchored" data-anchor-id="a.-where-the-chain-breaks-today">6a. Where the chain breaks today</h3>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div id="fig-coord-decision-tree" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-coord-decision-tree-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-coord-decision-tree">flowchart TD
+    Q0{Case suspected?} --&gt;|Yes| Q1{Notified on&lt;br/&gt;NMC?}
+    Q0 --&gt;|No| X0[Case invisible]:::bad
+
+    Q1 --&gt;|Yes 0.30| Q2{SMS reaches&lt;br/&gt;EHP?}
+    Q1 --&gt;|No 0.70| X1[No notification]:::bad
+
+    Q2 --&gt;|Yes 0.95| Q3{EHP&lt;br/&gt;investigates?}
+    Q2 --&gt;|No 0.05| X2[Dies at NMC]:::bad
+
+    Q3 --&gt;|Yes 0.60| Q4{Recorded&lt;br/&gt;on NMC?}
+    Q3 --&gt;|No 0.40| X3[No response]:::bad
+
+    Q4 --&gt;|Yes 0.05| G1[Loop closed&lt;br/&gt;to NMC]:::good
+    Q4 --&gt;|No 0.95| Q5{Refer to&lt;br/&gt;DALRRD?}
+
+    Q5 --&gt;|Yes 0.30| Q6{DALRRD&lt;br/&gt;acts?}
+    Q5 --&gt;|No 0.70| X4[Regulator&lt;br/&gt;never hears]:::bad
+
+    Q6 --&gt;|Yes 0.50| Q7{Feedback to&lt;br/&gt;NMC + clinician?}
+    Q6 --&gt;|No 0.50| X5[Source persists]:::bad
+
+    Q7 --&gt;|To EHP only 0.90| X6[NMC + clinician&lt;br/&gt;still blind]:::bad
+    Q7 --&gt;|To NMC + clinician 0.10| G2[Loop fully closed]:::good
+
+    classDef bad fill:#fdd,stroke:#cc0000,stroke-width:1.5px
+    classDef good fill:#cfc,stroke:#060,stroke-width:1.5px
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-coord-decision-tree-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Coordination decision tree for a single suspected case under the status quo. Eight decision nodes; six default to a red (broken-loop) terminal.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Joint P(loop fully closes) ≈ 1.1 %</strong> under the status quo. Expected coordination cost per suspected case ≈ <strong>R196,400</strong> — virtually the full per-case societal burden of R197,000, because the loop almost never closes.</p>
+</section>
+<section id="b.-clinical-outcome-subtree" class="level3">
+<h3 class="anchored" data-anchor-id="b.-clinical-outcome-subtree">6b. Clinical-outcome subtree</h3>
+<p>Each coordination terminal feeds into a clinical-outcome subtree for the index case <em>and</em> for the secondary cases that would otherwise follow from the same source:</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div id="fig-coord-outcome-tree" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-coord-outcome-tree-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-coord-outcome-tree">flowchart TD
+    T0[Suspected case] --&gt; P1{Loop closed?}
+
+    P1 --&gt;|Yes — G1 or G2| S1[Source removed]:::good
+    P1 --&gt;|No — X1..X6| S2[Source persists]:::bad
+
+    S1 --&gt; I1[Index case:&lt;br/&gt;p_death 0.13&lt;br/&gt;p_severe 0.27&lt;br/&gt;p_recover 0.60]
+    S2 --&gt; I2[Index case:&lt;br/&gt;p_death 0.13&lt;br/&gt;p_severe 0.27&lt;br/&gt;p_recover 0.60]
+
+    S1 --&gt; N1[Averted secondary cases&lt;br/&gt;≈ ρ × η = 0.9]:::good
+    S2 --&gt; N2[Secondary cases&lt;br/&gt;≈ ρ = 3.0]:::bad
+
+    N1 --&gt; AD1[Deaths averted&lt;br/&gt;≈ 0.117]:::good
+    N2 --&gt; AD2[Extra deaths&lt;br/&gt;≈ 0.39]:::bad
+
+    classDef bad fill:#fdd,stroke:#cc0000,stroke-width:1.5px
+    classDef good fill:#cfc,stroke:#060,stroke-width:1.5px
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-coord-outcome-tree-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Clinical-outcome subtree attached to each coordination terminal. Loop closure (green) triggers source removal and averts ρ × η secondary cases; loop-broken terminals (red) allow ρ secondary cases to follow.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="c.-what-changes-under-each-coordination-scenario" class="level3">
+<h3 class="anchored" data-anchor-id="c.-what-changes-under-each-coordination-scenario">6c. What changes under each coordination scenario</h3>
+<table class="table-striped table-hover caption-top table">
+<caption>Modelled coordination outcomes at national scale (× 11,690 suspected cases/year). Probabilities are placeholders aligned with the surveillance detection-rate ranges in the <a href="../posts/surveillance_policy.html">Surveillance brief</a>.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Scenario</th>
+<th style="text-align: right;">P(loop closed)</th>
+<th style="text-align: right;">Deaths averted / year</th>
+<th style="text-align: right;">Burden avoided / year</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Status quo</td>
+<td style="text-align: right;">1.1 %</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">—</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">+ C3 (NICD→DALRRD feed)</td>
+<td style="text-align: right;">~40 %</td>
+<td style="text-align: right;">~547</td>
+<td style="text-align: right;">~R835M</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Coordination Full Package (C1–C5)</strong></td>
+<td style="text-align: right;"><strong>~70 %</strong></td>
+<td style="text-align: right;"><strong>~957</strong></td>
+<td style="text-align: right;"><strong>~R1.45B</strong></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="implementation-considerations" class="level2">
+<h2 class="anchored" data-anchor-id="implementation-considerations">7. Implementation considerations</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 28%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Component</th>
+<th style="text-align: left;">Lead agency</th>
+<th style="text-align: right;">Year-1 cost</th>
+<th style="text-align: left;">Critical path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">C1: NMC closure-of-loop field</td>
+<td style="text-align: left;">NICD NMC team + NDoH circular</td>
+<td style="text-align: right;">R30k</td>
+<td style="text-align: left;">NMC schema change; EHP training</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">C2: Structured DALRRD referral form on NMC</td>
+<td style="text-align: left;">NICD + DALRRD Pesticide Registrar</td>
+<td style="text-align: right;">R25k</td>
+<td style="text-align: left;">DALRRD inbox + workflow</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">C3: NICD→DALRRD intelligence feed</td>
+<td style="text-align: left;">NICD analyst + DALRRD liaison</td>
+<td style="text-align: right;">R40k</td>
+<td style="text-align: left;">Quarterly brief template; cluster alert SOP</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">C4: Notifier auto-feedback</td>
+<td style="text-align: left;">NICD NMC team</td>
+<td style="text-align: right;">R20k</td>
+<td style="text-align: left;">Email templating</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">C5: Joint KPI dashboard</td>
+<td style="text-align: left;">NICD + DALRRD + Provinces</td>
+<td style="text-align: right;">R30k</td>
+<td style="text-align: left;">KPI definitions; public hosting</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Total</strong></td>
+<td style="text-align: left;">NICD-led</td>
+<td style="text-align: right;"><strong>~R145k</strong></td>
+<td style="text-align: left;">All within existing legal authority</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Institutional mechanism.</strong> A <strong>quarterly Joint Coordination Forum</strong> (NICD chair; DALRRD, NHLS, PIH, and one rotating provincial DoH representative) reviews the KPI dashboard, signs off cluster-alert escalations, and resolves cross-departmental blockers. Mandated by joint NDoH–DALRRD Director-General circular. <strong>No new legislation required.</strong></p>
+<p><strong>Risks and mitigations.</strong></p>
+<ul>
+<li><em>EHP non-compliance with new NMC field.</em> Mitigation: 14-day completion KPI tied to provincial performance reviews; circular from NDoH DG.</li>
+<li><em>DALRRD capacity to act on referrals.</em> Mitigation: C3 quarterly brief lets DALRRD prioritise by burden rather than respond reactively.</li>
+<li><em>Privacy concerns on clinician auto-feedback.</em> Mitigation: feedback is aggregate at clinician level, not patient-identifying.</li>
+</ul>
+</section>
+<section id="recommended-next-step" class="level2">
+<h2 class="anchored" data-anchor-id="recommended-next-step">8. Recommended next step</h2>
+<p><strong>Adopt C1 + C3 as the Coordination MVP, and the Full Package within 12 months.</strong></p>
+<ul>
+<li><strong>Weeks 1–4:</strong> NDoH–DALRRD joint DG circular committing to the closed-loop model; standing up the Joint Coordination Forum.</li>
+<li><strong>Weeks 4–12:</strong> C1 NMC schema change + EHP training; C3 NICD→DALRRD quarterly brief begins on the existing NMC data.</li>
+<li><strong>Months 3–12:</strong> C2 referral form, C4 auto-feedback, C5 KPI dashboard go live.</li>
+<li><strong>Month 12:</strong> Evaluate against (i) median notification-to-investigation time, (ii) % of notifications with recorded outcome, (iii) DALRRD-reported regulatory actions per quarter.</li>
+</ul>
+<p>The surveillance signal that flows <em>into</em> this loop is covered in the <a href="../posts/surveillance_policy.html">Surveillance brief</a>. The first product-specific regulatory action the loop should be designed to deliver is the subject of the <a href="../posts/terbufos_policy.html">Terbufos brief</a>.</p>
+<hr>
+<div class="footer-cta">
+<p><strong>Companion briefs:</strong> <a href="../posts/surveillance_policy.html">Surveillance</a> · <a href="../posts/terbufos_policy.html">Terbufos restriction</a> · <a href="../posts/decision_model.html">Decision Model</a> · <a href="../posts/costing_analysis.html">Costing Analysis</a></p>
+</div>
+
+
+<!-- -->
+
+</section>
+
+ ]]></description>
+  <category>policy</category>
+  <category>coordination</category>
+  <category>decision-makers</category>
+  <guid>https://your-site-url.com/posts/coordination_policy.html</guid>
+  <pubDate>Thu, 04 Sep 2025 22:00:00 GMT</pubDate>
+</item>
+<item>
   <title>Costing Analysis: Improved Pesticide Surveillance</title>
   <dc:creator>D2P Project Team</dc:creator>
   <link>https://your-site-url.com/posts/costing_analysis.html</link>
@@ -20675,9 +21238,102 @@ Table&nbsp;6: Optimistic scenario results
   <pubDate>Thu, 04 Sep 2025 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <title>Policy Brief: Strengthening Pesticide Poisoning Surveillance</title>
+  <title>Policy Brief Hub: Strengthening Pesticide Poisoning Surveillance and Response</title>
   <dc:creator>D2P Project Team</dc:creator>
   <link>https://your-site-url.com/posts/policy_brief.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>What this page is
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The original single combined policy brief has been restructured into <strong>three focused, decision-maker-facing documents</strong>, each addressing a distinct policy question. They share a common evidence base — defined in a single iterable parameter set — and reference each other where their actions interact.</p>
+</div>
+</div>
+<section id="the-three-policy-briefs" class="level2">
+<h2 class="anchored" data-anchor-id="the-three-policy-briefs">The three policy briefs</h2>
+<section id="strengthening-pesticide-poisoning-surveillance" class="level3">
+<h3 class="anchored" data-anchor-id="strengthening-pesticide-poisoning-surveillance"><a href="../posts/surveillance_policy.html">1 · Strengthening Pesticide Poisoning Surveillance</a></h3>
+<p><strong>Policy question.</strong> Should NDoH invest in automated, multi-source surveillance to close the detection gap between NMC, the NHLS laboratory, and the Poisons Information Helpline?</p>
+<p><strong>Headline recommendation.</strong> Adopt the <strong>Surveillance MVP</strong> (NHLS→NMC IT feed + BChE auto-notification + PIH dashboard / MVD) — <strong>~R157,000/year, ~150 deaths averted/year</strong>.</p>
+</section>
+<section id="closing-the-coordination-loop" class="level3">
+<h3 class="anchored" data-anchor-id="closing-the-coordination-loop"><a href="../posts/coordination_policy.html">2 · Closing the Coordination Loop</a></h3>
+<p><strong>Policy question.</strong> Should NDoH and DALRRD mandate a closed-loop coordination workflow so that every NMC notification triggers an investigation that is recorded, every EHP→DALRRD referral is structured, and every DALRRD action is fed back?</p>
+<p><strong>Headline recommendation.</strong> Adopt the <strong>Coordination Full Package</strong> (mandatory NMC closure-of-loop field + structured DALRRD referral + NICD→DALRRD intelligence feed + clinician auto-feedback + joint KPI dashboard) — <strong>~R145,000/year, ~957 deaths averted/year at scale</strong>.</p>
+</section>
+<section id="restricting-or-banning-terbufos" class="level3">
+<h3 class="anchored" data-anchor-id="restricting-or-banning-terbufos"><a href="../posts/terbufos_policy.html">3 · Restricting or Banning Terbufos</a></h3>
+<p><strong>Policy question.</strong> Should South Africa restrict, or fully ban, terbufos as a registered agricultural pesticide?</p>
+<p><strong>Headline recommendation.</strong> Adopt <strong>Option T2 (tighter restriction)</strong> immediately, with a hard-coded <strong>24-month evaluation gate</strong> that mechanically escalates to a full ban (Option T3) if attributable serious-poisoning cases do not fall by a pre-agreed margin.</p>
+</section>
+</section>
+<section id="how-the-three-briefs-fit-together" class="level2">
+<h2 class="anchored" data-anchor-id="how-the-three-briefs-fit-together">How the three briefs fit together</h2>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div id="fig-hub-overview" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-hub-overview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-hub-overview">flowchart LR
+    S[1 · Surveillance&lt;br/&gt;Detect cases earlier&lt;br/&gt;and more completely] --&gt; C[2 · Coordination&lt;br/&gt;Close the NMC–EHP–DALRRD&lt;br/&gt;loop on every signal]
+    C --&gt; R[3 · Terbufos&lt;br/&gt;First product-specific&lt;br/&gt;regulatory action]
+    R -.Evidence of impact.-&gt; S
+
+    style S fill:#cce5ff,stroke:#333
+    style C fill:#9f9,stroke:#333
+    style R fill:#ffd9b3,stroke:#cc8800
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hub-overview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the signal; coordination ensures it leads to action; product-specific regulation (starting with terbufos) is the first concrete output the upgraded system should deliver.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="shared-evidence-base" class="level2">
+<h2 class="anchored" data-anchor-id="shared-evidence-base">Shared evidence base</h2>
+<p>All three briefs draw their numerical claims from a single shared parameter set (cases per year, CFR, per-case costs, decision-tree probabilities, prevention efficacy η, secondary-case multiplier ρ). The parameter file is intentionally separated so the model can be <strong>iterated centrally</strong> without re-editing each brief.</p>
+<p>Source files:</p>
+<ul>
+<li><a href="../posts/decision_model.html">Decision Model</a> — burden, parameters, sensitivity analyses</li>
+<li><a href="../posts/costing_analysis.html">Costing Analysis</a> — full cost build-up</li>
+<li><a href="../posts/surveillance_concept_note.html">Surveillance Concept Note</a> — technical surveillance design</li>
+</ul>
+<hr>
+<div class="footer-cta">
+<p>Read in order: <a href="../posts/surveillance_policy.html">Surveillance</a> → <a href="../posts/coordination_policy.html">Coordination</a> → <a href="../posts/terbufos_policy.html">Terbufos</a>.</p>
+</div>
+
+
+<!-- -->
+
+</section>
+
+ ]]></description>
+  <category>policy</category>
+  <category>brief</category>
+  <category>decision-makers</category>
+  <guid>https://your-site-url.com/posts/policy_brief.html</guid>
+  <pubDate>Thu, 04 Sep 2025 22:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Policy Brief 1: Strengthening Pesticide Poisoning Surveillance</title>
+  <dc:creator>D2P Project Team</dc:creator>
+  <link>https://your-site-url.com/posts/surveillance_policy.html</link>
   <description><![CDATA[ 
 
 
@@ -20693,483 +21349,518 @@ Table&nbsp;6: Optimistic scenario results
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Target audience:</strong> Ministerial Advisory Committee (MAC), National Department of Health (NDoH), Provincial Health Leadership</p>
-<p><strong>Reading time:</strong> 8 minutes</p>
-<p><strong>Key message:</strong> South Africa has the legal authority to strengthen pesticide poisoning surveillance — we just need to execute better. Five low-cost options can improve detection by 50–85% without new legislation.</p>
+<p><strong>Target audience:</strong> Ministerial Advisory Committee (MAC), National Department of Health (NDoH), Provincial Health Leadership, NICD/NHLS leadership.</p>
+<p><strong>Companion briefs:</strong> <a href="../posts/coordination_policy.html">Coordination</a> · <a href="../posts/terbufos_policy.html">Terbufos restriction</a>.</p>
 </div>
 </div>
-<section id="the-problem-in-plain-language" class="level2">
-<h2 class="anchored" data-anchor-id="the-problem-in-plain-language">The Problem in Plain Language</h2>
-<p>Every year, an estimated <strong>10,000+ South Africans</strong> are poisoned by pesticides — yet our surveillance system captures fewer than half of these cases. Most victims are:</p>
-<ul>
-<li><strong>Young children</strong> (accidental exposure from unsafe storage)</li>
-<li><strong>Adolescent girls</strong> (intentional self-harm)</li>
-<li><strong>Adult male farm workers</strong> (occupational exposure)</li>
-</ul>
-<p><strong>Why does this matter?</strong></p>
-<ul>
-<li><strong>Public health risk:</strong> Clusters of poisonings may signal contaminated food, illegal pesticide sales, or unsafe working conditions — but we detect them too late (or not at all)</li>
-<li><strong>Preventable deaths:</strong> Early detection of hotspots could trigger rapid response (source removal, environmental sampling, community warnings)</li>
-<li><strong>Wasted resources:</strong> Three government agencies collect pesticide data independently, but they don’t talk to each other</li>
-</ul>
+<section id="policy-question" class="level2">
+<h2 class="anchored" data-anchor-id="policy-question">1. Policy question</h2>
+<p><strong>Should NDoH invest in automated, multi-source pesticide-poisoning surveillance to close the detection gap between the NMC, NHLS laboratory, and PIH data streams?</strong></p>
 </section>
-<section id="whats-causing-the-failure" class="level2">
-<h2 class="anchored" data-anchor-id="whats-causing-the-failure">What’s Causing the Failure?</h2>
-<p>A <strong>fishbone analysis</strong> identified five root causes — all fixable without new laws:</p>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div id="fig-fishbone" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-fishbone-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div>
-<pre class="mermaid mermaid-js" data-label="fig-fishbone">flowchart LR
-    A[Surveillance Failure] --&gt; B[No NHLS-NICD linkage]
-    A --&gt; C[PIH data not used for surveillance]
-    A --&gt; D[Delayed manual reporting]
-    A --&gt; E[No inter-agency MOUs]
-    A --&gt; F[No hotspot detection capacity]
-    
-    B --&gt; G[Option 1: NHLS data sharing MOU]
-    C --&gt; H[Option 4: PIH quarterly reports]
-    D --&gt; I[Option 3: BChE auto-notify]
-    E --&gt; J[Option 2: DALRRD data sharing]
-    F --&gt; K[Option 5: Provincial coordination]
-    
-    style A fill:#f99,stroke:#333
-    style G fill:#9f9,stroke:#333
-    style H fill:#9f9,stroke:#333
-    style I fill:#9f9,stroke:#333
-    style J fill:#9f9,stroke:#333
-    style K fill:#9f9,stroke:#333
-</pre>
-</div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fishbone-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Root causes of surveillance failure and the policy options that address them
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
+<section id="public-health-problem" class="level2">
+<h2 class="anchored" data-anchor-id="public-health-problem">2. Public health problem</h2>
+<p>South Africa under-detects pesticide poisoning. Three data streams each see a fraction of the problem, and none of them sees the whole picture:</p>
+<ul>
+<li>Most cases never appear in NMC.</li>
+<li>Severe laboratory results do not trigger a public-health alert.</li>
+<li>The country’s largest single source of clinical signal — the Poisons Information Helpline — is not used for surveillance at all.</li>
+</ul>
+<p>The consequences are operational, not theoretical: hotspots are detected late or not at all; clusters caused by contaminated food, illegal pesticide sales, or unsafe occupational exposure run their course before any agency responds; and the country has no real-time view of which products are causing harm.</p>
 </section>
-<section id="five-policy-options-all-legally-feasible-today" class="level2">
-<h2 class="anchored" data-anchor-id="five-policy-options-all-legally-feasible-today">Five Policy Options (All Legally Feasible Today)</h2>
-<section id="status-quo-keep-doing-what-were-doing" class="level3">
-<h3 class="anchored" data-anchor-id="status-quo-keep-doing-what-were-doing">Status Quo: Keep Doing What We’re Doing</h3>
-<p><strong>What it is:</strong></p>
-<ul>
-<li>Clinicians manually file NMC notifications (often 2–4 weeks late)</li>
-<li>NHLS runs ~9,000 BChE tests/year but results don’t trigger public health alerts</li>
-<li>PIH answers ~9,000 calls/year but data aren’t analyzed for surveillance</li>
-</ul>
-<p><strong>Performance:</strong></p>
-<ul>
-<li>Detects ~4.5 of 10 annual hotspots</li>
-<li>Annual cost: R0 (no change)</li>
-</ul>
-<p><strong>Bottom line:</strong> Cheap, but ineffective.</p>
-<hr>
-</section>
-<section id="option-1-nhls-data-sharing-agreement" class="level3">
-<h3 class="anchored" data-anchor-id="option-1-nhls-data-sharing-agreement">Option 1: NHLS Data Sharing Agreement</h3>
-<p><strong>What it is:</strong></p>
-<ul>
-<li>Formalize a Memorandum of Understanding (MOU) between NICD and NHLS</li>
-<li>NHLS shares aggregated BChE data (de-identified) monthly</li>
-<li>NICD analysts manually review for trends</li>
-</ul>
-<p><strong>Legal basis:</strong> Section 90 of the National Health Act (2003)</p>
-<p><strong>Performance:</strong></p>
-<ul>
-<li>Detects ~5.2 of 10 annual hotspots</li>
-<li>Annual cost: ~R40,000 (legal review, MOU development)</li>
-<li>Implementation time: 8–12 weeks</li>
-</ul>
-<p><strong>Bottom line:</strong> Low cost, modest improvement — but still relies on manual review.</p>
-<hr>
-</section>
-<section id="option-2-dalrrd-pesticide-registration-data-sharing" class="level3">
-<h3 class="anchored" data-anchor-id="option-2-dalrrd-pesticide-registration-data-sharing">Option 2: DALRRD Pesticide Registration Data Sharing</h3>
-<p><strong>What it is:</strong></p>
-<ul>
-<li>Link pesticide poisoning cases to Department of Agriculture’s pesticide registration database</li>
-<li>Identify which products are most commonly involved in poisonings</li>
-<li>Target enforcement and labeling improvements</li>
-</ul>
-<p><strong>Legal basis:</strong> Inter-departmental data sharing protocols</p>
-<p><strong>Performance:</strong></p>
-<ul>
-<li>Detects ~5.8 of 10 annual hotspots</li>
-<li>Annual cost: ~R40,000 (liaison and data cleaning)</li>
-<li>Implementation time: 12 weeks</li>
-</ul>
-<p><strong>Bottom line:</strong> Useful for long-term prevention, less immediate impact on surveillance.</p>
-<hr>
-</section>
-<section id="option-3-bche-auto-notification-recommended" class="level3">
-<h3 class="anchored" data-anchor-id="option-3-bche-auto-notification-recommended">Option 3: BChE Auto-Notification (★ Recommended)</h3>
-<p><strong>What it is:</strong></p>
-<ul>
-<li>Configure NHLS Laboratory Information System (LIS) to automatically notify NICD when BChE results show <strong>severe poisoning</strong> (&lt; 50% of normal)</li>
-<li>Notification sent within <strong>24 hours</strong> of result validation</li>
-<li>No clinician action required</li>
-</ul>
-<p><strong>Legal basis:</strong> Already permitted under NMC regulations; requires only IT configuration</p>
-<p><strong>Performance:</strong></p>
-<ul>
-<li>Detects ~6.7 of 10 annual hotspots</li>
-<li>Annual cost: ~R55,000 (IT staff time)</li>
-<li>Implementation time: <strong>2–4 weeks</strong></li>
-</ul>
-<p><strong>Why this is a game-changer:</strong></p>
-<ul>
-<li><strong>Fast:</strong> Cuts notification delay from 2–4 weeks to &lt;24 hours</li>
-<li><strong>Automated:</strong> Removes reliance on busy clinicians remembering to file paperwork</li>
-<li><strong>Scalable:</strong> Once configured, runs indefinitely with minimal ongoing cost</li>
-</ul>
-<p><strong>Bottom line:</strong> Best value for money. <strong>Recommended as first priority.</strong></p>
-<hr>
-</section>
-<section id="option-4-pih-quarterly-reports-recommended" class="level3">
-<h3 class="anchored" data-anchor-id="option-4-pih-quarterly-reports-recommended">Option 4: PIH Quarterly Reports (★ Recommended)</h3>
-<p><strong>What it is:</strong></p>
-<ul>
-<li>Poisons Information Helpline (PIH) generates <strong>quarterly summary reports</strong> of pesticide-related calls</li>
-<li>Includes age/sex distribution, geographic patterns, and severity</li>
-<li>Sent to NICD for trend analysis</li>
-</ul>
-<p><strong>Legal basis:</strong> Existing MOU between PIH and NICD</p>
-<p><strong>Performance:</strong></p>
-<ul>
-<li>Detects ~6.1 of 10 annual hotspots</li>
-<li>Annual cost: ~R62,000 (PIH analyst time)</li>
-<li>Implementation time: <strong>1–2 weeks</strong></li>
-</ul>
-<p><strong>Why this is valuable:</strong></p>
-<ul>
-<li><strong>Complements BChE data:</strong> PIH captures cases that never get laboratory testing</li>
-<li><strong>Clinical context:</strong> PIH records suspected pesticide type and exposure circumstances</li>
-<li><strong>Quick to implement:</strong> Requires only staff time, no IT infrastructure</li>
-</ul>
-<p><strong>Bottom line:</strong> Low-hanging fruit. <strong>Recommended as second priority.</strong></p>
-<hr>
-</section>
-<section id="option-5-provincial-hotspot-response-coordination" class="level3">
-<h3 class="anchored" data-anchor-id="option-5-provincial-hotspot-response-coordination">Option 5: Provincial Hotspot Response Coordination</h3>
-<p><strong>What it is:</strong></p>
-<ul>
-<li>Dedicate provincial surveillance officers to <strong>investigate clusters</strong> within 72 hours</li>
-<li>Provide training, SOPs, and budget for field investigations</li>
-<li>Establish clear escalation protocols (when to sample environment, when to involve agriculture/police)</li>
-</ul>
-<p><strong>Legal basis:</strong> Provincial health departments already have outbreak response authority</p>
-<p><strong>Performance:</strong></p>
-<ul>
-<li>Detects ~7.4 of 10 annual hotspots (when combined with Options 3 or 4)</li>
-<li>Annual cost: ~R40,000 (training, SOPs, coordination meetings)</li>
-<li>Implementation time: 12 weeks</li>
-</ul>
-<p><strong>Why this matters:</strong></p>
-<ul>
-<li><strong>Closes the loop:</strong> Detection is useless without response capacity</li>
-<li><strong>Prevents recurrence:</strong> Field investigations can identify and remove sources</li>
-</ul>
-<p><strong>Bottom line:</strong> Essential for long-term success, but requires Options 3 or 4 to generate timely alerts.</p>
-<hr>
-</section>
-<section id="full-package-all-four-options-combined" class="level3">
-<h3 class="anchored" data-anchor-id="full-package-all-four-options-combined">Full Package: All Four Options Combined</h3>
-<p><strong>What it is:</strong></p>
-<ul>
-<li>Combine Options 1–5 into an <strong>integrated surveillance system</strong></li>
-</ul>
-<p><strong>Performance:</strong></p>
-<ul>
-<li>Detects ~8.3 of 10 annual hotspots</li>
-<li>Annual cost: ~R237,000 (&lt; R20,000/month)</li>
-<li>Implementation time: 12 weeks</li>
-</ul>
-<p><strong>Why this is the best choice:</strong></p>
-<ul>
-<li><strong>85% effectiveness:</strong> Dramatically better than status quo (45%)</li>
-<li><strong>Redundancy:</strong> Multiple data sources cross-validate each other</li>
-<li><strong>Affordable:</strong> Less than the cost of one full-time epidemiologist</li>
-</ul>
-<p><strong>Bottom line:</strong> If budget allows, this is the <strong>gold standard</strong>.</p>
-<hr>
-</section>
-</section>
-<section id="comparison-table" class="level2">
-<h2 class="anchored" data-anchor-id="comparison-table">Comparison Table</h2>
-<table class="table-striped table-hover caption-top table">
-<caption>Base-case comparison of policy options</caption>
-<colgroup>
-<col style="width: 8%">
-<col style="width: 14%">
-<col style="width: 21%">
-<col style="width: 33%">
-<col style="width: 22%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Option</th>
-<th style="text-align: right;">Annual Cost</th>
-<th style="text-align: right;">Hotspots Detected</th>
-<th style="text-align: right;">% Improvement vs.&nbsp;Status Quo</th>
-<th style="text-align: left;">Implementation Time</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><strong>Status Quo</strong></td>
-<td style="text-align: right;">R0</td>
-<td style="text-align: right;">4.5 / 10</td>
-<td style="text-align: right;">—</td>
-<td style="text-align: left;">—</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Option 1: NHLS MOU</td>
-<td style="text-align: right;">R40,000</td>
-<td style="text-align: right;">5.2 / 10</td>
-<td style="text-align: right;">+16%</td>
-<td style="text-align: left;">8–12 weeks</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Option 2: DALRRD data</td>
-<td style="text-align: right;">R40,000</td>
-<td style="text-align: right;">5.8 / 10</td>
-<td style="text-align: right;">+29%</td>
-<td style="text-align: left;">12 weeks</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>Option 3: BChE auto-notify</strong></td>
-<td style="text-align: right;"><strong>R55,000</strong></td>
-<td style="text-align: right;"><strong>6.7 / 10</strong></td>
-<td style="text-align: right;"><strong>+49%</strong></td>
-<td style="text-align: left;"><strong>2–4 weeks</strong></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>Option 4: PIH reports</strong></td>
-<td style="text-align: right;"><strong>R62,000</strong></td>
-<td style="text-align: right;"><strong>6.1 / 10</strong></td>
-<td style="text-align: right;"><strong>+36%</strong></td>
-<td style="text-align: left;"><strong>1–2 weeks</strong></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Option 5: Provincial coordination</td>
-<td style="text-align: right;">R40,000</td>
-<td style="text-align: right;">7.4 / 10*</td>
-<td style="text-align: right;">+64%*</td>
-<td style="text-align: left;">12 weeks</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>Full Package</strong></td>
-<td style="text-align: right;"><strong>R237,000</strong></td>
-<td style="text-align: right;"><strong>8.3 / 10</strong></td>
-<td style="text-align: right;"><strong>+84%</strong></td>
-<td style="text-align: left;"><strong>12 weeks</strong></td>
-</tr>
-</tbody>
-</table>
-<p><em>* Assumes Option 5 is combined with at least one data-generation option (3 or 4)</em></p>
-</section>
-<section id="sensitivity-analysis-what-if-were-wrong" class="level2">
-<h2 class="anchored" data-anchor-id="sensitivity-analysis-what-if-were-wrong">Sensitivity Analysis: What If We’re Wrong?</h2>
-<p>All cost and effectiveness estimates are based on <strong>placeholder assumptions</strong> (the model will be updated with real data from the pilot). But even under pessimistic scenarios, the recommendations hold:</p>
-<section id="pessimistic-scenario-low-effectiveness-high-cost" class="level3">
-<h3 class="anchored" data-anchor-id="pessimistic-scenario-low-effectiveness-high-cost">Pessimistic Scenario (Low Effectiveness, High Cost)</h3>
-<p>Assume:</p>
-<ul>
-<li>Options are only 50% as effective as base-case estimates</li>
-<li>Costs are 2× higher than budgeted</li>
-</ul>
-<p><strong>Result:</strong></p>
-<ul>
-<li>Option 3 (BChE auto-notify) still improves detection by +12% for ~R110,000/year</li>
-<li>Full Package still improves detection by +29% for ~R474,000/year</li>
-</ul>
-<p><strong>Conclusion:</strong> Even if we’re substantially wrong, the options remain cost-effective.</p>
-</section>
-<section id="optimistic-scenario-high-effectiveness-low-cost" class="level3">
-<h3 class="anchored" data-anchor-id="optimistic-scenario-high-effectiveness-low-cost">Optimistic Scenario (High Effectiveness, Low Cost)</h3>
-<p>Assume:</p>
-<ul>
-<li>Options are 150% as effective as base-case estimates</li>
-<li>Costs are 50% lower than budgeted</li>
-</ul>
-<p><strong>Result:</strong></p>
-<ul>
-<li>Option 3 improves detection by +86% for ~R28,000/year</li>
-<li>Full Package achieves near-perfect detection (9.5 / 10 hotspots) for ~R119,000/year</li>
-</ul>
-<p><strong>Conclusion:</strong> There’s significant upside potential if implementation goes smoothly.</p>
-</section>
-</section>
-<section id="decision-framework-for-macndoh" class="level2">
-<h2 class="anchored" data-anchor-id="decision-framework-for-macndoh">Decision Framework for MAC/NDoH</h2>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<section id="status-quo" class="level2">
+<h2 class="anchored" data-anchor-id="status-quo">3. Status quo</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Three Decision Paths
+<span class="screen-reader-only">Note</span>Headline numbers used across all D2P policy documents
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<section id="path-1-minimal-investment-maximum-speed" class="level3">
-<h3 class="anchored" data-anchor-id="path-1-minimal-investment-maximum-speed">Path 1: Minimal Investment, Maximum Speed</h3>
-<p><strong>Recommendation:</strong> Implement <strong>Option 4 (PIH quarterly reports)</strong> immediately</p>
-<p><strong>Why:</strong></p>
-<ul>
-<li>Can be launched in <strong>1–2 weeks</strong></li>
-<li>Costs only ~R62,000/year</li>
-<li>Requires no IT infrastructure or legal reviews</li>
-<li>Improves detection by +36%</li>
-</ul>
-<p><strong>Who should choose this:</strong> Provinces with limited budget or IT capacity</p>
-<hr>
-</section>
-<section id="path-2-best-value-for-money" class="level3">
-<h3 class="anchored" data-anchor-id="path-2-best-value-for-money">Path 2: Best Value for Money</h3>
-<p><strong>Recommendation:</strong> Implement <strong>Option 3 (BChE auto-notify)</strong></p>
-<p><strong>Why:</strong></p>
-<ul>
-<li>Best effectiveness per rand spent (+49% for R55,000/year)</li>
-<li>Fully automated (minimal ongoing effort)</li>
-<li>Can be operational in 2–4 weeks</li>
-</ul>
-<p><strong>Who should choose this:</strong> Provinces with NHLS IT support available</p>
-<hr>
-</section>
-<section id="path-3-comprehensive-solution" class="level3">
-<h3 class="anchored" data-anchor-id="path-3-comprehensive-solution">Path 3: Comprehensive Solution</h3>
-<p><strong>Recommendation:</strong> Implement <strong>Full Package (all four options)</strong></p>
-<p><strong>Why:</strong></p>
-<ul>
-<li>Achieves 85% effectiveness (vs.&nbsp;45% status quo)</li>
-<li>Multiple data sources provide redundancy and cross-validation</li>
-<li>Still affordable (~R237,000/year = less than one FTE)</li>
-</ul>
-<p><strong>Who should choose this:</strong> National rollout; provinces with adequate budget</p>
-</section>
+<p>All three policy documents draw their quantitative claims from this single shared parameter set. To revise an assumption, <strong>edit <code>posts/_shared_parameters.qmd</code></strong> — every document that includes it will update on the next render.</p>
+<p><strong>Burden (per year, South Africa):</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 31%">
+<col style="width: 20%">
+<col style="width: 48%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: right;">Value</th>
+<th style="text-align: left;">Source / status</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">NMC pesticide-poisoning notifications</td>
+<td style="text-align: right;">~690</td>
+<td style="text-align: left;">NMC 2020–2024 annual reports</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NHLS severe BChE inhibitions (live patients)</td>
+<td style="text-align: right;">~2,000</td>
+<td style="text-align: left;">NHLS LIS, 2020–2024</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Poisons Information Helpline pesticide calls</td>
+<td style="text-align: right;">~9,000</td>
+<td style="text-align: left;">PIH Annual Report 2019</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Total suspected pesticide-poisoning cases / year</td>
+<td style="text-align: right;"><strong>~11,690</strong></td>
+<td style="text-align: left;">Sum of three mutually-exclusive streams (placeholder for record-linkage)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Case-fatality rate (CFR, mid-range)</td>
+<td style="text-align: right;">13 %</td>
+<td style="text-align: left;">NMC observed range 10–15 %; under-counts intentional self-poisoning under ICD-10 default rules</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Annual deaths</td>
+<td style="text-align: right;"><strong>~1,500 – 1,800</strong></td>
+<td style="text-align: left;">11,690 × CFR</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Per-case morbidity cost</td>
+<td style="text-align: right;">R12,000</td>
+<td style="text-align: left;">Existing decision-model parameter</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Per-death mortality cost</td>
+<td style="text-align: right;">R1,500,000</td>
+<td style="text-align: left;">Human-capital approach, existing model</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Per-case societal cost</strong></td>
+<td style="text-align: right;"><strong>~R197,000</strong></td>
+<td style="text-align: left;">R12,000 + 0.13 × R1.5M</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Total annual economic burden</strong></td>
+<td style="text-align: right;"><strong>~R2.3 billion / year</strong></td>
+<td style="text-align: left;">11,690 × R197,000</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Decision-tree parameters (placeholders — to be re-estimated from pilot):</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 31%">
+<col style="width: 22%">
+<col style="width: 20%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: center;">Symbol</th>
+<th style="text-align: right;">Value</th>
+<th style="text-align: left;">Used in</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Loop-closure prevention efficacy</td>
+<td style="text-align: center;">η</td>
+<td style="text-align: right;">0.30</td>
+<td style="text-align: left;">Burden-avoided model; outcome subtree</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Secondary cases per unaddressed source</td>
+<td style="text-align: center;">ρ</td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: left;">Outcome subtree</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">P(index death)</td>
+<td style="text-align: center;">p_death</td>
+<td style="text-align: right;">0.13</td>
+<td style="text-align: left;">Outcome subtree</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">P(severe morbidity, ICU/admission)</td>
+<td style="text-align: center;">p_severe</td>
+<td style="text-align: right;">0.27</td>
+<td style="text-align: left;">Outcome subtree</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">P(full recovery)</td>
+<td style="text-align: center;">p_recover</td>
+<td style="text-align: right;">0.60</td>
+<td style="text-align: left;">Outcome subtree</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Status-quo coordination transition probabilities (per suspected case):</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Node</th>
+<th style="text-align: left;">Decision</th>
+<th style="text-align: right;">P(Yes)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Q1</td>
+<td style="text-align: left;">Clinician/PHO files on NMC</td>
+<td style="text-align: right;">0.30</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Q2</td>
+<td style="text-align: left;">NMC SMS reaches local EHP</td>
+<td style="text-align: right;">0.95</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Q3</td>
+<td style="text-align: left;">EHP investigates</td>
+<td style="text-align: right;">0.60</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Q4</td>
+<td style="text-align: left;">Investigation recorded on NMC</td>
+<td style="text-align: right;">0.05</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Q5</td>
+<td style="text-align: left;">EHP refers to DALRRD</td>
+<td style="text-align: right;">0.30</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Q6</td>
+<td style="text-align: left;">DALRRD acts</td>
+<td style="text-align: right;">0.50</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Q7</td>
+<td style="text-align: left;">DALRRD feeds back to NMC + clinician</td>
+<td style="text-align: right;">0.10</td>
+</tr>
+</tbody>
+</table>
+<p>Joint P(loop fully closes) ≈ <strong>1.1 %</strong> under the status quo.</p>
+<p>Full numerical derivations live in the <a href="../posts/decision_model.html">Decision Model</a> and the <a href="../posts/costing_analysis.html">Costing Analysis</a>.</p>
 </div>
 </div>
-</section>
-<section id="legal-and-ethical-considerations" class="level2">
-<h2 class="anchored" data-anchor-id="legal-and-ethical-considerations">Legal and Ethical Considerations</h2>
-<section id="is-this-legal" class="level3">
-<h3 class="anchored" data-anchor-id="is-this-legal">Is This Legal?</h3>
-<p><strong>Yes.</strong> All options can be implemented under existing law:</p>
-<ul>
-<li><strong>Section 90 of the National Health Act (2003):</strong> Permits inter-agency data sharing for public health purposes</li>
-<li><strong>NMC Regulations:</strong> Allow laboratory-triggered notifications (Option 3)</li>
-<li><strong>Existing MOUs:</strong> PIH-NICD collaboration already established (Option 4)</li>
-</ul>
-<p><strong>No new legislation required.</strong></p>
-</section>
-<section id="what-about-privacy" class="level3">
-<h3 class="anchored" data-anchor-id="what-about-privacy">What About Privacy?</h3>
-<ul>
-<li>All data sharing follows <strong>POPIA (Protection of Personal Information Act)</strong> requirements</li>
-<li>Laboratory auto-notifications include only:
-<ul>
-<li>Patient demographics (age, sex, facility)</li>
-<li>BChE value</li>
-<li>Test date</li>
-</ul></li>
-<li><strong>No names, ID numbers, or contact details</strong> are shared</li>
-<li>De-identification protocols apply to all aggregated reports</li>
-</ul>
-</section>
-<section id="what-if-we-do-nothing" class="level3">
-<h3 class="anchored" data-anchor-id="what-if-we-do-nothing">What If We Do Nothing?</h3>
-<p><strong>Risks of maintaining the status quo:</strong></p>
-<ol type="1">
-<li><strong>Ongoing under-detection</strong> of hotspots → preventable deaths continue</li>
-<li><strong>Wasted data:</strong> NHLS and PIH collect valuable information that goes unused</li>
-<li><strong>Missed clusters:</strong> Contaminated food sources, illegal pesticide sales, or occupational hazards remain undetected</li>
-<li><strong>International embarrassment:</strong> South Africa’s surveillance system lags behind regional peers (Botswana, Kenya have better pesticide monitoring)</li>
-</ol>
-</section>
-</section>
-<section id="next-steps" class="level2">
-<h2 class="anchored" data-anchor-id="next-steps">Next Steps</h2>
-<section id="for-national-leadership-mac-ndoh" class="level3">
-<h3 class="anchored" data-anchor-id="for-national-leadership-mac-ndoh">For National Leadership (MAC, NDoH)</h3>
-<ol type="1">
-<li><strong>Review this brief</strong> and the full <a href="../analysis_report_v2.html">decision analysis report</a></li>
-<li><strong>Select a preferred option</strong> (or Full Package)</li>
-<li><strong>Approve pilot funding</strong> (~R120,000 for 6-month pilot in 2–3 provinces)</li>
-<li><strong>Designate a lead agency</strong> (recommend NICD as national coordinator)</li>
-</ol>
-</section>
-<section id="for-provincial-leadership" class="level3">
-<h3 class="anchored" data-anchor-id="for-provincial-leadership">For Provincial Leadership</h3>
-<ol type="1">
-<li><strong>Identify a surveillance focal point</strong> (existing epidemiologist or environmental health officer)</li>
-<li><strong>Assess local NHLS capacity</strong> for BChE auto-notification (Option 3)</li>
-<li><strong>Allocate budget</strong> for pilot participation (~R40,000–R80,000 depending on options selected)</li>
-</ol>
-</section>
-<section id="for-nicdnhlspih" class="level3">
-<h3 class="anchored" data-anchor-id="for-nicdnhlspih">For NICD/NHLS/PIH</h3>
-<ol type="1">
-<li><strong>Finalize MOUs</strong> for data sharing (Months 1–2)</li>
-<li><strong>Configure auto-notification</strong> in pilot provinces (Months 2–3)</li>
-<li><strong>Launch pilot</strong> (Month 3)</li>
-<li><strong>Monitor and evaluate</strong> (Months 3–6)</li>
-<li><strong>Report findings to MAC</strong> (Month 6)</li>
-</ol>
-</section>
-</section>
-<section id="timeline" class="level2">
-<h2 class="anchored" data-anchor-id="timeline">Timeline</h2>
+<p><strong>Architecturally, the three streams are unlinked:</strong></p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
-<div id="fig-timeline" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-surv-current-system" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-timeline-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div aria-describedby="fig-surv-current-system-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
-<pre class="mermaid mermaid-js" data-label="fig-timeline">gantt
-    title Pesticide Surveillance Pilot Implementation
-    dateFormat YYYY-MM-DD
-    section Phase 1
-    Secure funding           :a1, 2026-06-01, 30d
-    Finalize MOUs            :a2, 2026-06-15, 45d
-    Configure NHLS auto-notify :a3, 2026-07-01, 30d
-    section Phase 2
-    Train provincial staff   :b1, 2026-07-15, 14d
-    Launch pilot             :b2, 2026-08-01, 1d
-    section Phase 3
-    Monitor and collect data :c1, 2026-08-01, 120d
-    Evaluate results         :c2, 2026-11-15, 30d
-    Report to MAC            :milestone, c3, 2026-12-15, 1d
+<pre class="mermaid mermaid-js" data-label="fig-surv-current-system">flowchart LR
+    A[Healthcare Facility&lt;br/&gt;Clinician / PHO] --&gt;|NMC notification| E[("NICD / NMC&lt;br/&gt;&lt;b&gt;Source of truth&lt;/b&gt;")]
+    A --&gt; N[NHLS Laboratory]
+
+    subgraph N[NHLS Laboratory]
+        direction TB
+        C1[BChE Assay&lt;br/&gt;~2,000 severe/year&lt;br/&gt;&lt;i&gt;Live patients&lt;/i&gt;]
+        C2[Chemical Toxicology&lt;br/&gt;&lt;i&gt;Post-mortem only —&lt;br/&gt;not yet done on&lt;br/&gt;live patients&lt;/i&gt;]
+    end
+
+    A --&gt; D[PIH Consultation&lt;br/&gt;~9,000 calls/year&lt;br/&gt;&lt;i&gt;No minimum dataset&lt;/i&gt;]
+
+    C1 -.No structured feed.-&gt; E
+    C2 -.x Not available for&lt;br/&gt;live-patient surveillance.-x E
+    D -.No minimum viable&lt;br/&gt;dataset defined.-&gt; E
+
+    style E fill:#9f9,stroke:#060,stroke-width:2px
+    style A fill:#fde,stroke:#333
+    style C1 fill:#bbf,stroke:#333
+    style C2 fill:#ffd9b3,stroke:#cc8800,stroke-dasharray: 5 5
+    style D fill:#bfb,stroke:#333
 </pre>
 </div>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-timeline-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Proposed implementation timeline for pilot phase
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-surv-current-system-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Current surveillance architecture. NICD/NMC is the source of truth, but the NHLS laboratory streams (BChE on live patients; chemical toxicology — post-mortem only) and PIH consultations do not feed into NMC in a structured way.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
+<p><strong>What this means in plain numbers.</strong> NMC sees ~690 cases/year. NHLS sees ~2,000 severe BChE results/year on live patients but does not auto-notify. PIH receives ~9,000 calls/year that are never aggregated to a surveillance dataset. The true annual burden of ~11,690 cases is therefore <strong>observed at &lt; 6 % completeness</strong> by NMC alone.</p>
+<section id="detection-vs.-true-burden-a-critical-distinction" class="level3">
+<h3 class="anchored" data-anchor-id="detection-vs.-true-burden-a-critical-distinction">Detection vs.&nbsp;true burden — a critical distinction</h3>
+<p>Better surveillance has <strong>two opposite numerical effects</strong> that decision-makers must not confuse:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 25%">
+<col style="width: 18%">
+<col style="width: 37%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Effect</th>
+<th style="text-align: center;">Direction</th>
+<th style="text-align: left;">Driver</th>
+<th style="text-align: left;">Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Observed</strong> burden</td>
+<td style="text-align: center;">↑</td>
+<td style="text-align: left;">Better case-finding (auto-notify, MVD ingest)</td>
+<td style="text-align: left;">The headline “case count” will rise as detection improves — this is success, not failure.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>True</strong> burden</td>
+<td style="text-align: center;">↓</td>
+<td style="text-align: left;">Faster source removal, targeted regulation, prevention</td>
+<td style="text-align: left;">Number of actual poisonings falls as hotspots are addressed earlier.</td>
+</tr>
+</tbody>
+</table>
+<p>A naive reading of post-pilot data will show “more cases” and conclude the system is getting worse. The correct reading is to compare <strong>completeness-adjusted true incidence</strong> against the baseline, using laboratory and PIH denominators as the closest proxy. This needs to be agreed up front with NDoH and the MAC.</p>
 </section>
-<section id="conclusion" class="level2">
-<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
-<p>South Africa’s pesticide poisoning surveillance system is failing — but <strong>we can fix it quickly and affordably</strong>. The legal authority exists, the data sources exist, and the technology exists. What’s missing is <strong>coordination and execution</strong>.</p>
-<p><strong>Our recommendation:</strong></p>
-<ol type="1">
-<li><strong>Start small:</strong> Pilot Options 3 and 4 in 2–3 provinces (total cost: ~R120,000 for 6 months)</li>
-<li><strong>Measure impact:</strong> Track timeliness, completeness, and hotspot detection rates</li>
-<li><strong>Scale up:</strong> Expand to national rollout if pilot succeeds</li>
-</ol>
-<p><strong>The cost of inaction</strong> — preventable deaths, missed outbreaks, and wasted data — far exceeds the cost of these simple improvements.</p>
+</section>
+<section id="root-cause-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="root-cause-analysis">4. Root cause analysis</h2>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div id="fig-surv-fishbone" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-surv-fishbone-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-surv-fishbone">flowchart LR
+    A[Surveillance under-detection] --&gt; B[NHLS–NMC MOU not&lt;br/&gt;IT-implemented]
+    A --&gt; C[PIH data not used&lt;br/&gt;for surveillance]
+    A --&gt; D[Delayed manual reporting]
+    A --&gt; F[No live-patient&lt;br/&gt;chemical toxicology]
+
+    B --&gt; G[Option S1: Activate&lt;br/&gt;NHLS→NMC IT feed]
+    C --&gt; H[Option S4: PIH minimum&lt;br/&gt;viable dataset + dashboard]
+    D --&gt; I[Option S3a: BChE&lt;br/&gt;auto-notify &lt;i&gt;capability exists&lt;/i&gt;]
+    F --&gt; J[Option S3b: Live-patient&lt;br/&gt;chemical toxicology + auto-notify]
+
+    style A fill:#f99,stroke:#333
+    style G fill:#9f9,stroke:#333
+    style H fill:#9f9,stroke:#333
+    style I fill:#9f9,stroke:#333
+    style J fill:#9f9,stroke:#333
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-surv-fishbone-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-improvement options that address each one.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The four root causes are all <strong>executional, not legislative</strong>. Each one is already legally permissible under Section 90 of the National Health Act (2003) and the existing NMC regulations.</p>
+</section>
+<section id="policy-options" class="level2">
+<h2 class="anchored" data-anchor-id="policy-options">5. Policy options</h2>
+<section id="option-s1-activate-the-nhlsnmc-it-feed-mou-exists" class="level3">
+<h3 class="anchored" data-anchor-id="option-s1-activate-the-nhlsnmc-it-feed-mou-exists">Option S1 — Activate the NHLS→NMC IT feed <em>(MOU exists)</em></h3>
+<p>The NHLS–NICD MOU for routine BChE data sharing already exists on paper. What is missing is the <strong>IT implementation</strong> — a working LIS-to-NMC connector (HL7 / structured flat-file export), QA governance, and a monthly reconciliation. Detection rises from ~4.5 to ~5.2 hotspots / 10 (annual cost ~R40k ongoing + ~R80k one-off, 8–12 weeks).</p>
+</section>
+<section id="option-s3a-bche-auto-notification-recommended-capability-exists" class="level3">
+<h3 class="anchored" data-anchor-id="option-s3a-bche-auto-notification-recommended-capability-exists">Option S3a — BChE auto-notification <em>(★ recommended — capability exists)</em></h3>
+<p>Configure the NHLS LIS to fire an automatic NICD notification when a BChE result shows severe inhibition (&lt; 50 % of normal), within 24 hours of validation. <strong>No new test, no new reagent contract</strong> — only an IT configuration on top of the ~9,000 BChE tests/year already performed. Detection rises to ~6.7 / 10 for <strong>R55k/year</strong> in 2–4 weeks. This is the highest-value, fastest option on the menu.</p>
+</section>
+<section id="option-s3b-live-patient-chemical-toxicology-auto-notification-recommended-medium-term" class="level3">
+<h3 class="anchored" data-anchor-id="option-s3b-live-patient-chemical-toxicology-auto-notification-recommended-medium-term">Option S3b — Live-patient chemical toxicology + auto-notification <em>(★ recommended, medium term)</em></h3>
+<p>NHLS currently performs chemical toxicology (qualitative/quantitative pesticide assays) <strong>post-mortem only</strong>. There is no live-patient toxicology capability. Option S3b funds:</p>
+<ul>
+<li>Phase 1: a sentinel tertiary site (e.g.&nbsp;CHB) to perform live-patient chemical toxicology.</li>
+<li>Phase 2–3: 4–5 site rollout with auto-notification wired in.</li>
+</ul>
+<p>The clinical-surveillance value is <strong>agent attribution</strong>: S3a tells us a poisoning happened; S3b tells us <em>which product</em>. Without S3b, ~10,000 survivors/year are recorded with agent “unknown / suspected”, which makes targeted regulation (see <a href="../posts/terbufos_policy.html">Terbufos brief</a>) impossible. Cost: ~R1.2M pilot site → ~R3.6M for 5-site rollout, 6–12 months. Funded from research-surveillance streams (SAMRC, Bloomberg, Gates), not the surveillance operating budget.</p>
+</section>
+<section id="option-s4-pih-live-dashboard-minimum-viable-dataset-recommended" class="level3">
+<h3 class="anchored" data-anchor-id="option-s4-pih-live-dashboard-minimum-viable-dataset-recommended">Option S4 — PIH live dashboard + Minimum Viable Dataset <em>(★ recommended)</em></h3>
+<p>Two layers:</p>
+<ul>
+<li><strong>Short term (1–2 weeks):</strong> PIH publishes a live dashboard of pesticide-related calls (counts, geography, agent, severity, demographics). No new data; just a daily extract from existing call records.</li>
+<li><strong>Medium term (3–9 months):</strong> PIH and NICD agree a <strong>Minimum Viable Dataset (MVD)</strong> so the ~9,000 calls/year can be ingested into NMC as a structured surveillance stream.</li>
+</ul>
+<p>Detection rises to ~6.1 / 10 for <strong>R62k/year</strong>. The dashboard is the lowest-hanging fruit in the whole portfolio: it ships in days.</p>
+</section>
+<section id="summary-comparison" class="level3">
+<h3 class="anchored" data-anchor-id="summary-comparison">Summary comparison</h3>
+<table class="table-striped table-hover caption-top table">
+<caption>Surveillance options — base-case. Detection improvements feed directly into the <a href="../posts/decision_model.html">Decision Model</a> burden-avoidance calculation (η = 0.30).</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Option</th>
+<th style="text-align: right;">Annual cost</th>
+<th style="text-align: right;">Hotspots detected / 10</th>
+<th style="text-align: right;">Δ vs.&nbsp;status quo</th>
+<th style="text-align: left;">Time</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Status quo</td>
+<td style="text-align: right;">R0</td>
+<td style="text-align: right;">4.5</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: left;">—</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">S1: NHLS→NMC IT feed</td>
+<td style="text-align: right;">R40k + R80k one-off</td>
+<td style="text-align: right;">5.2</td>
+<td style="text-align: right;">+16 %</td>
+<td style="text-align: left;">8–12 wks</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">S3a: BChE auto-notify</td>
+<td style="text-align: right;">R55k</td>
+<td style="text-align: right;">6.7</td>
+<td style="text-align: right;">+49 %</td>
+<td style="text-align: left;">2–4 wks</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">S3b: Live toxicology + auto-notify</td>
+<td style="text-align: right;">R1.2M pilot → R3.6M</td>
+<td style="text-align: right;">+10–15 pp on S3a</td>
+<td style="text-align: right;">additional</td>
+<td style="text-align: left;">6–12 mo pilot</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">S4: PIH dashboard + MVD</td>
+<td style="text-align: right;">R62k</td>
+<td style="text-align: right;">6.1</td>
+<td style="text-align: right;">+36 %</td>
+<td style="text-align: left;">1–2 wks dash / 3–9 mo MVD</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>S1 + S3a + S4 (Surveillance MVP)</strong></td>
+<td style="text-align: right;"><strong>~R157k</strong></td>
+<td style="text-align: right;"><strong>~7.8</strong></td>
+<td style="text-align: right;"><strong>+73 %</strong></td>
+<td style="text-align: left;"><strong>12 weeks</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Full S1 + S3a + S3b + S4</td>
+<td style="text-align: right;">~R1.4M</td>
+<td style="text-align: right;">~8.5</td>
+<td style="text-align: right;">+89 %</td>
+<td style="text-align: left;">6–12 months</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="decision-tree-from-surveillance-investment-to-averted-burden" class="level2">
+<h2 class="anchored" data-anchor-id="decision-tree-from-surveillance-investment-to-averted-burden">6. Decision tree — from surveillance investment to averted burden</h2>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div id="fig-surv-decision-tree" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-surv-decision-tree-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-surv-decision-tree">flowchart TD
+    INV{Surveillance&lt;br/&gt;investment?} --&gt;|None| SQ[Status quo&lt;br/&gt;P_detect = 0.45]:::bad
+    INV --&gt;|S4 only&lt;br/&gt;R62k| O4[+ PIH MVD&lt;br/&gt;P_detect = 0.61]:::warn
+    INV --&gt;|S3a only&lt;br/&gt;R55k| O3a[+ BChE auto-notify&lt;br/&gt;P_detect = 0.67]:::warn
+    INV --&gt;|S1 + S3a + S4&lt;br/&gt;~R157k| MVP[Surveillance MVP&lt;br/&gt;P_detect = 0.78]:::good
+    INV --&gt;|+ S3b&lt;br/&gt;~R1.4M| FULL[Full + toxicology&lt;br/&gt;P_detect = 0.85]:::good
+
+    SQ --&gt; BSQ[Cases averted&lt;br/&gt;≈ 117 / year]
+    O4  --&gt; B4[Cases averted&lt;br/&gt;≈ 561 / year]
+    O3a --&gt; B3a[Cases averted&lt;br/&gt;≈ 772 / year]
+    MVP --&gt; BMVP[Cases averted&lt;br/&gt;≈ 1,158 / year]
+    FULL --&gt; BFULL[Cases averted&lt;br/&gt;≈ 1,403 / year]
+
+    BSQ --&gt; DSQ[Deaths averted&lt;br/&gt;≈ 15]
+    B4 --&gt; D4[Deaths averted&lt;br/&gt;≈ 73]
+    B3a --&gt; D3a[Deaths averted&lt;br/&gt;≈ 100]
+    BMVP --&gt; DMVP[Deaths averted&lt;br/&gt;≈ 151]
+    BFULL --&gt; DFULL[Deaths averted&lt;br/&gt;≈ 182]
+
+    classDef bad fill:#fdd,stroke:#cc0000,stroke-width:1.5px
+    classDef warn fill:#ffe9b3,stroke:#cc8800,stroke-width:1.5px
+    classDef good fill:#cfc,stroke:#060,stroke-width:1.5px
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-surv-decision-tree-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Surveillance investment decision tree. Each option raises detection probability; loop-closure efficacy η = 0.30 translates detection into avoided cases and deaths. Per-case societal cost R197,000 applies the monetary value.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Cases averted = (P_detect − 0.45) × η × 11,690. Deaths averted = cases averted × p_death (0.13). The MVP package averts ≈ 150 deaths/year for ≈ R157,000 spend — <strong>~R1,000 per death averted</strong> against a per-death societal cost of R1.5M.</p>
+</section>
+<section id="implementation-considerations" class="level2">
+<h2 class="anchored" data-anchor-id="implementation-considerations">7. Implementation considerations</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 28%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Component</th>
+<th style="text-align: left;">Lead agency</th>
+<th style="text-align: right;">Year-1 cost</th>
+<th style="text-align: left;">Critical path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">S1 IT feed</td>
+<td style="text-align: left;">NHLS IT + NICD middleware</td>
+<td style="text-align: right;">R40k + R80k one-off</td>
+<td style="text-align: left;">LIS-to-NMC HL7 connector spec</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">S3a BChE auto-notify</td>
+<td style="text-align: left;">NHLS LIS team</td>
+<td style="text-align: right;">R55k</td>
+<td style="text-align: left;">LIS rule configuration; QA review</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">S3b Live toxicology</td>
+<td style="text-align: left;">NHLS clinical chemistry + sentinel hospital</td>
+<td style="text-align: right;">R1.2M pilot</td>
+<td style="text-align: left;">Lab method validation; sample logistics</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">S4 PIH dashboard</td>
+<td style="text-align: left;">PIH (Tygerberg) + NICD</td>
+<td style="text-align: right;">R62k</td>
+<td style="text-align: left;">Daily extract + hosting; MVD workshop</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Hotspot detection (SaTScan)</td>
+<td style="text-align: left;">NICD epi analyst</td>
+<td style="text-align: right;">R40k</td>
+<td style="text-align: left;">Geocoding of NMC + MVD ingest</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Privacy &amp; legal.</strong> All flows are de-identified (age, sex, facility, result, date). POPIA-compliant under existing Section 90 NHA authority. <strong>No new legislation required.</strong></p>
+<p><strong>Risks.</strong> (i) Low BChE testing uptake by clinicians — S3a fires only on tests ordered. (ii) Data-quality drift if facility metadata is incomplete (geocoding will fail). (iii) Capacity bottleneck at provincial response level — the <a href="../posts/coordination_policy.html">Coordination brief</a> addresses this.</p>
+</section>
+<section id="recommended-next-step" class="level2">
+<h2 class="anchored" data-anchor-id="recommended-next-step">8. Recommended next step</h2>
+<p><strong>Adopt the Surveillance MVP (S1 + S3a + S4) and pilot in 3 provinces (Gauteng, Western Cape, KZN) for 6 months.</strong> Approximate pilot budget: <strong>~R157,000 operating + ~R80,000 IT setup</strong>. Lead agency: NICD as national coordinator.</p>
+<ul>
+<li><strong>Weeks 1–2:</strong> S4 dashboard live; S3a LIS configuration begins.</li>
+<li><strong>Months 1–3:</strong> S1 IT connector built and tested; S4 MVD workshop with PIH.</li>
+<li><strong>Month 6:</strong> Evaluate against (a) completeness of NHLS severe results in NMC and (b) cluster-detection latency.</li>
+<li><strong>Month 9:</strong> Add S3b sentinel toxicology site, funded from a separate research-surveillance stream.</li>
+</ul>
+<p>The coordination side of the same system — how NICD, EHPs, DALRRD, and provincial response teams act on the improved signal — is covered in the <a href="../posts/coordination_policy.html">Coordination brief</a>. The product-specific regulatory action that S3b makes possible is the subject of the <a href="../posts/terbufos_policy.html">Terbufos brief</a>.</p>
 <hr>
 <div class="footer-cta">
-<p><strong>Questions or feedback?</strong> Contact the D2P Project team at <a href="mailto:contact@example.com">contact@example.com</a></p>
-<p><strong>Download the full policy brief:</strong> <a href="../pesticide_poisoning_policy_brief_filled.docx">pesticide_poisoning_policy_brief_filled.docx</a></p>
+<p><strong>Companion briefs:</strong> <a href="../posts/coordination_policy.html">Coordination</a> · <a href="../posts/terbufos_policy.html">Terbufos restriction</a> · <a href="../posts/decision_model.html">Decision Model</a> · <a href="../posts/costing_analysis.html">Costing Analysis</a></p>
 </div>
 
 
@@ -21179,9 +21870,560 @@ Figure&nbsp;2: Proposed implementation timeline for pilot phase
 
  ]]></description>
   <category>policy</category>
-  <category>brief</category>
+  <category>surveillance</category>
   <category>decision-makers</category>
-  <guid>https://your-site-url.com/posts/policy_brief.html</guid>
+  <guid>https://your-site-url.com/posts/surveillance_policy.html</guid>
+  <pubDate>Thu, 04 Sep 2025 22:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Policy Brief 3: Restricting or Banning Terbufos in South Africa</title>
+  <dc:creator>D2P Project Team</dc:creator>
+  <link>https://your-site-url.com/posts/terbufos_policy.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>For Decision-Makers
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Target audience:</strong> DALRRD Pesticide Registrar, Ministerial Advisory Committee (MAC), National Department of Health (NDoH), Department of Trade, Industry &amp; Competition (substitution support).</p>
+<p><strong>Companion briefs:</strong> <a href="../posts/surveillance_policy.html">Surveillance</a> · <a href="../posts/coordination_policy.html">Coordination</a>.</p>
+<p><strong>Status:</strong> <strong>DRAFT.</strong> This brief makes the qualitative public-health case and outlines the decision logic. Several quantitative claims — South African market volume, attributable case fractions, and yield-impact estimates — are flagged as <code>[Evidence gap]</code> and require dedicated data collection before final regulatory action.</p>
+</div>
+</div>
+<section id="policy-question" class="level2">
+<h2 class="anchored" data-anchor-id="policy-question">1. Policy question</h2>
+<p><strong>Should South Africa restrict the use of terbufos, or ban it outright as a registered agricultural pesticide?</strong></p>
+</section>
+<section id="public-health-problem" class="level2">
+<h2 class="anchored" data-anchor-id="public-health-problem">2. Public health problem</h2>
+<p>Terbufos is a <strong>WHO Class Ia (“Extremely Hazardous”)</strong> organophosphate insecticide. It is acutely toxic via oral, dermal, and inhalation routes, with an oral LD50 in the low-mg/kg range, and acts via irreversible cholinesterase inhibition. Small ingested quantities are lethal in adults; very small quantities are lethal in children.</p>
+<p>In the South African context, terbufos has been repeatedly implicated in mass and individual acute-poisoning incidents, including ingestion of granular formulations sold informally outside the regulated agricultural market. <code>[Evidence gap: compile NICD / NHLS / forensic-toxicology series of terbufos-attributed events 2020–present, with case-fatality breakdown.]</code></p>
+<p>The public-health case rests on three claims:</p>
+<ol type="1">
+<li><strong>High intrinsic toxicity</strong> at sub-gram doses (well-established from WHO, US-EPA, and EFSA technical reviews).</li>
+<li><strong>Disproportionate contribution to severe and fatal poisonings</strong> relative to its agricultural market share — the proportionality argument cannot be quantified without S3b live-patient chemical toxicology (see <a href="../posts/surveillance_policy.html">Surveillance brief</a>). <code>[Evidence gap.]</code></li>
+<li><strong>High substitutability for its primary use cases</strong> (soil insect / stalk borer / nematode control in maize and other field crops). <code>[Evidence gap: SA-specific substitution feasibility study, ideally co-produced with DALRRD and grain-industry bodies.]</code></li>
+</ol>
+<p>The first claim is settled science. The second and third are the empirical claims a final regulatory decision depends on.</p>
+</section>
+<section id="status-quo" class="level2">
+<h2 class="anchored" data-anchor-id="status-quo">3. Status quo</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Headline numbers used across all D2P policy documents
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>All three policy documents draw their quantitative claims from this single shared parameter set. To revise an assumption, <strong>edit <code>posts/_shared_parameters.qmd</code></strong> — every document that includes it will update on the next render.</p>
+<p><strong>Burden (per year, South Africa):</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 31%">
+<col style="width: 20%">
+<col style="width: 48%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: right;">Value</th>
+<th style="text-align: left;">Source / status</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">NMC pesticide-poisoning notifications</td>
+<td style="text-align: right;">~690</td>
+<td style="text-align: left;">NMC 2020–2024 annual reports</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NHLS severe BChE inhibitions (live patients)</td>
+<td style="text-align: right;">~2,000</td>
+<td style="text-align: left;">NHLS LIS, 2020–2024</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Poisons Information Helpline pesticide calls</td>
+<td style="text-align: right;">~9,000</td>
+<td style="text-align: left;">PIH Annual Report 2019</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Total suspected pesticide-poisoning cases / year</td>
+<td style="text-align: right;"><strong>~11,690</strong></td>
+<td style="text-align: left;">Sum of three mutually-exclusive streams (placeholder for record-linkage)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Case-fatality rate (CFR, mid-range)</td>
+<td style="text-align: right;">13 %</td>
+<td style="text-align: left;">NMC observed range 10–15 %; under-counts intentional self-poisoning under ICD-10 default rules</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Annual deaths</td>
+<td style="text-align: right;"><strong>~1,500 – 1,800</strong></td>
+<td style="text-align: left;">11,690 × CFR</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Per-case morbidity cost</td>
+<td style="text-align: right;">R12,000</td>
+<td style="text-align: left;">Existing decision-model parameter</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Per-death mortality cost</td>
+<td style="text-align: right;">R1,500,000</td>
+<td style="text-align: left;">Human-capital approach, existing model</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Per-case societal cost</strong></td>
+<td style="text-align: right;"><strong>~R197,000</strong></td>
+<td style="text-align: left;">R12,000 + 0.13 × R1.5M</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Total annual economic burden</strong></td>
+<td style="text-align: right;"><strong>~R2.3 billion / year</strong></td>
+<td style="text-align: left;">11,690 × R197,000</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Decision-tree parameters (placeholders — to be re-estimated from pilot):</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 31%">
+<col style="width: 22%">
+<col style="width: 20%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: center;">Symbol</th>
+<th style="text-align: right;">Value</th>
+<th style="text-align: left;">Used in</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Loop-closure prevention efficacy</td>
+<td style="text-align: center;">η</td>
+<td style="text-align: right;">0.30</td>
+<td style="text-align: left;">Burden-avoided model; outcome subtree</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Secondary cases per unaddressed source</td>
+<td style="text-align: center;">ρ</td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: left;">Outcome subtree</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">P(index death)</td>
+<td style="text-align: center;">p_death</td>
+<td style="text-align: right;">0.13</td>
+<td style="text-align: left;">Outcome subtree</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">P(severe morbidity, ICU/admission)</td>
+<td style="text-align: center;">p_severe</td>
+<td style="text-align: right;">0.27</td>
+<td style="text-align: left;">Outcome subtree</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">P(full recovery)</td>
+<td style="text-align: center;">p_recover</td>
+<td style="text-align: right;">0.60</td>
+<td style="text-align: left;">Outcome subtree</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Status-quo coordination transition probabilities (per suspected case):</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Node</th>
+<th style="text-align: left;">Decision</th>
+<th style="text-align: right;">P(Yes)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Q1</td>
+<td style="text-align: left;">Clinician/PHO files on NMC</td>
+<td style="text-align: right;">0.30</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Q2</td>
+<td style="text-align: left;">NMC SMS reaches local EHP</td>
+<td style="text-align: right;">0.95</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Q3</td>
+<td style="text-align: left;">EHP investigates</td>
+<td style="text-align: right;">0.60</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Q4</td>
+<td style="text-align: left;">Investigation recorded on NMC</td>
+<td style="text-align: right;">0.05</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Q5</td>
+<td style="text-align: left;">EHP refers to DALRRD</td>
+<td style="text-align: right;">0.30</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Q6</td>
+<td style="text-align: left;">DALRRD acts</td>
+<td style="text-align: right;">0.50</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Q7</td>
+<td style="text-align: left;">DALRRD feeds back to NMC + clinician</td>
+<td style="text-align: right;">0.10</td>
+</tr>
+</tbody>
+</table>
+<p>Joint P(loop fully closes) ≈ <strong>1.1 %</strong> under the status quo.</p>
+<p>Full numerical derivations live in the <a href="../posts/decision_model.html">Decision Model</a> and the <a href="../posts/costing_analysis.html">Costing Analysis</a>.</p>
+</div>
+</div>
+<p><strong>Terbufos-specific status quo:</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Item</th>
+<th style="text-align: left;">Status</th>
+<th style="text-align: left;">Evidence basis</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Registration status</td>
+<td style="text-align: left;">Registered in South Africa as a soil insecticide</td>
+<td style="text-align: left;">DALRRD pesticide register</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WHO classification</td>
+<td style="text-align: left;">Class Ia (Extremely Hazardous)</td>
+<td style="text-align: left;">WHO Recommended Classification of Pesticides by Hazard (current edition)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Banned in EU</td>
+<td style="text-align: left;">Yes — not approved for use under EU 1107/2009</td>
+<td style="text-align: left;">EU Pesticides Database</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Annual SA agricultural market volume</td>
+<td style="text-align: left;"><code>[Evidence gap]</code></td>
+<td style="text-align: left;">DALRRD import/sales registry</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Documented acute-poisoning case series (SA)</td>
+<td style="text-align: left;">Partial</td>
+<td style="text-align: left;">NMC + forensic toxicology — see <a href="../posts/coordination_policy.html">Coordination brief</a> for why this is incomplete</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Primary registered crop uses</td>
+<td style="text-align: left;">Maize (stalk borer, nematodes)</td>
+<td style="text-align: left;">DALRRD pesticide register</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Available substitute actives for primary uses</td>
+<td style="text-align: left;">Multiple <code>[Evidence gap: SA-specific substitution feasibility]</code></td>
+<td style="text-align: left;">Industry technical literature</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Why act now?</strong></p>
+<ul>
+<li>A series of high-profile mass-poisoning events in SA have placed terbufos in the public and political spotlight, creating a window for regulatory action that may not recur. <code>[Evidence gap: compile incident dossier.]</code></li>
+<li>The EU has already removed terbufos from its approved list — South Africa is increasingly an outlier among middle-income agricultural exporters.</li>
+<li>The <a href="../posts/surveillance_policy.html">Surveillance</a> + <a href="../posts/coordination_policy.html">Coordination</a> investments give NICD and DALRRD, for the first time, the institutional pathway to act on a single-product signal.</li>
+</ul>
+</section>
+<section id="root-cause-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="root-cause-analysis">4. Root cause analysis</h2>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div id="fig-terb-fishbone" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-terb-fishbone-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-terb-fishbone">flowchart LR
+    A[Disproportionate&lt;br/&gt;terbufos-related harm] --&gt; R1[High intrinsic toxicity&lt;br/&gt;WHO Class Ia]
+    A --&gt; R2[Granular formulation&lt;br/&gt;resembles food / seed]
+    A --&gt; R3[Diversion into informal&lt;br/&gt;retail / pest-control use]
+    A --&gt; R4[Limited live-patient&lt;br/&gt;agent attribution]
+    A --&gt; R5[Substitutes available but&lt;br/&gt;switching not mandated]
+
+    R1 --&gt; O1[Option T2/T3: Class Ia&lt;br/&gt;phase-out aligned with WHO]
+    R2 --&gt; O2[Option T2: Formulation restriction&lt;br/&gt;e.g. only encapsulated, no granular]
+    R3 --&gt; O3[Option T2: Restricted-use&lt;br/&gt;permitting + traceability]
+    R4 --&gt; O4[Surveillance S3b&lt;br/&gt;&lt;i&gt;see Surveillance brief&lt;/i&gt;]
+    R5 --&gt; O5[Option T2/T3: DALRRD substitution&lt;br/&gt;support + grower advisory]
+
+    style A fill:#f99,stroke:#333
+    style O1 fill:#9f9,stroke:#333
+    style O2 fill:#9f9,stroke:#333
+    style O3 fill:#9f9,stroke:#333
+    style O4 fill:#bbf,stroke:#333
+    style O5 fill:#9f9,stroke:#333
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-terb-fishbone-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Root causes that make terbufos a disproportionate public-health hazard in South Africa.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The drivers cluster into intrinsic-hazard, formulation-pathway, market-pathway, attribution-evidence, and substitution-readiness causes. Three of the five are addressed by regulatory action on terbufos itself; one (R4) is addressed by the surveillance brief; one (R5) is a co-dependency with DALRRD and the grain industry.</p>
+</section>
+<section id="policy-options" class="level2">
+<h2 class="anchored" data-anchor-id="policy-options">5. Policy options</h2>
+<section id="option-t1-no-change-status-quo" class="level3">
+<h3 class="anchored" data-anchor-id="option-t1-no-change-status-quo">Option T1 — No change <em>(status quo)</em></h3>
+<p>Terbufos remains registered under existing conditions. Relies on general pesticide-handling regulations and clinician/EHP-led NMC notifications to detect harm. <strong>This is the implicit decision if no regulatory action is taken.</strong></p>
+</section>
+<section id="option-t2-tighter-restriction-recommended-interim" class="level3">
+<h3 class="anchored" data-anchor-id="option-t2-tighter-restriction-recommended-interim">Option T2 — Tighter restriction <em>(★ recommended interim)</em></h3>
+<p>A bundle of measures short of an outright ban:</p>
+<ul>
+<li><strong>Formulation restriction.</strong> Withdraw granular formulations that visually resemble food/seed; allow only encapsulated or liquid formulations dispensed via licensed agricultural distributors.</li>
+<li><strong>Restricted-use product (RUP) designation.</strong> Sales only to certified applicators against a logged transaction; no informal-market sales.</li>
+<li><strong>Mandatory point-of-sale labelling and lockable container requirement.</strong></li>
+<li><strong>Quarterly DALRRD audit</strong> of distributor records, with NICD→DALRRD intelligence feed (see Coordination brief Option C3) flagging geographies of concern.</li>
+<li><strong>Sunset clause.</strong> Conditional 24-month re-registration; if NICD-attributed serious-poisoning cases (from S3b toxicology, once operational) do not decline by a pre-agreed margin, automatic transition to Option T3.</li>
+</ul>
+<p>Cost: principally regulatory and enforcement. <code>[Evidence gap: DALRRD inspectorate cost model for RUP enforcement.]</code> Implementation: 6–12 months.</p>
+</section>
+<section id="option-t3-full-ban-phase-out" class="level3">
+<h3 class="anchored" data-anchor-id="option-t3-full-ban-phase-out">Option T3 — Full ban / phase-out</h3>
+<p>Cancel terbufos product registrations under the Fertilizers, Farm Feeds, Agricultural Remedies and Stock Remedies Act. Phase-out window (12–24 months) to allow substitute uptake and product clearance. Aligns South Africa with the EU position.</p>
+<p><strong>Trade-offs to manage:</strong></p>
+<ul>
+<li><em>Crop-yield impact on maize.</em> <code>[Evidence gap: SA-specific yield modelling under leading substitute actives; requires DALRRD + grain-industry collaboration.]</code></li>
+<li><em>Substitute toxicity profile.</em> Some substitutes (e.g.&nbsp;fipronil, certain neonicotinoids) carry their own ecological and human-health concerns. <code>[Evidence gap: SA-specific comparative hazard assessment.]</code></li>
+<li><em>Smallholder access.</em> Substitutes may be more expensive or harder to access at smallholder scale. <code>[Evidence gap: substitute pricing and accessibility.]</code></li>
+<li><em>Compliance / black-market risk.</em> A poorly-enforced ban can drive demand to unregulated supply. Mitigated by DALRRD inspectorate capacity (Coordination C3) and by Option T2 acting as a 24-month stepping stone.</li>
+</ul>
+<p>Cost: regulatory cost low; market-transition cost concentrated on growers and distributors. <code>[Evidence gap.]</code> Implementation: 12–24 months.</p>
+</section>
+</section>
+<section id="decision-tree-terbufos-regulatory-choices" class="level2">
+<h2 class="anchored" data-anchor-id="decision-tree-terbufos-regulatory-choices">6. Decision tree — terbufos regulatory choices</h2>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div id="fig-terb-decision-tree" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-terb-decision-tree-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-terb-decision-tree">flowchart TD
+    Q{Regulatory action&lt;br/&gt;on terbufos?} --&gt;|T1: No change| T1[Status quo]:::bad
+    Q --&gt;|T2: Tighter restriction| T2[RUP + formulation +&lt;br/&gt;distributor audit]:::warn
+    Q --&gt;|T3: Full ban / phase-out| T3[Cancel registration&lt;br/&gt;12–24 month phase-out]:::good
+
+    T1 --&gt; H1[Public health&lt;br/&gt;Continued mass-poisoning&lt;br/&gt;events possible]:::bad
+    T1 --&gt; A1[Agriculture&lt;br/&gt;No change]:::good
+    T1 --&gt; I1[Implementation&lt;br/&gt;Nothing required]:::good
+
+    T2 --&gt; H2[Public health&lt;br/&gt;Reduced informal-market&lt;br/&gt;diversion; partial impact]:::warn
+    T2 --&gt; A2[Agriculture&lt;br/&gt;Continued use under&lt;br/&gt;RUP conditions]:::warn
+    T2 --&gt; I2[Implementation&lt;br/&gt;DALRRD inspectorate&lt;br/&gt;capacity required]:::warn
+
+    T3 --&gt; H3[Public health&lt;br/&gt;Removes the source&lt;br/&gt;of harm]:::good
+    T3 --&gt; A3[Agriculture&lt;br/&gt;Substitution required&lt;br/&gt;~Evidence gap on yield~]:::warn
+    T3 --&gt; I3[Implementation&lt;br/&gt;Cancellation +&lt;br/&gt;24-month phase-out]:::warn
+
+    H2 --&gt; E2{Re-evaluate at&lt;br/&gt;24 months}
+    E2 --&gt;|Sufficient reduction| T2K[Keep T2]:::good
+    E2 --&gt;|Insufficient reduction| T3F[Escalate to T3]:::warn
+
+    classDef bad fill:#fdd,stroke:#cc0000,stroke-width:1.5px
+    classDef warn fill:#ffe9b3,stroke:#cc8800,stroke-width:1.5px
+    classDef good fill:#cfc,stroke:#060,stroke-width:1.5px
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-terb-decision-tree-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Terbufos regulatory decision tree. Each branch shows the expected public-health, agricultural, and implementation consequences. Quantitative values where shown are illustrative — see Evidence gaps.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>How to read the tree.</strong> Public-health, agricultural, and implementation consequences are shown separately rather than collapsed into a single utility. T1 is best for agriculture and implementation but worst for public health. T3 is best for public health but loads risk onto the agricultural and implementation arms. T2 is a calibrated middle path with a <strong>built-in evaluation gate</strong> at 24 months that mechanically escalates to T3 if the public-health gain is insufficient.</p>
+<section id="quantitative-anchor-illustrative" class="level3">
+<h3 class="anchored" data-anchor-id="quantitative-anchor-illustrative">Quantitative anchor (illustrative)</h3>
+<p>Using the shared parameter set, <strong>even a 10 % reduction in terbufos-attributable severe cases</strong> corresponds to:</p>
+<ul>
+<li>~<code>0.10 × [terbufos attributable fraction] × 11,690</code> averted suspected cases / year <code>[Evidence gap on attributable fraction]</code></li>
+<li>At η = 0.30 and p_death = 0.13, this maps directly to deaths averted per year via the <a href="../posts/coordination_policy.html">Coordination</a> outcome model.</li>
+</ul>
+<p>We deliberately do <strong>not</strong> publish a single headline “deaths averted by banning terbufos” number until the attributable fraction is established by S3b toxicology, to avoid the dominance of an unverifiable input.</p>
+</section>
+</section>
+<section id="implementation-considerations" class="level2">
+<h2 class="anchored" data-anchor-id="implementation-considerations">7. Implementation considerations</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 29%">
+<col style="width: 44%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Issue</th>
+<th style="text-align: left;">Status</th>
+<th style="text-align: left;">Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Regulatory authority</td>
+<td style="text-align: left;">DALRRD has full authority under the Act</td>
+<td style="text-align: left;">None required</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Pesticide registration cancellation process</td>
+<td style="text-align: left;">Established administrative pathway</td>
+<td style="text-align: left;">Standard DALRRD process</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Attributable-fraction evidence</td>
+<td style="text-align: left;"><code>[Evidence gap]</code></td>
+<td style="text-align: left;">Stand up Surveillance Option S3b at 1 sentinel site within 12 months</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Yield-impact evidence</td>
+<td style="text-align: left;"><code>[Evidence gap]</code></td>
+<td style="text-align: left;">Commission grain-industry / ARC modelling alongside Option T2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Substitute hazard profile</td>
+<td style="text-align: left;"><code>[Evidence gap]</code></td>
+<td style="text-align: left;">DALRRD comparative hazard review at registration</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Smallholder access to substitutes</td>
+<td style="text-align: left;"><code>[Evidence gap]</code></td>
+<td style="text-align: left;">Grower advisory + transition subsidy via DALRRD</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Compliance / black-market risk</td>
+<td style="text-align: left;">High under T3 if poorly enforced</td>
+<td style="text-align: left;">T2 as a 24-month stepping stone; Coordination C3 intelligence feed</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Stakeholder consultation</td>
+<td style="text-align: left;">Required</td>
+<td style="text-align: left;">DALRRD + grain industry + civil-society public-comment process</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Institutional responsibilities.</strong> DALRRD leads regulatory action. NDoH/NICD supplies the attributable-harm evidence base (via <a href="../posts/surveillance_policy.html">Surveillance</a> S3b and <a href="../posts/coordination_policy.html">Coordination</a> C3). DTIC and Agriculture sector bodies lead substitution support. Civil-society and grower organisations participate in formal consultation.</p>
+</section>
+<section id="recommended-next-step" class="level2">
+<h2 class="anchored" data-anchor-id="recommended-next-step">8. Recommended next step</h2>
+<p><strong>Adopt Option T2 immediately as an interim measure, with a hard-coded 24-month evaluation gate that escalates to Option T3 unless a pre-agreed reduction in attributable serious-poisoning cases is demonstrated.</strong></p>
+<p>Concretely:</p>
+<ol type="1">
+<li><strong>Within 3 months.</strong> DALRRD gazette the formulation restriction, RUP designation, distributor audit, and lockable-container requirement.</li>
+<li><strong>Within 6 months.</strong> NICD operationalises the <a href="../posts/coordination_policy.html">Coordination Option C3</a> NICD→DALRRD intelligence feed with quarterly terbufos-specific reporting.</li>
+<li><strong>Within 12 months.</strong> <a href="../posts/surveillance_policy.html">Surveillance Option S3b</a> sentinel live-patient chemical toxicology site operational, producing the attributable-fraction evidence base.</li>
+<li><strong>Within 24 months.</strong> Joint NDoH–DALRRD review against pre-agreed reduction target → escalate to Option T3 if target missed, retain Option T2 if met.</li>
+<li><strong>In parallel.</strong> Commission the four explicit <code>[Evidence gap]</code> work items (market volume, attributable fraction, yield-impact, substitute hazard) to retire the uncertainty that today prevents a clean cost–benefit calculation.</li>
+</ol>
+<p>This is the option that takes the strongest public-health action immediately compatible with the evidence on hand, while building the evidence base needed to defend a full ban on its merits at the 24-month gate.</p>
+<hr>
+</section>
+<section id="evidence-gaps-to-retire-before-final-action" class="level2">
+<h2 class="anchored" data-anchor-id="evidence-gaps-to-retire-before-final-action">Evidence gaps to retire before final action</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 17%">
+<col style="width: 25%">
+<col style="width: 46%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">#</th>
+<th style="text-align: left;">Gap</th>
+<th style="text-align: left;">Owner</th>
+<th style="text-align: left;">Required by</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Terbufos SA annual market volume + import/sales registry</td>
+<td style="text-align: left;">DALRRD</td>
+<td style="text-align: left;">Month 3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Compile NICD/NHLS/forensic-toxicology terbufos case series 2020–present</td>
+<td style="text-align: left;">NICD + NHLS</td>
+<td style="text-align: left;">Month 6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Terbufos attributable fraction of severe pesticide-poisoning cases (requires S3b)</td>
+<td style="text-align: left;">NHLS toxicology + NICD</td>
+<td style="text-align: left;">Month 12</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">SA-specific yield-impact modelling under leading substitutes</td>
+<td style="text-align: left;">ARC + grain industry</td>
+<td style="text-align: left;">Month 18</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">Comparative hazard profile of leading substitutes</td>
+<td style="text-align: left;">DALRRD registration + NICD</td>
+<td style="text-align: left;">Month 18</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">Substitute pricing and smallholder accessibility</td>
+<td style="text-align: left;">DALRRD + DTIC</td>
+<td style="text-align: left;">Month 18</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">DALRRD RUP-enforcement cost model</td>
+<td style="text-align: left;">DALRRD inspectorate</td>
+<td style="text-align: left;">Month 3</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<div class="footer-cta">
+<p><strong>Companion briefs:</strong> <a href="../posts/surveillance_policy.html">Surveillance</a> · <a href="../posts/coordination_policy.html">Coordination</a> · <a href="../posts/decision_model.html">Decision Model</a> · <a href="../posts/costing_analysis.html">Costing Analysis</a></p>
+</div>
+
+
+<!-- -->
+
+</section>
+
+ ]]></description>
+  <category>policy</category>
+  <category>regulation</category>
+  <category>terbufos</category>
+  <category>decision-makers</category>
+  <guid>https://your-site-url.com/posts/terbufos_policy.html</guid>
   <pubDate>Thu, 04 Sep 2025 22:00:00 GMT</pubDate>
 </item>
 <item>
