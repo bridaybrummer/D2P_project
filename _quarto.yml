@@ -49,6 +49,8 @@ format:
     link-external-newwindow: true
     link-external-icon: true
     link-external-filter: '^(?:http:|https:)\/\/(?:[^\/]*\.)?bridaybrummer\.github\.io|^(?!http)'
+    include-in-header:
+      - chatbot/embed.html
 
 execute:
   freeze: auto
