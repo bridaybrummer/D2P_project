@@ -48,7 +48,7 @@ South Africa has three parallel data streams for pesticide poisoning. Each captu
 
 ```{mermaid}
 %%| label: fig-current-system
-%%| fig-cap: "Current (fragmented) surveillance architecture. NICD is the de facto source-of-truth for case notifications, but the laboratory (BChE + chemical toxicology) and PIH streams do not flow into it in a structured way."
+%%| fig-cap: "Current (fragmented) surveillance architecture. NICD is the de facto source-of-truth for case notifications, but the laboratory streams (BChE; chemical toxicology — currently post-mortem only, not yet performed on live patients) and PIH do not flow into it in a structured way."
 flowchart LR
     A[Healthcare Facility] --> B[NMC Notification<br/>~690/year]
     A --> C1
@@ -58,7 +58,7 @@ flowchart LR
     subgraph NHLS [NHLS Laboratory]
         direction TB
         C1[BChE Assay<br/>~2,000 severe/year]
-        C2[Chemical Toxicology<br/>qualitative/quantitative<br/>pesticide assays]
+        C2[Chemical Toxicology<br/>qualitative/quantitative<br/>pesticide assays<br/><i>Post-mortem only —<br/>not yet done on live patients</i>]
     end
 
     B --> E[("NICD Database<br/><b>Source of truth</b>")]
@@ -72,7 +72,7 @@ flowchart LR
 
     style E fill:#9f9,stroke:#333,stroke-width:2px
     style C1 fill:#cce5ff,stroke:#333
-    style C2 fill:#cce5ff,stroke:#333
+    style C2 fill:#ffe0b3,stroke:#cc6600,stroke-dasharray: 5 5
     style F1 fill:#bbf,stroke:#333
     style F2 fill:#bbf,stroke:#333
     style G fill:#bfb,stroke:#333
@@ -81,7 +81,7 @@ flowchart LR
 **What this diagram shows.** Three gaps in the current state:
 
 1. **NICD database is the source of truth** for case notifications but receives only the clinician-completed NMC stream (~690/year) — a fraction of the true burden.
-2. **The NHLS laboratory holds two relevant data streams** — routine **BChE** activity assays and **chemical toxicology** (qualitative/quantitative pesticide assays) — neither of which feeds NICD in a structured, automated way.
+2. **The NHLS laboratory holds two relevant capabilities** — routine **BChE** activity assays (already performed on live patients) and **chemical toxicology** (qualitative/quantitative pesticide assays, currently **post-mortem only — not yet performed on live patients**; Component 6 proposes extending this to hospitalised survivors at sentinel sites). Neither stream feeds NICD in a structured, automated way.
 3. **PIH consultations are not captured against a minimum viable dataset**, so the ~9,000 calls/year cannot be aggregated, geocoded, or matched to NICD cases.
 
 **Documented failures:**
