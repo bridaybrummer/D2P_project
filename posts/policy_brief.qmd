@@ -133,6 +133,84 @@ flowchart TD
 - The only two green exits (`G1`, `G2`) depend on behaviours that are **not currently mandated**: EHPs writing investigation outcomes onto NMC, and DALRRD feeding regulatory action back to NMC and the clinician.
 - This is why the policy options below all target a specific decision node: **Option 1** (NHLS→NMC IT feed) replaces the fragile `Q1` decision with an automatic one; **Option 3a/3b** do the same for laboratory-confirmed cases; **Option 2** (NICD→DALRRD) and the Full Package feedback loop force `Q5`, `Q6`, and `Q7` to become recorded, structured steps.
 
+### From Coordination to Clinical Outcomes
+
+Each coordination terminal (`G1`, `G2`, `X1`–`X6`) feeds into a downstream **clinical-outcome subtree** for (i) the index case and (ii) the secondary cases that would have followed from the same source (contaminated product, illegal supply, occupational hazard). Loop closure does not change the index-case prognosis — that is already determined by clinical management — but it **does** change the probability that the source is removed before the next victim is exposed.
+
+```{mermaid}
+%%| label: fig-outcome-decision-tree
+%%| fig-cap: "Clinical-outcome subtree attached to each coordination terminal. Loop closure (green) triggers source removal and averts secondary cases; loop-broken terminals (red) allow the source to keep producing cases at the cluster rate ρ."
+flowchart TD
+    T0[Suspected case<br/>at coordination terminal] --> P1{Loop closed?}
+
+    P1 -->|Yes — G1 or G2| S1[Source identified<br/>+ removed]:::good
+    P1 -->|No — X1...X6| S2[Source persists]:::bad
+
+    S1 --> I1{Index case<br/>clinical outcome}
+    S2 --> I2{Index case<br/>clinical outcome}
+
+    I1 -->|p_death = 0.13| D1[Index death]:::bad
+    I1 -->|p_severe = 0.27| H1[Severe morbidity<br/>ICU / hospital]:::warn
+    I1 -->|p_recover = 0.60| R1[Full recovery]:::good
+
+    I2 -->|p_death = 0.13| D2[Index death]:::bad
+    I2 -->|p_severe = 0.27| H2[Severe morbidity<br/>ICU / hospital]:::warn
+    I2 -->|p_recover = 0.60| R2[Full recovery]:::good
+
+    S1 --> N1[Secondary cases<br/>averted ≈ ρ × η]:::good
+    S2 --> N2[Secondary cases<br/>NOT averted ≈ ρ]:::bad
+
+    N1 --> AD1[Deaths averted<br/>≈ ρ × η × p_death]:::good
+    N2 --> AD2[Additional deaths<br/>≈ ρ × p_death]:::bad
+
+    classDef bad fill:#fdd,stroke:#cc0000,stroke-width:1.5px,color:#600
+    classDef warn fill:#ffe9b3,stroke:#cc8800,stroke-width:1.5px,color:#663300
+    classDef good fill:#cfc,stroke:#060,stroke-width:1.5px,color:#030
+```
+
+**Parameters used in the subtree (consistent with the [Decision Model](decision_model.qmd#sec-burden-economics)):**
+
+| Parameter | Symbol | Value | Rationale / source |
+|:----------|:------:|------:|:-------------------|
+| Case-fatality rate (index) | `p_death` | 0.13 | Mid-range of NMC-observed CFR 10–15%; conservative vs. VR under-coding |
+| Severe morbidity (ICU/hospital) | `p_severe` | 0.27 | Placeholder — proportion of survivors with ICU stay |
+| Full recovery (survivor) | `p_recover` | 0.60 | Residual; survivors managed outpatient or short admission |
+| Secondary cases per source | `ρ` | 3.0 | Expected additional cases from an unaddressed source (cluster size minus index); placeholder |
+| Loop-closure prevention efficacy | `η` | 0.30 | Same η as in burden model — fraction of `ρ` averted when source is removed |
+| Per-case morbidity cost | — | R12,000 | Existing model parameter |
+| Per-death mortality cost | — | R1,500,000 | Human-capital approach, existing model |
+| Per-case societal cost | — | ~R197,000 | R12,000 + 0.13 × R1.5M (matches R2.3B ÷ 11,690 cases) |
+
+: Subtree parameters. All probabilities and ρ are placeholders to be re-estimated from the pilot. {.striped .hover}
+
+**Expected outcomes per *suspected* case (index + averted secondaries):**
+
+| Scenario | P(loop closed) | Expected deaths / case | Expected severe / case | Cases averted / case | Deaths averted / case | Expected cost / case (R) |
+|:---------|---------------:|----------------------:|----------------------:|---------------------:|---------------------:|-------------------------:|
+| **Status quo** | 0.011 | 0.130 | 0.270 | 0.010 | 0.0013 | 196,400 |
+| + Option 1 (NHLS IT feed) | 0.080 | 0.130 | 0.270 | 0.072 | 0.0094 | 181,000 |
+| + Option 3a (BChE auto-notify) | 0.150 | 0.130 | 0.270 | 0.135 | 0.0176 | 167,500 |
+| + Option 3a + 3b (toxicology) | 0.220 | 0.130 | 0.270 | 0.198 | 0.0257 | 154,000 |
+| + Option 2 (NICD→DALRRD) | 0.400 | 0.130 | 0.270 | 0.360 | 0.0468 | 125,000 |
+| **Full Package** | 0.700 | 0.130 | 0.270 | 0.630 | 0.0819 | 72,000 |
+
+: Expected per-case clinical outcomes. *Cases averted/case* = P(closed) × ρ × η. *Deaths averted/case* = cases averted × p_death. Cost column repeats the coordination-cost table for ease of reading. {.striped .hover}
+
+**Scaled to ~11,690 suspected cases/year:**
+
+| Scenario | Loops closed / year | Secondary cases averted / year | **Deaths averted / year** | Coordination cost / year (Rm) | **Burden avoided / year (Rm)** |
+|:---------|--------------------:|-------------------------------:|--------------------------:|-----------------------------:|-------------------------------:|
+| **Status quo** | 129 | 117 | 15 | 2,296 | — (baseline) |
+| + Option 1 | 935 | 842 | 110 | 2,116 | 180 |
+| + Option 3a | 1,753 | 1,578 | 205 | 1,958 | 338 |
+| + Option 3a + 3b | 2,572 | 2,315 | 301 | 1,800 | 496 |
+| + Option 2 | 4,676 | 4,208 | 547 | 1,461 | 835 |
+| **Full Package** | 8,183 | 7,365 | **957** | **842** | **1,454** |
+
+: National-scale annual outcomes. *Burden avoided* = (status-quo coordination cost) − (option coordination cost), monetising the prevention benefit through the per-case cost reduction. {.striped .hover}
+
+**Headline:** the Full Package averts roughly **950 deaths/year** and **7,400 secondary cases/year** for an annual surveillance spend of < R1.5M — a per-death-averted cost on the order of **R1,500**, against a per-death societal cost of R1.5M. Even halving every effectiveness parameter (η = 0.15, ρ = 1.5, p_death = 0.07) keeps the per-death-averted cost below R12,000, i.e. > 100× cheaper than the per-death burden. The dominance survives generous pessimism on every input.
+
 A **fishbone analysis** identified five root causes — all fixable without new laws:
 
 ```{mermaid}
