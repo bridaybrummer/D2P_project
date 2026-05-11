@@ -46,6 +46,15 @@ C_burden_mortality_stratified,1245000000,"Mortality cost using stratified CFR (8
 C_burden_mortality_headline,2250000000,"Mortality cost using headline 1,500 deaths * R1.5M = R2.25B | dist=fixed(,) | Headline"
 C_burden_total_conservative,1335000000,"Conservative total ~ R1.34B/year (stratified CFR) | dist=fixed(,) | Lower bound for advocacy"
 C_burden_total_headline,2340000000,"Headline total ~ R2.3B/year | dist=fixed(,) | Used in all advocacy products"
+# === STAKEHOLDER SHARES OF ANNUAL BURDEN (ZAR 2025, headline scenario) — who bears the R2.34B ===,,
+share_doh_morbidity,70000000,"NDoH (public hospitals): UPFS ward + ICU + ventilation + atropine/PAM + repeat care | dist=fixed(,) | Derived from C_burden_morbidity × hospital-care fraction (~78%)"
+share_nhls_morbidity,10000000,"NHLS (laboratory): BChE + LFT + U&E + GC-MS confirmatory volume | dist=fixed(,) | Derived from C_burden_morbidity × lab fraction (~11%)"
+share_individual_oop_morbidity,10000000,"Individuals / households out-of-pocket: transport, lost wages during admission, caregiver time | dist=fixed(,) | Derived from C_burden_morbidity × OOP fraction (~11%)"
+share_dalrrd_burden,0,"DALRRD (regulator): R0 of burden side by construction — DALRRD cost sits on the intervention side (enforcement, recalls) | dist=fixed(,) | By construction"
+share_household_mortality,2250000000,"Households / wider society: lost lifetime earnings (1500 deaths × R1.5M human-capital) | dist=fixed(,) | = C_burden_mortality_headline"
+share_health_system_total,80000000,"Health-sector subtotal (NDoH + NHLS) — the budget-line burden | dist=fixed(,) | = share_doh_morbidity + share_nhls_morbidity"
+share_household_total,2260000000,"Household + society subtotal (OOP + lost lifetime earnings) | dist=fixed(,) | = share_individual_oop_morbidity + share_household_mortality"
+share_total_check,2340000000,"Sum check vs C_burden_total_headline | dist=fixed(,) | Internal consistency"
 # === RESPONSE EFFICACY ===,,
 eta_response_lo,0.15,"Response efficacy lower (low-engagement scenario) | dist=fixed(,) | Sensitivity"
 eta_response_mid,0.30,"Response efficacy base case | dist=beta(30,70) | Buckley source-control literature"
