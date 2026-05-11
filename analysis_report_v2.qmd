@@ -78,8 +78,8 @@ From 2020 to 2024, three independent data sources paint a consistent picture:
 - **Adult males (30+)**: Occupational exposures in agricultural settings
 
 ::: {.callout-warning}
-## True burden far exceeds NMC notifications
-The ~690 NMC notifications per year almost certainly under-represent the true burden. Combining the three data systems as **mutually exclusive** (no patient-level linkage exists across NMC, NHLS, and PIH), the true annual burden is approximately **NMC (~690) + NHLS severe BChE (~2,000) + PIH calls (~9,000) ≈ 11,690 cases/year**. Applying the NMC-observed case fatality rate of **10–15%** yields ~1,500–1,800 deaths/year (headline uses upper-mid CFR 13–15% because vital-registration data systematically under-code intentional self-poisoning under ICD-10 default rules; see the [VR poisoning-deaths analysis](https://bridaybrummer.github.io/MRC_VR/projects/poisoning_deaths/) — pesticide-only deaths derived from a 30–50% pesticide share of all-cause poisoning mortality (3,200–4,000/year) yield an independent triangulation of ~960–2,000 pesticide deaths/year, consistent with the CFR-derived range). Monetised at ~R12,000/non-fatal case and ~R1.5M/death (human-capital approach), the **total economic burden is on the order of R2.3 billion/year**. See the [Decision Model — Economic Analysis](posts/decision_model.qmd#sec-burden-economics) for the linkage between surveillance spend, detection rate, and avoided burden cost.
+## Under-counting is substantial
+The ~690 NMC notifications per year almost certainly under-represent the true burden. BChE data alone show ~2,000 severe inhibitions annually. Evaluations of the NMC system describe incomplete reporting, incorrect data, and discrepancies between notification and laboratory records. The real number of poisonings may be **3–5 times higher** than what is currently captured.
 :::
 
 ## Root Causes: What Can Be Fixed Now?
@@ -315,7 +315,7 @@ tp$tbl_params
 
 ::: {.callout-tip}
 ## How to update parameters
-Edit [`amua_import_parameters_v3.csv`](amua_import_parameters_v3.csv):
+Edit [`amua_import_parameters_v2.csv`](amua_import_parameters_v2.csv):
 
 - **`Expression`** column → point estimate (used in base-case)
 - **`Notes`** column → PSA distribution specification (e.g., `dist=beta(80,20)`)
@@ -496,7 +496,7 @@ The model parameters are placeholders. The implementation process generates the 
 ## Updating the model
 After the pilot:
 
-1. Update values in [`amua_import_parameters_v3.csv`](amua_import_parameters_v3.csv)
+1. Update values in [`amua_import_parameters_v2.csv`](amua_import_parameters_v2.csv)
 2. Run `Rscript wrangling_v2.r` in the terminal
 3. Re-render this report: `quarto render analysis_report_v2.qmd`
 4. Compare the updated results with the current placeholder-based estimates
@@ -508,7 +508,7 @@ The model is designed to be a **living decision tool**, not a one-off analysis.
 
 ::: {.callout-tip collapse="true"}
 ## Adding a new strategy
-1. Add parameters to `amua_import_parameters_v3.csv` (probability chain + costs)
+1. Add parameters to `amua_import_parameters_v2.csv` (probability chain + costs)
 2. Add a `make_row()` call in `evaluate_tree()` in `methods_v2.r`
 3. Re-run `wrangling_v2.r` — all tables, figures and sensitivity analyses update automatically
 :::

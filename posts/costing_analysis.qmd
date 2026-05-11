@@ -23,27 +23,19 @@ This document provides **detailed cost estimates** for implementing and operatin
 - Expert elicitation for liaison and coordination activities
 
 ::: {.callout-important}
-## Headline Findings — Surveillance Spend vs. Burden Averted
+## Headline Findings — Two Cost Lenses
 
-**The true annual burden of pesticide poisoning in South Africa is ~R2.3 billion** (11,690 cases, ~1,500–1,800 deaths/year at CFR 13–15%; see [Decision Model — Economic Analysis](decision_model.qmd#sec-burden-economics) and the [VR poisoning-deaths analysis](https://bridaybrummer.github.io/MRC_VR/projects/poisoning_deaths/) for triangulation).
+**Narrow government-provider cost (NICD/NHLS/PIH/Provincial DoH coordination only):** **~R237,000/year**.
 
-**Full Package surveillance spend:**
+**Pressure-tested whole-system cost** (including downstream hospital toxicology workload, lab test volume, Environmental Health Practitioner (EHP) investigations, and agricultural enforcement): **~R1.55 million/year** (range: R0.9–2.7 million).
 
-- Narrow (NICD/NHLS/PIH/Provincial DoH coordination only): **~R237,000/year**
-- Whole-system (including induced demand on hospitals, labs, EHPs, and DALRRD enforcement): **~R1.19 million/year** (range R0.7–2.0M)
+**Why the gap matters:** Improved surveillance is not free at the point of detection. Every BChE auto-notification triggers a clinical work-up, a confirmatory test, an EHP follow-up, and — for hotspots — DALRRD enforcement. The narrow figure understates true budget impact by **~6×**. Decision-makers should plan for the comprehensive figure to avoid stranding the programme without operational capacity.
 
-**Avoided burden cost (Full Package, base case): ~R260 million/year.**
+**For context, the comprehensive figure still represents:**
 
-**Return on investment: ~220× (whole-system cost) to ~1,100× (narrow cost).**
-
-**Why the narrow vs. whole-system gap matters:** Improved surveillance is not free at the point of detection. Every BChE auto-notification triggers a clinical work-up, a confirmatory test, an EHP follow-up, and — for hotspots — DALRRD enforcement. The narrow figure understates true budget impact by **~5×**. Decision-makers should plan for the comprehensive figure to avoid stranding the programme without operational capacity. The economic case holds at either figure.
-
-**For context, the whole-system figure still represents:**
-
-- **0.0021%** of the National Department of Health budget (~R56 billion/year)
-- **R102 per case in the true annual burden** (~11,690 cases/year)
+- **0.0028%** of the National Department of Health budget (~R56 billion/year)
+- **R172 per severe pesticide poisoning case** (based on ~9,000 cases/year)
 - **Less than the salary of 3 mid-level epidemiologists**
-- **~0.05%** of the avoided burden cost it generates
 :::
 
 ## Costing Methodology

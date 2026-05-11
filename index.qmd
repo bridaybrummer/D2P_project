@@ -20,9 +20,7 @@ The D2P Project addresses a critical public health challenge: **weak surveillanc
 ::: {.callout-important}
 ## The Core Challenge
 
-Three independent data systems each touch part of the burden but never share records: **NMC notifications (~690/year), NHLS severe-poisoning lab results (~2,000/year), and the Poisons Information Helpline (~9,000 calls/year).** Treating them as mutually exclusive (the most defensible position absent record linkage), the **true annual burden is ~11,690 cases and ~1,500–1,800 deaths/year** (CFR 13–15%; the upper-mid range is the headline given known under-coding of intentional poisonings in vital-registration data — see [VR triangulation](https://bridaybrummer.github.io/MRC_VR/projects/poisoning_deaths/)), with a total economic cost on the order of **~R2.3 billion/year**.
-
-The current system captures and acts on **fewer than half** of these cases. The D2P Project shows that **R0.24M–R1.19M/year of surveillance, coordination, and enforcement spend offsets a multi-billion-rand burden** — a return on investment of roughly **1,000×**.
+South Africa experiences an estimated **2,000+ severe pesticide poisonings annually**, but the current surveillance system captures fewer than half. Three independent data sources — National Notifiable Medical Conditions (NMC), NHLS laboratory data, and the Poisons Information Helpline — all point to substantial under-reporting and weak inter-agency coordination.
 :::
 
 ## Key Questions Addressed
@@ -78,17 +76,16 @@ Detailed cost estimates for each policy option, including personnel, infrastruct
 - No systematic linkage between laboratory results (NHLS) and case notifications (NMC)
 - Poisons Information Helpline data not integrated into surveillance workflows
 
-### Low-Cost Options, Large Avoided Burden
+### Low-Cost Options Exist
 
-| Option | Annual Cost | Hotspots Addressed | Avoided Burden Cost | Implementation Time |
-|:-------|------------:|-------------------:|--------------------:|:-------------------|
-| Status Quo | R0 | 4.5 / 10 | — | — |
-| Option 3: BChE auto-notify | R55,000 | 6.7 / 10 | ~R150M/year | 2–4 weeks |
-| Option 4: Quarterly PIH reports | R62,000 | 6.1 / 10 | ~R110M/year | 1–2 weeks |
-| **Full Package (narrow cost)** | **R237,000** | **8.3 / 10** | **~R260M/year** | **12 weeks** |
-| Full Package (whole-system cost) | R1,193,000 | 8.3 / 10 | ~R260M/year | 12 weeks |
+| Option | Annual Cost | Hotspots Addressed | Implementation Time |
+|:-------|------------:|-------------------:|:-------------------|
+| Status Quo | R0 | 4.5 / 10 | — |
+| Option 3: BChE auto-notify | R55,000 | 6.7 / 10 | 2–4 weeks |
+| Option 4: Quarterly PIH reports | R62,000 | 6.1 / 10 | 1–2 weeks |
+| **Full Package** | **R237,000** | **8.3 / 10** | **12 weeks** |
 
-: Base-case results — avoided burden uses η = 0.30 against a true burden of ~R2.3B/year. See [Decision Model — Economic Analysis](posts/decision_model.qmd#sec-burden-economics). {.striped .hover}
+: Base-case results {.striped .hover}
 
 ### All Options Are Legally Feasible
 

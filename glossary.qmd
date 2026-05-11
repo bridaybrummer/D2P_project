@@ -68,6 +68,32 @@ This glossary translates the surveillance, clinical, and health-economics jargon
 
 ---
 
+## 3a. Policy, governance and IT acronyms
+
+**MAC** — Ministerial Advisory Committee. Standing expert body that advises the Minister of Health on technical policy. One of the primary audiences for the [Policy Brief](posts/policy_brief.qmd).
+
+**NDoH** — National Department of Health. The national policy and stewardship authority for the public health system.
+
+**MOU** — Memorandum of Understanding. A written, non-statutory agreement between two agencies setting out how they will share data, staff or responsibilities. Used here for NHLS↔NICD, PIH↔NICD, and NICD↔DALRRD data flows. An MOU on paper is not the same as a working data pipe — Option 1 exists precisely because the NHLS–NICD MOU is signed but **not yet IT-implemented**.
+
+**LIS** — Laboratory Information System. The IT platform NHLS labs use to register, process and release test results. The system that would carry the Option 3a auto-notification rule.
+
+**HL7** — Health Level Seven. International standard for exchanging clinical and laboratory messages between IT systems. The likely transport protocol for the NHLS LIS → NMC feed.
+
+**MVD** — Minimum Viable Dataset. The smallest agreed set of fields (e.g. age, sex, suspected agent, severity, geography, time) that two systems need to exchange for surveillance use. Negotiating the PIH↔NICD MVD is the medium-term half of Option 4.
+
+**CHB** — Chris Hani Baragwanath Academic Hospital, Soweto. Proposed Option 3b sentinel chemical-toxicology pilot site.
+
+**POPIA** — Protection of Personal Information Act (2013). South Africa's data-protection law. All inter-agency feeds in this project share **de-identified, aggregated** data (no names, ID numbers, or contact details) to stay within POPIA.
+
+**SOP** — Standard Operating Procedure. A written, repeatable instruction for staff (e.g. "when an EHP receives a cluster alert, do X, Y, Z within 24 hours"). The status-quo EHP→DALRRD referral is **not** governed by an SOP, which is the gap Option 2 closes.
+
+**Section 90, National Health Act (2003).** The statutory clause that permits inter-agency data sharing for public-health purposes. Provides the legal basis for Options 1, 2 and 4 — **no new legislation is required**.
+
+**SAMRC / Bloomberg / Gates.** External research funders (South African Medical Research Council; Bloomberg Philanthropies; Bill & Melinda Gates Foundation) flagged as plausible sponsors for Option 3b, which is treated as a research-surveillance investment rather than an operational line item.
+
+---
+
 ## 4. Estimating burden — the methods
 
 **Burden of disease.** The total impact in cases, deaths, healthy years lost, or money. Headline for this project: **~11,690 cases, ~1,500–1,800 deaths, ~R2.3B/year**.
@@ -144,19 +170,21 @@ Extra cost per extra unit of effect (e.g. per DALY averted) when moving from com
 
 ## 7. The policy options
 
-**Option 1 — NHLS data MOU.** Monthly aggregated feed of severe BChE cases from NHLS to NMC.
+The policy brief uses the current numbering below. Earlier drafts had a separate "Option 5 — Provincial response activation" and "Option 6 — Sentinel toxicology"; response coordination has since been moved into the parallel coordination workstream, and sentinel toxicology has been folded in as **Option 3b**.
 
-**Option 2 — DALRRD product linkage.** Cross-reference case clusters with pesticide product-sales data to identify likely active ingredient and source.
+**Option 1 — Activate the NHLS–NMC data feed (IT implementation).** The NHLS↔NICD MOU for BChE data sharing already exists. What is missing is the working **LIS-to-NMC pipe** (HL7 / flat-file). De-identified, aggregated severe-BChE cases flow into NMC for trend analysis.
 
-**Option 3 — BChE auto-notification.** NHLS lab system automatically issues an NMC notification within 24 hours of a severe BChE result. Single biggest detection gain.
+**Option 2 — NICD → DALRRD poisoning intelligence feed.** Quarterly NICD/NMC brief (plus ad-hoc cluster alerts) flowing to DALRRD so that pesticide registration, labelling and inspectorate priorities are informed by real-world morbidity and mortality. **Direction is NICD → DALRRD**, in response to DALRRD's formal request.
 
-**Option 4 — PIH quarterly reports.** Structured quarterly clinical-toxicology summaries from the Poisons Helpline integrated into NMC review.
+**Option 3a — BChE auto-notification (capability exists).** NHLS LIS automatically issues an NMC notification within 24 hours of a severe BChE result (<50% of normal). The laboratory capability already exists (~9,000 tests/year); only the auto-notification rule needs configuring. Single biggest fast-win detection gain.
 
-**Option 5 — Provincial response activation.** Standardised SOP and trained team to investigate detected hotspots in the field. Triggered by Options 3 or 4.
+**Option 3b — Chemical toxicology auto-notification (new capability).** Extends auto-notification to **chemical toxicology assays** (qualitative/quantitative pesticide identification by GC-MS / LC-MS). This capability does **not yet exist on live patients** — NHLS currently performs chemical toxicology *post-mortem only*. Phase 1: sentinel build at CHB. Phase 2–3: expand to 4–5 tertiary sites. Funded as research-surveillance investment (SAMRC, Bloomberg, Gates), not the operational surveillance budget. Provides the **agent attribution** that Option 2 needs to be useful.
 
-**Option 6 — Sentinel toxicology.** Small network of tertiary hospitals (CHB pilot → Groote Schuur, Albert Luthuli, Universitas, Steve Biko) collects biological specimens for **GC-MS / LC-MS** chemical attribution. Treated as a parallel research investment, not part of the operational Full Package.
+**Option 4 — PIH minimum viable dataset + live dashboard.** Short-term (weeks): PIH publishes a **live dashboard** of pesticide-related calls. Medium-term (months): agree a **minimum viable dataset (MVD)** so PIH call records can be ingested into NMC as a routine, structured stream. Captures the ~10,000 calls/year that never reach a laboratory.
 
-**Full Package.** Options 1–5 implemented together. Detection ≈ 0.83. Cost: **R237k/year narrow**, **R1.19M/year whole-system**.
+**Full Surveillance Package.** Options 1 + 2 + 3a + 4 implemented together. Detection ≈ 0.83. Cost: **~R197k/year narrow** (~R1.19M/year whole-system). Option 3b adds sentinel toxicology on top via research funding.
+
+**Response & coordination workstream.** Provincial response activation, EHP/DALRRD field investigation and outbreak coordination are **not** part of the surveillance package above — they are commissioned, funded and evaluated separately. See the [Costing Analysis](posts/costing_analysis.qmd) for the budget split.
 
 ---
 

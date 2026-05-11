@@ -89,14 +89,11 @@ library(tidyverse)
 
 baseline_params <- tribble(
   ~Parameter, ~Value, ~Source,
-  "NMC notifications/year", "~690", "NICD surveillance reports",
-  "Severe BChE inhibitions/year (NHLS)", "~2,000", "NHLS laboratory data",
-  "PIH pesticide-related calls/year", "~9,000", "Poisons Information Helpline",
-  "**True burden (assumed mutually exclusive sum)**", "**~11,690 cases/year**", "NMC + NHLS + PIH (no record linkage available)",
-  "Case fatality rate (CFR)", "10–15% (mid 12.5%)", "NMC data; consistent with LMIC literature",
-  "Estimated deaths/year", "~1,460 (1,170–1,750)", "True burden × CFR",
   "Estimated annual hotspots", "10", "Expert estimate (NICD)",
-  "Hotspots detected (status quo)", "4.5 (45%)", "NMC data 2020–2024"
+  "Hotspots detected (status quo)", "4.5 (45%)", "NMC data 2020-2024",
+  "Severe BChE inhibitions/year", "~2,000", "NHLS laboratory data",
+  "NMC notifications/year", "~690", "NICD surveillance reports",
+  "Detection gap", "~1,310 cases (66%)", "Calculated"
 )
 
 baseline_params %>%
@@ -112,33 +109,8 @@ baseline_params %>%
   cols_align(
     align = "center",
     columns = c(Value, Source)
-  ) %>%
-  tab_source_note(
-    source_note = "True burden assumes NMC, NHLS, and PIH data sources are mutually exclusive. Without record linkage between systems, we treat the sum as an upper-bound estimate of incident pesticide exposures captured by any surveillance touchpoint. Overlap, if any, would lower true burden; cases never reaching any system would raise it."
   )
 ```
-
-#### True Burden Rationale
-
-::: {.callout-important}
-## Estimating the True Burden of Poisoning
-
-Because **no patient-level linkage** exists between NMC, NHLS, and the PIH, we cannot deduplicate cases across systems. We therefore make the **simplifying assumption that the three data streams are mutually exclusive** and sum them to approximate the true annual burden:
-
-$$
-B_{\text{true}} \;=\; n_{\text{NMC}} + n_{\text{NHLS}} + n_{\text{PIH}} \;\approx\; 690 + 2{,}000 + 9{,}000 \;=\; 11{,}690 \text{ cases/year}
-$$
-
-This is the **denominator** against which all surveillance options are now evaluated. Mortality is derived from this burden using the NMC-observed case fatality rate (CFR ≈ 10–15%):
-
-$$
-D_{\text{true}} \;=\; B_{\text{true}} \times \text{CFR} \;\approx\; 11{,}690 \times 0.125 \;\approx\; 1{,}460 \text{ deaths/year (base case, mid CFR)}
-$$
-
-The full sensitivity range is **~1,170–1,750 deaths/year** (CFR 10–15%). For headline communication in the [policy brief](policy_brief.qmd), [one-pager](../one_pager.qmd), [index](../index.qmd), and [concept note](surveillance_concept_note.qmd), we quote **~1,500–1,800 deaths/year** (upper-mid CFR 13–15%) because South Africa's vital-registration data systematically under-codes intentional self-poisoning under ICD-10 Vol. 2 default rules (the death-notification form has no manner-of-death field, so unspecified-intent deaths default to X40–X49 "accidental") — see the [MRC VR poisoning-deaths analysis](https://bridaybrummer.github.io/MRC_VR/projects/poisoning_deaths/). VR records ~3,200–4,000 all-cause poisoning deaths/year (2018–2022); applying a 30–50% pesticide share gives an **independent triangulation of ~960–2,000 pesticide deaths/year**, consistent with both the base-case (1,460) and headline (1,500–1,800) anchors.
-
-**Caveat:** If overlap exists between systems (e.g., a severe NHLS-detected case also notified to NMC), true burden is overstated. If unreported community cases exist, it is understated. The mutually-exclusive assumption is the most defensible position absent linkage, and is conservative in the sense that it does **not** invent cases beyond what the three systems already touch.
-:::
 
 #### Effectiveness Parameters
 
@@ -207,65 +179,6 @@ cost_params %>%
     locations = cells_body(columns = Total_Annual_Cost)
   )
 ```
-
-#### Option 6: Sentinel Toxicology Surveillance — A Complement, Not a Substitute {#sec-option-6}
-
-Options 1–5 above all act on the same lever: **detection sensitivity** ($d_i$ in the burden-economics model). They make existing data flow faster and reach the right desk. None of them tell us **which chemical agent** caused a non-fatal poisoning.
-
-That gap matters. Forensic toxicology in South Africa is performed almost exclusively post-mortem; for the ~10,000 patients/year who **survive** an acute pesticide poisoning, the causative agent is recorded as "suspected organophosphate" or simply "pesticide unknown" in 25–75% of cases (PIH; NMC). This blocks targeted regulation: you cannot ban or restrict a product whose contribution to morbidity you cannot quantify.
-
-**Option 6** is a sentinel-research surveillance system, derived from the [Pesticide Poisoning Surveillance Concept Note (DRAFT 3, 2025)](../archive/Pesticide_Poisoning_Surveillance_Concept_Note_DRAFT_3_11082025_LL_BB05092025.docx), that fills this gap by collecting gastric aspirate and urine specimens from living patients admitted with suspected pesticide poisoning at tertiary sentinel sites and running advanced toxicology (GC-MS / LC-MS/MS multi-residue pesticide screen).
-
-::: {.callout-note}
-## What Option 6 adds beyond Options 1–5
-
-1. **Chemical-agent attribution in survivors** (not just decedents) → morbidity-by-agent estimates for organophosphates, carbamates, pyrethroids, terbufos, aldicarb residual use, etc.
-2. **Direct medical-cost evidence** per admission (ICU days, ward days, ventilation, interventions, fee-schedule cost) → replaces the placeholder $c_m$ = R12,000 with empirical ZAR/admission distributions.
-3. **DALY estimation** monetised at the SA cost-effectiveness threshold of **R38,500/DALY** (Edoka & Stacey 2020) → links the regulatory benefit of restricting a specific HHP to a defensible willingness-to-pay.
-4. **Evidence base for targeted regulation** (DALRRD product restrictions, recall priorities, Schedule changes) — a different lever from detection.
-:::
-
-```{r}
-#| label: tbl-option6-cost
-#| tbl-cap: "Option 6 (sentinel toxicology surveillance) — indicative annual cost, 5-site rollout"
-
-option6_cost <- tribble(
-  ~Component, ~Unit_Cost, ~Volume, ~Annual_Cost,
-  "GC-MS / LC-MS pesticide screen (gastric + urine, 2 specimens)", "R2,500/sample", "323 patients × 2", "R1,615,000",
-  "Enhanced clinical battery (BChE, LFTs, U&E, repeat)", "R1,500/patient", "323 patients", "R485,000",
-  "Research nurses (0.5 FTE × 5 sentinel sites)", "R175,000/0.5 FTE", "5 sites", "R875,000",
-  "Data infrastructure (REDCap, coordination, QA)", "—", "—", "R200,000",
-  "Site overheads, ethics, training", "—", "—", "R300,000",
-  "Specimen transport, courier, biobank", "—", "—", "R150,000",
-  "Total — full 5-site rollout (Phase 2+)", "", "", "R3,625,000",
-  "Pilot — 1 site (CHB), Phase 1, 12 months", "", "", "R1,200,000"
-)
-
-option6_cost %>%
-  gt() %>%
-  tab_header(
-    title = "Option 6: Sentinel Toxicology Surveillance — Indicative Cost",
-    subtitle = "5 tertiary sites: CHB, Groote Schuur, Albert Luthuli, Universitas, Steve Biko"
-  ) %>%
-  cols_align(align = "left", columns = Component) %>%
-  tab_style(
-    style = cell_text(weight = "bold"),
-    locations = cells_body(rows = c(7, 8))
-  )
-```
-
-::: {.callout-warning}
-## Why Option 6 is not in the headline ICER table
-
-Option 6 answers a different question to Options 1–5 and operates on a different burden-economics lever. Inserting it into the same hotspots-detected ranking would be an apples-to-oranges comparison:
-
-- **Cost** is ~5–15× the Full Package (R1.2M pilot; R3.6M full rollout), reflecting toxicology testing volumes and per-site research staffing.
-- **Detection contribution** is modest (~+0.05–0.10 hotspot-equivalents/year via better case characterisation at sentinel sites), but **regulatory attribution** is uniquely high.
-- **Benefit pathway** is targeted product restriction (e.g., terbufos, methamidophos), which acts on the **incidence** ($B_{\text{true}}$) rather than the **detection-response** product ($d \times \eta$). A 5–10% sustained reduction in $B_{\text{true}}$ from a single restricted HHP averts ~R115M–R230M/year of burden, swamping the ~R3.6M annual cost.
-- **Time-to-benefit** is longer (3–5 years to generate the evidence base, then regulatory action), and conditional on DALRRD acting on the evidence.
-
-**Recommendation:** Treat Option 6 as a **parallel research-surveillance investment**, costed and funded separately from Options 1–5. It is best paired with Option 3 (which generates the BChE auto-notification trigger that flags candidate sentinel-site cases) and Option 5 (which provides the field-investigation arm). Funding pathways: NHLS research, MRC, Bloomberg Philanthropies / Gates Foundation, NDoH research grants. See the Implementation Roadmap in [Surveillance Concept Note §4 — Component 6](surveillance_concept_note.qmd#sec-component-6).
-:::
 
 ## Model Results
 
@@ -531,250 +444,6 @@ optimistic %>%
 
 **Conclusion:** Significant upside potential if pilot demonstrates better-than-expected performance.
 
-## Economic Analysis: Cost of the True Burden {#sec-burden-economics}
-
-The decision-tree above answers **"how many hotspots are detected?"**. This section reframes the question economically: **"what does the true burden of pesticide poisoning cost the system, and how much of that cost is averted as we invest more in surveillance, coordination, and enforcement?"**
-
-### Framework
-
-We construct a simple linear model linking surveillance spend to burden cost:
-
-1. **True annual burden** $B_{\text{true}}$ is the mutually-exclusive sum of NMC, NHLS, and PIH cases.
-2. Each non-fatal poisoning carries a **per-case morbidity cost** $c_m$ (acute care + follow-up + lost productivity).
-3. Each fatal poisoning carries a **per-death mortality cost** $c_d$ (human-capital approach: years of life lost × annualised income).
-4. The **total economic burden** under status quo is $C_{\text{burden}} = B_{\text{true}}\,(1 - \text{CFR})\,c_m \;+\; B_{\text{true}}\,\text{CFR}\,c_d$.
-5. Each surveillance option detects a fraction $d_i$ of true hotspots. Detected hotspots are responded to with response efficacy $\eta$, which removes a fraction $d_i\,\eta$ of the **future** burden through hazard removal (recall, decanting, behaviour change, enforcement).
-6. **Residual burden cost** under option $i$ is $C_i = C_{\text{burden}} \times (1 - d_i\,\eta)$, and **net economic benefit** is $\text{NMB}_i = (C_{\text{burden}} - C_i) - K_i$, where $K_i$ is the comprehensive system cost (from [costing_analysis.qmd](costing_analysis.qmd)).
-
-::: {.callout-note}
-## Key Insight
-
-As surveillance, coordination, and enforcement spend ($K_i$) rises, the **detected fraction** $d_i$ rises, and the **residual cost of the true burden** $C_i$ falls. The economic case for the Full Package is therefore the **slope of avoided burden cost vs. incremental surveillance investment**.
-:::
-
-### Per-Case Cost Parameters
-
-```{r}
-#| label: tbl-percase-costs
-#| tbl-cap: "Per-case morbidity and mortality cost parameters"
-
-percase_params <- tribble(
-  ~Parameter, ~Symbol, ~Base, ~Low, ~High, ~Source_Rationale,
-  "Per-case morbidity cost (ZAR)", "c_m", "R12,000", "R6,000", "R25,000", "Acute hospital admission (avg 2–4 days), labs, antidotes, follow-up; LMIC literature on OP poisoning admissions",
-  "Per-death mortality cost (ZAR)", "c_d", "R1,500,000", "R750,000", "R3,000,000", "Human-capital approach: ~25 productive years lost × ~R60k median annual income (Stats SA), no VSL multiplier",
-  "Case fatality rate", "CFR", "12.5%", "10%", "15%", "NMC observed range",
-  "Response efficacy (fraction of future cases averted per detected hotspot)", "η", "0.30", "0.15", "0.50", "Plausible range for hazard removal + enforcement effect; pilot will refine"
-)
-
-percase_params %>%
-  gt() %>%
-  tab_header(
-    title = "Per-Case Economic Parameters",
-    subtitle = "Used to monetise true burden and avoided cost"
-  ) %>%
-  cols_label(Source_Rationale = "Source / Rationale") %>%
-  cols_align(align = "right", columns = c(Base, Low, High)) %>%
-  tab_footnote(
-    footnote = "All values are placeholders to be refined with pilot data and a costing study.",
-    locations = cells_column_labels(columns = Base)
-  )
-```
-
-### Status Quo: Total Economic Burden
-
-```{r}
-#| label: tbl-burden-status-quo
-#| tbl-cap: "Status quo total economic burden of pesticide poisoning"
-
-# Parameters
-B_true <- 11690        # True annual burden (cases)
-CFR_base <- 0.125      # Case fatality rate (mid)
-c_m <- 12000           # Morbidity cost per non-fatal case (ZAR)
-c_d <- 1500000         # Mortality cost per death (ZAR)
-eta <- 0.30            # Response efficacy
-
-deaths <- B_true * CFR_base
-nonfatal <- B_true * (1 - CFR_base)
-
-cost_morbidity <- nonfatal * c_m
-cost_mortality <- deaths * c_d
-cost_total <- cost_morbidity + cost_mortality
-
-burden_sq <- tribble(
-  ~Component, ~Cases, ~Unit_Cost, ~Annual_Cost,
-  "Non-fatal poisonings", format(round(nonfatal), big.mark = ","), paste0("R", format(c_m, big.mark = ",")), paste0("R", format(round(cost_morbidity), big.mark = ",")),
-  "Fatal poisonings", format(round(deaths), big.mark = ","), paste0("R", format(c_d, big.mark = ",")), paste0("R", format(round(cost_mortality), big.mark = ",")),
-  "**Total economic burden (status quo)**", format(B_true, big.mark = ","), "—", paste0("**R", format(round(cost_total), big.mark = ","), "**")
-)
-
-burden_sq %>%
-  gt() %>%
-  tab_header(
-    title = "Status Quo: Total Economic Burden",
-    subtitle = "Annual cost of pesticide poisoning to South Africa (base-case parameters)"
-  ) %>%
-  cols_align(align = "right", columns = c(Cases, Unit_Cost, Annual_Cost)) %>%
-  tab_style(
-    style = list(cell_text(weight = "bold"), cell_fill(color = "lightyellow")),
-    locations = cells_body(rows = 3)
-  )
-```
-
-::: {.callout-important}
-## Status Quo Burden ≈ R2.3 Billion/Year
-
-At base-case parameters, **the true economic burden of pesticide poisoning is roughly three orders of magnitude larger than the entire surveillance budget under any option** considered here. This re-frames the affordability question: every 1% of true burden cost averted is worth ~R23 million.
-:::
-
-### Avoided Burden Cost by Surveillance Option
-
-```{r}
-#| label: tbl-avoided-burden
-#| tbl-cap: "Avoided burden cost and net monetary benefit by option"
-
-# Detection probabilities (from effectiveness table)
-options_econ <- tribble(
-  ~Option,                         ~detect_rate, ~surveillance_cost,
-  "Status Quo",                    0.45,         0,
-  "Option 1: NHLS MOU",            0.52,         40000,
-  "Option 2: DALRRD data",         0.58,         40000,
-  "Option 3: BChE auto-notify",    0.67,         55000,
-  "Option 4: PIH reports",         0.61,         62000,
-  "Option 5: Provincial coord.",   0.74,         40000,
-  "Full Package (narrow cost)",    0.83,         237000,
-  "Full Package (whole-system)",   0.83,         1193000
-)
-
-# Avoided cost relative to status quo
-sq_residual <- cost_total * (1 - 0.45 * eta)
-
-options_econ <- options_econ %>%
-  mutate(
-    residual_burden_cost = cost_total * (1 - detect_rate * eta),
-    avoided_cost_vs_sq   = sq_residual - residual_burden_cost,
-    nmb_vs_sq            = avoided_cost_vs_sq - surveillance_cost,
-    roi                  = ifelse(surveillance_cost == 0, NA_real_, avoided_cost_vs_sq / surveillance_cost)
-  )
-
-options_econ %>%
-  mutate(
-    surveillance_cost   = paste0("R", format(round(surveillance_cost), big.mark = ",")),
-    residual_burden_cost = paste0("R", format(round(residual_burden_cost / 1e6, 1), big.mark = ","), "M"),
-    avoided_cost_vs_sq  = paste0("R", format(round(avoided_cost_vs_sq / 1e6, 1), big.mark = ","), "M"),
-    nmb_vs_sq           = paste0("R", format(round(nmb_vs_sq / 1e6, 1), big.mark = ","), "M"),
-    roi                 = ifelse(is.na(roi), "—", paste0(format(round(roi), big.mark = ","), "×"))
-  ) %>%
-  gt() %>%
-  tab_header(
-    title = "Avoided Burden Cost by Surveillance Option",
-    subtitle = "Burden cost reduces as detection rises with surveillance, coordination, and enforcement spend"
-  ) %>%
-  cols_label(
-    detect_rate = "Detection rate (d_i)",
-    surveillance_cost = "Surveillance spend (K_i)",
-    residual_burden_cost = "Residual burden cost",
-    avoided_cost_vs_sq = "Avoided cost vs. SQ",
-    nmb_vs_sq = "Net monetary benefit",
-    roi = "ROI (avoided ÷ spend)"
-  ) %>%
-  cols_align(align = "right", columns = -Option) %>%
-  tab_style(
-    style = cell_fill(color = "lightgreen"),
-    locations = cells_body(rows = 7)
-  ) %>%
-  tab_footnote(
-    footnote = "Residual burden cost = total burden × (1 − d_i × η), with η = 0.30. NMB = avoided cost − surveillance spend. Whole-system cost (R1.19M) includes induced demand on hospitals, labs, EHPs, and DALRRD enforcement.",
-    locations = cells_column_labels(columns = nmb_vs_sq)
-  )
-```
-
-### Spend–Burden Curve
-
-```{r}
-#| label: fig-spend-burden
-#| fig-cap: "Cost of the true burden falls as surveillance, coordination, and enforcement spend rises"
-#| fig-width: 8
-#| fig-height: 5
-
-ggplot(options_econ, aes(x = surveillance_cost, y = residual_burden_cost / 1e6)) +
-  geom_line(color = "grey60", linetype = "dashed") +
-  geom_point(aes(color = Option), size = 4) +
-  geom_text(aes(label = Option), vjust = -1.2, size = 3) +
-  scale_x_continuous(labels = scales::label_dollar(prefix = "R", scale = 1e-3, suffix = "k")) +
-  scale_y_continuous(labels = scales::label_dollar(prefix = "R", suffix = "M")) +
-  labs(
-    title = "Surveillance Spend vs. Residual Cost of True Burden",
-    subtitle = "Each rand spent on surveillance, coordination, and enforcement reduces the cost of true poisoning burden",
-    x = "Annual surveillance / coordination / enforcement spend (K_i)",
-    y = "Residual cost of true burden (C_i)",
-    caption = "Base case: η = 0.30, CFR = 12.5%, true burden = 11,690 cases/year"
-  ) +
-  theme_minimal() +
-  theme(
-    plot.title = element_text(face = "bold"),
-    legend.position = "none"
-  )
-```
-
-### Sensitivity: CFR and Response Efficacy
-
-The economic case is most sensitive to **CFR** (which scales mortality cost) and **response efficacy** $\eta$ (which scales avoided cost per detected hotspot).
-
-```{r}
-#| label: tbl-econ-sensitivity
-#| tbl-cap: "Sensitivity of Full Package net monetary benefit to CFR and response efficacy"
-
-cfr_grid <- c(0.10, 0.125, 0.15)
-eta_grid <- c(0.15, 0.30, 0.50)
-K_full <- 1193000   # whole-system cost
-d_full <- 0.83
-d_sq   <- 0.45
-
-sens <- expand_grid(CFR = cfr_grid, eta_val = eta_grid) %>%
-  mutate(
-    burden_total = (B_true * (1 - CFR) * c_m) + (B_true * CFR * c_d),
-    avoided      = burden_total * (d_full - d_sq) * eta_val,
-    nmb          = avoided - K_full
-  ) %>%
-  mutate(
-    `Total burden` = paste0("R", format(round(burden_total / 1e9, 2), big.mark = ","), "B"),
-    `Avoided cost (Full Pkg)` = paste0("R", format(round(avoided / 1e6, 1), big.mark = ","), "M"),
-    `NMB (Full Pkg)` = paste0("R", format(round(nmb / 1e6, 1), big.mark = ","), "M")
-  ) %>%
-  select(CFR, eta_val, `Total burden`, `Avoided cost (Full Pkg)`, `NMB (Full Pkg)`)
-
-sens %>%
-  gt() %>%
-  tab_header(
-    title = "Sensitivity: CFR × Response Efficacy",
-    subtitle = "Full Package net monetary benefit (whole-system cost = R1.19M)"
-  ) %>%
-  cols_label(eta_val = "η (response efficacy)") %>%
-  fmt_percent(columns = CFR, decimals = 1) %>%
-  cols_align(align = "right", columns = everything())
-```
-
-::: {.callout-tip}
-## Bottom Line
-
-Across the full plausible CFR × $\eta$ grid, the Full Package generates a **net monetary benefit measured in hundreds of millions of rand**, dwarfing its R0.24M (narrow) or R1.19M (whole-system) annual cost. Even at the **least favourable corner** (CFR = 10%, η = 0.15), avoided burden cost exceeds programme cost by orders of magnitude.
-
-**Policy implication:** The economic case for surveillance investment does not hinge on optimistic assumptions. It holds because the true burden is large, and even modest improvements in detection translate into substantial avoided costs.
-:::
-
-### Limitations of the Economic Model
-
-::: {.callout-warning}
-## Caveats
-
-1. **Mutually-exclusive assumption** likely overstates true burden if NMC/NHLS/PIH overlap; understates it if community cases never reach any system. Sensitivity to a 30% deduplication: total burden falls ~30% but Full Package NMB remains strongly positive.
-2. **Per-case morbidity cost (R12,000)** is a placeholder. A South-African micro-costing study of pesticide-poisoning admissions is needed.
-3. **Per-death cost (R1.5M)** uses the human-capital approach, which is conservative relative to value-of-statistical-life (VSL) estimates (typically R5–15M for SA). Switching to VSL would magnify NMB by ~3–10×.
-4. **Response efficacy η = 0.30** is the largest single uncertainty. Efficacy depends on enforcement capacity, retailer compliance, and community uptake — all measurable in pilot.
-5. **Linear scaling** assumes each detected hotspot averts the same fraction of future cases. In reality, marginal hotspots may be smaller or harder to act on (diminishing returns).
-6. **No discounting** applied (short time horizon).
-:::
-
 ## Model Validation
 
 ### Face Validity
@@ -831,7 +500,7 @@ Model will be validated against **pilot data** (Q3 2026 – Q1 2027):
 
 All model files and code are available in the project repository:
 
-- `amua_import_parameters_v3.csv` — Parameter definitions for Amua import (see [Parameter Appraisal](../parameter_appraisal.qmd) for the v2 → v3 critique)
+- `amua_import_parameters_v2.csv` — Parameter definitions for Amua import
 - `wrangling_v2.r` — Data processing script
 - `methods_v2.r` — Custom functions for analysis
 - `analysis_report_v2.qmd` — Full analysis report with embedded code
@@ -841,7 +510,7 @@ All model files and code are available in the project repository:
 To reproduce this analysis:
 
 1. Download Amua from [https://github.com/zward/Amua](https://github.com/zward/Amua)
-2. Import `amua_import_parameters_v3.csv`
+2. Import `amua_import_parameters_v2.csv`
 3. Run decision tree model (10,000 PSA iterations)
 4. Export results to CSV
 5. Run `wrangling_v2.r` to process outputs
@@ -872,5 +541,5 @@ Future analyses could include:
 ::: {.footer-cta}
 **Questions about the model?** Contact the D2P analytical team at [contact@example.com](mailto:contact@example.com)
 
-**Download model files:** [amua_import_parameters_v3.csv](../amua_import_parameters_v3.csv) — see [Parameter Critical Appraisal](../parameter_appraisal.qmd) for the methodology and v2 critique.
+**Download model files:** [amua_import_parameters_v2.csv](../amua_import_parameters_v2.csv)
 :::

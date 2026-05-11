@@ -24,7 +24,7 @@ execute:
 ## The Problem We're Solving
 
 ::: {.key-stat}
-**~11,690 South Africans** are poisoned by pesticides every year (NMC + NHLS + PIH, treated as mutually exclusive in the absence of record linkage). At a case fatality rate of 10–15%, that is **~1,500–1,800 deaths/year** (headline uses upper-mid CFR 13–15%; vital-registration under-codes intentional poisonings, so this is conservative — see the [VR analysis](https://bridaybrummer.github.io/MRC_VR/projects/poisoning_deaths/)) and a total economic burden of **~R2.3 billion/year**. Our surveillance system captures and acts on **fewer than half** of these cases.
+**10,000+ South Africans** are severely poisoned by pesticides every year — but our surveillance system captures **fewer than half** of these cases.
 :::
 
 **Who is affected?**
@@ -150,21 +150,19 @@ We identified **five policy options** that can be implemented **immediately** (n
 
 ---
 
-## What This Costs vs. What It Saves
+## What This Costs in Context
 
 | **Comparison** | **Amount** |
 |:---------------|:-----------|
-| True annual burden of pesticide poisoning | **~R2.3 billion** |
-| Full Package annual cost (narrow) | R237,000 |
-| Full Package annual cost (whole-system, including induced demand) | R1.19 million |
-| Avoided burden cost (Full Package, base case) | **~R260 million/year** |
-| Return on investment (avoided ÷ spend) | **~220–1,100×** |
-| % of National DoH budget | 0.0004 – 0.002% |
-| **Cost if we do nothing** | **~R2.3B/year burden, preventable deaths, ongoing under-detection** |
+| Full Package annual cost | R237,000 |
+| Cost per severe poisoning case | R26 |
+| % of National DoH budget | 0.0004% |
+| Cost per additional hotspot detected | R23,700 |
+| **Cost if we do nothing** | **Preventable deaths, ongoing under-detection** |
 
-: Base-case parameters: response efficacy η = 0.30, CFR = 12.5%. See [Decision Model — Economic Analysis](posts/decision_model.qmd#sec-burden-economics). {.striped}
+: {.striped}
 
-**For comparison:** South Africa's TB surveillance system costs ~R15 million/year. Pesticide surveillance would be **1.6–8%** of that investment, against a comparable annual burden.
+**For comparison:** South Africa's TB surveillance system costs ~R15 million/year. Pesticide surveillance would be **1.6%** of that investment.
 
 ---
 
@@ -200,33 +198,21 @@ We identified **five policy options** that can be implemented **immediately** (n
 
 ---
 
-## The D2P Recommendation
-
-::: {.recommendation-box}
-### Adopt Options 3 + 4 + 5 as the Minimum Viable Package; scale to Full Package within 18 months
-
-**Rationale:** Options 3 (BChE auto-notify) and 4 (PIH quarterly reports) generate the data; Option 5 (provincial response) closes the loop. Together they capture ~80% of the Full Package's effectiveness at ~40% of its narrow cost.
-
-| Decision | Action | Owner | Timeline |
-|:---|:---|:---|:---|
-| **1. Approve pilot** | R950,000 over 6 months in Gauteng, Western Cape, KZN | NDoH + MAC | Q3 2026 |
-| **2. Designate lead** | NICD as national coordinator | NDoH | Q3 2026 |
-| **3. Launch quick wins** | Options 3 + 4 (cost ~R117k/year) | NICD + NHLS + PIH | Weeks 1–4 |
-| **4. Build response capacity** | Option 5 in 3 pilot provinces | Provincial DoH | Weeks 4–12 |
-| **5. Evaluate and scale** | National rollout if avoided-burden ratio holds | MAC | Q1 2027 |
-:::
-
 ## The Bottom Line
 
 ::: {.key-stat}
-**We know the problem. We know the solutions. We have the legal authority. The economic case is overwhelming. We can start today.**
+**We know the problem. We know the solutions. We have the legal authority. We can start today.**
 :::
 
-**The cost of action:** R237k–R1.19M/year (narrow vs. whole-system)
+**The cost of action:** R237,000/year (affordable, evidence-based, legally feasible)
 
-**The cost of inaction:** ~R2.3 billion/year in unaddressed burden, ~1,500–1,800 preventable deaths, missed outbreaks
+**The cost of inaction:** Preventable deaths, missed outbreaks, wasted data, and international embarrassment
 
-**Return on investment:** Avoided burden cost exceeds programme cost by **two to three orders of magnitude** under all plausible parameter combinations.
+**What we're asking for:**
+
+1. **Approval** to pilot the Full Package in 3 provinces (6 months, R120,000)
+2. **Commitment** to scale nationally if pilot succeeds
+3. **Leadership** from MAC and NDoH to coordinate across NICD, NHLS, PIH, and provinces
 
 ---
 
