@@ -362,7 +362,7 @@ window.Quarto = {
     subgraph NHLS [NHLS Laboratory]
         direction TB
         C1[BChE Assay&lt;br/&gt;~2,000 severe/year]
-        C2[Chemical Toxicology&lt;br/&gt;qualitative/quantitative&lt;br/&gt;pesticide assays]
+        C2[Chemical Toxicology&lt;br/&gt;qualitative/quantitative&lt;br/&gt;pesticide assays&lt;br/&gt;&lt;i&gt;Post-mortem only —&lt;br/&gt;not yet done on live patients&lt;/i&gt;]
     end
 
     B --&gt; E[("NICD Database&lt;br/&gt;&lt;b&gt;Source of truth&lt;/b&gt;")]
@@ -376,7 +376,7 @@ window.Quarto = {
 
     style E fill:#9f9,stroke:#333,stroke-width:2px
     style C1 fill:#cce5ff,stroke:#333
-    style C2 fill:#cce5ff,stroke:#333
+    style C2 fill:#ffe0b3,stroke:#cc6600,stroke-dasharray: 5 5
     style F1 fill:#bbf,stroke:#333
     style F2 fill:#bbf,stroke:#333
     style G fill:#bfb,stroke:#333
@@ -384,7 +384,7 @@ window.Quarto = {
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-current-system-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Current (fragmented) surveillance architecture. NICD is the de facto source-of-truth for case notifications, but the laboratory (BChE + chemical toxicology) and PIH streams do not flow into it in a structured way.
+Figure&nbsp;1: Current (fragmented) surveillance architecture. NICD is the de facto source-of-truth for case notifications, but the laboratory streams (BChE; chemical toxicology — currently post-mortem only, not yet performed on live patients) and PIH do not flow into it in a structured way.
 </figcaption>
 </figure>
 </div>
@@ -393,7 +393,7 @@ Figure&nbsp;1: Current (fragmented) surveillance architecture. NICD is the de fa
 <p><strong>What this diagram shows.</strong> Three gaps in the current state:</p>
 <ol type="1">
 <li><strong>NICD database is the source of truth</strong> for case notifications but receives only the clinician-completed NMC stream (~690/year) — a fraction of the true burden.</li>
-<li><strong>The NHLS laboratory holds two relevant data streams</strong> — routine <strong>BChE</strong> activity assays and <strong>chemical toxicology</strong> (qualitative/quantitative pesticide assays) — neither of which feeds NICD in a structured, automated way.</li>
+<li><strong>The NHLS laboratory holds two relevant capabilities</strong> — routine <strong>BChE</strong> activity assays (already performed on live patients) and <strong>chemical toxicology</strong> (qualitative/quantitative pesticide assays, currently <strong>post-mortem only — not yet performed on live patients</strong>; Component 6 proposes extending this to hospitalised survivors at sentinel sites). Neither stream feeds NICD in a structured, automated way.</li>
 <li><strong>PIH consultations are not captured against a minimum viable dataset</strong>, so the ~9,000 calls/year cannot be aggregated, geocoded, or matched to NICD cases.</li>
 </ol>
 <p><strong>Documented failures:</strong></p>
@@ -1413,7 +1413,7 @@ Figure&nbsp;2: Proposed integrated surveillance and response architecture
 <span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid}</span></span>
 <span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>%%| label: fig-current-<span class="fu">system</span></span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>%%| fig-cap: <span class="ot">"</span><span class="st">Current (fragmented) surveillance architecture. NICD is the de facto source-of-truth for case notifications, but the laboratory (BChE + chemical toxicology) and PIH streams do not flow into it in a structured way.</span><span class="ot">"</span></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>%%| fig-cap: <span class="ot">"</span><span class="st">Current (fragmented) surveillance architecture. NICD is the de facto source-of-truth for case notifications, but the laboratory streams (BChE; chemical toxicology — currently post-mortem only, not yet performed on live patients) and PIH do not flow into it in a structured way.</span><span class="ot">"</span></span>
 <span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>flowchart LR</span>
 <span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>    A[Healthcare Facility] --&gt; B[NMC Notification&lt;br/&gt;~<span class="dv">690</span>/year]</span>
 <span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>    A --&gt; C1</span>
@@ -1423,7 +1423,7 @@ Figure&nbsp;2: Proposed integrated surveillance and response architecture
 <span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>    subgraph NHLS [NHLS Laboratory]</span>
 <span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>        direction TB</span>
 <span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>        C1[BChE Assay&lt;br/&gt;~<span class="dv">2</span>,<span class="dv">000</span> severe/year]</span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>        C2[Chemical Toxicology&lt;br/&gt;qualitative/quantitative&lt;br/&gt;pesticide assays]</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>        C2[Chemical Toxicology&lt;br/&gt;qualitative/quantitative&lt;br/&gt;pesticide assays&lt;br/&gt;&lt;i&gt;Post-mortem only —&lt;br/&gt;<span class="ot">not</span> yet done on live patients&lt;/i&gt;]</span>
 <span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>    end</span>
 <span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>    B --&gt; E[(<span class="ot">"</span><span class="st">NICD Database&lt;br/&gt;&lt;b&gt;Source of truth&lt;/b&gt;</span><span class="ot">"</span>)]</span>
@@ -1437,7 +1437,7 @@ Figure&nbsp;2: Proposed integrated surveillance and response architecture
 <span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>    style E fill:<span class="co">#9f9,stroke:#333,stroke-width:2px</span></span>
 <span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>    style C1 fill:<span class="co">#cce5ff,stroke:#333</span></span>
-<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>    style C2 fill:<span class="co">#cce5ff,stroke:#333</span></span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>    style C2 fill:<span class="co">#ffe0b3,stroke:#cc6600,stroke-dasharray: 5 5</span></span>
 <span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>    style F1 fill:<span class="co">#bbf,stroke:#333</span></span>
 <span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>    style F2 fill:<span class="co">#bbf,stroke:#333</span></span>
 <span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>    style G fill:<span class="co">#bfb,stroke:#333</span></span>
@@ -1446,7 +1446,7 @@ Figure&nbsp;2: Proposed integrated surveillance and response architecture
 <span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>**What this diagram shows.** Three gaps in the current state:</span>
 <span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**NICD database is the source of truth** for case notifications but receives only the clinician-completed NMC stream (~690/year) — a fraction of the true burden.</span>
-<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**The NHLS laboratory holds two relevant data streams** — routine **BChE** activity assays and **chemical toxicology** (qualitative/quantitative pesticide assays) — neither of which feeds NICD in a structured, automated way.</span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**The NHLS laboratory holds two relevant capabilities** — routine **BChE** activity assays (already performed on live patients) and **chemical toxicology** (qualitative/quantitative pesticide assays, currently **post-mortem only — not yet performed on live patients**; Component 6 proposes extending this to hospitalised survivors at sentinel sites). Neither stream feeds NICD in a structured, automated way.</span>
 <span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**PIH consultations are not captured against a minimum viable dataset**, so the ~9,000 calls/year cannot be aggregated, geocoded, or matched to NICD cases.</span>
 <span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>**Documented failures:**</span>
