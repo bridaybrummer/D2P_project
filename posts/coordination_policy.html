@@ -113,6 +113,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
 <script src="../site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -232,7 +261,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">May 11, 2026</p>
+      <p class="date-modified">May 12, 2026</p>
     </div>
   </div>
     
@@ -268,7 +297,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="status-quo" class="level2">
 <h2 class="anchored" data-anchor-id="status-quo">3. Status quo</h2>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -277,28 +306,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>All numerical claims in this brief draw from a single CSV — <a href="../amua_import_parameters_v3.csv"><code>amua_import_parameters_v3.csv</code></a> — rendered in full at the <a href="../parameters_hub.html">Parameters Hub</a>. The headline values below are pulled from that file at render time; <strong>do not edit the numbers in this brief — edit the CSV and re-render</strong>.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="wfomlkxrbz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#wfomlkxrbz table {
+<div id="iddkgwvygl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#iddkgwvygl table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#wfomlkxrbz thead, #wfomlkxrbz tbody, #wfomlkxrbz tfoot, #wfomlkxrbz tr, #wfomlkxrbz td, #wfomlkxrbz th {
+#iddkgwvygl thead, #iddkgwvygl tbody, #iddkgwvygl tfoot, #iddkgwvygl tr, #iddkgwvygl td, #iddkgwvygl th {
   border-style: none;
 }
 
-#wfomlkxrbz p {
+#iddkgwvygl p {
   margin: 0;
   padding: 0;
 }
 
-#wfomlkxrbz .gt_table {
+#iddkgwvygl .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -324,12 +353,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#wfomlkxrbz .gt_caption {
+#iddkgwvygl .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#wfomlkxrbz .gt_title {
+#iddkgwvygl .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -341,7 +370,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#wfomlkxrbz .gt_subtitle {
+#iddkgwvygl .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -353,7 +382,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#wfomlkxrbz .gt_heading {
+#iddkgwvygl .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -365,13 +394,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#wfomlkxrbz .gt_bottom_border {
+#iddkgwvygl .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#wfomlkxrbz .gt_col_headings {
+#iddkgwvygl .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -386,7 +415,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#wfomlkxrbz .gt_col_heading {
+#iddkgwvygl .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -406,7 +435,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#wfomlkxrbz .gt_column_spanner_outer {
+#iddkgwvygl .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -418,15 +447,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#wfomlkxrbz .gt_column_spanner_outer:first-child {
+#iddkgwvygl .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#wfomlkxrbz .gt_column_spanner_outer:last-child {
+#iddkgwvygl .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#wfomlkxrbz .gt_column_spanner {
+#iddkgwvygl .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -438,11 +467,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#wfomlkxrbz .gt_spanner_row {
+#iddkgwvygl .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#wfomlkxrbz .gt_group_heading {
+#iddkgwvygl .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -468,7 +497,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#wfomlkxrbz .gt_empty_group_heading {
+#iddkgwvygl .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -483,15 +512,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#wfomlkxrbz .gt_from_md > :first-child {
+#iddkgwvygl .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#wfomlkxrbz .gt_from_md > :last-child {
+#iddkgwvygl .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#wfomlkxrbz .gt_row {
+#iddkgwvygl .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -510,7 +539,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#wfomlkxrbz .gt_stub {
+#iddkgwvygl .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -523,7 +552,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#wfomlkxrbz .gt_stub_row_group {
+#iddkgwvygl .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -537,15 +566,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#wfomlkxrbz .gt_row_group_first td {
+#iddkgwvygl .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#wfomlkxrbz .gt_row_group_first th {
+#iddkgwvygl .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#wfomlkxrbz .gt_summary_row {
+#iddkgwvygl .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -555,16 +584,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#wfomlkxrbz .gt_first_summary_row {
+#iddkgwvygl .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#wfomlkxrbz .gt_first_summary_row.thick {
+#iddkgwvygl .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#wfomlkxrbz .gt_last_summary_row {
+#iddkgwvygl .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -574,7 +603,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#wfomlkxrbz .gt_grand_summary_row {
+#iddkgwvygl .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -584,7 +613,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#wfomlkxrbz .gt_first_grand_summary_row {
+#iddkgwvygl .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -594,7 +623,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#wfomlkxrbz .gt_last_grand_summary_row_top {
+#iddkgwvygl .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -604,11 +633,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#wfomlkxrbz .gt_striped {
+#iddkgwvygl .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#wfomlkxrbz .gt_table_body {
+#iddkgwvygl .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -617,7 +646,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#wfomlkxrbz .gt_footnotes {
+#iddkgwvygl .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -631,7 +660,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#wfomlkxrbz .gt_footnote {
+#iddkgwvygl .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -640,7 +669,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#wfomlkxrbz .gt_sourcenotes {
+#iddkgwvygl .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -654,7 +683,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#wfomlkxrbz .gt_sourcenote {
+#iddkgwvygl .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -662,72 +691,72 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#wfomlkxrbz .gt_left {
+#iddkgwvygl .gt_left {
   text-align: left;
 }
 
-#wfomlkxrbz .gt_center {
+#iddkgwvygl .gt_center {
   text-align: center;
 }
 
-#wfomlkxrbz .gt_right {
+#iddkgwvygl .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#wfomlkxrbz .gt_font_normal {
+#iddkgwvygl .gt_font_normal {
   font-weight: normal;
 }
 
-#wfomlkxrbz .gt_font_bold {
+#iddkgwvygl .gt_font_bold {
   font-weight: bold;
 }
 
-#wfomlkxrbz .gt_font_italic {
+#iddkgwvygl .gt_font_italic {
   font-style: italic;
 }
 
-#wfomlkxrbz .gt_super {
+#iddkgwvygl .gt_super {
   font-size: 65%;
 }
 
-#wfomlkxrbz .gt_footnote_marks {
+#iddkgwvygl .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#wfomlkxrbz .gt_asterisk {
+#iddkgwvygl .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#wfomlkxrbz .gt_indent_1 {
+#iddkgwvygl .gt_indent_1 {
   text-indent: 5px;
 }
 
-#wfomlkxrbz .gt_indent_2 {
+#iddkgwvygl .gt_indent_2 {
   text-indent: 10px;
 }
 
-#wfomlkxrbz .gt_indent_3 {
+#iddkgwvygl .gt_indent_3 {
   text-indent: 15px;
 }
 
-#wfomlkxrbz .gt_indent_4 {
+#iddkgwvygl .gt_indent_4 {
   text-indent: 20px;
 }
 
-#wfomlkxrbz .gt_indent_5 {
+#iddkgwvygl .gt_indent_5 {
   text-indent: 25px;
 }
 
-#wfomlkxrbz .katex-display {
+#iddkgwvygl .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#wfomlkxrbz div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#iddkgwvygl div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -808,23 +837,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="who-bears-the-r2.34b-annual-burden">Who bears the R2.34B annual burden?</h3>
 <div class="cell">
 <div class="cell-output-display">
-<div id="gufnlfycrr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#gufnlfycrr table {
+<div id="gsftkzlyhp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#gsftkzlyhp table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#gufnlfycrr thead, #gufnlfycrr tbody, #gufnlfycrr tfoot, #gufnlfycrr tr, #gufnlfycrr td, #gufnlfycrr th {
+#gsftkzlyhp thead, #gsftkzlyhp tbody, #gsftkzlyhp tfoot, #gsftkzlyhp tr, #gsftkzlyhp td, #gsftkzlyhp th {
   border-style: none;
 }
 
-#gufnlfycrr p {
+#gsftkzlyhp p {
   margin: 0;
   padding: 0;
 }
 
-#gufnlfycrr .gt_table {
+#gsftkzlyhp .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -850,12 +879,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#gufnlfycrr .gt_caption {
+#gsftkzlyhp .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#gufnlfycrr .gt_title {
+#gsftkzlyhp .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -867,7 +896,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#gufnlfycrr .gt_subtitle {
+#gsftkzlyhp .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -879,7 +908,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#gufnlfycrr .gt_heading {
+#gsftkzlyhp .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -891,13 +920,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#gufnlfycrr .gt_bottom_border {
+#gsftkzlyhp .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#gufnlfycrr .gt_col_headings {
+#gsftkzlyhp .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -912,7 +941,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#gufnlfycrr .gt_col_heading {
+#gsftkzlyhp .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -932,7 +961,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#gufnlfycrr .gt_column_spanner_outer {
+#gsftkzlyhp .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -944,15 +973,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#gufnlfycrr .gt_column_spanner_outer:first-child {
+#gsftkzlyhp .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#gufnlfycrr .gt_column_spanner_outer:last-child {
+#gsftkzlyhp .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#gufnlfycrr .gt_column_spanner {
+#gsftkzlyhp .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -964,11 +993,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#gufnlfycrr .gt_spanner_row {
+#gsftkzlyhp .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#gufnlfycrr .gt_group_heading {
+#gsftkzlyhp .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -994,7 +1023,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#gufnlfycrr .gt_empty_group_heading {
+#gsftkzlyhp .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1009,15 +1038,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#gufnlfycrr .gt_from_md > :first-child {
+#gsftkzlyhp .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#gufnlfycrr .gt_from_md > :last-child {
+#gsftkzlyhp .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#gufnlfycrr .gt_row {
+#gsftkzlyhp .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1036,7 +1065,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#gufnlfycrr .gt_stub {
+#gsftkzlyhp .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1049,7 +1078,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#gufnlfycrr .gt_stub_row_group {
+#gsftkzlyhp .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1063,15 +1092,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#gufnlfycrr .gt_row_group_first td {
+#gsftkzlyhp .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#gufnlfycrr .gt_row_group_first th {
+#gsftkzlyhp .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#gufnlfycrr .gt_summary_row {
+#gsftkzlyhp .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1081,16 +1110,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#gufnlfycrr .gt_first_summary_row {
+#gsftkzlyhp .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#gufnlfycrr .gt_first_summary_row.thick {
+#gsftkzlyhp .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#gufnlfycrr .gt_last_summary_row {
+#gsftkzlyhp .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1100,7 +1129,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#gufnlfycrr .gt_grand_summary_row {
+#gsftkzlyhp .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1110,7 +1139,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#gufnlfycrr .gt_first_grand_summary_row {
+#gsftkzlyhp .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1120,7 +1149,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#gufnlfycrr .gt_last_grand_summary_row_top {
+#gsftkzlyhp .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1130,11 +1159,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#gufnlfycrr .gt_striped {
+#gsftkzlyhp .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#gufnlfycrr .gt_table_body {
+#gsftkzlyhp .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1143,7 +1172,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#gufnlfycrr .gt_footnotes {
+#gsftkzlyhp .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1157,7 +1186,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#gufnlfycrr .gt_footnote {
+#gsftkzlyhp .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1166,7 +1195,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#gufnlfycrr .gt_sourcenotes {
+#gsftkzlyhp .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1180,7 +1209,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#gufnlfycrr .gt_sourcenote {
+#gsftkzlyhp .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1188,72 +1217,72 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#gufnlfycrr .gt_left {
+#gsftkzlyhp .gt_left {
   text-align: left;
 }
 
-#gufnlfycrr .gt_center {
+#gsftkzlyhp .gt_center {
   text-align: center;
 }
 
-#gufnlfycrr .gt_right {
+#gsftkzlyhp .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#gufnlfycrr .gt_font_normal {
+#gsftkzlyhp .gt_font_normal {
   font-weight: normal;
 }
 
-#gufnlfycrr .gt_font_bold {
+#gsftkzlyhp .gt_font_bold {
   font-weight: bold;
 }
 
-#gufnlfycrr .gt_font_italic {
+#gsftkzlyhp .gt_font_italic {
   font-style: italic;
 }
 
-#gufnlfycrr .gt_super {
+#gsftkzlyhp .gt_super {
   font-size: 65%;
 }
 
-#gufnlfycrr .gt_footnote_marks {
+#gsftkzlyhp .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#gufnlfycrr .gt_asterisk {
+#gsftkzlyhp .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#gufnlfycrr .gt_indent_1 {
+#gsftkzlyhp .gt_indent_1 {
   text-indent: 5px;
 }
 
-#gufnlfycrr .gt_indent_2 {
+#gsftkzlyhp .gt_indent_2 {
   text-indent: 10px;
 }
 
-#gufnlfycrr .gt_indent_3 {
+#gsftkzlyhp .gt_indent_3 {
   text-indent: 15px;
 }
 
-#gufnlfycrr .gt_indent_4 {
+#gsftkzlyhp .gt_indent_4 {
   text-indent: 20px;
 }
 
-#gufnlfycrr .gt_indent_5 {
+#gsftkzlyhp .gt_indent_5 {
   text-indent: 25px;
 }
 
-#gufnlfycrr .katex-display {
+#gsftkzlyhp .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#gufnlfycrr div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#gsftkzlyhp div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1311,6 +1340,600 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p><strong>Reading the table.</strong> ~96 % of the R2.34B is <strong>mortality, borne by households and the wider economy</strong> as lost lifetime earnings (1,500 deaths × R1.5M human-capital, undiscounted; sensitivity: R1.05M at 3 % discount). The directly-budgeted health-sector share is <strong>R80M</strong> (NDoH ~R70M hospital + NHLS ~R10M lab) — modest in absolute terms, but it is the only column that appears on a departmental budget line. DALRRD bears <strong>R0</strong> of the <em>burden</em> side by construction: their cost sits on the <em>intervention</em> side (enforcement, recalls, registration action).</p>
 <p>For the full sourced parameter set (CFR by severity, UPFS tariffs, per-option costs, induced-demand components, DALY monetisation, NMB), see the <strong><a href="../parameters_hub.html">Parameters Hub</a></strong>. For the v2 → v3 critical appraisal, see <a href="../parameter_appraisal.html"><code>parameter_appraisal.qmd</code></a>.</p>
+</section>
+<section id="canonical-option-costs-detect-act-restrict" class="level3">
+<h3 class="anchored" data-anchor-id="canonical-option-costs-detect-act-restrict">Canonical option costs (Detect · Act · Restrict)</h3>
+<div class="cell">
+<div class="cell-output-display">
+<div id="eaqyekkrkh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#eaqyekkrkh table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#eaqyekkrkh thead, #eaqyekkrkh tbody, #eaqyekkrkh tfoot, #eaqyekkrkh tr, #eaqyekkrkh td, #eaqyekkrkh th {
+  border-style: none;
+}
+
+#eaqyekkrkh p {
+  margin: 0;
+  padding: 0;
+}
+
+#eaqyekkrkh .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: small;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#eaqyekkrkh .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#eaqyekkrkh .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#eaqyekkrkh .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#eaqyekkrkh .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#eaqyekkrkh .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#eaqyekkrkh .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#eaqyekkrkh .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#eaqyekkrkh .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#eaqyekkrkh .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#eaqyekkrkh .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#eaqyekkrkh .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#eaqyekkrkh .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#eaqyekkrkh .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#eaqyekkrkh .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#eaqyekkrkh .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#eaqyekkrkh .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#eaqyekkrkh .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#eaqyekkrkh .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#eaqyekkrkh .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#eaqyekkrkh .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#eaqyekkrkh .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#eaqyekkrkh .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#eaqyekkrkh .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#eaqyekkrkh .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#eaqyekkrkh .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#eaqyekkrkh .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#eaqyekkrkh .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#eaqyekkrkh .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#eaqyekkrkh .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#eaqyekkrkh .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#eaqyekkrkh .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#eaqyekkrkh .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#eaqyekkrkh .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#eaqyekkrkh .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#eaqyekkrkh .gt_left {
+  text-align: left;
+}
+
+#eaqyekkrkh .gt_center {
+  text-align: center;
+}
+
+#eaqyekkrkh .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#eaqyekkrkh .gt_font_normal {
+  font-weight: normal;
+}
+
+#eaqyekkrkh .gt_font_bold {
+  font-weight: bold;
+}
+
+#eaqyekkrkh .gt_font_italic {
+  font-style: italic;
+}
+
+#eaqyekkrkh .gt_super {
+  font-size: 65%;
+}
+
+#eaqyekkrkh .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#eaqyekkrkh .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#eaqyekkrkh .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#eaqyekkrkh .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#eaqyekkrkh .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#eaqyekkrkh .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#eaqyekkrkh .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#eaqyekkrkh .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#eaqyekkrkh div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_heading header">
+<td colspan="3" class="gt_heading gt_title gt_font_normal">Option costs by stage (Detect · Act · Restrict)</td>
+</tr>
+<tr class="gt_heading even">
+<td colspan="3" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border">All values pulled from amua_import_parameters_v3.csv at render time</td>
+</tr>
+<tr class="gt_col_headings header">
+<th id="Option" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Option</th>
+<th id="Cost" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Cost</th>
+<th id="Notes" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Notes</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="gt_group_heading_row odd">
+<th colspan="3" id="Detect" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Detect</th>
+</tr>
+<tr class="gt_row_group_first even">
+<td class="gt_row gt_left" headers="Detect  Option">S1 — NHLS→NMC IT feed (operating)</td>
+<td class="gt_row gt_right" headers="Detect  Cost">R60,000</td>
+<td class="gt_row gt_left" headers="Detect  Notes">0.05 FTE analyst + QA</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left gt_striped" headers="Detect  Option">S3a — BChE auto-notify (operating)</td>
+<td class="gt_row gt_right gt_striped" headers="Detect  Cost">R55,000</td>
+<td class="gt_row gt_left gt_striped" headers="Detect  Notes">LIS HL7 middleware</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Detect  Option">S4 — PIH dashboard / MVD (operating)</td>
+<td class="gt_row gt_right" headers="Detect  Cost">R42,000</td>
+<td class="gt_row gt_left" headers="Detect  Notes">MVD redesign</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left gt_striped" headers="Detect  Option">Surveillance MVP (S1+S3a+S4, operating) ★</td>
+<td class="gt_row gt_right gt_striped" headers="Detect  Cost">R157,000</td>
+<td class="gt_row gt_left gt_striped" headers="Detect  Notes">= R60k + R55k + R42k</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Detect  Option">Surveillance MVP setup (one-off)</td>
+<td class="gt_row gt_right" headers="Detect  Cost">R80,000</td>
+<td class="gt_row gt_left" headers="Detect  Notes">S3a HL7 dominates</td>
+</tr>
+<tr class="gt_group_heading_row odd">
+<th colspan="3" id="Act" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Act</th>
+</tr>
+<tr class="gt_row_group_first even">
+<td class="gt_row gt_left gt_striped" headers="Act  Option">C1 — NMC closure-of-loop field (operating)</td>
+<td class="gt_row gt_right gt_striped" headers="Act  Cost">R30,000</td>
+<td class="gt_row gt_left gt_striped" headers="Act  Notes">Schema + EHP training</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Act  Option">C2 — Structured DALRRD referral form (operating)</td>
+<td class="gt_row gt_right" headers="Act  Cost">R25,000</td>
+<td class="gt_row gt_left" headers="Act  Notes">Form + workflow</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="Act  Option">C3 — NICD→DALRRD intelligence feed (operating)</td>
+<td class="gt_row gt_right gt_striped" headers="Act  Cost">R40,000</td>
+<td class="gt_row gt_left gt_striped" headers="Act  Notes">Quarterly brief + alerts</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Act  Option">C4 — Clinician auto-feedback (operating)</td>
+<td class="gt_row gt_right" headers="Act  Cost">R20,000</td>
+<td class="gt_row gt_left" headers="Act  Notes">Email templating</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="Act  Option">C5 — Joint KPI dashboard (operating)</td>
+<td class="gt_row gt_right gt_striped" headers="Act  Cost">R30,000</td>
+<td class="gt_row gt_left gt_striped" headers="Act  Notes">Public hosting</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Act  Option">Coordination Full Package (operating) ★</td>
+<td class="gt_row gt_right" headers="Act  Cost">R145,000</td>
+<td class="gt_row gt_left" headers="Act  Notes">= Σ C1..C5</td>
+</tr>
+<tr class="gt_group_heading_row even">
+<th colspan="3" id="Restrict" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Restrict</th>
+</tr>
+<tr class="gt_row_group_first odd">
+<td class="gt_row gt_left gt_striped" headers="Restrict  Option">T2 — RUP + audit + formulation restriction (low)</td>
+<td class="gt_row gt_right gt_striped" headers="Restrict  Cost">R1.00 million</td>
+<td class="gt_row gt_left gt_striped" headers="Restrict  Notes">DALRRD inspectorate, lower</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Restrict  Option">T2 — RUP + audit + formulation restriction (mid)★</td>
+<td class="gt_row gt_right" headers="Restrict  Cost">R2.00 million</td>
+<td class="gt_row gt_left" headers="Restrict  Notes">Working value</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left gt_striped" headers="Restrict  Option">T2 — RUP + audit + formulation restriction (hi)</td>
+<td class="gt_row gt_right gt_striped" headers="Restrict  Cost">R3.00 million</td>
+<td class="gt_row gt_left gt_striped" headers="Restrict  Notes">Upper</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Under the hood — models, packages, and formulae
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Software stack.</strong> This site is built with <strong>Quarto v1.x</strong> rendering R chunks through <strong>R ≥ 4.3</strong> and <strong>knitr</strong>. Tables use <strong><a href="https://gt.rstudio.com/">gt</a></strong>; data wrangling <strong><a href="https://www.tidyverse.org/">tidyverse</a></strong> (<code>dplyr</code>, <code>readr</code>, <code>tibble</code>); percentage formatting <strong><a href="https://scales.r-lib.org/">scales</a></strong>; diagrams <strong><a href="https://mermaid.js.org/">mermaid</a></strong> via Quarto’s built-in diagram filter. The interactive <a href="../parameter_playground.html">Parameter Playground</a> layer adds <strong><a href="https://observablehq.com/@observablehq/observable-javascript">Observable JS</a></strong> via Quarto OJS.</p>
+<p><strong>Canonical parameter file.</strong> All numerical values in every brief, the one-pager, and the playground resolve through <code>pick(name)</code> → <code>readr::read_csv("../amua_import_parameters_v3.csv")</code> → string lookup → <code>as.numeric()</code> → <code>zar()</code> formatter. <strong>No rand value in any brief is a literal in prose</strong> (except where prose paraphrases a CSV-sourced value). The audit chain is: CSV row → <code>_shared_parameters.qmd</code> <code>pick()</code> call → rendered <code>gt</code> cell.</p>
+<p><strong>Burden model (closed-form, deterministic).</strong></p>
+<p><span class="math display">\[
+C_{\text{burden}} \;=\; \underbrace{\sum_{s \in \{\text{PIH},\text{NHLS},\text{NMC}\}} n_s \cdot c^{\text{morb}}_s}_{\text{morbidity}} \;+\; \underbrace{n_{\text{deaths}} \cdot c^{\text{mort}}_{\text{HC}}}_{\text{mortality (human-capital)}}
+\]</span></p>
+<p>where <span class="math inline">\(n_s\)</span> = stream counts (rows <code>n_pih_annual</code>, <code>n_nhls_severe_annual</code>, <code>n_nmc_annual</code>), <span class="math inline">\(c^{\text{morb}}_s\)</span> = stratum-specific per-case morbidity costs (rows <code>c_morbidity_*</code>), <span class="math inline">\(n_{\text{deaths}} = 1{,}500\)</span> (<code>n_deaths_headline</code>), $c^{}_{} = $ 25 productive years × R60k median income, undiscounted (<code>c_mortality_human_capital</code>). Stratified-CFR alternative (<code>C_burden_total_conservative</code> ≈ R1.34B) is supplied as a sensitivity.</p>
+<p><strong>Coordination decision tree (closed-form joint probability).</strong></p>
+<p><span class="math display">\[
+P(\text{loop closed}) \;=\; \prod_{i=1}^{8} p_i
+\]</span></p>
+<p>over eight sequential nodes (notify → SMS → investigate → record → refer → DALRRD acts → feedback → feedback to clinician). Status-quo joint product ≈ 1.1 % (<code>p_loop_closed_status_quo</code>); Full Package ≈ 70 % (<code>p_loop_closed_FP</code>). Deaths averted = <span class="math inline">\(\Delta P \times \eta \times n_{\text{burden}} \times p_{\text{death}}\)</span>, with <span class="math inline">\(\eta\)</span> from <code>eta_response_mid</code> = 0.30 and <span class="math inline">\(p_{\text{death}}\)</span> from <code>cfr_headline_mid</code> = 0.125.</p>
+<p><strong>Terbufos bracketed estimate.</strong></p>
+<p><span class="math display">\[
+\text{Deaths averted}_{T3} \;=\; f_{\text{attr}} \cdot \phi_{\text{retired}} \cdot n_{\text{deaths}}
+\]</span></p>
+<p>with <span class="math inline">\(f_{\text{attr}} \in [0.20, 0.35]\)</span> (<code>frac_terbufos_attributable_{lo,mid,hi}</code>, anchored to Sri Lanka Class Ia withdrawal natural experiments, Gunnell et al.&nbsp;<em>Lancet Glob Health</em> 2017) and <span class="math inline">\(\phi_{\text{retired}} \in [0.60, 0.80]\)</span> (Sri Lanka substitution-incompleteness). Bracket: 200–400 deaths/yr (<code>n_deaths_averted_T3_{lo,hi}</code>).</p>
+<p><strong>Surveillance detection model.</strong></p>
+<p><span class="math display">\[
+\text{Cases averted} \;=\; (P_{\text{detect}} - P_{\text{detect}}^{\text{SQ}}) \cdot \eta \cdot n_{\text{burden}}
+\]</span></p>
+<p>with <span class="math inline">\(P_{\text{detect}}\)</span> pulled from <code>d_status_quo</code>, <code>d_option1_NHLS_MOU</code>, …, <code>d_full_package</code> (expert elicitation, beta priors). Cost-effectiveness uses <strong>net monetary benefit (NMB)</strong> at the SA cost-effectiveness threshold <span class="math inline">\(\lambda\)</span> = R38,500/DALY averted (Edoka &amp; Stacey 2020).</p>
+<p><strong>Probabilistic sensitivity analysis (PSA).</strong> Each CSV row carries a <code>dist=&lt;family&gt;(&lt;params&gt;)</code> tag (<code>beta</code>, <code>gamma</code>, <code>fixed</code>) parsed by the analysis pipeline (<code>wrangling_v2.r</code>) for Monte Carlo PSA. Distributions follow standard health-economics conventions: gamma for costs (shape 25 → CV ≈ 0.20), beta for probabilities (parameterised on the sample-equivalent count), fixed for deterministic anchors and derived sums.</p>
+<p><strong>What this site does <em>not</em> do.</strong> No mixed-effects regression, no machine-learning model, no causal-inference identification strategy, no Bayesian hierarchical model. The site is a transparent deterministic burden-and-decision-tree calculator with explicit PSA. Strength comes from auditability, not algorithmic complexity.</p>
+</div>
+</div>
+</div>
 </section>
 </div>
 </div>
