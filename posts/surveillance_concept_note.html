@@ -334,7 +334,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
     subgraph N[NHLS Laboratory]
         direction TB
-        C1[BChE Assay&lt;br/&gt;~2,000 severe/year&lt;br/&gt;&lt;i&gt;Live patients&lt;/i&gt;]
+        C1[BChE Assay&lt;br/&gt;1,779 severe/year&lt;br/&gt;10,626 tests 2023&lt;br/&gt;&lt;i&gt;Live patients&lt;/i&gt;]
         C2[Chemical Toxicology&lt;br/&gt;&lt;i&gt;Post-mortem only —&lt;br/&gt;not yet done on&lt;br/&gt;live patients&lt;/i&gt;]
     end
 
@@ -362,7 +362,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-current-system-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Current (fragmented) surveillance architecture. NICD is the de facto source-of-truth for case notifications. Notifications on the NMC platform trigger an SMS to the local EHP (mandated to investigate) but the investigation outcome is not recorded back on NMC. EHP→DALRRD referral is informal and likewise unrecorded. NHLS holds two distinct laboratory streams — BChE (live patients, ~2,000/yr severe) and Chemical Toxicology (post-mortem only — not yet done on live patients) — neither of which feeds NICD in a structured way. PIH consultations are not captured against a minimum viable dataset.
+Figure&nbsp;1: Current (fragmented) surveillance architecture. NICD is the de facto source-of-truth for case notifications. Notifications on the NMC platform trigger an SMS to the local EHP (mandated to investigate) but the investigation outcome is not recorded back on NMC. EHP→DALRRD referral is informal and likewise unrecorded. NHLS holds two distinct laboratory streams — BChE (live patients, 1,779/yr severe from 10,626 tests in 2023) and Chemical Toxicology (post-mortem only — not yet done on live patients) — neither of which feeds NICD in a structured way. PIH consultations are not captured against a minimum viable dataset.
 </figcaption>
 </figure>
 </div>
@@ -371,7 +371,7 @@ Figure&nbsp;1: Current (fragmented) surveillance architecture. NICD is the de fa
 <p><strong>What this diagram shows.</strong> Five gaps in the current state:</p>
 <ol type="1">
 <li><strong>NICD/NMC is the source of truth</strong> for case notifications but receives only the clinician-completed NMC stream (~1,013/year, 2023) — a fraction of the true burden.</li>
-<li><strong>The NHLS laboratory holds two distinct streams</strong>: (a) <strong>BChE assays</strong> on live patients (~2,000 severe results/year, capability exists) and (b) <strong>Chemical toxicology</strong> — qualitative/quantitative pesticide assays which <strong>NHLS currently performs post-mortem only</strong>. Live-patient chemical toxicology is not yet available (see <a href="#sec-component-6">Component 6</a>).</li>
+<li><strong>The NHLS laboratory holds two distinct streams</strong>: (a) <strong>BChE assays</strong> on live patients (10,626 tests/year in 2023; 1,779 severe results, capability exists) and (b) <strong>Chemical toxicology</strong> — qualitative/quantitative pesticide assays which <strong>NHLS currently performs post-mortem only</strong>. Live-patient chemical toxicology is not yet available (see <a href="#sec-component-6">Component 6</a>).</li>
 <li><strong>Neither NHLS stream feeds NICD in a structured way.</strong> BChE has no automated notification; chemical toxicology is not yet generated on living patients at all.</li>
 <li><strong>The EHP arm exists but does not close the loop.</strong> When an NMC notification is filed, an SMS reaches the local EHP, who is mandated to investigate — but neither the investigation outcome nor the informal DALRRD referral is recorded back on NMC, and DALRRD’s regulatory action (if any) is fed back to the EHP at best, never to NICD or the clinician.</li>
 <li><strong>PIH consultations are not captured against a minimum viable dataset</strong>, so the ~1,158 clinician-initiated calls/year (2023) cannot be aggregated, geocoded, or matched to NICD cases.</li>
@@ -1243,14 +1243,14 @@ Figure&nbsp;2: Proposed integrated surveillance architecture
 <span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid}</span></span>
 <span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>%%| label: fig-current-<span class="fu">system</span></span>
-<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>%%| fig-cap: <span class="ot">"</span><span class="st">Current (fragmented) surveillance architecture. NICD is the de facto source-of-truth for case notifications. Notifications on the NMC platform trigger an SMS to the local EHP (mandated to investigate) but the investigation outcome is not recorded back on NMC. EHP→DALRRD referral is informal and likewise unrecorded. NHLS holds two distinct laboratory streams — BChE (live patients, ~2,000/yr severe) and Chemical Toxicology (post-mortem only — not yet done on live patients) — neither of which feeds NICD in a structured way. PIH consultations are not captured against a minimum viable dataset.</span><span class="ot">"</span></span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>%%| fig-cap: <span class="ot">"</span><span class="st">Current (fragmented) surveillance architecture. NICD is the de facto source-of-truth for case notifications. Notifications on the NMC platform trigger an SMS to the local EHP (mandated to investigate) but the investigation outcome is not recorded back on NMC. EHP→DALRRD referral is informal and likewise unrecorded. NHLS holds two distinct laboratory streams — BChE (live patients, 1,779/yr severe from 10,626 tests in 2023) and Chemical Toxicology (post-mortem only — not yet done on live patients) — neither of which feeds NICD in a structured way. PIH consultations are not captured against a minimum viable dataset.</span><span class="ot">"</span></span>
 <span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>flowchart LR</span>
 <span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>    A[Healthcare Facility&lt;br/&gt;Clinician / PHO] --&gt;|NMC notification| E[(<span class="ot">"</span><span class="st">NICD / NMC&lt;br/&gt;&lt;b&gt;Source of truth&lt;/b&gt;</span><span class="ot">"</span>)]</span>
 <span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>    A --&gt; N[NHLS Laboratory]</span>
 <span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>    subgraph N[NHLS Laboratory]</span>
 <span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>        direction TB</span>
-<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>        C1[BChE Assay&lt;br/&gt;~<span class="dv">2</span>,<span class="dv">000</span> severe/year&lt;br/&gt;&lt;i&gt;Live patients&lt;/i&gt;]</span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>        C1[BChE Assay&lt;br/&gt;<span class="dv">1</span>,<span class="dv">779</span> severe/year&lt;br/&gt;<span class="dv">10</span>,<span class="dv">626</span> tests <span class="dv">2023</span>&lt;br/&gt;&lt;i&gt;Live patients&lt;/i&gt;]</span>
 <span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>        C2[Chemical Toxicology&lt;br/&gt;&lt;i&gt;Post-mortem only —&lt;br/&gt;<span class="ot">not</span> yet done on&lt;br/&gt;live patients&lt;/i&gt;]</span>
 <span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a>    end</span>
 <span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a></span>
@@ -1280,7 +1280,7 @@ Figure&nbsp;2: Proposed integrated surveillance architecture
 <span id="cb3-81"><a href="#cb3-81" aria-hidden="true" tabindex="-1"></a>**What this diagram shows.** Five gaps in the current state:</span>
 <span id="cb3-82"><a href="#cb3-82" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-83"><a href="#cb3-83" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**NICD/NMC is the source of truth** for case notifications but receives only the clinician-completed NMC stream (~1,013/year, 2023) — a fraction of the true burden.</span>
-<span id="cb3-84"><a href="#cb3-84" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**The NHLS laboratory holds two distinct streams**: (a) **BChE assays** on live patients (~2,000 severe results/year, capability exists) and (b) **Chemical toxicology** — qualitative/quantitative pesticide assays which **NHLS currently performs post-mortem only**. Live-patient chemical toxicology is not yet available (see <span class="co">[</span><span class="ot">Component 6</span><span class="co">](#sec-component-6)</span>).</span>
+<span id="cb3-84"><a href="#cb3-84" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**The NHLS laboratory holds two distinct streams**: (a) **BChE assays** on live patients (10,626 tests/year in 2023; 1,779 severe results, capability exists) and (b) **Chemical toxicology** — qualitative/quantitative pesticide assays which **NHLS currently performs post-mortem only**. Live-patient chemical toxicology is not yet available (see <span class="co">[</span><span class="ot">Component 6</span><span class="co">](#sec-component-6)</span>).</span>
 <span id="cb3-85"><a href="#cb3-85" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Neither NHLS stream feeds NICD in a structured way.** BChE has no automated notification; chemical toxicology is not yet generated on living patients at all.</span>
 <span id="cb3-86"><a href="#cb3-86" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**The EHP arm exists but does not close the loop.** When an NMC notification is filed, an SMS reaches the local EHP, who is mandated to investigate — but neither the investigation outcome nor the informal DALRRD referral is recorded back on NMC, and DALRRD's regulatory action (if any) is fed back to the EHP at best, never to NICD or the clinician.</span>
 <span id="cb3-87"><a href="#cb3-87" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>**PIH consultations are not captured against a minimum viable dataset**, so the ~1,158 clinician-initiated calls/year (2023) cannot be aggregated, geocoded, or matched to NICD cases.</span>
