@@ -142,7 +142,7 @@ section_table(params, "response efficacy")
 
 ```{r}
 #| label: tbl-detection
-#| tbl-cap: "Per-option detection probability — currently expert-elicited, to be updated from pilot data."
+#| tbl-cap: "Per-option detection probability — all active rows derived on the per-case scale from NICD + NHLS + PIH 2023 stream counts ÷ StatsSA MACOD mid-burden (20,960). v1 hotspot-cluster rows retained as DEPRECATED for back-compat only. Full audit trail in the [Surveillance brief §6](posts/surveillance_policy.qmd#sec-decision-tree)."
 section_table(params, "detection probabilities")
 ```
 

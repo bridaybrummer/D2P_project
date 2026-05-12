@@ -155,12 +155,14 @@ Cost: ~R1.2M pilot site → ~R3.6M for 5-site rollout, 6–12 months. Funded fro
 **Scope of this brief.** Surveillance changes only what is *seen*. The status quo P_detect = 0.048 (§6 below) is a **measurement** of the current detection gap, not a counterfactual against which deaths are averted. Cases-averted and deaths-averted figures therefore live in the [Coordination brief](coordination_policy.qmd) (where the response is parameterised) and the [Terbufos brief](terbufos_policy.qmd) (where regulatory action is parameterised). This separation keeps the surveillance pitch honest: better surveillance is **necessary but not sufficient**.
 :::
 
-## 6. Decision tree — from surveillance investment to detection uplift
+## 6. Decision tree — from surveillance investment to detection uplift {#sec-decision-tree}
 
 ::: {.callout-note collapse="true"}
-## How we derive the status-quo detection probability (`d_status_quo` = 0.048)
+## Audit trail — how every P_detect value in this brief was derived
 
-The status-quo detection probability is **derived, not elicited**. The chain of evidence is:
+All active P_detect values are **derived, not elicited**, on a single per-case scale. The arithmetic is auditable from three published anchors.
+
+### Step 1 — the implied true annual burden (denominator)
 
 | Anchor | Value | Source |
 |--|--:|--|
@@ -168,21 +170,48 @@ The status-quo detection probability is **derived, not elicited**. The chain of 
 | NMC-hospitalised case-fatality rate | 12.5 % | `cfr_headline_mid` (range 10–15 %) — Free State 2018-19 + NMC observed |
 | StatsSA MACOD pesticide-poisoning deaths/yr | 2,620 | `n_deaths_statssa_macod` — StatsSA Causes of Death, 2023: Table 4.12: Accidental poisoning by and exposure to noxious substance (X40-X49) |
 
-**Identification.** If notified cases have CFR ≈ 12.5 %, then the *full* true burden satisfies $\text{true cases} \times \text{CFR} = \text{deaths}$, so the implied true burden is $2{,}620 / 0.125 \;=\; 20{,}960$ cases/year (`n_true_burden_from_statssa_mid`).
-
-**Per-case detection probability**:
+If notified cases have CFR ≈ 12.5 %, then the *full* true burden satisfies $\text{true cases} \times \text{CFR} = \text{deaths}$, so
 
 $$
-P_\text{detect}^{SQ} \;=\; \frac{N_\text{NMC} \times \text{CFR}_\text{NMC}}{N_\text{deaths,StatsSA}} \;=\; \frac{1{,}013 \times 0.125}{2{,}620} \;=\; \mathbf{0.048}
+N_\text{true} \;=\; \frac{2{,}620}{0.125} \;=\; \mathbf{20{,}960}\ \text{cases/year} \quad (\texttt{n\_true\_burden\_from\_statssa\_mid})
 $$
 
-**CFR sensitivity bracket** (CSV: `d_status_quo_lo`, `d_status_quo_hi`):
+This is the **single denominator** used for every per-case P_detect below.
 
-- Lower bound (CFR = 0.10): $P_\text{detect}^{SQ} = 0.039$ (implied burden 26,200)
+### Step 2 — the per-stream numerators (2023 actuals)
+
+| Stream | Annual count | CSV row | Source |
+|--|--:|--|--|
+| NMC notifications | 1,013 | `n_nmc_annual` | NICD NMC Annual Report 2023 |
+| NHLS severe BChE inhibitions (<50 % normal) | 1,779 | `n_nhls_severe_annual` | NHLS LIS 2023 (of 10,626 total tests) |
+| PIH clinician-initiated calls | 1,158 | `n_pih_annual` | PIH (Tygerberg) 2023 |
+
+The three streams are treated as **mutually exclusive** in the base case (severe BChE ≠ NMC-notified ≠ PIH-called); the overlap-correction sensitivity is parameterised separately in the hub.
+
+### Step 3 — P_detect for each option
+
+Each option adds one or more streams to the NMC base. The numerator is the sum of streams reaching the surveillance system; the denominator is always 20,960.
+
+| Option | Streams summed | Arithmetic | P_detect | CSV row |
+|--|--|--:|--:|--|
+| Status quo | NMC only | $1{,}013 / 20{,}960$ | **0.048** | `d_status_quo` |
+| S1 — PIH MVD + dashboard | NMC + PIH | $(1{,}013 + 1{,}158) / 20{,}960 = 2{,}171 / 20{,}960$ | **0.104** | `d_option4_PIH_quarterly` |
+| S2 — BChE auto-notify | NMC + NHLS severe | $(1{,}013 + 1{,}779) / 20{,}960 = 2{,}792 / 20{,}960$ | **0.133** | `d_option3_BChE_autonotify` |
+| **Surveillance MVP (S1 + S2)** | NMC + NHLS severe + PIH | $(1{,}013 + 1{,}779 + 1{,}158) / 20{,}960 = 3{,}950 / 20{,}960$ | **0.189** | `d_surveillance_mvp` |
+
+### Step 4 — CFR sensitivity bracket on the status-quo anchor
+
+The denominator scales inversely with the CFR assumed for NMC-notified cases (CSV: `d_status_quo_lo`, `d_status_quo_hi`):
+
+- Lower bound (CFR = 0.10): $P_\text{detect}^{SQ} = 1{,}013 \times 0.10 / 2{,}620 = 0.039$ (implied burden 26,200)
 - Mid (CFR = 0.125): $P_\text{detect}^{SQ} = 0.048$ (implied burden 20,960)
-- Upper (CFR = 0.15): $P_\text{detect}^{SQ} = 0.058$ (implied burden 17,467)
+- Upper (CFR = 0.15): $P_\text{detect}^{SQ} = 1{,}013 \times 0.15 / 2{,}620 = 0.058$ (implied burden 17,467)
 
-**Why this replaces the v1 value of 0.45.** The legacy v1 figure was an expert-elicited estimate on a different scale, derived from a model of spatial event sensitivity rather than per-case detection. That quantity answered a different question and is not comparable to a per-case detection probability. This brief now uses the **per-case** framing throughout — directly auditable from NICD + StatsSA published figures — and all option values in §5 are likewise derived on the per-case scale.
+The same CFR bracket applies proportionally to S1/S2/MVP — e.g. the MVP varies from 0.151 (CFR 0.10) to 0.226 (CFR 0.15).
+
+### Step 5 — why this replaces the v1 value of 0.45
+
+The legacy v1 figure was an expert-elicited estimate on a different scale, derived from a model of spatial event sensitivity rather than per-case detection. That quantity answered a different question and is not comparable to a per-case detection probability. This brief now uses the **per-case** framing throughout — every value above is directly auditable from NICD + NHLS + PIH + StatsSA published figures and the canonical [`amua_import_parameters_v3.csv`](../amua_import_parameters_v3.csv).
 :::
 
 ````{r}
