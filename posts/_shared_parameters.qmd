@@ -95,4 +95,87 @@ stakeholder |>
 
 
 For the full sourced parameter set (CFR by severity, UPFS tariffs, per-option costs, induced-demand components, DALY monetisation, NMB), see the **[Parameters Hub](../parameters_hub.html)**. For the v2 → v3 critical appraisal, see [`parameter_appraisal.qmd`](../parameter_appraisal.qmd).
+
+### Canonical option costs (Detect · Act · Restrict)
+
+```{r}
+#| label: shared-params-option-costs
+#| echo: false
+#| message: false
+#| warning: false
+
+option_costs <- tibble::tribble(
+  ~Stage,        ~Option,                                            ~Name,                          ~Notes,
+  "Detect",      "S1 — NHLS→NMC IT feed (operating)",                "c_S1_NHLS_NMC_feed_op",        "0.05 FTE analyst + QA",
+  "Detect",      "S3a — BChE auto-notify (operating)",               "c_S3a_BChE_autonotify_op",     "LIS HL7 middleware",
+  "Detect",      "S4 — PIH dashboard / MVD (operating)",             "c_S4_PIH_dashboard_op",        "MVD redesign",
+  "Detect",      "Surveillance MVP (S1+S3a+S4, operating) ★",        "c_surv_MVP_op",                "= R60k + R55k + R42k",
+  "Detect",      "Surveillance MVP setup (one-off)",                 "c_surv_MVP_setup",             "S3a HL7 dominates",
+  "Act",         "C1 — NMC closure-of-loop field (operating)",       "c_C1_NMC_closure_op",          "Schema + EHP training",
+  "Act",         "C2 — Structured DALRRD referral form (operating)", "c_C2_referral_form_op",        "Form + workflow",
+  "Act",         "C3 — NICD→DALRRD intelligence feed (operating)",   "c_C3_intel_feed_op",           "Quarterly brief + alerts",
+  "Act",         "C4 — Clinician auto-feedback (operating)",         "c_C4_clinician_fb_op",         "Email templating",
+  "Act",         "C5 — Joint KPI dashboard (operating)",             "c_C5_KPI_dashboard_op",        "Public hosting",
+  "Act",         "Coordination Full Package (operating) ★",          "c_coord_FP_op",                "= Σ C1..C5",
+  "Restrict",    "T2 — RUP + audit + formulation restriction (low)", "c_T2_RUP_enforcement_lo",      "DALRRD inspectorate, lower",
+  "Restrict",    "T2 — RUP + audit + formulation restriction (mid)★","c_T2_RUP_enforcement_mid",     "Working value",
+  "Restrict",    "T2 — RUP + audit + formulation restriction (hi)",  "c_T2_RUP_enforcement_hi",      "Upper"
+) |>
+  dplyr::mutate(
+    Cost = vapply(Name, function(n) zar(pick(n)), character(1))
+  ) |>
+  dplyr::select(Stage, Option, Cost, Notes)
+
+option_costs |>
+  gt(groupname_col = "Stage") |>
+  tab_header(title = "Option costs by stage (Detect · Act · Restrict)",
+             subtitle = "All values pulled from amua_import_parameters_v3.csv at render time") |>
+  cols_align("right", Cost) |>
+  opt_row_striping() |>
+  tab_options(table.font.size = "small", row_group.font.weight = "bold")
+```
+
+::: {.callout-tip icon=false collapse="true"}
+## Under the hood — models, packages, and formulae
+
+**Software stack.** This site is built with **Quarto v1.x** rendering R chunks through **R ≥ 4.3** and **knitr**. Tables use **[gt](https://gt.rstudio.com/)**; data wrangling **[tidyverse](https://www.tidyverse.org/)** (`dplyr`, `readr`, `tibble`); percentage formatting **[scales](https://scales.r-lib.org/)**; diagrams **[mermaid](https://mermaid.js.org/)** via Quarto's built-in diagram filter. The interactive [Parameter Playground](../parameter_playground.qmd) layer adds **[Observable JS](https://observablehq.com/@observablehq/observable-javascript)** via Quarto OJS.
+
+**Canonical parameter file.** All numerical values in every brief, the one-pager, and the playground resolve through `pick(name)` → `readr::read_csv("../amua_import_parameters_v3.csv")` → string lookup → `as.numeric()` → `zar()` formatter. **No rand value in any brief is a literal in prose** (except where prose paraphrases a CSV-sourced value). The audit chain is: CSV row → `_shared_parameters.qmd` `pick()` call → rendered `gt` cell.
+
+**Burden model (closed-form, deterministic).**
+
+$$
+C_{\text{burden}} \;=\; \underbrace{\sum_{s \in \{\text{PIH},\text{NHLS},\text{NMC}\}} n_s \cdot c^{\text{morb}}_s}_{\text{morbidity}} \;+\; \underbrace{n_{\text{deaths}} \cdot c^{\text{mort}}_{\text{HC}}}_{\text{mortality (human-capital)}}
+$$
+
+where $n_s$ = stream counts (rows `n_pih_annual`, `n_nhls_severe_annual`, `n_nmc_annual`), $c^{\text{morb}}_s$ = stratum-specific per-case morbidity costs (rows `c_morbidity_*`), $n_{\text{deaths}} = 1{,}500$ (`n_deaths_headline`), $c^{\text{mort}}_{\text{HC}} = $ 25 productive years × R60k median income, undiscounted (`c_mortality_human_capital`). Stratified-CFR alternative (`C_burden_total_conservative` ≈ R1.34B) is supplied as a sensitivity.
+
+**Coordination decision tree (closed-form joint probability).**
+
+$$
+P(\text{loop closed}) \;=\; \prod_{i=1}^{8} p_i
+$$
+
+over eight sequential nodes (notify → SMS → investigate → record → refer → DALRRD acts → feedback → feedback to clinician). Status-quo joint product ≈ 1.1 % (`p_loop_closed_status_quo`); Full Package ≈ 70 % (`p_loop_closed_FP`). Deaths averted = $\Delta P \times \eta \times n_{\text{burden}} \times p_{\text{death}}$, with $\eta$ from `eta_response_mid` = 0.30 and $p_{\text{death}}$ from `cfr_headline_mid` = 0.125.
+
+**Terbufos bracketed estimate.**
+
+$$
+\text{Deaths averted}_{T3} \;=\; f_{\text{attr}} \cdot \phi_{\text{retired}} \cdot n_{\text{deaths}}
+$$
+
+with $f_{\text{attr}} \in [0.20, 0.35]$ (`frac_terbufos_attributable_{lo,mid,hi}`, anchored to Sri Lanka Class Ia withdrawal natural experiments, Gunnell et al. *Lancet Glob Health* 2017) and $\phi_{\text{retired}} \in [0.60, 0.80]$ (Sri Lanka substitution-incompleteness). Bracket: 200–400 deaths/yr (`n_deaths_averted_T3_{lo,hi}`).
+
+**Surveillance detection model.**
+
+$$
+\text{Cases averted} \;=\; (P_{\text{detect}} - P_{\text{detect}}^{\text{SQ}}) \cdot \eta \cdot n_{\text{burden}}
+$$
+
+with $P_{\text{detect}}$ pulled from `d_status_quo`, `d_option1_NHLS_MOU`, …, `d_full_package` (expert elicitation, beta priors). Cost-effectiveness uses **net monetary benefit (NMB)** at the SA cost-effectiveness threshold $\lambda$ = R38,500/DALY averted (Edoka & Stacey 2020).
+
+**Probabilistic sensitivity analysis (PSA).** Each CSV row carries a `dist=<family>(<params>)` tag (`beta`, `gamma`, `fixed`) parsed by the analysis pipeline (`wrangling_v2.r`) for Monte Carlo PSA. Distributions follow standard health-economics conventions: gamma for costs (shape 25 → CV ≈ 0.20), beta for probabilities (parameterised on the sample-equivalent count), fixed for deterministic anchors and derived sums.
+
+**What this site does *not* do.** No mixed-effects regression, no machine-learning model, no causal-inference identification strategy, no Bayesian hierarchical model. The site is a transparent deterministic burden-and-decision-tree calculator with explicit PSA. Strength comes from auditability, not algorithmic complexity.
+:::
 :::
