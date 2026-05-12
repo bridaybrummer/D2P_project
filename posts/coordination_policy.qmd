@@ -147,65 +147,109 @@ Total annual cost of the Coordination Full Package: **~R145,000**. No new legisl
 
 ### 6a. Where the chain breaks today
 
-```{mermaid}
-%%| label: fig-coord-decision-tree
-%%| fig-cap: "Coordination decision tree for a single suspected case under the status quo. Eight decision nodes; six default to a red (broken-loop) terminal."
+````{r}
+#| label: fig-coord-decision-tree
+#| echo: false
+#| output: asis
+p1 <- as.numeric(pick("p_coord_sq_nmc_notified"))
+p2 <- as.numeric(pick("p_coord_sq_sms_reaches_ehp"))
+p3 <- as.numeric(pick("p_coord_sq_ehp_investigates"))
+p4 <- as.numeric(pick("p_coord_sq_recorded_on_nmc"))
+p5 <- as.numeric(pick("p_coord_sq_refer_dalrrd"))
+p6 <- as.numeric(pick("p_coord_sq_dalrrd_acts"))
+p7 <- as.numeric(pick("p_coord_sq_feedback_full"))
+
+p_loop_sq <- as.numeric(pick("p_loop_closed_status_quo"))
+
+cat(sprintf('```{mermaid}
+%%%%| fig-cap: "Coordination decision tree for a single suspected case under the status quo. Eight conditional steps; six terminate in a broken-loop outcome. All eight node probabilities pulled from amua_import_parameters_v3.csv at render time."
 flowchart TD
     Q0{Case suspected?} -->|Yes| Q1{Notified on<br/>NMC?}
     Q0 -->|No| X0[Case invisible]:::bad
 
-    Q1 -->|Yes 0.30| Q2{SMS reaches<br/>EHP?}
-    Q1 -->|No 0.70| X1[No notification]:::bad
+    Q1 -->|Yes %.2f| Q2{SMS reaches<br/>EHP?}
+    Q1 -->|No %.2f| X1[No notification]:::bad
 
-    Q2 -->|Yes 0.95| Q3{EHP<br/>investigates?}
-    Q2 -->|No 0.05| X2[Dies at NMC]:::bad
+    Q2 -->|Yes %.2f| Q3{EHP<br/>investigates?}
+    Q2 -->|No %.2f| X2[Dies at NMC]:::bad
 
-    Q3 -->|Yes 0.60| Q4{Recorded<br/>on NMC?}
-    Q3 -->|No 0.40| X3[No response]:::bad
+    Q3 -->|Yes %.2f| Q4{Recorded<br/>on NMC?}
+    Q3 -->|No %.2f| X3[No response]:::bad
 
-    Q4 -->|Yes 0.05| G1[Loop closed<br/>to NMC]:::good
-    Q4 -->|No 0.95| Q5{Refer to<br/>DALRRD?}
+    Q4 -->|Yes %.2f| G1[Loop closed<br/>to NMC]:::good
+    Q4 -->|No %.2f| Q5{Refer to<br/>DALRRD?}
 
-    Q5 -->|Yes 0.30| Q6{DALRRD<br/>acts?}
-    Q5 -->|No 0.70| X4[Regulator<br/>never hears]:::bad
+    Q5 -->|Yes %.2f| Q6{DALRRD<br/>acts?}
+    Q5 -->|No %.2f| X4[Regulator<br/>never hears]:::bad
 
-    Q6 -->|Yes 0.50| Q7{Feedback to<br/>NMC + clinician?}
-    Q6 -->|No 0.50| X5[Source persists]:::bad
+    Q6 -->|Yes %.2f| Q7{Feedback to<br/>NMC + clinician?}
+    Q6 -->|No %.2f| X5[Source persists]:::bad
 
-    Q7 -->|To EHP only 0.90| X6[NMC + clinician<br/>still blind]:::bad
-    Q7 -->|To NMC + clinician 0.10| G2[Loop fully closed]:::good
+    Q7 -->|To EHP only %.2f| X6[NMC + clinician<br/>still blind]:::bad
+    Q7 -->|To NMC + clinician %.2f| G2[Loop fully closed]:::good
 
     classDef bad fill:#fdd,stroke:#cc0000,stroke-width:1.5px
     classDef good fill:#cfc,stroke:#060,stroke-width:1.5px
 ```
+',
+p1, 1 - p1,
+p2, 1 - p2,
+p3, 1 - p3,
+p4, 1 - p4,
+p5, 1 - p5,
+p6, 1 - p6,
+1 - p7, p7
+))
+````
 
-**Joint P(loop fully closes) ≈ 1.1 %** under the status quo. Expected coordination cost per suspected case ≈ **R196,400** — virtually the full per-case societal burden of R197,000, because the loop almost never closes.
+**Joint P(loop fully closes) ≈ `r sprintf("%.1f %%", 100 * as.numeric(pick("p_loop_closed_status_quo")))`** under the status quo (CSV: `p_loop_closed_status_quo`). Expected coordination cost per suspected case ≈ **R196,400** — virtually the full per-case societal burden of R197,000, because the loop almost never closes.
 
 ### 6b. Clinical-outcome subtree
 
 Each coordination terminal feeds into a clinical-outcome subtree for the index case *and* for the secondary cases that would otherwise follow from the same source:
 
-```{mermaid}
-%%| label: fig-coord-outcome-tree
-%%| fig-cap: "Clinical-outcome subtree attached to each coordination terminal. Loop closure (green) triggers source removal and averts ρ × η secondary cases; loop-broken terminals (red) allow ρ secondary cases to follow."
+````{r}
+#| label: fig-coord-outcome-tree
+#| echo: false
+#| output: asis
+rho     <- as.numeric(pick("rho_secondary"))
+eta     <- as.numeric(pick("eta_response_mid"))
+p_dth   <- as.numeric(pick("p_death"))
+p_sev   <- as.numeric(pick("p_severe"))
+p_rec   <- as.numeric(pick("p_recover"))
+
+averted_sec   <- rho * eta
+extra_sec     <- rho
+averted_deaths<- averted_sec * p_dth
+extra_deaths  <- extra_sec * p_dth
+
+cat(sprintf('```{mermaid}
+%%%%| fig-cap: "Clinical-outcome subtree attached to each coordination terminal. Index-case probabilities (p_death, p_severe, p_recover) and secondary-case multipliers (rho_secondary, eta_response_mid) all pulled from amua_import_parameters_v3.csv at render time."
 flowchart TD
     T0[Suspected case] --> P1{Loop closed?}
 
     P1 -->|Yes — G1 or G2| S1[Source removed]:::good
     P1 -->|No — X1..X6| S2[Source persists]:::bad
 
-    S1 --> I1[Index case:<br/>p_death 0.13<br/>p_severe 0.27<br/>p_recover 0.60]
-    S2 --> I2[Index case:<br/>p_death 0.13<br/>p_severe 0.27<br/>p_recover 0.60]
+    S1 --> I1[Index case:<br/>p_death %.2f<br/>p_severe %.2f<br/>p_recover %.2f]
+    S2 --> I2[Index case:<br/>p_death %.2f<br/>p_severe %.2f<br/>p_recover %.2f]
 
-    S1 --> N1[Averted secondary cases<br/>≈ ρ × η = 0.9]:::good
-    S2 --> N2[Secondary cases<br/>≈ ρ = 3.0]:::bad
+    S1 --> N1[Averted secondary cases<br/>~ rho x eta = %.2f]:::good
+    S2 --> N2[Secondary cases<br/>~ rho = %.2f]:::bad
 
-    N1 --> AD1[Deaths averted<br/>≈ 0.117]:::good
-    N2 --> AD2[Extra deaths<br/>≈ 0.39]:::bad
+    N1 --> AD1[Deaths averted<br/>~ %.3f]:::good
+    N2 --> AD2[Extra deaths<br/>~ %.3f]:::bad
 
     classDef bad fill:#fdd,stroke:#cc0000,stroke-width:1.5px
     classDef good fill:#cfc,stroke:#060,stroke-width:1.5px
 ```
+',
+p_dth, p_sev, p_rec,
+p_dth, p_sev, p_rec,
+averted_sec, extra_sec,
+averted_deaths, extra_deaths
+))
+````
 
 ### 6c. What changes under each coordination scenario
 

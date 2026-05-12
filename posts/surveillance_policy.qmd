@@ -154,34 +154,70 @@ Detection rises to ~6.1 / 10 for **R62k/year**. The dashboard is the lowest-hang
 
 ## 6. Decision tree — from surveillance investment to averted burden
 
-```{mermaid}
-%%| label: fig-surv-decision-tree
-%%| fig-cap: "Surveillance investment decision tree. Each option raises detection probability; loop-closure efficacy η = 0.30 translates detection into avoided cases and deaths. Per-case societal cost R197,000 applies the monetary value."
+````{r}
+#| label: fig-surv-decision-tree
+#| echo: false
+#| output: asis
+d_sq    <- as.numeric(pick("d_status_quo"))
+d_s4    <- as.numeric(pick("d_option4_PIH_quarterly"))
+d_s3a   <- as.numeric(pick("d_option3_BChE_autonotify"))
+d_mvp   <- as.numeric(pick("d_surveillance_mvp"))
+d_full  <- as.numeric(pick("d_surveillance_full_S3b"))
+eta     <- as.numeric(pick("eta_response_mid"))
+N       <- as.numeric(pick("n_burden_true"))
+p_death <- as.numeric(pick("p_death"))
+
+ca <- function(d) round((d - d_sq) * eta * N)
+da <- function(d) round((d - d_sq) * eta * N * p_death)
+
+c_s4   <- as.numeric(pick("c_S4_PIH_dashboard_op"))
+c_s3a  <- as.numeric(pick("c_S3a_BChE_autonotify_op"))
+c_mvp  <- as.numeric(pick("c_surv_MVP_op"))
+
+cat(sprintf('```{mermaid}
+%%%%| fig-cap: "Surveillance investment decision tree. Each option raises detection probability; response efficacy η = %.2f (CSV: eta_response_mid) translates detection into avoided cases. All numerical values pulled from amua_import_parameters_v3.csv at render time."
 flowchart TD
-    INV{Surveillance<br/>investment?} -->|None| SQ[Status quo<br/>P_detect = 0.45]:::bad
-    INV -->|S4 only<br/>R62k| O4[+ PIH MVD<br/>P_detect = 0.61]:::warn
-    INV -->|S3a only<br/>R55k| O3a[+ BChE auto-notify<br/>P_detect = 0.67]:::warn
-    INV -->|S1 + S3a + S4<br/>~R157k| MVP[Surveillance MVP<br/>P_detect = 0.78]:::good
-    INV -->|+ S3b<br/>~R1.4M| FULL[Full + toxicology<br/>P_detect = 0.85]:::good
+    INV{Surveillance<br/>investment?} -->|None| SQ[Status quo<br/>P_detect = %.2f]:::bad
+    INV -->|S4 only<br/>R%s| O4[+ PIH MVD<br/>P_detect = %.2f]:::warn
+    INV -->|S3a only<br/>R%s| O3a[+ BChE auto-notify<br/>P_detect = %.2f]:::warn
+    INV -->|S1 + S3a + S4<br/>R%s| MVP[Surveillance MVP<br/>P_detect = %.2f]:::good
+    INV -->|+ S3b<br/>~R1.4M| FULL[Full + toxicology<br/>P_detect = %.2f]:::good
 
-    SQ --> BSQ[Cases averted<br/>≈ 117 / year]
-    O4  --> B4[Cases averted<br/>≈ 561 / year]
-    O3a --> B3a[Cases averted<br/>≈ 772 / year]
-    MVP --> BMVP[Cases averted<br/>≈ 1,158 / year]
-    FULL --> BFULL[Cases averted<br/>≈ 1,403 / year]
+    SQ --> BSQ[Cases averted<br/>baseline]
+    O4  --> B4[Cases averted<br/>~%s / year]
+    O3a --> B3a[Cases averted<br/>~%s / year]
+    MVP --> BMVP[Cases averted<br/>~%s / year]
+    FULL --> BFULL[Cases averted<br/>~%s / year]
 
-    BSQ --> DSQ[Deaths averted<br/>≈ 15]
-    B4 --> D4[Deaths averted<br/>≈ 73]
-    B3a --> D3a[Deaths averted<br/>≈ 100]
-    BMVP --> DMVP[Deaths averted<br/>≈ 151]
-    BFULL --> DFULL[Deaths averted<br/>≈ 182]
+    BSQ --> DSQ[Deaths averted<br/>baseline]
+    B4 --> D4[Deaths averted<br/>~%s]
+    B3a --> D3a[Deaths averted<br/>~%s]
+    BMVP --> DMVP[Deaths averted<br/>~%s]
+    BFULL --> DFULL[Deaths averted<br/>~%s]
 
     classDef bad fill:#fdd,stroke:#cc0000,stroke-width:1.5px
     classDef warn fill:#ffe9b3,stroke:#cc8800,stroke-width:1.5px
     classDef good fill:#cfc,stroke:#060,stroke-width:1.5px
 ```
+',
+eta,
+d_sq,
+format(c_s4,  big.mark = ","), d_s4,
+format(c_s3a, big.mark = ","), d_s3a,
+format(c_mvp, big.mark = ","), d_mvp,
+d_full,
+format(ca(d_s4),   big.mark = ","),
+format(ca(d_s3a),  big.mark = ","),
+format(ca(d_mvp),  big.mark = ","),
+format(ca(d_full), big.mark = ","),
+format(da(d_s4),   big.mark = ","),
+format(da(d_s3a),  big.mark = ","),
+format(da(d_mvp),  big.mark = ","),
+format(da(d_full), big.mark = ",")
+))
+````
 
-Cases averted = (P_detect − 0.45) × η × 11,690. Deaths averted = cases averted × p_death (0.13). The MVP package averts ≈ 150 deaths/year for ≈ R157,000 spend — **~R1,000 per death averted** against a per-death societal cost of R1.5M.
+`Cases averted = (P_detect − d_status_quo) × η × n_burden_true`. `Deaths averted = cases averted × p_death`. All five inputs (`d_status_quo`, `d_option3_BChE_autonotify`, `d_option4_PIH_quarterly`, `d_surveillance_mvp`, `d_surveillance_full_S3b`, `eta_response_mid`, `n_burden_true`, `p_death`) live in [`amua_import_parameters_v3.csv`](../amua_import_parameters_v3.csv) — edit the CSV and re-render to update both the tree and the prose.
 
 ## 7. Implementation considerations
 
