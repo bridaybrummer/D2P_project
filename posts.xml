@@ -22856,23 +22856,23 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
 <p>All numerical claims in this brief draw from a single CSV — <a href="../amua_import_parameters_v3.csv"><code>amua_import_parameters_v3.csv</code></a> — rendered in full at the <a href="../parameters_hub.html">Parameters Hub</a>. The headline values below are pulled from that file at render time; <strong>do not edit the numbers in this brief — edit the CSV and re-render</strong>.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="hatohpttrm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#hatohpttrm table {
+<div id="rkeekhszpy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#rkeekhszpy table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#hatohpttrm thead, #hatohpttrm tbody, #hatohpttrm tfoot, #hatohpttrm tr, #hatohpttrm td, #hatohpttrm th {
+#rkeekhszpy thead, #rkeekhszpy tbody, #rkeekhszpy tfoot, #rkeekhszpy tr, #rkeekhszpy td, #rkeekhszpy th {
   border-style: none;
 }
 
-#hatohpttrm p {
+#rkeekhszpy p {
   margin: 0;
   padding: 0;
 }
 
-#hatohpttrm .gt_table {
+#rkeekhszpy .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -22898,12 +22898,12 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-left-color: #D3D3D3;
 }
 
-#hatohpttrm .gt_caption {
+#rkeekhszpy .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#hatohpttrm .gt_title {
+#rkeekhszpy .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -22915,7 +22915,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-bottom-width: 0;
 }
 
-#hatohpttrm .gt_subtitle {
+#rkeekhszpy .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -22927,7 +22927,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-top-width: 0;
 }
 
-#hatohpttrm .gt_heading {
+#rkeekhszpy .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -22939,13 +22939,13 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-right-color: #D3D3D3;
 }
 
-#hatohpttrm .gt_bottom_border {
+#rkeekhszpy .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#hatohpttrm .gt_col_headings {
+#rkeekhszpy .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -22960,7 +22960,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-right-color: #D3D3D3;
 }
 
-#hatohpttrm .gt_col_heading {
+#rkeekhszpy .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -22980,7 +22980,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   overflow-x: hidden;
 }
 
-#hatohpttrm .gt_column_spanner_outer {
+#rkeekhszpy .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -22992,15 +22992,15 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 4px;
 }
 
-#hatohpttrm .gt_column_spanner_outer:first-child {
+#rkeekhszpy .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#hatohpttrm .gt_column_spanner_outer:last-child {
+#rkeekhszpy .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#hatohpttrm .gt_column_spanner {
+#rkeekhszpy .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -23012,11 +23012,11 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   width: 100%;
 }
 
-#hatohpttrm .gt_spanner_row {
+#rkeekhszpy .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#hatohpttrm .gt_group_heading {
+#rkeekhszpy .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -23042,7 +23042,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   text-align: left;
 }
 
-#hatohpttrm .gt_empty_group_heading {
+#rkeekhszpy .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -23057,15 +23057,15 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   vertical-align: middle;
 }
 
-#hatohpttrm .gt_from_md > :first-child {
+#rkeekhszpy .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#hatohpttrm .gt_from_md > :last-child {
+#rkeekhszpy .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#hatohpttrm .gt_row {
+#rkeekhszpy .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -23084,7 +23084,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   overflow-x: hidden;
 }
 
-#hatohpttrm .gt_stub {
+#rkeekhszpy .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -23097,7 +23097,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#hatohpttrm .gt_stub_row_group {
+#rkeekhszpy .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -23111,15 +23111,15 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   vertical-align: top;
 }
 
-#hatohpttrm .gt_row_group_first td {
+#rkeekhszpy .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#hatohpttrm .gt_row_group_first th {
+#rkeekhszpy .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#hatohpttrm .gt_summary_row {
+#rkeekhszpy .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -23129,16 +23129,16 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#hatohpttrm .gt_first_summary_row {
+#rkeekhszpy .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#hatohpttrm .gt_first_summary_row.thick {
+#rkeekhszpy .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#hatohpttrm .gt_last_summary_row {
+#rkeekhszpy .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -23148,7 +23148,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-bottom-color: #D3D3D3;
 }
 
-#hatohpttrm .gt_grand_summary_row {
+#rkeekhszpy .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -23158,7 +23158,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#hatohpttrm .gt_first_grand_summary_row {
+#rkeekhszpy .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -23168,7 +23168,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-top-color: #D3D3D3;
 }
 
-#hatohpttrm .gt_last_grand_summary_row_top {
+#rkeekhszpy .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -23178,11 +23178,11 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-bottom-color: #D3D3D3;
 }
 
-#hatohpttrm .gt_striped {
+#rkeekhszpy .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#hatohpttrm .gt_table_body {
+#rkeekhszpy .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -23191,7 +23191,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-bottom-color: #D3D3D3;
 }
 
-#hatohpttrm .gt_footnotes {
+#rkeekhszpy .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -23205,7 +23205,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-right-color: #D3D3D3;
 }
 
-#hatohpttrm .gt_footnote {
+#rkeekhszpy .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -23214,7 +23214,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#hatohpttrm .gt_sourcenotes {
+#rkeekhszpy .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -23228,7 +23228,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-right-color: #D3D3D3;
 }
 
-#hatohpttrm .gt_sourcenote {
+#rkeekhszpy .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -23236,72 +23236,72 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#hatohpttrm .gt_left {
+#rkeekhszpy .gt_left {
   text-align: left;
 }
 
-#hatohpttrm .gt_center {
+#rkeekhszpy .gt_center {
   text-align: center;
 }
 
-#hatohpttrm .gt_right {
+#rkeekhszpy .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#hatohpttrm .gt_font_normal {
+#rkeekhszpy .gt_font_normal {
   font-weight: normal;
 }
 
-#hatohpttrm .gt_font_bold {
+#rkeekhszpy .gt_font_bold {
   font-weight: bold;
 }
 
-#hatohpttrm .gt_font_italic {
+#rkeekhszpy .gt_font_italic {
   font-style: italic;
 }
 
-#hatohpttrm .gt_super {
+#rkeekhszpy .gt_super {
   font-size: 65%;
 }
 
-#hatohpttrm .gt_footnote_marks {
+#rkeekhszpy .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#hatohpttrm .gt_asterisk {
+#rkeekhszpy .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#hatohpttrm .gt_indent_1 {
+#rkeekhszpy .gt_indent_1 {
   text-indent: 5px;
 }
 
-#hatohpttrm .gt_indent_2 {
+#rkeekhszpy .gt_indent_2 {
   text-indent: 10px;
 }
 
-#hatohpttrm .gt_indent_3 {
+#rkeekhszpy .gt_indent_3 {
   text-indent: 15px;
 }
 
-#hatohpttrm .gt_indent_4 {
+#rkeekhszpy .gt_indent_4 {
   text-indent: 20px;
 }
 
-#hatohpttrm .gt_indent_5 {
+#rkeekhszpy .gt_indent_5 {
   text-indent: 25px;
 }
 
-#hatohpttrm .katex-display {
+#rkeekhszpy .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#hatohpttrm div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#rkeekhszpy div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -23382,23 +23382,23 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
 <h3 class="anchored" data-anchor-id="who-bears-the-r2.34b-annual-burden">Who bears the R2.34B annual burden?</h3>
 <div class="cell">
 <div class="cell-output-display">
-<div id="rhitqvdmxe" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#rhitqvdmxe table {
+<div id="hslyjnselq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#hslyjnselq table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#rhitqvdmxe thead, #rhitqvdmxe tbody, #rhitqvdmxe tfoot, #rhitqvdmxe tr, #rhitqvdmxe td, #rhitqvdmxe th {
+#hslyjnselq thead, #hslyjnselq tbody, #hslyjnselq tfoot, #hslyjnselq tr, #hslyjnselq td, #hslyjnselq th {
   border-style: none;
 }
 
-#rhitqvdmxe p {
+#hslyjnselq p {
   margin: 0;
   padding: 0;
 }
 
-#rhitqvdmxe .gt_table {
+#hslyjnselq .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -23424,12 +23424,12 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-left-color: #D3D3D3;
 }
 
-#rhitqvdmxe .gt_caption {
+#hslyjnselq .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#rhitqvdmxe .gt_title {
+#hslyjnselq .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -23441,7 +23441,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-bottom-width: 0;
 }
 
-#rhitqvdmxe .gt_subtitle {
+#hslyjnselq .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -23453,7 +23453,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-top-width: 0;
 }
 
-#rhitqvdmxe .gt_heading {
+#hslyjnselq .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -23465,13 +23465,13 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-right-color: #D3D3D3;
 }
 
-#rhitqvdmxe .gt_bottom_border {
+#hslyjnselq .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#rhitqvdmxe .gt_col_headings {
+#hslyjnselq .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -23486,7 +23486,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-right-color: #D3D3D3;
 }
 
-#rhitqvdmxe .gt_col_heading {
+#hslyjnselq .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -23506,7 +23506,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   overflow-x: hidden;
 }
 
-#rhitqvdmxe .gt_column_spanner_outer {
+#hslyjnselq .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -23518,15 +23518,15 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 4px;
 }
 
-#rhitqvdmxe .gt_column_spanner_outer:first-child {
+#hslyjnselq .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#rhitqvdmxe .gt_column_spanner_outer:last-child {
+#hslyjnselq .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#rhitqvdmxe .gt_column_spanner {
+#hslyjnselq .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -23538,11 +23538,11 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   width: 100%;
 }
 
-#rhitqvdmxe .gt_spanner_row {
+#hslyjnselq .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#rhitqvdmxe .gt_group_heading {
+#hslyjnselq .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -23568,7 +23568,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   text-align: left;
 }
 
-#rhitqvdmxe .gt_empty_group_heading {
+#hslyjnselq .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -23583,15 +23583,15 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   vertical-align: middle;
 }
 
-#rhitqvdmxe .gt_from_md > :first-child {
+#hslyjnselq .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#rhitqvdmxe .gt_from_md > :last-child {
+#hslyjnselq .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#rhitqvdmxe .gt_row {
+#hslyjnselq .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -23610,7 +23610,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   overflow-x: hidden;
 }
 
-#rhitqvdmxe .gt_stub {
+#hslyjnselq .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -23623,7 +23623,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#rhitqvdmxe .gt_stub_row_group {
+#hslyjnselq .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -23637,15 +23637,15 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   vertical-align: top;
 }
 
-#rhitqvdmxe .gt_row_group_first td {
+#hslyjnselq .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#rhitqvdmxe .gt_row_group_first th {
+#hslyjnselq .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#rhitqvdmxe .gt_summary_row {
+#hslyjnselq .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -23655,16 +23655,16 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#rhitqvdmxe .gt_first_summary_row {
+#hslyjnselq .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#rhitqvdmxe .gt_first_summary_row.thick {
+#hslyjnselq .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#rhitqvdmxe .gt_last_summary_row {
+#hslyjnselq .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -23674,7 +23674,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-bottom-color: #D3D3D3;
 }
 
-#rhitqvdmxe .gt_grand_summary_row {
+#hslyjnselq .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -23684,7 +23684,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#rhitqvdmxe .gt_first_grand_summary_row {
+#hslyjnselq .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -23694,7 +23694,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-top-color: #D3D3D3;
 }
 
-#rhitqvdmxe .gt_last_grand_summary_row_top {
+#hslyjnselq .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -23704,11 +23704,11 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-bottom-color: #D3D3D3;
 }
 
-#rhitqvdmxe .gt_striped {
+#hslyjnselq .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#rhitqvdmxe .gt_table_body {
+#hslyjnselq .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -23717,7 +23717,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-bottom-color: #D3D3D3;
 }
 
-#rhitqvdmxe .gt_footnotes {
+#hslyjnselq .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -23731,7 +23731,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-right-color: #D3D3D3;
 }
 
-#rhitqvdmxe .gt_footnote {
+#hslyjnselq .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -23740,7 +23740,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#rhitqvdmxe .gt_sourcenotes {
+#hslyjnselq .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -23754,7 +23754,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-right-color: #D3D3D3;
 }
 
-#rhitqvdmxe .gt_sourcenote {
+#hslyjnselq .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -23762,72 +23762,72 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#rhitqvdmxe .gt_left {
+#hslyjnselq .gt_left {
   text-align: left;
 }
 
-#rhitqvdmxe .gt_center {
+#hslyjnselq .gt_center {
   text-align: center;
 }
 
-#rhitqvdmxe .gt_right {
+#hslyjnselq .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#rhitqvdmxe .gt_font_normal {
+#hslyjnselq .gt_font_normal {
   font-weight: normal;
 }
 
-#rhitqvdmxe .gt_font_bold {
+#hslyjnselq .gt_font_bold {
   font-weight: bold;
 }
 
-#rhitqvdmxe .gt_font_italic {
+#hslyjnselq .gt_font_italic {
   font-style: italic;
 }
 
-#rhitqvdmxe .gt_super {
+#hslyjnselq .gt_super {
   font-size: 65%;
 }
 
-#rhitqvdmxe .gt_footnote_marks {
+#hslyjnselq .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#rhitqvdmxe .gt_asterisk {
+#hslyjnselq .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#rhitqvdmxe .gt_indent_1 {
+#hslyjnselq .gt_indent_1 {
   text-indent: 5px;
 }
 
-#rhitqvdmxe .gt_indent_2 {
+#hslyjnselq .gt_indent_2 {
   text-indent: 10px;
 }
 
-#rhitqvdmxe .gt_indent_3 {
+#hslyjnselq .gt_indent_3 {
   text-indent: 15px;
 }
 
-#rhitqvdmxe .gt_indent_4 {
+#hslyjnselq .gt_indent_4 {
   text-indent: 20px;
 }
 
-#rhitqvdmxe .gt_indent_5 {
+#hslyjnselq .gt_indent_5 {
   text-indent: 25px;
 }
 
-#rhitqvdmxe .katex-display {
+#hslyjnselq .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#rhitqvdmxe div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#hslyjnselq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -23890,23 +23890,23 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
 <h3 class="anchored" data-anchor-id="canonical-option-costs-detect-act-restrict">Canonical option costs (Detect · Act · Restrict)</h3>
 <div class="cell">
 <div class="cell-output-display">
-<div id="mzhuvoqvcw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#mzhuvoqvcw table {
+<div id="pchbblxvht" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#pchbblxvht table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#mzhuvoqvcw thead, #mzhuvoqvcw tbody, #mzhuvoqvcw tfoot, #mzhuvoqvcw tr, #mzhuvoqvcw td, #mzhuvoqvcw th {
+#pchbblxvht thead, #pchbblxvht tbody, #pchbblxvht tfoot, #pchbblxvht tr, #pchbblxvht td, #pchbblxvht th {
   border-style: none;
 }
 
-#mzhuvoqvcw p {
+#pchbblxvht p {
   margin: 0;
   padding: 0;
 }
 
-#mzhuvoqvcw .gt_table {
+#pchbblxvht .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -23932,12 +23932,12 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-left-color: #D3D3D3;
 }
 
-#mzhuvoqvcw .gt_caption {
+#pchbblxvht .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#mzhuvoqvcw .gt_title {
+#pchbblxvht .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -23949,7 +23949,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-bottom-width: 0;
 }
 
-#mzhuvoqvcw .gt_subtitle {
+#pchbblxvht .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -23961,7 +23961,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-top-width: 0;
 }
 
-#mzhuvoqvcw .gt_heading {
+#pchbblxvht .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -23973,13 +23973,13 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-right-color: #D3D3D3;
 }
 
-#mzhuvoqvcw .gt_bottom_border {
+#pchbblxvht .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#mzhuvoqvcw .gt_col_headings {
+#pchbblxvht .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -23994,7 +23994,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-right-color: #D3D3D3;
 }
 
-#mzhuvoqvcw .gt_col_heading {
+#pchbblxvht .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -24014,7 +24014,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   overflow-x: hidden;
 }
 
-#mzhuvoqvcw .gt_column_spanner_outer {
+#pchbblxvht .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -24026,15 +24026,15 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 4px;
 }
 
-#mzhuvoqvcw .gt_column_spanner_outer:first-child {
+#pchbblxvht .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#mzhuvoqvcw .gt_column_spanner_outer:last-child {
+#pchbblxvht .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#mzhuvoqvcw .gt_column_spanner {
+#pchbblxvht .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -24046,11 +24046,11 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   width: 100%;
 }
 
-#mzhuvoqvcw .gt_spanner_row {
+#pchbblxvht .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#mzhuvoqvcw .gt_group_heading {
+#pchbblxvht .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -24076,7 +24076,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   text-align: left;
 }
 
-#mzhuvoqvcw .gt_empty_group_heading {
+#pchbblxvht .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -24091,15 +24091,15 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   vertical-align: middle;
 }
 
-#mzhuvoqvcw .gt_from_md > :first-child {
+#pchbblxvht .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#mzhuvoqvcw .gt_from_md > :last-child {
+#pchbblxvht .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#mzhuvoqvcw .gt_row {
+#pchbblxvht .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -24118,7 +24118,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   overflow-x: hidden;
 }
 
-#mzhuvoqvcw .gt_stub {
+#pchbblxvht .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -24131,7 +24131,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#mzhuvoqvcw .gt_stub_row_group {
+#pchbblxvht .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -24145,15 +24145,15 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   vertical-align: top;
 }
 
-#mzhuvoqvcw .gt_row_group_first td {
+#pchbblxvht .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#mzhuvoqvcw .gt_row_group_first th {
+#pchbblxvht .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#mzhuvoqvcw .gt_summary_row {
+#pchbblxvht .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -24163,16 +24163,16 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#mzhuvoqvcw .gt_first_summary_row {
+#pchbblxvht .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#mzhuvoqvcw .gt_first_summary_row.thick {
+#pchbblxvht .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#mzhuvoqvcw .gt_last_summary_row {
+#pchbblxvht .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -24182,7 +24182,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-bottom-color: #D3D3D3;
 }
 
-#mzhuvoqvcw .gt_grand_summary_row {
+#pchbblxvht .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -24192,7 +24192,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#mzhuvoqvcw .gt_first_grand_summary_row {
+#pchbblxvht .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -24202,7 +24202,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-top-color: #D3D3D3;
 }
 
-#mzhuvoqvcw .gt_last_grand_summary_row_top {
+#pchbblxvht .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -24212,11 +24212,11 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-bottom-color: #D3D3D3;
 }
 
-#mzhuvoqvcw .gt_striped {
+#pchbblxvht .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#mzhuvoqvcw .gt_table_body {
+#pchbblxvht .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -24225,7 +24225,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-bottom-color: #D3D3D3;
 }
 
-#mzhuvoqvcw .gt_footnotes {
+#pchbblxvht .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -24239,7 +24239,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-right-color: #D3D3D3;
 }
 
-#mzhuvoqvcw .gt_footnote {
+#pchbblxvht .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -24248,7 +24248,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#mzhuvoqvcw .gt_sourcenotes {
+#pchbblxvht .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -24262,7 +24262,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-right-color: #D3D3D3;
 }
 
-#mzhuvoqvcw .gt_sourcenote {
+#pchbblxvht .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -24270,72 +24270,72 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#mzhuvoqvcw .gt_left {
+#pchbblxvht .gt_left {
   text-align: left;
 }
 
-#mzhuvoqvcw .gt_center {
+#pchbblxvht .gt_center {
   text-align: center;
 }
 
-#mzhuvoqvcw .gt_right {
+#pchbblxvht .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#mzhuvoqvcw .gt_font_normal {
+#pchbblxvht .gt_font_normal {
   font-weight: normal;
 }
 
-#mzhuvoqvcw .gt_font_bold {
+#pchbblxvht .gt_font_bold {
   font-weight: bold;
 }
 
-#mzhuvoqvcw .gt_font_italic {
+#pchbblxvht .gt_font_italic {
   font-style: italic;
 }
 
-#mzhuvoqvcw .gt_super {
+#pchbblxvht .gt_super {
   font-size: 65%;
 }
 
-#mzhuvoqvcw .gt_footnote_marks {
+#pchbblxvht .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#mzhuvoqvcw .gt_asterisk {
+#pchbblxvht .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#mzhuvoqvcw .gt_indent_1 {
+#pchbblxvht .gt_indent_1 {
   text-indent: 5px;
 }
 
-#mzhuvoqvcw .gt_indent_2 {
+#pchbblxvht .gt_indent_2 {
   text-indent: 10px;
 }
 
-#mzhuvoqvcw .gt_indent_3 {
+#pchbblxvht .gt_indent_3 {
   text-indent: 15px;
 }
 
-#mzhuvoqvcw .gt_indent_4 {
+#pchbblxvht .gt_indent_4 {
   text-indent: 20px;
 }
 
-#mzhuvoqvcw .gt_indent_5 {
+#pchbblxvht .gt_indent_5 {
   text-indent: 25px;
 }
 
-#mzhuvoqvcw .katex-display {
+#pchbblxvht .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#mzhuvoqvcw div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#pchbblxvht div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -24672,7 +24672,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
 <td style="text-align: left;"><strong>S1 + S2 (Surveillance MVP)</strong></td>
 <td style="text-align: right;"><strong>~R117k</strong></td>
 <td style="text-align: right;"><strong>0.189 (~19 %)</strong></td>
-<td style="text-align: right;"><strong>+14 pp</strong></td>
+<td style="text-align: right;"><strong>+14.1 pp</strong></td>
 <td style="text-align: left;"><strong>12 weeks</strong></td>
 </tr>
 <tr class="odd">
