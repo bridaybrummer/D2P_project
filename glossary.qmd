@@ -38,7 +38,7 @@ This glossary translates the surveillance, clinical, and health-economics jargon
 
 **Notifiable Medical Condition (NMC).** A condition that doctors and labs are legally required to report to the Department of Health. Pesticide poisoning is on this list. NICD runs the system.
 
-**Hotspot.** An unusual cluster of cases — too many in one place, one time, or one product. Detecting hotspots quickly is the main job of surveillance.
+**Case detection.** Getting a true pesticide-poisoning case into the surveillance system (NMC, NHLS LIS or PIH dataset) so it can be acted on. Improving the share of true cases captured is the main job of surveillance.
 
 **Sentinel surveillance.** Instead of trying to capture every case nationally, you pick a small number of well-chosen sites (usually tertiary hospitals) and collect **richer, more reliable** data from them. Trades coverage for depth. This is what **Option 6** does.
 
@@ -64,7 +64,7 @@ This glossary translates the surveillance, clinical, and health-economics jargon
 
 **DALRRD** — Department of Agriculture, Land Reform and Rural Development. Regulates pesticide registration and product sales.
 
-**EHP** — Environmental Health Practitioner. Local-government public-health staff who do the field investigations when a hotspot is flagged.
+**EHP** — Environmental Health Practitioner. Local-government public-health staff who do the field investigations when a notification is received.
 
 ---
 
@@ -86,7 +86,7 @@ This glossary translates the surveillance, clinical, and health-economics jargon
 
 **POPIA** — Protection of Personal Information Act (2013). South Africa's data-protection law. All inter-agency feeds in this project share **de-identified, aggregated** data (no names, ID numbers, or contact details) to stay within POPIA.
 
-**SOP** — Standard Operating Procedure. A written, repeatable instruction for staff (e.g. "when an EHP receives a cluster alert, do X, Y, Z within 24 hours"). The status-quo EHP→DALRRD referral is **not** governed by an SOP, which is the gap Option 2 closes.
+**SOP** — Standard Operating Procedure. A written, repeatable instruction for staff (e.g. "when an EHP receives a notification, do X, Y, Z within 24 hours"). The status-quo EHP→DALRRD referral is **not** governed by an SOP, which is the gap Option 2 closes.
 
 **Section 90, National Health Act (2003).** The statutory clause that permits inter-agency data sharing for public-health purposes. Provides the legal basis for Options 1, 2 and 4 — **no new legislation is required**.
 
@@ -142,9 +142,9 @@ A flat 12.5% CFR applied to the total burden gives **~1,460 deaths**; the strati
 
 **Decision tree.** A model that maps out the consequences of choosing each option, weighted by probabilities. Used here to compare Status Quo, individual Options 1–6, and the Full Package. Built in **Amua**.
 
-**Detection probability ($d_i$).** The proportion of true hotspots that this option catches. Status quo ≈ 0.45; Full Package ≈ 0.83.
+**Detection probability ($d_i$).** The proportion of true pesticide-poisoning cases that this option catches and enters into the surveillance system. Status-quo per-case d ≈ 0.048 (1,013 NMC notifications ÷ ~20,960 implied true cases/yr); Surveillance MVP ≈ 0.19.
 
-**Response efficacy ($\eta$).** Of the hotspots that are detected and investigated, the proportion where the response actually prevents further cases. Base case **0.30**; sensitivity range **0.15–0.50**.
+**Response efficacy ($\eta$).** Of the cases that are detected and investigated, the proportion where the response actually prevents further cases. Base case **0.30**; sensitivity range **0.15–0.50**.
 
 **Avoided burden.**
 $$C_{\text{avoided},i} \;=\; C_{\text{burden}} \cdot d_i \cdot \eta$$
@@ -174,7 +174,7 @@ The policy brief uses the current numbering below. Earlier drafts had a separate
 
 **Option 1 — Activate the NHLS–NMC data feed (IT implementation).** The NHLS↔NICD MOU for BChE data sharing already exists. What is missing is the working **LIS-to-NMC pipe** (HL7 / flat-file). De-identified, aggregated severe-BChE cases flow into NMC for trend analysis.
 
-**Option 2 — NICD → DALRRD poisoning intelligence feed.** Quarterly NICD/NMC brief (plus ad-hoc cluster alerts) flowing to DALRRD so that pesticide registration, labelling and inspectorate priorities are informed by real-world morbidity and mortality. **Direction is NICD → DALRRD**, in response to DALRRD's formal request.
+**Option 2 — NICD → DALRRD poisoning intelligence feed.** Quarterly NICD/NMC brief (plus ad-hoc case-spike alerts) flowing to DALRRD so that pesticide registration, labelling and inspectorate priorities are informed by real-world morbidity and mortality. **Direction is NICD → DALRRD**, in response to DALRRD's formal request.
 
 **Option 3a — BChE auto-notification (capability exists).** NHLS LIS automatically issues an NMC notification within 24 hours of a severe BChE result (<50% of normal). The laboratory capability already exists (~9,000 tests/year); only the auto-notification rule needs configuring. Single biggest fast-win detection gain.
 

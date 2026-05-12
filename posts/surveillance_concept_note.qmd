@@ -26,7 +26,7 @@ This concept note outlines a comprehensive framework for improving pesticide poi
 
 1. **Links existing data streams** without creating new parallel systems
 2. **Automates notification workflows** to reduce reporting delays
-3. **Enables hotspot detection** through spatial and temporal clustering analysis
+3. **Enables spatial-temporal signal detection** on integrated case data
 4. **Supports rapid public health response** via clear escalation protocols
 
 ::: {.callout-note}
@@ -90,7 +90,7 @@ From 2020–2024:
 
 - **~3,450 NMC notifications** were filed, but at least **~10,000 severe BChE inhibitions** were detected in NHLS labs
 - **Gap of ~6,550 cases** that should have triggered public health investigation
-- **No clustering analysis** to identify hotspots (e.g., contaminated food sources, illegal pesticide sales)
+- **No spatial-temporal pattern analysis** to identify case concentrations (e.g., contaminated food sources, illegal pesticide sales)
 
 ## Proposed Framework
 
@@ -98,7 +98,7 @@ From 2020–2024:
 
 1. **Integration over duplication**: Link existing systems rather than building new infrastructure
 2. **Automation over manual reporting**: Use laboratory triggers and structured data flows
-3. **Timeliness over completeness**: Prioritize rapid detection for actionable hotspots
+3. **Timeliness over completeness**: Prioritize rapid detection of actionable cases
 4. **Scalability**: Start with pilot provinces, expand based on evidence
 
 ### System Architecture
@@ -126,7 +126,7 @@ flowchart TB
     L --> M[Quarterly summary to NICD]
     M --> J
     
-    J --> N{Cluster detected?}
+    J --> N{Concentration of cases<br/>in space or time?}
     N -->|Yes| O[Alert provincial team]
     N -->|No| P[Routine monitoring]
     
@@ -198,11 +198,11 @@ PIH call log → Quarterly extraction → Excel/CSV → Email to NICD → Manual
 
 **Cost:** ~R80,000/year (legal review, MOU development, ongoing liaison)
 
-#### 4. Hotspot Detection Algorithm
+#### 4. Spatial-Temporal Signal Detection
 
 **Method:**
 
-Use **space-time permutation scan statistic** (SaTScan software) to detect clusters of:
+Use **space-time permutation scan statistic** (SaTScan software) on integrated case data to detect concentrations of cases:
 
 - Higher-than-expected case counts
 - In defined geographic areas (district or sub-district level)
@@ -212,14 +212,14 @@ Use **space-time permutation scan statistic** (SaTScan software) to detect clust
 
 - Run weekly on aggregated case data (NMC + BChE auto-notifications + PIH reports)
 - Generate alerts when:
-  - Relative risk > 2.0 (cluster has 2× expected cases)
+  - Relative risk > 2.0 (signal area has 2× expected cases)
   - P-value < 0.05
-  - Cluster includes ≥3 cases
+  - Signal includes ≥3 cases
 
 **Response protocol:**
 
 1. Alert sent to provincial surveillance officer
-2. Officer reviews cluster for plausibility (ruling out data artifacts)
+2. Officer reviews signal for plausibility (ruling out data artifacts)
 3. If plausible, initiate field investigation within **72 hours**
 
 **Cost:** Included in Option 5 (~R40,000/year for analyst time)
@@ -234,14 +234,14 @@ Use **space-time permutation scan statistic** (SaTScan software) to detect clust
 
 1. Configure NHLS auto-notifications for pilot provinces
 2. Establish PIH quarterly reporting workflow
-3. Train provincial surveillance officers on hotspot response
+3. Train provincial surveillance officers on signal response
 4. Develop standard operating procedures (SOPs)
 
 **Milestones:**
 
 - Month 2: First auto-notification sent
 - Month 3: First PIH quarterly report delivered
-- Month 4: First cluster alert (if any)
+- Month 4: First signal alert (if any)
 - Month 6: Pilot evaluation and refinement
 
 ### Phase 2: National Rollout (Months 7–12)
@@ -250,13 +250,13 @@ Use **space-time permutation scan statistic** (SaTScan software) to detect clust
 
 1. Expand NHLS auto-notifications to all provinces
 2. Finalize MOUs for inter-agency data sharing
-3. Deploy SaTScan algorithm for weekly cluster detection
+3. Deploy SaTScan algorithm for weekly spatial-temporal signal detection
 4. Conduct national training for provincial teams
 
 **Milestones:**
 
 - Month 9: All provinces receiving auto-notifications
-- Month 10: First national clustering analysis
+- Month 10: First national spatial-temporal pattern analysis
 - Month 12: System fully operational
 
 ### Phase 3: Evaluation (Months 13–24)
@@ -265,9 +265,9 @@ Use **space-time permutation scan statistic** (SaTScan software) to detect clust
 
 1. **Timeliness**: Median time from exposure to notification
 2. **Completeness**: % of severe BChE inhibitions with corresponding NMC notifications
-3. **Sensitivity**: % of known outbreaks detected by cluster algorithm
-4. **Response**: % of clusters investigated within 72 hours
-5. **Impact**: Change in hospitalization rates in hotspot areas
+3. **Sensitivity**: % of known outbreaks detected by the signal-detection algorithm
+4. **Response**: % of signals investigated within 72 hours
+5. **Impact**: Change in hospitalization rates in identified signal areas
 
 ## Governance and Oversight
 
@@ -275,7 +275,7 @@ Use **space-time permutation scan statistic** (SaTScan software) to detect clust
 
 | Agency | Role |
 |:-------|:-----|
-| **NICD** | Lead surveillance agency; cluster detection; national coordination |
+| **NICD** | Lead surveillance agency; spatial-temporal signal detection; national coordination |
 | **NHLS** | Laboratory testing; auto-notification configuration; quality assurance |
 | **PIH** | Clinical toxicology advice; quarterly reporting |
 | **Provincial DoH** | Field investigation; source control; environmental sampling |
@@ -297,7 +297,7 @@ Use **space-time permutation scan statistic** (SaTScan software) to detect clust
 | NHLS auto-notifications | 55,000 | IT staff time for LIS configuration |
 | PIH quarterly reports | 62,000 | Analyst time for data extraction |
 | Inter-agency MOUs | 80,000 | Legal review and liaison |
-| Cluster detection | 40,000 | Analyst time for SaTScan runs |
+| Spatial-temporal signal detection | 40,000 | Analyst time for SaTScan runs |
 | **Total (Full Package)** | **237,000** | **All four options combined** |
 
 : Estimated annual costs for integrated surveillance framework {.striped .hover}
@@ -317,7 +317,7 @@ This framework assumes:
 **Risks:**
 
 - **Low uptake of BChE testing**: If clinicians don't order tests, laboratory triggers won't fire
-- **Data quality issues**: Incomplete or incorrect demographic data may hinder hotspot detection
+- **Data quality issues**: Incomplete or incorrect demographic data may hinder spatial-temporal signal detection
 - **Response capacity constraints**: Provincial teams may lack vehicles, sampling equipment, or staff time
 :::
 

@@ -21,11 +21,11 @@ This document describes the **decision tree model** used to compare five policy 
 ::: {.callout-note}
 ## Purpose of This Model
 
-**Question:** Which combination of short-term institutional actions will most efficiently improve hotspot detection and response?
+**Question:** Which combination of short-term institutional actions will most efficiently improve **per-case** pesticide-poisoning detection and response?
 
 **Approach:** Compare 6 strategies (status quo + 5 options) on two dimensions:
 
-1. **Effectiveness:** Number of hotspots detected and responded to (out of 10/year)
+1. **Effectiveness:** Per-case detection probability — share of the implied true burden (~20,960 cases/yr, StatsSA-anchored) that the surveillance system actually sees
 2. **Cost:** Annual implementation and operational costs (ZAR)
 
 **Output:** Cost-effectiveness ratios to inform policy prioritization
@@ -49,13 +49,13 @@ flowchart TD
     A --> G[Option 5: Provincial coordination]
     A --> H[Full Package: All options]
     
-    E --> I{Is hotspot detected?}
+    E --> I{Is case detected?}
     I -->|Yes| J[Response initiated]
-    I -->|No| K[Missed hotspot]
+    I -->|No| K[Missed case]
     
     J --> L{Is response successful?}
-    L -->|Yes| M[Hotspot controlled]
-    L -->|No| N[Hotspot persists]
+    L -->|Yes| M[Source / exposure controlled]
+    L -->|No| N[Exposure persists]
     
     style A fill:#f9f,stroke:#333
     style E fill:#9f9,stroke:#333
@@ -89,12 +89,12 @@ library(tidyverse)
 
 baseline_params <- tribble(
   ~Parameter, ~Value, ~Source,
-  "Estimated annual hotspots", "10", "Expert estimate (NICD)",
-  "Hotspots detected (status quo)", "4.5 (45%)", "NMC data 2020-2024",
+  "Implied true annual burden (mid-CFR)", "~20,960", "StatsSA MACOD 2023 ÷ 0.125",
+  "Status-quo per-case detection (P_detect)", "0.048 (~5%)", "1,013 NMC × 0.125 ÷ 2,620 StatsSA deaths",
   "Severe BChE inhibitions/year", "~1,779", "NHLS LIS 2023",
   "Total BChE tests/year", "~10,626", "NHLS LIS 2023",
   "NMC notifications/year", "~1,013", "NICD NMC Annual Report 2023",
-  "Detection gap", "~987 cases (49%)", "Calculated"
+  "Detection gap", "~19,947 cases (~95%)", "Implied burden − NMC notifications"
 )
 
 baseline_params %>%
@@ -115,21 +115,21 @@ baseline_params %>%
 
 #### Effectiveness Parameters
 
-Each option has an estimated **probability of detecting** a hotspot:
+Each option has an estimated **per-case detection probability** — the share of true annual cases captured into the surveillance system:
 
 ```{r}
 #| label: tbl-effectiveness
 #| tbl-cap: "Effectiveness parameters for each option"
 
 effectiveness_params <- tribble(
-  ~Option, ~Detection_Probability, ~Hotspots_Detected, ~Rationale,
-  "Status Quo", "0.45", "4.5 / 10", "Current NMC system performance",
-  "Option 1: NHLS MOU", "0.52", "5.2 / 10", "Monthly aggregated BChE data",
-  "Option 2: DALRRD data", "0.58", "5.8 / 10", "Pesticide product linkage",
-  "Option 3: BChE auto-notify", "0.67", "6.7 / 10", "24-hour lab-triggered alerts",
-  "Option 4: PIH reports", "0.61", "6.1 / 10", "Quarterly clinical toxicology summaries",
-  "Option 5: Provincial coordination", "0.74*", "7.4 / 10", "Rapid field investigation (*requires Options 3 or 4)",
-  "Full Package", "0.83", "8.3 / 10", "All four options combined (synergistic)"
+  ~Option, ~Detection_Probability, ~Cases_Detected, ~Rationale,
+  "Status Quo", "0.048", "~1,013 / 20,960", "NMC-only, StatsSA-anchored",
+  "Option 1: NHLS MOU (legacy)", "0.052 (deprecated)", "—", "Now operational; no longer an active option",
+  "Option 2: DALRRD data (legacy)", "0.058 (deprecated)", "—", "Coordination scope; see coordination brief",
+  "Option 3 / S2: BChE auto-notify", "0.133", "~2,792 / 20,960", "Adds 1,779 severe BChE/yr to NMC stream",
+  "Option 4 / S1: PIH MVD + dashboard", "0.104", "~2,171 / 20,960", "Adds 1,158 clinician calls/yr to NMC stream",
+  "Option 5: Provincial coordination (legacy)", "—", "—", "Response-side; see coordination brief",
+  "Surveillance MVP (S1 + S2)", "0.189", "~3,950 / 20,960", "Both streams combined; CSV-anchored"
 )
 
 effectiveness_params %>%
@@ -143,8 +143,8 @@ effectiveness_params %>%
     columns = Option
   ) %>%
   tab_footnote(
-    footnote = "Option 5 requires at least one data-generation option (3 or 4) to function",
-    locations = cells_body(columns = Option, rows = 6)
+    footnote = "Legacy options 1, 2 and 5 fall outside the active surveillance MVP — retained here for v1 back-compat",
+    locations = cells_body(columns = Option, rows = c(2, 3, 6))
   )
 ```
 
@@ -187,20 +187,17 @@ cost_params %>%
 
 ```{r}
 #| label: fig-base-case
-#| fig-cap: "Cost-effectiveness plane: Annual cost vs. hotspots detected"
+#| fig-cap: "Cost-effectiveness plane: Annual cost vs. per-case detection probability"
 #| fig-width: 8
 #| fig-height: 6
 
-# Create base case results data
+# Create base case results data (per-case P_detect scale, anchored to StatsSA mid-burden 20,960)
 base_case <- tribble(
   ~strategy_name, ~strategy_code, ~cost_annual, ~effectiveness,
-  "Status Quo", "SQ", 0, 4.5,
-  "Option 1: NHLS MOU", "O1", 40000, 5.2,
-  "Option 2: DALRRD data", "O2", 40000, 5.8,
-  "Option 3: BChE auto-notify", "O3", 55000, 6.7,
-  "Option 4: PIH reports", "O4", 62000, 6.1,
-  "Option 5: Provincial coordination", "O5", 40000, 7.4,
-  "Full Package", "PKG", 237000, 8.3
+  "Status Quo", "SQ", 0, 0.048,
+  "S1: PIH MVD + dashboard", "S1", 62000, 0.104,
+  "S2: BChE auto-notify", "S2", 55000, 0.133,
+  "Surveillance MVP (S1+S2)", "MVP", 117000, 0.189
 )
 
 # Create cost-effectiveness plot
@@ -211,13 +208,14 @@ ggplot(base_case, aes(x = cost_annual, y = effectiveness)) +
                linetype = "dashed", color = "red", alpha = 0.5) +
   scale_color_brewer(palette = "Set2") +
   scale_x_continuous(labels = scales::dollar_format(prefix = "R", suffix = "", scale = 1)) +
-  scale_y_continuous(limits = c(4, 9), breaks = seq(4, 9, 1)) +
+  scale_y_continuous(limits = c(0, 0.25), breaks = seq(0, 0.25, 0.05),
+                     labels = scales::percent_format(accuracy = 1)) +
   labs(
     title = "Cost-Effectiveness of Surveillance Policy Options",
-    subtitle = "Base-case scenario (all parameters at expected values)",
+    subtitle = "Base-case scenario (per-case detection, StatsSA-anchored)",
     x = "Annual Cost (ZAR)",
-    y = "Hotspots Detected and Responded To (out of 10/year)",
-    caption = "SQ = Status Quo, O1-O5 = Options 1-5, PKG = Full Package\nDashed line = Status quo performance"
+    y = "Per-case detection probability (P_detect)",
+    caption = "SQ = Status Quo, S1 = PIH MVD + dashboard, S2 = BChE auto-notify, MVP = S1+S2\nDashed line = Status quo performance"
   ) +
   theme_minimal() +
   theme(
@@ -229,30 +227,29 @@ ggplot(base_case, aes(x = cost_annual, y = effectiveness)) +
 
 ### Incremental Cost-Effectiveness Ratios (ICERs)
 
-The **incremental cost-effectiveness ratio (ICER)** tells us how much it costs to detect **one additional hotspot** compared to the next-best option.
+The **incremental cost-effectiveness ratio (ICER)** tells us how much it costs to detect **one additional percentage-point of true cases** compared to the next-best option.
 
 ```{r}
 #| label: tbl-icer
 #| tbl-cap: "Incremental cost-effectiveness analysis"
 
 icer_table <- tribble(
-  ~Strategy, ~Cost, ~Effectiveness, ~Incremental_Cost, ~Incremental_Effect, ~ICER,
-  "Status Quo", "R0", "4.5", "—", "—", "—",
-  "Option 1", "R40,000", "5.2", "R40,000", "0.7", "R57,143/hotspot",
-  "Option 4", "R62,000", "6.1", "R22,000", "0.9", "R24,444/hotspot",
-  "Option 3", "R55,000", "6.7", "-R7,000*", "0.6", "Dominates Option 4",
-  "Full Package", "R237,000", "8.3", "R182,000", "1.6", "R113,750/hotspot"
+  ~Strategy, ~Cost, ~P_detect, ~Incremental_Cost, ~Incremental_pp, ~ICER,
+  "Status Quo", "R0", "0.048", "—", "—", "—",
+  "S1: PIH MVD + dashboard", "R62,000", "0.104", "R62,000", "+5.6 pp", "R11,071 per pp",
+  "S2: BChE auto-notify", "R55,000", "0.133", "−R7,000*", "+2.9 pp", "Dominates S1",
+  "Surveillance MVP (S1+S2)", "R117,000", "0.189", "R62,000", "+5.6 pp", "R11,071 per pp"
 )
 
 icer_table %>%
   gt() %>%
   tab_header(
     title = "Incremental Cost-Effectiveness Analysis",
-    subtitle = "Strategies ranked by increasing effectiveness"
+    subtitle = "Strategies ranked by increasing per-case detection probability"
   ) %>%
   tab_footnote(
-    footnote = "Option 3 is cheaper than Option 4 but more effective — Option 4 is 'dominated'",
-    locations = cells_body(columns = Incremental_Cost, rows = 4)
+    footnote = "S2 is cheaper than S1 and more effective — S1 alone is 'dominated', though both are recommended together as the MVP",
+    locations = cells_body(columns = Incremental_Cost, rows = 3)
   ) %>%
   tab_style(
     style = cell_fill(color = "lightgreen"),
@@ -263,9 +260,9 @@ icer_table %>%
 ::: {.callout-tip}
 ## Interpretation
 
-- **Option 3 (BChE auto-notify) dominates Option 4** — it's both cheaper and more effective
-- **Best value:** Option 3 costs ~R57,000 per additional hotspot detected (compared to status quo)
-- **Full Package:** Costs ~R114,000 per additional hotspot — still reasonable for comprehensive coverage
+- **S2 (BChE auto-notify) dominates S1** in isolation — it costs less and adds more detection. Both are recommended together (MVP) because they catch *different* patients (BChE-tested vs PIH-called).
+- **Best value:** ~R11,000 per percentage-point of additional per-case detection.
+- **MVP:** Triples the share of true cases entering the surveillance system (0.048 → 0.189) for ~R117k/yr operating.
 :::
 
 ## Sensitivity Analysis
@@ -274,21 +271,21 @@ icer_table %>%
 
 We tested how results change when individual parameters vary:
 
-#### 1. Detection Probability for Option 3 (BChE Auto-Notify)
+#### 1. Detection Probability for S2 (BChE Auto-Notify)
 
 ```{r}
 #| label: fig-sensitivity-detection
-#| fig-cap: "Tornado diagram: Impact of varying detection probability for Option 3"
+#| fig-cap: "Tornado diagram: Impact of varying detection probability for S2"
 #| fig-width: 8
 #| fig-height: 4
 
-# Simulate tornado diagram data
+# Simulate tornado diagram data (per-case P_detect scale)
 tornado_data <- tribble(
   ~Parameter, ~Low_Value, ~High_Value, ~Low_Effectiveness, ~High_Effectiveness,
-  "Detection probability", "0.50", "0.85", 5.0, 8.5,
-  "Annual cost", "R27,500", "R110,000", 6.7, 6.7,
-  "Baseline hotspots/year", "7", "15", 4.7, 12.8,
-  "Response success rate", "0.60", "0.95", 6.0, 7.5
+  "Detection probability (S2)", "0.10", "0.17", 0.10, 0.17,
+  "Annual cost (S2)", "R27,500", "R110,000", 0.133, 0.133,
+  "True burden (CFR 10%-15%)", "17,467", "26,200", 0.107, 0.160,
+  "Response efficacy (η)", "0.15", "0.50", 0.133, 0.133
 )
 
 # Create tornado plot
@@ -297,17 +294,18 @@ tornado_long <- tornado_data %>%
                names_to = "Scenario", values_to = "Effectiveness") %>%
   mutate(Scenario = if_else(Scenario == "Low_Effectiveness", "Low", "High"))
 
-ggplot(tornado_long, aes(y = reorder(Parameter, abs(Effectiveness - 6.7)))) +
+ggplot(tornado_long, aes(y = reorder(Parameter, abs(Effectiveness - 0.133)))) +
   geom_line(aes(x = Effectiveness, group = Parameter), size = 1.5, color = "steelblue") +
   geom_point(aes(x = Effectiveness, color = Scenario), size = 4) +
-  geom_vline(xintercept = 6.7, linetype = "dashed", color = "red", alpha = 0.5) +
+  geom_vline(xintercept = 0.133, linetype = "dashed", color = "red", alpha = 0.5) +
+  scale_x_continuous(labels = scales::percent_format(accuracy = 1)) +
   scale_color_manual(values = c("Low" = "#d32f2f", "High" = "#388e3c")) +
   labs(
-    title = "One-Way Sensitivity Analysis for Option 3",
-    subtitle = "Impact of parameter variation on hotspots detected",
-    x = "Hotspots Detected (out of 10-15/year)",
+    title = "One-Way Sensitivity Analysis for S2",
+    subtitle = "Impact of parameter variation on per-case detection probability",
+    x = "Per-case detection probability (P_detect)",
     y = "Parameter Varied",
-    caption = "Red line = Base-case result (6.7 hotspots)"
+    caption = "Red line = Base-case S2 result (P_detect = 0.133)"
   ) +
   theme_minimal() +
   theme(
@@ -318,8 +316,8 @@ ggplot(tornado_long, aes(y = reorder(Parameter, abs(Effectiveness - 6.7)))) +
 
 **Key findings:**
 
-- Model is **most sensitive** to baseline assumptions about total hotspots/year
-- Detection probability has moderate impact
+- Model is **most sensitive** to the StatsSA true-burden denominator (CFR bracket)
+- Detection probability variation has moderate impact within its plausible range
 - Cost variations don't affect effectiveness (as expected)
 
 #### 2. Probabilistic Sensitivity Analysis (PSA)
@@ -337,16 +335,16 @@ set.seed(2026)
 n_sims <- 1000  # Reduced for demonstration
 
 psa_results <- tibble(
-  strategy = rep(c("Status Quo", "Option 3", "Full Package"), each = n_sims),
+  strategy = rep(c("Status Quo", "S2 BChE auto-notify", "Surveillance MVP"), each = n_sims),
   cost = c(
     rnorm(n_sims, 0, 0),  # Status quo has no cost
-    rnorm(n_sims, 55000, 15000),  # Option 3
-    rnorm(n_sims, 237000, 50000)  # Full Package
+    rnorm(n_sims, 55000, 15000),  # S2
+    rnorm(n_sims, 117000, 25000)  # MVP
   ),
   effectiveness = c(
-    rnorm(n_sims, 4.5, 0.8),  # Status quo
-    rnorm(n_sims, 6.7, 1.2),  # Option 3
-    rnorm(n_sims, 8.3, 1.0)   # Full Package
+    rnorm(n_sims, 0.048, 0.010),  # Status quo
+    rnorm(n_sims, 0.133, 0.020),  # S2
+    rnorm(n_sims, 0.189, 0.025)   # MVP
   )
 ) %>%
   filter(cost >= 0, effectiveness >= 0)
@@ -356,11 +354,12 @@ ggplot(psa_results, aes(x = cost, y = effectiveness, color = strategy)) +
   stat_ellipse(level = 0.95, size = 1.2) +
   scale_color_brewer(palette = "Set1") +
   scale_x_continuous(labels = scales::dollar_format(prefix = "R", scale = 1)) +
+  scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
   labs(
     title = "Probabilistic Sensitivity Analysis (1000 Simulations)",
     subtitle = "95% confidence ellipses around base-case estimates",
     x = "Annual Cost (ZAR)",
-    y = "Hotspots Detected (out of 10/year)",
+    y = "Per-case detection probability (P_detect)",
     color = "Strategy"
   ) +
   theme_minimal() +
@@ -372,8 +371,8 @@ ggplot(psa_results, aes(x = cost, y = effectiveness, color = strategy)) +
 
 **Key findings:**
 
-- Option 3 and Full Package remain **superior to status quo** in >95% of simulations
-- Full Package has **narrower uncertainty** than Option 3 alone (redundancy reduces variance)
+- S2 and MVP remain **superior to status quo** in >95% of simulations
+- MVP has **narrower uncertainty** than S2 alone (two independent streams reduce variance)
 
 ### Scenario Analyses
 
@@ -391,10 +390,10 @@ Results:
 #| tbl-cap: "Pessimistic scenario results"
 
 pessimistic <- tribble(
-  ~Strategy, ~Cost, ~Effectiveness, ~Improvement_vs_SQ,
-  "Status Quo", "R0", "2.3", "—",
-  "Option 3", "R110,000", "3.4", "+48%",
-  "Full Package", "R474,000", "4.2", "+83%"
+  ~Strategy, ~Cost, ~P_detect, ~Improvement_vs_SQ,
+  "Status Quo", "R0", "0.024", "—",
+  "S2 BChE auto-notify", "R110,000", "0.067", "+4.3 pp",
+  "Surveillance MVP", "R234,000", "0.095", "+7.1 pp"
 )
 
 pessimistic %>%
@@ -425,10 +424,10 @@ Results:
 #| tbl-cap: "Optimistic scenario results"
 
 optimistic <- tribble(
-  ~Strategy, ~Cost, ~Effectiveness, ~Improvement_vs_SQ,
-  "Status Quo", "R0", "6.8", "—",
-  "Option 3", "R27,500", "10.0", "+47%",
-  "Full Package", "R118,500", "12.5", "+84%"
+  ~Strategy, ~Cost, ~P_detect, ~Improvement_vs_SQ,
+  "Status Quo", "R0", "0.072", "—",
+  "S2 BChE auto-notify", "R27,500", "0.200", "+12.8 pp",
+  "Surveillance MVP", "R58,500", "0.284", "+21.2 pp"
 )
 
 optimistic %>%
@@ -438,8 +437,8 @@ optimistic %>%
     subtitle = "Effectiveness increased 50%, costs halved"
   ) %>%
   tab_footnote(
-    footnote = "Near-perfect hotspot detection achievable under favorable conditions",
-    locations = cells_column_labels(columns = Effectiveness)
+    footnote = "Per-case detection up to ~28% achievable if all streams perform at upper bound",
+    locations = cells_column_labels(columns = P_detect)
   )
 ```
 
@@ -485,7 +484,7 @@ Model will be validated against **pilot data** (Q3 2026 – Q1 2027):
 1. **Placeholder parameters:** All values subject to revision based on pilot data
 2. **Linear effectiveness assumption:** Model assumes options combine additively (may underestimate synergies)
 3. **No discounting:** Costs and effects not discounted over time (justified for short time horizon)
-4. **No health outcomes:** Model tracks hotspots detected, not deaths/disabilities averted (future extension planned)
+4. **No health outcomes:** Model tracks per-case detection probability, not deaths/disabilities averted (future extension planned)
 5. **No equity analysis:** Model doesn't differentiate by age, sex, or socioeconomic status
 :::
 

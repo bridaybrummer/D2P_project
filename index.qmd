@@ -32,7 +32,7 @@ format:
 ::: {.feature-card}
 ### 1 · [Detect](posts/surveillance_policy.qmd)
 
-**Surveillance brief.** Close the gap between NMC, NHLS, and PIH so hotspots are seen in days, not weeks.
+**Surveillance brief.** Close the gap between NMC, NHLS, and PIH so cases are seen in days, not weeks.
 
 **MVP — R157k/year, +73 % detection, 12 weeks.**
 NHLS→NMC feed + BChE auto-notify + PIH dashboard/MVD.

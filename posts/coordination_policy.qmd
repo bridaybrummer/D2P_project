@@ -103,15 +103,15 @@ Add a referral form to NMC that auto-emails the DALRRD Pesticide Registrar/Inspe
 
 ### Option C3 — NICD→DALRRD poisoning intelligence feed *(★ recommended)*
 
-DALRRD has formally requested poisoning intelligence to inform registration, labelling, and inspectorate priorities. Output: a quarterly NICD brief by suspected product / geography / season, plus an ad-hoc cluster-alert channel. **Closes the regulator-feedback gap and gives DALRRD the evidence base for product-specific action (the explicit prerequisite for the [Terbufos brief](terbufos_policy.qmd) recommendation).** Annual cost: **~R40,000** (NICD analyst + DALRRD liaison), 12 weeks.
+DALRRD has formally requested poisoning intelligence to inform registration, labelling, and inspectorate priorities. Output: a quarterly NICD brief by suspected product / geography / season, plus an ad-hoc case-spike alert channel. **Closes the regulator-feedback gap and gives DALRRD the evidence base for product-specific action (the explicit prerequisite for the [Terbufos brief](terbufos_policy.qmd) recommendation).** Annual cost: **~R40,000** (NICD analyst + DALRRD liaison), 12 weeks.
 
 ### Option C4 — Auto-feedback to notifying clinician
 
-NMC sends the notifying clinician a quarterly case-status summary: outcome of EHP investigation, regulatory action taken, whether their case contributed to a detected cluster. Removes the "I notify into a black hole" disincentive. Annual cost: **~R20,000** (templating + email integration).
+NMC sends the notifying clinician a quarterly case-status summary: outcome of EHP investigation, regulatory action taken, whether their case contributed to a wider investigation. Removes the "I notify into a black hole" disincentive. Annual cost: **~R20,000** (templating + email integration).
 
 ### Option C5 — Joint KPI dashboard
 
-A small public dashboard tracking: median time from notification to EHP investigation; % of notifications with a recorded outcome; % of clusters with documented DALRRD action; % of notifying clinicians who received feedback. Co-owned by NICD, DALRRD, and provincial DoHs. Annual cost: **~R30,000**.
+A small public dashboard tracking: median time from notification to EHP investigation; % of notifications with a recorded outcome; % of cases with documented DALRRD action; % of notifying clinicians who received feedback. Co-owned by NICD, DALRRD, and provincial DoHs. Annual cost: **~R30,000**.
 
 ### Coordination Full Package (C1 + C2 + C3 + C4 + C5)
 
@@ -123,7 +123,7 @@ flowchart LR
     L[NHLS Laboratory<br/>BChE + Toxicology] -->|Auto-notify<br/>< 24h| D
     P[PIH<br/>Quarterly summary] -->|Minimum viable<br/>dataset| D
 
-    D -->|Cluster alert| E[Provincial EHP /<br/>Response Team]
+    D -->|Case-spike alert| E[Provincial EHP /<br/>Response Team]
     E -->|Structured<br/>referral| C[DALRRD<br/>Inspectorate]
     C -->|Enforcement /<br/>recall outcome| D
     E -->|Investigation<br/>outcome| D
@@ -276,12 +276,12 @@ Burden avoided is split by **who would otherwise have borne it**, so each agency
 |:----------|:------------|------------:|:--------------|
 | C1: NMC closure-of-loop field | NICD NMC team + NDoH circular | R30k | NMC schema change; EHP training |
 | C2: Structured DALRRD referral form on NMC | NICD + DALRRD Pesticide Registrar | R25k | DALRRD inbox + workflow |
-| C3: NICD→DALRRD intelligence feed | NICD analyst + DALRRD liaison | R40k | Quarterly brief template; cluster alert SOP |
+| C3: NICD→DALRRD intelligence feed | NICD analyst + DALRRD liaison | R40k | Quarterly brief template; case-spike alert SOP |
 | C4: Notifier auto-feedback | NICD NMC team | R20k | Email templating |
 | C5: Joint KPI dashboard | NICD + DALRRD + Provinces | R30k | KPI definitions; public hosting |
 | **Total** | NICD-led | **~R145k** | All within existing legal authority |
 
-**Institutional mechanism.** A **quarterly Joint Coordination Forum** (NICD chair; DALRRD, NHLS, PIH, and one rotating provincial DoH representative) reviews the KPI dashboard, signs off cluster-alert escalations, and resolves cross-departmental blockers. Mandated by joint NDoH–DALRRD Director-General circular. **No new legislation required.**
+**Institutional mechanism.** A **quarterly Joint Coordination Forum** (NICD chair; DALRRD, NHLS, PIH, and one rotating provincial DoH representative) reviews the KPI dashboard, signs off case-spike alert escalations, and resolves cross-departmental blockers. Mandated by joint NDoH–DALRRD Director-General circular. **No new legislation required.**
 
 **Risks and mitigations.**
 

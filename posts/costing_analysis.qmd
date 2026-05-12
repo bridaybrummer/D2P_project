@@ -29,7 +29,7 @@ This document provides **detailed cost estimates** for implementing and operatin
 
 **Pressure-tested whole-system cost** (including downstream hospital toxicology workload, lab test volume, Environmental Health Practitioner (EHP) investigations, and agricultural enforcement): **~R1.55 million/year** (range: R0.9–2.7 million).
 
-**Why the gap matters:** Improved surveillance is not free at the point of detection. Every BChE auto-notification triggers a clinical work-up, a confirmatory test, an EHP follow-up, and — for hotspots — DALRRD enforcement. The narrow figure understates true budget impact by **~6×**. Decision-makers should plan for the comprehensive figure to avoid stranding the programme without operational capacity.
+**Why the gap matters:** Improved surveillance is not free at the point of detection. Every BChE auto-notification triggers a clinical work-up, a confirmatory test, an EHP follow-up, and — for case-spike signals — DALRRD enforcement. The narrow figure understates true budget impact by **~6×**. Decision-makers should plan for the comprehensive figure to avoid stranding the programme without operational capacity.
 
 **For context, the comprehensive figure still represents:**
 
@@ -53,7 +53,7 @@ This analysis uses **two nested perspectives** to make the trade-offs transparen
 2. **Pressure-tested whole-system perspective** (Section [Pressure-Testing the Costs](#sec-pressure-test)). Adds the **induced demand** that improved surveillance creates downstream:
    - **Hospitals:** clinician time for exposure histories, sample collection, NMC notification completion, and data collation by records clerks
    - **Laboratories:** higher BChE test volumes, confirmatory GC-MS toxicology, sample transport and storage
-   - **Environmental Health Practitioners (EHPs):** field investigation of clusters, environmental sampling, source tracing
+   - **Environmental Health Practitioners (EHPs):** field investigation of case-spike signals, environmental sampling, source tracing
    - **Agricultural enforcement:** DALRRD compliance officers responding to illegal-pesticide signals, retailer audits, registration follow-up
 
 **Still excluded (for now):**
@@ -65,7 +65,7 @@ This analysis uses **two nested perspectives** to make the trade-offs transparen
 ::: {.callout-warning}
 ## Why This Matters
 
-The narrow perspective is appropriate for **"what new line items appear in the surveillance programme budget?"** — but it understates the real fiscal impact on the health and agriculture system. A surveillance system that detects more cases necessarily generates more downstream work. Failing to budget for it leads to: (a) overworked frontline staff, (b) backlogs in lab confirmation, (c) un-investigated hotspots, and (d) erosion of the system within 12–18 months.
+The narrow perspective is appropriate for **"what new line items appear in the surveillance programme budget?"** — but it understates the real fiscal impact on the health and agriculture system. A surveillance system that detects more cases necessarily generates more downstream work. Failing to budget for it leads to: (a) overworked frontline staff, (b) backlogs in lab confirmation, (c) un-investigated case-spike signals, and (d) erosion of the system within 12–18 months.
 :::
 
 ### Time Horizon
@@ -462,9 +462,9 @@ option4_total %>%
 
 ---
 
-### Option 5: Provincial Hotspot Response Coordination
+### Option 5: Provincial Case-Spike Response Coordination
 
-**Description:** Establish provincial capacity for rapid field investigation of clusters
+**Description:** Establish provincial capacity for rapid field investigation when case data show a concentration in space or time
 
 #### Personnel Costs
 
@@ -533,7 +533,7 @@ option5_total %>%
   gt() %>%
   tab_header(
     title = "Option 5: Total Costs",
-    subtitle = "Provincial Hotspot Response Coordination"
+    subtitle = "Provincial Case-Spike Response Coordination"
   ) %>%
   cols_align(align = "right", columns = Cost) %>%
   tab_footnote(
@@ -631,7 +631,7 @@ ggplot(cost_comparison, aes(x = reorder(Option, -Cost), y = Cost, fill = Phase))
 The **narrow estimates** above (~R237k/year) capture only the **surveillance coordination** layer — NICD, NHLS liaison, PIH reporting, provincial coordinators. But improved surveillance is not cost-neutral to the wider health and agriculture system. Every additional BChE notification triggers:
 
 1. **Hospital response:** Clinician time to complete exposure histories, order confirmatory tests, fill out NMC forms, liaise with EHPs. Records clerks collate the data.
-2. **Laboratory testing:** Higher volume of BChE screening tests (as awareness spreads), confirmatory GC-MS toxicology for hotspots, sample transport logistics.
+2. **Laboratory testing:** Higher volume of BChE screening tests (as awareness spreads), confirmatory GC-MS toxicology for investigated cases, sample transport logistics.
 3. **Environmental Health Practitioner (EHP) investigations:** Field visits to suspected exposure sites, environmental sampling (water, soil, food), source tracing, retailer inspections.
 4. **Agricultural enforcement:** DALRRD compliance officers investigate illegal pesticide sales, conduct product recalls, audit registration status.
 
@@ -641,7 +641,7 @@ This section quantifies the **induced demand** from the Full Package (Options 1�
 
 ### Downstream Cost Component 1: Hospital Toxicology Workload
 
-**Scenario:** Full Package detects 85% of hotspots (vs. 45% today). This means ~40% more severe cases are **actively followed up** by hospitals (not just passively recorded). Each follow-up requires:
+**Scenario:** Full Package detects ~85% of severe cases (vs. ~5% per-case today, anchored to StatsSA). This means substantially more severe cases are **actively followed up** by hospitals (not just passively recorded). Each follow-up requires:
 
 #### Hospital Personnel Time
 
@@ -745,7 +745,7 @@ hospital_consumables %>%
 
 ### Downstream Cost Component 2: Laboratory Testing Volume Escalation
 
-**Scenario:** Improved surveillance increases **demand** for BChE screening tests (as clinicians become more aware) **and** confirmatory GC-MS toxicology for hotspots.
+**Scenario:** Improved surveillance increases **demand** for BChE screening tests (as clinicians become more aware) **and** confirmatory GC-MS toxicology for investigated cases.
 
 #### Increased BChE Screening Volume
 
@@ -786,20 +786,20 @@ lab_volume %>%
 
 **BChE screening escalation: ~R360,000/year**
 
-#### Confirmatory GC-MS Toxicology for Hotspots
+#### Confirmatory GC-MS Toxicology for Investigated Cases
 
 ```{r}
 #| label: tbl-confirmatory-tox
-#| tbl-cap: "Confirmatory toxicology testing for hotspots"
+#| tbl-cap: "Confirmatory toxicology testing for investigated cases"
 
-# Hotspot-driven confirmatory testing
-current_hotspots_per_year <- 4.5  # Status quo detects ~4.5 hotspots/year
-full_package_hotspots_per_year <- 8.3  # Full Package detects 8.3 hotspots/year
-incremental_hotspots <- full_package_hotspots_per_year - current_hotspots_per_year
+# Case-investigation-driven confirmatory testing
+current_investigations_per_year <- 4.5  # Status quo triggers ~4.5 field investigations/year
+full_package_investigations_per_year <- 8.3  # Full Package triggers 8.3 investigations/year
+incremental_investigations <- full_package_investigations_per_year - current_investigations_per_year
 
-# Each hotspot triggers 5 confirmatory GC-MS tests (index case + 4 cluster contacts)
-gcms_tests_per_hotspot <- 5
-incremental_gcms_tests <- incremental_hotspots * gcms_tests_per_hotspot
+# Each investigation triggers 5 confirmatory GC-MS tests (index case + 4 contacts)
+gcms_tests_per_investigation <- 5
+incremental_gcms_tests <- incremental_investigations * gcms_tests_per_investigation
 
 # GC-MS cost
 gcms_test_cost <- 2500  # R2,500/test (reagents, technician time, instrument maintenance, reference standards)
@@ -807,7 +807,7 @@ gcms_test_cost <- 2500  # R2,500/test (reagents, technician time, instrument mai
 incremental_gcms_cost <- incremental_gcms_tests * gcms_test_cost
 
 confirmatory_tox <- tribble(
-  ~Test_Type, ~Hotspots_per_Year, ~Tests_per_Hotspot, ~Total_Tests, ~Cost_per_Test, ~Annual_Cost,
+  ~Test_Type, ~Investigations_per_Year, ~Tests_per_Investigation, ~Total_Tests, ~Cost_per_Test, ~Annual_Cost,
   "GC-MS confirmatory toxicology", "3.8 additional", 5, "19", "R2,500", paste0("R", format(round(incremental_gcms_cost), big.mark = ","))
 )
 
@@ -815,11 +815,11 @@ confirmatory_tox %>%
   gt() %>%
   tab_header(
     title = "Confirmatory Toxicology (GC-MS)",
-    subtitle = "For hotspot investigation and cluster confirmation"
+    subtitle = "For case-event field investigations"
   ) %>%
   cols_label(
-    Hotspots_per_Year = "Additional Hotspots/Year",
-    Tests_per_Hotspot = "Tests per Hotspot",
+    Investigations_per_Year = "Additional Investigations/Year",
+    Tests_per_Investigation = "Tests per Investigation",
     Total_Tests = "Total Additional Tests",
     Cost_per_Test = "Cost per Test"
   ) %>%
@@ -871,7 +871,7 @@ sample_logistics %>%
 
 ### Downstream Cost Component 3: Environmental Health Practitioner (EHP) Investigations
 
-**Scenario:** Full Package detects 3.8 additional hotspots/year. Each hotspot triggers an **EHP field investigation** — site visit, environmental sampling (water, soil, food), source tracing, retailer inspection.
+**Scenario:** Full Package triggers 3.8 additional field investigations/year. Each investigation involves an **EHP field response** — site visit, environmental sampling (water, soil, food), source tracing, retailer inspection.
 
 #### EHP Personnel Time
 
@@ -880,14 +880,14 @@ sample_logistics %>%
 #| tbl-cap: "EHP investigation workload"
 
 # EHP investigation parameters
-incremental_hotspots_ehp <- 3.8  # Same as above: 8.3 - 4.5 = 3.8 additional hotspots/year
+incremental_investigations_ehp <- 3.8  # Same as above: 8.3 - 4.5 = 3.8 additional investigations/year
 hours_per_investigation <- 16  # 2 days × 8 hours (site visit, sampling, report writing)
 ehp_hourly_rate <- 320000 / 1800  # ~R178/hour (R320k annual salary, 1800 hours/year)
 
-ehp_personnel_cost <- incremental_hotspots_ehp * hours_per_investigation * ehp_hourly_rate
+ehp_personnel_cost <- incremental_investigations_ehp * hours_per_investigation * ehp_hourly_rate
 
 ehp_workload <- tribble(
-  ~Activity, ~Hotspots_per_Year, ~Hours_per_Investigation, ~Hourly_Rate, ~Annual_Cost,
+  ~Activity, ~Investigations_per_Year, ~Hours_per_Investigation, ~Hourly_Rate, ~Annual_Cost,
   "EHP field investigations", 3.8, 16, "R178", paste0("R", format(round(ehp_personnel_cost), big.mark = ","))
 )
 
@@ -895,10 +895,10 @@ ehp_workload %>%
   gt() %>%
   tab_header(
     title = "EHP Investigation Workload",
-    subtitle = "Field investigations for additional hotspots"
+    subtitle = "Field investigations for additional case-events"
   ) %>%
   cols_label(
-    Hotspots_per_Year = "Additional Hotspots/Year",
+    Investigations_per_Year = "Additional Investigations/Year",
     Hours_per_Investigation = "Hours per Investigation",
     Hourly_Rate = "EHP Hourly Rate"
   ) %>%
@@ -913,28 +913,28 @@ ehp_workload %>%
 #| label: tbl-env-sampling
 #| tbl-cap: "Environmental sampling and laboratory analysis"
 
-# Environmental sampling per hotspot
-water_samples_per_hotspot <- 3
-soil_samples_per_hotspot <- 2
-food_samples_per_hotspot <- 2
+# Environmental sampling per investigation
+water_samples_per_investigation <- 3
+soil_samples_per_investigation <- 2
+food_samples_per_investigation <- 2
 
-total_samples_per_hotspot <- water_samples_per_hotspot + soil_samples_per_hotspot + food_samples_per_hotspot
+total_samples_per_investigation <- water_samples_per_investigation + soil_samples_per_investigation + food_samples_per_investigation
 
 # Lab analysis costs
 pesticide_residue_analysis_cost <- 1500  # R1,500/sample (GC-MS or LC-MS/MS for multi-residue screen)
 
-env_sampling_cost_per_hotspot <- total_samples_per_hotspot * pesticide_residue_analysis_cost
-env_sampling_annual_cost <- incremental_hotspots_ehp * env_sampling_cost_per_hotspot
+env_sampling_cost_per_investigation <- total_samples_per_investigation * pesticide_residue_analysis_cost
+env_sampling_annual_cost <- incremental_investigations_ehp * env_sampling_cost_per_investigation
 
 # Sampling consumables
-sampling_kit_cost_per_hotspot <- 500  # R500/hotspot (sterile containers, labels, transport media)
+sampling_kit_cost_per_investigation <- 500  # R500/investigation (sterile containers, labels, transport media)
 
-total_env_sampling_cost <- env_sampling_annual_cost + (incremental_hotspots_ehp * sampling_kit_cost_per_hotspot)
+total_env_sampling_cost <- env_sampling_annual_cost + (incremental_investigations_ehp * sampling_kit_cost_per_investigation)
 
 env_sampling <- tribble(
-  ~Item, ~Samples_per_Hotspot, ~Cost_per_Sample, ~Hotspots_per_Year, ~Annual_Cost,
+  ~Item, ~Samples_per_Investigation, ~Cost_per_Sample, ~Investigations_per_Year, ~Annual_Cost,
   "Water/soil/food pesticide analysis", 7, "R1,500", 3.8, paste0("R", format(round(env_sampling_annual_cost), big.mark = ",")),
-  "Sampling kits & consumables", NA, "R500/hotspot", 3.8, paste0("R", format(round(incremental_hotspots_ehp * sampling_kit_cost_per_hotspot), big.mark = ",")),
+  "Sampling kits & consumables", NA, "R500/investigation", 3.8, paste0("R", format(round(incremental_investigations_ehp * sampling_kit_cost_per_investigation), big.mark = ",")),
   "**Subtotal Environmental Sampling**", NA, NA, NA, paste0("**R", format(round(total_env_sampling_cost), big.mark = ","), "**")
 )
 
@@ -942,11 +942,11 @@ env_sampling %>%
   gt() %>%
   tab_header(title = "Environmental Sampling & Analysis") %>%
   cols_label(
-    Samples_per_Hotspot = "Samples per Hotspot",
+    Samples_per_Investigation = "Samples per Investigation",
     Cost_per_Sample = "Cost per Sample",
-    Hotspots_per_Year = "Additional Hotspots/Year"
+    Investigations_per_Year = "Additional Investigations/Year"
   ) %>%
-  cols_align(align = "right", columns = c(Samples_per_Hotspot, Cost_per_Sample, Hotspots_per_Year, Annual_Cost)) %>%
+  cols_align(align = "right", columns = c(Samples_per_Investigation, Cost_per_Sample, Investigations_per_Year, Annual_Cost)) %>%
   tab_style(
     style = cell_text(weight = "bold"),
     locations = cells_body(rows = 3)
@@ -967,14 +967,14 @@ distance_per_investigation_km <- 150  # Average round-trip distance (urban + rur
 vehicle_cost_per_km <- 4.50  # Government rate (fuel + maintenance)
 travel_cost_per_investigation <- distance_per_investigation_km * vehicle_cost_per_km
 
-travel_annual_cost <- incremental_hotspots_ehp * travel_cost_per_investigation
+travel_annual_cost <- incremental_investigations_ehp * travel_cost_per_investigation
 
 # Report writing (admin time)
 report_writing_hours <- 4  # 4 hours to compile findings, liaise with DALRRD
 admin_hourly_rate <- 200000 / 1800  # ~R111/hour (admin support)
 reporting_cost_per_investigation <- report_writing_hours * admin_hourly_rate
 
-reporting_annual_cost <- incremental_hotspots_ehp * reporting_cost_per_investigation
+reporting_annual_cost <- incremental_investigations_ehp * reporting_cost_per_investigation
 
 total_ehp_travel_reporting <- travel_annual_cost + reporting_annual_cost
 
@@ -1008,7 +1008,7 @@ ehp_travel %>%
 
 ### Downstream Cost Component 4: Agricultural Enforcement (DALRRD)
 
-**Scenario:** Environmental sampling identifies **illegal pesticide sales** or **misuse of restricted products** in ~50% of hotspots. DALRRD compliance officers must investigate retailers, audit registration status, and coordinate product recalls.
+**Scenario:** Environmental sampling identifies **illegal pesticide sales** or **misuse of restricted products** in ~50% of investigated case-events. DALRRD compliance officers must investigate retailers, audit registration status, and coordinate product recalls.
 
 #### DALRRD Compliance Officer Workload
 
@@ -1017,11 +1017,11 @@ ehp_travel %>%
 #| tbl-cap: "DALRRD compliance officer workload"
 
 # Enforcement parameters
-hotspots_triggering_enforcement <- incremental_hotspots_ehp * 0.5  # 50% of hotspots involve illegal sales
+investigations_triggering_enforcement <- incremental_investigations_ehp * 0.5  # 50% of investigations involve illegal sales
 hours_per_enforcement_case <- 24  # 3 days (retailer inspection, product sampling, registration audit, liaison with SAPS if criminal)
 dalrrd_officer_hourly_rate <- 350000 / 1800  # ~R194/hour (R350k salary)
 
-dalrrd_personnel_cost <- hotspots_triggering_enforcement * hours_per_enforcement_case * dalrrd_officer_hourly_rate
+dalrrd_personnel_cost <- investigations_triggering_enforcement * hours_per_enforcement_case * dalrrd_officer_hourly_rate
 
 dalrrd_workload <- tribble(
   ~Activity, ~Cases_per_Year, ~Hours_per_Case, ~Hourly_Rate, ~Annual_Cost,
@@ -1032,7 +1032,7 @@ dalrrd_workload %>%
   gt() %>%
   tab_header(
     title = "DALRRD Compliance Officer Workload",
-    subtitle = "Investigations of illegal pesticide sales (50% of hotspots)"
+    subtitle = "Investigations of illegal pesticide sales (50% of case-event investigations)"
   ) %>%
   cols_label(
     Cases_per_Year = "Enforcement Cases/Year",
@@ -1055,7 +1055,7 @@ products_sampled_per_case <- 3  # Retailer typically stocks 3 suspect products
 product_analysis_cost <- 3500  # R3,500/product (active ingredient assay, formulation check, stability testing)
 
 product_testing_cost_per_case <- products_sampled_per_case * product_analysis_cost
-product_testing_annual_cost <- hotspots_triggering_enforcement * product_testing_cost_per_case
+product_testing_annual_cost <- investigations_triggering_enforcement * product_testing_cost_per_case
 
 product_sampling <- tribble(
   ~Item, ~Products_per_Case, ~Cost_per_Product, ~Cases_per_Year, ~Annual_Cost,
@@ -1085,11 +1085,11 @@ product_sampling %>%
 contested_cases_proportion <- 0.3  # 30% of cases go to legal review
 legal_cost_per_contested_case <- 15000  # R15,000 (attorney fees, court filing)
 
-legal_annual_cost <- hotspots_triggering_enforcement * contested_cases_proportion * legal_cost_per_contested_case
+legal_annual_cost <- investigations_triggering_enforcement * contested_cases_proportion * legal_cost_per_contested_case
 
 # Administrative costs
 admin_cost_per_case <- 2000  # R2,000 (notices, correspondence, file management)
-admin_annual_cost <- hotspots_triggering_enforcement * admin_cost_per_case
+admin_annual_cost <- investigations_triggering_enforcement * admin_cost_per_case
 
 total_legal_admin <- legal_annual_cost + admin_annual_cost
 
@@ -1183,7 +1183,7 @@ The **pressure-tested** comprehensive figure is **5.0× higher** than the narrow
 1. **Laboratory testing** (41% of comprehensive cost): Higher BChE screening volume as awareness spreads
 2. **Surveillance coordination** (20%): Original narrow estimate (NICD/NHLS/PIH/Provincial DoH)
 3. **Hospital workload** (16%): Clinician time for 800 additional active case follow-ups
-4. **EHP investigations** (13%): Field investigations for 3.8 additional hotspots
+4. **EHP investigations** (13%): Field investigations for 3.8 additional case-events
 5. **DALRRD enforcement** (10%): Compliance investigations for illegal pesticide sales
 :::
 
@@ -1201,7 +1201,7 @@ The comprehensive cost estimate is sensitive to key parameters. Three scenarios:
 # LOW scenario assumptions:
 # - 10% BChE volume increase (not 20%)
 # - 50% of base-case hospital workload (not all additional cases actively followed up)
-# - 50% of base-case EHP investigations (hotspots clustered geographically)
+# - 50% of base-case EHP investigations (case-events concentrated geographically)
 
 low_scenario <- 237000 + (188000 * 0.5) + (493000 * 0.5) + (154000 * 0.5) + (121000 * 0.5)
 
@@ -1218,9 +1218,9 @@ high_scenario <- 237000 + (188000 * 1.5) + (493000 * 1.75) + (154000 * 1.5) + (1
 
 scenario_sensitivity <- tribble(
   ~Scenario, ~Comprehensive_Cost, ~Notes,
-  "**Low** (conservative utilization)", paste0("**R", format(round(low_scenario), big.mark = ","), "**"), "Assumes 50% of base-case downstream demand (minimal awareness campaign, clustered hotspots)",
+  "**Low** (conservative utilization)", paste0("**R", format(round(low_scenario), big.mark = ","), "**"), "Assumes 50% of base-case downstream demand (minimal awareness campaign, geographically concentrated investigations)",
   "**Base** (expected utilization)", paste0("**R", format(round(base_scenario), big.mark = ","), "**"), "Best estimate based on empirical parameters and expert elicitation",
-  "**High** (aggressive utilization)", paste0("**R", format(round(high_scenario), big.mark = ","), "**"), "Assumes 150–200% of base-case downstream demand (active awareness, dispersed hotspots, criminal prosecutions)"
+  "**High** (aggressive utilization)", paste0("**R", format(round(high_scenario), big.mark = ","), "**"), "Assumes 150–200% of base-case downstream demand (active awareness, geographically dispersed investigations, criminal prosecutions)"
 )
 
 scenario_sensitivity %>%
@@ -1492,9 +1492,9 @@ Unlike the narrow surveillance coordination budget (R237k), the comprehensive sy
 
 1. **Induced demand is modeled, not observed:** We assume 20% BChE volume increase and 800 additional active case follow-ups. Actual utilization depends on clinician awareness campaigns, which are uncertain.
 2. **Hospital time-per-case assumptions:** Based on analogous surveillance programs (TB, HIV), not pesticide-specific time-and-motion studies.
-3. **Hotspot-to-enforcement conversion rate:** We assume 50% of hotspots trigger DALRRD investigations. Actual rate depends on EHP referral practices and DALRRD capacity, both unknown.
+3. **Investigation-to-enforcement conversion rate:** We assume 50% of investigated case-events trigger DALRRD investigations. Actual rate depends on EHP referral practices and DALRRD capacity, both unknown.
 4. **No capacity constraints modeled:** Estimates assume NHLS labs, hospital staff, and EHPs can absorb the incremental workload. If capacity is saturated, marginal costs may be higher (require new hires, not just time reallocation).
-5. **Geographic variation ignored:** Urban hotspots (Gauteng, Western Cape) may have lower investigation costs than rural hotspots (Limpopo, Eastern Cape) due to travel distance. We use national averages.
+5. **Geographic variation ignored:** Urban investigations (Gauteng, Western Cape) may have lower investigation costs than rural ones (Limpopo, Eastern Cape) due to travel distance. We use national averages.
 6. **Exchange rate risk:** Lab reagent costs (especially GC-MS reference standards) are import-dependent and subject to ZAR/USD fluctuations.
 
 **Both perspectives exclude:**

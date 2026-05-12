@@ -32,7 +32,7 @@ South Africa under-detects pesticide poisoning. Three data streams each see a fr
 - Severe laboratory results do not trigger a public-health alert.
 - The country's largest single source of clinical signal — the Poisons Information Helpline — is not used for surveillance at all.
 
-Hotspots are detected late or not at all; clusters from contaminated food, illegal sales, or unsafe occupational exposure run their course before any agency responds; and the country has no real-time view of which products are causing harm.
+Cases from contaminated food, illegal sales, or unsafe occupational exposure are detected late or not at all; agencies have no real-time view of which products are causing harm; and the country cannot target regulatory or public-health response to where harm is concentrating.
 
 ## 3. Status quo
 
@@ -81,7 +81,7 @@ Better surveillance has **two opposite numerical effects** that decision-makers 
 | Effect | Direction | Driver | Interpretation |
 |:-------|:---------:|:-------|:---------------|
 | **Observed** burden | ↑ | Better case-finding (auto-notify, MVD ingest) | The headline "case count" will rise as detection improves — this is success, not failure. |
-| **True** burden | ↓ | Faster source removal, targeted regulation, prevention | Number of actual poisonings falls as hotspots are addressed earlier. |
+| **True** burden | ↓ | Faster source removal, targeted regulation, prevention | Number of actual poisonings falls as cases are detected and acted on earlier. |
 
 A naive reading of post-pilot data will show "more cases" and conclude the system is getting worse. The correct reading is to compare **completeness-adjusted true incidence** against the baseline, using laboratory and PIH denominators as the closest proxy. This needs to be agreed up front with NDoH and the MAC.
 
@@ -125,33 +125,31 @@ Two layers:
 - **Short term (1–2 weeks):** PIH publishes a live dashboard of pesticide-related calls (counts, geography, agent, severity, demographics). No new data; just a daily extract from existing call records.
 - **Medium term (3–9 months):** PIH and NICD agree a **Minimum Viable Dataset (MVD)** so the ~1,158 clinician-initiated calls/year can be ingested into NMC as a structured surveillance stream.
 
-Detection rises to ~6.1 / 10 for **R62k/year**. The dashboard is the lowest-hanging fruit in the whole portfolio: it ships in days.
+Detection rises to ~10 % of true cases (up from ~5 %) for **R62k/year**. The dashboard is the lowest-hanging fruit in the whole portfolio: it ships in days.
 
 ### Option S2 — BChE auto-notification *(★ recommended — capability exists)*
 
-Configure the NHLS LIS to fire an automatic NICD notification when a BChE result shows severe inhibition (< 50 % of normal), within 24 hours of validation. **No new test, no new reagent contract** — only an IT configuration on top of the ~10,626 BChE tests/year already performed (1,779 severe in 2023). Detection rises to ~6.7 / 10 for **R55k/year** in 2–4 weeks. This is the highest-value, fastest option on the menu.
+Configure the NHLS LIS to fire an automatic NICD notification when a BChE result shows severe inhibition (< 50 % of normal), within 24 hours of validation. **No new test, no new reagent contract** — only an IT configuration on top of the ~10,626 BChE tests/year already performed (1,779 severe in 2023). Detection rises to ~13 % of true cases (up from ~5 %) for **R55k/year** in 2–4 weeks. This is the highest-value, fastest option on the menu.
 
-### Option S3 — Sentinel live-patient toxicology + auto-notification *(★ recommended, medium term)*
+### Option S3 — Sentinel live-patient toxicology *(★ recommended, medium term — distinct purpose)*
 
-NHLS currently performs chemical toxicology (qualitative/quantitative pesticide assays) **post-mortem only**. There is no live-patient toxicology capability. Option S3 funds:
+NHLS currently performs chemical toxicology (qualitative/quantitative pesticide assays) **post-mortem only**. There is no live-patient toxicology capability. Option S3 funds a sentinel tertiary site (e.g. CHB) to perform live-patient chemical toxicology, scaling to 4–5 sites in phase 2–3.
 
-- Phase 1: a sentinel tertiary site (e.g. CHB) to perform live-patient chemical toxicology.
-- Phase 2–3: 4–5 site rollout with auto-notification wired in.
+**S3 has a different purpose from S1 and S2** and is *not* a detection-coverage uplift. S1 and S2 increase the share of true cases that enter the surveillance system. **S3 identifies the proportion of chemical agents being found in severely poisoned living patients at sentinel sites** — the missing evidence base for product-specific regulation (see [Terbufos brief](terbufos_policy.qmd)). Without S3, ~10,000 survivors/year are recorded with agent "unknown / suspected" and targeted product restriction has no quantitative footing.
 
-The clinical-surveillance value is **agent attribution**: S2 tells us a poisoning happened; S3 tells us *which product*. Without S3, ~10,000 survivors/year are recorded with agent "unknown / suspected", which makes targeted regulation (see [Terbufos brief](terbufos_policy.qmd)) impossible. Cost: ~R1.2M pilot site → ~R3.6M for 5-site rollout, 6–12 months. Funded from research-surveillance streams (SAMRC, Bloomberg, Gates), not the surveillance operating budget.
+Cost: ~R1.2M pilot site → ~R3.6M for 5-site rollout, 6–12 months. Funded from research-surveillance streams (SAMRC, Bloomberg, Gates), not the surveillance operating budget. Full quantitative concept in the [sentinel toxicology appendix](surveillance_concept_note.qmd).
 
 ### Summary comparison
 
-| Option | Annual cost | Hotspots detected / 10 | Δ vs. status quo | Time |
+| Option | Annual cost | P_detect (per-case) | Δ vs. status quo | Time |
 |:-------|------------:|---------------------:|----------------:|:-----|
-| Status quo | R0 | 4.5 | — | — |
-| S1: PIH dashboard + MVD | R62k | 6.1 | +36 % | 1–2 wks dash / 3–9 mo MVD |
-| S2: BChE auto-notify | R55k | 6.7 | +49 % | 2–4 wks |
-| S3: Sentinel toxicology + auto-notify | R1.2M pilot → R3.6M | +10–15 pp on S2 | additional | 6–12 mo pilot |
-| **S1 + S2 (Surveillance MVP)** | **~R117k** | **~7.8** | **+73 %** | **12 weeks** |
-| S1 + S2 + S3 (Full) | ~R1.3M | ~8.5 | +89 % | 6–12 months |
+| Status quo | R0 | 0.048 (~5 %) | — | — |
+| S1: PIH dashboard + MVD | R62k | 0.104 (~10 %) | +5.6 pp | 1–2 wks dash / 3–9 mo MVD |
+| S2: BChE auto-notify | R55k | 0.133 (~13 %) | +8.5 pp | 2–4 wks |
+| **S1 + S2 (Surveillance MVP)** | **~R117k** | **0.189 (~19 %)** | **+14 pp** | **12 weeks** |
+| S3: Sentinel toxicology (agent attribution — distinct purpose) | R1.2M pilot → R3.6M | n/a (not a coverage uplift) | feeds product-banning evidence base | 6–12 mo pilot |
 
-: Surveillance options — base-case. Each row shows the **detection uplift only**. Translating P_detect into cases or deaths averted requires the response-side parameters (η, agency capacity, regulatory action) covered in the [Coordination](coordination_policy.qmd) and [Terbufos](terbufos_policy.qmd) briefs. {.striped .hover}
+: Surveillance options — base-case. P_detect is the per-case detection probability, anchored to the StatsSA MACOD 2023 mid-burden of 20,960 true cases/year. S1 and S2 expand coverage; **S3 is a parallel agent-attribution investment**, not a coverage uplift — see option text above. Translating P_detect into cases or deaths averted requires the response-side parameters (η, agency capacity, regulatory action) covered in the [Coordination](coordination_policy.qmd) and [Terbufos](terbufos_policy.qmd) briefs. {.striped .hover}
 
 ::: {.callout-note appearance="simple"}
 **Scope of this brief.** Surveillance changes only what is *seen*. The status quo P_detect = 0.048 (§6 below) is a **measurement** of the current detection gap, not a counterfactual against which deaths are averted. Cases-averted and deaths-averted figures therefore live in the [Coordination brief](coordination_policy.qmd) (where the response is parameterised) and the [Terbufos brief](terbufos_policy.qmd) (where regulatory action is parameterised). This separation keeps the surveillance pitch honest: better surveillance is **necessary but not sufficient**.
@@ -184,7 +182,7 @@ $$
 - Mid (CFR = 0.125): $P_\text{detect}^{SQ} = 0.048$ (implied burden 20,960)
 - Upper (CFR = 0.15): $P_\text{detect}^{SQ} = 0.058$ (implied burden 17,467)
 
-**Why this replaces the v1 value of 0.45.** The legacy v1 figure was an expert-elicited *hotspot-cluster* sensitivity (binomial argument: at cluster size ≥10 even with per-case sensitivity ~6 %, at least one case is captured with probability ~0.46). That quantity answers a different question. The brief now uses the **per-case** framing — directly auditable from NICD + StatsSA published figures — and the v1 0.45 is retained only for `analysis_report_v2.qmd` back-compat as `d_status_quo_v1_hotspot`.
+**Why this replaces the v1 value of 0.45.** The legacy v1 figure was an expert-elicited estimate on a different scale, derived from a model of spatial event sensitivity rather than per-case detection. That quantity answered a different question and is not comparable to a per-case detection probability. This brief now uses the **per-case** framing throughout — directly auditable from NICD + StatsSA published figures — and all option values in §5 are likewise derived on the per-case scale.
 :::
 
 ````{r}
@@ -192,40 +190,39 @@ $$
 #| echo: false
 #| output: asis
 d_sq    <- as.numeric(pick("d_status_quo"))
-d_s4    <- as.numeric(pick("d_option4_PIH_quarterly"))
-d_s3a   <- as.numeric(pick("d_option3_BChE_autonotify"))
+d_s1    <- as.numeric(pick("d_option4_PIH_quarterly"))
+d_s2    <- as.numeric(pick("d_option3_BChE_autonotify"))
 d_mvp   <- as.numeric(pick("d_surveillance_mvp"))
-d_full  <- as.numeric(pick("d_surveillance_full_S3b"))
 
-c_s4   <- as.numeric(pick("c_S4_PIH_dashboard_op"))
-c_s3a  <- as.numeric(pick("c_S3a_BChE_autonotify_op"))
+c_s1   <- as.numeric(pick("c_S4_PIH_dashboard_op"))
+c_s2   <- as.numeric(pick("c_S3a_BChE_autonotify_op"))
 c_mvp  <- as.numeric(pick("c_surv_MVP_op"))
 
-pp <- function(d) sprintf("%+.0f pp", (d - d_sq) * 100)
+pp <- function(d) sprintf("%+.1f pp", (d - d_sq) * 100)
 
 cat(sprintf('```{mermaid}
-%%%%| fig-cap: "Surveillance investment decision tree — detection uplift only. Each option raises the per-case detection probability P_detect; the absolute burden impact of those uplifts depends on response-side parameters covered in the coordination and terbufos briefs. All numerical values pulled from amua_import_parameters_v3.csv at render time."
+%%%%| fig-cap: "Surveillance investment decision tree — per-case detection uplift only. Each option raises P_detect, the share of true annual cases (~20,960 StatsSA-anchored mid-burden) that enter the surveillance system. The absolute burden impact of these uplifts depends on response-side parameters covered in the coordination and terbufos briefs. S3 (sentinel toxicology) is shown separately because it is an agent-attribution investment, not a coverage uplift. All numerical values pulled from amua_import_parameters_v3.csv at render time."
 flowchart TD
-    INV{Surveillance<br/>investment?} -->|None| SQ[Status quo<br/>P_detect = %.3f<br/><i>baseline measurement</i>]:::bad
-    INV -->|S1 only<br/>R%s/yr| O4[+ PIH MVD<br/>P_detect = %.2f<br/>%s vs SQ]:::warn
-    INV -->|S2 only<br/>R%s/yr| O3a[+ BChE auto-notify<br/>P_detect = %.2f<br/>%s vs SQ]:::warn
-    INV -->|S1 + S2<br/>R%s/yr| MVP[Surveillance MVP<br/>P_detect = %.2f<br/>%s vs SQ]:::good
-    INV -->|+ S3<br/>~R1.3M/yr| FULL[Full + toxicology<br/>P_detect = %.2f<br/>%s vs SQ]:::good
+    INV{Surveillance<br/>investment?} -->|None| SQ[Status quo<br/>P_detect = %.3f<br/>~5%% of true cases]:::bad
+    INV -->|S1 only<br/>R%s/yr| O1[+ PIH MVD<br/>P_detect = %.3f<br/>%s vs SQ]:::warn
+    INV -->|S2 only<br/>R%s/yr| O2[+ BChE auto-notify<br/>P_detect = %.3f<br/>%s vs SQ]:::warn
+    INV -->|S1 + S2<br/>R%s/yr| MVP[Surveillance MVP<br/>P_detect = %.3f<br/>%s vs SQ]:::good
+    S3[S3 Sentinel toxicology<br/>agent attribution<br/><i>parallel investment —<br/>see Terbufos brief</i>]:::aux
 
     classDef bad fill:#fdd,stroke:#cc0000,stroke-width:1.5px
     classDef warn fill:#ffe9b3,stroke:#cc8800,stroke-width:1.5px
     classDef good fill:#cfc,stroke:#060,stroke-width:1.5px
+    classDef aux fill:#e6f0ff,stroke:#3366cc,stroke-width:1.5px,stroke-dasharray: 5 5
 ```
 ',
 d_sq,
-format(c_s4,  big.mark = ","), d_s4,  pp(d_s4),
-format(c_s3a, big.mark = ","), d_s3a, pp(d_s3a),
-format(c_mvp, big.mark = ","), d_mvp, pp(d_mvp),
-d_full, pp(d_full)
+format(c_s1,  big.mark = ","), d_s1,  pp(d_s1),
+format(c_s2,  big.mark = ","), d_s2,  pp(d_s2),
+format(c_mvp, big.mark = ","), d_mvp, pp(d_mvp)
 ))
 ````
 
-The tree reports **detection uplift in percentage points only**. The status-quo node is a **measurement** of the current detection gap, not a baseline from which deaths are counted as averted — surveillance has no response attached. Five inputs (`d_status_quo`, `d_option3_BChE_autonotify`, `d_option4_PIH_quarterly`, `d_surveillance_mvp`, `d_surveillance_full_S3b`) and three operating-cost rows (`c_S4_PIH_dashboard_op`, `c_S3a_BChE_autonotify_op`, `c_surv_MVP_op`) live in [`amua_import_parameters_v3.csv`](../amua_import_parameters_v3.csv) — edit the CSV and re-render.
+The tree reports **per-case detection uplift in percentage points**. The status-quo node is a **measurement** of the current detection gap (1,013 NMC notifications ÷ ~20,960 implied true cases), not a baseline from which deaths are counted as averted — surveillance has no response attached. Four detection inputs (`d_status_quo`, `d_option3_BChE_autonotify`, `d_option4_PIH_quarterly`, `d_surveillance_mvp`) and three operating-cost rows (`c_S4_PIH_dashboard_op`, `c_S3a_BChE_autonotify_op`, `c_surv_MVP_op`) live in [`amua_import_parameters_v3.csv`](../amua_import_parameters_v3.csv) — edit the CSV and re-render. Option S3 sits outside this tree: it is an agent-attribution investment whose value is parameterised in the [Terbufos brief](terbufos_policy.qmd) and the [sentinel toxicology appendix](surveillance_concept_note.qmd).
 
 **For burden impact, see the next brief.** The same P_detect figures feed into the [Coordination brief](coordination_policy.qmd) decision tree, where response efficacy η converts detection into cases averted, and into the [Terbufos brief](terbufos_policy.qmd), where regulatory restriction converts cases into deaths averted.
 
@@ -236,11 +233,10 @@ The tree reports **detection uplift in percentage points only**. The status-quo 
 | S1 PIH dashboard | PIH (Tygerberg) + NICD | R62k | Daily extract + hosting; MVD workshop |
 | S2 BChE auto-notify | NHLS LIS team | R55k | LIS rule configuration; QA review |
 | S3 Sentinel toxicology | NHLS clinical chemistry + sentinel hospital | R1.2M pilot | Lab method validation; sample logistics |
-| Hotspot detection (SaTScan) | NICD epi analyst | R40k | Geocoding of NMC + MVD ingest |
 
 **Privacy & legal.** All flows are de-identified (age, sex, facility, result, date). POPIA-compliant under existing Section 90 NHA authority. **No new legislation required.**
 
-**Risks.** (i) Low BChE testing uptake by clinicians — S3a fires only on tests ordered. (ii) Data-quality drift if facility metadata is incomplete (geocoding will fail). (iii) Capacity bottleneck at provincial response level — the [Coordination brief](coordination_policy.qmd) addresses this.
+**Risks.** (i) Low BChE testing uptake by clinicians — S2 fires only on tests ordered. (ii) Data-quality drift if facility metadata is incomplete. (iii) Capacity bottleneck at provincial response level — the [Coordination brief](coordination_policy.qmd) addresses this.
 
 ## 8. Recommended next step
 
@@ -248,15 +244,15 @@ The tree reports **detection uplift in percentage points only**. The status-quo 
 
 - **Weeks 1–2:** S1 PIH dashboard live; S2 BChE LIS configuration begins.
 - **Months 1–3:** S1 MVD workshop with PIH finalised; S2 BChE auto-notify QA review completed.
-- **Month 6:** Evaluate against (a) completeness of NHLS severe results in NMC and (b) cluster-detection latency.
+- **Month 6:** Evaluate against (a) completeness of NHLS severe results in NMC and (b) signal-to-investigation latency.
 - **Month 9:** Add S3 sentinel toxicology site, funded from a separate research-surveillance stream.
 
-The coordination side of the same system — how NICD, EHPs, DALRRD, and provincial response teams act on the improved signal — is covered in the [Coordination brief](coordination_policy.qmd). The product-specific regulatory action that S3b makes possible is the subject of the [Terbufos brief](terbufos_policy.qmd).
+The coordination side of the same system — how NICD, EHPs, DALRRD, and provincial response teams act on the improved signal — is covered in the [Coordination brief](coordination_policy.qmd). The product-specific regulatory action that S3 makes possible is the subject of the [Terbufos brief](terbufos_policy.qmd).
 
 ---
 
 ::: {.footer-cta}
 **Companion briefs:** [Coordination](coordination_policy.qmd) · [Terbufos restriction](terbufos_policy.qmd) · [Decision Model](decision_model.qmd) · [Costing Analysis](costing_analysis.qmd)
 
-**Technical appendices:** [A — Surveillance decision analysis](../analysis_report_v2.qmd) · [D — Sentinel toxicology (S3b deep dive)](surveillance_concept_note.qmd)
+**Technical appendices:** [A — Surveillance decision analysis](../analysis_report_v2.qmd) · [D — Sentinel toxicology (S3 deep dive)](surveillance_concept_note.qmd)
 :::

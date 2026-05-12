@@ -50,7 +50,7 @@ A pesticide-poisoning case must traverse eight conditionally independent steps f
 2. EHP receives SMS and opens investigation
 3. EHP completes field investigation in <14 days
 4. EHP outcome is recorded back on NMC
-5. NICD reviews and classifies (cluster vs sporadic)
+5. NICD reviews the notification and routes it to investigation
 6. NICD refers to DALRRD via structured channel
 7. DALRRD acts (inspection / withdrawal / formulation review)
 8. Action and outcome are fed back to clinician + NICD

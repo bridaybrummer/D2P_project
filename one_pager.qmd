@@ -33,9 +33,9 @@ execute:
 
 ::: {.option-summary}
 ### 1 · Detect — Surveillance ★
-**Ask:** Adopt the Surveillance MVP — NHLS→NMC feed + BChE auto-notify + PIH dashboard/MVD.
-**Cost:** R157,000/yr (+ R80k IT setup)
-**Impact:** +73 % hotspot detection; ~150 deaths averted/yr
+**Ask:** Adopt the Surveillance MVP — PIH dashboard/MVD (S1) + BChE auto-notify (S2). NHLS→NMC IT feed now operational.
+**Cost:** R117,000/yr
+**Impact:** Per-case detection 5 % → 19 % (almost 4×); enables faster, targeted response.
 **Time:** 12 weeks
 **Owner:** NICD · NHLS · PIH
 :::
