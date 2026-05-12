@@ -88,23 +88,48 @@ This will open the website in your default browser at `http://localhost:XXXX`.
 
 ### Publish the Website
 
-#### Option 1: GitHub Pages
+#### Option 1 (recommended for collaborators): one-command R deploy script
+
+If you don't want to learn git/GitHub, use **`deploy.R`** — it renders, commits, pushes, and publishes in one step.
+
+**From R or RStudio:**
+
+```r
+source("deploy.R")
+deploy("Short description of what you changed")
+```
+
+**From the terminal:**
 
 ```bash
+Rscript deploy.R "Short description of what you changed"
+```
+
+One-time setup (only the first time you ever use git on this machine):
+
+```bash
+git config --global user.name  "Your Name"
+git config --global user.email "you@example.com"
+```
+
+You also need a way for git to authenticate with GitHub. The easiest is to install [GitHub CLI](https://cli.github.com/) and run `gh auth login` once. The script will tell you if anything is missing.
+
+#### Option 2: bash equivalent
+
+```bash
+./publish.sh "Short description of what you changed"
+```
+
+(Functionally identical to `deploy.R`; use whichever you prefer.)
+
+#### Option 3: raw Quarto commands
+
+```bash
+quarto render
 quarto publish gh-pages
 ```
 
-#### Option 2: Netlify
-
-```bash
-quarto publish netlify
-```
-
-#### Option 3: Quarto Pub
-
-```bash
-quarto publish quarto-pub
-```
+(You then need to commit + push the source yourself.)
 
 ## Customization
 
