@@ -249,4 +249,6 @@ These were previously flagged as `[Evidence gap]`. None of them is a genuine SA 
 
 ::: {.footer-cta}
 **Companion briefs:** [Surveillance](surveillance_policy.qmd) · [Coordination](coordination_policy.qmd) · [Decision Model](decision_model.qmd) · [Costing Analysis](costing_analysis.qmd)
+
+**Technical appendix:** [C — Terbufos bracketed deaths-averted estimate](../technical_appendix_terbufos.qmd)
 :::

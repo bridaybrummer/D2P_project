@@ -1,6 +1,6 @@
 ---
-title: "Pesticide Poisoning Surveillance in South Africa"
-subtitle: "A Decision Analysis of Short-Term Policy Options for Improved Coordination and Response"
+title: "Technical Appendix A — Surveillance Decision Analysis"
+subtitle: "Legacy 5-option taxonomy: cost-effectiveness model for surveillance investments (Option S3 family)"
 author: "D2P Project"
 date: today
 format:
@@ -27,6 +27,24 @@ library(scales)
 
 tp <- readRDS("tables_and_plots_v2.Rds")
 ```
+
+::: {.callout-note}
+## Where this appendix fits
+
+This appendix presents the **formal decision-analytic model** behind the [Surveillance brief](posts/surveillance_policy.qmd). It uses the original 5-option v1 taxonomy (SQ, Option 1–4, Full Package) which has since been re-expressed in the S-taxonomy used by the brief (S1–S4). Mapping:
+
+| v1 (this appendix) | v3 (brief) | Description |
+|:--|:--|:--|
+| Option 1 | S2 | Inter-agency data sharing / MOUs |
+| Option 2 | S2 | DALRRD / SAPS integration |
+| Option 3 | S3a | NHLS BChE auto-notification |
+| Option 4 | S1 | PIH quarterly reporting |
+| Full Package | S1+S2+S3a | Combined detection upgrade |
+
+The live-patient chemical-toxicology investment (**S3b**) is **not** in this v1 model — it is treated separately in [Technical Appendix D — Sentinel Toxicology](posts/surveillance_concept_note.qmd).
+
+**Sister appendices:** [B — Coordination model](technical_appendix_coordination.qmd) · [C — Terbufos bracketed estimate](technical_appendix_terbufos.qmd) · [D — Sentinel toxicology](posts/surveillance_concept_note.qmd).
+:::
 
 # Executive Summary {.unnumbered}
 

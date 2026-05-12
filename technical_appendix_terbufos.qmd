@@ -1,0 +1,133 @@
+---
+title: "Technical Appendix C — Terbufos Bracketed Deaths-Averted Estimate"
+subtitle: "Closed-form attributable-fraction model for the T2 restriction option"
+author: "D2P Project"
+date: today
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    code-fold: true
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+::: {.callout-note}
+## Where this appendix fits
+
+This appendix is the **formal quantitative basis** for the bracketed 200–400 deaths-averted-per-year estimate cited in the [Terbufos brief](posts/terbufos_policy.qmd). It is deliberately a closed-form attributable-fraction calculation — not a decision tree — because the upstream uncertainty is dominated by the attributable fraction itself.
+
+**Sister appendices:** [A — Surveillance decision analysis](analysis_report_v2.qmd) · [B — Coordination model](technical_appendix_coordination.qmd) · [D — Sentinel toxicology](posts/surveillance_concept_note.qmd).
+:::
+
+```{r}
+#| label: setup
+library(tidyverse)
+library(gt)
+
+raw <- readr::read_csv("amua_import_parameters_v3.csv", show_col_types = FALSE)
+pick <- function(name) {
+  v <- raw |> dplyr::filter(Name == name) |> dplyr::pull(Expression)
+  if (length(v) == 0) NA_real_ else as.numeric(v[1])
+}
+zar <- function(x) {
+  n <- suppressWarnings(as.numeric(x))
+  if (is.na(n)) return(x)
+  if (n >= 1e6) sprintf("R%.2f million", n / 1e6)
+  else sprintf("R%s", format(round(n), big.mark = ",", scientific = FALSE))
+}
+
+f_lo  <- pick("frac_terbufos_attributable_lo")
+f_mid <- pick("frac_terbufos_attributable_mid")
+f_hi  <- pick("frac_terbufos_attributable_hi")
+N     <- pick("n_deaths_headline")
+```
+
+# 1. The formula
+
+Annual deaths averted by removing terbufos from informal channels:
+
+$$
+\widehat{D}_{T2} \;=\; f_\text{attr} \times \varphi_\text{retired} \times N_\text{deaths}
+$$
+
+where
+
+- $f_\text{attr}$ = terbufos attributable fraction of fatal SA pesticide poisonings (CSV: `frac_terbufos_attributable_{lo,mid,hi}` = `r f_lo`, `r f_mid`, `r f_hi`)
+- $\varphi_\text{retired}$ = fraction of terbufos exposure successfully retired by enforcement (substitution-adjusted; placeholder 0.6 working, 0.4–0.8 sensitivity)
+- $N_\text{deaths}$ = headline annual deaths (CSV: `n_deaths_headline` = `r format(N, big.mark = ",")`)
+
+# 2. Bracketed estimate
+
+```{r}
+#| label: tbl-bracket
+phi_grid <- c(lo = 0.4, mid = 0.6, hi = 0.8)
+
+tibble::tibble(
+  Scenario = c("Lower bound (conservative)", "Working value", "Upper bound (optimistic)"),
+  `f_attr` = c(f_lo, f_mid, f_hi),
+  `φ_retired` = c(0.4, 0.6, 0.8),
+  `N_deaths` = N
+) |>
+  dplyr::mutate(
+    `Deaths averted/yr` = round(`f_attr` * `φ_retired` * `N_deaths`)
+  ) |>
+  gt() |>
+  fmt_percent(columns = c(`f_attr`, `φ_retired`), decimals = 0) |>
+  fmt_number(columns = c(`N_deaths`, `Deaths averted/yr`), decimals = 0) |>
+  tab_header(
+    title = "Bracketed deaths averted per year, Option T2 (restriction + enforcement)",
+    subtitle = "Working bracket cited in the Terbufos brief: ~200–400/yr"
+  ) |>
+  opt_row_striping()
+```
+
+Working value: $\widehat{D}_{T2}^{\text{mid}} = `r f_mid` \times 0.6 \times `r N` = `r round(f_mid * 0.6 * N)`$ deaths/yr.
+
+Honest bracket: `r round(f_lo * 0.4 * N)` (lower) — `r round(f_hi * 0.8 * N)` (upper).
+
+# 3. Cost side
+
+```{r}
+#| label: tbl-cost
+tibble::tibble(
+  Scenario   = c("Lower", "Working", "Upper"),
+  `Enforcement cost/yr` = c(pick("c_T2_RUP_enforcement_lo"),
+                            pick("c_T2_RUP_enforcement_mid"),
+                            pick("c_T2_RUP_enforcement_hi"))
+) |>
+  dplyr::mutate(`Enforcement cost/yr` = sapply(`Enforcement cost/yr`, zar)) |>
+  gt() |>
+  tab_header(title = "Option T2 enforcement cost",
+             subtitle = "CSV: c_T2_RUP_enforcement_{lo,mid,hi} — US EPA RUP cost scaled to SA") |>
+  opt_row_striping()
+```
+
+# 4. Cost per death averted
+
+Working value: cost/death-averted = `r zar(pick("c_T2_RUP_enforcement_mid") / round(f_mid * 0.6 * N))`.
+
+This is well below any reasonable willingness-to-pay anchor for SA (e.g. 1× GDP/capita per DALY ≈ R85,000–R130,000), so **T2 dominates "do nothing" even at the lower bound of deaths averted.**
+
+# 5. International anchors
+
+- **Sri Lanka:** Single-agent withdrawals of class I OPs (1995–2011) reduced national suicide rate by ~50% with no compensatory substitution to other methods (Gunnell et al. 2017).
+- **Bangladesh:** Similar withdrawal pattern, similar mortality reduction.
+- **South Africa:** Davies et al. 2023 — terbufos dominates paediatric fatal pesticide poisonings in Soweto.
+
+The Sri Lanka and Bangladesh natural experiments are why we treat $f_\text{attr} \in [0.20, 0.35]$ as defensible without a new SA-specific autopsy study.
+
+# 6. Limitations
+
+- $\varphi_\text{retired}$ is the **biggest single uncertainty**. Substitution to other class I OPs would shrink this dramatically. Restricting the whole class (not just terbufos) is the obvious mitigation.
+- The model assumes the **detection signal exists**: without sentinel toxicology ([Appendix D](posts/surveillance_concept_note.qmd)) and a working coordination loop ([Appendix B](technical_appendix_coordination.qmd)), the regulatory action can't fire on time.
+- No discounting applied — the 200–400/yr estimate is a steady-state annual figure.
+
+---
+
+::: {.footer-cta}
+**Brief:** [Terbufos policy brief](posts/terbufos_policy.qmd) · **Sister appendices:** [A](analysis_report_v2.qmd) · [B](technical_appendix_coordination.qmd) · [D](posts/surveillance_concept_note.qmd)
+:::

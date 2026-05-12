@@ -212,4 +212,6 @@ The coordination side of the same system — how NICD, EHPs, DALRRD, and provinc
 
 ::: {.footer-cta}
 **Companion briefs:** [Coordination](coordination_policy.qmd) · [Terbufos restriction](terbufos_policy.qmd) · [Decision Model](decision_model.qmd) · [Costing Analysis](costing_analysis.qmd)
+
+**Technical appendices:** [A — Surveillance decision analysis](../analysis_report_v2.qmd) · [D — Sentinel toxicology (S3b deep dive)](surveillance_concept_note.qmd)
 :::

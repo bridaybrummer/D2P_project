@@ -25,8 +25,16 @@ website:
         href: parameters_hub.html
       - text: "Playground"
         href: parameter_playground.html
-      - text: "Full Analysis Report"
-        href: analysis_report_v2.html
+      - text: "Technical Appendices"
+        menu:
+          - text: "A — Surveillance (decision analysis)"
+            href: analysis_report_v2.html
+          - text: "B — Coordination (joint-probability model)"
+            href: technical_appendix_coordination.html
+          - text: "C — Terbufos (bracketed deaths averted)"
+            href: technical_appendix_terbufos.html
+          - text: "D — Sentinel toxicology (live-patient testing, S3b)"
+            href: posts/surveillance_concept_note.html
     right:
       - icon: github
         href: https://github.com/

@@ -1,0 +1,128 @@
+---
+title: "Technical Appendix B — Coordination Model"
+subtitle: "Closed-form joint-probability model for the NICD ↔ EHP ↔ DALRRD response loop"
+author: "D2P Project"
+date: today
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    code-fold: true
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+::: {.callout-note}
+## Where this appendix fits
+
+This appendix is the **formal quantitative model** behind the [Coordination brief](posts/coordination_policy.qmd). It treats the response loop as a chain of conditionally independent steps, gives the closed-form for the joint probability that the loop fully closes, and pulls the per-node parameters from the canonical CSV (`p_loop_closed_*`, `c_C1…C5_op`).
+
+**Sister appendices:** [A — Surveillance decision analysis](analysis_report_v2.qmd) · [C — Terbufos bracketed estimate](technical_appendix_terbufos.qmd) · [D — Sentinel toxicology](posts/surveillance_concept_note.qmd).
+:::
+
+```{r}
+#| label: setup
+library(tidyverse)
+library(gt)
+library(scales)
+
+raw <- readr::read_csv("amua_import_parameters_v3.csv", show_col_types = FALSE)
+pick <- function(name) {
+  v <- raw |> dplyr::filter(Name == name) |> dplyr::pull(Expression)
+  if (length(v) == 0) NA_real_ else as.numeric(v[1])
+}
+zar <- function(x) {
+  n <- suppressWarnings(as.numeric(x))
+  if (is.na(n)) return(x)
+  if (n >= 1e6) sprintf("R%.2f million", n / 1e6)
+  else sprintf("R%s", format(round(n), big.mark = ",", scientific = FALSE))
+}
+```
+
+# 1. The chain
+
+A pesticide-poisoning case must traverse eight conditionally independent steps for the response loop to close:
+
+1. Clinician suspects and notifies (NMC)
+2. EHP receives SMS and opens investigation
+3. EHP completes field investigation in <14 days
+4. EHP outcome is recorded back on NMC
+5. NICD reviews and classifies (cluster vs sporadic)
+6. NICD refers to DALRRD via structured channel
+7. DALRRD acts (inspection / withdrawal / formulation review)
+8. Action and outcome are fed back to clinician + NICD
+
+Let $p_i$ denote the probability that step $i$ succeeds, conditional on step $i-1$. The joint probability the loop closes is:
+
+$$
+P(\text{loop closed}) \;=\; \prod_{i=1}^{8} p_i
+$$
+
+Under status quo, several $p_i$ are near zero (especially steps 4, 6, 8 — none recorded back on NMC), giving an aggregate $P(\text{loop closed}) \approx$ **`r sprintf("%.1f%%", 100 * pick("p_loop_closed_status_quo"))`** (CSV: `p_loop_closed_status_quo`).
+
+# 2. Scenarios
+
+```{r}
+#| label: tbl-scenarios
+tibble::tribble(
+  ~Scenario,                     ~`P(loop closed)`,                           ~`Annual operating cost`,
+  "Status quo",                  pick("p_loop_closed_status_quo"),            0,
+  "C3 only (NICD→DALRRD feed)",  pick("p_loop_closed_C3_only"),               pick("c_C3_intel_feed_op"),
+  "Coordination Full Package",   pick("p_loop_closed_FP"),                    pick("c_coord_FP_op")
+) |>
+  dplyr::mutate(
+    `P(loop closed)` = scales::percent(`P(loop closed)`, accuracy = 0.1),
+    `Annual operating cost` = sapply(`Annual operating cost`, zar)
+  ) |>
+  gt() |>
+  tab_header(title = "Three operating points",
+             subtitle = "All values pulled from amua_import_parameters_v3.csv") |>
+  opt_row_striping()
+```
+
+The **Coordination Full Package** is the sum of five no-new-legislation sub-options (C1 NMC closure-of-loop field; C2 structured DALRRD referral form; C3 NICD→DALRRD intelligence feed; C4 clinician auto-feedback; C5 joint KPI dashboard). It moves $P(\text{loop closed})$ from `r sprintf("%.1f%%", 100 * pick("p_loop_closed_status_quo"))` to `r sprintf("%.0f%%", 100 * pick("p_loop_closed_FP"))` — a **~`r round(pick("p_loop_closed_FP") / pick("p_loop_closed_status_quo"))`× lift** for `r zar(pick("c_coord_FP_op"))`/year.
+
+# 3. Per-node cost table
+
+```{r}
+#| label: tbl-c-options
+tibble::tribble(
+  ~Code, ~Component,                                  ~`Operating cost`,
+  "C1",  "NMC closure-of-loop field",                  pick("c_C1_NMC_closure_op"),
+  "C2",  "Structured DALRRD referral form",            pick("c_C2_referral_form_op"),
+  "C3",  "NICD→DALRRD intelligence feed",              pick("c_C3_intel_feed_op"),
+  "C4",  "Clinician auto-feedback loop",               pick("c_C4_clinician_fb_op"),
+  "C5",  "Joint KPI dashboard",                        pick("c_C5_KPI_dashboard_op"),
+  "—",   "Full Package (sum)",                         pick("c_coord_FP_op")
+) |>
+  dplyr::mutate(`Operating cost` = sapply(`Operating cost`, zar)) |>
+  gt() |>
+  tab_header(title = "Coordination sub-options",
+             subtitle = "Per-year operating cost; all under R150k aggregate") |>
+  opt_row_striping()
+```
+
+# 4. One-way sensitivity
+
+The joint product structure means $P(\text{loop closed})$ is bounded above by the weakest link. The two weakest links under status quo are step 4 (EHP outcome recorded back on NMC) and step 8 (feedback to clinician). C1 directly targets step 4; C4 directly targets step 8. Their combined effect is reflected in `p_loop_closed_FP`.
+
+A reasonable sensitivity range, holding all other $p_i$ fixed at Full Package values, is:
+
+- **Lower:** $P(\text{loop closed}) = 0.50$ (if C4 clinician feedback adoption is poor)
+- **Mid:**   $P(\text{loop closed}) = 0.70$ (`p_loop_closed_FP`)
+- **Upper:** $P(\text{loop closed}) = 0.85$ (if KPI dashboard creates accountability pressure)
+
+# 5. Limitations
+
+- The eight steps are treated as **conditionally independent**. In practice steps 6–8 are correlated (a poorly-functioning NICD→DALRRD channel hurts both).
+- Per-node probabilities are **placeholder Beta priors**. The Coordination pilot is designed to produce posterior estimates within 12 months.
+- The model assumes the surveillance signal is already in place. The Detect investments are covered in [Technical Appendix A](analysis_report_v2.qmd) and [Technical Appendix D](posts/surveillance_concept_note.qmd).
+
+---
+
+::: {.footer-cta}
+**Brief:** [Coordination policy brief](posts/coordination_policy.qmd) · **Sister appendices:** [A](analysis_report_v2.qmd) · [C](technical_appendix_terbufos.qmd) · [D](posts/surveillance_concept_note.qmd)
+:::

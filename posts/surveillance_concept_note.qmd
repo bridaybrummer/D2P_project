@@ -1,16 +1,24 @@
 ---
-title: "Pesticide Poisoning Surveillance Concept Note"
-subtitle: "A Framework for Strengthening Detection and Response in South Africa"
+title: "Technical Appendix D — Sentinel Toxicology"
+subtitle: "Concept note for live-patient chemical-toxicology testing (Option S3b)"
 author: "D2P Project Team"
 date: "2025-08-05"
 date-modified: today
-categories: [surveillance, framework, concept-note]
+categories: [surveillance, framework, concept-note, technical-appendix]
 format:
   html:
     toc: true
     toc-depth: 3
     number-sections: true
 ---
+
+::: {.callout-note}
+## Where this appendix fits
+
+This appendix is the **quantitative concept note** for the live-patient chemical-toxicology investment (**Option S3b**) referenced in the [Surveillance brief](surveillance_policy.qmd). It is the only one of the four surveillance sub-options that **creates a new capability** — NHLS currently performs qualitative/quantitative pesticide assays only on post-mortem specimens. Pilot costing is anchored in canonical CSV rows `c_option6_pilot_year1` (R1.2m), `c_option6_full_5site_annual` (R3.625m), `c_gcms_screen_per_specimen` (R2,500), and `c_clinical_battery_per_patient` (R1,500).
+
+**Sister appendices:** [A — Surveillance decision analysis](../analysis_report_v2.qmd) · [B — Coordination model](../technical_appendix_coordination.qmd) · [C — Terbufos bracketed estimate](../technical_appendix_terbufos.qmd).
+:::
 
 ## Executive Summary
 

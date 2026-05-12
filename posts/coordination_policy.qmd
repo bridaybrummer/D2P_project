@@ -260,4 +260,6 @@ The surveillance signal that flows *into* this loop is covered in the [Surveilla
 
 ::: {.footer-cta}
 **Companion briefs:** [Surveillance](surveillance_policy.qmd) · [Terbufos restriction](terbufos_policy.qmd) · [Decision Model](decision_model.qmd) · [Costing Analysis](costing_analysis.qmd)
+
+**Technical appendix:** [B — Coordination joint-probability model](../technical_appendix_coordination.qmd)
 :::
