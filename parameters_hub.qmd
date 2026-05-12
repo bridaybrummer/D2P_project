@@ -220,7 +220,7 @@ The following items are referenced in the policy briefs but do **not yet have a 
 | ID | Parameter | Used in | Owner |
 |:---|:----------|:--------|:------|
 | TBF-1 | Terbufos annual SA market volume (kg active ingredient) | [Terbufos brief](posts/terbufos_policy.qmd) | DALRRD Pesticide Registrar |
-| TBF-2 | Terbufos attributable fraction of severe pesticide-poisoning cases | [Terbufos brief](posts/terbufos_policy.qmd) | NICD + NHLS toxicology (S3b) |
+| TBF-2 | Terbufos attributable fraction of severe pesticide-poisoning cases | [Terbufos brief](posts/terbufos_policy.qmd) | NICD + NHLS toxicology (S3) |
 | TBF-3 | SA-specific yield impact under leading substitutes (maize) | [Terbufos brief](posts/terbufos_policy.qmd) | ARC + grain industry |
 | TBF-4 | Comparative hazard profile of leading substitutes | [Terbufos brief](posts/terbufos_policy.qmd) | DALRRD registration |
 | COORD-1 | Per-node coordination transition probabilities Q1–Q7 | [Coordination brief](posts/coordination_policy.qmd) | NICD + DALRRD audit |

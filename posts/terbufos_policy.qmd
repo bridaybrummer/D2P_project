@@ -19,7 +19,7 @@ format:
 
 **Companion briefs:** [Surveillance](surveillance_policy.qmd) · [Coordination](coordination_policy.qmd).
 
-**Status:** **DRAFT.** One genuine SA evidence gap remains (the adult **live-patient** attributable fraction, resolved only by Surveillance Option S3b). The other quantitative inputs — market volume, yield impact, substitute hazard, substitute pricing, enforcement cost — are **not epistemic gaps**: they are either administrative numbers DALRRD can pull, or values defensibly anchored to the EU/US/Sri Lanka evidence base (see [§2b](#international-natural-experiment-evidence) and [Interim assumptions](#interim-assumptions-anchored-to-international-evidence)).
+**Status:** **DRAFT.** One genuine SA evidence gap remains (the adult **live-patient** attributable fraction, resolved only by Surveillance Option S3). The other quantitative inputs — market volume, yield impact, substitute hazard, substitute pricing, enforcement cost — are **not epistemic gaps**: they are either administrative numbers DALRRD can pull, or values defensibly anchored to the EU/US/Sri Lanka evidence base (see [§2b](#international-natural-experiment-evidence) and [Interim assumptions](#interim-assumptions-anchored-to-international-evidence)).
 :::
 
 ## 1. Policy question
@@ -35,7 +35,7 @@ Terbufos is a **WHO Class Ia ("Extremely Hazardous")** organophosphate insectici
 The public-health case rests on three claims:
 
 1. **High intrinsic toxicity** at sub-gram doses — settled science (WHO Class Ia; rat oral LD50 1.6–4.5 mg/kg).[^who][^epa]
-2. **Disproportionate contribution to severe and fatal poisonings** — supported in paediatric SA data (Davies 2023);[^davies] adult attributable fraction is not yet quantified pending live-patient chemical toxicology (Surveillance Option S3b).
+2. **Disproportionate contribution to severe and fatal poisonings** — supported in paediatric SA data (Davies 2023);[^davies] adult attributable fraction is not yet quantified pending live-patient chemical toxicology (Surveillance Option S3).
 3. **High substitutability for its primary use cases** (soil insect / stalk borer / nematode control in maize and other field crops) — registered substitutes exist (see §5), but **SA-specific yield-impact modelling is not yet done** (open item TBF-3).
 
 ### 2b. International natural-experiment evidence {#international-natural-experiment-evidence}
@@ -78,7 +78,7 @@ DALRRD itself bears **~R0 of the R2.34B annual burden**. That cost is carried by
 | EU approval status | Not approved (expired Jun 2009; not renewed) | EU Pesticides Database, Regulation (EC) 1107/2009 |
 | US (US EPA) status | Restricted-Use Pesticide (RUP); voluntary cancellations of granular formulations | US EPA RED 2006[^epa] |
 | Paediatric mortality attribution (SA) | Dominant agent in fatal childhood pesticide poisoning, with methamidophos | Davies et al. 2023[^davies] |
-| Adult attribution fraction (SA) | Not yet quantified | Open item TBF-2 — requires Surveillance Option S3b |
+| Adult attribution fraction (SA) | Not yet quantified | Open item TBF-2 — requires Surveillance Option S3 |
 | Annual SA agricultural market volume | Not in workspace; held by DALRRD | Open item TBF-1 |
 | Primary registered crop uses | Maize (stalk borer, nematodes); other field crops | DALRRD pesticide register |
 | Available substitute actives | Several registered alternatives exist for the primary use cases (e.g. alternative organophosphates, carbamates, neonicotinoids, biological controls); SA-specific comparative analysis pending | Industry technical literature; open item TBF-3/TBF-4 |
@@ -104,7 +104,7 @@ flowchart LR
     R1 --> O1[Option T2/T3: Class Ia<br/>phase-out aligned with WHO]
     R2 --> O2[Option T2: Formulation restriction<br/>e.g. only encapsulated, no granular]
     R3 --> O3[Option T2: Restricted-use<br/>permitting + traceability]
-    R4 --> O4[Surveillance S3b<br/><i>see Surveillance brief</i>]
+    R4 --> O4[Surveillance S3<br/><i>see Surveillance brief</i>]
     R5 --> O5[Option T2/T3: DALRRD substitution<br/>support + grower advisory]
 
     style A fill:#f99,stroke:#333
@@ -131,7 +131,7 @@ A bundle of measures short of an outright ban:
 - **Restricted-use product (RUP) designation.** Sales only to certified applicators against a logged transaction; no informal-market sales.
 - **Mandatory point-of-sale labelling and lockable container requirement.**
 - **Quarterly DALRRD audit** of distributor records, with NICD→DALRRD intelligence feed (see Coordination brief Option C3) flagging geographies of concern.
-- **Sunset clause.** Conditional 24-month re-registration; if NICD-attributed serious-poisoning cases (from S3b toxicology, once operational) do not decline by a pre-agreed margin, automatic transition to Option T3.
+- **Sunset clause.** Conditional 24-month re-registration; if NICD-attributed serious-poisoning cases (from S3 toxicology, once operational) do not decline by a pre-agreed margin, automatic transition to Option T3.
 
 Cost: principally regulatory and enforcement. `[Evidence gap: DALRRD inspectorate cost model for RUP enforcement.]` Implementation: 6–12 months.
 
@@ -190,7 +190,7 @@ Using the shared parameter set and the Sri Lanka attributable-fraction bracket:
 - Option T3 (full withdrawal) at Sri Lanka-class substitution-incompleteness (60–80 % of attributable burden actually retired) → **~200–400 deaths/yr averted.**
 - Option T2 (formulation restriction + RUP + audit), partial coverage of the informal-market diversion pathway only → **~80–180 deaths/yr averted**, with the 24-month evaluation gate sized to detect this signal.
 
-This is a **bracketed working estimate**, not a point claim. The bracket is wide on purpose. The single piece of evidence that would tighten it — a live-patient adult attributable fraction — is the [Surveillance Option S3b](surveillance_policy.qmd) deliverable at month 12. Decision-makers should not wait for it: the lower end of the bracket alone (~200 deaths/yr) at a regulatory cost of ~R1–3M/yr gives a leverage ratio of approximately **1 : 500** on household-borne mortality cost — the case for action is robust across the full bracket.
+This is a **bracketed working estimate**, not a point claim. The bracket is wide on purpose. The single piece of evidence that would tighten it — a live-patient adult attributable fraction — is the [Surveillance Option S3](surveillance_policy.qmd) deliverable at month 12. Decision-makers should not wait for it: the lower end of the bracket alone (~200 deaths/yr) at a regulatory cost of ~R1–3M/yr gives a leverage ratio of approximately **1 : 500** on household-borne mortality cost — the case for action is robust across the full bracket.
 
 ## 7. Implementation considerations
 
@@ -198,14 +198,14 @@ This is a **bracketed working estimate**, not a point claim. The bracket is wide
 |:------|:-------|:-----------|
 | Regulatory authority | DALRRD has full authority under the Act | None required |
 | Pesticide registration cancellation process | Established administrative pathway | Standard DALRRD process |
-| Attributable-fraction evidence | `[Evidence gap]` | Stand up Surveillance Option S3b at 1 sentinel site within 12 months |
+| Attributable-fraction evidence | `[Evidence gap]` | Stand up Surveillance Option S3 at 1 sentinel site within 12 months |
 | Yield-impact evidence | `[Evidence gap]` | Commission grain-industry / ARC modelling alongside Option T2 |
 | Substitute hazard profile | `[Evidence gap]` | DALRRD comparative hazard review at registration |
 | Smallholder access to substitutes | `[Evidence gap]` | Grower advisory + transition subsidy via DALRRD |
 | Compliance / black-market risk | High under T3 if poorly enforced | T2 as a 24-month stepping stone; Coordination C3 intelligence feed |
 | Stakeholder consultation | Required | DALRRD + grain industry + civil-society public-comment process |
 
-**Institutional responsibilities.** DALRRD leads regulatory action. NDoH/NICD supplies the attributable-harm evidence base (via [Surveillance](surveillance_policy.qmd) S3b and [Coordination](coordination_policy.qmd) C3). DTIC and Agriculture sector bodies lead substitution support. Civil-society and grower organisations participate in formal consultation.
+**Institutional responsibilities.** DALRRD leads regulatory action. NDoH/NICD supplies the attributable-harm evidence base (via [Surveillance](surveillance_policy.qmd) S3 and [Coordination](coordination_policy.qmd) C3). DTIC and Agriculture sector bodies lead substitution support. Civil-society and grower organisations participate in formal consultation.
 
 ## 8. Recommended next step
 
@@ -215,7 +215,7 @@ Concretely:
 
 1. **Within 3 months.** DALRRD gazette the formulation restriction, RUP designation, distributor audit, and lockable-container requirement.
 2. **Within 6 months.** NICD operationalises the [Coordination Option C3](coordination_policy.qmd) NICD→DALRRD intelligence feed with quarterly terbufos-specific reporting.
-3. **Within 12 months.** [Surveillance Option S3b](surveillance_policy.qmd) sentinel live-patient chemical toxicology site operational, producing the attributable-fraction evidence base.
+3. **Within 12 months.** [Surveillance Option S3](surveillance_policy.qmd) sentinel live-patient chemical toxicology site operational, producing the attributable-fraction evidence base.
 4. **Within 24 months.** Joint NDoH–DALRRD review against pre-agreed reduction target → escalate to Option T3 if target missed, retain Option T2 if met.
 5. **In parallel.** Commission the four explicit `[Evidence gap]` work items (market volume, attributable fraction, yield-impact, substitute hazard) to retire the uncertainty that today prevents a clean cost–benefit calculation.
 
@@ -227,7 +227,7 @@ This is the option that takes the strongest public-health action immediately com
 
 | # | Gap | Why it is genuinely missing | Owner | Required by |
 |:--|:----|:----------------------------|:------|:------------|
-| 1 | **Adult live-patient terbufos attributable fraction in severe non-fatal pesticide poisonings** | SA does not currently run live-patient chemical toxicology at scale; forensic data captures fatalities only. Only Surveillance Option S3b resolves it. | NHLS toxicology + NICD | Month 12 |
+| 1 | **Adult live-patient terbufos attributable fraction in severe non-fatal pesticide poisonings** | SA does not currently run live-patient chemical toxicology at scale; forensic data captures fatalities only. Only Surveillance Option S3 resolves it. | NHLS toxicology + NICD | Month 12 |
 
 ## Interim assumptions, anchored to international evidence {#interim-assumptions-anchored-to-international-evidence}
 

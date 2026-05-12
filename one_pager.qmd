@@ -106,7 +106,7 @@ Outcomes of those decisions feed back into the surveillance system.
 ## What we are *not* asking for
 
 - No new legislation.
-- No new test, no new reagent contract (S3a is an LIS configuration).
+- No new test, no new reagent contract (S2 is an LIS configuration).
 - No new agency.
 - No single point-estimate masquerading as certainty — every figure traces back to [`amua_import_parameters_v3.csv`](amua_import_parameters_v3.csv); open evidence gaps are listed in the [Parameters Hub](parameters_hub.qmd).
 
