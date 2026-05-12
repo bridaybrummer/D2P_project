@@ -120,7 +120,51 @@ This is well below any reasonable willingness-to-pay anchor for SA (e.g. 1× GDP
 
 The Sri Lanka and Bangladesh natural experiments are why we treat $f_\text{attr} \in [0.20, 0.35]$ as defensible without a new SA-specific autopsy study.
 
-# 6. Limitations
+# 6. Maize yield impact under a terbufos ban {#sec-yield-impact}
+
+This section underpins the brief paragraph in §7 of the [Terbufos brief](posts/terbufos_policy.qmd). The headline conclusion — **<5 % yield impact, concentrated in non-Bt smallholder maize** — rests on three multiplicative factors.
+
+## 6.1 Closed form
+
+$$
+\Delta Y \;=\; s_{\text{non-Bt}} \times u_{\text{terbufos}} \times \delta_{\text{substitute}}
+$$
+
+where
+
+- $s_{\text{non-Bt}}$ = share of SA maize area not under Bt-trait varieties (~15 %; the Bt trait covers the dominant stalk-borer use case biologically).
+- $u_{\text{terbufos}}$ = share of that non-Bt area where terbufos is the *current* soil-insect / nematode treatment (≤50 %; the rest already uses substitutes or no treatment).
+- $\delta_{\text{substitute}}$ = residual per-hectare yield gap when terbufos is replaced by the leading registered substitute (chlorantraniliprole, thiamethoxam, imidacloprid, or biological control). International field-trial evidence: 0–10 %, working value ~5 %.
+
+Working value: $\Delta Y \approx 0.15 \times 0.50 \times 0.05 = 0.375 \%$ of national maize output. Plausible upper bound at $s=0.20$, $u=0.70$, $\delta=0.10$: $\Delta Y \approx 1.4 \%$. The brief's "<5 %" headline is comfortably conservative.
+
+## 6.2 Why the cost is bounded
+
+1. **Bt-trait penetration.** SA commercial maize is ~85 % Bt — the dominant stalk-borer use case is retired biologically before any chemical intervention. This is the single largest reason the SA yield exposure is small relative to the equivalent EU 2009 case.
+2. **Substitute acute-hazard profile.** Substitutes are 100–1,000× less acutely toxic on rat oral LD50 (chlorantraniliprole U, thiamethoxam II, imidacloprid II vs terbufos Ia). The acute-poisoning burden retired by withdrawal is therefore the **full** terbufos attributable share, not a redistribution to a similar-hazard substitute.
+3. **EU 2009 natural experiment.** Terbufos was withdrawn in the EU more than 15 years ago. No documented maize-yield collapse in any producer state. SA's exposure is *smaller* than the EU's was because of Bt penetration.
+
+## 6.3 Input-cost delta
+
+Substitutes cost roughly 2–5× per hectare vs commodity granular OPs. Maize gross output is ~R20,000/ha. The substitute-cost delta is therefore single-digit-% of gross output — meaningful for smallholder margins but not for the national maize balance sheet.
+
+## 6.4 Smallholder transition support
+
+The remaining concentration of impact on non-Bt smallholder maize is addressed by a two-season DALRRD grower-advisory + targeted subsidy on substitute inputs. Cost is bounded by the size of the non-Bt smallholder pool and the substitute-cost delta, and is small relative to the household-borne mortality cost retired by the ban (~R1.4–2.6B/yr at the working bracket).
+
+## 6.5 Sensitivity
+
+| Driver | Plausible range | Effect on $\Delta Y$ |
+|:-------|:----------------|:--------------------:|
+| Bt-trait coverage $s_{\text{non-Bt}}$ | 0.10 – 0.20 | linear |
+| Current terbufos use on non-Bt area $u_{\text{terbufos}}$ | 0.30 – 0.70 | linear |
+| Substitute yield gap $\delta_{\text{substitute}}$ | 0.00 – 0.10 | linear |
+| **Combined upper bound** | — | **~1.4 %** |
+| **Combined working value** | — | **~0.4 %** |
+
+: Three-factor sensitivity for the SA maize yield impact of a terbufos ban. Even the joint upper bound is well within the brief's "<5 %" headline. {.striped .hover}
+
+# 7. Limitations
 
 - $\varphi_\text{retired}$ is the **biggest single uncertainty**. Substitution to other class I OPs would shrink this dramatically. Restricting the whole class (not just terbufos) is the obvious mitigation.
 - The model assumes the **detection signal exists**: without sentinel toxicology ([Appendix D](posts/surveillance_concept_note.qmd)) and a working coordination loop ([Appendix B](technical_appendix_coordination.qmd)), the regulatory action can't fire on time.
