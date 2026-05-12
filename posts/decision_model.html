@@ -302,10 +302,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Question:</strong> Which combination of short-term institutional actions will most efficiently improve hotspot detection and response?</p>
+<p><strong>Question:</strong> Which combination of short-term institutional actions will most efficiently improve <strong>per-case</strong> pesticide-poisoning detection and response?</p>
 <p><strong>Approach:</strong> Compare 6 strategies (status quo + 5 options) on two dimensions:</p>
 <ol type="1">
-<li><strong>Effectiveness:</strong> Number of hotspots detected and responded to (out of 10/year)</li>
+<li><strong>Effectiveness:</strong> Per-case detection probability — share of the implied true burden (~20,960 cases/yr, StatsSA-anchored) that the surveillance system actually sees</li>
 <li><strong>Cost:</strong> Annual implementation and operational costs (ZAR)</li>
 </ol>
 <p><strong>Output:</strong> Cost-effectiveness ratios to inform policy prioritization</p>
@@ -332,13 +332,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     A --&gt; G[Option 5: Provincial coordination]
     A --&gt; H[Full Package: All options]
     
-    E --&gt; I{Is hotspot detected?}
+    E --&gt; I{Is case detected?}
     I --&gt;|Yes| J[Response initiated]
-    I --&gt;|No| K[Missed hotspot]
+    I --&gt;|No| K[Missed case]
     
     J --&gt; L{Is response successful?}
-    L --&gt;|Yes| M[Hotspot controlled]
-    L --&gt;|No| N[Hotspot persists]
+    L --&gt;|Yes| M[Source / exposure controlled]
+    L --&gt;|No| N[Exposure persists]
     
     style A fill:#f9f,stroke:#333
     style E fill:#9f9,stroke:#333
@@ -388,23 +388,23 @@ Table&nbsp;1: Baseline epidemiology parameters
 </figcaption>
 <div aria-describedby="tbl-baseline-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="bqfjljydkc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#bqfjljydkc table {
+<div id="mbxrxcsljl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#mbxrxcsljl table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#bqfjljydkc thead, #bqfjljydkc tbody, #bqfjljydkc tfoot, #bqfjljydkc tr, #bqfjljydkc td, #bqfjljydkc th {
+#mbxrxcsljl thead, #mbxrxcsljl tbody, #mbxrxcsljl tfoot, #mbxrxcsljl tr, #mbxrxcsljl td, #mbxrxcsljl th {
   border-style: none;
 }
 
-#bqfjljydkc p {
+#mbxrxcsljl p {
   margin: 0;
   padding: 0;
 }
 
-#bqfjljydkc .gt_table {
+#mbxrxcsljl .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -430,12 +430,12 @@ Table&nbsp;1: Baseline epidemiology parameters
   border-left-color: #D3D3D3;
 }
 
-#bqfjljydkc .gt_caption {
+#mbxrxcsljl .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#bqfjljydkc .gt_title {
+#mbxrxcsljl .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -447,7 +447,7 @@ Table&nbsp;1: Baseline epidemiology parameters
   border-bottom-width: 0;
 }
 
-#bqfjljydkc .gt_subtitle {
+#mbxrxcsljl .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -459,7 +459,7 @@ Table&nbsp;1: Baseline epidemiology parameters
   border-top-width: 0;
 }
 
-#bqfjljydkc .gt_heading {
+#mbxrxcsljl .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -471,13 +471,13 @@ Table&nbsp;1: Baseline epidemiology parameters
   border-right-color: #D3D3D3;
 }
 
-#bqfjljydkc .gt_bottom_border {
+#mbxrxcsljl .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#bqfjljydkc .gt_col_headings {
+#mbxrxcsljl .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -492,7 +492,7 @@ Table&nbsp;1: Baseline epidemiology parameters
   border-right-color: #D3D3D3;
 }
 
-#bqfjljydkc .gt_col_heading {
+#mbxrxcsljl .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -512,7 +512,7 @@ Table&nbsp;1: Baseline epidemiology parameters
   overflow-x: hidden;
 }
 
-#bqfjljydkc .gt_column_spanner_outer {
+#mbxrxcsljl .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -524,15 +524,15 @@ Table&nbsp;1: Baseline epidemiology parameters
   padding-right: 4px;
 }
 
-#bqfjljydkc .gt_column_spanner_outer:first-child {
+#mbxrxcsljl .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#bqfjljydkc .gt_column_spanner_outer:last-child {
+#mbxrxcsljl .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#bqfjljydkc .gt_column_spanner {
+#mbxrxcsljl .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -544,11 +544,11 @@ Table&nbsp;1: Baseline epidemiology parameters
   width: 100%;
 }
 
-#bqfjljydkc .gt_spanner_row {
+#mbxrxcsljl .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#bqfjljydkc .gt_group_heading {
+#mbxrxcsljl .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -574,7 +574,7 @@ Table&nbsp;1: Baseline epidemiology parameters
   text-align: left;
 }
 
-#bqfjljydkc .gt_empty_group_heading {
+#mbxrxcsljl .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -589,15 +589,15 @@ Table&nbsp;1: Baseline epidemiology parameters
   vertical-align: middle;
 }
 
-#bqfjljydkc .gt_from_md > :first-child {
+#mbxrxcsljl .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#bqfjljydkc .gt_from_md > :last-child {
+#mbxrxcsljl .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#bqfjljydkc .gt_row {
+#mbxrxcsljl .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -616,7 +616,7 @@ Table&nbsp;1: Baseline epidemiology parameters
   overflow-x: hidden;
 }
 
-#bqfjljydkc .gt_stub {
+#mbxrxcsljl .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -629,7 +629,7 @@ Table&nbsp;1: Baseline epidemiology parameters
   padding-right: 5px;
 }
 
-#bqfjljydkc .gt_stub_row_group {
+#mbxrxcsljl .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -643,15 +643,15 @@ Table&nbsp;1: Baseline epidemiology parameters
   vertical-align: top;
 }
 
-#bqfjljydkc .gt_row_group_first td {
+#mbxrxcsljl .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#bqfjljydkc .gt_row_group_first th {
+#mbxrxcsljl .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#bqfjljydkc .gt_summary_row {
+#mbxrxcsljl .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -661,16 +661,16 @@ Table&nbsp;1: Baseline epidemiology parameters
   padding-right: 5px;
 }
 
-#bqfjljydkc .gt_first_summary_row {
+#mbxrxcsljl .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#bqfjljydkc .gt_first_summary_row.thick {
+#mbxrxcsljl .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#bqfjljydkc .gt_last_summary_row {
+#mbxrxcsljl .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -680,7 +680,7 @@ Table&nbsp;1: Baseline epidemiology parameters
   border-bottom-color: #D3D3D3;
 }
 
-#bqfjljydkc .gt_grand_summary_row {
+#mbxrxcsljl .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -690,7 +690,7 @@ Table&nbsp;1: Baseline epidemiology parameters
   padding-right: 5px;
 }
 
-#bqfjljydkc .gt_first_grand_summary_row {
+#mbxrxcsljl .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -700,7 +700,7 @@ Table&nbsp;1: Baseline epidemiology parameters
   border-top-color: #D3D3D3;
 }
 
-#bqfjljydkc .gt_last_grand_summary_row_top {
+#mbxrxcsljl .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -710,11 +710,11 @@ Table&nbsp;1: Baseline epidemiology parameters
   border-bottom-color: #D3D3D3;
 }
 
-#bqfjljydkc .gt_striped {
+#mbxrxcsljl .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#bqfjljydkc .gt_table_body {
+#mbxrxcsljl .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -723,7 +723,7 @@ Table&nbsp;1: Baseline epidemiology parameters
   border-bottom-color: #D3D3D3;
 }
 
-#bqfjljydkc .gt_footnotes {
+#mbxrxcsljl .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -737,7 +737,7 @@ Table&nbsp;1: Baseline epidemiology parameters
   border-right-color: #D3D3D3;
 }
 
-#bqfjljydkc .gt_footnote {
+#mbxrxcsljl .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -746,7 +746,7 @@ Table&nbsp;1: Baseline epidemiology parameters
   padding-right: 5px;
 }
 
-#bqfjljydkc .gt_sourcenotes {
+#mbxrxcsljl .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -760,7 +760,7 @@ Table&nbsp;1: Baseline epidemiology parameters
   border-right-color: #D3D3D3;
 }
 
-#bqfjljydkc .gt_sourcenote {
+#mbxrxcsljl .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -768,72 +768,72 @@ Table&nbsp;1: Baseline epidemiology parameters
   padding-right: 5px;
 }
 
-#bqfjljydkc .gt_left {
+#mbxrxcsljl .gt_left {
   text-align: left;
 }
 
-#bqfjljydkc .gt_center {
+#mbxrxcsljl .gt_center {
   text-align: center;
 }
 
-#bqfjljydkc .gt_right {
+#mbxrxcsljl .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#bqfjljydkc .gt_font_normal {
+#mbxrxcsljl .gt_font_normal {
   font-weight: normal;
 }
 
-#bqfjljydkc .gt_font_bold {
+#mbxrxcsljl .gt_font_bold {
   font-weight: bold;
 }
 
-#bqfjljydkc .gt_font_italic {
+#mbxrxcsljl .gt_font_italic {
   font-style: italic;
 }
 
-#bqfjljydkc .gt_super {
+#mbxrxcsljl .gt_super {
   font-size: 65%;
 }
 
-#bqfjljydkc .gt_footnote_marks {
+#mbxrxcsljl .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#bqfjljydkc .gt_asterisk {
+#mbxrxcsljl .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#bqfjljydkc .gt_indent_1 {
+#mbxrxcsljl .gt_indent_1 {
   text-indent: 5px;
 }
 
-#bqfjljydkc .gt_indent_2 {
+#mbxrxcsljl .gt_indent_2 {
   text-indent: 10px;
 }
 
-#bqfjljydkc .gt_indent_3 {
+#mbxrxcsljl .gt_indent_3 {
   text-indent: 15px;
 }
 
-#bqfjljydkc .gt_indent_4 {
+#mbxrxcsljl .gt_indent_4 {
   text-indent: 20px;
 }
 
-#bqfjljydkc .gt_indent_5 {
+#mbxrxcsljl .gt_indent_5 {
   text-indent: 25px;
 }
 
-#bqfjljydkc .katex-display {
+#mbxrxcsljl .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#bqfjljydkc div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#mbxrxcsljl div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -854,14 +854,14 @@ Table&nbsp;1: Baseline epidemiology parameters
 </thead>
 <tbody class="gt_table_body">
 <tr class="odd">
-<td class="gt_row gt_left" headers="Parameter">Estimated annual hotspots</td>
-<td class="gt_row gt_center" headers="Value">10</td>
-<td class="gt_row gt_center" headers="Source">Expert estimate (NICD)</td>
+<td class="gt_row gt_left" headers="Parameter">Implied true annual burden (mid-CFR)</td>
+<td class="gt_row gt_center" headers="Value">~20,960</td>
+<td class="gt_row gt_center" headers="Source">StatsSA MACOD 2023 ÷ 0.125</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_left" headers="Parameter">Hotspots detected (status quo)</td>
-<td class="gt_row gt_center" headers="Value">4.5 (45%)</td>
-<td class="gt_row gt_center" headers="Source">NMC data 2020-2024</td>
+<td class="gt_row gt_left" headers="Parameter">Status-quo per-case detection (P_detect)</td>
+<td class="gt_row gt_center" headers="Value">0.048 (~5%)</td>
+<td class="gt_row gt_center" headers="Source">1,013 NMC × 0.125 ÷ 2,620 StatsSA deaths</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Parameter">Severe BChE inhibitions/year</td>
@@ -880,8 +880,8 @@ Table&nbsp;1: Baseline epidemiology parameters
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Parameter">Detection gap</td>
-<td class="gt_row gt_center" headers="Value">~987 cases (49%)</td>
-<td class="gt_row gt_center" headers="Source">Calculated</td>
+<td class="gt_row gt_center" headers="Value">~19,947 cases (~95%)</td>
+<td class="gt_row gt_center" headers="Source">Implied burden − NMC notifications</td>
 </tr>
 </tbody>
 </table>
@@ -895,7 +895,7 @@ Table&nbsp;1: Baseline epidemiology parameters
 </section>
 <section id="effectiveness-parameters" class="level4" data-number="2.3.2">
 <h4 data-number="2.3.2" class="anchored" data-anchor-id="effectiveness-parameters"><span class="header-section-number">2.3.2</span> Effectiveness Parameters</h4>
-<p>Each option has an estimated <strong>probability of detecting</strong> a hotspot:</p>
+<p>Each option has an estimated <strong>per-case detection probability</strong> — the share of true annual cases captured into the surveillance system:</p>
 <div class="cell">
 <div id="tbl-effectiveness" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -904,23 +904,23 @@ Table&nbsp;2: Effectiveness parameters for each option
 </figcaption>
 <div aria-describedby="tbl-effectiveness-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="rlikisslsv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#rlikisslsv table {
+<div id="dseicdxxhq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#dseicdxxhq table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#rlikisslsv thead, #rlikisslsv tbody, #rlikisslsv tfoot, #rlikisslsv tr, #rlikisslsv td, #rlikisslsv th {
+#dseicdxxhq thead, #dseicdxxhq tbody, #dseicdxxhq tfoot, #dseicdxxhq tr, #dseicdxxhq td, #dseicdxxhq th {
   border-style: none;
 }
 
-#rlikisslsv p {
+#dseicdxxhq p {
   margin: 0;
   padding: 0;
 }
 
-#rlikisslsv .gt_table {
+#dseicdxxhq .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -946,12 +946,12 @@ Table&nbsp;2: Effectiveness parameters for each option
   border-left-color: #D3D3D3;
 }
 
-#rlikisslsv .gt_caption {
+#dseicdxxhq .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#rlikisslsv .gt_title {
+#dseicdxxhq .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -963,7 +963,7 @@ Table&nbsp;2: Effectiveness parameters for each option
   border-bottom-width: 0;
 }
 
-#rlikisslsv .gt_subtitle {
+#dseicdxxhq .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -975,7 +975,7 @@ Table&nbsp;2: Effectiveness parameters for each option
   border-top-width: 0;
 }
 
-#rlikisslsv .gt_heading {
+#dseicdxxhq .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -987,13 +987,13 @@ Table&nbsp;2: Effectiveness parameters for each option
   border-right-color: #D3D3D3;
 }
 
-#rlikisslsv .gt_bottom_border {
+#dseicdxxhq .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#rlikisslsv .gt_col_headings {
+#dseicdxxhq .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1008,7 +1008,7 @@ Table&nbsp;2: Effectiveness parameters for each option
   border-right-color: #D3D3D3;
 }
 
-#rlikisslsv .gt_col_heading {
+#dseicdxxhq .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1028,7 +1028,7 @@ Table&nbsp;2: Effectiveness parameters for each option
   overflow-x: hidden;
 }
 
-#rlikisslsv .gt_column_spanner_outer {
+#dseicdxxhq .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1040,15 +1040,15 @@ Table&nbsp;2: Effectiveness parameters for each option
   padding-right: 4px;
 }
 
-#rlikisslsv .gt_column_spanner_outer:first-child {
+#dseicdxxhq .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#rlikisslsv .gt_column_spanner_outer:last-child {
+#dseicdxxhq .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#rlikisslsv .gt_column_spanner {
+#dseicdxxhq .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1060,11 +1060,11 @@ Table&nbsp;2: Effectiveness parameters for each option
   width: 100%;
 }
 
-#rlikisslsv .gt_spanner_row {
+#dseicdxxhq .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#rlikisslsv .gt_group_heading {
+#dseicdxxhq .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1090,7 +1090,7 @@ Table&nbsp;2: Effectiveness parameters for each option
   text-align: left;
 }
 
-#rlikisslsv .gt_empty_group_heading {
+#dseicdxxhq .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1105,15 +1105,15 @@ Table&nbsp;2: Effectiveness parameters for each option
   vertical-align: middle;
 }
 
-#rlikisslsv .gt_from_md > :first-child {
+#dseicdxxhq .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#rlikisslsv .gt_from_md > :last-child {
+#dseicdxxhq .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#rlikisslsv .gt_row {
+#dseicdxxhq .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1132,7 +1132,7 @@ Table&nbsp;2: Effectiveness parameters for each option
   overflow-x: hidden;
 }
 
-#rlikisslsv .gt_stub {
+#dseicdxxhq .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1145,7 +1145,7 @@ Table&nbsp;2: Effectiveness parameters for each option
   padding-right: 5px;
 }
 
-#rlikisslsv .gt_stub_row_group {
+#dseicdxxhq .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1159,15 +1159,15 @@ Table&nbsp;2: Effectiveness parameters for each option
   vertical-align: top;
 }
 
-#rlikisslsv .gt_row_group_first td {
+#dseicdxxhq .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#rlikisslsv .gt_row_group_first th {
+#dseicdxxhq .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#rlikisslsv .gt_summary_row {
+#dseicdxxhq .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1177,16 +1177,16 @@ Table&nbsp;2: Effectiveness parameters for each option
   padding-right: 5px;
 }
 
-#rlikisslsv .gt_first_summary_row {
+#dseicdxxhq .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#rlikisslsv .gt_first_summary_row.thick {
+#dseicdxxhq .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#rlikisslsv .gt_last_summary_row {
+#dseicdxxhq .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1196,7 +1196,7 @@ Table&nbsp;2: Effectiveness parameters for each option
   border-bottom-color: #D3D3D3;
 }
 
-#rlikisslsv .gt_grand_summary_row {
+#dseicdxxhq .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1206,7 +1206,7 @@ Table&nbsp;2: Effectiveness parameters for each option
   padding-right: 5px;
 }
 
-#rlikisslsv .gt_first_grand_summary_row {
+#dseicdxxhq .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1216,7 +1216,7 @@ Table&nbsp;2: Effectiveness parameters for each option
   border-top-color: #D3D3D3;
 }
 
-#rlikisslsv .gt_last_grand_summary_row_top {
+#dseicdxxhq .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1226,11 +1226,11 @@ Table&nbsp;2: Effectiveness parameters for each option
   border-bottom-color: #D3D3D3;
 }
 
-#rlikisslsv .gt_striped {
+#dseicdxxhq .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#rlikisslsv .gt_table_body {
+#dseicdxxhq .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1239,7 +1239,7 @@ Table&nbsp;2: Effectiveness parameters for each option
   border-bottom-color: #D3D3D3;
 }
 
-#rlikisslsv .gt_footnotes {
+#dseicdxxhq .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1253,7 +1253,7 @@ Table&nbsp;2: Effectiveness parameters for each option
   border-right-color: #D3D3D3;
 }
 
-#rlikisslsv .gt_footnote {
+#dseicdxxhq .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1262,7 +1262,7 @@ Table&nbsp;2: Effectiveness parameters for each option
   padding-right: 5px;
 }
 
-#rlikisslsv .gt_sourcenotes {
+#dseicdxxhq .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1276,7 +1276,7 @@ Table&nbsp;2: Effectiveness parameters for each option
   border-right-color: #D3D3D3;
 }
 
-#rlikisslsv .gt_sourcenote {
+#dseicdxxhq .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1284,72 +1284,72 @@ Table&nbsp;2: Effectiveness parameters for each option
   padding-right: 5px;
 }
 
-#rlikisslsv .gt_left {
+#dseicdxxhq .gt_left {
   text-align: left;
 }
 
-#rlikisslsv .gt_center {
+#dseicdxxhq .gt_center {
   text-align: center;
 }
 
-#rlikisslsv .gt_right {
+#dseicdxxhq .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#rlikisslsv .gt_font_normal {
+#dseicdxxhq .gt_font_normal {
   font-weight: normal;
 }
 
-#rlikisslsv .gt_font_bold {
+#dseicdxxhq .gt_font_bold {
   font-weight: bold;
 }
 
-#rlikisslsv .gt_font_italic {
+#dseicdxxhq .gt_font_italic {
   font-style: italic;
 }
 
-#rlikisslsv .gt_super {
+#dseicdxxhq .gt_super {
   font-size: 65%;
 }
 
-#rlikisslsv .gt_footnote_marks {
+#dseicdxxhq .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#rlikisslsv .gt_asterisk {
+#dseicdxxhq .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#rlikisslsv .gt_indent_1 {
+#dseicdxxhq .gt_indent_1 {
   text-indent: 5px;
 }
 
-#rlikisslsv .gt_indent_2 {
+#dseicdxxhq .gt_indent_2 {
   text-indent: 10px;
 }
 
-#rlikisslsv .gt_indent_3 {
+#dseicdxxhq .gt_indent_3 {
   text-indent: 15px;
 }
 
-#rlikisslsv .gt_indent_4 {
+#dseicdxxhq .gt_indent_4 {
   text-indent: 20px;
 }
 
-#rlikisslsv .gt_indent_5 {
+#dseicdxxhq .gt_indent_5 {
   text-indent: 25px;
 }
 
-#rlikisslsv .katex-display {
+#dseicdxxhq .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#rlikisslsv div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#dseicdxxhq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1364,57 +1364,57 @@ Table&nbsp;2: Effectiveness parameters for each option
 </tr>
 <tr class="gt_col_headings header">
 <th id="Option" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Option</th>
-<th id="Detection_Probability" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Detection_Probability</th>
-<th id="Hotspots_Detected" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Hotspots_Detected</th>
+<th id="Detection_Probability" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Detection_Probability</th>
+<th id="Cases_Detected" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Cases_Detected</th>
 <th id="Rationale" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Rationale</th>
 </tr>
 </thead>
 <tbody class="gt_table_body">
 <tr class="odd">
 <td class="gt_row gt_left" headers="Option">Status Quo</td>
-<td class="gt_row gt_right" headers="Detection_Probability">0.45</td>
-<td class="gt_row gt_right" headers="Hotspots_Detected">4.5 / 10</td>
-<td class="gt_row gt_left" headers="Rationale">Current NMC system performance</td>
+<td class="gt_row gt_left" headers="Detection_Probability">0.048</td>
+<td class="gt_row gt_left" headers="Cases_Detected">~1,013 / 20,960</td>
+<td class="gt_row gt_left" headers="Rationale">NMC-only, StatsSA-anchored</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_left" headers="Option">Option 1: NHLS MOU</td>
-<td class="gt_row gt_right" headers="Detection_Probability">0.52</td>
-<td class="gt_row gt_right" headers="Hotspots_Detected">5.2 / 10</td>
-<td class="gt_row gt_left" headers="Rationale">Monthly aggregated BChE data</td>
+<td class="gt_row gt_left" headers="Option">Option 1: NHLS MOU (legacy)<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span></td>
+<td class="gt_row gt_left" headers="Detection_Probability">0.052 (deprecated)</td>
+<td class="gt_row gt_left" headers="Cases_Detected">—</td>
+<td class="gt_row gt_left" headers="Rationale">Now operational; no longer an active option</td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_left" headers="Option">Option 2: DALRRD data</td>
-<td class="gt_row gt_right" headers="Detection_Probability">0.58</td>
-<td class="gt_row gt_right" headers="Hotspots_Detected">5.8 / 10</td>
-<td class="gt_row gt_left" headers="Rationale">Pesticide product linkage</td>
+<td class="gt_row gt_left" headers="Option">Option 2: DALRRD data (legacy)<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span></td>
+<td class="gt_row gt_left" headers="Detection_Probability">0.058 (deprecated)</td>
+<td class="gt_row gt_left" headers="Cases_Detected">—</td>
+<td class="gt_row gt_left" headers="Rationale">Coordination scope; see coordination brief</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_left" headers="Option">Option 3: BChE auto-notify</td>
-<td class="gt_row gt_right" headers="Detection_Probability">0.67</td>
-<td class="gt_row gt_right" headers="Hotspots_Detected">6.7 / 10</td>
-<td class="gt_row gt_left" headers="Rationale">24-hour lab-triggered alerts</td>
+<td class="gt_row gt_left" headers="Option">Option 3 / S2: BChE auto-notify</td>
+<td class="gt_row gt_left" headers="Detection_Probability">0.133</td>
+<td class="gt_row gt_left" headers="Cases_Detected">~2,792 / 20,960</td>
+<td class="gt_row gt_left" headers="Rationale">Adds 1,779 severe BChE/yr to NMC stream</td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_left" headers="Option">Option 4: PIH reports</td>
-<td class="gt_row gt_right" headers="Detection_Probability">0.61</td>
-<td class="gt_row gt_right" headers="Hotspots_Detected">6.1 / 10</td>
-<td class="gt_row gt_left" headers="Rationale">Quarterly clinical toxicology summaries</td>
+<td class="gt_row gt_left" headers="Option">Option 4 / S1: PIH MVD + dashboard</td>
+<td class="gt_row gt_left" headers="Detection_Probability">0.104</td>
+<td class="gt_row gt_left" headers="Cases_Detected">~2,171 / 20,960</td>
+<td class="gt_row gt_left" headers="Rationale">Adds 1,158 clinician calls/yr to NMC stream</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_left" headers="Option">Option 5: Provincial coordination<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span></td>
-<td class="gt_row gt_right" headers="Detection_Probability">0.74*</td>
-<td class="gt_row gt_right" headers="Hotspots_Detected">7.4 / 10</td>
-<td class="gt_row gt_left" headers="Rationale">Rapid field investigation (*requires Options 3 or 4)</td>
+<td class="gt_row gt_left" headers="Option">Option 5: Provincial coordination (legacy)<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span></td>
+<td class="gt_row gt_left" headers="Detection_Probability">—</td>
+<td class="gt_row gt_left" headers="Cases_Detected">—</td>
+<td class="gt_row gt_left" headers="Rationale">Response-side; see coordination brief</td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_left" headers="Option">Full Package</td>
-<td class="gt_row gt_right" headers="Detection_Probability">0.83</td>
-<td class="gt_row gt_right" headers="Hotspots_Detected">8.3 / 10</td>
-<td class="gt_row gt_left" headers="Rationale">All four options combined (synergistic)</td>
+<td class="gt_row gt_left" headers="Option">Surveillance MVP (S1 + S2)</td>
+<td class="gt_row gt_left" headers="Detection_Probability">0.189</td>
+<td class="gt_row gt_left" headers="Cases_Detected">~3,950 / 20,960</td>
+<td class="gt_row gt_left" headers="Rationale">Both streams combined; CSV-anchored</td>
 </tr>
 </tbody><tfoot>
 <tr class="gt_footnotes odd">
-<td colspan="4" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span> Option 5 requires at least one data-generation option (3 or 4) to function</td>
+<td colspan="4" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span> Legacy options 1, 2 and 5 fall outside the active surveillance MVP — retained here for v1 back-compat</td>
 </tr>
 </tfoot>
 
@@ -1437,23 +1437,23 @@ Table&nbsp;3: Annual cost estimates for each option
 </figcaption>
 <div aria-describedby="tbl-costs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tcjqjazojb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#tcjqjazojb table {
+<div id="iwwqhpjzta" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#iwwqhpjzta table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#tcjqjazojb thead, #tcjqjazojb tbody, #tcjqjazojb tfoot, #tcjqjazojb tr, #tcjqjazojb td, #tcjqjazojb th {
+#iwwqhpjzta thead, #iwwqhpjzta tbody, #iwwqhpjzta tfoot, #iwwqhpjzta tr, #iwwqhpjzta td, #iwwqhpjzta th {
   border-style: none;
 }
 
-#tcjqjazojb p {
+#iwwqhpjzta p {
   margin: 0;
   padding: 0;
 }
 
-#tcjqjazojb .gt_table {
+#iwwqhpjzta .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1479,12 +1479,12 @@ Table&nbsp;3: Annual cost estimates for each option
   border-left-color: #D3D3D3;
 }
 
-#tcjqjazojb .gt_caption {
+#iwwqhpjzta .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#tcjqjazojb .gt_title {
+#iwwqhpjzta .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1496,7 +1496,7 @@ Table&nbsp;3: Annual cost estimates for each option
   border-bottom-width: 0;
 }
 
-#tcjqjazojb .gt_subtitle {
+#iwwqhpjzta .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1508,7 +1508,7 @@ Table&nbsp;3: Annual cost estimates for each option
   border-top-width: 0;
 }
 
-#tcjqjazojb .gt_heading {
+#iwwqhpjzta .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1520,13 +1520,13 @@ Table&nbsp;3: Annual cost estimates for each option
   border-right-color: #D3D3D3;
 }
 
-#tcjqjazojb .gt_bottom_border {
+#iwwqhpjzta .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#tcjqjazojb .gt_col_headings {
+#iwwqhpjzta .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1541,7 +1541,7 @@ Table&nbsp;3: Annual cost estimates for each option
   border-right-color: #D3D3D3;
 }
 
-#tcjqjazojb .gt_col_heading {
+#iwwqhpjzta .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1561,7 +1561,7 @@ Table&nbsp;3: Annual cost estimates for each option
   overflow-x: hidden;
 }
 
-#tcjqjazojb .gt_column_spanner_outer {
+#iwwqhpjzta .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1573,15 +1573,15 @@ Table&nbsp;3: Annual cost estimates for each option
   padding-right: 4px;
 }
 
-#tcjqjazojb .gt_column_spanner_outer:first-child {
+#iwwqhpjzta .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#tcjqjazojb .gt_column_spanner_outer:last-child {
+#iwwqhpjzta .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#tcjqjazojb .gt_column_spanner {
+#iwwqhpjzta .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1593,11 +1593,11 @@ Table&nbsp;3: Annual cost estimates for each option
   width: 100%;
 }
 
-#tcjqjazojb .gt_spanner_row {
+#iwwqhpjzta .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#tcjqjazojb .gt_group_heading {
+#iwwqhpjzta .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1623,7 +1623,7 @@ Table&nbsp;3: Annual cost estimates for each option
   text-align: left;
 }
 
-#tcjqjazojb .gt_empty_group_heading {
+#iwwqhpjzta .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1638,15 +1638,15 @@ Table&nbsp;3: Annual cost estimates for each option
   vertical-align: middle;
 }
 
-#tcjqjazojb .gt_from_md > :first-child {
+#iwwqhpjzta .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#tcjqjazojb .gt_from_md > :last-child {
+#iwwqhpjzta .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#tcjqjazojb .gt_row {
+#iwwqhpjzta .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1665,7 +1665,7 @@ Table&nbsp;3: Annual cost estimates for each option
   overflow-x: hidden;
 }
 
-#tcjqjazojb .gt_stub {
+#iwwqhpjzta .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1678,7 +1678,7 @@ Table&nbsp;3: Annual cost estimates for each option
   padding-right: 5px;
 }
 
-#tcjqjazojb .gt_stub_row_group {
+#iwwqhpjzta .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1692,15 +1692,15 @@ Table&nbsp;3: Annual cost estimates for each option
   vertical-align: top;
 }
 
-#tcjqjazojb .gt_row_group_first td {
+#iwwqhpjzta .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#tcjqjazojb .gt_row_group_first th {
+#iwwqhpjzta .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#tcjqjazojb .gt_summary_row {
+#iwwqhpjzta .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1710,16 +1710,16 @@ Table&nbsp;3: Annual cost estimates for each option
   padding-right: 5px;
 }
 
-#tcjqjazojb .gt_first_summary_row {
+#iwwqhpjzta .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#tcjqjazojb .gt_first_summary_row.thick {
+#iwwqhpjzta .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#tcjqjazojb .gt_last_summary_row {
+#iwwqhpjzta .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1729,7 +1729,7 @@ Table&nbsp;3: Annual cost estimates for each option
   border-bottom-color: #D3D3D3;
 }
 
-#tcjqjazojb .gt_grand_summary_row {
+#iwwqhpjzta .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1739,7 +1739,7 @@ Table&nbsp;3: Annual cost estimates for each option
   padding-right: 5px;
 }
 
-#tcjqjazojb .gt_first_grand_summary_row {
+#iwwqhpjzta .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1749,7 +1749,7 @@ Table&nbsp;3: Annual cost estimates for each option
   border-top-color: #D3D3D3;
 }
 
-#tcjqjazojb .gt_last_grand_summary_row_top {
+#iwwqhpjzta .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1759,11 +1759,11 @@ Table&nbsp;3: Annual cost estimates for each option
   border-bottom-color: #D3D3D3;
 }
 
-#tcjqjazojb .gt_striped {
+#iwwqhpjzta .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#tcjqjazojb .gt_table_body {
+#iwwqhpjzta .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1772,7 +1772,7 @@ Table&nbsp;3: Annual cost estimates for each option
   border-bottom-color: #D3D3D3;
 }
 
-#tcjqjazojb .gt_footnotes {
+#iwwqhpjzta .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1786,7 +1786,7 @@ Table&nbsp;3: Annual cost estimates for each option
   border-right-color: #D3D3D3;
 }
 
-#tcjqjazojb .gt_footnote {
+#iwwqhpjzta .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1795,7 +1795,7 @@ Table&nbsp;3: Annual cost estimates for each option
   padding-right: 5px;
 }
 
-#tcjqjazojb .gt_sourcenotes {
+#iwwqhpjzta .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1809,7 +1809,7 @@ Table&nbsp;3: Annual cost estimates for each option
   border-right-color: #D3D3D3;
 }
 
-#tcjqjazojb .gt_sourcenote {
+#iwwqhpjzta .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1817,72 +1817,72 @@ Table&nbsp;3: Annual cost estimates for each option
   padding-right: 5px;
 }
 
-#tcjqjazojb .gt_left {
+#iwwqhpjzta .gt_left {
   text-align: left;
 }
 
-#tcjqjazojb .gt_center {
+#iwwqhpjzta .gt_center {
   text-align: center;
 }
 
-#tcjqjazojb .gt_right {
+#iwwqhpjzta .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#tcjqjazojb .gt_font_normal {
+#iwwqhpjzta .gt_font_normal {
   font-weight: normal;
 }
 
-#tcjqjazojb .gt_font_bold {
+#iwwqhpjzta .gt_font_bold {
   font-weight: bold;
 }
 
-#tcjqjazojb .gt_font_italic {
+#iwwqhpjzta .gt_font_italic {
   font-style: italic;
 }
 
-#tcjqjazojb .gt_super {
+#iwwqhpjzta .gt_super {
   font-size: 65%;
 }
 
-#tcjqjazojb .gt_footnote_marks {
+#iwwqhpjzta .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#tcjqjazojb .gt_asterisk {
+#iwwqhpjzta .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#tcjqjazojb .gt_indent_1 {
+#iwwqhpjzta .gt_indent_1 {
   text-indent: 5px;
 }
 
-#tcjqjazojb .gt_indent_2 {
+#iwwqhpjzta .gt_indent_2 {
   text-indent: 10px;
 }
 
-#tcjqjazojb .gt_indent_3 {
+#iwwqhpjzta .gt_indent_3 {
   text-indent: 15px;
 }
 
-#tcjqjazojb .gt_indent_4 {
+#iwwqhpjzta .gt_indent_4 {
   text-indent: 20px;
 }
 
-#tcjqjazojb .gt_indent_5 {
+#iwwqhpjzta .gt_indent_5 {
   text-indent: 25px;
 }
 
-#tcjqjazojb .katex-display {
+#iwwqhpjzta .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#tcjqjazojb div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#iwwqhpjzta div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1977,7 +1977,7 @@ Table&nbsp;3: Annual cost estimates for each option
 <img src="decision_model_files/figure-html/fig-base-case-1.png" class="img-fluid figure-img" width="768">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-base-case-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Cost-effectiveness plane: Annual cost vs.&nbsp;hotspots detected
+Figure&nbsp;2: Cost-effectiveness plane: Annual cost vs.&nbsp;per-case detection probability
 </figcaption>
 </figure>
 </div>
@@ -1986,7 +1986,7 @@ Figure&nbsp;2: Cost-effectiveness plane: Annual cost vs.&nbsp;hotspots detected
 </section>
 <section id="incremental-cost-effectiveness-ratios-icers" class="level3" data-number="3.2">
 <h3 data-number="3.2" class="anchored" data-anchor-id="incremental-cost-effectiveness-ratios-icers"><span class="header-section-number">3.2</span> Incremental Cost-Effectiveness Ratios (ICERs)</h3>
-<p>The <strong>incremental cost-effectiveness ratio (ICER)</strong> tells us how much it costs to detect <strong>one additional hotspot</strong> compared to the next-best option.</p>
+<p>The <strong>incremental cost-effectiveness ratio (ICER)</strong> tells us how much it costs to detect <strong>one additional percentage-point of true cases</strong> compared to the next-best option.</p>
 <div class="cell">
 <div id="tbl-icer" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -1995,23 +1995,23 @@ Table&nbsp;4: Incremental cost-effectiveness analysis
 </figcaption>
 <div aria-describedby="tbl-icer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="sokmpikxal" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#sokmpikxal table {
+<div id="adrgodsjpv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#adrgodsjpv table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#sokmpikxal thead, #sokmpikxal tbody, #sokmpikxal tfoot, #sokmpikxal tr, #sokmpikxal td, #sokmpikxal th {
+#adrgodsjpv thead, #adrgodsjpv tbody, #adrgodsjpv tfoot, #adrgodsjpv tr, #adrgodsjpv td, #adrgodsjpv th {
   border-style: none;
 }
 
-#sokmpikxal p {
+#adrgodsjpv p {
   margin: 0;
   padding: 0;
 }
 
-#sokmpikxal .gt_table {
+#adrgodsjpv .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2037,12 +2037,12 @@ Table&nbsp;4: Incremental cost-effectiveness analysis
   border-left-color: #D3D3D3;
 }
 
-#sokmpikxal .gt_caption {
+#adrgodsjpv .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#sokmpikxal .gt_title {
+#adrgodsjpv .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2054,7 +2054,7 @@ Table&nbsp;4: Incremental cost-effectiveness analysis
   border-bottom-width: 0;
 }
 
-#sokmpikxal .gt_subtitle {
+#adrgodsjpv .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2066,7 +2066,7 @@ Table&nbsp;4: Incremental cost-effectiveness analysis
   border-top-width: 0;
 }
 
-#sokmpikxal .gt_heading {
+#adrgodsjpv .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2078,13 +2078,13 @@ Table&nbsp;4: Incremental cost-effectiveness analysis
   border-right-color: #D3D3D3;
 }
 
-#sokmpikxal .gt_bottom_border {
+#adrgodsjpv .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#sokmpikxal .gt_col_headings {
+#adrgodsjpv .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2099,7 +2099,7 @@ Table&nbsp;4: Incremental cost-effectiveness analysis
   border-right-color: #D3D3D3;
 }
 
-#sokmpikxal .gt_col_heading {
+#adrgodsjpv .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2119,7 +2119,7 @@ Table&nbsp;4: Incremental cost-effectiveness analysis
   overflow-x: hidden;
 }
 
-#sokmpikxal .gt_column_spanner_outer {
+#adrgodsjpv .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2131,15 +2131,15 @@ Table&nbsp;4: Incremental cost-effectiveness analysis
   padding-right: 4px;
 }
 
-#sokmpikxal .gt_column_spanner_outer:first-child {
+#adrgodsjpv .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#sokmpikxal .gt_column_spanner_outer:last-child {
+#adrgodsjpv .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#sokmpikxal .gt_column_spanner {
+#adrgodsjpv .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2151,11 +2151,11 @@ Table&nbsp;4: Incremental cost-effectiveness analysis
   width: 100%;
 }
 
-#sokmpikxal .gt_spanner_row {
+#adrgodsjpv .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#sokmpikxal .gt_group_heading {
+#adrgodsjpv .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2181,7 +2181,7 @@ Table&nbsp;4: Incremental cost-effectiveness analysis
   text-align: left;
 }
 
-#sokmpikxal .gt_empty_group_heading {
+#adrgodsjpv .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2196,15 +2196,15 @@ Table&nbsp;4: Incremental cost-effectiveness analysis
   vertical-align: middle;
 }
 
-#sokmpikxal .gt_from_md > :first-child {
+#adrgodsjpv .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#sokmpikxal .gt_from_md > :last-child {
+#adrgodsjpv .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#sokmpikxal .gt_row {
+#adrgodsjpv .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2223,7 +2223,7 @@ Table&nbsp;4: Incremental cost-effectiveness analysis
   overflow-x: hidden;
 }
 
-#sokmpikxal .gt_stub {
+#adrgodsjpv .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2236,7 +2236,7 @@ Table&nbsp;4: Incremental cost-effectiveness analysis
   padding-right: 5px;
 }
 
-#sokmpikxal .gt_stub_row_group {
+#adrgodsjpv .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2250,15 +2250,15 @@ Table&nbsp;4: Incremental cost-effectiveness analysis
   vertical-align: top;
 }
 
-#sokmpikxal .gt_row_group_first td {
+#adrgodsjpv .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#sokmpikxal .gt_row_group_first th {
+#adrgodsjpv .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#sokmpikxal .gt_summary_row {
+#adrgodsjpv .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2268,16 +2268,16 @@ Table&nbsp;4: Incremental cost-effectiveness analysis
   padding-right: 5px;
 }
 
-#sokmpikxal .gt_first_summary_row {
+#adrgodsjpv .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#sokmpikxal .gt_first_summary_row.thick {
+#adrgodsjpv .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#sokmpikxal .gt_last_summary_row {
+#adrgodsjpv .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2287,7 +2287,7 @@ Table&nbsp;4: Incremental cost-effectiveness analysis
   border-bottom-color: #D3D3D3;
 }
 
-#sokmpikxal .gt_grand_summary_row {
+#adrgodsjpv .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2297,7 +2297,7 @@ Table&nbsp;4: Incremental cost-effectiveness analysis
   padding-right: 5px;
 }
 
-#sokmpikxal .gt_first_grand_summary_row {
+#adrgodsjpv .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2307,7 +2307,7 @@ Table&nbsp;4: Incremental cost-effectiveness analysis
   border-top-color: #D3D3D3;
 }
 
-#sokmpikxal .gt_last_grand_summary_row_top {
+#adrgodsjpv .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2317,11 +2317,11 @@ Table&nbsp;4: Incremental cost-effectiveness analysis
   border-bottom-color: #D3D3D3;
 }
 
-#sokmpikxal .gt_striped {
+#adrgodsjpv .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#sokmpikxal .gt_table_body {
+#adrgodsjpv .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2330,7 +2330,7 @@ Table&nbsp;4: Incremental cost-effectiveness analysis
   border-bottom-color: #D3D3D3;
 }
 
-#sokmpikxal .gt_footnotes {
+#adrgodsjpv .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2344,7 +2344,7 @@ Table&nbsp;4: Incremental cost-effectiveness analysis
   border-right-color: #D3D3D3;
 }
 
-#sokmpikxal .gt_footnote {
+#adrgodsjpv .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2353,7 +2353,7 @@ Table&nbsp;4: Incremental cost-effectiveness analysis
   padding-right: 5px;
 }
 
-#sokmpikxal .gt_sourcenotes {
+#adrgodsjpv .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2367,7 +2367,7 @@ Table&nbsp;4: Incremental cost-effectiveness analysis
   border-right-color: #D3D3D3;
 }
 
-#sokmpikxal .gt_sourcenote {
+#adrgodsjpv .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2375,72 +2375,72 @@ Table&nbsp;4: Incremental cost-effectiveness analysis
   padding-right: 5px;
 }
 
-#sokmpikxal .gt_left {
+#adrgodsjpv .gt_left {
   text-align: left;
 }
 
-#sokmpikxal .gt_center {
+#adrgodsjpv .gt_center {
   text-align: center;
 }
 
-#sokmpikxal .gt_right {
+#adrgodsjpv .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#sokmpikxal .gt_font_normal {
+#adrgodsjpv .gt_font_normal {
   font-weight: normal;
 }
 
-#sokmpikxal .gt_font_bold {
+#adrgodsjpv .gt_font_bold {
   font-weight: bold;
 }
 
-#sokmpikxal .gt_font_italic {
+#adrgodsjpv .gt_font_italic {
   font-style: italic;
 }
 
-#sokmpikxal .gt_super {
+#adrgodsjpv .gt_super {
   font-size: 65%;
 }
 
-#sokmpikxal .gt_footnote_marks {
+#adrgodsjpv .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#sokmpikxal .gt_asterisk {
+#adrgodsjpv .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#sokmpikxal .gt_indent_1 {
+#adrgodsjpv .gt_indent_1 {
   text-indent: 5px;
 }
 
-#sokmpikxal .gt_indent_2 {
+#adrgodsjpv .gt_indent_2 {
   text-indent: 10px;
 }
 
-#sokmpikxal .gt_indent_3 {
+#adrgodsjpv .gt_indent_3 {
   text-indent: 15px;
 }
 
-#sokmpikxal .gt_indent_4 {
+#adrgodsjpv .gt_indent_4 {
   text-indent: 20px;
 }
 
-#sokmpikxal .gt_indent_5 {
+#adrgodsjpv .gt_indent_5 {
   text-indent: 25px;
 }
 
-#sokmpikxal .katex-display {
+#adrgodsjpv .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#sokmpikxal div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#adrgodsjpv div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2451,14 +2451,14 @@ Table&nbsp;4: Incremental cost-effectiveness analysis
 <td colspan="6" class="gt_heading gt_title gt_font_normal">Incremental Cost-Effectiveness Analysis</td>
 </tr>
 <tr class="gt_heading even">
-<td colspan="6" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border">Strategies ranked by increasing effectiveness</td>
+<td colspan="6" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border">Strategies ranked by increasing per-case detection probability</td>
 </tr>
 <tr class="gt_col_headings header">
 <th id="Strategy" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Strategy</th>
 <th id="Cost" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Cost</th>
-<th id="Effectiveness" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Effectiveness</th>
+<th id="P_detect" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">P_detect</th>
 <th id="Incremental_Cost" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Incremental_Cost</th>
-<th id="Incremental_Effect" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Incremental_Effect</th>
+<th id="Incremental_pp" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Incremental_pp</th>
 <th id="ICER" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">ICER</th>
 </tr>
 </thead>
@@ -2466,46 +2466,38 @@ Table&nbsp;4: Incremental cost-effectiveness analysis
 <tr class="odd">
 <td class="gt_row gt_left" headers="Strategy">Status Quo</td>
 <td class="gt_row gt_left" headers="Cost">R0</td>
-<td class="gt_row gt_right" headers="Effectiveness">4.5</td>
+<td class="gt_row gt_right" headers="P_detect">0.048</td>
 <td class="gt_row gt_left" headers="Incremental_Cost">—</td>
-<td class="gt_row gt_left" headers="Incremental_Effect">—</td>
+<td class="gt_row gt_left" headers="Incremental_pp">—</td>
 <td class="gt_row gt_left" headers="ICER">—</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_left" headers="Strategy">Option 1</td>
-<td class="gt_row gt_left" headers="Cost">R40,000</td>
-<td class="gt_row gt_right" headers="Effectiveness">5.2</td>
-<td class="gt_row gt_left" headers="Incremental_Cost">R40,000</td>
-<td class="gt_row gt_left" headers="Incremental_Effect">0.7</td>
-<td class="gt_row gt_left" headers="ICER">R57,143/hotspot</td>
+<td class="gt_row gt_left" headers="Strategy">S1: PIH MVD + dashboard</td>
+<td class="gt_row gt_left" headers="Cost">R62,000</td>
+<td class="gt_row gt_right" headers="P_detect">0.104</td>
+<td class="gt_row gt_left" headers="Incremental_Cost">R62,000</td>
+<td class="gt_row gt_left" headers="Incremental_pp">+5.6 pp</td>
+<td class="gt_row gt_left" headers="ICER">R11,071 per pp</td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_left" headers="Strategy">Option 4</td>
-<td class="gt_row gt_left" headers="Cost">R62,000</td>
-<td class="gt_row gt_right" headers="Effectiveness">6.1</td>
-<td class="gt_row gt_left" headers="Incremental_Cost">R22,000</td>
-<td class="gt_row gt_left" headers="Incremental_Effect">0.9</td>
-<td class="gt_row gt_left" headers="ICER">R24,444/hotspot</td>
+<td class="gt_row gt_left" headers="Strategy">S2: BChE auto-notify</td>
+<td class="gt_row gt_left" headers="Cost">R55,000</td>
+<td class="gt_row gt_right" headers="P_detect">0.133</td>
+<td class="gt_row gt_left" headers="Incremental_Cost">−R7,000*<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span></td>
+<td class="gt_row gt_left" headers="Incremental_pp">+2.9 pp</td>
+<td class="gt_row gt_left" headers="ICER">Dominates S1</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_left" headers="Strategy" style="background-color: #90EE90">Option 3</td>
-<td class="gt_row gt_left" headers="Cost" style="background-color: #90EE90">R55,000</td>
-<td class="gt_row gt_right" headers="Effectiveness" style="background-color: #90EE90">6.7</td>
-<td class="gt_row gt_left" headers="Incremental_Cost" style="background-color: #90EE90">-R7,000*<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span></td>
-<td class="gt_row gt_left" headers="Incremental_Effect" style="background-color: #90EE90">0.6</td>
-<td class="gt_row gt_left" headers="ICER" style="background-color: #90EE90">Dominates Option 4</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Strategy">Full Package</td>
-<td class="gt_row gt_left" headers="Cost">R237,000</td>
-<td class="gt_row gt_right" headers="Effectiveness">8.3</td>
-<td class="gt_row gt_left" headers="Incremental_Cost">R182,000</td>
-<td class="gt_row gt_left" headers="Incremental_Effect">1.6</td>
-<td class="gt_row gt_left" headers="ICER">R113,750/hotspot</td>
+<td class="gt_row gt_left" headers="Strategy" style="background-color: #90EE90">Surveillance MVP (S1+S2)</td>
+<td class="gt_row gt_left" headers="Cost" style="background-color: #90EE90">R117,000</td>
+<td class="gt_row gt_right" headers="P_detect" style="background-color: #90EE90">0.189</td>
+<td class="gt_row gt_left" headers="Incremental_Cost" style="background-color: #90EE90">R62,000</td>
+<td class="gt_row gt_left" headers="Incremental_pp" style="background-color: #90EE90">+5.6 pp</td>
+<td class="gt_row gt_left" headers="ICER" style="background-color: #90EE90">R11,071 per pp</td>
 </tr>
 </tbody><tfoot>
 <tr class="gt_footnotes odd">
-<td colspan="6" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span> Option 3 is cheaper than Option 4 but more effective — Option 4 is 'dominated'</td>
+<td colspan="6" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span> S2 is cheaper than S1 and more effective — S1 alone is 'dominated', though both are recommended together as the MVP</td>
 </tr>
 </tfoot>
 
@@ -2528,9 +2520,9 @@ Table&nbsp;4: Incremental cost-effectiveness analysis
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li><strong>Option 3 (BChE auto-notify) dominates Option 4</strong> — it’s both cheaper and more effective</li>
-<li><strong>Best value:</strong> Option 3 costs ~R57,000 per additional hotspot detected (compared to status quo)</li>
-<li><strong>Full Package:</strong> Costs ~R114,000 per additional hotspot — still reasonable for comprehensive coverage</li>
+<li><strong>S2 (BChE auto-notify) dominates S1</strong> in isolation — it costs less and adds more detection. Both are recommended together (MVP) because they catch <em>different</em> patients (BChE-tested vs PIH-called).</li>
+<li><strong>Best value:</strong> ~R11,000 per percentage-point of additional per-case detection.</li>
+<li><strong>MVP:</strong> Triples the share of true cases entering the surveillance system (0.048 → 0.189) for ~R117k/yr operating.</li>
 </ul>
 </div>
 </div>
@@ -2541,8 +2533,8 @@ Table&nbsp;4: Incremental cost-effectiveness analysis
 <section id="one-way-sensitivity-analyses" class="level3" data-number="4.1">
 <h3 data-number="4.1" class="anchored" data-anchor-id="one-way-sensitivity-analyses"><span class="header-section-number">4.1</span> One-Way Sensitivity Analyses</h3>
 <p>We tested how results change when individual parameters vary:</p>
-<section id="detection-probability-for-option-3-bche-auto-notify" class="level4" data-number="4.1.1">
-<h4 data-number="4.1.1" class="anchored" data-anchor-id="detection-probability-for-option-3-bche-auto-notify"><span class="header-section-number">4.1.1</span> 1. Detection Probability for Option 3 (BChE Auto-Notify)</h4>
+<section id="detection-probability-for-s2-bche-auto-notify" class="level4" data-number="4.1.1">
+<h4 data-number="4.1.1" class="anchored" data-anchor-id="detection-probability-for-s2-bche-auto-notify"><span class="header-section-number">4.1.1</span> 1. Detection Probability for S2 (BChE Auto-Notify)</h4>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-sensitivity-detection" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -2551,7 +2543,7 @@ Table&nbsp;4: Incremental cost-effectiveness analysis
 <img src="decision_model_files/figure-html/fig-sensitivity-detection-1.png" class="img-fluid figure-img" width="768">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sensitivity-detection-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: Tornado diagram: Impact of varying detection probability for Option 3
+Figure&nbsp;3: Tornado diagram: Impact of varying detection probability for S2
 </figcaption>
 </figure>
 </div>
@@ -2559,8 +2551,8 @@ Figure&nbsp;3: Tornado diagram: Impact of varying detection probability for Opti
 </div>
 <p><strong>Key findings:</strong></p>
 <ul>
-<li>Model is <strong>most sensitive</strong> to baseline assumptions about total hotspots/year</li>
-<li>Detection probability has moderate impact</li>
+<li>Model is <strong>most sensitive</strong> to the StatsSA true-burden denominator (CFR bracket)</li>
+<li>Detection probability variation has moderate impact within its plausible range</li>
 <li>Cost variations don’t affect effectiveness (as expected)</li>
 </ul>
 </section>
@@ -2583,8 +2575,8 @@ Figure&nbsp;4: Probabilistic sensitivity analysis: 10,000 simulations
 </div>
 <p><strong>Key findings:</strong></p>
 <ul>
-<li>Option 3 and Full Package remain <strong>superior to status quo</strong> in &gt;95% of simulations</li>
-<li>Full Package has <strong>narrower uncertainty</strong> than Option 3 alone (redundancy reduces variance)</li>
+<li>S2 and MVP remain <strong>superior to status quo</strong> in &gt;95% of simulations</li>
+<li>MVP has <strong>narrower uncertainty</strong> than S2 alone (two independent streams reduce variance)</li>
 </ul>
 </section>
 </section>
@@ -3067,7 +3059,7 @@ Table&nbsp;5: Pessimistic scenario results
 <tr class="gt_col_headings header">
 <th id="Strategy" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Strategy</th>
 <th id="Cost" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Cost</th>
-<th id="Effectiveness" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Effectiveness</th>
+<th id="P_detect" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">P_detect</th>
 <th id="Improvement_vs_SQ" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Improvement_vs_SQ<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span></th>
 </tr>
 </thead>
@@ -3075,20 +3067,20 @@ Table&nbsp;5: Pessimistic scenario results
 <tr class="odd">
 <td class="gt_row gt_left" headers="Strategy">Status Quo</td>
 <td class="gt_row gt_left" headers="Cost">R0</td>
-<td class="gt_row gt_right" headers="Effectiveness">2.3</td>
+<td class="gt_row gt_right" headers="P_detect">0.024</td>
 <td class="gt_row gt_left" headers="Improvement_vs_SQ">—</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_left" headers="Strategy">Option 3</td>
+<td class="gt_row gt_left" headers="Strategy">S2 BChE auto-notify</td>
 <td class="gt_row gt_left" headers="Cost">R110,000</td>
-<td class="gt_row gt_right" headers="Effectiveness">3.4</td>
-<td class="gt_row gt_left" headers="Improvement_vs_SQ">+48%</td>
+<td class="gt_row gt_right" headers="P_detect">0.067</td>
+<td class="gt_row gt_left" headers="Improvement_vs_SQ">+4.3 pp</td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_left" headers="Strategy">Full Package</td>
-<td class="gt_row gt_left" headers="Cost">R474,000</td>
-<td class="gt_row gt_right" headers="Effectiveness">4.2</td>
-<td class="gt_row gt_left" headers="Improvement_vs_SQ">+83%</td>
+<td class="gt_row gt_left" headers="Strategy">Surveillance MVP</td>
+<td class="gt_row gt_left" headers="Cost">R234,000</td>
+<td class="gt_row gt_right" headers="P_detect">0.095</td>
+<td class="gt_row gt_left" headers="Improvement_vs_SQ">+7.1 pp</td>
 </tr>
 </tbody><tfoot>
 <tr class="gt_footnotes odd">
@@ -3583,7 +3575,7 @@ Table&nbsp;6: Optimistic scenario results
 <tr class="gt_col_headings header">
 <th id="Strategy" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Strategy</th>
 <th id="Cost" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Cost</th>
-<th id="Effectiveness" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Effectiveness<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span></th>
+<th id="P_detect" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">P_detect<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span></th>
 <th id="Improvement_vs_SQ" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Improvement_vs_SQ</th>
 </tr>
 </thead>
@@ -3591,24 +3583,24 @@ Table&nbsp;6: Optimistic scenario results
 <tr class="odd">
 <td class="gt_row gt_left" headers="Strategy">Status Quo</td>
 <td class="gt_row gt_left" headers="Cost">R0</td>
-<td class="gt_row gt_right" headers="Effectiveness">6.8</td>
+<td class="gt_row gt_right" headers="P_detect">0.072</td>
 <td class="gt_row gt_left" headers="Improvement_vs_SQ">—</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_left" headers="Strategy">Option 3</td>
+<td class="gt_row gt_left" headers="Strategy">S2 BChE auto-notify</td>
 <td class="gt_row gt_left" headers="Cost">R27,500</td>
-<td class="gt_row gt_right" headers="Effectiveness">10.0</td>
-<td class="gt_row gt_left" headers="Improvement_vs_SQ">+47%</td>
+<td class="gt_row gt_right" headers="P_detect">0.200</td>
+<td class="gt_row gt_left" headers="Improvement_vs_SQ">+12.8 pp</td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_left" headers="Strategy">Full Package</td>
-<td class="gt_row gt_left" headers="Cost">R118,500</td>
-<td class="gt_row gt_right" headers="Effectiveness">12.5</td>
-<td class="gt_row gt_left" headers="Improvement_vs_SQ">+84%</td>
+<td class="gt_row gt_left" headers="Strategy">Surveillance MVP</td>
+<td class="gt_row gt_left" headers="Cost">R58,500</td>
+<td class="gt_row gt_right" headers="P_detect">0.284</td>
+<td class="gt_row gt_left" headers="Improvement_vs_SQ">+21.2 pp</td>
 </tr>
 </tbody><tfoot>
 <tr class="gt_footnotes odd">
-<td colspan="4" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span> Near-perfect hotspot detection achievable under favorable conditions</td>
+<td colspan="4" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span> Per-case detection up to ~28% achievable if all streams perform at upper bound</td>
 </tr>
 </tfoot>
 
@@ -3677,7 +3669,7 @@ Table&nbsp;6: Optimistic scenario results
 <li><strong>Placeholder parameters:</strong> All values subject to revision based on pilot data</li>
 <li><strong>Linear effectiveness assumption:</strong> Model assumes options combine additively (may underestimate synergies)</li>
 <li><strong>No discounting:</strong> Costs and effects not discounted over time (justified for short time horizon)</li>
-<li><strong>No health outcomes:</strong> Model tracks hotspots detected, not deaths/disabilities averted (future extension planned)</li>
+<li><strong>No health outcomes:</strong> Model tracks per-case detection probability, not deaths/disabilities averted (future extension planned)</li>
 <li><strong>No equity analysis:</strong> Model doesn’t differentiate by age, sex, or socioeconomic status</li>
 </ol>
 </div>
@@ -4231,11 +4223,11 @@ Table&nbsp;6: Optimistic scenario results
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="fu">## Purpose of This Model</span></span>
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>**Question:** Which combination of short-term institutional actions will most efficiently improve hotspot detection and response?</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>**Question:** Which combination of short-term institutional actions will most efficiently improve **per-case** pesticide-poisoning detection and response?</span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>**Approach:** Compare 6 strategies (status quo + 5 options) on two dimensions:</span>
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Effectiveness:** Number of hotspots detected and responded to (out of 10/year)</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Effectiveness:** Per-case detection probability — share of the implied true burden (~20,960 cases/yr, StatsSA-anchored) that the surveillance system actually sees</span>
 <span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Cost:** Annual implementation and operational costs (ZAR)</span>
 <span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>**Output:** Cost-effectiveness ratios to inform policy prioritization</span>
@@ -4259,13 +4251,13 @@ Table&nbsp;6: Optimistic scenario results
 <span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>    A --&gt; G[Option <span class="dv">5</span>: Provincial coordination]</span>
 <span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>    A --&gt; H[Full Package: All options]</span>
 <span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>    E --&gt; I{Is hotspot detected?}</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>    E --&gt; I{Is case detected?}</span>
 <span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>    I --&gt;|Yes| J[Response initiated]</span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>    I --&gt;|No| K[Missed hotspot]</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>    I --&gt;|No| K[Missed case]</span>
 <span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>    J --&gt; L{Is response successful?}</span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>    L --&gt;|Yes| M[Hotspot controlled]</span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>    L --&gt;|No| N[Hotspot persists]</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>    L --&gt;|Yes| M[Source / exposure controlled]</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>    L --&gt;|No| N[Exposure persists]</span>
 <span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>    style A fill:<span class="co">#f9f,stroke:#333</span></span>
 <span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>    style E fill:<span class="co">#9f9,stroke:#333</span></span>
@@ -4299,12 +4291,12 @@ Table&nbsp;6: Optimistic scenario results
 <span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>baseline_params <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
 <span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>Parameter, <span class="sc">~</span>Value, <span class="sc">~</span>Source,</span>
-<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Estimated annual hotspots"</span>, <span class="st">"10"</span>, <span class="st">"Expert estimate (NICD)"</span>,</span>
-<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Hotspots detected (status quo)"</span>, <span class="st">"4.5 (45%)"</span>, <span class="st">"NMC data 2020-2024"</span>,</span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Implied true annual burden (mid-CFR)"</span>, <span class="st">"~20,960"</span>, <span class="st">"StatsSA MACOD 2023 ÷ 0.125"</span>,</span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Status-quo per-case detection (P_detect)"</span>, <span class="st">"0.048 (~5%)"</span>, <span class="st">"1,013 NMC × 0.125 ÷ 2,620 StatsSA deaths"</span>,</span>
 <span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Severe BChE inhibitions/year"</span>, <span class="st">"~1,779"</span>, <span class="st">"NHLS LIS 2023"</span>,</span>
 <span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Total BChE tests/year"</span>, <span class="st">"~10,626"</span>, <span class="st">"NHLS LIS 2023"</span>,</span>
 <span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>  <span class="st">"NMC notifications/year"</span>, <span class="st">"~1,013"</span>, <span class="st">"NICD NMC Annual Report 2023"</span>,</span>
-<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Detection gap"</span>, <span class="st">"~987 cases (49%)"</span>, <span class="st">"Calculated"</span></span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Detection gap"</span>, <span class="st">"~19,947 cases (~95%)"</span>, <span class="st">"Implied burden − NMC notifications"</span></span>
 <span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>baseline_params <span class="sc">%&gt;%</span></span>
@@ -4325,21 +4317,21 @@ Table&nbsp;6: Optimistic scenario results
 <span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Effectiveness Parameters</span></span>
 <span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>Each option has an estimated **probability of detecting** a hotspot:</span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>Each option has an estimated **per-case detection probability** — the share of true annual cases captured into the surveillance system:</span>
 <span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-effectiveness</span></span>
 <span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: "Effectiveness parameters for each option"</span></span>
 <span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>effectiveness_params <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
-<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>Option, <span class="sc">~</span>Detection_Probability, <span class="sc">~</span>Hotspots_Detected, <span class="sc">~</span>Rationale,</span>
-<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Status Quo"</span>, <span class="st">"0.45"</span>, <span class="st">"4.5 / 10"</span>, <span class="st">"Current NMC system performance"</span>,</span>
-<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Option 1: NHLS MOU"</span>, <span class="st">"0.52"</span>, <span class="st">"5.2 / 10"</span>, <span class="st">"Monthly aggregated BChE data"</span>,</span>
-<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Option 2: DALRRD data"</span>, <span class="st">"0.58"</span>, <span class="st">"5.8 / 10"</span>, <span class="st">"Pesticide product linkage"</span>,</span>
-<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Option 3: BChE auto-notify"</span>, <span class="st">"0.67"</span>, <span class="st">"6.7 / 10"</span>, <span class="st">"24-hour lab-triggered alerts"</span>,</span>
-<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Option 4: PIH reports"</span>, <span class="st">"0.61"</span>, <span class="st">"6.1 / 10"</span>, <span class="st">"Quarterly clinical toxicology summaries"</span>,</span>
-<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Option 5: Provincial coordination"</span>, <span class="st">"0.74*"</span>, <span class="st">"7.4 / 10"</span>, <span class="st">"Rapid field investigation (*requires Options 3 or 4)"</span>,</span>
-<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Full Package"</span>, <span class="st">"0.83"</span>, <span class="st">"8.3 / 10"</span>, <span class="st">"All four options combined (synergistic)"</span></span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>Option, <span class="sc">~</span>Detection_Probability, <span class="sc">~</span>Cases_Detected, <span class="sc">~</span>Rationale,</span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Status Quo"</span>, <span class="st">"0.048"</span>, <span class="st">"~1,013 / 20,960"</span>, <span class="st">"NMC-only, StatsSA-anchored"</span>,</span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Option 1: NHLS MOU (legacy)"</span>, <span class="st">"0.052 (deprecated)"</span>, <span class="st">"—"</span>, <span class="st">"Now operational; no longer an active option"</span>,</span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Option 2: DALRRD data (legacy)"</span>, <span class="st">"0.058 (deprecated)"</span>, <span class="st">"—"</span>, <span class="st">"Coordination scope; see coordination brief"</span>,</span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Option 3 / S2: BChE auto-notify"</span>, <span class="st">"0.133"</span>, <span class="st">"~2,792 / 20,960"</span>, <span class="st">"Adds 1,779 severe BChE/yr to NMC stream"</span>,</span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Option 4 / S1: PIH MVD + dashboard"</span>, <span class="st">"0.104"</span>, <span class="st">"~2,171 / 20,960"</span>, <span class="st">"Adds 1,158 clinician calls/yr to NMC stream"</span>,</span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Option 5: Provincial coordination (legacy)"</span>, <span class="st">"—"</span>, <span class="st">"—"</span>, <span class="st">"Response-side; see coordination brief"</span>,</span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Surveillance MVP (S1 + S2)"</span>, <span class="st">"0.189"</span>, <span class="st">"~3,950 / 20,960"</span>, <span class="st">"Both streams combined; CSV-anchored"</span></span>
 <span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>effectiveness_params <span class="sc">%&gt;%</span></span>
@@ -4353,8 +4345,8 @@ Table&nbsp;6: Optimistic scenario results
 <span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> Option</span>
 <span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
 <span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_footnote</span>(</span>
-<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>    <span class="at">footnote =</span> <span class="st">"Option 5 requires at least one data-generation option (3 or 4) to function"</span>,</span>
-<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_body</span>(<span class="at">columns =</span> Option, <span class="at">rows =</span> <span class="dv">6</span>)</span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>    <span class="at">footnote =</span> <span class="st">"Legacy options 1, 2 and 5 fall outside the active surveillance MVP — retained here for v1 back-compat"</span>,</span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_body</span>(<span class="at">columns =</span> Option, <span class="at">rows =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">6</span>))</span>
 <span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a></span>
@@ -4397,363 +4389,362 @@ Table&nbsp;6: Optimistic scenario results
 <span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-base-case</span></span>
-<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Cost-effectiveness plane: Annual cost vs. hotspots detected"</span></span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Cost-effectiveness plane: Annual cost vs. per-case detection probability"</span></span>
 <span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 8</span></span>
 <span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 6</span></span>
 <span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a><span class="co"># Create base case results data</span></span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a><span class="co"># Create base case results data (per-case P_detect scale, anchored to StatsSA mid-burden 20,960)</span></span>
 <span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>base_case <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
 <span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>strategy_name, <span class="sc">~</span>strategy_code, <span class="sc">~</span>cost_annual, <span class="sc">~</span>effectiveness,</span>
-<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Status Quo"</span>, <span class="st">"SQ"</span>, <span class="dv">0</span>, <span class="fl">4.5</span>,</span>
-<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Option 1: NHLS MOU"</span>, <span class="st">"O1"</span>, <span class="dv">40000</span>, <span class="fl">5.2</span>,</span>
-<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Option 2: DALRRD data"</span>, <span class="st">"O2"</span>, <span class="dv">40000</span>, <span class="fl">5.8</span>,</span>
-<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Option 3: BChE auto-notify"</span>, <span class="st">"O3"</span>, <span class="dv">55000</span>, <span class="fl">6.7</span>,</span>
-<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Option 4: PIH reports"</span>, <span class="st">"O4"</span>, <span class="dv">62000</span>, <span class="fl">6.1</span>,</span>
-<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Option 5: Provincial coordination"</span>, <span class="st">"O5"</span>, <span class="dv">40000</span>, <span class="fl">7.4</span>,</span>
-<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Full Package"</span>, <span class="st">"PKG"</span>, <span class="dv">237000</span>, <span class="fl">8.3</span></span>
-<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a><span class="co"># Create cost-effectiveness plot</span></span>
-<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(base_case, <span class="fu">aes</span>(<span class="at">x =</span> cost_annual, <span class="at">y =</span> effectiveness)) <span class="sc">+</span></span>
-<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> strategy_name), <span class="at">size =</span> <span class="dv">4</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> strategy_code), <span class="at">vjust =</span> <span class="sc">-</span><span class="dv">1</span>, <span class="at">size =</span> <span class="fl">3.5</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>) <span class="sc">+</span></span>
-<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> base_case<span class="sc">$</span>effectiveness[<span class="dv">1</span>], </span>
-<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>               <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">"Set2"</span>) <span class="sc">+</span></span>
-<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">dollar_format</span>(<span class="at">prefix =</span> <span class="st">"R"</span>, <span class="at">suffix =</span> <span class="st">""</span>, <span class="at">scale =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">9</span>), <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Cost-Effectiveness of Surveillance Policy Options"</span>,</span>
-<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Base-case scenario (all parameters at expected values)"</span>,</span>
-<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Annual Cost (ZAR)"</span>,</span>
-<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Hotspots Detected and Responded To (out of 10/year)"</span>,</span>
-<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"SQ = Status Quo, O1-O5 = Options 1-5, PKG = Full Package</span><span class="sc">\n</span><span class="st">Dashed line = Status quo performance"</span></span>
-<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">14</span>),</span>
-<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>),</span>
-<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>()</span>
-<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Status Quo"</span>, <span class="st">"SQ"</span>, <span class="dv">0</span>, <span class="fl">0.048</span>,</span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>  <span class="st">"S1: PIH MVD + dashboard"</span>, <span class="st">"S1"</span>, <span class="dv">62000</span>, <span class="fl">0.104</span>,</span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>  <span class="st">"S2: BChE auto-notify"</span>, <span class="st">"S2"</span>, <span class="dv">55000</span>, <span class="fl">0.133</span>,</span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Surveillance MVP (S1+S2)"</span>, <span class="st">"MVP"</span>, <span class="dv">117000</span>, <span class="fl">0.189</span></span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a><span class="co"># Create cost-effectiveness plot</span></span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(base_case, <span class="fu">aes</span>(<span class="at">x =</span> cost_annual, <span class="at">y =</span> effectiveness)) <span class="sc">+</span></span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> strategy_name), <span class="at">size =</span> <span class="dv">4</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> strategy_code), <span class="at">vjust =</span> <span class="sc">-</span><span class="dv">1</span>, <span class="at">size =</span> <span class="fl">3.5</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>) <span class="sc">+</span></span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> base_case<span class="sc">$</span>effectiveness[<span class="dv">1</span>], </span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>               <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">"Set2"</span>) <span class="sc">+</span></span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">dollar_format</span>(<span class="at">prefix =</span> <span class="st">"R"</span>, <span class="at">suffix =</span> <span class="st">""</span>, <span class="at">scale =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.25</span>), <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="fl">0.25</span>, <span class="fl">0.05</span>),</span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>                     <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">percent_format</span>(<span class="at">accuracy =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Cost-Effectiveness of Surveillance Policy Options"</span>,</span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Base-case scenario (per-case detection, StatsSA-anchored)"</span>,</span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Annual Cost (ZAR)"</span>,</span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Per-case detection probability (P_detect)"</span>,</span>
+<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"SQ = Status Quo, S1 = PIH MVD + dashboard, S2 = BChE auto-notify, MVP = S1+S2</span><span class="sc">\n</span><span class="st">Dashed line = Status quo performance"</span></span>
+<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">14</span>),</span>
+<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>()</span>
+<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a><span class="fu">### Incremental Cost-Effectiveness Ratios (ICERs)</span></span>
 <span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a><span class="fu">### Incremental Cost-Effectiveness Ratios (ICERs)</span></span>
+<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>The **incremental cost-effectiveness ratio (ICER)** tells us how much it costs to detect **one additional percentage-point of true cases** compared to the next-best option.</span>
 <span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>The **incremental cost-effectiveness ratio (ICER)** tells us how much it costs to detect **one additional hotspot** compared to the next-best option.</span>
-<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-icer</span></span>
-<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: "Incremental cost-effectiveness analysis"</span></span>
-<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>icer_table <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
-<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>Strategy, <span class="sc">~</span>Cost, <span class="sc">~</span>Effectiveness, <span class="sc">~</span>Incremental_Cost, <span class="sc">~</span>Incremental_Effect, <span class="sc">~</span>ICER,</span>
-<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Status Quo"</span>, <span class="st">"R0"</span>, <span class="st">"4.5"</span>, <span class="st">"—"</span>, <span class="st">"—"</span>, <span class="st">"—"</span>,</span>
-<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Option 1"</span>, <span class="st">"R40,000"</span>, <span class="st">"5.2"</span>, <span class="st">"R40,000"</span>, <span class="st">"0.7"</span>, <span class="st">"R57,143/hotspot"</span>,</span>
-<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Option 4"</span>, <span class="st">"R62,000"</span>, <span class="st">"6.1"</span>, <span class="st">"R22,000"</span>, <span class="st">"0.9"</span>, <span class="st">"R24,444/hotspot"</span>,</span>
-<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Option 3"</span>, <span class="st">"R55,000"</span>, <span class="st">"6.7"</span>, <span class="st">"-R7,000*"</span>, <span class="st">"0.6"</span>, <span class="st">"Dominates Option 4"</span>,</span>
-<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Full Package"</span>, <span class="st">"R237,000"</span>, <span class="st">"8.3"</span>, <span class="st">"R182,000"</span>, <span class="st">"1.6"</span>, <span class="st">"R113,750/hotspot"</span></span>
-<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>icer_table <span class="sc">%&gt;%</span></span>
-<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(</span>
-<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Incremental Cost-Effectiveness Analysis"</span>,</span>
-<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Strategies ranked by increasing effectiveness"</span></span>
-<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_footnote</span>(</span>
-<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a>    <span class="at">footnote =</span> <span class="st">"Option 3 is cheaper than Option 4 but more effective — Option 4 is 'dominated'"</span>,</span>
-<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_body</span>(<span class="at">columns =</span> Incremental_Cost, <span class="at">rows =</span> <span class="dv">4</span>)</span>
-<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
-<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">cell_fill</span>(<span class="at">color =</span> <span class="st">"lightgreen"</span>),</span>
-<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_body</span>(<span class="at">rows =</span> <span class="dv">4</span>)</span>
-<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-icer</span></span>
+<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: "Incremental cost-effectiveness analysis"</span></span>
+<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>icer_table <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
+<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>Strategy, <span class="sc">~</span>Cost, <span class="sc">~</span>P_detect, <span class="sc">~</span>Incremental_Cost, <span class="sc">~</span>Incremental_pp, <span class="sc">~</span>ICER,</span>
+<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Status Quo"</span>, <span class="st">"R0"</span>, <span class="st">"0.048"</span>, <span class="st">"—"</span>, <span class="st">"—"</span>, <span class="st">"—"</span>,</span>
+<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>  <span class="st">"S1: PIH MVD + dashboard"</span>, <span class="st">"R62,000"</span>, <span class="st">"0.104"</span>, <span class="st">"R62,000"</span>, <span class="st">"+5.6 pp"</span>, <span class="st">"R11,071 per pp"</span>,</span>
+<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>  <span class="st">"S2: BChE auto-notify"</span>, <span class="st">"R55,000"</span>, <span class="st">"0.133"</span>, <span class="st">"−R7,000*"</span>, <span class="st">"+2.9 pp"</span>, <span class="st">"Dominates S1"</span>,</span>
+<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Surveillance MVP (S1+S2)"</span>, <span class="st">"R117,000"</span>, <span class="st">"0.189"</span>, <span class="st">"R62,000"</span>, <span class="st">"+5.6 pp"</span>, <span class="st">"R11,071 per pp"</span></span>
+<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>icer_table <span class="sc">%&gt;%</span></span>
+<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(</span>
+<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Incremental Cost-Effectiveness Analysis"</span>,</span>
+<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Strategies ranked by increasing per-case detection probability"</span></span>
+<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_footnote</span>(</span>
+<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>    <span class="at">footnote =</span> <span class="st">"S2 is cheaper than S1 and more effective — S1 alone is 'dominated', though both are recommended together as the MVP"</span>,</span>
+<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_body</span>(<span class="at">columns =</span> Incremental_Cost, <span class="at">rows =</span> <span class="dv">3</span>)</span>
+<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
+<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">cell_fill</span>(<span class="at">color =</span> <span class="st">"lightgreen"</span>),</span>
+<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_body</span>(<span class="at">rows =</span> <span class="dv">4</span>)</span>
+<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
+<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a><span class="fu">## Interpretation</span></span>
 <span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
-<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a><span class="fu">## Interpretation</span></span>
-<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Option 3 (BChE auto-notify) dominates Option 4** — it's both cheaper and more effective</span>
-<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Best value:** Option 3 costs ~R57,000 per additional hotspot detected (compared to status quo)</span>
-<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Full Package:** Costs ~R114,000 per additional hotspot — still reasonable for comprehensive coverage</span>
-<span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a><span class="fu">## Sensitivity Analysis</span></span>
-<span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a><span class="fu">### One-Way Sensitivity Analyses</span></span>
-<span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a>We tested how results change when individual parameters vary:</span>
-<span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a><span class="fu">#### 1. Detection Probability for Option 3 (BChE Auto-Notify)</span></span>
-<span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-sensitivity-detection</span></span>
-<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Tornado diagram: Impact of varying detection probability for Option 3"</span></span>
-<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 8</span></span>
-<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 4</span></span>
-<span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulate tornado diagram data</span></span>
-<span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a>tornado_data <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
-<span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>Parameter, <span class="sc">~</span>Low_Value, <span class="sc">~</span>High_Value, <span class="sc">~</span>Low_Effectiveness, <span class="sc">~</span>High_Effectiveness,</span>
-<span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Detection probability"</span>, <span class="st">"0.50"</span>, <span class="st">"0.85"</span>, <span class="fl">5.0</span>, <span class="fl">8.5</span>,</span>
-<span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Annual cost"</span>, <span class="st">"R27,500"</span>, <span class="st">"R110,000"</span>, <span class="fl">6.7</span>, <span class="fl">6.7</span>,</span>
-<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Baseline hotspots/year"</span>, <span class="st">"7"</span>, <span class="st">"15"</span>, <span class="fl">4.7</span>, <span class="fl">12.8</span>,</span>
-<span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Response success rate"</span>, <span class="st">"0.60"</span>, <span class="st">"0.95"</span>, <span class="fl">6.0</span>, <span class="fl">7.5</span></span>
-<span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a><span class="co"># Create tornado plot</span></span>
-<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>tornado_long <span class="ot">&lt;-</span> tornado_data <span class="sc">%&gt;%</span></span>
-<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(Low_Effectiveness, High_Effectiveness),</span>
-<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"Scenario"</span>, <span class="at">values_to =</span> <span class="st">"Effectiveness"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Scenario =</span> <span class="fu">if_else</span>(Scenario <span class="sc">==</span> <span class="st">"Low_Effectiveness"</span>, <span class="st">"Low"</span>, <span class="st">"High"</span>))</span>
-<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(tornado_long, <span class="fu">aes</span>(<span class="at">y =</span> <span class="fu">reorder</span>(Parameter, <span class="fu">abs</span>(Effectiveness <span class="sc">-</span> <span class="fl">6.7</span>)))) <span class="sc">+</span></span>
-<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> Effectiveness, <span class="at">group =</span> Parameter), <span class="at">size =</span> <span class="fl">1.5</span>, <span class="at">color =</span> <span class="st">"steelblue"</span>) <span class="sc">+</span></span>
-<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> Effectiveness, <span class="at">color =</span> Scenario), <span class="at">size =</span> <span class="dv">4</span>) <span class="sc">+</span></span>
-<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fl">6.7</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Low"</span> <span class="ot">=</span> <span class="st">"#d32f2f"</span>, <span class="st">"High"</span> <span class="ot">=</span> <span class="st">"#388e3c"</span>)) <span class="sc">+</span></span>
-<span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"One-Way Sensitivity Analysis for Option 3"</span>,</span>
-<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Impact of parameter variation on hotspots detected"</span>,</span>
-<span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Hotspots Detected (out of 10-15/year)"</span>,</span>
-<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Parameter Varied"</span>,</span>
-<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Red line = Base-case result (6.7 hotspots)"</span></span>
-<span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>),</span>
-<span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"right"</span></span>
-<span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb1-331"><a href="#cb1-331" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**S2 (BChE auto-notify) dominates S1** in isolation — it costs less and adds more detection. Both are recommended together (MVP) because they catch *different* patients (BChE-tested vs PIH-called).</span>
+<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Best value:** ~R11,000 per percentage-point of additional per-case detection.</span>
+<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**MVP:** Triples the share of true cases entering the surveillance system (0.048 → 0.189) for ~R117k/yr operating.</span>
+<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a><span class="fu">## Sensitivity Analysis</span></span>
+<span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a><span class="fu">### One-Way Sensitivity Analyses</span></span>
+<span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a>We tested how results change when individual parameters vary:</span>
+<span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a><span class="fu">#### 1. Detection Probability for S2 (BChE Auto-Notify)</span></span>
+<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-sensitivity-detection</span></span>
+<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Tornado diagram: Impact of varying detection probability for S2"</span></span>
+<span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 8</span></span>
+<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 4</span></span>
+<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulate tornado diagram data (per-case P_detect scale)</span></span>
+<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a>tornado_data <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
+<span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>Parameter, <span class="sc">~</span>Low_Value, <span class="sc">~</span>High_Value, <span class="sc">~</span>Low_Effectiveness, <span class="sc">~</span>High_Effectiveness,</span>
+<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Detection probability (S2)"</span>, <span class="st">"0.10"</span>, <span class="st">"0.17"</span>, <span class="fl">0.10</span>, <span class="fl">0.17</span>,</span>
+<span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Annual cost (S2)"</span>, <span class="st">"R27,500"</span>, <span class="st">"R110,000"</span>, <span class="fl">0.133</span>, <span class="fl">0.133</span>,</span>
+<span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a>  <span class="st">"True burden (CFR 10%-15%)"</span>, <span class="st">"17,467"</span>, <span class="st">"26,200"</span>, <span class="fl">0.107</span>, <span class="fl">0.160</span>,</span>
+<span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Response efficacy (η)"</span>, <span class="st">"0.15"</span>, <span class="st">"0.50"</span>, <span class="fl">0.133</span>, <span class="fl">0.133</span></span>
+<span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a><span class="co"># Create tornado plot</span></span>
+<span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>tornado_long <span class="ot">&lt;-</span> tornado_data <span class="sc">%&gt;%</span></span>
+<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(Low_Effectiveness, High_Effectiveness),</span>
+<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"Scenario"</span>, <span class="at">values_to =</span> <span class="st">"Effectiveness"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Scenario =</span> <span class="fu">if_else</span>(Scenario <span class="sc">==</span> <span class="st">"Low_Effectiveness"</span>, <span class="st">"Low"</span>, <span class="st">"High"</span>))</span>
+<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(tornado_long, <span class="fu">aes</span>(<span class="at">y =</span> <span class="fu">reorder</span>(Parameter, <span class="fu">abs</span>(Effectiveness <span class="sc">-</span> <span class="fl">0.133</span>)))) <span class="sc">+</span></span>
+<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> Effectiveness, <span class="at">group =</span> Parameter), <span class="at">size =</span> <span class="fl">1.5</span>, <span class="at">color =</span> <span class="st">"steelblue"</span>) <span class="sc">+</span></span>
+<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> Effectiveness, <span class="at">color =</span> Scenario), <span class="at">size =</span> <span class="dv">4</span>) <span class="sc">+</span></span>
+<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fl">0.133</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">percent_format</span>(<span class="at">accuracy =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Low"</span> <span class="ot">=</span> <span class="st">"#d32f2f"</span>, <span class="st">"High"</span> <span class="ot">=</span> <span class="st">"#388e3c"</span>)) <span class="sc">+</span></span>
+<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"One-Way Sensitivity Analysis for S2"</span>,</span>
+<span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Impact of parameter variation on per-case detection probability"</span>,</span>
+<span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Per-case detection probability (P_detect)"</span>,</span>
+<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Parameter Varied"</span>,</span>
+<span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Red line = Base-case S2 result (P_detect = 0.133)"</span></span>
+<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"right"</span></span>
+<span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-331"><a href="#cb1-331" aria-hidden="true" tabindex="-1"></a>**Key findings:**</span>
 <span id="cb1-332"><a href="#cb1-332" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-333"><a href="#cb1-333" aria-hidden="true" tabindex="-1"></a>**Key findings:**</span>
-<span id="cb1-334"><a href="#cb1-334" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-335"><a href="#cb1-335" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Model is **most sensitive** to baseline assumptions about total hotspots/year</span>
-<span id="cb1-336"><a href="#cb1-336" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Detection probability has moderate impact</span>
-<span id="cb1-337"><a href="#cb1-337" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Cost variations don't affect effectiveness (as expected)</span>
+<span id="cb1-333"><a href="#cb1-333" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Model is **most sensitive** to the StatsSA true-burden denominator (CFR bracket)</span>
+<span id="cb1-334"><a href="#cb1-334" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Detection probability variation has moderate impact within its plausible range</span>
+<span id="cb1-335"><a href="#cb1-335" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Cost variations don't affect effectiveness (as expected)</span>
+<span id="cb1-336"><a href="#cb1-336" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-337"><a href="#cb1-337" aria-hidden="true" tabindex="-1"></a><span class="fu">#### 2. Probabilistic Sensitivity Analysis (PSA)</span></span>
 <span id="cb1-338"><a href="#cb1-338" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a><span class="fu">#### 2. Probabilistic Sensitivity Analysis (PSA)</span></span>
+<span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a>We ran **10,000 Monte Carlo simulations** varying all parameters simultaneously according to their uncertainty distributions:</span>
 <span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a>We ran **10,000 Monte Carlo simulations** varying all parameters simultaneously according to their uncertainty distributions:</span>
-<span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-psa</span></span>
-<span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Probabilistic sensitivity analysis: 10,000 simulations"</span></span>
-<span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 8</span></span>
-<span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 6</span></span>
-<span id="cb1-350"><a href="#cb1-350" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-351"><a href="#cb1-351" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulate PSA results</span></span>
-<span id="cb1-352"><a href="#cb1-352" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2026</span>)</span>
-<span id="cb1-353"><a href="#cb1-353" aria-hidden="true" tabindex="-1"></a>n_sims <span class="ot">&lt;-</span> <span class="dv">1000</span>  <span class="co"># Reduced for demonstration</span></span>
-<span id="cb1-354"><a href="#cb1-354" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-355"><a href="#cb1-355" aria-hidden="true" tabindex="-1"></a>psa_results <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb1-356"><a href="#cb1-356" aria-hidden="true" tabindex="-1"></a>  <span class="at">strategy =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Status Quo"</span>, <span class="st">"Option 3"</span>, <span class="st">"Full Package"</span>), <span class="at">each =</span> n_sims),</span>
-<span id="cb1-357"><a href="#cb1-357" aria-hidden="true" tabindex="-1"></a>  <span class="at">cost =</span> <span class="fu">c</span>(</span>
-<span id="cb1-358"><a href="#cb1-358" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rnorm</span>(n_sims, <span class="dv">0</span>, <span class="dv">0</span>),  <span class="co"># Status quo has no cost</span></span>
-<span id="cb1-359"><a href="#cb1-359" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rnorm</span>(n_sims, <span class="dv">55000</span>, <span class="dv">15000</span>),  <span class="co"># Option 3</span></span>
-<span id="cb1-360"><a href="#cb1-360" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rnorm</span>(n_sims, <span class="dv">237000</span>, <span class="dv">50000</span>)  <span class="co"># Full Package</span></span>
-<span id="cb1-361"><a href="#cb1-361" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb1-362"><a href="#cb1-362" aria-hidden="true" tabindex="-1"></a>  <span class="at">effectiveness =</span> <span class="fu">c</span>(</span>
-<span id="cb1-363"><a href="#cb1-363" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rnorm</span>(n_sims, <span class="fl">4.5</span>, <span class="fl">0.8</span>),  <span class="co"># Status quo</span></span>
-<span id="cb1-364"><a href="#cb1-364" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rnorm</span>(n_sims, <span class="fl">6.7</span>, <span class="fl">1.2</span>),  <span class="co"># Option 3</span></span>
-<span id="cb1-365"><a href="#cb1-365" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rnorm</span>(n_sims, <span class="fl">8.3</span>, <span class="fl">1.0</span>)   <span class="co"># Full Package</span></span>
-<span id="cb1-366"><a href="#cb1-366" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb1-367"><a href="#cb1-367" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
-<span id="cb1-368"><a href="#cb1-368" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(cost <span class="sc">&gt;=</span> <span class="dv">0</span>, effectiveness <span class="sc">&gt;=</span> <span class="dv">0</span>)</span>
-<span id="cb1-369"><a href="#cb1-369" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-370"><a href="#cb1-370" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(psa_results, <span class="fu">aes</span>(<span class="at">x =</span> cost, <span class="at">y =</span> effectiveness, <span class="at">color =</span> strategy)) <span class="sc">+</span></span>
-<span id="cb1-371"><a href="#cb1-371" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.3</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb1-372"><a href="#cb1-372" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_ellipse</span>(<span class="at">level =</span> <span class="fl">0.95</span>, <span class="at">size =</span> <span class="fl">1.2</span>) <span class="sc">+</span></span>
-<span id="cb1-373"><a href="#cb1-373" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">"Set1"</span>) <span class="sc">+</span></span>
-<span id="cb1-374"><a href="#cb1-374" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">dollar_format</span>(<span class="at">prefix =</span> <span class="st">"R"</span>, <span class="at">scale =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb1-375"><a href="#cb1-375" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb1-376"><a href="#cb1-376" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Probabilistic Sensitivity Analysis (1000 Simulations)"</span>,</span>
-<span id="cb1-377"><a href="#cb1-377" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"95% confidence ellipses around base-case estimates"</span>,</span>
-<span id="cb1-378"><a href="#cb1-378" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Annual Cost (ZAR)"</span>,</span>
-<span id="cb1-379"><a href="#cb1-379" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Hotspots Detected (out of 10/year)"</span>,</span>
-<span id="cb1-380"><a href="#cb1-380" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Strategy"</span></span>
-<span id="cb1-381"><a href="#cb1-381" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb1-382"><a href="#cb1-382" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb1-383"><a href="#cb1-383" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb1-384"><a href="#cb1-384" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>),</span>
-<span id="cb1-385"><a href="#cb1-385" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span></span>
-<span id="cb1-386"><a href="#cb1-386" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb1-387"><a href="#cb1-387" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-388"><a href="#cb1-388" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-389"><a href="#cb1-389" aria-hidden="true" tabindex="-1"></a>**Key findings:**</span>
-<span id="cb1-390"><a href="#cb1-390" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-391"><a href="#cb1-391" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Option 3 and Full Package remain **superior to status quo** in &gt;95% of simulations</span>
-<span id="cb1-392"><a href="#cb1-392" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Full Package has **narrower uncertainty** than Option 3 alone (redundancy reduces variance)</span>
-<span id="cb1-393"><a href="#cb1-393" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-394"><a href="#cb1-394" aria-hidden="true" tabindex="-1"></a><span class="fu">### Scenario Analyses</span></span>
-<span id="cb1-395"><a href="#cb1-395" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-396"><a href="#cb1-396" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Scenario 1: Pessimistic (Low Effectiveness, High Cost)</span></span>
-<span id="cb1-397"><a href="#cb1-397" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-398"><a href="#cb1-398" aria-hidden="true" tabindex="-1"></a>Assumptions:</span>
-<span id="cb1-399"><a href="#cb1-399" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-400"><a href="#cb1-400" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Detection probabilities reduced by 50%</span>
-<span id="cb1-401"><a href="#cb1-401" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Costs doubled</span>
-<span id="cb1-402"><a href="#cb1-402" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-403"><a href="#cb1-403" aria-hidden="true" tabindex="-1"></a>Results:</span>
-<span id="cb1-404"><a href="#cb1-404" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-407"><a href="#cb1-407" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb1-408"><a href="#cb1-408" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-pessimistic</span></span>
-<span id="cb1-409"><a href="#cb1-409" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: "Pessimistic scenario results"</span></span>
-<span id="cb1-410"><a href="#cb1-410" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-411"><a href="#cb1-411" aria-hidden="true" tabindex="-1"></a>pessimistic <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
-<span id="cb1-412"><a href="#cb1-412" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>Strategy, <span class="sc">~</span>Cost, <span class="sc">~</span>Effectiveness, <span class="sc">~</span>Improvement_vs_SQ,</span>
-<span id="cb1-413"><a href="#cb1-413" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Status Quo"</span>, <span class="st">"R0"</span>, <span class="st">"2.3"</span>, <span class="st">"—"</span>,</span>
-<span id="cb1-414"><a href="#cb1-414" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Option 3"</span>, <span class="st">"R110,000"</span>, <span class="st">"3.4"</span>, <span class="st">"+48%"</span>,</span>
-<span id="cb1-415"><a href="#cb1-415" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Full Package"</span>, <span class="st">"R474,000"</span>, <span class="st">"4.2"</span>, <span class="st">"+83%"</span></span>
-<span id="cb1-416"><a href="#cb1-416" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-417"><a href="#cb1-417" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-418"><a href="#cb1-418" aria-hidden="true" tabindex="-1"></a>pessimistic <span class="sc">%&gt;%</span></span>
-<span id="cb1-419"><a href="#cb1-419" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb1-420"><a href="#cb1-420" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(</span>
-<span id="cb1-421"><a href="#cb1-421" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Pessimistic Scenario"</span>,</span>
-<span id="cb1-422"><a href="#cb1-422" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Effectiveness halved, costs doubled"</span></span>
-<span id="cb1-423"><a href="#cb1-423" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb1-424"><a href="#cb1-424" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_footnote</span>(</span>
-<span id="cb1-425"><a href="#cb1-425" aria-hidden="true" tabindex="-1"></a>    <span class="at">footnote =</span> <span class="st">"Even under pessimistic assumptions, options still improve on status quo"</span>,</span>
-<span id="cb1-426"><a href="#cb1-426" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_column_labels</span>(<span class="at">columns =</span> Improvement_vs_SQ)</span>
-<span id="cb1-427"><a href="#cb1-427" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb1-428"><a href="#cb1-428" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-429"><a href="#cb1-429" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-430"><a href="#cb1-430" aria-hidden="true" tabindex="-1"></a>**Conclusion:** Options remain valuable even if real-world performance is much worse than expected.</span>
-<span id="cb1-431"><a href="#cb1-431" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-432"><a href="#cb1-432" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Scenario 2: Optimistic (High Effectiveness, Low Cost)</span></span>
-<span id="cb1-433"><a href="#cb1-433" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-434"><a href="#cb1-434" aria-hidden="true" tabindex="-1"></a>Assumptions:</span>
-<span id="cb1-435"><a href="#cb1-435" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-436"><a href="#cb1-436" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Detection probabilities increased by 50%</span>
-<span id="cb1-437"><a href="#cb1-437" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Costs halved</span>
-<span id="cb1-438"><a href="#cb1-438" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-439"><a href="#cb1-439" aria-hidden="true" tabindex="-1"></a>Results:</span>
-<span id="cb1-440"><a href="#cb1-440" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-443"><a href="#cb1-443" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb1-444"><a href="#cb1-444" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-optimistic</span></span>
-<span id="cb1-445"><a href="#cb1-445" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: "Optimistic scenario results"</span></span>
-<span id="cb1-446"><a href="#cb1-446" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-447"><a href="#cb1-447" aria-hidden="true" tabindex="-1"></a>optimistic <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
-<span id="cb1-448"><a href="#cb1-448" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>Strategy, <span class="sc">~</span>Cost, <span class="sc">~</span>Effectiveness, <span class="sc">~</span>Improvement_vs_SQ,</span>
-<span id="cb1-449"><a href="#cb1-449" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Status Quo"</span>, <span class="st">"R0"</span>, <span class="st">"6.8"</span>, <span class="st">"—"</span>,</span>
-<span id="cb1-450"><a href="#cb1-450" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Option 3"</span>, <span class="st">"R27,500"</span>, <span class="st">"10.0"</span>, <span class="st">"+47%"</span>,</span>
-<span id="cb1-451"><a href="#cb1-451" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Full Package"</span>, <span class="st">"R118,500"</span>, <span class="st">"12.5"</span>, <span class="st">"+84%"</span></span>
-<span id="cb1-452"><a href="#cb1-452" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-453"><a href="#cb1-453" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-454"><a href="#cb1-454" aria-hidden="true" tabindex="-1"></a>optimistic <span class="sc">%&gt;%</span></span>
-<span id="cb1-455"><a href="#cb1-455" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb1-456"><a href="#cb1-456" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(</span>
-<span id="cb1-457"><a href="#cb1-457" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Optimistic Scenario"</span>,</span>
-<span id="cb1-458"><a href="#cb1-458" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Effectiveness increased 50%, costs halved"</span></span>
-<span id="cb1-459"><a href="#cb1-459" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb1-460"><a href="#cb1-460" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_footnote</span>(</span>
-<span id="cb1-461"><a href="#cb1-461" aria-hidden="true" tabindex="-1"></a>    <span class="at">footnote =</span> <span class="st">"Near-perfect hotspot detection achievable under favorable conditions"</span>,</span>
-<span id="cb1-462"><a href="#cb1-462" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_column_labels</span>(<span class="at">columns =</span> Effectiveness)</span>
-<span id="cb1-463"><a href="#cb1-463" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb1-464"><a href="#cb1-464" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-465"><a href="#cb1-465" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-466"><a href="#cb1-466" aria-hidden="true" tabindex="-1"></a>**Conclusion:** Significant upside potential if pilot demonstrates better-than-expected performance.</span>
-<span id="cb1-467"><a href="#cb1-467" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-468"><a href="#cb1-468" aria-hidden="true" tabindex="-1"></a><span class="fu">## Model Validation</span></span>
-<span id="cb1-469"><a href="#cb1-469" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-470"><a href="#cb1-470" aria-hidden="true" tabindex="-1"></a><span class="fu">### Face Validity</span></span>
-<span id="cb1-471"><a href="#cb1-471" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-472"><a href="#cb1-472" aria-hidden="true" tabindex="-1"></a>Model reviewed by:</span>
-<span id="cb1-473"><a href="#cb1-473" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-474"><a href="#cb1-474" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>NICD surveillance epidemiologists</span>
-<span id="cb1-475"><a href="#cb1-475" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>NHLS laboratory managers</span>
-<span id="cb1-476"><a href="#cb1-476" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>PIH clinical toxicologists</span>
-<span id="cb1-477"><a href="#cb1-477" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Academic health economists (UCT School of Public Health)</span>
-<span id="cb1-478"><a href="#cb1-478" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-479"><a href="#cb1-479" aria-hidden="true" tabindex="-1"></a>**Feedback incorporated:**</span>
-<span id="cb1-480"><a href="#cb1-480" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-481"><a href="#cb1-481" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Adjusted detection probabilities based on expert elicitation</span>
-<span id="cb1-482"><a href="#cb1-482" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Added response success rate as probabilistic node</span>
-<span id="cb1-483"><a href="#cb1-483" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Included scenario for "Option 5 requires Option 3 or 4"</span>
-<span id="cb1-484"><a href="#cb1-484" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-485"><a href="#cb1-485" aria-hidden="true" tabindex="-1"></a><span class="fu">### Internal Validity</span></span>
-<span id="cb1-486"><a href="#cb1-486" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-487"><a href="#cb1-487" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Parameter consistency:** All probabilities sum to 1.0</span>
-<span id="cb1-488"><a href="#cb1-488" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Cost additivity:** Full Package cost = sum of individual option costs</span>
-<span id="cb1-489"><a href="#cb1-489" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Effectiveness synergy:** Full Package &gt; sum of individual effects (captures coordination benefits)</span>
-<span id="cb1-490"><a href="#cb1-490" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-491"><a href="#cb1-491" aria-hidden="true" tabindex="-1"></a><span class="fu">### External Validity (Pending)</span></span>
-<span id="cb1-492"><a href="#cb1-492" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-493"><a href="#cb1-493" aria-hidden="true" tabindex="-1"></a>Model will be validated against **pilot data** (Q3 2026 – Q1 2027):</span>
-<span id="cb1-494"><a href="#cb1-494" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-495"><a href="#cb1-495" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Compare predicted vs. observed detection rates</span>
-<span id="cb1-496"><a href="#cb1-496" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Update cost parameters with actual implementation expenses</span>
-<span id="cb1-497"><a href="#cb1-497" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Refine effectiveness estimates based on measured time-to-detection</span>
-<span id="cb1-498"><a href="#cb1-498" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Re-run PSA with empirical parameter distributions</span>
-<span id="cb1-499"><a href="#cb1-499" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-500"><a href="#cb1-500" aria-hidden="true" tabindex="-1"></a><span class="fu">## Model Limitations</span></span>
-<span id="cb1-501"><a href="#cb1-501" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-502"><a href="#cb1-502" aria-hidden="true" tabindex="-1"></a>::: {.callout-warning}</span>
-<span id="cb1-503"><a href="#cb1-503" aria-hidden="true" tabindex="-1"></a><span class="fu">## Key Limitations</span></span>
-<span id="cb1-504"><a href="#cb1-504" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-505"><a href="#cb1-505" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Placeholder parameters:** All values subject to revision based on pilot data</span>
-<span id="cb1-506"><a href="#cb1-506" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Linear effectiveness assumption:** Model assumes options combine additively (may underestimate synergies)</span>
-<span id="cb1-507"><a href="#cb1-507" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**No discounting:** Costs and effects not discounted over time (justified for short time horizon)</span>
-<span id="cb1-508"><a href="#cb1-508" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**No health outcomes:** Model tracks hotspots detected, not deaths/disabilities averted (future extension planned)</span>
-<span id="cb1-509"><a href="#cb1-509" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>**No equity analysis:** Model doesn't differentiate by age, sex, or socioeconomic status</span>
-<span id="cb1-510"><a href="#cb1-510" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-511"><a href="#cb1-511" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-512"><a href="#cb1-512" aria-hidden="true" tabindex="-1"></a><span class="fu">## Software and Reproducibility</span></span>
-<span id="cb1-513"><a href="#cb1-513" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-514"><a href="#cb1-514" aria-hidden="true" tabindex="-1"></a><span class="fu">### Tools Used</span></span>
-<span id="cb1-515"><a href="#cb1-515" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-516"><a href="#cb1-516" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Amua v1.0.3:** Decision tree modeling and Monte Carlo simulation</span>
-<span id="cb1-517"><a href="#cb1-517" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**R v4.3.1:** Data wrangling, visualization, and reporting</span>
-<span id="cb1-518"><a href="#cb1-518" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Quarto v1.3:** Reproducible document generation</span>
-<span id="cb1-519"><a href="#cb1-519" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-520"><a href="#cb1-520" aria-hidden="true" tabindex="-1"></a><span class="fu">### Model Files</span></span>
-<span id="cb1-521"><a href="#cb1-521" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-522"><a href="#cb1-522" aria-hidden="true" tabindex="-1"></a>All model files and code are available in the project repository:</span>
-<span id="cb1-523"><a href="#cb1-523" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-524"><a href="#cb1-524" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`amua_import_parameters_v2.csv`</span> — Parameter definitions for Amua import</span>
-<span id="cb1-525"><a href="#cb1-525" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`wrangling_v2.r`</span> — Data processing script</span>
-<span id="cb1-526"><a href="#cb1-526" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`methods_v2.r`</span> — Custom functions for analysis</span>
-<span id="cb1-527"><a href="#cb1-527" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`analysis_report_v2.qmd`</span> — Full analysis report with embedded code</span>
-<span id="cb1-528"><a href="#cb1-528" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-529"><a href="#cb1-529" aria-hidden="true" tabindex="-1"></a><span class="fu">### Reproducing Results</span></span>
-<span id="cb1-530"><a href="#cb1-530" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-531"><a href="#cb1-531" aria-hidden="true" tabindex="-1"></a>To reproduce this analysis:</span>
-<span id="cb1-532"><a href="#cb1-532" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-533"><a href="#cb1-533" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Download Amua from <span class="co">[</span><span class="ot">https://github.com/zward/Amua</span><span class="co">](https://github.com/zward/Amua)</span></span>
-<span id="cb1-534"><a href="#cb1-534" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Import <span class="in">`amua_import_parameters_v2.csv`</span></span>
-<span id="cb1-535"><a href="#cb1-535" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Run decision tree model (10,000 PSA iterations)</span>
-<span id="cb1-536"><a href="#cb1-536" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Export results to CSV</span>
-<span id="cb1-537"><a href="#cb1-537" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Run <span class="in">`wrangling_v2.r`</span> to process outputs</span>
-<span id="cb1-538"><a href="#cb1-538" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>Render <span class="in">`analysis_report_v2.qmd`</span></span>
-<span id="cb1-539"><a href="#cb1-539" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-540"><a href="#cb1-540" aria-hidden="true" tabindex="-1"></a><span class="fu">## Next Steps</span></span>
-<span id="cb1-541"><a href="#cb1-541" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-542"><a href="#cb1-542" aria-hidden="true" tabindex="-1"></a><span class="fu">### Model Updates Planned</span></span>
-<span id="cb1-543"><a href="#cb1-543" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-544"><a href="#cb1-544" aria-hidden="true" tabindex="-1"></a>Once pilot data become available:</span>
-<span id="cb1-545"><a href="#cb1-545" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-546"><a href="#cb1-546" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Update effectiveness parameters** with empirical detection rates</span>
-<span id="cb1-547"><a href="#cb1-547" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Refine cost estimates** based on actual implementation expenses</span>
-<span id="cb1-548"><a href="#cb1-548" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Extend model** to include health outcomes (deaths averted, DALYs gained)</span>
-<span id="cb1-549"><a href="#cb1-549" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Add equity dimensions** (stratify by age, sex, province)</span>
-<span id="cb1-550"><a href="#cb1-550" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>**Multi-year projection** with discounting</span>
-<span id="cb1-551"><a href="#cb1-551" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-552"><a href="#cb1-552" aria-hidden="true" tabindex="-1"></a><span class="fu">### Decision Analysis Extensions</span></span>
-<span id="cb1-553"><a href="#cb1-553" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-554"><a href="#cb1-554" aria-hidden="true" tabindex="-1"></a>Future analyses could include:</span>
-<span id="cb1-555"><a href="#cb1-555" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-556"><a href="#cb1-556" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Value of information analysis:** How much is it worth to reduce parameter uncertainty?</span>
-<span id="cb1-557"><a href="#cb1-557" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Budget impact analysis:** What if we scale up to all 9 provinces?</span>
-<span id="cb1-558"><a href="#cb1-558" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Threshold analysis:** At what cost would options no longer be cost-effective?</span>
-<span id="cb1-559"><a href="#cb1-559" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-560"><a href="#cb1-560" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb1-561"><a href="#cb1-561" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-562"><a href="#cb1-562" aria-hidden="true" tabindex="-1"></a>::: {.footer-cta}</span>
-<span id="cb1-563"><a href="#cb1-563" aria-hidden="true" tabindex="-1"></a>**Questions about the model?** Contact the D2P analytical team at <span class="co">[</span><span class="ot">contact@example.com</span><span class="co">](mailto:contact@example.com)</span></span>
-<span id="cb1-564"><a href="#cb1-564" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-565"><a href="#cb1-565" aria-hidden="true" tabindex="-1"></a>**Download model files:** <span class="co">[</span><span class="ot">amua_import_parameters_v2.csv</span><span class="co">](../amua_import_parameters_v2.csv)</span></span>
-<span id="cb1-566"><a href="#cb1-566" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-psa</span></span>
+<span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Probabilistic sensitivity analysis: 10,000 simulations"</span></span>
+<span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 8</span></span>
+<span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 6</span></span>
+<span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulate PSA results</span></span>
+<span id="cb1-350"><a href="#cb1-350" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2026</span>)</span>
+<span id="cb1-351"><a href="#cb1-351" aria-hidden="true" tabindex="-1"></a>n_sims <span class="ot">&lt;-</span> <span class="dv">1000</span>  <span class="co"># Reduced for demonstration</span></span>
+<span id="cb1-352"><a href="#cb1-352" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-353"><a href="#cb1-353" aria-hidden="true" tabindex="-1"></a>psa_results <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb1-354"><a href="#cb1-354" aria-hidden="true" tabindex="-1"></a>  <span class="at">strategy =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Status Quo"</span>, <span class="st">"S2 BChE auto-notify"</span>, <span class="st">"Surveillance MVP"</span>), <span class="at">each =</span> n_sims),</span>
+<span id="cb1-355"><a href="#cb1-355" aria-hidden="true" tabindex="-1"></a>  <span class="at">cost =</span> <span class="fu">c</span>(</span>
+<span id="cb1-356"><a href="#cb1-356" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rnorm</span>(n_sims, <span class="dv">0</span>, <span class="dv">0</span>),  <span class="co"># Status quo has no cost</span></span>
+<span id="cb1-357"><a href="#cb1-357" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rnorm</span>(n_sims, <span class="dv">55000</span>, <span class="dv">15000</span>),  <span class="co"># S2</span></span>
+<span id="cb1-358"><a href="#cb1-358" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rnorm</span>(n_sims, <span class="dv">117000</span>, <span class="dv">25000</span>)  <span class="co"># MVP</span></span>
+<span id="cb1-359"><a href="#cb1-359" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb1-360"><a href="#cb1-360" aria-hidden="true" tabindex="-1"></a>  <span class="at">effectiveness =</span> <span class="fu">c</span>(</span>
+<span id="cb1-361"><a href="#cb1-361" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rnorm</span>(n_sims, <span class="fl">0.048</span>, <span class="fl">0.010</span>),  <span class="co"># Status quo</span></span>
+<span id="cb1-362"><a href="#cb1-362" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rnorm</span>(n_sims, <span class="fl">0.133</span>, <span class="fl">0.020</span>),  <span class="co"># S2</span></span>
+<span id="cb1-363"><a href="#cb1-363" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rnorm</span>(n_sims, <span class="fl">0.189</span>, <span class="fl">0.025</span>)   <span class="co"># MVP</span></span>
+<span id="cb1-364"><a href="#cb1-364" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-365"><a href="#cb1-365" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb1-366"><a href="#cb1-366" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(cost <span class="sc">&gt;=</span> <span class="dv">0</span>, effectiveness <span class="sc">&gt;=</span> <span class="dv">0</span>)</span>
+<span id="cb1-367"><a href="#cb1-367" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-368"><a href="#cb1-368" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(psa_results, <span class="fu">aes</span>(<span class="at">x =</span> cost, <span class="at">y =</span> effectiveness, <span class="at">color =</span> strategy)) <span class="sc">+</span></span>
+<span id="cb1-369"><a href="#cb1-369" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.3</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb1-370"><a href="#cb1-370" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_ellipse</span>(<span class="at">level =</span> <span class="fl">0.95</span>, <span class="at">size =</span> <span class="fl">1.2</span>) <span class="sc">+</span></span>
+<span id="cb1-371"><a href="#cb1-371" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">"Set1"</span>) <span class="sc">+</span></span>
+<span id="cb1-372"><a href="#cb1-372" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">dollar_format</span>(<span class="at">prefix =</span> <span class="st">"R"</span>, <span class="at">scale =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb1-373"><a href="#cb1-373" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">percent_format</span>(<span class="at">accuracy =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb1-374"><a href="#cb1-374" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb1-375"><a href="#cb1-375" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Probabilistic Sensitivity Analysis (1000 Simulations)"</span>,</span>
+<span id="cb1-376"><a href="#cb1-376" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"95% confidence ellipses around base-case estimates"</span>,</span>
+<span id="cb1-377"><a href="#cb1-377" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Annual Cost (ZAR)"</span>,</span>
+<span id="cb1-378"><a href="#cb1-378" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Per-case detection probability (P_detect)"</span>,</span>
+<span id="cb1-379"><a href="#cb1-379" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Strategy"</span></span>
+<span id="cb1-380"><a href="#cb1-380" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb1-381"><a href="#cb1-381" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb1-382"><a href="#cb1-382" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb1-383"><a href="#cb1-383" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb1-384"><a href="#cb1-384" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span></span>
+<span id="cb1-385"><a href="#cb1-385" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-386"><a href="#cb1-386" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-387"><a href="#cb1-387" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-388"><a href="#cb1-388" aria-hidden="true" tabindex="-1"></a>**Key findings:**</span>
+<span id="cb1-389"><a href="#cb1-389" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-390"><a href="#cb1-390" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>S2 and MVP remain **superior to status quo** in &gt;95% of simulations</span>
+<span id="cb1-391"><a href="#cb1-391" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>MVP has **narrower uncertainty** than S2 alone (two independent streams reduce variance)</span>
+<span id="cb1-392"><a href="#cb1-392" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-393"><a href="#cb1-393" aria-hidden="true" tabindex="-1"></a><span class="fu">### Scenario Analyses</span></span>
+<span id="cb1-394"><a href="#cb1-394" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-395"><a href="#cb1-395" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Scenario 1: Pessimistic (Low Effectiveness, High Cost)</span></span>
+<span id="cb1-396"><a href="#cb1-396" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-397"><a href="#cb1-397" aria-hidden="true" tabindex="-1"></a>Assumptions:</span>
+<span id="cb1-398"><a href="#cb1-398" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-399"><a href="#cb1-399" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Detection probabilities reduced by 50%</span>
+<span id="cb1-400"><a href="#cb1-400" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Costs doubled</span>
+<span id="cb1-401"><a href="#cb1-401" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-402"><a href="#cb1-402" aria-hidden="true" tabindex="-1"></a>Results:</span>
+<span id="cb1-403"><a href="#cb1-403" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-406"><a href="#cb1-406" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-407"><a href="#cb1-407" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-pessimistic</span></span>
+<span id="cb1-408"><a href="#cb1-408" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: "Pessimistic scenario results"</span></span>
+<span id="cb1-409"><a href="#cb1-409" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-410"><a href="#cb1-410" aria-hidden="true" tabindex="-1"></a>pessimistic <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
+<span id="cb1-411"><a href="#cb1-411" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>Strategy, <span class="sc">~</span>Cost, <span class="sc">~</span>P_detect, <span class="sc">~</span>Improvement_vs_SQ,</span>
+<span id="cb1-412"><a href="#cb1-412" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Status Quo"</span>, <span class="st">"R0"</span>, <span class="st">"0.024"</span>, <span class="st">"—"</span>,</span>
+<span id="cb1-413"><a href="#cb1-413" aria-hidden="true" tabindex="-1"></a>  <span class="st">"S2 BChE auto-notify"</span>, <span class="st">"R110,000"</span>, <span class="st">"0.067"</span>, <span class="st">"+4.3 pp"</span>,</span>
+<span id="cb1-414"><a href="#cb1-414" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Surveillance MVP"</span>, <span class="st">"R234,000"</span>, <span class="st">"0.095"</span>, <span class="st">"+7.1 pp"</span></span>
+<span id="cb1-415"><a href="#cb1-415" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-416"><a href="#cb1-416" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-417"><a href="#cb1-417" aria-hidden="true" tabindex="-1"></a>pessimistic <span class="sc">%&gt;%</span></span>
+<span id="cb1-418"><a href="#cb1-418" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb1-419"><a href="#cb1-419" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(</span>
+<span id="cb1-420"><a href="#cb1-420" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Pessimistic Scenario"</span>,</span>
+<span id="cb1-421"><a href="#cb1-421" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Effectiveness halved, costs doubled"</span></span>
+<span id="cb1-422"><a href="#cb1-422" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb1-423"><a href="#cb1-423" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_footnote</span>(</span>
+<span id="cb1-424"><a href="#cb1-424" aria-hidden="true" tabindex="-1"></a>    <span class="at">footnote =</span> <span class="st">"Even under pessimistic assumptions, options still improve on status quo"</span>,</span>
+<span id="cb1-425"><a href="#cb1-425" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_column_labels</span>(<span class="at">columns =</span> Improvement_vs_SQ)</span>
+<span id="cb1-426"><a href="#cb1-426" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-427"><a href="#cb1-427" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-428"><a href="#cb1-428" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-429"><a href="#cb1-429" aria-hidden="true" tabindex="-1"></a>**Conclusion:** Options remain valuable even if real-world performance is much worse than expected.</span>
+<span id="cb1-430"><a href="#cb1-430" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-431"><a href="#cb1-431" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Scenario 2: Optimistic (High Effectiveness, Low Cost)</span></span>
+<span id="cb1-432"><a href="#cb1-432" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-433"><a href="#cb1-433" aria-hidden="true" tabindex="-1"></a>Assumptions:</span>
+<span id="cb1-434"><a href="#cb1-434" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-435"><a href="#cb1-435" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Detection probabilities increased by 50%</span>
+<span id="cb1-436"><a href="#cb1-436" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Costs halved</span>
+<span id="cb1-437"><a href="#cb1-437" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-438"><a href="#cb1-438" aria-hidden="true" tabindex="-1"></a>Results:</span>
+<span id="cb1-439"><a href="#cb1-439" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-442"><a href="#cb1-442" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-443"><a href="#cb1-443" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-optimistic</span></span>
+<span id="cb1-444"><a href="#cb1-444" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: "Optimistic scenario results"</span></span>
+<span id="cb1-445"><a href="#cb1-445" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-446"><a href="#cb1-446" aria-hidden="true" tabindex="-1"></a>optimistic <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
+<span id="cb1-447"><a href="#cb1-447" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>Strategy, <span class="sc">~</span>Cost, <span class="sc">~</span>P_detect, <span class="sc">~</span>Improvement_vs_SQ,</span>
+<span id="cb1-448"><a href="#cb1-448" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Status Quo"</span>, <span class="st">"R0"</span>, <span class="st">"0.072"</span>, <span class="st">"—"</span>,</span>
+<span id="cb1-449"><a href="#cb1-449" aria-hidden="true" tabindex="-1"></a>  <span class="st">"S2 BChE auto-notify"</span>, <span class="st">"R27,500"</span>, <span class="st">"0.200"</span>, <span class="st">"+12.8 pp"</span>,</span>
+<span id="cb1-450"><a href="#cb1-450" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Surveillance MVP"</span>, <span class="st">"R58,500"</span>, <span class="st">"0.284"</span>, <span class="st">"+21.2 pp"</span></span>
+<span id="cb1-451"><a href="#cb1-451" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-452"><a href="#cb1-452" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-453"><a href="#cb1-453" aria-hidden="true" tabindex="-1"></a>optimistic <span class="sc">%&gt;%</span></span>
+<span id="cb1-454"><a href="#cb1-454" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb1-455"><a href="#cb1-455" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(</span>
+<span id="cb1-456"><a href="#cb1-456" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Optimistic Scenario"</span>,</span>
+<span id="cb1-457"><a href="#cb1-457" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Effectiveness increased 50%, costs halved"</span></span>
+<span id="cb1-458"><a href="#cb1-458" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb1-459"><a href="#cb1-459" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_footnote</span>(</span>
+<span id="cb1-460"><a href="#cb1-460" aria-hidden="true" tabindex="-1"></a>    <span class="at">footnote =</span> <span class="st">"Per-case detection up to ~28% achievable if all streams perform at upper bound"</span>,</span>
+<span id="cb1-461"><a href="#cb1-461" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_column_labels</span>(<span class="at">columns =</span> P_detect)</span>
+<span id="cb1-462"><a href="#cb1-462" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-463"><a href="#cb1-463" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-464"><a href="#cb1-464" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-465"><a href="#cb1-465" aria-hidden="true" tabindex="-1"></a>**Conclusion:** Significant upside potential if pilot demonstrates better-than-expected performance.</span>
+<span id="cb1-466"><a href="#cb1-466" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-467"><a href="#cb1-467" aria-hidden="true" tabindex="-1"></a><span class="fu">## Model Validation</span></span>
+<span id="cb1-468"><a href="#cb1-468" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-469"><a href="#cb1-469" aria-hidden="true" tabindex="-1"></a><span class="fu">### Face Validity</span></span>
+<span id="cb1-470"><a href="#cb1-470" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-471"><a href="#cb1-471" aria-hidden="true" tabindex="-1"></a>Model reviewed by:</span>
+<span id="cb1-472"><a href="#cb1-472" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-473"><a href="#cb1-473" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>NICD surveillance epidemiologists</span>
+<span id="cb1-474"><a href="#cb1-474" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>NHLS laboratory managers</span>
+<span id="cb1-475"><a href="#cb1-475" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>PIH clinical toxicologists</span>
+<span id="cb1-476"><a href="#cb1-476" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Academic health economists (UCT School of Public Health)</span>
+<span id="cb1-477"><a href="#cb1-477" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-478"><a href="#cb1-478" aria-hidden="true" tabindex="-1"></a>**Feedback incorporated:**</span>
+<span id="cb1-479"><a href="#cb1-479" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-480"><a href="#cb1-480" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Adjusted detection probabilities based on expert elicitation</span>
+<span id="cb1-481"><a href="#cb1-481" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Added response success rate as probabilistic node</span>
+<span id="cb1-482"><a href="#cb1-482" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Included scenario for "Option 5 requires Option 3 or 4"</span>
+<span id="cb1-483"><a href="#cb1-483" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-484"><a href="#cb1-484" aria-hidden="true" tabindex="-1"></a><span class="fu">### Internal Validity</span></span>
+<span id="cb1-485"><a href="#cb1-485" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-486"><a href="#cb1-486" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Parameter consistency:** All probabilities sum to 1.0</span>
+<span id="cb1-487"><a href="#cb1-487" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Cost additivity:** Full Package cost = sum of individual option costs</span>
+<span id="cb1-488"><a href="#cb1-488" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Effectiveness synergy:** Full Package &gt; sum of individual effects (captures coordination benefits)</span>
+<span id="cb1-489"><a href="#cb1-489" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-490"><a href="#cb1-490" aria-hidden="true" tabindex="-1"></a><span class="fu">### External Validity (Pending)</span></span>
+<span id="cb1-491"><a href="#cb1-491" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-492"><a href="#cb1-492" aria-hidden="true" tabindex="-1"></a>Model will be validated against **pilot data** (Q3 2026 – Q1 2027):</span>
+<span id="cb1-493"><a href="#cb1-493" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-494"><a href="#cb1-494" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Compare predicted vs. observed detection rates</span>
+<span id="cb1-495"><a href="#cb1-495" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Update cost parameters with actual implementation expenses</span>
+<span id="cb1-496"><a href="#cb1-496" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Refine effectiveness estimates based on measured time-to-detection</span>
+<span id="cb1-497"><a href="#cb1-497" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Re-run PSA with empirical parameter distributions</span>
+<span id="cb1-498"><a href="#cb1-498" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-499"><a href="#cb1-499" aria-hidden="true" tabindex="-1"></a><span class="fu">## Model Limitations</span></span>
+<span id="cb1-500"><a href="#cb1-500" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-501"><a href="#cb1-501" aria-hidden="true" tabindex="-1"></a>::: {.callout-warning}</span>
+<span id="cb1-502"><a href="#cb1-502" aria-hidden="true" tabindex="-1"></a><span class="fu">## Key Limitations</span></span>
+<span id="cb1-503"><a href="#cb1-503" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-504"><a href="#cb1-504" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Placeholder parameters:** All values subject to revision based on pilot data</span>
+<span id="cb1-505"><a href="#cb1-505" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Linear effectiveness assumption:** Model assumes options combine additively (may underestimate synergies)</span>
+<span id="cb1-506"><a href="#cb1-506" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**No discounting:** Costs and effects not discounted over time (justified for short time horizon)</span>
+<span id="cb1-507"><a href="#cb1-507" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**No health outcomes:** Model tracks per-case detection probability, not deaths/disabilities averted (future extension planned)</span>
+<span id="cb1-508"><a href="#cb1-508" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>**No equity analysis:** Model doesn't differentiate by age, sex, or socioeconomic status</span>
+<span id="cb1-509"><a href="#cb1-509" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-510"><a href="#cb1-510" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-511"><a href="#cb1-511" aria-hidden="true" tabindex="-1"></a><span class="fu">## Software and Reproducibility</span></span>
+<span id="cb1-512"><a href="#cb1-512" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-513"><a href="#cb1-513" aria-hidden="true" tabindex="-1"></a><span class="fu">### Tools Used</span></span>
+<span id="cb1-514"><a href="#cb1-514" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-515"><a href="#cb1-515" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Amua v1.0.3:** Decision tree modeling and Monte Carlo simulation</span>
+<span id="cb1-516"><a href="#cb1-516" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**R v4.3.1:** Data wrangling, visualization, and reporting</span>
+<span id="cb1-517"><a href="#cb1-517" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Quarto v1.3:** Reproducible document generation</span>
+<span id="cb1-518"><a href="#cb1-518" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-519"><a href="#cb1-519" aria-hidden="true" tabindex="-1"></a><span class="fu">### Model Files</span></span>
+<span id="cb1-520"><a href="#cb1-520" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-521"><a href="#cb1-521" aria-hidden="true" tabindex="-1"></a>All model files and code are available in the project repository:</span>
+<span id="cb1-522"><a href="#cb1-522" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-523"><a href="#cb1-523" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`amua_import_parameters_v2.csv`</span> — Parameter definitions for Amua import</span>
+<span id="cb1-524"><a href="#cb1-524" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`wrangling_v2.r`</span> — Data processing script</span>
+<span id="cb1-525"><a href="#cb1-525" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`methods_v2.r`</span> — Custom functions for analysis</span>
+<span id="cb1-526"><a href="#cb1-526" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`analysis_report_v2.qmd`</span> — Full analysis report with embedded code</span>
+<span id="cb1-527"><a href="#cb1-527" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-528"><a href="#cb1-528" aria-hidden="true" tabindex="-1"></a><span class="fu">### Reproducing Results</span></span>
+<span id="cb1-529"><a href="#cb1-529" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-530"><a href="#cb1-530" aria-hidden="true" tabindex="-1"></a>To reproduce this analysis:</span>
+<span id="cb1-531"><a href="#cb1-531" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-532"><a href="#cb1-532" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Download Amua from <span class="co">[</span><span class="ot">https://github.com/zward/Amua</span><span class="co">](https://github.com/zward/Amua)</span></span>
+<span id="cb1-533"><a href="#cb1-533" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Import <span class="in">`amua_import_parameters_v2.csv`</span></span>
+<span id="cb1-534"><a href="#cb1-534" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Run decision tree model (10,000 PSA iterations)</span>
+<span id="cb1-535"><a href="#cb1-535" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Export results to CSV</span>
+<span id="cb1-536"><a href="#cb1-536" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Run <span class="in">`wrangling_v2.r`</span> to process outputs</span>
+<span id="cb1-537"><a href="#cb1-537" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>Render <span class="in">`analysis_report_v2.qmd`</span></span>
+<span id="cb1-538"><a href="#cb1-538" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-539"><a href="#cb1-539" aria-hidden="true" tabindex="-1"></a><span class="fu">## Next Steps</span></span>
+<span id="cb1-540"><a href="#cb1-540" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-541"><a href="#cb1-541" aria-hidden="true" tabindex="-1"></a><span class="fu">### Model Updates Planned</span></span>
+<span id="cb1-542"><a href="#cb1-542" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-543"><a href="#cb1-543" aria-hidden="true" tabindex="-1"></a>Once pilot data become available:</span>
+<span id="cb1-544"><a href="#cb1-544" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-545"><a href="#cb1-545" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Update effectiveness parameters** with empirical detection rates</span>
+<span id="cb1-546"><a href="#cb1-546" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Refine cost estimates** based on actual implementation expenses</span>
+<span id="cb1-547"><a href="#cb1-547" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Extend model** to include health outcomes (deaths averted, DALYs gained)</span>
+<span id="cb1-548"><a href="#cb1-548" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Add equity dimensions** (stratify by age, sex, province)</span>
+<span id="cb1-549"><a href="#cb1-549" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>**Multi-year projection** with discounting</span>
+<span id="cb1-550"><a href="#cb1-550" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-551"><a href="#cb1-551" aria-hidden="true" tabindex="-1"></a><span class="fu">### Decision Analysis Extensions</span></span>
+<span id="cb1-552"><a href="#cb1-552" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-553"><a href="#cb1-553" aria-hidden="true" tabindex="-1"></a>Future analyses could include:</span>
+<span id="cb1-554"><a href="#cb1-554" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-555"><a href="#cb1-555" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Value of information analysis:** How much is it worth to reduce parameter uncertainty?</span>
+<span id="cb1-556"><a href="#cb1-556" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Budget impact analysis:** What if we scale up to all 9 provinces?</span>
+<span id="cb1-557"><a href="#cb1-557" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Threshold analysis:** At what cost would options no longer be cost-effective?</span>
+<span id="cb1-558"><a href="#cb1-558" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-559"><a href="#cb1-559" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb1-560"><a href="#cb1-560" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-561"><a href="#cb1-561" aria-hidden="true" tabindex="-1"></a>::: {.footer-cta}</span>
+<span id="cb1-562"><a href="#cb1-562" aria-hidden="true" tabindex="-1"></a>**Questions about the model?** Contact the D2P analytical team at <span class="co">[</span><span class="ot">contact@example.com</span><span class="co">](mailto:contact@example.com)</span></span>
+<span id="cb1-563"><a href="#cb1-563" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-564"><a href="#cb1-564" aria-hidden="true" tabindex="-1"></a>**Download model files:** <span class="co">[</span><span class="ot">amua_import_parameters_v2.csv</span><span class="co">](../amua_import_parameters_v2.csv)</span></span>
+<span id="cb1-565"><a href="#cb1-565" aria-hidden="true" tabindex="-1"></a>:::</span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

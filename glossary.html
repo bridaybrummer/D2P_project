@@ -289,7 +289,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="surveillance-what-the-words-mean">2. Surveillance — what the words mean</h2>
 <p><strong>Surveillance.</strong> The ongoing collection of health data <strong>for action</strong> — not for archives. If nothing changes because of the data, it isn’t surveillance.</p>
 <p><strong>Notifiable Medical Condition (NMC).</strong> A condition that doctors and labs are legally required to report to the Department of Health. Pesticide poisoning is on this list. NICD runs the system.</p>
-<p><strong>Hotspot.</strong> An unusual cluster of cases — too many in one place, one time, or one product. Detecting hotspots quickly is the main job of surveillance.</p>
+<p><strong>Case detection.</strong> Getting a true pesticide-poisoning case into the surveillance system (NMC, NHLS LIS or PIH dataset) so it can be acted on. Improving the share of true cases captured is the main job of surveillance.</p>
 <p><strong>Sentinel surveillance.</strong> Instead of trying to capture every case nationally, you pick a small number of well-chosen sites (usually tertiary hospitals) and collect <strong>richer, more reliable</strong> data from them. Trades coverage for depth. This is what <strong>Option 6</strong> does.</p>
 <p><strong>Case definition.</strong> The rule for “does this patient count?”. Distinguishes <em>suspected</em>, <em>probable</em>, and <em>confirmed</em> cases.</p>
 <p><strong>Auto-notification.</strong> The lab system fires off an NMC notification automatically when a result crosses a threshold (e.g.&nbsp;BChE &lt;50%). No clinician form-filling required. This is <strong>Option 3</strong>.</p>
@@ -304,7 +304,7 @@ window.Quarto = {
 <p><strong>NHLS</strong> — National Health Laboratory Service. The public-sector lab network, ~80% population coverage. Source of BChE test results.</p>
 <p><strong>PIH</strong> — Poisons Information Helpline at Red Cross Children’s Hospital. A 24-hour clinical advice line. Sees ~9,000 pesticide-related calls a year — many of which never become hospital admissions and so never appear in NMC or NHLS data.</p>
 <p><strong>DALRRD</strong> — Department of Agriculture, Land Reform and Rural Development. Regulates pesticide registration and product sales.</p>
-<p><strong>EHP</strong> — Environmental Health Practitioner. Local-government public-health staff who do the field investigations when a hotspot is flagged.</p>
+<p><strong>EHP</strong> — Environmental Health Practitioner. Local-government public-health staff who do the field investigations when a notification is received.</p>
 <hr>
 </section>
 <section id="a.-policy-governance-and-it-acronyms" class="level2">
@@ -317,7 +317,7 @@ window.Quarto = {
 <p><strong>MVD</strong> — Minimum Viable Dataset. The smallest agreed set of fields (e.g.&nbsp;age, sex, suspected agent, severity, geography, time) that two systems need to exchange for surveillance use. Negotiating the PIH↔︎NICD MVD is the medium-term half of Option 4.</p>
 <p><strong>CHB</strong> — Chris Hani Baragwanath Academic Hospital, Soweto. Proposed Option 3b sentinel chemical-toxicology pilot site.</p>
 <p><strong>POPIA</strong> — Protection of Personal Information Act (2013). South Africa’s data-protection law. All inter-agency feeds in this project share <strong>de-identified, aggregated</strong> data (no names, ID numbers, or contact details) to stay within POPIA.</p>
-<p><strong>SOP</strong> — Standard Operating Procedure. A written, repeatable instruction for staff (e.g.&nbsp;“when an EHP receives a cluster alert, do X, Y, Z within 24 hours”). The status-quo EHP→DALRRD referral is <strong>not</strong> governed by an SOP, which is the gap Option 2 closes.</p>
+<p><strong>SOP</strong> — Standard Operating Procedure. A written, repeatable instruction for staff (e.g.&nbsp;“when an EHP receives a notification, do X, Y, Z within 24 hours”). The status-quo EHP→DALRRD referral is <strong>not</strong> governed by an SOP, which is the gap Option 2 closes.</p>
 <p><strong>Section 90, National Health Act (2003).</strong> The statutory clause that permits inter-agency data sharing for public-health purposes. Provides the legal basis for Options 1, 2 and 4 — <strong>no new legislation is required</strong>.</p>
 <p><strong>SAMRC / Bloomberg / Gates.</strong> External research funders (South African Medical Research Council; Bloomberg Philanthropies; Bill &amp; Melinda Gates Foundation) flagged as plausible sponsors for Option 3b, which is treated as a research-surveillance investment rather than an operational line item.</p>
 <hr>
@@ -378,8 +378,8 @@ window.Quarto = {
 <section id="decision-analytic-methods" class="level2">
 <h2 class="anchored" data-anchor-id="decision-analytic-methods">6. Decision-analytic methods</h2>
 <p><strong>Decision tree.</strong> A model that maps out the consequences of choosing each option, weighted by probabilities. Used here to compare Status Quo, individual Options 1–6, and the Full Package. Built in <strong>Amua</strong>.</p>
-<p><strong>Detection probability (<span class="math inline">\(d_i\)</span>).</strong> The proportion of true hotspots that this option catches. Status quo ≈ 0.45; Full Package ≈ 0.83.</p>
-<p><strong>Response efficacy (<span class="math inline">\(\eta\)</span>).</strong> Of the hotspots that are detected and investigated, the proportion where the response actually prevents further cases. Base case <strong>0.30</strong>; sensitivity range <strong>0.15–0.50</strong>.</p>
+<p><strong>Detection probability (<span class="math inline">\(d_i\)</span>).</strong> The proportion of true pesticide-poisoning cases that this option catches and enters into the surveillance system. Status-quo per-case d ≈ 0.048 (1,013 NMC notifications ÷ ~20,960 implied true cases/yr); Surveillance MVP ≈ 0.19.</p>
+<p><strong>Response efficacy (<span class="math inline">\(\eta\)</span>).</strong> Of the cases that are detected and investigated, the proportion where the response actually prevents further cases. Base case <strong>0.30</strong>; sensitivity range <strong>0.15–0.50</strong>.</p>
 <p><strong>Avoided burden.</strong> <span class="math display">\[C_{\text{avoided},i} \;=\; C_{\text{burden}} \cdot d_i \cdot \eta\]</span> Total burden cost × the option’s detection rate × the response efficacy. This is the money saved by surveillance.</p>
 <p><strong>Net Monetary Benefit (NMB).</strong> Avoided burden minus the option’s own cost. <span class="math display">\[\text{NMB}_i \;=\; (C_0 - C_i) \;-\; K_i\]</span> Positive NMB = the option pays for itself.</p>
 <p><strong>ICER.</strong> Incremental Cost-Effectiveness Ratio: <span class="math display">\[\text{ICER} \;=\; \frac{C_1 - C_0}{E_1 - E_0}\]</span> Extra cost per extra unit of effect (e.g.&nbsp;per DALY averted) when moving from comparator to new option. Compare against λ.</p>
@@ -393,7 +393,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="the-policy-options">7. The policy options</h2>
 <p>The policy brief uses the current numbering below. Earlier drafts had a separate “Option 5 — Provincial response activation” and “Option 6 — Sentinel toxicology”; response coordination has since been moved into the parallel coordination workstream, and sentinel toxicology has been folded in as <strong>Option 3b</strong>.</p>
 <p><strong>Option 1 — Activate the NHLS–NMC data feed (IT implementation).</strong> The NHLS↔︎NICD MOU for BChE data sharing already exists. What is missing is the working <strong>LIS-to-NMC pipe</strong> (HL7 / flat-file). De-identified, aggregated severe-BChE cases flow into NMC for trend analysis.</p>
-<p><strong>Option 2 — NICD → DALRRD poisoning intelligence feed.</strong> Quarterly NICD/NMC brief (plus ad-hoc cluster alerts) flowing to DALRRD so that pesticide registration, labelling and inspectorate priorities are informed by real-world morbidity and mortality. <strong>Direction is NICD → DALRRD</strong>, in response to DALRRD’s formal request.</p>
+<p><strong>Option 2 — NICD → DALRRD poisoning intelligence feed.</strong> Quarterly NICD/NMC brief (plus ad-hoc case-spike alerts) flowing to DALRRD so that pesticide registration, labelling and inspectorate priorities are informed by real-world morbidity and mortality. <strong>Direction is NICD → DALRRD</strong>, in response to DALRRD’s formal request.</p>
 <p><strong>Option 3a — BChE auto-notification (capability exists).</strong> NHLS LIS automatically issues an NMC notification within 24 hours of a severe BChE result (&lt;50% of normal). The laboratory capability already exists (~9,000 tests/year); only the auto-notification rule needs configuring. Single biggest fast-win detection gain.</p>
 <p><strong>Option 3b — Chemical toxicology auto-notification (new capability).</strong> Extends auto-notification to <strong>chemical toxicology assays</strong> (qualitative/quantitative pesticide identification by GC-MS / LC-MS). This capability does <strong>not yet exist on live patients</strong> — NHLS currently performs chemical toxicology <em>post-mortem only</em>. Phase 1: sentinel build at CHB. Phase 2–3: expand to 4–5 tertiary sites. Funded as research-surveillance investment (SAMRC, Bloomberg, Gates), not the operational surveillance budget. Provides the <strong>agent attribution</strong> that Option 2 needs to be useful.</p>
 <p><strong>Option 4 — PIH minimum viable dataset + live dashboard.</strong> Short-term (weeks): PIH publishes a <strong>live dashboard</strong> of pesticide-related calls. Medium-term (months): agree a <strong>minimum viable dataset (MVD)</strong> so PIH call records can be ingested into NMC as a routine, structured stream. Captures the ~10,000 calls/year that never reach a laboratory.</p>
@@ -931,7 +931,7 @@ window.Quarto = {
 <span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>**Notifiable Medical Condition (NMC).** A condition that doctors and labs are legally required to report to the Department of Health. Pesticide poisoning is on this list. NICD runs the system.</span>
 <span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>**Hotspot.** An unusual cluster of cases — too many in one place, one time, or one product. Detecting hotspots quickly is the main job of surveillance.</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>**Case detection.** Getting a true pesticide-poisoning case into the surveillance system (NMC, NHLS LIS or PIH dataset) so it can be acted on. Improving the share of true cases captured is the main job of surveillance.</span>
 <span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>**Sentinel surveillance.** Instead of trying to capture every case nationally, you pick a small number of well-chosen sites (usually tertiary hospitals) and collect **richer, more reliable** data from them. Trades coverage for depth. This is what **Option 6** does.</span>
 <span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
@@ -957,7 +957,7 @@ window.Quarto = {
 <span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>**DALRRD** — Department of Agriculture, Land Reform and Rural Development. Regulates pesticide registration and product sales.</span>
 <span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>**EHP** — Environmental Health Practitioner. Local-government public-health staff who do the field investigations when a hotspot is flagged.</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>**EHP** — Environmental Health Practitioner. Local-government public-health staff who do the field investigations when a notification is received.</span>
 <span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>---</span>
 <span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a></span>
@@ -979,7 +979,7 @@ window.Quarto = {
 <span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>**POPIA** — Protection of Personal Information Act (2013). South Africa's data-protection law. All inter-agency feeds in this project share **de-identified, aggregated** data (no names, ID numbers, or contact details) to stay within POPIA.</span>
 <span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>**SOP** — Standard Operating Procedure. A written, repeatable instruction for staff (e.g. "when an EHP receives a cluster alert, do X, Y, Z within 24 hours"). The status-quo EHP→DALRRD referral is **not** governed by an SOP, which is the gap Option 2 closes.</span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>**SOP** — Standard Operating Procedure. A written, repeatable instruction for staff (e.g. "when an EHP receives a notification, do X, Y, Z within 24 hours"). The status-quo EHP→DALRRD referral is **not** governed by an SOP, which is the gap Option 2 closes.</span>
 <span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>**Section 90, National Health Act (2003).** The statutory clause that permits inter-agency data sharing for public-health purposes. Provides the legal basis for Options 1, 2 and 4 — **no new legislation is required**.</span>
 <span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a></span>
@@ -1035,9 +1035,9 @@ window.Quarto = {
 <span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>**Decision tree.** A model that maps out the consequences of choosing each option, weighted by probabilities. Used here to compare Status Quo, individual Options 1–6, and the Full Package. Built in **Amua**.</span>
 <span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>**Detection probability ($d_i$).** The proportion of true hotspots that this option catches. Status quo ≈ 0.45; Full Package ≈ 0.83.</span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>**Detection probability ($d_i$).** The proportion of true pesticide-poisoning cases that this option catches and enters into the surveillance system. Status-quo per-case d ≈ 0.048 (1,013 NMC notifications ÷ ~20,960 implied true cases/yr); Surveillance MVP ≈ 0.19.</span>
 <span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>**Response efficacy ($\eta$).** Of the hotspots that are detected and investigated, the proportion where the response actually prevents further cases. Base case **0.30**; sensitivity range **0.15–0.50**.</span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>**Response efficacy ($\eta$).** Of the cases that are detected and investigated, the proportion where the response actually prevents further cases. Base case **0.30**; sensitivity range **0.15–0.50**.</span>
 <span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>**Avoided burden.**</span>
 <span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>$$C_{\text{avoided},i} \;=\; C_{\text{burden}} \cdot d_i \cdot \eta$$</span>
@@ -1067,7 +1067,7 @@ window.Quarto = {
 <span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>**Option 1 — Activate the NHLS–NMC data feed (IT implementation).** The NHLS↔NICD MOU for BChE data sharing already exists. What is missing is the working **LIS-to-NMC pipe** (HL7 / flat-file). De-identified, aggregated severe-BChE cases flow into NMC for trend analysis.</span>
 <span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>**Option 2 — NICD → DALRRD poisoning intelligence feed.** Quarterly NICD/NMC brief (plus ad-hoc cluster alerts) flowing to DALRRD so that pesticide registration, labelling and inspectorate priorities are informed by real-world morbidity and mortality. **Direction is NICD → DALRRD**, in response to DALRRD's formal request.</span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>**Option 2 — NICD → DALRRD poisoning intelligence feed.** Quarterly NICD/NMC brief (plus ad-hoc case-spike alerts) flowing to DALRRD so that pesticide registration, labelling and inspectorate priorities are informed by real-world morbidity and mortality. **Direction is NICD → DALRRD**, in response to DALRRD's formal request.</span>
 <span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>**Option 3a — BChE auto-notification (capability exists).** NHLS LIS automatically issues an NMC notification within 24 hours of a severe BChE result (&lt;50% of normal). The laboratory capability already exists (~9,000 tests/year); only the auto-notification rule needs configuring. Single biggest fast-win detection gain.</span>
 <span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a></span>

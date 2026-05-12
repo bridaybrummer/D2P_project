@@ -300,7 +300,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol type="1">
 <li><strong>Links existing data streams</strong> without creating new parallel systems</li>
 <li><strong>Automates notification workflows</strong> to reduce reporting delays</li>
-<li><strong>Enables hotspot detection</strong> through spatial and temporal clustering analysis</li>
+<li><strong>Enables spatial-temporal signal detection</strong> on integrated case data</li>
 <li><strong>Supports rapid public health response</strong> via clear escalation protocols</li>
 </ol>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -383,7 +383,7 @@ Figure&nbsp;1: Current (fragmented) surveillance architecture. NICD is the de fa
 <ul>
 <li><strong>~3,450 NMC notifications</strong> were filed, but at least <strong>~10,000 severe BChE inhibitions</strong> were detected in NHLS labs</li>
 <li><strong>Gap of ~6,550 cases</strong> that should have triggered public health investigation</li>
-<li><strong>No clustering analysis</strong> to identify hotspots (e.g., contaminated food sources, illegal pesticide sales)</li>
+<li><strong>No spatial-temporal pattern analysis</strong> to identify case concentrations (e.g., contaminated food sources, illegal pesticide sales)</li>
 </ul>
 </section>
 </section>
@@ -394,7 +394,7 @@ Figure&nbsp;1: Current (fragmented) surveillance architecture. NICD is the de fa
 <ol type="1">
 <li><strong>Integration over duplication</strong>: Link existing systems rather than building new infrastructure</li>
 <li><strong>Automation over manual reporting</strong>: Use laboratory triggers and structured data flows</li>
-<li><strong>Timeliness over completeness</strong>: Prioritize rapid detection for actionable hotspots</li>
+<li><strong>Timeliness over completeness</strong>: Prioritize rapid detection of actionable cases</li>
 <li><strong>Scalability</strong>: Start with pilot provinces, expand based on evidence</li>
 </ol>
 </section>
@@ -426,7 +426,7 @@ Figure&nbsp;1: Current (fragmented) surveillance architecture. NICD is the de fa
     L --&gt; M[Quarterly summary to NICD]
     M --&gt; J
     
-    J --&gt; N{Cluster detected?}
+    J --&gt; N{Concentration of cases&lt;br/&gt;in space or time?}
     N --&gt;|Yes| O[Alert provincial team]
     N --&gt;|No| P[Routine monitoring]
     
@@ -506,10 +506,10 @@ Figure&nbsp;2: Proposed integrated surveillance architecture
 <p><strong>Legal basis:</strong> Section 90 of the National Health Act (2003) allows inter-agency sharing for public health purposes</p>
 <p><strong>Cost:</strong> ~R80,000/year (legal review, MOU development, ongoing liaison)</p>
 </section>
-<section id="hotspot-detection-algorithm" class="level4" data-number="3.3.4">
-<h4 data-number="3.3.4" class="anchored" data-anchor-id="hotspot-detection-algorithm"><span class="header-section-number">3.3.4</span> 4. Hotspot Detection Algorithm</h4>
+<section id="spatial-temporal-signal-detection" class="level4" data-number="3.3.4">
+<h4 data-number="3.3.4" class="anchored" data-anchor-id="spatial-temporal-signal-detection"><span class="header-section-number">3.3.4</span> 4. Spatial-Temporal Signal Detection</h4>
 <p><strong>Method:</strong></p>
-<p>Use <strong>space-time permutation scan statistic</strong> (SaTScan software) to detect clusters of:</p>
+<p>Use <strong>space-time permutation scan statistic</strong> (SaTScan software) on integrated case data to detect concentrations of cases:</p>
 <ul>
 <li>Higher-than-expected case counts</li>
 <li>In defined geographic areas (district or sub-district level)</li>
@@ -520,15 +520,15 @@ Figure&nbsp;2: Proposed integrated surveillance architecture
 <li>Run weekly on aggregated case data (NMC + BChE auto-notifications + PIH reports)</li>
 <li>Generate alerts when:
 <ul>
-<li>Relative risk &gt; 2.0 (cluster has 2× expected cases)</li>
+<li>Relative risk &gt; 2.0 (signal area has 2× expected cases)</li>
 <li>P-value &lt; 0.05</li>
-<li>Cluster includes ≥3 cases</li>
+<li>Signal includes ≥3 cases</li>
 </ul></li>
 </ul>
 <p><strong>Response protocol:</strong></p>
 <ol type="1">
 <li>Alert sent to provincial surveillance officer</li>
-<li>Officer reviews cluster for plausibility (ruling out data artifacts)</li>
+<li>Officer reviews signal for plausibility (ruling out data artifacts)</li>
 <li>If plausible, initiate field investigation within <strong>72 hours</strong></li>
 </ol>
 <p><strong>Cost:</strong> Included in Option 5 (~R40,000/year for analyst time)</p>
@@ -544,14 +544,14 @@ Figure&nbsp;2: Proposed integrated surveillance architecture
 <ol type="1">
 <li>Configure NHLS auto-notifications for pilot provinces</li>
 <li>Establish PIH quarterly reporting workflow</li>
-<li>Train provincial surveillance officers on hotspot response</li>
+<li>Train provincial surveillance officers on signal response</li>
 <li>Develop standard operating procedures (SOPs)</li>
 </ol>
 <p><strong>Milestones:</strong></p>
 <ul>
 <li>Month 2: First auto-notification sent</li>
 <li>Month 3: First PIH quarterly report delivered</li>
-<li>Month 4: First cluster alert (if any)</li>
+<li>Month 4: First signal alert (if any)</li>
 <li>Month 6: Pilot evaluation and refinement</li>
 </ul>
 </section>
@@ -561,13 +561,13 @@ Figure&nbsp;2: Proposed integrated surveillance architecture
 <ol type="1">
 <li>Expand NHLS auto-notifications to all provinces</li>
 <li>Finalize MOUs for inter-agency data sharing</li>
-<li>Deploy SaTScan algorithm for weekly cluster detection</li>
+<li>Deploy SaTScan algorithm for weekly spatial-temporal signal detection</li>
 <li>Conduct national training for provincial teams</li>
 </ol>
 <p><strong>Milestones:</strong></p>
 <ul>
 <li>Month 9: All provinces receiving auto-notifications</li>
-<li>Month 10: First national clustering analysis</li>
+<li>Month 10: First national spatial-temporal pattern analysis</li>
 <li>Month 12: System fully operational</li>
 </ul>
 </section>
@@ -577,9 +577,9 @@ Figure&nbsp;2: Proposed integrated surveillance architecture
 <ol type="1">
 <li><strong>Timeliness</strong>: Median time from exposure to notification</li>
 <li><strong>Completeness</strong>: % of severe BChE inhibitions with corresponding NMC notifications</li>
-<li><strong>Sensitivity</strong>: % of known outbreaks detected by cluster algorithm</li>
-<li><strong>Response</strong>: % of clusters investigated within 72 hours</li>
-<li><strong>Impact</strong>: Change in hospitalization rates in hotspot areas</li>
+<li><strong>Sensitivity</strong>: % of known outbreaks detected by the signal-detection algorithm</li>
+<li><strong>Response</strong>: % of signals investigated within 72 hours</li>
+<li><strong>Impact</strong>: Change in hospitalization rates in identified signal areas</li>
 </ol>
 </section>
 </section>
@@ -602,7 +602,7 @@ Figure&nbsp;2: Proposed integrated surveillance architecture
 <tbody>
 <tr class="odd">
 <td style="text-align: left;"><strong>NICD</strong></td>
-<td style="text-align: left;">Lead surveillance agency; cluster detection; national coordination</td>
+<td style="text-align: left;">Lead surveillance agency; spatial-temporal signal detection; national coordination</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><strong>NHLS</strong></td>
@@ -669,7 +669,7 @@ Figure&nbsp;2: Proposed integrated surveillance architecture
 <td style="text-align: left;">Legal review and liaison</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Cluster detection</td>
+<td style="text-align: left;">Spatial-temporal signal detection</td>
 <td style="text-align: right;">40,000</td>
 <td style="text-align: left;">Analyst time for SaTScan runs</td>
 </tr>
@@ -703,7 +703,7 @@ Figure&nbsp;2: Proposed integrated surveillance architecture
 <p><strong>Risks:</strong></p>
 <ul>
 <li><strong>Low uptake of BChE testing</strong>: If clinicians don’t order tests, laboratory triggers won’t fire</li>
-<li><strong>Data quality issues</strong>: Incomplete or incorrect demographic data may hinder hotspot detection</li>
+<li><strong>Data quality issues</strong>: Incomplete or incorrect demographic data may hinder spatial-temporal signal detection</li>
 <li><strong>Response capacity constraints</strong>: Provincial teams may lack vehicles, sampling equipment, or staff time</li>
 </ul>
 </div>
@@ -1227,7 +1227,7 @@ Figure&nbsp;2: Proposed integrated surveillance architecture
 <span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Links existing data streams** without creating new parallel systems</span>
 <span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Automates notification workflows** to reduce reporting delays</span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Enables hotspot detection** through spatial and temporal clustering analysis</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Enables spatial-temporal signal detection** on integrated case data</span>
 <span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Supports rapid public health response** via clear escalation protocols</span>
 <span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
@@ -1291,7 +1291,7 @@ Figure&nbsp;2: Proposed integrated surveillance architecture
 <span id="cb3-92"><a href="#cb3-92" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-93"><a href="#cb3-93" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**~3,450 NMC notifications** were filed, but at least **~10,000 severe BChE inhibitions** were detected in NHLS labs</span>
 <span id="cb3-94"><a href="#cb3-94" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Gap of ~6,550 cases** that should have triggered public health investigation</span>
-<span id="cb3-95"><a href="#cb3-95" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**No clustering analysis** to identify hotspots (e.g., contaminated food sources, illegal pesticide sales)</span>
+<span id="cb3-95"><a href="#cb3-95" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**No spatial-temporal pattern analysis** to identify case concentrations (e.g., contaminated food sources, illegal pesticide sales)</span>
 <span id="cb3-96"><a href="#cb3-96" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-97"><a href="#cb3-97" aria-hidden="true" tabindex="-1"></a><span class="fu">## Proposed Framework</span></span>
 <span id="cb3-98"><a href="#cb3-98" aria-hidden="true" tabindex="-1"></a></span>
@@ -1299,7 +1299,7 @@ Figure&nbsp;2: Proposed integrated surveillance architecture
 <span id="cb3-100"><a href="#cb3-100" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-101"><a href="#cb3-101" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Integration over duplication**: Link existing systems rather than building new infrastructure</span>
 <span id="cb3-102"><a href="#cb3-102" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Automation over manual reporting**: Use laboratory triggers and structured data flows</span>
-<span id="cb3-103"><a href="#cb3-103" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Timeliness over completeness**: Prioritize rapid detection for actionable hotspots</span>
+<span id="cb3-103"><a href="#cb3-103" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Timeliness over completeness**: Prioritize rapid detection of actionable cases</span>
 <span id="cb3-104"><a href="#cb3-104" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Scalability**: Start with pilot provinces, expand based on evidence</span>
 <span id="cb3-105"><a href="#cb3-105" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-106"><a href="#cb3-106" aria-hidden="true" tabindex="-1"></a><span class="fu">### System Architecture</span></span>
@@ -1327,7 +1327,7 @@ Figure&nbsp;2: Proposed integrated surveillance architecture
 <span id="cb3-130"><a href="#cb3-130" aria-hidden="true" tabindex="-1"></a>    L --&gt; M[Quarterly summary to NICD]</span>
 <span id="cb3-131"><a href="#cb3-131" aria-hidden="true" tabindex="-1"></a>    M --&gt; J</span>
 <span id="cb3-132"><a href="#cb3-132" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb3-133"><a href="#cb3-133" aria-hidden="true" tabindex="-1"></a>    J --&gt; N{Cluster detected?}</span>
+<span id="cb3-133"><a href="#cb3-133" aria-hidden="true" tabindex="-1"></a>    J --&gt; N{Concentration of cases&lt;br/&gt;in space <span class="ot">or</span> <span class="fu">time</span>?}</span>
 <span id="cb3-134"><a href="#cb3-134" aria-hidden="true" tabindex="-1"></a>    N --&gt;|Yes| O[Alert provincial team]</span>
 <span id="cb3-135"><a href="#cb3-135" aria-hidden="true" tabindex="-1"></a>    N --&gt;|No| P[Routine monitoring]</span>
 <span id="cb3-136"><a href="#cb3-136" aria-hidden="true" tabindex="-1"></a>    </span>
@@ -1399,11 +1399,11 @@ Figure&nbsp;2: Proposed integrated surveillance architecture
 <span id="cb3-202"><a href="#cb3-202" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-203"><a href="#cb3-203" aria-hidden="true" tabindex="-1"></a>**Cost:** ~R80,000/year (legal review, MOU development, ongoing liaison)</span>
 <span id="cb3-204"><a href="#cb3-204" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-205"><a href="#cb3-205" aria-hidden="true" tabindex="-1"></a><span class="fu">#### 4. Hotspot Detection Algorithm</span></span>
+<span id="cb3-205"><a href="#cb3-205" aria-hidden="true" tabindex="-1"></a><span class="fu">#### 4. Spatial-Temporal Signal Detection</span></span>
 <span id="cb3-206"><a href="#cb3-206" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-207"><a href="#cb3-207" aria-hidden="true" tabindex="-1"></a>**Method:**</span>
 <span id="cb3-208"><a href="#cb3-208" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-209"><a href="#cb3-209" aria-hidden="true" tabindex="-1"></a>Use **space-time permutation scan statistic** (SaTScan software) to detect clusters of:</span>
+<span id="cb3-209"><a href="#cb3-209" aria-hidden="true" tabindex="-1"></a>Use **space-time permutation scan statistic** (SaTScan software) on integrated case data to detect concentrations of cases:</span>
 <span id="cb3-210"><a href="#cb3-210" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-211"><a href="#cb3-211" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Higher-than-expected case counts</span>
 <span id="cb3-212"><a href="#cb3-212" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>In defined geographic areas (district or sub-district level)</span>
@@ -1413,14 +1413,14 @@ Figure&nbsp;2: Proposed integrated surveillance architecture
 <span id="cb3-216"><a href="#cb3-216" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-217"><a href="#cb3-217" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Run weekly on aggregated case data (NMC + BChE auto-notifications + PIH reports)</span>
 <span id="cb3-218"><a href="#cb3-218" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Generate alerts when:</span>
-<span id="cb3-219"><a href="#cb3-219" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Relative risk &gt; 2.0 (cluster has 2× expected cases)</span>
+<span id="cb3-219"><a href="#cb3-219" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Relative risk &gt; 2.0 (signal area has 2× expected cases)</span>
 <span id="cb3-220"><a href="#cb3-220" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>P-value &lt; 0.05</span>
-<span id="cb3-221"><a href="#cb3-221" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Cluster includes ≥3 cases</span>
+<span id="cb3-221"><a href="#cb3-221" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Signal includes ≥3 cases</span>
 <span id="cb3-222"><a href="#cb3-222" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-223"><a href="#cb3-223" aria-hidden="true" tabindex="-1"></a>**Response protocol:**</span>
 <span id="cb3-224"><a href="#cb3-224" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-225"><a href="#cb3-225" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Alert sent to provincial surveillance officer</span>
-<span id="cb3-226"><a href="#cb3-226" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Officer reviews cluster for plausibility (ruling out data artifacts)</span>
+<span id="cb3-226"><a href="#cb3-226" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Officer reviews signal for plausibility (ruling out data artifacts)</span>
 <span id="cb3-227"><a href="#cb3-227" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>If plausible, initiate field investigation within **72 hours**</span>
 <span id="cb3-228"><a href="#cb3-228" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-229"><a href="#cb3-229" aria-hidden="true" tabindex="-1"></a>**Cost:** Included in Option 5 (~R40,000/year for analyst time)</span>
@@ -1435,14 +1435,14 @@ Figure&nbsp;2: Proposed integrated surveillance architecture
 <span id="cb3-238"><a href="#cb3-238" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-239"><a href="#cb3-239" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Configure NHLS auto-notifications for pilot provinces</span>
 <span id="cb3-240"><a href="#cb3-240" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Establish PIH quarterly reporting workflow</span>
-<span id="cb3-241"><a href="#cb3-241" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Train provincial surveillance officers on hotspot response</span>
+<span id="cb3-241"><a href="#cb3-241" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Train provincial surveillance officers on signal response</span>
 <span id="cb3-242"><a href="#cb3-242" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Develop standard operating procedures (SOPs)</span>
 <span id="cb3-243"><a href="#cb3-243" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-244"><a href="#cb3-244" aria-hidden="true" tabindex="-1"></a>**Milestones:**</span>
 <span id="cb3-245"><a href="#cb3-245" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-246"><a href="#cb3-246" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Month 2: First auto-notification sent</span>
 <span id="cb3-247"><a href="#cb3-247" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Month 3: First PIH quarterly report delivered</span>
-<span id="cb3-248"><a href="#cb3-248" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Month 4: First cluster alert (if any)</span>
+<span id="cb3-248"><a href="#cb3-248" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Month 4: First signal alert (if any)</span>
 <span id="cb3-249"><a href="#cb3-249" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Month 6: Pilot evaluation and refinement</span>
 <span id="cb3-250"><a href="#cb3-250" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-251"><a href="#cb3-251" aria-hidden="true" tabindex="-1"></a><span class="fu">### Phase 2: National Rollout (Months 7–12)</span></span>
@@ -1451,13 +1451,13 @@ Figure&nbsp;2: Proposed integrated surveillance architecture
 <span id="cb3-254"><a href="#cb3-254" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-255"><a href="#cb3-255" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Expand NHLS auto-notifications to all provinces</span>
 <span id="cb3-256"><a href="#cb3-256" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Finalize MOUs for inter-agency data sharing</span>
-<span id="cb3-257"><a href="#cb3-257" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Deploy SaTScan algorithm for weekly cluster detection</span>
+<span id="cb3-257"><a href="#cb3-257" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Deploy SaTScan algorithm for weekly spatial-temporal signal detection</span>
 <span id="cb3-258"><a href="#cb3-258" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Conduct national training for provincial teams</span>
 <span id="cb3-259"><a href="#cb3-259" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-260"><a href="#cb3-260" aria-hidden="true" tabindex="-1"></a>**Milestones:**</span>
 <span id="cb3-261"><a href="#cb3-261" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-262"><a href="#cb3-262" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Month 9: All provinces receiving auto-notifications</span>
-<span id="cb3-263"><a href="#cb3-263" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Month 10: First national clustering analysis</span>
+<span id="cb3-263"><a href="#cb3-263" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Month 10: First national spatial-temporal pattern analysis</span>
 <span id="cb3-264"><a href="#cb3-264" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Month 12: System fully operational</span>
 <span id="cb3-265"><a href="#cb3-265" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-266"><a href="#cb3-266" aria-hidden="true" tabindex="-1"></a><span class="fu">### Phase 3: Evaluation (Months 13–24)</span></span>
@@ -1466,9 +1466,9 @@ Figure&nbsp;2: Proposed integrated surveillance architecture
 <span id="cb3-269"><a href="#cb3-269" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-270"><a href="#cb3-270" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Timeliness**: Median time from exposure to notification</span>
 <span id="cb3-271"><a href="#cb3-271" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Completeness**: % of severe BChE inhibitions with corresponding NMC notifications</span>
-<span id="cb3-272"><a href="#cb3-272" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Sensitivity**: % of known outbreaks detected by cluster algorithm</span>
-<span id="cb3-273"><a href="#cb3-273" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Response**: % of clusters investigated within 72 hours</span>
-<span id="cb3-274"><a href="#cb3-274" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>**Impact**: Change in hospitalization rates in hotspot areas</span>
+<span id="cb3-272"><a href="#cb3-272" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Sensitivity**: % of known outbreaks detected by the signal-detection algorithm</span>
+<span id="cb3-273"><a href="#cb3-273" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Response**: % of signals investigated within 72 hours</span>
+<span id="cb3-274"><a href="#cb3-274" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>**Impact**: Change in hospitalization rates in identified signal areas</span>
 <span id="cb3-275"><a href="#cb3-275" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-276"><a href="#cb3-276" aria-hidden="true" tabindex="-1"></a><span class="fu">## Governance and Oversight</span></span>
 <span id="cb3-277"><a href="#cb3-277" aria-hidden="true" tabindex="-1"></a></span>
@@ -1476,7 +1476,7 @@ Figure&nbsp;2: Proposed integrated surveillance architecture
 <span id="cb3-279"><a href="#cb3-279" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-280"><a href="#cb3-280" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Agency <span class="pp">|</span> Role <span class="pp">|</span></span>
 <span id="cb3-281"><a href="#cb3-281" aria-hidden="true" tabindex="-1"></a><span class="pp">|:-------|:-----|</span></span>
-<span id="cb3-282"><a href="#cb3-282" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **NICD** <span class="pp">|</span> Lead surveillance agency; cluster detection; national coordination <span class="pp">|</span></span>
+<span id="cb3-282"><a href="#cb3-282" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **NICD** <span class="pp">|</span> Lead surveillance agency; spatial-temporal signal detection; national coordination <span class="pp">|</span></span>
 <span id="cb3-283"><a href="#cb3-283" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **NHLS** <span class="pp">|</span> Laboratory testing; auto-notification configuration; quality assurance <span class="pp">|</span></span>
 <span id="cb3-284"><a href="#cb3-284" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **PIH** <span class="pp">|</span> Clinical toxicology advice; quarterly reporting <span class="pp">|</span></span>
 <span id="cb3-285"><a href="#cb3-285" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Provincial DoH** <span class="pp">|</span> Field investigation; source control; environmental sampling <span class="pp">|</span></span>
@@ -1498,7 +1498,7 @@ Figure&nbsp;2: Proposed integrated surveillance architecture
 <span id="cb3-301"><a href="#cb3-301" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> NHLS auto-notifications <span class="pp">|</span> 55,000 <span class="pp">|</span> IT staff time for LIS configuration <span class="pp">|</span></span>
 <span id="cb3-302"><a href="#cb3-302" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> PIH quarterly reports <span class="pp">|</span> 62,000 <span class="pp">|</span> Analyst time for data extraction <span class="pp">|</span></span>
 <span id="cb3-303"><a href="#cb3-303" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Inter-agency MOUs <span class="pp">|</span> 80,000 <span class="pp">|</span> Legal review and liaison <span class="pp">|</span></span>
-<span id="cb3-304"><a href="#cb3-304" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Cluster detection <span class="pp">|</span> 40,000 <span class="pp">|</span> Analyst time for SaTScan runs <span class="pp">|</span></span>
+<span id="cb3-304"><a href="#cb3-304" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Spatial-temporal signal detection <span class="pp">|</span> 40,000 <span class="pp">|</span> Analyst time for SaTScan runs <span class="pp">|</span></span>
 <span id="cb3-305"><a href="#cb3-305" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Total (Full Package)** | **237,000** | **All four options combined** <span class="pp">|</span></span>
 <span id="cb3-306"><a href="#cb3-306" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-307"><a href="#cb3-307" aria-hidden="true" tabindex="-1"></a>: Estimated annual costs for integrated surveillance framework {.striped .hover}</span>
@@ -1518,7 +1518,7 @@ Figure&nbsp;2: Proposed integrated surveillance architecture
 <span id="cb3-321"><a href="#cb3-321" aria-hidden="true" tabindex="-1"></a>**Risks:**</span>
 <span id="cb3-322"><a href="#cb3-322" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-323"><a href="#cb3-323" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Low uptake of BChE testing**: If clinicians don't order tests, laboratory triggers won't fire</span>
-<span id="cb3-324"><a href="#cb3-324" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Data quality issues**: Incomplete or incorrect demographic data may hinder hotspot detection</span>
+<span id="cb3-324"><a href="#cb3-324" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Data quality issues**: Incomplete or incorrect demographic data may hinder spatial-temporal signal detection</span>
 <span id="cb3-325"><a href="#cb3-325" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Response capacity constraints**: Provincial teams may lack vehicles, sampling equipment, or staff time</span>
 <span id="cb3-326"><a href="#cb3-326" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb3-327"><a href="#cb3-327" aria-hidden="true" tabindex="-1"></a></span>
