@@ -143,5 +143,19 @@ c_T2_RUP_enforcement_hi,3000000,"Option T2 enforcement, upper | dist=fixed(,) | 
 yield_impact_terbufos_withdrawal_mid,0.03,"SA maize yield impact under T3 full withdrawal, working value (Bt traits cover stalk borer use case) | dist=beta(3,97) | EU 2009 no documented collapse + SA Bt penetration ~85%"
 yield_impact_terbufos_withdrawal_hi,0.07,"Yield impact upper sensitivity | dist=fixed(,) | Smallholder non-Bt maize exposure"
 leverage_ratio_terbufos_T2,500,"Ratio of household mortality cost retired per rand of T2 regulatory spend | dist=fixed(,) | Lower bound, 200 deaths × R1.5M / R2M"
+# === DECISION-TREE NODE PROBABILITIES — CANONICAL (consumed by brief mermaid trees) ===,,
+p_death,0.13,"Case-fatality among suspected pesticide-poisoning cases | dist=beta(13,87) | NHLS BChE severe cohort"
+p_severe,0.27,"Proportion of survivors with severe morbidity (OPIDN / intermediate syndrome trajectory) | dist=beta(27,73) | OP literature"
+p_recover,0.60,"Proportion of survivors with full recovery | dist=beta(60,40) | Complement = 1 - p_severe (rounded)"
+rho_secondary,3.0,"Secondary cases per index case from a single uncontrolled source (cluster multiplier) | dist=gamma(9,0.33) | NICD outbreak debriefs"
+d_surveillance_mvp,0.78,"Detection probability under Surveillance MVP (S1 + S3a + S4) | dist=beta(78,22) | Expert elicitation, brief tree"
+d_surveillance_full_S3b,0.85,"Detection probability under Surveillance MVP + S3b sentinel toxicology | dist=beta(85,15) | Expert elicitation, brief tree"
+p_coord_sq_nmc_notified,0.30,"P(case notified on NMC | suspected) under status quo | dist=beta(30,70) | NICD audit"
+p_coord_sq_sms_reaches_ehp,0.95,"P(SMS reaches EHP | notified) | dist=beta(95,5) | NICD system check"
+p_coord_sq_ehp_investigates,0.60,"P(EHP investigates | SMS received) | dist=beta(60,40) | EHP survey"
+p_coord_sq_recorded_on_nmc,0.05,"P(investigation outcome recorded back on NMC | EHP investigates) | dist=beta(5,95) | NICD audit — almost never"
+p_coord_sq_refer_dalrrd,0.30,"P(EHP refers to DALRRD | investigates) | dist=beta(30,70) | Informal pathway"
+p_coord_sq_dalrrd_acts,0.50,"P(DALRRD takes regulatory action | referred) | dist=beta(50,50) | DALRRD inspectorate"
+p_coord_sq_feedback_full,0.10,"P(action fed back to NMC + clinician | DALRRD acts) | dist=beta(10,90) | Typically EHP-only"
 # === LEGACY ROWS (v1 5-option taxonomy) — DEPRECATED, retained for back-compat with analysis_report.qmd ===,,
 # Use the S/C/T canonical rows above for all new work. The c_option1..c_option5 rows below are v1 and have been superseded.,,
