@@ -41,7 +41,7 @@ Hotspots are detected late or not at all; clusters from contaminated food, illeg
 ::: {.callout-note}
 ## Health-sector share of the burden — what surveillance unlocks
 
-The public health system bears **~R80M of the R2.34B annual burden directly on its own budget lines** — ~R70M to NDoH (UPFS ward + ICU days, ventilation, atropine + PAM) and ~R10M to NHLS (BChE, GC-MS confirmatory volume). Every percentage point of additional detection (Options 1–5 below) reduces ward-days, ICU-days, and repeat lab workload *before* any mortality benefit is counted — so the surveillance investment pays back **on the NDoH and NHLS budget lines first**, and on household / societal mortality (~R2.25B) second.
+The public health system bears **~R80M of the R2.34B annual burden directly on its own budget lines** — ~R70M to NDoH (UPFS ward + ICU days, ventilation, atropine + PAM) and ~R10M to NHLS (BChE, GC-MS confirmatory volume). Better surveillance is a **necessary but not sufficient** input to reducing that burden: surveillance changes only what is *seen*; the burden reduction itself comes from the response side — source removal, regulatory action, clinical management — covered in the [Coordination brief](coordination_policy.qmd) and the [Terbufos brief](terbufos_policy.qmd). **This brief therefore quantifies P_detect uplift only and does not claim cases or deaths averted.**
 :::
 
 **Architecturally, the three streams are unlinked:**
@@ -150,13 +150,13 @@ Detection rises to ~6.1 / 10 for **R62k/year**. The dashboard is the lowest-hang
 | **S1 + S3a + S4 (Surveillance MVP)** | **~R157k** | **~7.8** | **+73 %** | **12 weeks** |
 | Full S1 + S3a + S3b + S4 | ~R1.4M | ~8.5 | +89 % | 6–12 months |
 
-: Surveillance options — base-case. Detection improvements feed directly into the [Decision Model](decision_model.qmd) burden-avoidance calculation (η = 0.30). {.striped .hover}
+: Surveillance options — base-case. Each row shows the **detection uplift only**. Translating P_detect into cases or deaths averted requires the response-side parameters (η, agency capacity, regulatory action) covered in the [Coordination](coordination_policy.qmd) and [Terbufos](terbufos_policy.qmd) briefs. {.striped .hover}
 
 ::: {.callout-note appearance="simple"}
-**Two framings, one model.** The "hotspots detected / 10" column is the **cluster** view (legacy v1 binomial argument at cluster size ≥10) and is retained here for narrative continuity with the original advocacy materials. The **per-case** detection probability $P_\text{detect}$ used in the decision tree below (§6) is anchored at $0.033$ via the StatsSA MACOD identity $N_\text{NMC}\cdot\text{CFR}/N_\text{deaths}$. The two columns answer different questions — *"do we ever notice a cluster?"* vs. *"what fraction of all cases do we count?"* — and the ratios (Δ %) are preserved across framings. The §6 tree is the auditable computation; this table is the headline summary.
+**Scope of this brief.** Surveillance changes only what is *seen*. The status quo P_detect = 0.033 (§6 below) is a **measurement** of the current detection gap, not a counterfactual against which deaths are averted. Cases-averted and deaths-averted figures therefore live in the [Coordination brief](coordination_policy.qmd) (where the response is parameterised) and the [Terbufos brief](terbufos_policy.qmd) (where regulatory action is parameterised). This separation keeps the surveillance pitch honest: better surveillance is **necessary but not sufficient**.
 :::
 
-## 6. Decision tree — from surveillance investment to averted burden
+## 6. Decision tree — from surveillance investment to detection uplift
 
 ::: {.callout-note collapse="true"}
 ## How we derive the status-quo detection probability (`d_status_quo` = 0.033)
@@ -184,10 +184,6 @@ $$
 - Upper (CFR = 0.15): $P_\text{detect}^{SQ} = 0.040$ (implied burden 17,467)
 
 **Why this replaces the v1 value of 0.45.** The legacy v1 figure was an expert-elicited *hotspot-cluster* sensitivity (binomial argument: at cluster size ≥10 even with per-case sensitivity ~6 %, at least one case is captured with probability ~0.46). That quantity answers a different question. The brief now uses the **per-case** framing — directly auditable from NICD + StatsSA published figures — and the v1 0.45 is retained only for `analysis_report_v2.qmd` back-compat as `d_status_quo_v1_hotspot`.
-
-::: {.callout-warning appearance="simple"}
-**Downstream coherence note.** The option-level detection probabilities (`d_option3_BChE_autonotify`, `d_option4_PIH_quarterly`, `d_surveillance_mvp`, `d_surveillance_full_S3b`) were expert-elicited under the v1 cluster framing. With the per-case status quo now grounded at 0.033, the *increments* under each option remain plausible but the *absolute* option values should be re-derived from the same StatsSA anchor (e.g. MVP = `n_burden_true / n_true_burden_from_statssa_mid` ≈ 0.56). The tree below uses the current CSV values; if those are not yet updated, treat the deaths-averted ranking as ordinal rather than absolute.
-:::
 :::
 
 ````{r}
@@ -199,61 +195,38 @@ d_s4    <- as.numeric(pick("d_option4_PIH_quarterly"))
 d_s3a   <- as.numeric(pick("d_option3_BChE_autonotify"))
 d_mvp   <- as.numeric(pick("d_surveillance_mvp"))
 d_full  <- as.numeric(pick("d_surveillance_full_S3b"))
-eta     <- as.numeric(pick("eta_response_mid"))
-N       <- as.numeric(pick("n_burden_true"))
-p_death <- as.numeric(pick("p_death"))
-
-ca <- function(d) round((d - d_sq) * eta * N)
-da <- function(d) round((d - d_sq) * eta * N * p_death)
 
 c_s4   <- as.numeric(pick("c_S4_PIH_dashboard_op"))
 c_s3a  <- as.numeric(pick("c_S3a_BChE_autonotify_op"))
 c_mvp  <- as.numeric(pick("c_surv_MVP_op"))
 
+pp <- function(d) sprintf("%+.0f pp", (d - d_sq) * 100)
+
 cat(sprintf('```{mermaid}
-%%%%| fig-cap: "Surveillance investment decision tree. Each option raises detection probability; response efficacy η = %.2f (CSV: eta_response_mid) translates detection into avoided cases. All numerical values pulled from amua_import_parameters_v3.csv at render time."
+%%%%| fig-cap: "Surveillance investment decision tree — detection uplift only. Each option raises the per-case detection probability P_detect; the absolute burden impact of those uplifts depends on response-side parameters covered in the coordination and terbufos briefs. All numerical values pulled from amua_import_parameters_v3.csv at render time."
 flowchart TD
-    INV{Surveillance<br/>investment?} -->|None| SQ[Status quo<br/>P_detect = %.2f]:::bad
-    INV -->|S4 only<br/>R%s| O4[+ PIH MVD<br/>P_detect = %.2f]:::warn
-    INV -->|S3a only<br/>R%s| O3a[+ BChE auto-notify<br/>P_detect = %.2f]:::warn
-    INV -->|S1 + S3a + S4<br/>R%s| MVP[Surveillance MVP<br/>P_detect = %.2f]:::good
-    INV -->|+ S3b<br/>~R1.4M| FULL[Full + toxicology<br/>P_detect = %.2f]:::good
-
-    SQ --> BSQ[Cases averted<br/>baseline]
-    O4  --> B4[Cases averted<br/>~%s / year]
-    O3a --> B3a[Cases averted<br/>~%s / year]
-    MVP --> BMVP[Cases averted<br/>~%s / year]
-    FULL --> BFULL[Cases averted<br/>~%s / year]
-
-    BSQ --> DSQ[Deaths averted<br/>baseline]
-    B4 --> D4[Deaths averted<br/>~%s]
-    B3a --> D3a[Deaths averted<br/>~%s]
-    BMVP --> DMVP[Deaths averted<br/>~%s]
-    BFULL --> DFULL[Deaths averted<br/>~%s]
+    INV{Surveillance<br/>investment?} -->|None| SQ[Status quo<br/>P_detect = %.3f<br/><i>baseline measurement</i>]:::bad
+    INV -->|S4 only<br/>R%s/yr| O4[+ PIH MVD<br/>P_detect = %.2f<br/>%s vs SQ]:::warn
+    INV -->|S3a only<br/>R%s/yr| O3a[+ BChE auto-notify<br/>P_detect = %.2f<br/>%s vs SQ]:::warn
+    INV -->|S1 + S3a + S4<br/>R%s/yr| MVP[Surveillance MVP<br/>P_detect = %.2f<br/>%s vs SQ]:::good
+    INV -->|+ S3b<br/>~R1.4M/yr| FULL[Full + toxicology<br/>P_detect = %.2f<br/>%s vs SQ]:::good
 
     classDef bad fill:#fdd,stroke:#cc0000,stroke-width:1.5px
     classDef warn fill:#ffe9b3,stroke:#cc8800,stroke-width:1.5px
     classDef good fill:#cfc,stroke:#060,stroke-width:1.5px
 ```
 ',
-eta,
 d_sq,
-format(c_s4,  big.mark = ","), d_s4,
-format(c_s3a, big.mark = ","), d_s3a,
-format(c_mvp, big.mark = ","), d_mvp,
-d_full,
-format(ca(d_s4),   big.mark = ","),
-format(ca(d_s3a),  big.mark = ","),
-format(ca(d_mvp),  big.mark = ","),
-format(ca(d_full), big.mark = ","),
-format(da(d_s4),   big.mark = ","),
-format(da(d_s3a),  big.mark = ","),
-format(da(d_mvp),  big.mark = ","),
-format(da(d_full), big.mark = ",")
+format(c_s4,  big.mark = ","), d_s4,  pp(d_s4),
+format(c_s3a, big.mark = ","), d_s3a, pp(d_s3a),
+format(c_mvp, big.mark = ","), d_mvp, pp(d_mvp),
+d_full, pp(d_full)
 ))
 ````
 
-`Cases averted = (P_detect − d_status_quo) × η × n_burden_true`. `Deaths averted = cases averted × p_death`. All five inputs (`d_status_quo`, `d_option3_BChE_autonotify`, `d_option4_PIH_quarterly`, `d_surveillance_mvp`, `d_surveillance_full_S3b`, `eta_response_mid`, `n_burden_true`, `p_death`) live in [`amua_import_parameters_v3.csv`](../amua_import_parameters_v3.csv) — edit the CSV and re-render to update both the tree and the prose.
+The tree reports **detection uplift in percentage points only**. The status-quo node is a **measurement** of the current detection gap, not a baseline from which deaths are counted as averted — surveillance has no response attached. Five inputs (`d_status_quo`, `d_option3_BChE_autonotify`, `d_option4_PIH_quarterly`, `d_surveillance_mvp`, `d_surveillance_full_S3b`) and three operating-cost rows (`c_S4_PIH_dashboard_op`, `c_S3a_BChE_autonotify_op`, `c_surv_MVP_op`) live in [`amua_import_parameters_v3.csv`](../amua_import_parameters_v3.csv) — edit the CSV and re-render.
+
+**For burden impact, see the next brief.** The same P_detect figures feed into the [Coordination brief](coordination_policy.qmd) decision tree, where response efficacy η converts detection into cases averted, and into the [Terbufos brief](terbufos_policy.qmd), where regulatory restriction converts cases into deaths averted.
 
 ## 7. Implementation considerations
 
