@@ -154,6 +154,38 @@ Detection rises to ~6.1 / 10 for **R62k/year**. The dashboard is the lowest-hang
 
 ## 6. Decision tree — from surveillance investment to averted burden
 
+::: {.callout-note collapse="true"}
+## How we derive the status-quo detection probability (`d_status_quo` = 0.043)
+
+The status-quo detection probability is **derived, not elicited**. The chain of evidence is:
+
+| Anchor | Value | Source |
+|--|--:|--|
+| Annual NMC pesticide notifications | 690 | `n_nmc_annual` — NICD NMC Annual Reports |
+| NMC-hospitalised case-fatality rate | 12.5 % | `cfr_headline_mid` (range 10–15 %) — Free State 2018-19 + NMC observed |
+| StatsSA MACOD pesticide-poisoning deaths/yr | 2,000 | `n_deaths_statssa_macod` — StatsSA Causes of Death |
+
+**Identification.** If notified cases have CFR ≈ 12.5 %, then the *full* true burden satisfies $\text{true cases} \times \text{CFR} = \text{deaths}$, so the implied true burden is $2{,}000 / 0.125 \;=\; 16{,}000$ cases/year (`n_true_burden_from_statssa_mid`).
+
+**Per-case detection probability**:
+
+$$
+P_\text{detect}^{SQ} \;=\; \frac{N_\text{NMC} \times \text{CFR}_\text{NMC}}{N_\text{deaths,StatsSA}} \;=\; \frac{690 \times 0.125}{2{,}000} \;=\; \mathbf{0.043}
+$$
+
+**CFR sensitivity bracket** (CSV: `d_status_quo_lo`, `d_status_quo_hi`):
+
+- Lower bound (CFR = 0.10): $P_\text{detect}^{SQ} = 0.035$ (implied burden 20,000)
+- Mid (CFR = 0.125): $P_\text{detect}^{SQ} = 0.043$ (implied burden 16,000)
+- Upper (CFR = 0.15): $P_\text{detect}^{SQ} = 0.052$ (implied burden 13,333)
+
+**Why this replaces the v1 value of 0.45.** The legacy v1 figure was an expert-elicited *hotspot-cluster* sensitivity (binomial argument: at cluster size ≥10 even with per-case sensitivity ~6 %, at least one case is captured with probability ~0.46). That quantity answers a different question. The brief now uses the **per-case** framing — directly auditable from NICD + StatsSA published figures — and the v1 0.45 is retained only for `analysis_report_v2.qmd` back-compat as `d_status_quo_v1_hotspot`.
+
+::: {.callout-warning appearance="simple"}
+**Downstream coherence note.** The option-level detection probabilities (`d_option3_BChE_autonotify`, `d_option4_PIH_quarterly`, `d_surveillance_mvp`, `d_surveillance_full_S3b`) were expert-elicited under the v1 cluster framing. With the per-case status quo now grounded at 0.043, the *increments* under each option remain plausible but the *absolute* option values should be re-derived from the same StatsSA anchor (e.g. MVP = `n_burden_true / n_true_burden_from_statssa_mid` ≈ 0.73). The tree below uses the current CSV values; if those are not yet updated, treat the deaths-averted ranking as ordinal rather than absolute.
+:::
+:::
+
 ````{r}
 #| label: fig-surv-decision-tree
 #| echo: false
