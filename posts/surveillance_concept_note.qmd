@@ -53,7 +53,7 @@ flowchart LR
         C2[Chemical Toxicology<br/><i>Post-mortem only —<br/>not yet done on<br/>live patients</i>]
     end
 
-    A --> D[PIH Consultation<br/>~9,000 calls/year<br/><i>No minimum dataset</i>]
+    A --> D[PIH Consultation<br/>~1,158 clinician calls/yr<br/><i>No minimum dataset</i>]
 
     E -->|SMS notification| H[Local EHP<br/><i>mandated to<br/>investigate</i>]
     H -.Investigation NOT<br/>recorded on NMC.-x E
@@ -78,11 +78,11 @@ flowchart LR
 
 **What this diagram shows.** Five gaps in the current state:
 
-1. **NICD/NMC is the source of truth** for case notifications but receives only the clinician-completed NMC stream (~690/year) — a fraction of the true burden.
+1. **NICD/NMC is the source of truth** for case notifications but receives only the clinician-completed NMC stream (~1,013/year, 2023) — a fraction of the true burden.
 2. **The NHLS laboratory holds two distinct streams**: (a) **BChE assays** on live patients (~2,000 severe results/year, capability exists) and (b) **Chemical toxicology** — qualitative/quantitative pesticide assays which **NHLS currently performs post-mortem only**. Live-patient chemical toxicology is not yet available (see [Component 6](#sec-component-6)).
 3. **Neither NHLS stream feeds NICD in a structured way.** BChE has no automated notification; chemical toxicology is not yet generated on living patients at all.
 4. **The EHP arm exists but does not close the loop.** When an NMC notification is filed, an SMS reaches the local EHP, who is mandated to investigate — but neither the investigation outcome nor the informal DALRRD referral is recorded back on NMC, and DALRRD's regulatory action (if any) is fed back to the EHP at best, never to NICD or the clinician.
-5. **PIH consultations are not captured against a minimum viable dataset**, so the ~9,000 calls/year cannot be aggregated, geocoded, or matched to NICD cases.
+5. **PIH consultations are not captured against a minimum viable dataset**, so the ~1,158 clinician-initiated calls/year (2023) cannot be aggregated, geocoded, or matched to NICD cases.
 
 ### Missed Opportunities
 

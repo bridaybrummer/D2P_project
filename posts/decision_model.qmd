@@ -92,8 +92,8 @@ baseline_params <- tribble(
   "Estimated annual hotspots", "10", "Expert estimate (NICD)",
   "Hotspots detected (status quo)", "4.5 (45%)", "NMC data 2020-2024",
   "Severe BChE inhibitions/year", "~2,000", "NHLS laboratory data",
-  "NMC notifications/year", "~690", "NICD surveillance reports",
-  "Detection gap", "~1,310 cases (66%)", "Calculated"
+  "NMC notifications/year", "~1,013", "NICD NMC Annual Report 2023",
+  "Detection gap", "~987 cases (49%)", "Calculated"
 )
 
 baseline_params %>%

@@ -59,7 +59,7 @@ flowchart LR
         C2[Chemical Toxicology<br/><i>Post-mortem only —<br/>not yet done on<br/>live patients</i>]
     end
 
-    A --> D[PIH Consultation<br/>~9,000 calls/year<br/><i>No minimum dataset</i>]
+    A --> D[PIH Consultation<br/>~1,158 clinician calls/yr<br/><i>No minimum dataset</i>]
 
     C1 -.No structured feed.-> E
     C2 -.x Not available for<br/>live-patient surveillance.-x E
@@ -72,7 +72,7 @@ flowchart LR
     style D fill:#bfb,stroke:#333
 ```
 
-**What this means in plain numbers.** NMC sees ~690 cases/year. NHLS sees ~2,000 severe BChE results/year on live patients but does not auto-notify. PIH receives ~9,000 calls/year that are never aggregated to a surveillance dataset. The true annual burden of ~11,690 cases is therefore **observed at < 6 % completeness** by NMC alone.
+**What this means in plain numbers.** NMC sees ~1,013 notifications/year (2023). NHLS sees ~2,000 severe BChE results/year on live patients but does not auto-notify. PIH receives ~1,158 clinician-initiated calls/year that are never aggregated to a surveillance dataset. Against an implied true annual burden of ~20,960 cases (StatsSA-anchored, mid-CFR), NMC alone captures **< 5 %**.
 
 ### Detection vs. true burden — a critical distinction
 
@@ -134,7 +134,7 @@ The clinical-surveillance value is **agent attribution**: S3a tells us a poisoni
 Two layers:
 
 - **Short term (1–2 weeks):** PIH publishes a live dashboard of pesticide-related calls (counts, geography, agent, severity, demographics). No new data; just a daily extract from existing call records.
-- **Medium term (3–9 months):** PIH and NICD agree a **Minimum Viable Dataset (MVD)** so the ~9,000 calls/year can be ingested into NMC as a structured surveillance stream.
+- **Medium term (3–9 months):** PIH and NICD agree a **Minimum Viable Dataset (MVD)** so the ~1,158 clinician-initiated calls/year can be ingested into NMC as a structured surveillance stream.
 
 Detection rises to ~6.1 / 10 for **R62k/year**. The dashboard is the lowest-hanging fruit in the whole portfolio: it ships in days.
 
@@ -153,19 +153,19 @@ Detection rises to ~6.1 / 10 for **R62k/year**. The dashboard is the lowest-hang
 : Surveillance options — base-case. Each row shows the **detection uplift only**. Translating P_detect into cases or deaths averted requires the response-side parameters (η, agency capacity, regulatory action) covered in the [Coordination](coordination_policy.qmd) and [Terbufos](terbufos_policy.qmd) briefs. {.striped .hover}
 
 ::: {.callout-note appearance="simple"}
-**Scope of this brief.** Surveillance changes only what is *seen*. The status quo P_detect = 0.033 (§6 below) is a **measurement** of the current detection gap, not a counterfactual against which deaths are averted. Cases-averted and deaths-averted figures therefore live in the [Coordination brief](coordination_policy.qmd) (where the response is parameterised) and the [Terbufos brief](terbufos_policy.qmd) (where regulatory action is parameterised). This separation keeps the surveillance pitch honest: better surveillance is **necessary but not sufficient**.
+**Scope of this brief.** Surveillance changes only what is *seen*. The status quo P_detect = 0.048 (§6 below) is a **measurement** of the current detection gap, not a counterfactual against which deaths are averted. Cases-averted and deaths-averted figures therefore live in the [Coordination brief](coordination_policy.qmd) (where the response is parameterised) and the [Terbufos brief](terbufos_policy.qmd) (where regulatory action is parameterised). This separation keeps the surveillance pitch honest: better surveillance is **necessary but not sufficient**.
 :::
 
 ## 6. Decision tree — from surveillance investment to detection uplift
 
 ::: {.callout-note collapse="true"}
-## How we derive the status-quo detection probability (`d_status_quo` = 0.033)
+## How we derive the status-quo detection probability (`d_status_quo` = 0.048)
 
 The status-quo detection probability is **derived, not elicited**. The chain of evidence is:
 
 | Anchor | Value | Source |
 |--|--:|--|
-| Annual NMC pesticide notifications | 690 | `n_nmc_annual` — NICD NMC Annual Reports |
+| Annual NMC pesticide notifications | 1,013 | `n_nmc_annual` — NICD NMC Annual Report 2023 |
 | NMC-hospitalised case-fatality rate | 12.5 % | `cfr_headline_mid` (range 10–15 %) — Free State 2018-19 + NMC observed |
 | StatsSA MACOD pesticide-poisoning deaths/yr | 2,620 | `n_deaths_statssa_macod` — StatsSA Causes of Death, 2023: Table 4.12: Accidental poisoning by and exposure to noxious substance (X40-X49) |
 
@@ -174,14 +174,14 @@ The status-quo detection probability is **derived, not elicited**. The chain of 
 **Per-case detection probability**:
 
 $$
-P_\text{detect}^{SQ} \;=\; \frac{N_\text{NMC} \times \text{CFR}_\text{NMC}}{N_\text{deaths,StatsSA}} \;=\; \frac{690 \times 0.125}{2{,}620} \;=\; \mathbf{0.033}
+P_\text{detect}^{SQ} \;=\; \frac{N_\text{NMC} \times \text{CFR}_\text{NMC}}{N_\text{deaths,StatsSA}} \;=\; \frac{1{,}013 \times 0.125}{2{,}620} \;=\; \mathbf{0.048}
 $$
 
 **CFR sensitivity bracket** (CSV: `d_status_quo_lo`, `d_status_quo_hi`):
 
-- Lower bound (CFR = 0.10): $P_\text{detect}^{SQ} = 0.026$ (implied burden 26,200)
-- Mid (CFR = 0.125): $P_\text{detect}^{SQ} = 0.033$ (implied burden 20,960)
-- Upper (CFR = 0.15): $P_\text{detect}^{SQ} = 0.040$ (implied burden 17,467)
+- Lower bound (CFR = 0.10): $P_\text{detect}^{SQ} = 0.039$ (implied burden 26,200)
+- Mid (CFR = 0.125): $P_\text{detect}^{SQ} = 0.048$ (implied burden 20,960)
+- Upper (CFR = 0.15): $P_\text{detect}^{SQ} = 0.058$ (implied burden 17,467)
 
 **Why this replaces the v1 value of 0.45.** The legacy v1 figure was an expert-elicited *hotspot-cluster* sensitivity (binomial argument: at cluster size ≥10 even with per-case sensitivity ~6 %, at least one case is captured with probability ~0.46). That quantity answers a different question. The brief now uses the **per-case** framing — directly auditable from NICD + StatsSA published figures — and the v1 0.45 is retained only for `analysis_report_v2.qmd` back-compat as `d_status_quo_v1_hotspot`.
 :::

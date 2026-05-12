@@ -91,7 +91,7 @@ Annual case counts across the three data streams (treated as mutually-exclusive)
 section_table(params, "burden parameters")
 ```
 
-**Interpretation.** Three administrative streams capture different severities. NMC (~690) counts clinically-notified cases; NHLS (~2,000) counts severe BChE inhibitions on live patients; PIH (~9,000) counts helpline consultations. Each stream is independently sourced; the sum is treated as the upper bound of the true annual burden pending record-linkage.
+**Interpretation.** Three administrative streams capture different severities. NMC (~1,013) counts clinically-notified cases (2023); NHLS (~2,000) counts severe BChE inhibitions on live patients; PIH (~1,158) counts clinician-initiated calls (2023). Each stream is independently sourced; the sum (~4,171) is the 2023 observed lower bound. The StatsSA-implied true annual burden is ~20,960 (mid-CFR scenario, `n_true_burden_from_statssa_mid`).
 
 ## 2. Case fatality rate
 
