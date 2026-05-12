@@ -25015,23 +25015,23 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
 <p>All numerical claims in this brief draw from a single CSV — <a href="../amua_import_parameters_v3.csv"><code>amua_import_parameters_v3.csv</code></a> — rendered in full at the <a href="../parameters_hub.html">Parameters Hub</a>. The headline values below are pulled from that file at render time; <strong>do not edit the numbers in this brief — edit the CSV and re-render</strong>.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="qqoxvckulf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#qqoxvckulf table {
+<div id="sbbeoxwfvf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#sbbeoxwfvf table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#qqoxvckulf thead, #qqoxvckulf tbody, #qqoxvckulf tfoot, #qqoxvckulf tr, #qqoxvckulf td, #qqoxvckulf th {
+#sbbeoxwfvf thead, #sbbeoxwfvf tbody, #sbbeoxwfvf tfoot, #sbbeoxwfvf tr, #sbbeoxwfvf td, #sbbeoxwfvf th {
   border-style: none;
 }
 
-#qqoxvckulf p {
+#sbbeoxwfvf p {
   margin: 0;
   padding: 0;
 }
 
-#qqoxvckulf .gt_table {
+#sbbeoxwfvf .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -25057,12 +25057,12 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-left-color: #D3D3D3;
 }
 
-#qqoxvckulf .gt_caption {
+#sbbeoxwfvf .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#qqoxvckulf .gt_title {
+#sbbeoxwfvf .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -25074,7 +25074,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-bottom-width: 0;
 }
 
-#qqoxvckulf .gt_subtitle {
+#sbbeoxwfvf .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -25086,7 +25086,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-top-width: 0;
 }
 
-#qqoxvckulf .gt_heading {
+#sbbeoxwfvf .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -25098,13 +25098,13 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-right-color: #D3D3D3;
 }
 
-#qqoxvckulf .gt_bottom_border {
+#sbbeoxwfvf .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#qqoxvckulf .gt_col_headings {
+#sbbeoxwfvf .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -25119,7 +25119,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-right-color: #D3D3D3;
 }
 
-#qqoxvckulf .gt_col_heading {
+#sbbeoxwfvf .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -25139,7 +25139,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   overflow-x: hidden;
 }
 
-#qqoxvckulf .gt_column_spanner_outer {
+#sbbeoxwfvf .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -25151,15 +25151,15 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   padding-right: 4px;
 }
 
-#qqoxvckulf .gt_column_spanner_outer:first-child {
+#sbbeoxwfvf .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#qqoxvckulf .gt_column_spanner_outer:last-child {
+#sbbeoxwfvf .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#qqoxvckulf .gt_column_spanner {
+#sbbeoxwfvf .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -25171,11 +25171,11 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   width: 100%;
 }
 
-#qqoxvckulf .gt_spanner_row {
+#sbbeoxwfvf .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#qqoxvckulf .gt_group_heading {
+#sbbeoxwfvf .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -25201,7 +25201,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   text-align: left;
 }
 
-#qqoxvckulf .gt_empty_group_heading {
+#sbbeoxwfvf .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -25216,15 +25216,15 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   vertical-align: middle;
 }
 
-#qqoxvckulf .gt_from_md > :first-child {
+#sbbeoxwfvf .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#qqoxvckulf .gt_from_md > :last-child {
+#sbbeoxwfvf .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#qqoxvckulf .gt_row {
+#sbbeoxwfvf .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -25243,7 +25243,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   overflow-x: hidden;
 }
 
-#qqoxvckulf .gt_stub {
+#sbbeoxwfvf .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -25256,7 +25256,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   padding-right: 5px;
 }
 
-#qqoxvckulf .gt_stub_row_group {
+#sbbeoxwfvf .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -25270,15 +25270,15 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   vertical-align: top;
 }
 
-#qqoxvckulf .gt_row_group_first td {
+#sbbeoxwfvf .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#qqoxvckulf .gt_row_group_first th {
+#sbbeoxwfvf .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#qqoxvckulf .gt_summary_row {
+#sbbeoxwfvf .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -25288,16 +25288,16 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   padding-right: 5px;
 }
 
-#qqoxvckulf .gt_first_summary_row {
+#sbbeoxwfvf .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#qqoxvckulf .gt_first_summary_row.thick {
+#sbbeoxwfvf .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#qqoxvckulf .gt_last_summary_row {
+#sbbeoxwfvf .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -25307,7 +25307,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-bottom-color: #D3D3D3;
 }
 
-#qqoxvckulf .gt_grand_summary_row {
+#sbbeoxwfvf .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -25317,7 +25317,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   padding-right: 5px;
 }
 
-#qqoxvckulf .gt_first_grand_summary_row {
+#sbbeoxwfvf .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -25327,7 +25327,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-top-color: #D3D3D3;
 }
 
-#qqoxvckulf .gt_last_grand_summary_row_top {
+#sbbeoxwfvf .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -25337,11 +25337,11 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-bottom-color: #D3D3D3;
 }
 
-#qqoxvckulf .gt_striped {
+#sbbeoxwfvf .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#qqoxvckulf .gt_table_body {
+#sbbeoxwfvf .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -25350,7 +25350,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-bottom-color: #D3D3D3;
 }
 
-#qqoxvckulf .gt_footnotes {
+#sbbeoxwfvf .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -25364,7 +25364,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-right-color: #D3D3D3;
 }
 
-#qqoxvckulf .gt_footnote {
+#sbbeoxwfvf .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -25373,7 +25373,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   padding-right: 5px;
 }
 
-#qqoxvckulf .gt_sourcenotes {
+#sbbeoxwfvf .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -25387,7 +25387,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-right-color: #D3D3D3;
 }
 
-#qqoxvckulf .gt_sourcenote {
+#sbbeoxwfvf .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -25395,72 +25395,72 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   padding-right: 5px;
 }
 
-#qqoxvckulf .gt_left {
+#sbbeoxwfvf .gt_left {
   text-align: left;
 }
 
-#qqoxvckulf .gt_center {
+#sbbeoxwfvf .gt_center {
   text-align: center;
 }
 
-#qqoxvckulf .gt_right {
+#sbbeoxwfvf .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#qqoxvckulf .gt_font_normal {
+#sbbeoxwfvf .gt_font_normal {
   font-weight: normal;
 }
 
-#qqoxvckulf .gt_font_bold {
+#sbbeoxwfvf .gt_font_bold {
   font-weight: bold;
 }
 
-#qqoxvckulf .gt_font_italic {
+#sbbeoxwfvf .gt_font_italic {
   font-style: italic;
 }
 
-#qqoxvckulf .gt_super {
+#sbbeoxwfvf .gt_super {
   font-size: 65%;
 }
 
-#qqoxvckulf .gt_footnote_marks {
+#sbbeoxwfvf .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#qqoxvckulf .gt_asterisk {
+#sbbeoxwfvf .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#qqoxvckulf .gt_indent_1 {
+#sbbeoxwfvf .gt_indent_1 {
   text-indent: 5px;
 }
 
-#qqoxvckulf .gt_indent_2 {
+#sbbeoxwfvf .gt_indent_2 {
   text-indent: 10px;
 }
 
-#qqoxvckulf .gt_indent_3 {
+#sbbeoxwfvf .gt_indent_3 {
   text-indent: 15px;
 }
 
-#qqoxvckulf .gt_indent_4 {
+#sbbeoxwfvf .gt_indent_4 {
   text-indent: 20px;
 }
 
-#qqoxvckulf .gt_indent_5 {
+#sbbeoxwfvf .gt_indent_5 {
   text-indent: 25px;
 }
 
-#qqoxvckulf .katex-display {
+#sbbeoxwfvf .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#qqoxvckulf div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#sbbeoxwfvf div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -25541,23 +25541,23 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
 <h3 class="anchored" data-anchor-id="who-bears-the-r2.34b-annual-burden">Who bears the R2.34B annual burden?</h3>
 <div class="cell">
 <div class="cell-output-display">
-<div id="mewvijttuf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#mewvijttuf table {
+<div id="fsjxackfff" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#fsjxackfff table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#mewvijttuf thead, #mewvijttuf tbody, #mewvijttuf tfoot, #mewvijttuf tr, #mewvijttuf td, #mewvijttuf th {
+#fsjxackfff thead, #fsjxackfff tbody, #fsjxackfff tfoot, #fsjxackfff tr, #fsjxackfff td, #fsjxackfff th {
   border-style: none;
 }
 
-#mewvijttuf p {
+#fsjxackfff p {
   margin: 0;
   padding: 0;
 }
 
-#mewvijttuf .gt_table {
+#fsjxackfff .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -25583,12 +25583,12 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-left-color: #D3D3D3;
 }
 
-#mewvijttuf .gt_caption {
+#fsjxackfff .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#mewvijttuf .gt_title {
+#fsjxackfff .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -25600,7 +25600,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-bottom-width: 0;
 }
 
-#mewvijttuf .gt_subtitle {
+#fsjxackfff .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -25612,7 +25612,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-top-width: 0;
 }
 
-#mewvijttuf .gt_heading {
+#fsjxackfff .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -25624,13 +25624,13 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-right-color: #D3D3D3;
 }
 
-#mewvijttuf .gt_bottom_border {
+#fsjxackfff .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#mewvijttuf .gt_col_headings {
+#fsjxackfff .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -25645,7 +25645,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-right-color: #D3D3D3;
 }
 
-#mewvijttuf .gt_col_heading {
+#fsjxackfff .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -25665,7 +25665,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   overflow-x: hidden;
 }
 
-#mewvijttuf .gt_column_spanner_outer {
+#fsjxackfff .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -25677,15 +25677,15 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   padding-right: 4px;
 }
 
-#mewvijttuf .gt_column_spanner_outer:first-child {
+#fsjxackfff .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#mewvijttuf .gt_column_spanner_outer:last-child {
+#fsjxackfff .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#mewvijttuf .gt_column_spanner {
+#fsjxackfff .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -25697,11 +25697,11 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   width: 100%;
 }
 
-#mewvijttuf .gt_spanner_row {
+#fsjxackfff .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#mewvijttuf .gt_group_heading {
+#fsjxackfff .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -25727,7 +25727,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   text-align: left;
 }
 
-#mewvijttuf .gt_empty_group_heading {
+#fsjxackfff .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -25742,15 +25742,15 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   vertical-align: middle;
 }
 
-#mewvijttuf .gt_from_md > :first-child {
+#fsjxackfff .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#mewvijttuf .gt_from_md > :last-child {
+#fsjxackfff .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#mewvijttuf .gt_row {
+#fsjxackfff .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -25769,7 +25769,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   overflow-x: hidden;
 }
 
-#mewvijttuf .gt_stub {
+#fsjxackfff .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -25782,7 +25782,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   padding-right: 5px;
 }
 
-#mewvijttuf .gt_stub_row_group {
+#fsjxackfff .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -25796,15 +25796,15 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   vertical-align: top;
 }
 
-#mewvijttuf .gt_row_group_first td {
+#fsjxackfff .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#mewvijttuf .gt_row_group_first th {
+#fsjxackfff .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#mewvijttuf .gt_summary_row {
+#fsjxackfff .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -25814,16 +25814,16 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   padding-right: 5px;
 }
 
-#mewvijttuf .gt_first_summary_row {
+#fsjxackfff .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#mewvijttuf .gt_first_summary_row.thick {
+#fsjxackfff .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#mewvijttuf .gt_last_summary_row {
+#fsjxackfff .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -25833,7 +25833,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-bottom-color: #D3D3D3;
 }
 
-#mewvijttuf .gt_grand_summary_row {
+#fsjxackfff .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -25843,7 +25843,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   padding-right: 5px;
 }
 
-#mewvijttuf .gt_first_grand_summary_row {
+#fsjxackfff .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -25853,7 +25853,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-top-color: #D3D3D3;
 }
 
-#mewvijttuf .gt_last_grand_summary_row_top {
+#fsjxackfff .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -25863,11 +25863,11 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-bottom-color: #D3D3D3;
 }
 
-#mewvijttuf .gt_striped {
+#fsjxackfff .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#mewvijttuf .gt_table_body {
+#fsjxackfff .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -25876,7 +25876,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-bottom-color: #D3D3D3;
 }
 
-#mewvijttuf .gt_footnotes {
+#fsjxackfff .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -25890,7 +25890,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-right-color: #D3D3D3;
 }
 
-#mewvijttuf .gt_footnote {
+#fsjxackfff .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -25899,7 +25899,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   padding-right: 5px;
 }
 
-#mewvijttuf .gt_sourcenotes {
+#fsjxackfff .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -25913,7 +25913,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-right-color: #D3D3D3;
 }
 
-#mewvijttuf .gt_sourcenote {
+#fsjxackfff .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -25921,72 +25921,72 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   padding-right: 5px;
 }
 
-#mewvijttuf .gt_left {
+#fsjxackfff .gt_left {
   text-align: left;
 }
 
-#mewvijttuf .gt_center {
+#fsjxackfff .gt_center {
   text-align: center;
 }
 
-#mewvijttuf .gt_right {
+#fsjxackfff .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#mewvijttuf .gt_font_normal {
+#fsjxackfff .gt_font_normal {
   font-weight: normal;
 }
 
-#mewvijttuf .gt_font_bold {
+#fsjxackfff .gt_font_bold {
   font-weight: bold;
 }
 
-#mewvijttuf .gt_font_italic {
+#fsjxackfff .gt_font_italic {
   font-style: italic;
 }
 
-#mewvijttuf .gt_super {
+#fsjxackfff .gt_super {
   font-size: 65%;
 }
 
-#mewvijttuf .gt_footnote_marks {
+#fsjxackfff .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#mewvijttuf .gt_asterisk {
+#fsjxackfff .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#mewvijttuf .gt_indent_1 {
+#fsjxackfff .gt_indent_1 {
   text-indent: 5px;
 }
 
-#mewvijttuf .gt_indent_2 {
+#fsjxackfff .gt_indent_2 {
   text-indent: 10px;
 }
 
-#mewvijttuf .gt_indent_3 {
+#fsjxackfff .gt_indent_3 {
   text-indent: 15px;
 }
 
-#mewvijttuf .gt_indent_4 {
+#fsjxackfff .gt_indent_4 {
   text-indent: 20px;
 }
 
-#mewvijttuf .gt_indent_5 {
+#fsjxackfff .gt_indent_5 {
   text-indent: 25px;
 }
 
-#mewvijttuf .katex-display {
+#fsjxackfff .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#mewvijttuf div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#fsjxackfff div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -26049,23 +26049,23 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
 <h3 class="anchored" data-anchor-id="canonical-option-costs-detect-act-restrict">Canonical option costs (Detect · Act · Restrict)</h3>
 <div class="cell">
 <div class="cell-output-display">
-<div id="gchwudkkkr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#gchwudkkkr table {
+<div id="nxcyhdqdnd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#nxcyhdqdnd table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#gchwudkkkr thead, #gchwudkkkr tbody, #gchwudkkkr tfoot, #gchwudkkkr tr, #gchwudkkkr td, #gchwudkkkr th {
+#nxcyhdqdnd thead, #nxcyhdqdnd tbody, #nxcyhdqdnd tfoot, #nxcyhdqdnd tr, #nxcyhdqdnd td, #nxcyhdqdnd th {
   border-style: none;
 }
 
-#gchwudkkkr p {
+#nxcyhdqdnd p {
   margin: 0;
   padding: 0;
 }
 
-#gchwudkkkr .gt_table {
+#nxcyhdqdnd .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -26091,12 +26091,12 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-left-color: #D3D3D3;
 }
 
-#gchwudkkkr .gt_caption {
+#nxcyhdqdnd .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#gchwudkkkr .gt_title {
+#nxcyhdqdnd .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -26108,7 +26108,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-bottom-width: 0;
 }
 
-#gchwudkkkr .gt_subtitle {
+#nxcyhdqdnd .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -26120,7 +26120,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-top-width: 0;
 }
 
-#gchwudkkkr .gt_heading {
+#nxcyhdqdnd .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -26132,13 +26132,13 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-right-color: #D3D3D3;
 }
 
-#gchwudkkkr .gt_bottom_border {
+#nxcyhdqdnd .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#gchwudkkkr .gt_col_headings {
+#nxcyhdqdnd .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -26153,7 +26153,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-right-color: #D3D3D3;
 }
 
-#gchwudkkkr .gt_col_heading {
+#nxcyhdqdnd .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -26173,7 +26173,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   overflow-x: hidden;
 }
 
-#gchwudkkkr .gt_column_spanner_outer {
+#nxcyhdqdnd .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -26185,15 +26185,15 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   padding-right: 4px;
 }
 
-#gchwudkkkr .gt_column_spanner_outer:first-child {
+#nxcyhdqdnd .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#gchwudkkkr .gt_column_spanner_outer:last-child {
+#nxcyhdqdnd .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#gchwudkkkr .gt_column_spanner {
+#nxcyhdqdnd .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -26205,11 +26205,11 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   width: 100%;
 }
 
-#gchwudkkkr .gt_spanner_row {
+#nxcyhdqdnd .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#gchwudkkkr .gt_group_heading {
+#nxcyhdqdnd .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -26235,7 +26235,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   text-align: left;
 }
 
-#gchwudkkkr .gt_empty_group_heading {
+#nxcyhdqdnd .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -26250,15 +26250,15 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   vertical-align: middle;
 }
 
-#gchwudkkkr .gt_from_md > :first-child {
+#nxcyhdqdnd .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#gchwudkkkr .gt_from_md > :last-child {
+#nxcyhdqdnd .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#gchwudkkkr .gt_row {
+#nxcyhdqdnd .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -26277,7 +26277,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   overflow-x: hidden;
 }
 
-#gchwudkkkr .gt_stub {
+#nxcyhdqdnd .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -26290,7 +26290,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   padding-right: 5px;
 }
 
-#gchwudkkkr .gt_stub_row_group {
+#nxcyhdqdnd .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -26304,15 +26304,15 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   vertical-align: top;
 }
 
-#gchwudkkkr .gt_row_group_first td {
+#nxcyhdqdnd .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#gchwudkkkr .gt_row_group_first th {
+#nxcyhdqdnd .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#gchwudkkkr .gt_summary_row {
+#nxcyhdqdnd .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -26322,16 +26322,16 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   padding-right: 5px;
 }
 
-#gchwudkkkr .gt_first_summary_row {
+#nxcyhdqdnd .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#gchwudkkkr .gt_first_summary_row.thick {
+#nxcyhdqdnd .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#gchwudkkkr .gt_last_summary_row {
+#nxcyhdqdnd .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -26341,7 +26341,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-bottom-color: #D3D3D3;
 }
 
-#gchwudkkkr .gt_grand_summary_row {
+#nxcyhdqdnd .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -26351,7 +26351,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   padding-right: 5px;
 }
 
-#gchwudkkkr .gt_first_grand_summary_row {
+#nxcyhdqdnd .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -26361,7 +26361,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-top-color: #D3D3D3;
 }
 
-#gchwudkkkr .gt_last_grand_summary_row_top {
+#nxcyhdqdnd .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -26371,11 +26371,11 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-bottom-color: #D3D3D3;
 }
 
-#gchwudkkkr .gt_striped {
+#nxcyhdqdnd .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#gchwudkkkr .gt_table_body {
+#nxcyhdqdnd .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -26384,7 +26384,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-bottom-color: #D3D3D3;
 }
 
-#gchwudkkkr .gt_footnotes {
+#nxcyhdqdnd .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -26398,7 +26398,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-right-color: #D3D3D3;
 }
 
-#gchwudkkkr .gt_footnote {
+#nxcyhdqdnd .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -26407,7 +26407,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   padding-right: 5px;
 }
 
-#gchwudkkkr .gt_sourcenotes {
+#nxcyhdqdnd .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -26421,7 +26421,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-right-color: #D3D3D3;
 }
 
-#gchwudkkkr .gt_sourcenote {
+#nxcyhdqdnd .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -26429,72 +26429,72 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   padding-right: 5px;
 }
 
-#gchwudkkkr .gt_left {
+#nxcyhdqdnd .gt_left {
   text-align: left;
 }
 
-#gchwudkkkr .gt_center {
+#nxcyhdqdnd .gt_center {
   text-align: center;
 }
 
-#gchwudkkkr .gt_right {
+#nxcyhdqdnd .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#gchwudkkkr .gt_font_normal {
+#nxcyhdqdnd .gt_font_normal {
   font-weight: normal;
 }
 
-#gchwudkkkr .gt_font_bold {
+#nxcyhdqdnd .gt_font_bold {
   font-weight: bold;
 }
 
-#gchwudkkkr .gt_font_italic {
+#nxcyhdqdnd .gt_font_italic {
   font-style: italic;
 }
 
-#gchwudkkkr .gt_super {
+#nxcyhdqdnd .gt_super {
   font-size: 65%;
 }
 
-#gchwudkkkr .gt_footnote_marks {
+#nxcyhdqdnd .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#gchwudkkkr .gt_asterisk {
+#nxcyhdqdnd .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#gchwudkkkr .gt_indent_1 {
+#nxcyhdqdnd .gt_indent_1 {
   text-indent: 5px;
 }
 
-#gchwudkkkr .gt_indent_2 {
+#nxcyhdqdnd .gt_indent_2 {
   text-indent: 10px;
 }
 
-#gchwudkkkr .gt_indent_3 {
+#nxcyhdqdnd .gt_indent_3 {
   text-indent: 15px;
 }
 
-#gchwudkkkr .gt_indent_4 {
+#nxcyhdqdnd .gt_indent_4 {
   text-indent: 20px;
 }
 
-#gchwudkkkr .gt_indent_5 {
+#nxcyhdqdnd .gt_indent_5 {
   text-indent: 25px;
 }
 
-#gchwudkkkr .katex-display {
+#nxcyhdqdnd .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#gchwudkkkr div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#nxcyhdqdnd div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -26731,8 +26731,8 @@ Figure&nbsp;1: Root causes that make terbufos a disproportionate public-health h
 <p><em>Intermediate restriction options (RUP, formulation restriction, distributor audit) are best understood as the <strong>mechanics of the phase-out</strong>, not as alternative end-states. The end-state is withdrawal.</em></p>
 </section>
 </section>
-<section id="decision-tree-burden-retired-under-each-option" class="level2">
-<h2 class="anchored" data-anchor-id="decision-tree-burden-retired-under-each-option">6. Decision tree — burden retired under each option</h2>
+<section id="decision-tree-deaths-burden-and-yield-under-each-option" class="level2">
+<h2 class="anchored" data-anchor-id="decision-tree-deaths-burden-and-yield-under-each-option">6. Decision tree — deaths, burden, and yield under each option</h2>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
 <div>
@@ -26742,27 +26742,38 @@ Figure&nbsp;1: Root causes that make terbufos a disproportionate public-health h
     Q{Ban terbufos?} --&gt;|No — T1&lt;br/&gt;Status quo| T1[Continued registration]:::bad
     Q --&gt;|Yes — T2&lt;br/&gt;Cancel registration| T2[12–24 month phase-out]:::good
 
-    T1 --&gt; H1[Annual burden retained&lt;br/&gt;~R2.34B&lt;br/&gt;~655 deaths/yr from terbufos]:::bad
-    T2 --&gt; H2[Annual burden retired&lt;br/&gt;~R0.41B ~R0.33–R0.57B~&lt;br/&gt;~458 deaths/yr averted ~367–642~]:::good
+    T1 --&gt; D1["&lt;b&gt;Deaths&lt;/b&gt;&lt;br/&gt;~655/yr terbufos-attributable&lt;br/&gt;~range 524–917~&lt;br/&gt;= 25% × 2,620 total"]:::bad
+    T1 --&gt; B1["&lt;b&gt;Burden&lt;/b&gt;&lt;br/&gt;~R0.58B/yr terbufos-attributable&lt;br/&gt;retained on households + NDoH"]:::bad
+    T1 --&gt; Y1["&lt;b&gt;Maize yield&lt;/b&gt;&lt;br/&gt;No change"]:::neutral
 
-    T1 --&gt; Y1[Maize yield&lt;br/&gt;No change]:::neutral
-    T2 --&gt; Y2[Maize yield&lt;br/&gt;&lt;5% impact&lt;br/&gt;~see §7~]:::neutral
+    T2 --&gt; D2["&lt;b&gt;Deaths averted&lt;/b&gt;&lt;br/&gt;~458/yr&lt;br/&gt;~range 367–642~&lt;br/&gt;= 25% × 70% × 2,620"]:::good
+    T2 --&gt; B2["&lt;b&gt;Burden retired&lt;/b&gt;&lt;br/&gt;~R0.41B/yr&lt;br/&gt;~range R0.33–R0.57B~"]:::good
+    T2 --&gt; Y2["&lt;b&gt;Maize yield&lt;/b&gt;&lt;br/&gt;&lt;5% impact&lt;br/&gt;~see §7~"]:::neutral
+
+    D2 --&gt; R2["Residual ~197 deaths/yr&lt;br/&gt;substitution-incompleteness&lt;br/&gt;~Sri Lanka 30%~"]:::warn
 
     classDef bad fill:#fdd,stroke:#cc0000,stroke-width:1.5px
     classDef good fill:#cfc,stroke:#060,stroke-width:2px
+    classDef warn fill:#ffe9b3,stroke:#cc8800,stroke-width:1.5px
     classDef neutral fill:#eee,stroke:#666
 </pre>
 </div>
-<p></p><figcaption> Two-node terbufos decision tree. The split is binary — ban or no ban. Burden retired under the ban is anchored to Davies 2023 (SA paediatric attribution) and the Sri Lanka Class Ia withdrawal evidence (Gunnell 2017): attributable fraction 20–35% (working 25%), with 70% of that attributable burden actually retired post-ban (Sri Lanka substitution-incompleteness).</figcaption> </figure><p></p>
+<p></p><figcaption> Two-node terbufos decision tree. The split is binary — ban or no ban. Each branch terminates in three parallel outcomes: deaths, monetised burden, and maize yield. Deaths-averted arithmetic: f_attr × φ_retired × N_deaths_total = 0.25 × 0.70 × 2,620 = 458/yr (working). Attributable fraction range 20–35% from Davies 2023 + Gunnell 2017; substitution-incompleteness 70% from Sri Lanka.</figcaption> </figure><p></p>
 </div>
 </div>
 </div>
-<p><strong>Reading the tree.</strong> The decision is binary because the upstream driver — high-intrinsic-toxicity granular OP in informal circulation — is binary: either the product is on the register or it isn’t. The quantitative anchor combines two CSV parameters:</p>
+<p><strong>Reading the tree.</strong> The decision is binary because the upstream driver — high-intrinsic-toxicity granular OP in informal circulation — is binary: either the product is on the register or it isn’t. Each branch terminates in three parallel outcomes:</p>
 <ul>
-<li><code>frac_terbufos_attributable_mid</code> = 25% (range 20–35%) — Davies 2023 + Gunnell 2017.</li>
-<li><code>frac_T3_burden_retired</code> = 70% — Sri Lanka substitution-incompleteness.</li>
+<li><strong>Deaths</strong> — the headline public-health metric. Computed as <img src="https://latex.codecogs.com/png.latex?f_%5Ctext%7Battr%7D%20%5Ctimes%20%5Cvarphi_%5Ctext%7Bretired%7D%20%5Ctimes%20N_%5Ctext%7Bdeaths%7D">. The working value pulls from three CSV parameters:
+<ul>
+<li><code>frac_terbufos_attributable_mid</code> = 25% (range 20–35%) — SA paediatric attribution (Davies 2023) + Sri Lanka single-agent withdrawal bracket (Gunnell 2017).</li>
+<li><code>frac_T3_burden_retired</code> = 70% — fraction of attributable burden retired post-ban, anchored to Sri Lanka substitution-incompleteness. The complement is the <em>residual</em> node — deaths that persist because some users will switch to other Class I OPs rather than to less-hazardous substitutes.</li>
+<li><code>n_deaths_headline</code> = 2,620 — StatsSA MACOD 2023 fatal pesticide-poisoning total.</li>
+</ul></li>
+<li><strong>Burden</strong> — the same multiplication applied to the R2.34B total annual burden. Working value: <strong>~R0.41B/yr retired</strong>, falling on households + NDoH at the canonical share split.</li>
+<li><strong>Maize yield</strong> — bounded at &lt;5 % (see §7).</li>
 </ul>
-<p>Applied to ~2,620 fatal pesticide-poisoning deaths/yr and the R2.34B total annual burden, the ban retires <strong>~458 deaths/yr</strong> and <strong>~R0.41B/yr</strong> at the working values, with the bracket reflecting honest uncertainty on the attributable fraction. The full closed-form derivation lives in <a href="../technical_appendix_terbufos.html">Technical Appendix C</a>.</p>
+<p>The full closed-form derivation, with the deaths-averted bracket calculated under every <img src="https://latex.codecogs.com/png.latex?f_%5Ctext%7Battr%7D%20%5Ctimes%20%5Cvarphi_%5Ctext%7Bretired%7D"> combination, lives in <a href="../technical_appendix_terbufos.html">Technical Appendix C</a>.</p>
 </section>
 <section id="crop-yield-impact-brief" class="level2">
 <h2 class="anchored" data-anchor-id="crop-yield-impact-brief">7. Crop-yield impact (brief)</h2>
