@@ -146,7 +146,7 @@ Cost: ~R1.2M pilot site → ~R3.6M for 5-site rollout, 6–12 months. Funded fro
 | Status quo | R0 | 0.048 (~5 %) | — | — |
 | S1: PIH dashboard + MVD | R62k | 0.104 (~10 %) | +5.6 pp | 1–2 wks dash / 3–9 mo MVD |
 | S2: BChE auto-notify | R55k | 0.133 (~13 %) | +8.5 pp | 2–4 wks |
-| **S1 + S2 (Surveillance MVP)** | **~R117k** | **0.189 (~19 %)** | **+14 pp** | **12 weeks** |
+| **S1 + S2 (Surveillance MVP)** | **~R117k** | **0.189 (~19 %)** | **+14.1 pp** | **12 weeks** |
 | S3: Sentinel toxicology (agent attribution — distinct purpose) | R1.2M pilot → R3.6M | n/a (not a coverage uplift) | feeds product-banning evidence base | 6–12 mo pilot |
 
 : Surveillance options — base-case. P_detect is the per-case detection probability, anchored to the StatsSA MACOD 2023 mid-burden of 20,960 true cases/year. S1 and S2 expand coverage; **S3 is a parallel agent-attribution investment**, not a coverage uplift — see option text above. Translating P_detect into cases or deaths averted requires the response-side parameters (η, agency capacity, regulatory action) covered in the [Coordination](coordination_policy.qmd) and [Terbufos](terbufos_policy.qmd) briefs. {.striped .hover}
