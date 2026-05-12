@@ -338,7 +338,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         C2[Chemical Toxicology&lt;br/&gt;&lt;i&gt;Post-mortem only —&lt;br/&gt;not yet done on&lt;br/&gt;live patients&lt;/i&gt;]
     end
 
-    A --&gt; D[PIH Consultation&lt;br/&gt;~9,000 calls/year&lt;br/&gt;&lt;i&gt;No minimum dataset&lt;/i&gt;]
+    A --&gt; D[PIH Consultation&lt;br/&gt;~1,158 clinician calls/yr&lt;br/&gt;&lt;i&gt;No minimum dataset&lt;/i&gt;]
 
     E --&gt;|SMS notification| H[Local EHP&lt;br/&gt;&lt;i&gt;mandated to&lt;br/&gt;investigate&lt;/i&gt;]
     H -.Investigation NOT&lt;br/&gt;recorded on NMC.-x E
@@ -370,11 +370,11 @@ Figure&nbsp;1: Current (fragmented) surveillance architecture. NICD is the de fa
 </div>
 <p><strong>What this diagram shows.</strong> Five gaps in the current state:</p>
 <ol type="1">
-<li><strong>NICD/NMC is the source of truth</strong> for case notifications but receives only the clinician-completed NMC stream (~690/year) — a fraction of the true burden.</li>
+<li><strong>NICD/NMC is the source of truth</strong> for case notifications but receives only the clinician-completed NMC stream (~1,013/year, 2023) — a fraction of the true burden.</li>
 <li><strong>The NHLS laboratory holds two distinct streams</strong>: (a) <strong>BChE assays</strong> on live patients (~2,000 severe results/year, capability exists) and (b) <strong>Chemical toxicology</strong> — qualitative/quantitative pesticide assays which <strong>NHLS currently performs post-mortem only</strong>. Live-patient chemical toxicology is not yet available (see <a href="#sec-component-6">Component 6</a>).</li>
 <li><strong>Neither NHLS stream feeds NICD in a structured way.</strong> BChE has no automated notification; chemical toxicology is not yet generated on living patients at all.</li>
 <li><strong>The EHP arm exists but does not close the loop.</strong> When an NMC notification is filed, an SMS reaches the local EHP, who is mandated to investigate — but neither the investigation outcome nor the informal DALRRD referral is recorded back on NMC, and DALRRD’s regulatory action (if any) is fed back to the EHP at best, never to NICD or the clinician.</li>
-<li><strong>PIH consultations are not captured against a minimum viable dataset</strong>, so the ~9,000 calls/year cannot be aggregated, geocoded, or matched to NICD cases.</li>
+<li><strong>PIH consultations are not captured against a minimum viable dataset</strong>, so the ~1,158 clinician-initiated calls/year (2023) cannot be aggregated, geocoded, or matched to NICD cases.</li>
 </ol>
 </section>
 <section id="missed-opportunities" class="level3" data-number="2.2">
@@ -1254,7 +1254,7 @@ Figure&nbsp;2: Proposed integrated surveillance architecture
 <span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>        C2[Chemical Toxicology&lt;br/&gt;&lt;i&gt;Post-mortem only —&lt;br/&gt;<span class="ot">not</span> yet done on&lt;br/&gt;live patients&lt;/i&gt;]</span>
 <span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a>    end</span>
 <span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a>    A --&gt; D[PIH Consultation&lt;br/&gt;~<span class="dv">9</span>,<span class="dv">000</span> calls/year&lt;br/&gt;&lt;i&gt;No minimum dataset&lt;/i&gt;]</span>
+<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a>    A --&gt; D[PIH Consultation&lt;br/&gt;~<span class="dv">1</span>,<span class="dv">158</span> clinician calls/yr&lt;br/&gt;&lt;i&gt;No minimum dataset&lt;/i&gt;]</span>
 <span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a>    E --&gt;|SMS notification| H[Local EHP&lt;br/&gt;&lt;i&gt;mandated to&lt;br/&gt;investigate&lt;/i&gt;]</span>
 <span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a>    H -.Investigation NOT&lt;br/&gt;recorded on NMC.<span class="ot">-x</span> E</span>
@@ -1279,11 +1279,11 @@ Figure&nbsp;2: Proposed integrated surveillance architecture
 <span id="cb3-80"><a href="#cb3-80" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-81"><a href="#cb3-81" aria-hidden="true" tabindex="-1"></a>**What this diagram shows.** Five gaps in the current state:</span>
 <span id="cb3-82"><a href="#cb3-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-83"><a href="#cb3-83" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**NICD/NMC is the source of truth** for case notifications but receives only the clinician-completed NMC stream (~690/year) — a fraction of the true burden.</span>
+<span id="cb3-83"><a href="#cb3-83" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**NICD/NMC is the source of truth** for case notifications but receives only the clinician-completed NMC stream (~1,013/year, 2023) — a fraction of the true burden.</span>
 <span id="cb3-84"><a href="#cb3-84" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**The NHLS laboratory holds two distinct streams**: (a) **BChE assays** on live patients (~2,000 severe results/year, capability exists) and (b) **Chemical toxicology** — qualitative/quantitative pesticide assays which **NHLS currently performs post-mortem only**. Live-patient chemical toxicology is not yet available (see <span class="co">[</span><span class="ot">Component 6</span><span class="co">](#sec-component-6)</span>).</span>
 <span id="cb3-85"><a href="#cb3-85" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Neither NHLS stream feeds NICD in a structured way.** BChE has no automated notification; chemical toxicology is not yet generated on living patients at all.</span>
 <span id="cb3-86"><a href="#cb3-86" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**The EHP arm exists but does not close the loop.** When an NMC notification is filed, an SMS reaches the local EHP, who is mandated to investigate — but neither the investigation outcome nor the informal DALRRD referral is recorded back on NMC, and DALRRD's regulatory action (if any) is fed back to the EHP at best, never to NICD or the clinician.</span>
-<span id="cb3-87"><a href="#cb3-87" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>**PIH consultations are not captured against a minimum viable dataset**, so the ~9,000 calls/year cannot be aggregated, geocoded, or matched to NICD cases.</span>
+<span id="cb3-87"><a href="#cb3-87" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>**PIH consultations are not captured against a minimum viable dataset**, so the ~1,158 clinician-initiated calls/year (2023) cannot be aggregated, geocoded, or matched to NICD cases.</span>
 <span id="cb3-88"><a href="#cb3-88" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-89"><a href="#cb3-89" aria-hidden="true" tabindex="-1"></a><span class="fu">### Missed Opportunities</span></span>
 <span id="cb3-90"><a href="#cb3-90" aria-hidden="true" tabindex="-1"></a></span>
