@@ -101,7 +101,7 @@ section_table(params, "burden parameters")
 section_table(params, "case fatality rate")
 ```
 
-**Stratified vs. headline.** Applying the stratified CFR row-by-row gives **~830 deaths/year**; applying the flat headline 12.5 % gives **~1,460 deaths/year**; the Stats SA Vital Registration triangulation gives **~960–2,000 deaths/year**. The headline figure is now anchored at **2,000 deaths/year** via **StatsSA MACOD** (CSV row `n_deaths_statssa_macod`, mirrored to `n_deaths_headline`) — this is the **canonical truth source** for deaths and is updated as new StatsSA releases land. It supersedes the v1 advocacy range of 1,500–1,800. The full v2 → v3 rationale is in [`parameter_appraisal.qmd`](parameter_appraisal.qmd).
+**Stratified vs. headline.** Applying the stratified CFR row-by-row gives **~830 deaths/year**; applying the flat headline 12.5 % gives **~1,460 deaths/year**; the Stats SA Vital Registration triangulation gives **~960–2,620 deaths/year**. The headline figure is now anchored at **2,620 deaths/year** via **StatsSA MACOD 2023, Table 4.12 (X40-X49: Accidental poisoning by and exposure to noxious substance)** — CSV row `n_deaths_statssa_macod`, mirrored to `n_deaths_headline`. This is the **canonical truth source** for deaths and is updated as new StatsSA releases land; it supersedes the v1 advocacy range of 1,500–1,800. The full v2 → v3 rationale is in [`parameter_appraisal.qmd`](parameter_appraisal.qmd).
 
 ## 3. Per-case costs
 

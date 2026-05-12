@@ -15,12 +15,12 @@ cfr_headline_mid,0.125,"Headline midpoint | dist=fixed(,) | Decision model base"
 cfr_headline_hi,0.15,"Headline upper bound | dist=fixed(,) | Decision model base"
 # Note: stratified CFR yields ~830 deaths/yr; flat 12.5% yields ~1460. StatsSA MACOD anchor (n_deaths_statssa_macod) is the canonical truth source for deaths and should be updated as new StatsSA releases land.,,
 n_deaths_stratified,830,"Deaths from stratified CFR application | dist=fixed(,) | Internal consistency check"
-n_deaths_headline,2000,"Headline annual deaths = n_deaths_statssa_macod (canonical truth, replaces v1 advocacy figure of 1500) | dist=fixed(,) | StatsSA MACOD"
+n_deaths_headline,2620,"Headline annual deaths = n_deaths_statssa_macod (canonical truth, replaces v1 advocacy figure of 1500) | dist=fixed(,) | StatsSA MACOD 2023 (X40-X49)"
 # === StatsSA MORTALITY ANCHOR (CANONICAL TRUTH SOURCE for deaths; used to derive d_status_quo and implied true burden) ===,,
-n_deaths_statssa_macod,2000,"StatsSA MACOD pesticide-poisoning deaths per year (mean recent series). CANONICAL truth source — update as new StatsSA releases land. | dist=gamma(25,80) | StatsSA Causes of Death"
-n_true_burden_from_statssa_lo,13333,"Implied true annual burden, upper-CFR scenario = n_deaths_statssa_macod / cfr_headline_hi = 2000/0.15 | dist=fixed(,) | Derived"
-n_true_burden_from_statssa_mid,16000,"Implied true annual burden, mid-CFR scenario = n_deaths_statssa_macod / cfr_headline_mid = 2000/0.125 | dist=fixed(,) | Derived"
-n_true_burden_from_statssa_hi,20000,"Implied true annual burden, lower-CFR scenario = n_deaths_statssa_macod / cfr_headline_lo = 2000/0.10 | dist=fixed(,) | Derived"
+n_deaths_statssa_macod,2620,"StatsSA MACOD pesticide-poisoning deaths per year. CANONICAL truth source — update as new StatsSA releases land. Current = StatsSA Causes of Death 2023, Table 4.12 (Accidental poisoning by and exposure to noxious substance, X40-X49). | dist=gamma(25,105) | StatsSA Causes of Death 2023, Table 4.12"
+n_true_burden_from_statssa_lo,17467,"Implied true annual burden, upper-CFR scenario = n_deaths_statssa_macod / cfr_headline_hi = 2620/0.15 | dist=fixed(,) | Derived"
+n_true_burden_from_statssa_mid,20960,"Implied true annual burden, mid-CFR scenario = n_deaths_statssa_macod / cfr_headline_mid = 2620/0.125 | dist=fixed(,) | Derived"
+n_true_burden_from_statssa_hi,26200,"Implied true annual burden, lower-CFR scenario = n_deaths_statssa_macod / cfr_headline_lo = 2620/0.10 | dist=fixed(,) | Derived"
 # === PER-CASE COSTS (CASE-MIX-WEIGHTED, ZAR 2025) ===,,
 c_pih_call_only,500,"Per-case cost for PIH-managed cases (helpline call + brief OPD + caregiver time) | dist=gamma(25,20) | PIH operational + Stats SA wage"
 c_ward_admission_per_day,1800,"Public-sector general ward UPFS day fee | dist=gamma(25,72) | UPFS 2024"
@@ -66,9 +66,9 @@ eta_response_mid,0.30,"Response efficacy base case | dist=beta(30,70) | Buckley 
 eta_response_hi,0.50,"Response efficacy upper (well-resourced scenario) | dist=fixed(,) | Sensitivity"
 # === DETECTION PROBABILITIES BY OPTION ===,,
 # === HOTSPOT-DETECTION FRAMING (legacy, expert-elicited cluster sensitivity) — kept for back-compat with v1 analysis_report ===,,
-d_status_quo,0.043,"NMC-only per-case detection probability = n_nmc_annual * cfr_headline_mid / n_deaths_statssa_macod = 690*0.125/2000 | dist=beta(4,96) | Derived from StatsSA MACOD anchor (replaces v1 expert-elicited 0.45)"
-d_status_quo_lo,0.0345,"d_status_quo lower bound (upper-CFR scenario = 690*0.10/2000 inverted) | dist=fixed(,) | Derived"
-d_status_quo_hi,0.0518,"d_status_quo upper bound = 690*0.15/2000 | dist=fixed(,) | Derived"
+d_status_quo,0.033,"NMC-only per-case detection probability = n_nmc_annual * cfr_headline_mid / n_deaths_statssa_macod = 690*0.125/2620 | dist=beta(3,97) | Derived from StatsSA MACOD 2023 anchor (replaces v1 expert-elicited 0.45)"
+d_status_quo_lo,0.026,"d_status_quo lower bound = 690*0.10/2620 | dist=fixed(,) | Derived"
+d_status_quo_hi,0.040,"d_status_quo upper bound = 690*0.15/2620 | dist=fixed(,) | Derived"
 d_status_quo_v1_hotspot,0.45,"LEGACY: v1 expert-elicited hotspot-cluster detection probability (binomial-cluster argument, not per-case). Retained for analysis_report_v2.qmd back-compat only. | dist=beta(45,55) | Expert elicitation, deprecated"
 d_option1_NHLS_MOU,0.52,"+ Monthly aggregated NHLS BChE data | dist=beta(52,48) | Expert elicitation"
 d_option2_DALRRD_data,0.58,"+ DALRRD pesticide product linkage | dist=beta(58,42) | Expert elicitation"
