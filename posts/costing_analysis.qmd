@@ -1413,7 +1413,7 @@ cost_per_case %>%
   ) %>%
   cols_align(align = "right", columns = c(Cases_Prevented, Cost_per_Case_Prevented)) %>%
   tab_footnote(
-    footnote = "Based on Full Package annual cost of R237,000 and baseline ~2,000 severe cases/year",
+    footnote = "Based on Full Package annual cost of R237,000 and baseline ~1,779 severe cases/year (NHLS LIS 2023)",
     locations = cells_column_labels(columns = Cost_per_Case_Prevented)
   )
 ```

@@ -55,7 +55,7 @@ flowchart LR
 
     subgraph N[NHLS Laboratory]
         direction TB
-        C1[BChE Assay<br/>~2,000 severe/year<br/><i>Live patients</i>]
+        C1[BChE Assay<br/>1,779 severe/year<br/>10,626 tests 2023<br/><i>Live patients</i>]
         C2[Chemical Toxicology<br/><i>Post-mortem only —<br/>not yet done on<br/>live patients</i>]
     end
 
@@ -72,7 +72,7 @@ flowchart LR
     style D fill:#bfb,stroke:#333
 ```
 
-**What this means in plain numbers.** NMC sees ~1,013 notifications/year (2023). NHLS sees ~2,000 severe BChE results/year on live patients but does not auto-notify. PIH receives ~1,158 clinician-initiated calls/year that are never aggregated to a surveillance dataset. Against an implied true annual burden of ~20,960 cases (StatsSA-anchored, mid-CFR), NMC alone captures **< 5 %**.
+**What this means in plain numbers.** NMC sees ~1,013 notifications/year (2023). NHLS performs ~10,626 BChE tests/year on live patients, of which 1,779 are severe inhibitions — none auto-notifies NMC. PIH receives ~1,158 clinician-initiated calls/year that are never aggregated to a surveillance dataset. Against an implied true annual burden of ~20,960 cases (StatsSA-anchored, mid-CFR), NMC alone captures **< 5 %**.
 
 ### Detection vs. true burden — a critical distinction
 
@@ -118,7 +118,7 @@ The NHLS–NICD MOU for routine BChE data sharing already exists on paper. What 
 
 ### Option S3a — BChE auto-notification *(★ recommended — capability exists)*
 
-Configure the NHLS LIS to fire an automatic NICD notification when a BChE result shows severe inhibition (< 50 % of normal), within 24 hours of validation. **No new test, no new reagent contract** — only an IT configuration on top of the ~9,000 BChE tests/year already performed. Detection rises to ~6.7 / 10 for **R55k/year** in 2–4 weeks. This is the highest-value, fastest option on the menu.
+Configure the NHLS LIS to fire an automatic NICD notification when a BChE result shows severe inhibition (< 50 % of normal), within 24 hours of validation. **No new test, no new reagent contract** — only an IT configuration on top of the ~10,626 BChE tests/year already performed (1,779 severe in 2023). Detection rises to ~6.7 / 10 for **R55k/year** in 2–4 weeks. This is the highest-value, fastest option on the menu.
 
 ### Option S3b — Live-patient chemical toxicology + auto-notification *(★ recommended, medium term)*
 

@@ -1,15 +1,16 @@
 Name,Expression,Notes
 # === BURDEN PARAMETERS (mutually-exclusive sum across NMC + NHLS + PIH) ===,,
 n_nmc_annual,1013,"Annual NMC pesticide notifications, 2023 | dist=fixed(,) | NICD NMC Annual Report 2023"
-n_nhls_severe_annual,2000,"Annual NHLS severe BChE inhibitions (<50% normal) | dist=fixed(,) | NHLS LIS data 2020-2024"
+n_nhls_severe_annual,1779,"Annual NHLS severe BChE inhibitions (<50% normal), 2023 | dist=fixed(,) | NHLS LIS 2023"
+n_nhls_total_annual,10626,"Annual NHLS BChE tests performed (all severities), 2023 — denominator for S3a auto-notify | dist=fixed(,) | NHLS LIS 2023"
 n_pih_annual,1158,"Annual PIH clinician-initiated pesticide calls, 2023 (clinical contacts only; total helpline volume is higher) | dist=fixed(,) | PIH 2023 annual data"
-n_burden_true,4171,"Observed annual cases = NMC + NHLS + PIH-clinician (2023 volumes, mutually exclusive assumption) = 1013+2000+1158 | dist=fixed(,) | Sum of three streams 2023"
+n_burden_true,3950,"Observed annual cases = NMC + NHLS-severe + PIH-clinician (2023 volumes, mutually exclusive assumption) = 1013+1779+1158 | dist=fixed(,) | Sum of three streams 2023"
 p_burden_overlap_correction,0.30,"Plausible overstatement from undeduplicated overlap (sensitivity) | dist=beta(30,70) | Conservative cap"
 # === CASE FATALITY RATE — STRATIFIED BY SEVERITY ===,,
 cfr_pih_mild,0.005,"PIH-call-only cases (mostly mild/moderate, often no admission) | dist=beta(5,995) | Estimated; PIH manages many at home"
 cfr_nhls_severe,0.30,"Severe BChE inhibition hospitalised cases | dist=beta(30,70) | Buckley 2021 Sri Lanka cohort"
 cfr_nmc_hospitalised,0.15,"NMC-notified (clinically significant, hospitalised) | dist=beta(15,85) | Free State 2018-19 + NMC observed"
-cfr_blended_observed,0.18,"Implied blended CFR from stratified weights = (1158*0.005 + 2000*0.30 + 1013*0.15)/4171 | dist=fixed(,) | Derived"
+cfr_blended_observed,0.175,"Implied blended CFR from stratified weights = (1158*0.005 + 1779*0.30 + 1013*0.15)/3950 | dist=fixed(,) | Derived"
 cfr_headline_lo,0.10,"Headline lower bound for sensitivity (NMC observed range) | dist=fixed(,) | Decision model base"
 cfr_headline_mid,0.125,"Headline midpoint | dist=fixed(,) | Decision model base"
 cfr_headline_hi,0.15,"Headline upper bound | dist=fixed(,) | Decision model base"
@@ -36,7 +37,7 @@ p_ventilation_among_icu,0.60,"Proportion of ICU pesticide cases requiring mechan
 c_morbidity_mild_PIH,500,"Per-case morbidity cost for PIH-only stratum | dist=fixed(,) | = c_pih_call_only"
 c_morbidity_moderate_NHLS,15000,"Per-case morbidity cost for NHLS ward-admitted (3 days * R1,800 + investigations + R7k OOP/lost wages) | dist=gamma(25,600) | UPFS + Stats SA"
 c_morbidity_severe_NMC,80000,"Per-case morbidity cost for NMC-notified severe (mix of ward + ICU + interventions) | dist=gamma(25,3200) | Weighted: 70%*R20k_ward + 30%*R220k_ICU"
-c_morbidity_blended,26759,"Case-mix-weighted blended morbidity cost = (1158*500 + 2000*15000 + 1013*80000)/4171 | dist=fixed(,) | Derived"
+c_morbidity_blended,27419,"Case-mix-weighted blended morbidity cost = (1158*500 + 1779*15000 + 1013*80000)/3950 | dist=fixed(,) | Derived"
 c_morbidity_headline,12000,"Headline blended morbidity used in burden model (round number; sensitivity R6k-R25k) | dist=gamma(25,480) | Decision model"
 # === MORTALITY COST (HUMAN-CAPITAL APPROACH) ===,,
 yll_per_death,30,"Years of life lost per pesticide death (median age 30, e64 SA life table) | dist=gamma(30,1) | StatsSA + VR analysis"
