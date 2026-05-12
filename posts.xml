@@ -22864,23 +22864,23 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
 <p>All numerical claims in this brief draw from a single CSV — <a href="../amua_import_parameters_v3.csv"><code>amua_import_parameters_v3.csv</code></a> — rendered in full at the <a href="../parameters_hub.html">Parameters Hub</a>. The headline values below are pulled from that file at render time; <strong>do not edit the numbers in this brief — edit the CSV and re-render</strong>.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="wptlvbzzbb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#wptlvbzzbb table {
+<div id="ofqfpateam" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ofqfpateam table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#wptlvbzzbb thead, #wptlvbzzbb tbody, #wptlvbzzbb tfoot, #wptlvbzzbb tr, #wptlvbzzbb td, #wptlvbzzbb th {
+#ofqfpateam thead, #ofqfpateam tbody, #ofqfpateam tfoot, #ofqfpateam tr, #ofqfpateam td, #ofqfpateam th {
   border-style: none;
 }
 
-#wptlvbzzbb p {
+#ofqfpateam p {
   margin: 0;
   padding: 0;
 }
 
-#wptlvbzzbb .gt_table {
+#ofqfpateam .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -22906,12 +22906,12 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-left-color: #D3D3D3;
 }
 
-#wptlvbzzbb .gt_caption {
+#ofqfpateam .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#wptlvbzzbb .gt_title {
+#ofqfpateam .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -22923,7 +22923,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-bottom-width: 0;
 }
 
-#wptlvbzzbb .gt_subtitle {
+#ofqfpateam .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -22935,7 +22935,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-top-width: 0;
 }
 
-#wptlvbzzbb .gt_heading {
+#ofqfpateam .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -22947,13 +22947,13 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-right-color: #D3D3D3;
 }
 
-#wptlvbzzbb .gt_bottom_border {
+#ofqfpateam .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#wptlvbzzbb .gt_col_headings {
+#ofqfpateam .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -22968,7 +22968,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-right-color: #D3D3D3;
 }
 
-#wptlvbzzbb .gt_col_heading {
+#ofqfpateam .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -22988,7 +22988,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   overflow-x: hidden;
 }
 
-#wptlvbzzbb .gt_column_spanner_outer {
+#ofqfpateam .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -23000,15 +23000,15 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 4px;
 }
 
-#wptlvbzzbb .gt_column_spanner_outer:first-child {
+#ofqfpateam .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#wptlvbzzbb .gt_column_spanner_outer:last-child {
+#ofqfpateam .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#wptlvbzzbb .gt_column_spanner {
+#ofqfpateam .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -23020,11 +23020,11 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   width: 100%;
 }
 
-#wptlvbzzbb .gt_spanner_row {
+#ofqfpateam .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#wptlvbzzbb .gt_group_heading {
+#ofqfpateam .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -23050,7 +23050,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   text-align: left;
 }
 
-#wptlvbzzbb .gt_empty_group_heading {
+#ofqfpateam .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -23065,15 +23065,15 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   vertical-align: middle;
 }
 
-#wptlvbzzbb .gt_from_md > :first-child {
+#ofqfpateam .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#wptlvbzzbb .gt_from_md > :last-child {
+#ofqfpateam .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#wptlvbzzbb .gt_row {
+#ofqfpateam .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -23092,7 +23092,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   overflow-x: hidden;
 }
 
-#wptlvbzzbb .gt_stub {
+#ofqfpateam .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -23105,7 +23105,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#wptlvbzzbb .gt_stub_row_group {
+#ofqfpateam .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -23119,15 +23119,15 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   vertical-align: top;
 }
 
-#wptlvbzzbb .gt_row_group_first td {
+#ofqfpateam .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#wptlvbzzbb .gt_row_group_first th {
+#ofqfpateam .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#wptlvbzzbb .gt_summary_row {
+#ofqfpateam .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -23137,16 +23137,16 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#wptlvbzzbb .gt_first_summary_row {
+#ofqfpateam .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#wptlvbzzbb .gt_first_summary_row.thick {
+#ofqfpateam .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#wptlvbzzbb .gt_last_summary_row {
+#ofqfpateam .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -23156,7 +23156,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-bottom-color: #D3D3D3;
 }
 
-#wptlvbzzbb .gt_grand_summary_row {
+#ofqfpateam .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -23166,7 +23166,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#wptlvbzzbb .gt_first_grand_summary_row {
+#ofqfpateam .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -23176,7 +23176,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-top-color: #D3D3D3;
 }
 
-#wptlvbzzbb .gt_last_grand_summary_row_top {
+#ofqfpateam .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -23186,11 +23186,11 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-bottom-color: #D3D3D3;
 }
 
-#wptlvbzzbb .gt_striped {
+#ofqfpateam .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#wptlvbzzbb .gt_table_body {
+#ofqfpateam .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -23199,7 +23199,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-bottom-color: #D3D3D3;
 }
 
-#wptlvbzzbb .gt_footnotes {
+#ofqfpateam .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -23213,7 +23213,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-right-color: #D3D3D3;
 }
 
-#wptlvbzzbb .gt_footnote {
+#ofqfpateam .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -23222,7 +23222,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#wptlvbzzbb .gt_sourcenotes {
+#ofqfpateam .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -23236,7 +23236,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-right-color: #D3D3D3;
 }
 
-#wptlvbzzbb .gt_sourcenote {
+#ofqfpateam .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -23244,72 +23244,72 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#wptlvbzzbb .gt_left {
+#ofqfpateam .gt_left {
   text-align: left;
 }
 
-#wptlvbzzbb .gt_center {
+#ofqfpateam .gt_center {
   text-align: center;
 }
 
-#wptlvbzzbb .gt_right {
+#ofqfpateam .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#wptlvbzzbb .gt_font_normal {
+#ofqfpateam .gt_font_normal {
   font-weight: normal;
 }
 
-#wptlvbzzbb .gt_font_bold {
+#ofqfpateam .gt_font_bold {
   font-weight: bold;
 }
 
-#wptlvbzzbb .gt_font_italic {
+#ofqfpateam .gt_font_italic {
   font-style: italic;
 }
 
-#wptlvbzzbb .gt_super {
+#ofqfpateam .gt_super {
   font-size: 65%;
 }
 
-#wptlvbzzbb .gt_footnote_marks {
+#ofqfpateam .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#wptlvbzzbb .gt_asterisk {
+#ofqfpateam .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#wptlvbzzbb .gt_indent_1 {
+#ofqfpateam .gt_indent_1 {
   text-indent: 5px;
 }
 
-#wptlvbzzbb .gt_indent_2 {
+#ofqfpateam .gt_indent_2 {
   text-indent: 10px;
 }
 
-#wptlvbzzbb .gt_indent_3 {
+#ofqfpateam .gt_indent_3 {
   text-indent: 15px;
 }
 
-#wptlvbzzbb .gt_indent_4 {
+#ofqfpateam .gt_indent_4 {
   text-indent: 20px;
 }
 
-#wptlvbzzbb .gt_indent_5 {
+#ofqfpateam .gt_indent_5 {
   text-indent: 25px;
 }
 
-#wptlvbzzbb .katex-display {
+#ofqfpateam .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#wptlvbzzbb div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ofqfpateam div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -23390,23 +23390,23 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
 <h3 class="anchored" data-anchor-id="who-bears-the-r2.34b-annual-burden">Who bears the R2.34B annual burden?</h3>
 <div class="cell">
 <div class="cell-output-display">
-<div id="jjekawqtlt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#jjekawqtlt table {
+<div id="uvnmvpciov" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#uvnmvpciov table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#jjekawqtlt thead, #jjekawqtlt tbody, #jjekawqtlt tfoot, #jjekawqtlt tr, #jjekawqtlt td, #jjekawqtlt th {
+#uvnmvpciov thead, #uvnmvpciov tbody, #uvnmvpciov tfoot, #uvnmvpciov tr, #uvnmvpciov td, #uvnmvpciov th {
   border-style: none;
 }
 
-#jjekawqtlt p {
+#uvnmvpciov p {
   margin: 0;
   padding: 0;
 }
 
-#jjekawqtlt .gt_table {
+#uvnmvpciov .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -23432,12 +23432,12 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-left-color: #D3D3D3;
 }
 
-#jjekawqtlt .gt_caption {
+#uvnmvpciov .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#jjekawqtlt .gt_title {
+#uvnmvpciov .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -23449,7 +23449,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-bottom-width: 0;
 }
 
-#jjekawqtlt .gt_subtitle {
+#uvnmvpciov .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -23461,7 +23461,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-top-width: 0;
 }
 
-#jjekawqtlt .gt_heading {
+#uvnmvpciov .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -23473,13 +23473,13 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-right-color: #D3D3D3;
 }
 
-#jjekawqtlt .gt_bottom_border {
+#uvnmvpciov .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#jjekawqtlt .gt_col_headings {
+#uvnmvpciov .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -23494,7 +23494,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-right-color: #D3D3D3;
 }
 
-#jjekawqtlt .gt_col_heading {
+#uvnmvpciov .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -23514,7 +23514,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   overflow-x: hidden;
 }
 
-#jjekawqtlt .gt_column_spanner_outer {
+#uvnmvpciov .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -23526,15 +23526,15 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 4px;
 }
 
-#jjekawqtlt .gt_column_spanner_outer:first-child {
+#uvnmvpciov .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#jjekawqtlt .gt_column_spanner_outer:last-child {
+#uvnmvpciov .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#jjekawqtlt .gt_column_spanner {
+#uvnmvpciov .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -23546,11 +23546,11 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   width: 100%;
 }
 
-#jjekawqtlt .gt_spanner_row {
+#uvnmvpciov .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#jjekawqtlt .gt_group_heading {
+#uvnmvpciov .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -23576,7 +23576,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   text-align: left;
 }
 
-#jjekawqtlt .gt_empty_group_heading {
+#uvnmvpciov .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -23591,15 +23591,15 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   vertical-align: middle;
 }
 
-#jjekawqtlt .gt_from_md > :first-child {
+#uvnmvpciov .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#jjekawqtlt .gt_from_md > :last-child {
+#uvnmvpciov .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#jjekawqtlt .gt_row {
+#uvnmvpciov .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -23618,7 +23618,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   overflow-x: hidden;
 }
 
-#jjekawqtlt .gt_stub {
+#uvnmvpciov .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -23631,7 +23631,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#jjekawqtlt .gt_stub_row_group {
+#uvnmvpciov .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -23645,15 +23645,15 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   vertical-align: top;
 }
 
-#jjekawqtlt .gt_row_group_first td {
+#uvnmvpciov .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#jjekawqtlt .gt_row_group_first th {
+#uvnmvpciov .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#jjekawqtlt .gt_summary_row {
+#uvnmvpciov .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -23663,16 +23663,16 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#jjekawqtlt .gt_first_summary_row {
+#uvnmvpciov .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#jjekawqtlt .gt_first_summary_row.thick {
+#uvnmvpciov .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#jjekawqtlt .gt_last_summary_row {
+#uvnmvpciov .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -23682,7 +23682,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-bottom-color: #D3D3D3;
 }
 
-#jjekawqtlt .gt_grand_summary_row {
+#uvnmvpciov .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -23692,7 +23692,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#jjekawqtlt .gt_first_grand_summary_row {
+#uvnmvpciov .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -23702,7 +23702,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-top-color: #D3D3D3;
 }
 
-#jjekawqtlt .gt_last_grand_summary_row_top {
+#uvnmvpciov .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -23712,11 +23712,11 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-bottom-color: #D3D3D3;
 }
 
-#jjekawqtlt .gt_striped {
+#uvnmvpciov .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#jjekawqtlt .gt_table_body {
+#uvnmvpciov .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -23725,7 +23725,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-bottom-color: #D3D3D3;
 }
 
-#jjekawqtlt .gt_footnotes {
+#uvnmvpciov .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -23739,7 +23739,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-right-color: #D3D3D3;
 }
 
-#jjekawqtlt .gt_footnote {
+#uvnmvpciov .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -23748,7 +23748,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#jjekawqtlt .gt_sourcenotes {
+#uvnmvpciov .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -23762,7 +23762,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-right-color: #D3D3D3;
 }
 
-#jjekawqtlt .gt_sourcenote {
+#uvnmvpciov .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -23770,72 +23770,72 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#jjekawqtlt .gt_left {
+#uvnmvpciov .gt_left {
   text-align: left;
 }
 
-#jjekawqtlt .gt_center {
+#uvnmvpciov .gt_center {
   text-align: center;
 }
 
-#jjekawqtlt .gt_right {
+#uvnmvpciov .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#jjekawqtlt .gt_font_normal {
+#uvnmvpciov .gt_font_normal {
   font-weight: normal;
 }
 
-#jjekawqtlt .gt_font_bold {
+#uvnmvpciov .gt_font_bold {
   font-weight: bold;
 }
 
-#jjekawqtlt .gt_font_italic {
+#uvnmvpciov .gt_font_italic {
   font-style: italic;
 }
 
-#jjekawqtlt .gt_super {
+#uvnmvpciov .gt_super {
   font-size: 65%;
 }
 
-#jjekawqtlt .gt_footnote_marks {
+#uvnmvpciov .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#jjekawqtlt .gt_asterisk {
+#uvnmvpciov .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#jjekawqtlt .gt_indent_1 {
+#uvnmvpciov .gt_indent_1 {
   text-indent: 5px;
 }
 
-#jjekawqtlt .gt_indent_2 {
+#uvnmvpciov .gt_indent_2 {
   text-indent: 10px;
 }
 
-#jjekawqtlt .gt_indent_3 {
+#uvnmvpciov .gt_indent_3 {
   text-indent: 15px;
 }
 
-#jjekawqtlt .gt_indent_4 {
+#uvnmvpciov .gt_indent_4 {
   text-indent: 20px;
 }
 
-#jjekawqtlt .gt_indent_5 {
+#uvnmvpciov .gt_indent_5 {
   text-indent: 25px;
 }
 
-#jjekawqtlt .katex-display {
+#uvnmvpciov .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#jjekawqtlt div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#uvnmvpciov div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -23898,23 +23898,23 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
 <h3 class="anchored" data-anchor-id="canonical-option-costs-detect-act-restrict">Canonical option costs (Detect · Act · Restrict)</h3>
 <div class="cell">
 <div class="cell-output-display">
-<div id="tukudrnecg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#tukudrnecg table {
+<div id="ghshbisziu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ghshbisziu table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#tukudrnecg thead, #tukudrnecg tbody, #tukudrnecg tfoot, #tukudrnecg tr, #tukudrnecg td, #tukudrnecg th {
+#ghshbisziu thead, #ghshbisziu tbody, #ghshbisziu tfoot, #ghshbisziu tr, #ghshbisziu td, #ghshbisziu th {
   border-style: none;
 }
 
-#tukudrnecg p {
+#ghshbisziu p {
   margin: 0;
   padding: 0;
 }
 
-#tukudrnecg .gt_table {
+#ghshbisziu .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -23940,12 +23940,12 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-left-color: #D3D3D3;
 }
 
-#tukudrnecg .gt_caption {
+#ghshbisziu .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#tukudrnecg .gt_title {
+#ghshbisziu .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -23957,7 +23957,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-bottom-width: 0;
 }
 
-#tukudrnecg .gt_subtitle {
+#ghshbisziu .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -23969,7 +23969,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-top-width: 0;
 }
 
-#tukudrnecg .gt_heading {
+#ghshbisziu .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -23981,13 +23981,13 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-right-color: #D3D3D3;
 }
 
-#tukudrnecg .gt_bottom_border {
+#ghshbisziu .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#tukudrnecg .gt_col_headings {
+#ghshbisziu .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -24002,7 +24002,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-right-color: #D3D3D3;
 }
 
-#tukudrnecg .gt_col_heading {
+#ghshbisziu .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -24022,7 +24022,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   overflow-x: hidden;
 }
 
-#tukudrnecg .gt_column_spanner_outer {
+#ghshbisziu .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -24034,15 +24034,15 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 4px;
 }
 
-#tukudrnecg .gt_column_spanner_outer:first-child {
+#ghshbisziu .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#tukudrnecg .gt_column_spanner_outer:last-child {
+#ghshbisziu .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#tukudrnecg .gt_column_spanner {
+#ghshbisziu .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -24054,11 +24054,11 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   width: 100%;
 }
 
-#tukudrnecg .gt_spanner_row {
+#ghshbisziu .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#tukudrnecg .gt_group_heading {
+#ghshbisziu .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -24084,7 +24084,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   text-align: left;
 }
 
-#tukudrnecg .gt_empty_group_heading {
+#ghshbisziu .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -24099,15 +24099,15 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   vertical-align: middle;
 }
 
-#tukudrnecg .gt_from_md > :first-child {
+#ghshbisziu .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#tukudrnecg .gt_from_md > :last-child {
+#ghshbisziu .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#tukudrnecg .gt_row {
+#ghshbisziu .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -24126,7 +24126,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   overflow-x: hidden;
 }
 
-#tukudrnecg .gt_stub {
+#ghshbisziu .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -24139,7 +24139,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#tukudrnecg .gt_stub_row_group {
+#ghshbisziu .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -24153,15 +24153,15 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   vertical-align: top;
 }
 
-#tukudrnecg .gt_row_group_first td {
+#ghshbisziu .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#tukudrnecg .gt_row_group_first th {
+#ghshbisziu .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#tukudrnecg .gt_summary_row {
+#ghshbisziu .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -24171,16 +24171,16 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#tukudrnecg .gt_first_summary_row {
+#ghshbisziu .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#tukudrnecg .gt_first_summary_row.thick {
+#ghshbisziu .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#tukudrnecg .gt_last_summary_row {
+#ghshbisziu .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -24190,7 +24190,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-bottom-color: #D3D3D3;
 }
 
-#tukudrnecg .gt_grand_summary_row {
+#ghshbisziu .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -24200,7 +24200,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#tukudrnecg .gt_first_grand_summary_row {
+#ghshbisziu .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -24210,7 +24210,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-top-color: #D3D3D3;
 }
 
-#tukudrnecg .gt_last_grand_summary_row_top {
+#ghshbisziu .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -24220,11 +24220,11 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-bottom-color: #D3D3D3;
 }
 
-#tukudrnecg .gt_striped {
+#ghshbisziu .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#tukudrnecg .gt_table_body {
+#ghshbisziu .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -24233,7 +24233,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-bottom-color: #D3D3D3;
 }
 
-#tukudrnecg .gt_footnotes {
+#ghshbisziu .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -24247,7 +24247,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-right-color: #D3D3D3;
 }
 
-#tukudrnecg .gt_footnote {
+#ghshbisziu .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -24256,7 +24256,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#tukudrnecg .gt_sourcenotes {
+#ghshbisziu .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -24270,7 +24270,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-right-color: #D3D3D3;
 }
 
-#tukudrnecg .gt_sourcenote {
+#ghshbisziu .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -24278,72 +24278,72 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#tukudrnecg .gt_left {
+#ghshbisziu .gt_left {
   text-align: left;
 }
 
-#tukudrnecg .gt_center {
+#ghshbisziu .gt_center {
   text-align: center;
 }
 
-#tukudrnecg .gt_right {
+#ghshbisziu .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#tukudrnecg .gt_font_normal {
+#ghshbisziu .gt_font_normal {
   font-weight: normal;
 }
 
-#tukudrnecg .gt_font_bold {
+#ghshbisziu .gt_font_bold {
   font-weight: bold;
 }
 
-#tukudrnecg .gt_font_italic {
+#ghshbisziu .gt_font_italic {
   font-style: italic;
 }
 
-#tukudrnecg .gt_super {
+#ghshbisziu .gt_super {
   font-size: 65%;
 }
 
-#tukudrnecg .gt_footnote_marks {
+#ghshbisziu .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#tukudrnecg .gt_asterisk {
+#ghshbisziu .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#tukudrnecg .gt_indent_1 {
+#ghshbisziu .gt_indent_1 {
   text-indent: 5px;
 }
 
-#tukudrnecg .gt_indent_2 {
+#ghshbisziu .gt_indent_2 {
   text-indent: 10px;
 }
 
-#tukudrnecg .gt_indent_3 {
+#ghshbisziu .gt_indent_3 {
   text-indent: 15px;
 }
 
-#tukudrnecg .gt_indent_4 {
+#ghshbisziu .gt_indent_4 {
   text-indent: 20px;
 }
 
-#tukudrnecg .gt_indent_5 {
+#ghshbisziu .gt_indent_5 {
   text-indent: 25px;
 }
 
-#tukudrnecg .katex-display {
+#ghshbisziu .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#tukudrnecg div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ghshbisziu div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -24585,13 +24585,13 @@ Figure&nbsp;1: Current surveillance architecture. NICD/NMC is the source of trut
     A --&gt; D[Delayed manual reporting]
     A --&gt; F[No live-patient&lt;br/&gt;chemical toxicology]
 
-    B --&gt; G[Option S1: Activate&lt;br/&gt;NHLS→NMC IT feed]
-    C --&gt; H[Option S4: PIH minimum&lt;br/&gt;viable dataset + dashboard]
-    D --&gt; I[Option S3a: BChE&lt;br/&gt;auto-notify &lt;i&gt;capability exists&lt;/i&gt;]
-    F --&gt; J[Option S3b: Live-patient&lt;br/&gt;chemical toxicology + auto-notify]
+    B --&gt; G["✓ NHLS→NMC IT feed&lt;br/&gt;&lt;i&gt;Completed&lt;/i&gt;"]
+    C --&gt; H[Option S1: PIH MVD&lt;br/&gt;+ dashboard]
+    D --&gt; I[Option S2: BChE&lt;br/&gt;auto-notify &lt;i&gt;capability exists&lt;/i&gt;]
+    F --&gt; J[Option S3: Sentinel&lt;br/&gt;toxicology + auto-notify]
 
     style A fill:#f99,stroke:#333
-    style G fill:#9f9,stroke:#333
+    style G fill:#e0e0e0,stroke:#999,stroke-dasharray: 5 5
     style H fill:#9f9,stroke:#333
     style I fill:#9f9,stroke:#333
     style J fill:#9f9,stroke:#333
@@ -24605,35 +24605,44 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
 </div>
 </div>
 </div>
-<p>The four root causes are all <strong>executional, not legislative</strong>. Each one is already legally permissible under Section 90 of the National Health Act (2003) and the existing NMC regulations.</p>
+<p>Three active root causes remain <strong>executional, not legislative</strong>, and are each already legally permissible under Section 90 of the National Health Act (2003) and the existing NMC regulations. The fourth root cause (NHLS–NMC IT connectivity) has been resolved — the LIS-to-NMC feed is now operational.</p>
 </section>
 <section id="policy-options" class="level2">
 <h2 class="anchored" data-anchor-id="policy-options">5. Policy options</h2>
-<section id="option-s1-activate-the-nhlsnmc-it-feed-mou-exists" class="level3">
-<h3 class="anchored" data-anchor-id="option-s1-activate-the-nhlsnmc-it-feed-mou-exists">Option S1 — Activate the NHLS→NMC IT feed <em>(MOU exists)</em></h3>
-<p>The NHLS–NICD MOU for routine BChE data sharing already exists on paper. What is missing is the <strong>IT implementation</strong> — a working LIS-to-NMC connector (HL7 / structured flat-file export), QA governance, and a monthly reconciliation. Detection rises from ~4.5 to ~5.2 hotspots / 10 (annual cost ~R40k ongoing + ~R80k one-off, 8–12 weeks).</p>
-</section>
-<section id="option-s3a-bche-auto-notification-recommended-capability-exists" class="level3">
-<h3 class="anchored" data-anchor-id="option-s3a-bche-auto-notification-recommended-capability-exists">Option S3a — BChE auto-notification <em>(★ recommended — capability exists)</em></h3>
-<p>Configure the NHLS LIS to fire an automatic NICD notification when a BChE result shows severe inhibition (&lt; 50 % of normal), within 24 hours of validation. <strong>No new test, no new reagent contract</strong> — only an IT configuration on top of the ~10,626 BChE tests/year already performed (1,779 severe in 2023). Detection rises to ~6.7 / 10 for <strong>R55k/year</strong> in 2–4 weeks. This is the highest-value, fastest option on the menu.</p>
-</section>
-<section id="option-s3b-live-patient-chemical-toxicology-auto-notification-recommended-medium-term" class="level3">
-<h3 class="anchored" data-anchor-id="option-s3b-live-patient-chemical-toxicology-auto-notification-recommended-medium-term">Option S3b — Live-patient chemical toxicology + auto-notification <em>(★ recommended, medium term)</em></h3>
-<p>NHLS currently performs chemical toxicology (qualitative/quantitative pesticide assays) <strong>post-mortem only</strong>. There is no live-patient toxicology capability. Option S3b funds:</p>
-<ul>
-<li>Phase 1: a sentinel tertiary site (e.g.&nbsp;CHB) to perform live-patient chemical toxicology.</li>
-<li>Phase 2–3: 4–5 site rollout with auto-notification wired in.</li>
-</ul>
-<p>The clinical-surveillance value is <strong>agent attribution</strong>: S3a tells us a poisoning happened; S3b tells us <em>which product</em>. Without S3b, ~10,000 survivors/year are recorded with agent “unknown / suspected”, which makes targeted regulation (see <a href="../posts/terbufos_policy.html">Terbufos brief</a>) impossible. Cost: ~R1.2M pilot site → ~R3.6M for 5-site rollout, 6–12 months. Funded from research-surveillance streams (SAMRC, Bloomberg, Gates), not the surveillance operating budget.</p>
-</section>
-<section id="option-s4-pih-live-dashboard-minimum-viable-dataset-recommended" class="level3">
-<h3 class="anchored" data-anchor-id="option-s4-pih-live-dashboard-minimum-viable-dataset-recommended">Option S4 — PIH live dashboard + Minimum Viable Dataset <em>(★ recommended)</em></h3>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>✓ NHLS–NMC IT feed — now operational
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The NHLS–NICD LIS-to-NMC connector is operational; monthly BChE data flows to NICD under the existing MOU. This root-cause is addressed. The three active options below build on that foundation.</p>
+</div>
+</div>
+<section id="option-s1-pih-live-dashboard-minimum-viable-dataset-recommended" class="level3">
+<h3 class="anchored" data-anchor-id="option-s1-pih-live-dashboard-minimum-viable-dataset-recommended">Option S1 — PIH live dashboard + Minimum Viable Dataset <em>(★ recommended)</em></h3>
 <p>Two layers:</p>
 <ul>
 <li><strong>Short term (1–2 weeks):</strong> PIH publishes a live dashboard of pesticide-related calls (counts, geography, agent, severity, demographics). No new data; just a daily extract from existing call records.</li>
 <li><strong>Medium term (3–9 months):</strong> PIH and NICD agree a <strong>Minimum Viable Dataset (MVD)</strong> so the ~1,158 clinician-initiated calls/year can be ingested into NMC as a structured surveillance stream.</li>
 </ul>
 <p>Detection rises to ~6.1 / 10 for <strong>R62k/year</strong>. The dashboard is the lowest-hanging fruit in the whole portfolio: it ships in days.</p>
+</section>
+<section id="option-s2-bche-auto-notification-recommended-capability-exists" class="level3">
+<h3 class="anchored" data-anchor-id="option-s2-bche-auto-notification-recommended-capability-exists">Option S2 — BChE auto-notification <em>(★ recommended — capability exists)</em></h3>
+<p>Configure the NHLS LIS to fire an automatic NICD notification when a BChE result shows severe inhibition (&lt; 50 % of normal), within 24 hours of validation. <strong>No new test, no new reagent contract</strong> — only an IT configuration on top of the ~10,626 BChE tests/year already performed (1,779 severe in 2023). Detection rises to ~6.7 / 10 for <strong>R55k/year</strong> in 2–4 weeks. This is the highest-value, fastest option on the menu.</p>
+</section>
+<section id="option-s3-sentinel-live-patient-toxicology-auto-notification-recommended-medium-term" class="level3">
+<h3 class="anchored" data-anchor-id="option-s3-sentinel-live-patient-toxicology-auto-notification-recommended-medium-term">Option S3 — Sentinel live-patient toxicology + auto-notification <em>(★ recommended, medium term)</em></h3>
+<p>NHLS currently performs chemical toxicology (qualitative/quantitative pesticide assays) <strong>post-mortem only</strong>. There is no live-patient toxicology capability. Option S3 funds:</p>
+<ul>
+<li>Phase 1: a sentinel tertiary site (e.g.&nbsp;CHB) to perform live-patient chemical toxicology.</li>
+<li>Phase 2–3: 4–5 site rollout with auto-notification wired in.</li>
+</ul>
+<p>The clinical-surveillance value is <strong>agent attribution</strong>: S2 tells us a poisoning happened; S3 tells us <em>which product</em>. Without S3, ~10,000 survivors/year are recorded with agent “unknown / suspected”, which makes targeted regulation (see <a href="../posts/terbufos_policy.html">Terbufos brief</a>) impossible. Cost: ~R1.2M pilot site → ~R3.6M for 5-site rollout, 6–12 months. Funded from research-surveillance streams (SAMRC, Bloomberg, Gates), not the surveillance operating budget.</p>
 </section>
 <section id="summary-comparison" class="level3">
 <h3 class="anchored" data-anchor-id="summary-comparison">Summary comparison</h3>
@@ -24657,43 +24666,36 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
 <td style="text-align: left;">—</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">S1: NHLS→NMC IT feed</td>
-<td style="text-align: right;">R40k + R80k one-off</td>
-<td style="text-align: right;">5.2</td>
-<td style="text-align: right;">+16 %</td>
-<td style="text-align: left;">8–12 wks</td>
+<td style="text-align: left;">S1: PIH dashboard + MVD</td>
+<td style="text-align: right;">R62k</td>
+<td style="text-align: right;">6.1</td>
+<td style="text-align: right;">+36 %</td>
+<td style="text-align: left;">1–2 wks dash / 3–9 mo MVD</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">S3a: BChE auto-notify</td>
+<td style="text-align: left;">S2: BChE auto-notify</td>
 <td style="text-align: right;">R55k</td>
 <td style="text-align: right;">6.7</td>
 <td style="text-align: right;">+49 %</td>
 <td style="text-align: left;">2–4 wks</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">S3b: Live toxicology + auto-notify</td>
+<td style="text-align: left;">S3: Sentinel toxicology + auto-notify</td>
 <td style="text-align: right;">R1.2M pilot → R3.6M</td>
-<td style="text-align: right;">+10–15 pp on S3a</td>
+<td style="text-align: right;">+10–15 pp on S2</td>
 <td style="text-align: right;">additional</td>
 <td style="text-align: left;">6–12 mo pilot</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">S4: PIH dashboard + MVD</td>
-<td style="text-align: right;">R62k</td>
-<td style="text-align: right;">6.1</td>
-<td style="text-align: right;">+36 %</td>
-<td style="text-align: left;">1–2 wks dash / 3–9 mo MVD</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>S1 + S3a + S4 (Surveillance MVP)</strong></td>
-<td style="text-align: right;"><strong>~R157k</strong></td>
+<td style="text-align: left;"><strong>S1 + S2 (Surveillance MVP)</strong></td>
+<td style="text-align: right;"><strong>~R117k</strong></td>
 <td style="text-align: right;"><strong>~7.8</strong></td>
 <td style="text-align: right;"><strong>+73 %</strong></td>
 <td style="text-align: left;"><strong>12 weeks</strong></td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">Full S1 + S3a + S3b + S4</td>
-<td style="text-align: right;">~R1.4M</td>
+<tr class="even">
+<td style="text-align: left;">S1 + S2 + S3 (Full)</td>
+<td style="text-align: right;">~R1.3M</td>
 <td style="text-align: right;">~8.5</td>
 <td style="text-align: right;">+89 %</td>
 <td style="text-align: left;">6–12 months</td>
@@ -24715,7 +24717,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
 <section id="decision-tree-from-surveillance-investment-to-detection-uplift" class="level2">
 <h2 class="anchored" data-anchor-id="decision-tree-from-surveillance-investment-to-detection-uplift">6. Decision tree — from surveillance investment to detection uplift</h2>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -24724,7 +24726,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The status-quo detection probability is <strong>derived, not elicited</strong>. The chain of evidence is:</p>
 <table class="caption-top table">
@@ -24778,10 +24780,10 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
 <div>
 <pre class="mermaid mermaid-js">flowchart TD
     INV{Surveillance&lt;br/&gt;investment?} --&gt;|None| SQ[Status quo&lt;br/&gt;P_detect = 0.048&lt;br/&gt;&lt;i&gt;baseline measurement&lt;/i&gt;]:::bad
-    INV --&gt;|S4 only&lt;br/&gt;R42,000/yr| O4[+ PIH MVD&lt;br/&gt;P_detect = 0.61&lt;br/&gt;+56 pp vs SQ]:::warn
-    INV --&gt;|S3a only&lt;br/&gt;R55,000/yr| O3a[+ BChE auto-notify&lt;br/&gt;P_detect = 0.67&lt;br/&gt;+62 pp vs SQ]:::warn
-    INV --&gt;|S1 + S3a + S4&lt;br/&gt;R157,000/yr| MVP[Surveillance MVP&lt;br/&gt;P_detect = 0.78&lt;br/&gt;+73 pp vs SQ]:::good
-    INV --&gt;|+ S3b&lt;br/&gt;~R1.4M/yr| FULL[Full + toxicology&lt;br/&gt;P_detect = 0.85&lt;br/&gt;+80 pp vs SQ]:::good
+    INV --&gt;|S1 only&lt;br/&gt;R42,000/yr| O4[+ PIH MVD&lt;br/&gt;P_detect = 0.61&lt;br/&gt;+56 pp vs SQ]:::warn
+    INV --&gt;|S2 only&lt;br/&gt;R55,000/yr| O3a[+ BChE auto-notify&lt;br/&gt;P_detect = 0.67&lt;br/&gt;+62 pp vs SQ]:::warn
+    INV --&gt;|S1 + S2&lt;br/&gt;R157,000/yr| MVP[Surveillance MVP&lt;br/&gt;P_detect = 0.78&lt;br/&gt;+73 pp vs SQ]:::good
+    INV --&gt;|+ S3&lt;br/&gt;~R1.3M/yr| FULL[Full + toxicology&lt;br/&gt;P_detect = 0.85&lt;br/&gt;+80 pp vs SQ]:::good
 
     classDef bad fill:#fdd,stroke:#cc0000,stroke-width:1.5px
     classDef warn fill:#ffe9b3,stroke:#cc8800,stroke-width:1.5px
@@ -24814,30 +24816,24 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">S1 IT feed</td>
-<td style="text-align: left;">NHLS IT + NICD middleware</td>
-<td style="text-align: right;">R40k + R80k one-off</td>
-<td style="text-align: left;">LIS-to-NMC HL7 connector spec</td>
+<td style="text-align: left;">S1 PIH dashboard</td>
+<td style="text-align: left;">PIH (Tygerberg) + NICD</td>
+<td style="text-align: right;">R62k</td>
+<td style="text-align: left;">Daily extract + hosting; MVD workshop</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">S3a BChE auto-notify</td>
+<td style="text-align: left;">S2 BChE auto-notify</td>
 <td style="text-align: left;">NHLS LIS team</td>
 <td style="text-align: right;">R55k</td>
 <td style="text-align: left;">LIS rule configuration; QA review</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">S3b Live toxicology</td>
+<td style="text-align: left;">S3 Sentinel toxicology</td>
 <td style="text-align: left;">NHLS clinical chemistry + sentinel hospital</td>
 <td style="text-align: right;">R1.2M pilot</td>
 <td style="text-align: left;">Lab method validation; sample logistics</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">S4 PIH dashboard</td>
-<td style="text-align: left;">PIH (Tygerberg) + NICD</td>
-<td style="text-align: right;">R62k</td>
-<td style="text-align: left;">Daily extract + hosting; MVD workshop</td>
-</tr>
-<tr class="odd">
 <td style="text-align: left;">Hotspot detection (SaTScan)</td>
 <td style="text-align: left;">NICD epi analyst</td>
 <td style="text-align: right;">R40k</td>
@@ -24850,12 +24846,12 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
 </section>
 <section id="recommended-next-step" class="level2">
 <h2 class="anchored" data-anchor-id="recommended-next-step">8. Recommended next step</h2>
-<p><strong>Adopt the Surveillance MVP (S1 + S3a + S4) and pilot in 3 provinces (Gauteng, Western Cape, KZN) for 6 months.</strong> Approximate pilot budget: <strong>~R157,000 operating + ~R80,000 IT setup</strong>. Lead agency: NICD as national coordinator.</p>
+<p><strong>Adopt the Surveillance MVP (S1 + S2) and pilot in 3 provinces (Gauteng, Western Cape, KZN) for 6 months.</strong> Approximate pilot budget: <strong>~R117,000 operating</strong> (NHLS–NMC IT feed is now operational). Lead agency: NICD as national coordinator.</p>
 <ul>
-<li><strong>Weeks 1–2:</strong> S4 dashboard live; S3a LIS configuration begins.</li>
-<li><strong>Months 1–3:</strong> S1 IT connector built and tested; S4 MVD workshop with PIH.</li>
+<li><strong>Weeks 1–2:</strong> S1 PIH dashboard live; S2 BChE LIS configuration begins.</li>
+<li><strong>Months 1–3:</strong> S1 MVD workshop with PIH finalised; S2 BChE auto-notify QA review completed.</li>
 <li><strong>Month 6:</strong> Evaluate against (a) completeness of NHLS severe results in NMC and (b) cluster-detection latency.</li>
-<li><strong>Month 9:</strong> Add S3b sentinel toxicology site, funded from a separate research-surveillance stream.</li>
+<li><strong>Month 9:</strong> Add S3 sentinel toxicology site, funded from a separate research-surveillance stream.</li>
 </ul>
 <p>The coordination side of the same system — how NICD, EHPs, DALRRD, and provincial response teams act on the improved signal — is covered in the <a href="../posts/coordination_policy.html">Coordination brief</a>. The product-specific regulatory action that S3b makes possible is the subject of the <a href="../posts/terbufos_policy.html">Terbufos brief</a>.</p>
 <hr>
@@ -24897,7 +24893,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
 <div class="callout-body-container callout-body">
 <p><strong>Target audience:</strong> DALRRD Pesticide Registrar, Ministerial Advisory Committee (MAC), National Department of Health (NDoH), Department of Trade, Industry &amp; Competition (substitution support).</p>
 <p><strong>Companion briefs:</strong> <a href="../posts/surveillance_policy.html">Surveillance</a> · <a href="../posts/coordination_policy.html">Coordination</a>.</p>
-<p><strong>Status:</strong> <strong>DRAFT.</strong> One genuine SA evidence gap remains (the adult <strong>live-patient</strong> attributable fraction, resolved only by Surveillance Option S3b). The other quantitative inputs — market volume, yield impact, substitute hazard, substitute pricing, enforcement cost — are <strong>not epistemic gaps</strong>: they are either administrative numbers DALRRD can pull, or values defensibly anchored to the EU/US/Sri Lanka evidence base (see §2b and Interim assumptions).</p>
+<p><strong>Status:</strong> <strong>DRAFT.</strong> One genuine SA evidence gap remains (the adult <strong>live-patient</strong> attributable fraction, resolved only by Surveillance Option S3). The other quantitative inputs — market volume, yield impact, substitute hazard, substitute pricing, enforcement cost — are <strong>not epistemic gaps</strong>: they are either administrative numbers DALRRD can pull, or values defensibly anchored to the EU/US/Sri Lanka evidence base (see §2b and Interim assumptions).</p>
 </div>
 </div>
 <section id="policy-question" class="level2">
@@ -24911,7 +24907,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
 <p>The public-health case rests on three claims:</p>
 <ol type="1">
 <li><strong>High intrinsic toxicity</strong> at sub-gram doses — settled science (WHO Class Ia; rat oral LD50 1.6–4.5 mg/kg).<sup>6</sup><sup>7</sup></li>
-<li><strong>Disproportionate contribution to severe and fatal poisonings</strong> — supported in paediatric SA data (Davies 2023);<sup>8</sup> adult attributable fraction is not yet quantified pending live-patient chemical toxicology (Surveillance Option S3b).</li>
+<li><strong>Disproportionate contribution to severe and fatal poisonings</strong> — supported in paediatric SA data (Davies 2023);<sup>8</sup> adult attributable fraction is not yet quantified pending live-patient chemical toxicology (Surveillance Option S3).</li>
 <li><strong>High substitutability for its primary use cases</strong> (soil insect / stalk borer / nematode control in maize and other field crops) — registered substitutes exist (see §5), but <strong>SA-specific yield-impact modelling is not yet done</strong> (open item TBF-3).</li>
 </ol>
 <section id="international-natural-experiment-evidence" class="level3">
@@ -24942,23 +24938,23 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
 <p>All numerical claims in this brief draw from a single CSV — <a href="../amua_import_parameters_v3.csv"><code>amua_import_parameters_v3.csv</code></a> — rendered in full at the <a href="../parameters_hub.html">Parameters Hub</a>. The headline values below are pulled from that file at render time; <strong>do not edit the numbers in this brief — edit the CSV and re-render</strong>.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="pgzeeniqdo" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#pgzeeniqdo table {
+<div id="uzwwelonip" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#uzwwelonip table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#pgzeeniqdo thead, #pgzeeniqdo tbody, #pgzeeniqdo tfoot, #pgzeeniqdo tr, #pgzeeniqdo td, #pgzeeniqdo th {
+#uzwwelonip thead, #uzwwelonip tbody, #uzwwelonip tfoot, #uzwwelonip tr, #uzwwelonip td, #uzwwelonip th {
   border-style: none;
 }
 
-#pgzeeniqdo p {
+#uzwwelonip p {
   margin: 0;
   padding: 0;
 }
 
-#pgzeeniqdo .gt_table {
+#uzwwelonip .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -24984,12 +24980,12 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-left-color: #D3D3D3;
 }
 
-#pgzeeniqdo .gt_caption {
+#uzwwelonip .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#pgzeeniqdo .gt_title {
+#uzwwelonip .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -25001,7 +24997,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-bottom-width: 0;
 }
 
-#pgzeeniqdo .gt_subtitle {
+#uzwwelonip .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -25013,7 +25009,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-top-width: 0;
 }
 
-#pgzeeniqdo .gt_heading {
+#uzwwelonip .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -25025,13 +25021,13 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-right-color: #D3D3D3;
 }
 
-#pgzeeniqdo .gt_bottom_border {
+#uzwwelonip .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#pgzeeniqdo .gt_col_headings {
+#uzwwelonip .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -25046,7 +25042,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-right-color: #D3D3D3;
 }
 
-#pgzeeniqdo .gt_col_heading {
+#uzwwelonip .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -25066,7 +25062,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   overflow-x: hidden;
 }
 
-#pgzeeniqdo .gt_column_spanner_outer {
+#uzwwelonip .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -25078,15 +25074,15 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   padding-right: 4px;
 }
 
-#pgzeeniqdo .gt_column_spanner_outer:first-child {
+#uzwwelonip .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#pgzeeniqdo .gt_column_spanner_outer:last-child {
+#uzwwelonip .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#pgzeeniqdo .gt_column_spanner {
+#uzwwelonip .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -25098,11 +25094,11 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   width: 100%;
 }
 
-#pgzeeniqdo .gt_spanner_row {
+#uzwwelonip .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#pgzeeniqdo .gt_group_heading {
+#uzwwelonip .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -25128,7 +25124,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   text-align: left;
 }
 
-#pgzeeniqdo .gt_empty_group_heading {
+#uzwwelonip .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -25143,15 +25139,15 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   vertical-align: middle;
 }
 
-#pgzeeniqdo .gt_from_md > :first-child {
+#uzwwelonip .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#pgzeeniqdo .gt_from_md > :last-child {
+#uzwwelonip .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#pgzeeniqdo .gt_row {
+#uzwwelonip .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -25170,7 +25166,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   overflow-x: hidden;
 }
 
-#pgzeeniqdo .gt_stub {
+#uzwwelonip .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -25183,7 +25179,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   padding-right: 5px;
 }
 
-#pgzeeniqdo .gt_stub_row_group {
+#uzwwelonip .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -25197,15 +25193,15 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   vertical-align: top;
 }
 
-#pgzeeniqdo .gt_row_group_first td {
+#uzwwelonip .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#pgzeeniqdo .gt_row_group_first th {
+#uzwwelonip .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#pgzeeniqdo .gt_summary_row {
+#uzwwelonip .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -25215,16 +25211,16 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   padding-right: 5px;
 }
 
-#pgzeeniqdo .gt_first_summary_row {
+#uzwwelonip .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#pgzeeniqdo .gt_first_summary_row.thick {
+#uzwwelonip .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#pgzeeniqdo .gt_last_summary_row {
+#uzwwelonip .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -25234,7 +25230,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-bottom-color: #D3D3D3;
 }
 
-#pgzeeniqdo .gt_grand_summary_row {
+#uzwwelonip .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -25244,7 +25240,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   padding-right: 5px;
 }
 
-#pgzeeniqdo .gt_first_grand_summary_row {
+#uzwwelonip .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -25254,7 +25250,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-top-color: #D3D3D3;
 }
 
-#pgzeeniqdo .gt_last_grand_summary_row_top {
+#uzwwelonip .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -25264,11 +25260,11 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-bottom-color: #D3D3D3;
 }
 
-#pgzeeniqdo .gt_striped {
+#uzwwelonip .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#pgzeeniqdo .gt_table_body {
+#uzwwelonip .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -25277,7 +25273,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-bottom-color: #D3D3D3;
 }
 
-#pgzeeniqdo .gt_footnotes {
+#uzwwelonip .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -25291,7 +25287,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-right-color: #D3D3D3;
 }
 
-#pgzeeniqdo .gt_footnote {
+#uzwwelonip .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -25300,7 +25296,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   padding-right: 5px;
 }
 
-#pgzeeniqdo .gt_sourcenotes {
+#uzwwelonip .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -25314,7 +25310,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-right-color: #D3D3D3;
 }
 
-#pgzeeniqdo .gt_sourcenote {
+#uzwwelonip .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -25322,72 +25318,72 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   padding-right: 5px;
 }
 
-#pgzeeniqdo .gt_left {
+#uzwwelonip .gt_left {
   text-align: left;
 }
 
-#pgzeeniqdo .gt_center {
+#uzwwelonip .gt_center {
   text-align: center;
 }
 
-#pgzeeniqdo .gt_right {
+#uzwwelonip .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#pgzeeniqdo .gt_font_normal {
+#uzwwelonip .gt_font_normal {
   font-weight: normal;
 }
 
-#pgzeeniqdo .gt_font_bold {
+#uzwwelonip .gt_font_bold {
   font-weight: bold;
 }
 
-#pgzeeniqdo .gt_font_italic {
+#uzwwelonip .gt_font_italic {
   font-style: italic;
 }
 
-#pgzeeniqdo .gt_super {
+#uzwwelonip .gt_super {
   font-size: 65%;
 }
 
-#pgzeeniqdo .gt_footnote_marks {
+#uzwwelonip .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#pgzeeniqdo .gt_asterisk {
+#uzwwelonip .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#pgzeeniqdo .gt_indent_1 {
+#uzwwelonip .gt_indent_1 {
   text-indent: 5px;
 }
 
-#pgzeeniqdo .gt_indent_2 {
+#uzwwelonip .gt_indent_2 {
   text-indent: 10px;
 }
 
-#pgzeeniqdo .gt_indent_3 {
+#uzwwelonip .gt_indent_3 {
   text-indent: 15px;
 }
 
-#pgzeeniqdo .gt_indent_4 {
+#uzwwelonip .gt_indent_4 {
   text-indent: 20px;
 }
 
-#pgzeeniqdo .gt_indent_5 {
+#uzwwelonip .gt_indent_5 {
   text-indent: 25px;
 }
 
-#pgzeeniqdo .katex-display {
+#uzwwelonip .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#pgzeeniqdo div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#uzwwelonip div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -25408,23 +25404,23 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
 <tbody class="gt_table_body">
 <tr class="odd">
 <td class="gt_row gt_left" headers="Parameter">Annual NMC pesticide notifications</td>
-<td class="gt_row gt_left" headers="Value">690</td>
+<td class="gt_row gt_left" headers="Value">1013</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left gt_striped" headers="Parameter">Annual NHLS severe BChE inhibitions (live)</td>
-<td class="gt_row gt_left gt_striped" headers="Value">2000</td>
+<td class="gt_row gt_left gt_striped" headers="Value">1779</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Parameter">Annual PIH pesticide-related calls</td>
-<td class="gt_row gt_left" headers="Value">9000</td>
+<td class="gt_row gt_left" headers="Value">1158</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left gt_striped" headers="Parameter">True annual burden (sum, upper bound)</td>
-<td class="gt_row gt_left gt_striped" headers="Value">11690</td>
+<td class="gt_row gt_left gt_striped" headers="Value">3950</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Parameter">Headline annual deaths</td>
-<td class="gt_row gt_left" headers="Value">1500</td>
+<td class="gt_row gt_left" headers="Value">2620</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left gt_striped" headers="Parameter">Blended headline morbidity cost per case</td>
@@ -25444,7 +25440,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
 </tr>
 <tr class="even">
 <td class="gt_row gt_left gt_striped" headers="Parameter">Detection probability — status quo</td>
-<td class="gt_row gt_left gt_striped" headers="Value">0.45</td>
+<td class="gt_row gt_left gt_striped" headers="Value">0.048</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Parameter">Detection probability — full package</td>
@@ -25468,23 +25464,23 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
 <h3 class="anchored" data-anchor-id="who-bears-the-r2.34b-annual-burden">Who bears the R2.34B annual burden?</h3>
 <div class="cell">
 <div class="cell-output-display">
-<div id="xwkiqoulrs" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#xwkiqoulrs table {
+<div id="tlfpgaltdd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#tlfpgaltdd table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#xwkiqoulrs thead, #xwkiqoulrs tbody, #xwkiqoulrs tfoot, #xwkiqoulrs tr, #xwkiqoulrs td, #xwkiqoulrs th {
+#tlfpgaltdd thead, #tlfpgaltdd tbody, #tlfpgaltdd tfoot, #tlfpgaltdd tr, #tlfpgaltdd td, #tlfpgaltdd th {
   border-style: none;
 }
 
-#xwkiqoulrs p {
+#tlfpgaltdd p {
   margin: 0;
   padding: 0;
 }
 
-#xwkiqoulrs .gt_table {
+#tlfpgaltdd .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -25510,12 +25506,12 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-left-color: #D3D3D3;
 }
 
-#xwkiqoulrs .gt_caption {
+#tlfpgaltdd .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#xwkiqoulrs .gt_title {
+#tlfpgaltdd .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -25527,7 +25523,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-bottom-width: 0;
 }
 
-#xwkiqoulrs .gt_subtitle {
+#tlfpgaltdd .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -25539,7 +25535,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-top-width: 0;
 }
 
-#xwkiqoulrs .gt_heading {
+#tlfpgaltdd .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -25551,13 +25547,13 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-right-color: #D3D3D3;
 }
 
-#xwkiqoulrs .gt_bottom_border {
+#tlfpgaltdd .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#xwkiqoulrs .gt_col_headings {
+#tlfpgaltdd .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -25572,7 +25568,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-right-color: #D3D3D3;
 }
 
-#xwkiqoulrs .gt_col_heading {
+#tlfpgaltdd .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -25592,7 +25588,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   overflow-x: hidden;
 }
 
-#xwkiqoulrs .gt_column_spanner_outer {
+#tlfpgaltdd .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -25604,15 +25600,15 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   padding-right: 4px;
 }
 
-#xwkiqoulrs .gt_column_spanner_outer:first-child {
+#tlfpgaltdd .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#xwkiqoulrs .gt_column_spanner_outer:last-child {
+#tlfpgaltdd .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#xwkiqoulrs .gt_column_spanner {
+#tlfpgaltdd .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -25624,11 +25620,11 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   width: 100%;
 }
 
-#xwkiqoulrs .gt_spanner_row {
+#tlfpgaltdd .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#xwkiqoulrs .gt_group_heading {
+#tlfpgaltdd .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -25654,7 +25650,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   text-align: left;
 }
 
-#xwkiqoulrs .gt_empty_group_heading {
+#tlfpgaltdd .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -25669,15 +25665,15 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   vertical-align: middle;
 }
 
-#xwkiqoulrs .gt_from_md > :first-child {
+#tlfpgaltdd .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#xwkiqoulrs .gt_from_md > :last-child {
+#tlfpgaltdd .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#xwkiqoulrs .gt_row {
+#tlfpgaltdd .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -25696,7 +25692,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   overflow-x: hidden;
 }
 
-#xwkiqoulrs .gt_stub {
+#tlfpgaltdd .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -25709,7 +25705,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   padding-right: 5px;
 }
 
-#xwkiqoulrs .gt_stub_row_group {
+#tlfpgaltdd .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -25723,15 +25719,15 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   vertical-align: top;
 }
 
-#xwkiqoulrs .gt_row_group_first td {
+#tlfpgaltdd .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#xwkiqoulrs .gt_row_group_first th {
+#tlfpgaltdd .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#xwkiqoulrs .gt_summary_row {
+#tlfpgaltdd .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -25741,16 +25737,16 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   padding-right: 5px;
 }
 
-#xwkiqoulrs .gt_first_summary_row {
+#tlfpgaltdd .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#xwkiqoulrs .gt_first_summary_row.thick {
+#tlfpgaltdd .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#xwkiqoulrs .gt_last_summary_row {
+#tlfpgaltdd .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -25760,7 +25756,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-bottom-color: #D3D3D3;
 }
 
-#xwkiqoulrs .gt_grand_summary_row {
+#tlfpgaltdd .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -25770,7 +25766,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   padding-right: 5px;
 }
 
-#xwkiqoulrs .gt_first_grand_summary_row {
+#tlfpgaltdd .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -25780,7 +25776,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-top-color: #D3D3D3;
 }
 
-#xwkiqoulrs .gt_last_grand_summary_row_top {
+#tlfpgaltdd .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -25790,11 +25786,11 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-bottom-color: #D3D3D3;
 }
 
-#xwkiqoulrs .gt_striped {
+#tlfpgaltdd .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#xwkiqoulrs .gt_table_body {
+#tlfpgaltdd .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -25803,7 +25799,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-bottom-color: #D3D3D3;
 }
 
-#xwkiqoulrs .gt_footnotes {
+#tlfpgaltdd .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -25817,7 +25813,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-right-color: #D3D3D3;
 }
 
-#xwkiqoulrs .gt_footnote {
+#tlfpgaltdd .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -25826,7 +25822,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   padding-right: 5px;
 }
 
-#xwkiqoulrs .gt_sourcenotes {
+#tlfpgaltdd .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -25840,7 +25836,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-right-color: #D3D3D3;
 }
 
-#xwkiqoulrs .gt_sourcenote {
+#tlfpgaltdd .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -25848,72 +25844,72 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   padding-right: 5px;
 }
 
-#xwkiqoulrs .gt_left {
+#tlfpgaltdd .gt_left {
   text-align: left;
 }
 
-#xwkiqoulrs .gt_center {
+#tlfpgaltdd .gt_center {
   text-align: center;
 }
 
-#xwkiqoulrs .gt_right {
+#tlfpgaltdd .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#xwkiqoulrs .gt_font_normal {
+#tlfpgaltdd .gt_font_normal {
   font-weight: normal;
 }
 
-#xwkiqoulrs .gt_font_bold {
+#tlfpgaltdd .gt_font_bold {
   font-weight: bold;
 }
 
-#xwkiqoulrs .gt_font_italic {
+#tlfpgaltdd .gt_font_italic {
   font-style: italic;
 }
 
-#xwkiqoulrs .gt_super {
+#tlfpgaltdd .gt_super {
   font-size: 65%;
 }
 
-#xwkiqoulrs .gt_footnote_marks {
+#tlfpgaltdd .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#xwkiqoulrs .gt_asterisk {
+#tlfpgaltdd .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#xwkiqoulrs .gt_indent_1 {
+#tlfpgaltdd .gt_indent_1 {
   text-indent: 5px;
 }
 
-#xwkiqoulrs .gt_indent_2 {
+#tlfpgaltdd .gt_indent_2 {
   text-indent: 10px;
 }
 
-#xwkiqoulrs .gt_indent_3 {
+#tlfpgaltdd .gt_indent_3 {
   text-indent: 15px;
 }
 
-#xwkiqoulrs .gt_indent_4 {
+#tlfpgaltdd .gt_indent_4 {
   text-indent: 20px;
 }
 
-#xwkiqoulrs .gt_indent_5 {
+#tlfpgaltdd .gt_indent_5 {
   text-indent: 25px;
 }
 
-#xwkiqoulrs .katex-display {
+#tlfpgaltdd .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#xwkiqoulrs div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#tlfpgaltdd div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -25976,23 +25972,23 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
 <h3 class="anchored" data-anchor-id="canonical-option-costs-detect-act-restrict">Canonical option costs (Detect · Act · Restrict)</h3>
 <div class="cell">
 <div class="cell-output-display">
-<div id="tiwpqijrsf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#tiwpqijrsf table {
+<div id="jgtvhmnnep" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#jgtvhmnnep table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#tiwpqijrsf thead, #tiwpqijrsf tbody, #tiwpqijrsf tfoot, #tiwpqijrsf tr, #tiwpqijrsf td, #tiwpqijrsf th {
+#jgtvhmnnep thead, #jgtvhmnnep tbody, #jgtvhmnnep tfoot, #jgtvhmnnep tr, #jgtvhmnnep td, #jgtvhmnnep th {
   border-style: none;
 }
 
-#tiwpqijrsf p {
+#jgtvhmnnep p {
   margin: 0;
   padding: 0;
 }
 
-#tiwpqijrsf .gt_table {
+#jgtvhmnnep .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -26018,12 +26014,12 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-left-color: #D3D3D3;
 }
 
-#tiwpqijrsf .gt_caption {
+#jgtvhmnnep .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#tiwpqijrsf .gt_title {
+#jgtvhmnnep .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -26035,7 +26031,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-bottom-width: 0;
 }
 
-#tiwpqijrsf .gt_subtitle {
+#jgtvhmnnep .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -26047,7 +26043,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-top-width: 0;
 }
 
-#tiwpqijrsf .gt_heading {
+#jgtvhmnnep .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -26059,13 +26055,13 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-right-color: #D3D3D3;
 }
 
-#tiwpqijrsf .gt_bottom_border {
+#jgtvhmnnep .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#tiwpqijrsf .gt_col_headings {
+#jgtvhmnnep .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -26080,7 +26076,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-right-color: #D3D3D3;
 }
 
-#tiwpqijrsf .gt_col_heading {
+#jgtvhmnnep .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -26100,7 +26096,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   overflow-x: hidden;
 }
 
-#tiwpqijrsf .gt_column_spanner_outer {
+#jgtvhmnnep .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -26112,15 +26108,15 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   padding-right: 4px;
 }
 
-#tiwpqijrsf .gt_column_spanner_outer:first-child {
+#jgtvhmnnep .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#tiwpqijrsf .gt_column_spanner_outer:last-child {
+#jgtvhmnnep .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#tiwpqijrsf .gt_column_spanner {
+#jgtvhmnnep .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -26132,11 +26128,11 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   width: 100%;
 }
 
-#tiwpqijrsf .gt_spanner_row {
+#jgtvhmnnep .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#tiwpqijrsf .gt_group_heading {
+#jgtvhmnnep .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -26162,7 +26158,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   text-align: left;
 }
 
-#tiwpqijrsf .gt_empty_group_heading {
+#jgtvhmnnep .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -26177,15 +26173,15 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   vertical-align: middle;
 }
 
-#tiwpqijrsf .gt_from_md > :first-child {
+#jgtvhmnnep .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#tiwpqijrsf .gt_from_md > :last-child {
+#jgtvhmnnep .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#tiwpqijrsf .gt_row {
+#jgtvhmnnep .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -26204,7 +26200,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   overflow-x: hidden;
 }
 
-#tiwpqijrsf .gt_stub {
+#jgtvhmnnep .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -26217,7 +26213,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   padding-right: 5px;
 }
 
-#tiwpqijrsf .gt_stub_row_group {
+#jgtvhmnnep .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -26231,15 +26227,15 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   vertical-align: top;
 }
 
-#tiwpqijrsf .gt_row_group_first td {
+#jgtvhmnnep .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#tiwpqijrsf .gt_row_group_first th {
+#jgtvhmnnep .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#tiwpqijrsf .gt_summary_row {
+#jgtvhmnnep .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -26249,16 +26245,16 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   padding-right: 5px;
 }
 
-#tiwpqijrsf .gt_first_summary_row {
+#jgtvhmnnep .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#tiwpqijrsf .gt_first_summary_row.thick {
+#jgtvhmnnep .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#tiwpqijrsf .gt_last_summary_row {
+#jgtvhmnnep .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -26268,7 +26264,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-bottom-color: #D3D3D3;
 }
 
-#tiwpqijrsf .gt_grand_summary_row {
+#jgtvhmnnep .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -26278,7 +26274,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   padding-right: 5px;
 }
 
-#tiwpqijrsf .gt_first_grand_summary_row {
+#jgtvhmnnep .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -26288,7 +26284,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-top-color: #D3D3D3;
 }
 
-#tiwpqijrsf .gt_last_grand_summary_row_top {
+#jgtvhmnnep .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -26298,11 +26294,11 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-bottom-color: #D3D3D3;
 }
 
-#tiwpqijrsf .gt_striped {
+#jgtvhmnnep .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#tiwpqijrsf .gt_table_body {
+#jgtvhmnnep .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -26311,7 +26307,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-bottom-color: #D3D3D3;
 }
 
-#tiwpqijrsf .gt_footnotes {
+#jgtvhmnnep .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -26325,7 +26321,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-right-color: #D3D3D3;
 }
 
-#tiwpqijrsf .gt_footnote {
+#jgtvhmnnep .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -26334,7 +26330,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   padding-right: 5px;
 }
 
-#tiwpqijrsf .gt_sourcenotes {
+#jgtvhmnnep .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -26348,7 +26344,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-right-color: #D3D3D3;
 }
 
-#tiwpqijrsf .gt_sourcenote {
+#jgtvhmnnep .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -26356,72 +26352,72 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   padding-right: 5px;
 }
 
-#tiwpqijrsf .gt_left {
+#jgtvhmnnep .gt_left {
   text-align: left;
 }
 
-#tiwpqijrsf .gt_center {
+#jgtvhmnnep .gt_center {
   text-align: center;
 }
 
-#tiwpqijrsf .gt_right {
+#jgtvhmnnep .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#tiwpqijrsf .gt_font_normal {
+#jgtvhmnnep .gt_font_normal {
   font-weight: normal;
 }
 
-#tiwpqijrsf .gt_font_bold {
+#jgtvhmnnep .gt_font_bold {
   font-weight: bold;
 }
 
-#tiwpqijrsf .gt_font_italic {
+#jgtvhmnnep .gt_font_italic {
   font-style: italic;
 }
 
-#tiwpqijrsf .gt_super {
+#jgtvhmnnep .gt_super {
   font-size: 65%;
 }
 
-#tiwpqijrsf .gt_footnote_marks {
+#jgtvhmnnep .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#tiwpqijrsf .gt_asterisk {
+#jgtvhmnnep .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#tiwpqijrsf .gt_indent_1 {
+#jgtvhmnnep .gt_indent_1 {
   text-indent: 5px;
 }
 
-#tiwpqijrsf .gt_indent_2 {
+#jgtvhmnnep .gt_indent_2 {
   text-indent: 10px;
 }
 
-#tiwpqijrsf .gt_indent_3 {
+#jgtvhmnnep .gt_indent_3 {
   text-indent: 15px;
 }
 
-#tiwpqijrsf .gt_indent_4 {
+#jgtvhmnnep .gt_indent_4 {
   text-indent: 20px;
 }
 
-#tiwpqijrsf .gt_indent_5 {
+#jgtvhmnnep .gt_indent_5 {
   text-indent: 25px;
 }
 
-#tiwpqijrsf .katex-display {
+#jgtvhmnnep .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#tiwpqijrsf div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#jgtvhmnnep div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -26542,7 +26538,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
 <p><strong>Canonical parameter file.</strong> All numerical values in every brief, the one-pager, and the playground resolve through <code>pick(name)</code> → <code>readr::read_csv("../amua_import_parameters_v3.csv")</code> → string lookup → <code>as.numeric()</code> → <code>zar()</code> formatter. <strong>No rand value in any brief is a literal in prose</strong> (except where prose paraphrases a CSV-sourced value). The audit chain is: CSV row → <code>_shared_parameters.qmd</code> <code>pick()</code> call → rendered <code>gt</code> cell.</p>
 <p><strong>Burden model (closed-form, deterministic).</strong></p>
 <p><img src="https://latex.codecogs.com/png.latex?%0AC_%7B%5Ctext%7Bburden%7D%7D%20%5C;=%5C;%20%5Cunderbrace%7B%5Csum_%7Bs%20%5Cin%20%5C%7B%5Ctext%7BPIH%7D,%5Ctext%7BNHLS%7D,%5Ctext%7BNMC%7D%5C%7D%7D%20n_s%20%5Ccdot%20c%5E%7B%5Ctext%7Bmorb%7D%7D_s%7D_%7B%5Ctext%7Bmorbidity%7D%7D%20%5C;+%5C;%20%5Cunderbrace%7Bn_%7B%5Ctext%7Bdeaths%7D%7D%20%5Ccdot%20c%5E%7B%5Ctext%7Bmort%7D%7D_%7B%5Ctext%7BHC%7D%7D%7D_%7B%5Ctext%7Bmortality%20(human-capital)%7D%7D%0A"></p>
-<p>where <img src="https://latex.codecogs.com/png.latex?n_s"> = stream counts (rows <code>n_pih_annual</code>, <code>n_nhls_severe_annual</code>, <code>n_nmc_annual</code>), <img src="https://latex.codecogs.com/png.latex?c%5E%7B%5Ctext%7Bmorb%7D%7D_s"> = stratum-specific per-case morbidity costs (rows <code>c_morbidity_*</code>), <img src="https://latex.codecogs.com/png.latex?n_%7B%5Ctext%7Bdeaths%7D%7D%20=%201%7B,%7D500"> (<code>n_deaths_headline</code>), $c^{}_{} = $ 25 productive years × R60k median income, undiscounted (<code>c_mortality_human_capital</code>). Stratified-CFR alternative (<code>C_burden_total_conservative</code> ≈ R1.34B) is supplied as a sensitivity.</p>
+<p>where <img src="https://latex.codecogs.com/png.latex?n_s"> = stream counts (rows <code>n_pih_annual</code>, <code>n_nhls_severe_annual</code>, <code>n_nmc_annual</code>), <img src="https://latex.codecogs.com/png.latex?c%5E%7B%5Ctext%7Bmorb%7D%7D_s"> = stratum-specific per-case morbidity costs (rows <code>c_morbidity_*</code>), <img src="https://latex.codecogs.com/png.latex?n_%7B%5Ctext%7Bdeaths%7D%7D%20=%202%7B,%7D620"> (<code>n_deaths_statssa_macod</code> — <strong>StatsSA MACOD 2023 (X40-X49) is the canonical truth source for deaths and is updated as new StatsSA releases land</strong>; <code>n_deaths_headline</code> mirrors it), $c^{}_{} = $ 25 productive years × R60k median income, undiscounted (<code>c_mortality_human_capital</code>). Stratified-CFR alternative (<code>C_burden_total_conservative</code> ≈ R1.34B) is supplied as a sensitivity.</p>
 <p><strong>Coordination decision tree (closed-form joint probability).</strong></p>
 <p><img src="https://latex.codecogs.com/png.latex?%0AP(%5Ctext%7Bloop%20closed%7D)%20%5C;=%5C;%20%5Cprod_%7Bi=1%7D%5E%7B8%7D%20p_i%0A"></p>
 <p>over eight sequential nodes (notify → SMS → investigate → record → refer → DALRRD acts → feedback → feedback to clinician). Status-quo joint product ≈ 1.1 % (<code>p_loop_closed_status_quo</code>); Full Package ≈ 70 % (<code>p_loop_closed_FP</code>). Deaths averted = <img src="https://latex.codecogs.com/png.latex?%5CDelta%20P%20%5Ctimes%20%5Ceta%20%5Ctimes%20n_%7B%5Ctext%7Bburden%7D%7D%20%5Ctimes%20p_%7B%5Ctext%7Bdeath%7D%7D">, with <img src="https://latex.codecogs.com/png.latex?%5Ceta"> from <code>eta_response_mid</code> = 0.30 and <img src="https://latex.codecogs.com/png.latex?p_%7B%5Ctext%7Bdeath%7D%7D"> from <code>cfr_headline_mid</code> = 0.125.</p>
@@ -26617,7 +26613,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
 <tr class="odd">
 <td style="text-align: left;">Adult attribution fraction (SA)</td>
 <td style="text-align: left;">Not yet quantified</td>
-<td style="text-align: left;">Open item TBF-2 — requires Surveillance Option S3b</td>
+<td style="text-align: left;">Open item TBF-2 — requires Surveillance Option S3</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Annual SA agricultural market volume</td>
@@ -26661,7 +26657,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
     R1 --&gt; O1[Option T2/T3: Class Ia&lt;br/&gt;phase-out aligned with WHO]
     R2 --&gt; O2[Option T2: Formulation restriction&lt;br/&gt;e.g. only encapsulated, no granular]
     R3 --&gt; O3[Option T2: Restricted-use&lt;br/&gt;permitting + traceability]
-    R4 --&gt; O4[Surveillance S3b&lt;br/&gt;&lt;i&gt;see Surveillance brief&lt;/i&gt;]
+    R4 --&gt; O4[Surveillance S3&lt;br/&gt;&lt;i&gt;see Surveillance brief&lt;/i&gt;]
     R5 --&gt; O5[Option T2/T3: DALRRD substitution&lt;br/&gt;support + grower advisory]
 
     style A fill:#f99,stroke:#333
@@ -26696,7 +26692,7 @@ Figure&nbsp;1: Root causes that make terbufos a disproportionate public-health h
 <li><strong>Restricted-use product (RUP) designation.</strong> Sales only to certified applicators against a logged transaction; no informal-market sales.</li>
 <li><strong>Mandatory point-of-sale labelling and lockable container requirement.</strong></li>
 <li><strong>Quarterly DALRRD audit</strong> of distributor records, with NICD→DALRRD intelligence feed (see Coordination brief Option C3) flagging geographies of concern.</li>
-<li><strong>Sunset clause.</strong> Conditional 24-month re-registration; if NICD-attributed serious-poisoning cases (from S3b toxicology, once operational) do not decline by a pre-agreed margin, automatic transition to Option T3.</li>
+<li><strong>Sunset clause.</strong> Conditional 24-month re-registration; if NICD-attributed serious-poisoning cases (from S3 toxicology, once operational) do not decline by a pre-agreed margin, automatic transition to Option T3.</li>
 </ul>
 <p>Cost: principally regulatory and enforcement. <code>[Evidence gap: DALRRD inspectorate cost model for RUP enforcement.]</code> Implementation: 6–12 months.</p>
 </section>
@@ -26765,7 +26761,7 @@ Figure&nbsp;2: Terbufos regulatory decision tree. Each branch shows the expected
 <li>Option T3 (full withdrawal) at Sri Lanka-class substitution-incompleteness (60–80 % of attributable burden actually retired) → <strong>~200–400 deaths/yr averted.</strong></li>
 <li>Option T2 (formulation restriction + RUP + audit), partial coverage of the informal-market diversion pathway only → <strong>~80–180 deaths/yr averted</strong>, with the 24-month evaluation gate sized to detect this signal.</li>
 </ul>
-<p>This is a <strong>bracketed working estimate</strong>, not a point claim. The bracket is wide on purpose. The single piece of evidence that would tighten it — a live-patient adult attributable fraction — is the <a href="../posts/surveillance_policy.html">Surveillance Option S3b</a> deliverable at month 12. Decision-makers should not wait for it: the lower end of the bracket alone (~200 deaths/yr) at a regulatory cost of ~R1–3M/yr gives a leverage ratio of approximately <strong>1 : 500</strong> on household-borne mortality cost — the case for action is robust across the full bracket.</p>
+<p>This is a <strong>bracketed working estimate</strong>, not a point claim. The bracket is wide on purpose. The single piece of evidence that would tighten it — a live-patient adult attributable fraction — is the <a href="../posts/surveillance_policy.html">Surveillance Option S3</a> deliverable at month 12. Decision-makers should not wait for it: the lower end of the bracket alone (~200 deaths/yr) at a regulatory cost of ~R1–3M/yr gives a leverage ratio of approximately <strong>1 : 500</strong> on household-borne mortality cost — the case for action is robust across the full bracket.</p>
 </section>
 </section>
 <section id="implementation-considerations" class="level2">
@@ -26797,7 +26793,7 @@ Figure&nbsp;2: Terbufos regulatory decision tree. Each branch shows the expected
 <tr class="odd">
 <td style="text-align: left;">Attributable-fraction evidence</td>
 <td style="text-align: left;"><code>[Evidence gap]</code></td>
-<td style="text-align: left;">Stand up Surveillance Option S3b at 1 sentinel site within 12 months</td>
+<td style="text-align: left;">Stand up Surveillance Option S3 at 1 sentinel site within 12 months</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Yield-impact evidence</td>
@@ -26826,7 +26822,7 @@ Figure&nbsp;2: Terbufos regulatory decision tree. Each branch shows the expected
 </tr>
 </tbody>
 </table>
-<p><strong>Institutional responsibilities.</strong> DALRRD leads regulatory action. NDoH/NICD supplies the attributable-harm evidence base (via <a href="../posts/surveillance_policy.html">Surveillance</a> S3b and <a href="../posts/coordination_policy.html">Coordination</a> C3). DTIC and Agriculture sector bodies lead substitution support. Civil-society and grower organisations participate in formal consultation.</p>
+<p><strong>Institutional responsibilities.</strong> DALRRD leads regulatory action. NDoH/NICD supplies the attributable-harm evidence base (via <a href="../posts/surveillance_policy.html">Surveillance</a> S3 and <a href="../posts/coordination_policy.html">Coordination</a> C3). DTIC and Agriculture sector bodies lead substitution support. Civil-society and grower organisations participate in formal consultation.</p>
 </section>
 <section id="recommended-next-step" class="level2">
 <h2 class="anchored" data-anchor-id="recommended-next-step">8. Recommended next step</h2>
@@ -26835,7 +26831,7 @@ Figure&nbsp;2: Terbufos regulatory decision tree. Each branch shows the expected
 <ol type="1">
 <li><strong>Within 3 months.</strong> DALRRD gazette the formulation restriction, RUP designation, distributor audit, and lockable-container requirement.</li>
 <li><strong>Within 6 months.</strong> NICD operationalises the <a href="../posts/coordination_policy.html">Coordination Option C3</a> NICD→DALRRD intelligence feed with quarterly terbufos-specific reporting.</li>
-<li><strong>Within 12 months.</strong> <a href="../posts/surveillance_policy.html">Surveillance Option S3b</a> sentinel live-patient chemical toxicology site operational, producing the attributable-fraction evidence base.</li>
+<li><strong>Within 12 months.</strong> <a href="../posts/surveillance_policy.html">Surveillance Option S3</a> sentinel live-patient chemical toxicology site operational, producing the attributable-fraction evidence base.</li>
 <li><strong>Within 24 months.</strong> Joint NDoH–DALRRD review against pre-agreed reduction target → escalate to Option T3 if target missed, retain Option T2 if met.</li>
 <li><strong>In parallel.</strong> Commission the four explicit <code>[Evidence gap]</code> work items (market volume, attributable fraction, yield-impact, substitute hazard) to retire the uncertainty that today prevents a clean cost–benefit calculation.</li>
 </ol>
@@ -26865,7 +26861,7 @@ Figure&nbsp;2: Terbufos regulatory decision tree. Each branch shows the expected
 <tr class="odd">
 <td style="text-align: left;">1</td>
 <td style="text-align: left;"><strong>Adult live-patient terbufos attributable fraction in severe non-fatal pesticide poisonings</strong></td>
-<td style="text-align: left;">SA does not currently run live-patient chemical toxicology at scale; forensic data captures fatalities only. Only Surveillance Option S3b resolves it.</td>
+<td style="text-align: left;">SA does not currently run live-patient chemical toxicology at scale; forensic data captures fatalities only. Only Surveillance Option S3 resolves it.</td>
 <td style="text-align: left;">NHLS toxicology + NICD</td>
 <td style="text-align: left;">Month 12</td>
 </tr>
@@ -26999,7 +26995,7 @@ Figure&nbsp;2: Terbufos regulatory decision tree. Each branch shows the expected
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This appendix is the <strong>quantitative concept note</strong> for the live-patient chemical-toxicology investment (<strong>Option S3b</strong>) referenced in the <a href="../posts/surveillance_policy.html">Surveillance brief</a>. It is the only one of the four surveillance sub-options that <strong>creates a new capability</strong> — NHLS currently performs qualitative/quantitative pesticide assays only on post-mortem specimens. Pilot costing is anchored in canonical CSV rows <code>c_option6_pilot_year1</code> (R1.2m), <code>c_option6_full_5site_annual</code> (R3.625m), <code>c_gcms_screen_per_specimen</code> (R2,500), and <code>c_clinical_battery_per_patient</code> (R1,500).</p>
+<p>This appendix is the <strong>quantitative concept note</strong> for the live-patient chemical-toxicology investment (<strong>Option S3</strong>) referenced in the <a href="../posts/surveillance_policy.html">Surveillance brief</a>. It is the only one of the three active surveillance options that <strong>creates a new capability</strong> — NHLS currently performs qualitative/quantitative pesticide assays only on post-mortem specimens. Pilot costing is anchored in canonical CSV rows <code>c_option6_pilot_year1</code> (R1.2m), <code>c_option6_full_5site_annual</code> (R3.625m), <code>c_gcms_screen_per_specimen</code> (R2,500), and <code>c_clinical_battery_per_patient</code> (R1,500).</p>
 <p><strong>Sister appendices:</strong> <a href="../analysis_report_v2.html">A — Surveillance decision analysis</a> · <a href="../technical_appendix_coordination.html">B — Coordination model</a> · <a href="../technical_appendix_terbufos.html">C — Terbufos bracketed estimate</a>.</p>
 </div>
 </div>
