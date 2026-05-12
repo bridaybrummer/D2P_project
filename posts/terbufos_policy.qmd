@@ -102,7 +102,7 @@ Cancel terbufos product registrations under the Fertilizers, Farm Feeds, Agricul
 
 *Intermediate restriction options (RUP, formulation restriction, distributor audit) are best understood as the **mechanics of the phase-out**, not as alternative end-states. The end-state is withdrawal.*
 
-## 6. Decision tree — burden retired under each option
+## 6. Decision tree — deaths, burden, and yield under each option
 
 ````{r}
 #| label: fig-terb-decision-tree
@@ -115,43 +115,65 @@ phi   <- as.numeric(pick("frac_T3_burden_retired"))
 N_deaths_year <- as.numeric(pick("n_deaths_headline"))
 burden_total  <- as.numeric(pick("C_burden_total_headline"))
 
-deaths_mid    <- round(f_mid * phi * N_deaths_year)
-deaths_lo     <- round(f_lo  * phi * N_deaths_year)
-deaths_hi     <- round(f_hi  * phi * N_deaths_year)
-burden_avert_mid <- round(f_mid * phi * burden_total / 1e9, 2)
-burden_avert_lo  <- round(f_lo  * phi * burden_total / 1e9, 2)
-burden_avert_hi  <- round(f_hi  * phi * burden_total / 1e9, 2)
+# Status-quo terbufos-attributable burden (no ban)
+deaths_attrib_mid <- round(f_mid * N_deaths_year)
+deaths_attrib_lo  <- round(f_lo  * N_deaths_year)
+deaths_attrib_hi  <- round(f_hi  * N_deaths_year)
+burden_attrib_mid <- round(f_mid * burden_total / 1e9, 2)
+
+# Deaths and burden averted under the ban
+deaths_avert_mid  <- round(f_mid * phi * N_deaths_year)
+deaths_avert_lo   <- round(f_lo  * phi * N_deaths_year)
+deaths_avert_hi   <- round(f_hi  * phi * N_deaths_year)
+burden_avert_mid  <- round(f_mid * phi * burden_total / 1e9, 2)
+burden_avert_lo   <- round(f_lo  * phi * burden_total / 1e9, 2)
+burden_avert_hi   <- round(f_hi  * phi * burden_total / 1e9, 2)
+
+# Residual deaths after the ban (substitution-incompleteness)
+deaths_residual_mid <- deaths_attrib_mid - deaths_avert_mid
 
 cat(sprintf('```{mermaid}
-%%%%| fig-cap: "Two-node terbufos decision tree. The split is binary — ban or no ban. Burden retired under the ban is anchored to Davies 2023 (SA paediatric attribution) and the Sri Lanka Class Ia withdrawal evidence (Gunnell 2017): attributable fraction %.0f–%.0f%% (working %.0f%%), with %.0f%% of that attributable burden actually retired post-ban (Sri Lanka substitution-incompleteness)."
+%%%%| fig-cap: "Two-node terbufos decision tree. The split is binary — ban or no ban. Each branch terminates in three parallel outcomes: deaths, monetised burden, and maize yield. Deaths-averted arithmetic: f_attr × φ_retired × N_deaths_total = %.2f × %.2f × %s = %.0f/yr (working). Attributable fraction range %.0f–%.0f%% from Davies 2023 + Gunnell 2017; substitution-incompleteness %.0f%% from Sri Lanka."
 flowchart TD
     Q{Ban terbufos?} -->|No — T1<br/>Status quo| T1[Continued registration]:::bad
     Q -->|Yes — T2<br/>Cancel registration| T2[12–24 month phase-out]:::good
 
-    T1 --> H1[Annual burden retained<br/>~R%.2fB<br/>~%.0f deaths/yr from terbufos]:::bad
-    T2 --> H2[Annual burden retired<br/>~R%.2fB ~R%.2f–R%.2fB~<br/>~%.0f deaths/yr averted ~%.0f–%.0f~]:::good
+    T1 --> D1["<b>Deaths</b><br/>~%.0f/yr terbufos-attributable<br/>~range %.0f–%.0f~<br/>= %.0f%% × %s total"]:::bad
+    T1 --> B1["<b>Burden</b><br/>~R%.2fB/yr terbufos-attributable<br/>retained on households + NDoH"]:::bad
+    T1 --> Y1["<b>Maize yield</b><br/>No change"]:::neutral
 
-    T1 --> Y1[Maize yield<br/>No change]:::neutral
-    T2 --> Y2[Maize yield<br/><5%% impact<br/>~see §7~]:::neutral
+    T2 --> D2["<b>Deaths averted</b><br/>~%.0f/yr<br/>~range %.0f–%.0f~<br/>= %.0f%% × %.0f%% × %s"]:::good
+    T2 --> B2["<b>Burden retired</b><br/>~R%.2fB/yr<br/>~range R%.2f–R%.2fB~"]:::good
+    T2 --> Y2["<b>Maize yield</b><br/><5%% impact<br/>~see §7~"]:::neutral
+
+    D2 --> R2["Residual ~%.0f deaths/yr<br/>substitution-incompleteness<br/>~Sri Lanka %.0f%%~"]:::warn
 
     classDef bad fill:#fdd,stroke:#cc0000,stroke-width:1.5px
     classDef good fill:#cfc,stroke:#060,stroke-width:2px
+    classDef warn fill:#ffe9b3,stroke:#cc8800,stroke-width:1.5px
     classDef neutral fill:#eee,stroke:#666
 ```
 ',
-100*f_lo, 100*f_hi, 100*f_mid, 100*phi,
-burden_total/1e9, round(f_mid * N_deaths_year),
+f_mid, phi, format(round(N_deaths_year), big.mark = ","), deaths_avert_mid,
+100*f_lo, 100*f_hi, 100*phi,
+deaths_attrib_mid, deaths_attrib_lo, deaths_attrib_hi, 100*f_mid, format(round(N_deaths_year), big.mark = ","),
+burden_attrib_mid,
+deaths_avert_mid, deaths_avert_lo, deaths_avert_hi, 100*f_mid, 100*phi, format(round(N_deaths_year), big.mark = ","),
 burden_avert_mid, burden_avert_lo, burden_avert_hi,
-deaths_mid, deaths_lo, deaths_hi
+deaths_residual_mid, 100*(1 - phi)
 ))
 ````
 
-**Reading the tree.** The decision is binary because the upstream driver — high-intrinsic-toxicity granular OP in informal circulation — is binary: either the product is on the register or it isn't. The quantitative anchor combines two CSV parameters:
+**Reading the tree.** The decision is binary because the upstream driver — high-intrinsic-toxicity granular OP in informal circulation — is binary: either the product is on the register or it isn't. Each branch terminates in three parallel outcomes:
 
-- `frac_terbufos_attributable_mid` = `r sprintf("%.0f%%", 100*as.numeric(pick("frac_terbufos_attributable_mid")))` (range `r sprintf("%.0f–%.0f%%", 100*as.numeric(pick("frac_terbufos_attributable_lo")), 100*as.numeric(pick("frac_terbufos_attributable_hi")))`) — Davies 2023 + Gunnell 2017.
-- `frac_T3_burden_retired` = `r sprintf("%.0f%%", 100*as.numeric(pick("frac_T3_burden_retired")))` — Sri Lanka substitution-incompleteness.
+- **Deaths** — the headline public-health metric. Computed as $f_\text{attr} \times \varphi_\text{retired} \times N_\text{deaths}$. The working value pulls from three CSV parameters:
+  - `frac_terbufos_attributable_mid` = `r sprintf("%.0f%%", 100*as.numeric(pick("frac_terbufos_attributable_mid")))` (range `r sprintf("%.0f–%.0f%%", 100*as.numeric(pick("frac_terbufos_attributable_lo")), 100*as.numeric(pick("frac_terbufos_attributable_hi")))`) — SA paediatric attribution (Davies 2023) + Sri Lanka single-agent withdrawal bracket (Gunnell 2017).
+  - `frac_T3_burden_retired` = `r sprintf("%.0f%%", 100*as.numeric(pick("frac_T3_burden_retired")))` — fraction of attributable burden retired post-ban, anchored to Sri Lanka substitution-incompleteness. The complement is the *residual* node — deaths that persist because some users will switch to other Class I OPs rather than to less-hazardous substitutes.
+  - `n_deaths_headline` = `r format(round(as.numeric(pick("n_deaths_headline"))), big.mark = ",")` — StatsSA MACOD 2023 fatal pesticide-poisoning total.
+- **Burden** — the same multiplication applied to the R`r sprintf("%.2f", as.numeric(pick("C_burden_total_headline"))/1e9)`B total annual burden. Working value: **~R`r round(as.numeric(pick("frac_terbufos_attributable_mid")) * as.numeric(pick("frac_T3_burden_retired")) * as.numeric(pick("C_burden_total_headline"))/1e9, 2)`B/yr retired**, falling on households + NDoH at the canonical share split.
+- **Maize yield** — bounded at <5 % (see §7).
 
-Applied to ~`r format(round(as.numeric(pick("n_deaths_headline"))), big.mark = ",")` fatal pesticide-poisoning deaths/yr and the R`r sprintf("%.2f", as.numeric(pick("C_burden_total_headline"))/1e9)`B total annual burden, the ban retires **~`r round(as.numeric(pick("frac_terbufos_attributable_mid")) * as.numeric(pick("frac_T3_burden_retired")) * as.numeric(pick("n_deaths_headline")))` deaths/yr** and **~R`r round(as.numeric(pick("frac_terbufos_attributable_mid")) * as.numeric(pick("frac_T3_burden_retired")) * as.numeric(pick("C_burden_total_headline"))/1e9, 2)`B/yr** at the working values, with the bracket reflecting honest uncertainty on the attributable fraction. The full closed-form derivation lives in [Technical Appendix C](../technical_appendix_terbufos.qmd).
+The full closed-form derivation, with the deaths-averted bracket calculated under every $f_\text{attr} \times \varphi_\text{retired}$ combination, lives in [Technical Appendix C](../technical_appendix_terbufos.qmd).
 
 ## 7. Crop-yield impact (brief)
 
