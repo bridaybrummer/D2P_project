@@ -121,9 +121,9 @@ c_S1_NHLS_NMC_feed_op,60000,"S1 NHLS→NMC IT feed operating: 0.05 FTE analyst +
 c_S3a_BChE_autonotify_setup,200000,"S3a BChE auto-notify setup: NHLS LIS HL7 reconfiguration + UAT | dist=gamma(25,8000) | NHLS IT (was c_option3_BChE_setup)"
 c_S3a_BChE_autonotify_op,55000,"S3a BChE auto-notify operating: middleware hosting + maintenance | dist=gamma(25,2200) | NHLS IT (was c_option3_BChE_operating)"
 c_S4_PIH_dashboard_setup,40000,"S4 PIH dashboard / MVD setup: reporting template + data dictionary | dist=gamma(25,1600) | PIH admin"
-c_S4_PIH_dashboard_op,42000,"S4 PIH dashboard / MVD operating (MVD redesign reduced PIH analyst burden vs the legacy 0.15 FTE estimate) | dist=gamma(25,1680) | PIH revised"
+c_S4_PIH_dashboard_op,82000,"S4 PIH dashboard / MVD operating (includes AfriTox agent-name harmonization for PIH+NMC) | dist=gamma(25,3280) | PIH revised, AfriTox harmonization"
 c_surv_MVP_setup,80000,"Surveillance MVP setup (S1+S3a+S4, IT one-off, dominated by S3a HL7 work) | dist=fixed(,) | Sum, S3a setup dominates"
-c_surv_MVP_op,157000,"Surveillance MVP annual operating = S1 (R60k) + S3a (R55k) + S4 (R42k) | dist=fixed(,) | Sum"
+c_surv_MVP_op,137000,"Surveillance MVP annual operating = S1 (R82k, includes AfriTox agent-name harmonization) + S3a (R55k) | dist=fixed(,) | Sum, AfriTox harmonization included"
 # === COORDINATION OPTIONS — CANONICAL (C-taxonomy) ===,,
 c_C1_NMC_closure_op,30000,"C1 NMC closure-of-loop field: schema change + EHP training material | dist=gamma(25,1200) | NICD NMC team"
 c_C2_referral_form_op,25000,"C2 Structured DALRRD referral form on NMC: form build + DALRRD inbox workflow | dist=gamma(25,1000) | NICD + DALRRD"
