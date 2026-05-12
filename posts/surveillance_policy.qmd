@@ -152,6 +152,10 @@ Detection rises to ~6.1 / 10 for **R62k/year**. The dashboard is the lowest-hang
 
 : Surveillance options — base-case. Detection improvements feed directly into the [Decision Model](decision_model.qmd) burden-avoidance calculation (η = 0.30). {.striped .hover}
 
+::: {.callout-note appearance="simple"}
+**Two framings, one model.** The "hotspots detected / 10" column is the **cluster** view (legacy v1 binomial argument at cluster size ≥10) and is retained here for narrative continuity with the original advocacy materials. The **per-case** detection probability $P_\text{detect}$ used in the decision tree below (§6) is anchored at $0.043$ via the StatsSA MACOD identity $N_\text{NMC}\cdot\text{CFR}/N_\text{deaths}$. The two columns answer different questions — *"do we ever notice a cluster?"* vs. *"what fraction of all cases do we count?"* — and the ratios (Δ %) are preserved across framings. The §6 tree is the auditable computation; this table is the headline summary.
+:::
+
 ## 6. Decision tree — from surveillance investment to averted burden
 
 ::: {.callout-note collapse="true"}
