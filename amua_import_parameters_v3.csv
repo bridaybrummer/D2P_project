@@ -12,11 +12,11 @@ cfr_blended_observed,0.07,"Implied blended CFR from stratified weights = (9000*0
 cfr_headline_lo,0.10,"Headline lower bound for sensitivity (NMC observed range) | dist=fixed(,) | Decision model base"
 cfr_headline_mid,0.125,"Headline midpoint | dist=fixed(,) | Decision model base"
 cfr_headline_hi,0.15,"Headline upper bound | dist=fixed(,) | Decision model base"
-# Note: stratified CFR yields ~830 deaths/yr; flat 12.5% yields ~1460. VR triangulation (30-50% of 3200-4000 all-poison deaths) gives 960-2000. Use stratified CFR for academic analysis; headline 1500-1800 for advocacy.,,
+# Note: stratified CFR yields ~830 deaths/yr; flat 12.5% yields ~1460. StatsSA MACOD anchor (n_deaths_statssa_macod) is the canonical truth source for deaths and should be updated as new StatsSA releases land.,,
 n_deaths_stratified,830,"Deaths from stratified CFR application | dist=fixed(,) | Internal consistency check"
-n_deaths_headline,1500,"Headline death estimate (upper-mid CFR + VR triangulation) | dist=fixed(,) | For advocacy products"
-# === StatsSA MORTALITY ANCHOR (used to derive d_status_quo per-case detection) ===,,
-n_deaths_statssa_macod,2000,"StatsSA MACOD pesticide-poisoning deaths per year (mean recent series) | dist=fixed(,) | StatsSA Causes of Death"
+n_deaths_headline,2000,"Headline annual deaths = n_deaths_statssa_macod (canonical truth, replaces v1 advocacy figure of 1500) | dist=fixed(,) | StatsSA MACOD"
+# === StatsSA MORTALITY ANCHOR (CANONICAL TRUTH SOURCE for deaths; used to derive d_status_quo and implied true burden) ===,,
+n_deaths_statssa_macod,2000,"StatsSA MACOD pesticide-poisoning deaths per year (mean recent series). CANONICAL truth source — update as new StatsSA releases land. | dist=gamma(25,80) | StatsSA Causes of Death"
 n_true_burden_from_statssa_lo,13333,"Implied true annual burden, upper-CFR scenario = n_deaths_statssa_macod / cfr_headline_hi = 2000/0.15 | dist=fixed(,) | Derived"
 n_true_burden_from_statssa_mid,16000,"Implied true annual burden, mid-CFR scenario = n_deaths_statssa_macod / cfr_headline_mid = 2000/0.125 | dist=fixed(,) | Derived"
 n_true_burden_from_statssa_hi,20000,"Implied true annual burden, lower-CFR scenario = n_deaths_statssa_macod / cfr_headline_lo = 2000/0.10 | dist=fixed(,) | Derived"
