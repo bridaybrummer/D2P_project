@@ -93,15 +93,29 @@ function start(name) {
 ```{ojs}
 //| echo: false
 
-viewof n_burden_true = Inputs.range([5000, 25000], {
-  step: 100,
-  value: start("n_burden_true"),
-  label: "Total annual burden (cases) — n_burden_true"
+viewof n_deaths_statssa_macod = Inputs.range([1000, 4000], {
+  step: 50,
+  value: start("n_deaths_statssa_macod"),
+  label: "Annual deaths (StatsSA MACOD) — n_deaths_statssa_macod ← canonical truth"
 })
 viewof cfr_headline_mid = Inputs.range([0.05, 0.20], {
   step: 0.005,
   value: start("cfr_headline_mid"),
   label: "Headline case-fatality rate — cfr_headline_mid"
+})
+viewof n_nmc_annual = Inputs.range([400, 1500], {
+  step: 10,
+  value: start("n_nmc_annual"),
+  label: "Annual NMC notifications — n_nmc_annual"
+})
+viewof n_burden_true_override = Inputs.range([5000, 25000], {
+  step: 100,
+  value: start("n_burden_true"),
+  label: "True annual burden (override; otherwise derived from StatsSA/CFR) — n_burden_true"
+})
+viewof use_statssa_burden = Inputs.toggle({
+  label: "Derive true burden from StatsSA deaths / CFR (recommended)",
+  value: true
 })
 ```
 
@@ -167,12 +181,19 @@ viewof c_full_package_wholesystem_operating = Inputs.range([500000, 3000000], {
 //| echo: false
 
 // ---------- Derived calculations ----------
-n_deaths            = n_burden_true * cfr_headline_mid
+// StatsSA MACOD is the canonical truth source for deaths.
+// True burden is derived as deaths / CFR unless user overrides.
+n_deaths            = n_deaths_statssa_macod
+n_burden_true       = use_statssa_burden ? (n_deaths_statssa_macod / cfr_headline_mid) : n_burden_true_override
+
+// Status-quo per-case detection = N_NMC * CFR / N_deaths_StatsSA
+d_status_quo_derived = (n_nmc_annual * cfr_headline_mid) / n_deaths_statssa_macod
+
 C_morbidity         = n_burden_true * c_morbidity_headline
 C_mortality         = n_deaths * c_mortality_human_capital
 C_burden_total      = C_morbidity + C_mortality
 
-// Detection × efficacy
+// Detection × efficacy (uses derived d_status_quo if user has not moved the slider far from CSV value)
 deaths_averted      = n_deaths * (d_full_package - d_status_quo) * eta_response_mid
 cases_averted       = n_burden_true * (d_full_package - d_status_quo) * eta_response_mid
 burden_avoided      = C_burden_total * (d_full_package - d_status_quo) * eta_response_mid
@@ -208,7 +229,9 @@ fmtR = (x) => {
 fmtN = (x) => x.toLocaleString("en-ZA", {maximumFractionDigits: 0});
 
 outcomesTable = Inputs.table([
-  {Outcome: "Annual deaths (modelled)",                   Value: fmtN(n_deaths)},
+  {Outcome: "Annual deaths (StatsSA MACOD)",              Value: fmtN(n_deaths)},
+  {Outcome: "Implied true burden (cases)",                Value: fmtN(n_burden_true)},
+  {Outcome: "Derived d_status_quo = N_NMC·CFR/N_deaths",   Value: d_status_quo_derived.toFixed(3)},
   {Outcome: "Total economic burden / year",               Value: fmtR(C_burden_total)},
   {Outcome: "Cases averted / year (Full Package)",        Value: fmtN(cases_averted)},
   {Outcome: "Deaths averted / year (Full Package)",       Value: fmtN(deaths_averted)},

@@ -148,7 +148,7 @@ $$
 C_{\text{burden}} \;=\; \underbrace{\sum_{s \in \{\text{PIH},\text{NHLS},\text{NMC}\}} n_s \cdot c^{\text{morb}}_s}_{\text{morbidity}} \;+\; \underbrace{n_{\text{deaths}} \cdot c^{\text{mort}}_{\text{HC}}}_{\text{mortality (human-capital)}}
 $$
 
-where $n_s$ = stream counts (rows `n_pih_annual`, `n_nhls_severe_annual`, `n_nmc_annual`), $c^{\text{morb}}_s$ = stratum-specific per-case morbidity costs (rows `c_morbidity_*`), $n_{\text{deaths}} = 1{,}500$ (`n_deaths_headline`), $c^{\text{mort}}_{\text{HC}} = $ 25 productive years × R60k median income, undiscounted (`c_mortality_human_capital`). Stratified-CFR alternative (`C_burden_total_conservative` ≈ R1.34B) is supplied as a sensitivity.
+where $n_s$ = stream counts (rows `n_pih_annual`, `n_nhls_severe_annual`, `n_nmc_annual`), $c^{\text{morb}}_s$ = stratum-specific per-case morbidity costs (rows `c_morbidity_*`), $n_{\text{deaths}} = 2{,}000$ (`n_deaths_statssa_macod` — **StatsSA MACOD is the canonical truth source for deaths and is updated as new StatsSA releases land**; `n_deaths_headline` mirrors it), $c^{\text{mort}}_{\text{HC}} = $ 25 productive years × R60k median income, undiscounted (`c_mortality_human_capital`). Stratified-CFR alternative (`C_burden_total_conservative` ≈ R1.34B) is supplied as a sensitivity.
 
 **Coordination decision tree (closed-form joint probability).**
 
