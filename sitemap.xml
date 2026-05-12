@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://your-site-url.com/technical_appendix_terbufos.html</loc>
+    <lastmod>2026-05-12T08:02:32.540Z</lastmod>
+  </url>
+  <url>
     <loc>https://your-site-url.com/posts/terbufos_policy.html</loc>
-    <lastmod>2026-05-11T19:19:59.187Z</lastmod>
+    <lastmod>2026-05-12T08:01:22.834Z</lastmod>
   </url>
   <url>
     <loc>https://your-site-url.com/posts/surveillance_concept_note.html</loc>
-    <lastmod>2026-05-11T19:15:47.000Z</lastmod>
+    <lastmod>2026-05-12T08:01:22.846Z</lastmod>
   </url>
   <url>
     <loc>https://your-site-url.com/posts/decision_model.html</loc>
@@ -14,7 +18,7 @@
   </url>
   <url>
     <loc>https://your-site-url.com/posts/coordination_policy.html</loc>
-    <lastmod>2026-05-11T19:15:47.022Z</lastmod>
+    <lastmod>2026-05-12T08:01:22.824Z</lastmod>
   </url>
   <url>
     <loc>https://your-site-url.com/parameters_hub.html</loc>
@@ -30,7 +34,7 @@
   </url>
   <url>
     <loc>https://your-site-url.com/analysis_report_v2.html</loc>
-    <lastmod>2026-05-11T12:44:46.533Z</lastmod>
+    <lastmod>2026-05-12T08:01:22.846Z</lastmod>
   </url>
   <url>
     <loc>https://your-site-url.com/glossary.html</loc>
@@ -58,6 +62,10 @@
   </url>
   <url>
     <loc>https://your-site-url.com/posts/surveillance_policy.html</loc>
-    <lastmod>2026-05-11T19:15:47.011Z</lastmod>
+    <lastmod>2026-05-12T08:01:22.802Z</lastmod>
+  </url>
+  <url>
+    <loc>https://your-site-url.com/technical_appendix_coordination.html</loc>
+    <lastmod>2026-05-12T08:02:06.657Z</lastmod>
   </url>
 </urlset>
