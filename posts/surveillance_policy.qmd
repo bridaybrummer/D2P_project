@@ -226,14 +226,29 @@ The legacy v1 figure was an expert-elicited estimate on a different scale, deriv
 #| label: fig-surv-decision-tree
 #| echo: false
 #| output: asis
-d_sq    <- as.numeric(pick("d_status_quo"))
-d_s1    <- as.numeric(pick("d_option4_PIH_quarterly"))
-d_s2    <- as.numeric(pick("d_option3_BChE_autonotify"))
-d_mvp   <- as.numeric(pick("d_surveillance_mvp"))
 
-c_s1   <- as.numeric(pick("c_S4_PIH_dashboard_op"))
-c_s2   <- as.numeric(pick("c_S3a_BChE_autonotify_op"))
-c_mvp  <- as.numeric(pick("c_surv_MVP_op"))
+# Source the decision-tree engine and the surveillance tree builder.
+# Both scripts auto-resolve their paths whether rendered from the project
+# root or from posts/. All numbers below come from the rollback of the tree
+# object built off amua_import_parameters_v3.csv -- no inline arithmetic.
+source("../R/surveillance_tree.r")
+
+params   <- load_params()                          # named list from CSV
+tree     <- build_surveillance_tree(params)        # dt_node object
+res      <- evs_to_df(eval_tree(tree))             # per-case rollback (tibble)
+annual   <- scale_surveillance_to_annual(res, params$n_true_burden_from_statssa_mid)
+
+# Pull arm-level values out of the rolled-back tibble. The arm names match
+# those defined in build_surveillance_tree() in R/surveillance_tree.r.
+arm <- function(a) annual %>% filter(arm == a)
+d_sq  <- arm("status_quo")$detected
+d_s1  <- arm("S1_PIH_MVD")$detected
+d_s2  <- arm("S2_BChE_autonotify")$detected
+d_mvp <- arm("MVP_S1_plus_S2")$detected
+
+c_s1   <- arm("S1_PIH_MVD")$annual_cost_zar
+c_s2   <- arm("S2_BChE_autonotify")$annual_cost_zar
+c_mvp  <- arm("MVP_S1_plus_S2")$annual_cost_zar
 
 pp <- function(d) sprintf("%+.1f pp", (d - d_sq) * 100)
 

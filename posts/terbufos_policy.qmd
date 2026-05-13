@@ -108,26 +108,42 @@ Cancel terbufos product registrations under the Fertilizers, Farm Feeds, Agricul
 #| label: fig-terb-decision-tree
 #| echo: false
 #| output: asis
-f_lo  <- as.numeric(pick("frac_terbufos_attributable_lo"))
-f_mid <- as.numeric(pick("frac_terbufos_attributable_mid"))
-f_hi  <- as.numeric(pick("frac_terbufos_attributable_hi"))
-phi   <- as.numeric(pick("frac_T3_burden_retired"))
-N_deaths_year <- as.numeric(pick("n_deaths_headline"))
-burden_total  <- as.numeric(pick("C_burden_total_headline"))
 
-# Status-quo terbufos-attributable burden (no ban)
-deaths_attrib_mid <- round(f_mid * N_deaths_year)
-deaths_attrib_lo  <- round(f_lo  * N_deaths_year)
-deaths_attrib_hi  <- round(f_hi  * N_deaths_year)
-burden_attrib_mid <- round(f_mid * burden_total / 1e9, 2)
+# Source the decision-tree engine and the terbufos tree builder. Numbers
+# below come from the rollback of the tree object built off
+# amua_import_parameters_v3.csv -- no inline arithmetic.
+source("../R/terbufos_tree.r")
 
-# Deaths and burden averted under the ban
-deaths_avert_mid  <- round(f_mid * phi * N_deaths_year)
-deaths_avert_lo   <- round(f_lo  * phi * N_deaths_year)
-deaths_avert_hi   <- round(f_hi  * phi * N_deaths_year)
-burden_avert_mid  <- round(f_mid * phi * burden_total / 1e9, 2)
-burden_avert_lo   <- round(f_lo  * phi * burden_total / 1e9, 2)
-burden_avert_hi   <- round(f_hi  * phi * burden_total / 1e9, 2)
+params  <- load_params()
+tree    <- build_terbufos_tree(params)
+res     <- evs_to_df(eval_tree(tree))
+averted <- compute_avertedness(res)
+
+# Parameters still pulled directly from the named list -- these drive the
+# bracket annotations in the diagram caption and the lo/hi range labels.
+f_lo  <- params$frac_terbufos_attributable_lo
+f_mid <- params$frac_terbufos_attributable_mid
+f_hi  <- params$frac_terbufos_attributable_hi
+phi   <- params$frac_T3_burden_retired
+N_deaths_year <- params$n_deaths_headline
+burden_total  <- params$C_burden_total_headline
+
+# Status-quo (T1) terbufos-attributable burden, pulled from the tibble.
+sq <- res %>% filter(arm == "status_quo")
+deaths_attrib_mid <- round(sq$deaths_per_yr)
+deaths_attrib_lo  <- round(f_lo * N_deaths_year)
+deaths_attrib_hi  <- round(f_hi * N_deaths_year)
+burden_attrib_mid <- round(sq$burden_zar_per_yr / 1e9, 2)
+
+# Deaths and burden averted under the ban, pulled from compute_avertedness().
+da <- averted %>% filter(metric == "deaths/yr")
+ba <- averted %>% filter(metric == "burden ZAR/yr")
+deaths_avert_mid  <- round(da$averted)
+deaths_avert_lo   <- round(f_lo * phi * N_deaths_year)
+deaths_avert_hi   <- round(f_hi * phi * N_deaths_year)
+burden_avert_mid  <- round(ba$averted / 1e9, 2)
+burden_avert_lo   <- round(f_lo * phi * burden_total / 1e9, 2)
+burden_avert_hi   <- round(f_hi * phi * burden_total / 1e9, 2)
 
 # Residual deaths after the ban (substitution-incompleteness)
 deaths_residual_mid <- deaths_attrib_mid - deaths_avert_mid
