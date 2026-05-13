@@ -1,0 +1,437 @@
+---
+title: "Overall Policy Model"
+subtitle: "Integrated steady-state model of surveillance, coordination, and terbufos phase-out"
+author: "D2P Project Team"
+date: "2026-05-13"
+date-modified: today
+categories: [policy, integrated-model, decision-makers, auditable]
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    number-sections: true
+    code-fold: true
+    code-tools: true
+---
+
+## Scope
+
+A single steady-state model of acute pesticide poisoning in South Africa in which the three companion briefs ([Surveillance](surveillance_policy.qmd), [Coordination](coordination_policy.qmd), [Terbufos](terbufos_policy.qmd)) are encoded as toggleable options. Every parameter is either a named row in [`amua_import_parameters_v4.csv`](../amua_import_parameters_v4.csv) or a declared constant at the top of the model chunk.
+
+The model is designed to demonstrate two structural results:
+
+1. **Detection–workload coupling.** Induced EHP investigation and DALRRD enforcement workload scales with the false-positive-inflated alert volume, producing diminishing marginal returns once community-tier surveillance is added.
+2. **Source-control coupling.** A 12–24 month terbufos phase-out reduces true cases and deaths proportionally, lowering health/YLL costs and induced surveillance workload by the same fraction.
+
+## Burden
+
+StatsSA MACOD 2023 records 2,620 deaths/yr from acute pesticide poisoning (ICD-10 X40–X49). Applied to a mid case-fatality of 12.5 %, this implies ~20,960 true cases/yr. NMC currently notifies ~5 % of true cases. Terbufos (WHO Class Ia organophosphate) is the dominant agent in fatal paediatric events (Davies 2023) with an attributable fraction of 20–35 %.
+
+## Model
+
+```{r}
+#| label: overall-model
+#| echo: true
+#| message: false
+#| warning: false
+
+library(tidyverse)
+library(gt)
+library(scales)
+
+# ----------------------------------------------------------------------
+# 1. PULL CANONICAL PARAMETERS FROM THE CSV
+# ----------------------------------------------------------------------
+raw <- readr::read_csv("../amua_import_parameters_v4.csv", show_col_types = FALSE)
+pick <- function(name) {
+  v <- raw |> filter(Name == name) |> pull(Expression)
+  if (length(v) == 0) NA_real_ else suppressWarnings(as.numeric(v[1]))
+}
+
+# Burden anchors
+N_true    <- pick("n_true_burden_from_statssa_mid")  # 20,960 true cases/yr
+N_deaths  <- pick("n_deaths_headline")               # 2,620 deaths/yr
+c_morb    <- pick("c_morbidity_headline")            # R/morbidity case
+c_mort    <- pick("c_mortality_human_capital")       # R/death (YLL human-capital)
+
+# Detection probabilities along the surveillance ladder
+d_SQ      <- pick("d_status_quo")           # NMC only
+d_MVP     <- pick("d_surveillance_mvp")     # MVP: NHLS feed + BChE auto + PIH MVD
+d_S1b_mid <- pick("d_S1b_event_community_mid")  # adds community/EHP layer
+
+# Surveillance operating costs (annual, regulator-paid)
+c_surv_MVP <- pick("c_surv_MVP_op")          # R137k
+c_S1b_op   <- pick("c_S1b_op_mid")           # R1.5M
+p_fp_S1b   <- pick("p_fp_S1b_mid")           # 35 % false-positive alerts
+
+# Coordination Full Package operating
+c_coord_FP <- pick("c_full_package_narrow_operating") - c_surv_MVP
+# (≈ R100k/yr incremental for C1–C5 closure-of-loop machinery)
+
+# Coordination outcome — deaths averted at scale
+n_deaths_av_coord_FP <- pick("n_deaths_averted_coord_FP")  # 957
+
+# Terbufos phase-out
+f_terb_mid <- pick("frac_terbufos_attributable_mid")  # 0.25
+phi_terb   <- pick("frac_T3_burden_retired")          # 0.70
+c_T2_enf   <- pick("c_T2_RUP_enforcement_mid")        # R2M
+
+# ----------------------------------------------------------------------
+# 2. ASSUMPTIONS DECLARED INLINE (NOT in the CSV — edit here)
+# ----------------------------------------------------------------------
+# These are the unit costs that translate detected alerts into induced
+# downstream workload. They are kept here, named, so a reviewer can
+# change them and re-render.
+
+c_per_investigation  <- 4000     # R/case: EHP environmental investigation + travel + write-up
+c_per_dalrrd_action  <- 12000    # R/case: DALRRD inspectorate site visit + sampling + enforcement letter
+p_dalrrd_action      <- 0.30     # P(DALRRD action | confirmed case worth referring)
+
+# Terbufos phase-out ramp: linear from 0 to phi_terb over RAMP_MONTHS
+RAMP_MONTHS          <- 18       # 12–24 month policy window; user-editable
+
+# ----------------------------------------------------------------------
+# 3. THE MODEL — one function, four scenarios
+# ----------------------------------------------------------------------
+# A scenario is fully specified by:
+#   d            : per-case detection probability
+#   c_surv       : annual surveillance operating cost
+#   c_coord      : annual coordination operating cost
+#   p_fp         : false-positive rate inflating alert volume
+#   terb_phase   : 0..1, share of terbufos-attributable burden retired this year
+#   c_regulatory : DALRRD enforcement spend (terbufos restriction)
+
+run_scenario <- function(d, c_surv, c_coord, p_fp,
+                         terb_phase = 0, c_regulatory = 0) {
+
+  # (A) Effective true burden after terbufos retirement this year
+  N_true_eff   <- N_true   * (1 - f_terb_mid * terb_phase)
+  N_deaths_eff <- N_deaths * (1 - f_terb_mid * terb_phase)
+
+  # (B) Detected (true) cases and gross alerts (incl. false positives)
+  detected_true  <- d * N_true_eff
+  gross_alerts   <- detected_true / (1 - p_fp)   # false-positive inflation
+  false_alerts   <- gross_alerts - detected_true
+
+  # (C) Induced workload costs (HCW/EHP/DALRRD) — scale with GROSS alerts
+  c_investigation <- gross_alerts * c_per_investigation
+  c_dalrrd_load   <- gross_alerts * p_dalrrd_action * c_per_dalrrd_action
+
+  # (D) Health & YLL cost on the *true* burden (only true cases incur it)
+  c_health <- N_true_eff   * c_morb
+  c_yll    <- N_deaths_eff * c_mort
+
+  # (E) Regulator-paid total this year
+  c_regulator <- c_surv + c_coord + c_investigation + c_dalrrd_load + c_regulatory
+
+  # (F) Societal total this year
+  c_society   <- c_regulator + c_health + c_yll
+
+  # (G) Deaths averted relative to status quo (no terbufos retirement, NMC-only)
+  deaths_sq   <- N_deaths
+  deaths_now  <- N_deaths_eff * (1 - (d - d_SQ))  # crude: detection→response→aversion
+  # Use a single response efficacy: eta = 0.30 (mid) applied to incremental detected cases
+  eta <- pick("eta_response_mid")
+  deaths_av_surv <- eta * (d - d_SQ) * N_true_eff * (N_deaths_eff / N_true_eff)
+  deaths_av_terb <- N_deaths * f_terb_mid * terb_phase
+  deaths_av      <- deaths_av_surv + deaths_av_terb
+
+  tibble(
+    detected_true   = detected_true,
+    gross_alerts    = gross_alerts,
+    false_alerts    = false_alerts,
+    c_surv          = c_surv,
+    c_coord         = c_coord,
+    c_investigation = c_investigation,
+    c_dalrrd_load   = c_dalrrd_load,
+    c_regulatory    = c_regulatory,
+    c_health        = c_health,
+    c_yll           = c_yll,
+    c_regulator_tot = c_regulator,
+    c_society_tot   = c_society,
+    deaths_averted  = deaths_av,
+    cost_per_death_averted =
+      if_else(deaths_av > 0, c_regulator / deaths_av, NA_real_)
+  )
+}
+
+# ----------------------------------------------------------------------
+# 4. FOUR LAYERED SCENARIOS
+# ----------------------------------------------------------------------
+phase_now <- min(1, 12 / RAMP_MONTHS)   # year-1 ramp fraction (12 months elapsed)
+
+scenarios <- bind_rows(
+  `0 · Status quo (NMC only)`                = run_scenario(d_SQ,      0,        0,         p_fp = 0,        terb_phase = 0,         c_regulatory = 0),
+  `1 · Surveillance MVP + Coordination FP`   = run_scenario(d_MVP,     c_surv_MVP, c_coord_FP, p_fp = 0,        terb_phase = 0,         c_regulatory = 0),
+  `2 · + Community surveillance (S1b)`       = run_scenario(d_S1b_mid, c_surv_MVP + c_S1b_op, c_coord_FP, p_fp = p_fp_S1b, terb_phase = 0,         c_regulatory = 0),
+  `3 · + Terbufos phase-out (yr 1, ramp ${RAMP_MONTHS}m)` =
+                                              run_scenario(d_S1b_mid, c_surv_MVP + c_S1b_op, c_coord_FP, p_fp = p_fp_S1b, terb_phase = phase_now, c_regulatory = c_T2_enf),
+  .id = "Scenario"
+)
+
+# Rename the dynamic label
+scenarios$Scenario[4] <- sprintf("3 · + Terbufos phase-out (yr 1, ramp %dm)", RAMP_MONTHS)
+```
+
+## Scenario comparison
+
+```{r}
+#| label: tbl-overall
+#| tbl-cap: "Annual steady-state outputs under each layered policy option."
+
+scenarios |>
+  mutate(
+    detected_true = round(detected_true),
+    gross_alerts  = round(gross_alerts),
+    false_alerts  = round(false_alerts),
+    `Regulator (R/yr)`   = scales::comma(round(c_regulator_tot)),
+    `Health + YLL (R/yr)`= scales::comma(round(c_health + c_yll)),
+    `Society (R/yr)`     = scales::comma(round(c_society_tot)),
+    `Deaths averted`     = round(deaths_averted),
+    `R / death averted`  = if_else(deaths_averted > 0,
+                                   scales::comma(round(c_regulator_tot / deaths_averted)),
+                                   "—")
+  ) |>
+  select(Scenario,
+         `Detected (true)` = detected_true,
+         `Gross alerts`    = gross_alerts,
+         `False alerts`    = false_alerts,
+         `Regulator (R/yr)`,
+         `Health + YLL (R/yr)`,
+         `Society (R/yr)`,
+         `Deaths averted`,
+         `R / death averted`) |>
+  gt() |>
+  tab_header(title = "Layered policy options — annual steady-state view") |>
+  opt_row_striping() |>
+  tab_options(table.font.size = "small")
+```
+
+Rows 1→2 raise detection from 5 % to 19 % at R237k/yr incremental regulator spend, with no false-positive inflation (administrative feeds only). Row 3 adds community-tier surveillance, which lifts detection further but introduces a 35 % false-positive rate; induced workload scales with gross (true + false) alert volume. Row 4 layers a `r RAMP_MONTHS`-month terbufos phase-out, which reduces true cases and deaths proportionally to the attributable fraction × ramp progress.
+
+## Detection–workload coupling
+
+```{r}
+#| label: fig-diminishing-returns
+#| fig-cap: "Marginal cost per death averted rises sharply with community-surveillance false-positive rate. The terbufos phase-out shifts the curve down because the system is now processing fewer true cases."
+
+fp_grid <- seq(0.10, 0.60, by = 0.025)
+
+curve_df <- bind_rows(
+  tibble(
+    fp = fp_grid,
+    label = "Surveillance only (no terbufos action)",
+    res = map(fp, ~ run_scenario(d_S1b_mid, c_surv_MVP + c_S1b_op, c_coord_FP,
+                                 p_fp = .x, terb_phase = 0, c_regulatory = 0))
+  ),
+  tibble(
+    fp = fp_grid,
+    label = sprintf("Surveillance + terbufos phase-out (yr 1, %dm ramp)", RAMP_MONTHS),
+    res = map(fp, ~ run_scenario(d_S1b_mid, c_surv_MVP + c_S1b_op, c_coord_FP,
+                                 p_fp = .x, terb_phase = phase_now, c_regulatory = c_T2_enf))
+  )
+) |>
+  mutate(cost_per_death = map_dbl(res, ~ .x$cost_per_death_averted)) |>
+  select(-res)
+
+ggplot(curve_df, aes(x = fp, y = cost_per_death, colour = label)) +
+  geom_line(linewidth = 1.1) +
+  geom_point(size = 1.5) +
+  scale_x_continuous(labels = scales::percent_format(accuracy = 1)) +
+  scale_y_continuous(labels = scales::comma_format(prefix = "R")) +
+  labs(
+    x = "Community-surveillance false-positive rate (p_fp_S1b)",
+    y = "Regulator cost per death averted (R/yr)",
+    colour = NULL
+  ) +
+  theme_minimal(base_size = 11) +
+  theme(legend.position = "bottom")
+```
+
+## Terbufos phase-out trajectory
+
+```{r}
+#| label: fig-terbufos-ramp
+#| fig-cap: "As terbufos is phased out (linear ramp), deaths and true-case burden fall, dragging *both* the health/YLL bill *and* the induced surveillance workload down with them."
+
+months <- 0:24
+ramp_frac <- pmin(1, months / RAMP_MONTHS)
+
+ramp_df <- map_dfr(seq_along(months), function(i) {
+  r <- run_scenario(d_S1b_mid, c_surv_MVP + c_S1b_op, c_coord_FP,
+                    p_fp = p_fp_S1b,
+                    terb_phase = ramp_frac[i],
+                    c_regulatory = c_T2_enf)
+  tibble(
+    month                   = months[i],
+    `True cases (residual)` = N_true   * (1 - f_terb_mid * ramp_frac[i]),
+    `Deaths (residual)`     = N_deaths * (1 - f_terb_mid * ramp_frac[i]),
+    `Health + YLL bill`     = r$c_health + r$c_yll,
+    `Surveillance + induced workload` =
+      r$c_surv + r$c_coord + r$c_investigation + r$c_dalrrd_load
+  )
+})
+
+ramp_long <- ramp_df |>
+  pivot_longer(-month, names_to = "metric", values_to = "value") |>
+  group_by(metric) |>
+  mutate(value_idx = value / first(value) * 100) |>
+  ungroup()
+
+ggplot(ramp_long, aes(x = month, y = value_idx, colour = metric)) +
+  geom_line(linewidth = 1.1) +
+  geom_vline(xintercept = RAMP_MONTHS, linetype = "dashed", alpha = 0.4) +
+  annotate("text", x = RAMP_MONTHS, y = 102, label = "Ramp complete",
+           hjust = 1.05, size = 3.2, alpha = 0.6) +
+  labs(
+    x = "Months after policy commencement",
+    y = "Indexed to month 0 (= 100)",
+    colour = NULL
+  ) +
+  theme_minimal(base_size = 11) +
+  theme(legend.position = "bottom")
+```
+
+## Sensitivity analyses
+
+Three two-way sensitivity tables are reported. Each varies two model inputs over their CSV-anchored ranges and holds all others at working values. Cells are colour-shaded from low (green) to high (red) on the reported outcome.
+
+### S1. False-positive rate × detection probability
+
+Outcome: regulator cost per death averted (R/yr), under the full surveillance + coordination stack with no terbufos action.
+
+```{r}
+#| label: tbl-sens-fp-detection
+#| tbl-cap: "Regulator cost per death averted (R/yr) as community false-positive rate and per-case detection are varied jointly. All other parameters held at working values; terbufos phase-out off."
+
+fp_levels    <- c(0.20, 0.35, 0.50)
+d_levels     <- c(d_MVP, 0.30, d_S1b_mid, 0.50)
+d_labels     <- c(sprintf("MVP (%.0f%%)", d_MVP*100),
+                  "30%",
+                  sprintf("S1b mid (%.0f%%)", d_S1b_mid*100),
+                  "50%")
+
+sens1 <- expand_grid(fp = fp_levels, d = d_levels) |>
+  mutate(
+    res = map2(d, fp, ~ run_scenario(.x, c_surv_MVP + c_S1b_op, c_coord_FP,
+                                     p_fp = .y, terb_phase = 0, c_regulatory = 0)),
+    cost_per_death = map_dbl(res, ~ .x$cost_per_death_averted),
+    d_lab = factor(d, levels = d_levels, labels = d_labels)
+  ) |>
+  select(fp, d_lab, cost_per_death) |>
+  pivot_wider(names_from = d_lab, values_from = cost_per_death) |>
+  mutate(`FP rate` = scales::percent(fp, accuracy = 1), .before = 1) |>
+  select(-fp)
+
+sens1 |>
+  gt(rowname_col = "FP rate") |>
+  fmt_number(columns = -1, decimals = 0, use_seps = TRUE, pattern = "R{x}") |>
+  data_color(columns = -1, palette = c("#1a9850", "#fee08b", "#d73027")) |>
+  tab_stubhead(label = "FP rate \\ Detection") |>
+  tab_options(table.font.size = "small")
+```
+
+Cost per death averted rises with both the false-positive rate (more induced workload per detected true case) and, at high FP, with detection itself (the additional true cases averted do not offset the alert-processing cost).
+
+### S2. Terbufos attributable fraction × ramp length
+
+Outcome: deaths averted in year 1 attributable to the phase-out, holding surveillance + coordination at the S1b mid scenario.
+
+```{r}
+#| label: tbl-sens-terbufos
+#| tbl-cap: "Year-1 deaths averted from terbufos phase-out, varying attributable fraction (rows) and ramp length (columns). At month 12 the ramp is complete for the 12-month option and 50–67 % complete for the 18- and 24-month options respectively."
+
+f_levels    <- c(pick("frac_terbufos_attributable_lo"),
+                 pick("frac_terbufos_attributable_mid"),
+                 pick("frac_terbufos_attributable_hi"))
+ramp_levels <- c(12, 18, 24)
+
+sens2 <- expand_grid(f_attr = f_levels, ramp = ramp_levels) |>
+  mutate(
+    phase_yr1 = pmin(1, 12 / ramp),
+    deaths_av = f_attr * phi_terb * N_deaths * phase_yr1
+  ) |>
+  select(f_attr, ramp, deaths_av) |>
+  pivot_wider(names_from = ramp, values_from = deaths_av,
+              names_glue = "{ramp}-month ramp") |>
+  mutate(`Attributable fraction` = scales::percent(f_attr, accuracy = 1),
+         .before = 1) |>
+  select(-f_attr)
+
+sens2 |>
+  gt(rowname_col = "Attributable fraction") |>
+  fmt_number(columns = -1, decimals = 0) |>
+  data_color(columns = -1, palette = c("#d73027", "#fee08b", "#1a9850")) |>
+  tab_stubhead(label = "f_attr \\ Ramp") |>
+  tab_options(table.font.size = "small")
+```
+
+The 12-month ramp captures the full attributable retirement in year 1; the 24-month ramp halves it. At the working attributable fraction (25 %), this is a difference of ~`r round(0.25 * phi_terb * N_deaths * (1 - 0.5))` deaths in year 1.
+
+### S3. Response efficacy × terbufos phase-out completion
+
+Outcome: total annual deaths averted (surveillance response + source control), under the S1b stack at mid FP.
+
+```{r}
+#| label: tbl-sens-eta-terbufos
+#| tbl-cap: "Total annual deaths averted (surveillance + terbufos retirement) as response efficacy η and phase-out completion are varied jointly. Negative complementarity is absent: the two levers add."
+
+eta_levels  <- c(pick("eta_response_lo"),
+                 pick("eta_response_mid"),
+                 pick("eta_response_hi"))
+phase_levels <- c(0, 0.5, 1)
+
+sens3 <- expand_grid(eta = eta_levels, phase = phase_levels) |>
+  mutate(
+    deaths_av_surv = eta * (d_S1b_mid - d_SQ) * N_true *
+                     (1 - f_terb_mid * phase) *
+                     (N_deaths / N_true),
+    deaths_av_terb = N_deaths * f_terb_mid * phase * phi_terb,
+    deaths_av_tot  = deaths_av_surv + deaths_av_terb
+  ) |>
+  select(eta, phase, deaths_av_tot) |>
+  pivot_wider(names_from = phase, values_from = deaths_av_tot,
+              names_glue = "{scales::percent(phase, accuracy = 1)} retired") |>
+  mutate(`Response efficacy η` = scales::percent(eta, accuracy = 1),
+         .before = 1) |>
+  select(-eta)
+
+sens3 |>
+  gt(rowname_col = "Response efficacy η") |>
+  fmt_number(columns = -1, decimals = 0) |>
+  data_color(columns = -1, palette = c("#d73027", "#fee08b", "#1a9850")) |>
+  tab_stubhead(label = "η \\ Terbufos retired") |>
+  tab_options(table.font.size = "small")
+```
+
+Surveillance contribution scales with η and is partially eroded as terbufos retirement reduces the residual true-case pool. Source-control contribution scales linearly with retirement. The two levers are additive at all parameter values in the supported ranges.
+
+## Results
+
+**Detection–workload coupling.** Administrative-tier surveillance (NHLS feed, BChE auto-notify, PIH MVD) and coordination (C1–C5) raise per-case detection from 5 % to 19 % without false-positive inflation, because alerts originate from confirmed laboratory or clinical events. Community-tier surveillance (S1b) raises detection further but at a benchmarked false-positive rate of 20–50 %; gross alert volume is 1.25–2 × the true-case count and marginal regulator cost per death averted rises monotonically with `p_fp_S1b`. The model implies S1b should be piloted with direct measurement of `p_fp_S1b` before national rollout.
+
+**Source-control coupling.** A `r RAMP_MONTHS`-month linear terbufos phase-out retires `r round(N_deaths * f_terb_mid * phi_terb)` deaths/yr and `r round(N_true * f_terb_mid * phi_terb)` cases/yr at full ramp (`frac_terbufos_attributable_mid = 0.25`, `frac_T3_burden_retired = 0.70`). Because induced workload and health/YLL costs both scale with true cases, all four output streams (cases, deaths, health/YLL, induced workload) fall by the same fraction. Source control is complementary to surveillance: it is the only lever that reduces the denominator the system has to process.
+
+## Editing the model
+
+Inputs are either CSV rows in [`amua_import_parameters_v4.csv`](../amua_import_parameters_v4.csv) (registry: [Parameters Hub](../parameters_hub.html)) or declared constants at the top of the model chunk (`c_per_investigation`, `c_per_dalrrd_action`, `p_dalrrd_action`, `RAMP_MONTHS`). Sensitivity ranges (`_lo`, `_hi`) are provided in the CSV for every working value. Typical edits:
+
+- `RAMP_MONTHS <- 12` or `24` — tighter or slower phase-out.
+- Replace `p_fp_S1b_mid` with `p_fp_S1b_hi` in the S1b scenario — stress-test community FP.
+- Drop `c_mort` from `c_society_tot` — health-system perspective only.
+
+## Relation to companion briefs
+
+```{mermaid}
+%%| label: fig-overall-fit
+%%| fig-cap: "Each companion brief specifies one component; this model evaluates them jointly."
+flowchart LR
+    A[1 · Surveillance<br/>MVP + S1b ladder] --> M[Integrated model<br/>this page]
+    B[2 · Coordination<br/>NMC→EHP→DALRRD closure] --> M
+    C[3 · Terbufos<br/>T2 → T3 escalation] --> M
+    style M fill:#fff3b0,stroke:#cc8800,stroke-width:2px
+```
+
+---
+
+Companion briefs: [Surveillance](surveillance_policy.qmd) · [Coordination](coordination_policy.qmd) · [Terbufos](terbufos_policy.qmd) · [Decision Model](decision_model.qmd) · [Costing](costing_analysis.qmd).

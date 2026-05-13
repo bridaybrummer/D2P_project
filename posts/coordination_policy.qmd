@@ -26,16 +26,18 @@ format:
 
 ## 2. Public health problem
 
-Better detection (see the [Surveillance brief](surveillance_policy.qmd)) is wasted if the system does not **act** on what it detects. South Africa's pesticide-poisoning response chain has **eight sequential decision points** between "case suspected" and "regulatory action closes the loop", and **six of those eight default to a broken-loop terminal**. A correctly-notified case can still produce no investigation, no source removal, and no regulatory follow-up — leaving the underlying hazard in place and producing predictable secondary cases.
+Better detection (see the [Surveillance brief](surveillance_policy.qmd)) is wasted if the system does not **act** on what it detects. The response chain has **eight sequential decision points** between "case suspected" and "regulatory action closes the loop"; **six of the eight default to a broken-loop terminal**. A correctly-notified case can still produce no investigation, no source removal, and no regulatory follow-up — leaving the underlying hazard in place and producing predictable secondary cases.
+
+The coordination loop is **agent-agnostic**: it processes terbufos clusters today, will process aldicarb or paraquat tomorrow, and — as South Africa's burden shifts with development — opioids, methadone, or recreational-drug overdoses thereafter. The closed loop is therefore the durable institutional asset; the [Terbufos brief](terbufos_policy.qmd) is the first product-specific output it should deliver, not the last.
 
 ## 3. Status quo
 
 {{< include _shared_parameters.qmd >}}
 
 ::: {.callout-note}
-## Who bears the R2.34B — the whole-of-government picture
+## Who bears the R2.34B
 
-The burden is split asymmetrically across government and society: **NDoH ~R70M (3 %), NHLS ~R10M (<1 %), individuals/households ~R10M out-of-pocket (<1 %), and ~R2.25B in lost lifetime earnings (96 %) borne by households and the wider economy**. DALRRD bears no direct burden-side cost — but they hold **the only legal lever that prevents the underlying exposure**. That asymmetry is exactly why the coordination loop must terminate in DALRRD action, not just in EHP investigation: the agency carrying the lowest share of the burden controls the highest-leverage intervention, so closing the NICD → EHP → DALRRD loop is the cheapest cross-departmental coordination available to government.
+NDoH ~R70M (3 %), NHLS ~R10M (<1 %), households ~R10M OOP (<1 %), and ~R2.25B (96 %) in lost lifetime earnings borne by households and the wider economy. DALRRD bears no direct burden-side cost but holds **the only legal lever that prevents the underlying exposure**. That asymmetry is why the loop must terminate in DALRRD action: the agency with the lowest burden share controls the highest-leverage intervention.
 :::
 
 ### The notification pathway — one-way and broken
@@ -93,25 +95,13 @@ The five drivers are: (1) NMC schema lacks a closure-of-loop field; (2) EHP→DA
 
 ## 5. Policy options
 
-### Option C1 — Mandate an NMC closure-of-loop field for EHPs
-
-Add a structured "investigation outcome" field to NMC against every notification: visited/not visited, source identified/not, environmental sampling done/not, referral made/not. Make completion within 14 days an EHP performance KPI. **No new legislation; an NMC schema change and circular from NDoH.** Annual cost: **~R30,000** (schema update + training material).
-
-### Option C2 — Structured EHP→DALRRD referral form on NMC
-
-Add a referral form to NMC that auto-emails the DALRRD Pesticide Registrar/Inspectorate when an EHP suspects an unsafe product, illegal sale, or occupational source. Captures product, location, suspected agent, severity, and EHP contact. Replaces today's informal phone/email referral. Annual cost: **~R25,000**.
-
-### Option C3 — NICD→DALRRD poisoning intelligence feed *(★ recommended)*
-
-DALRRD has formally requested poisoning intelligence to inform registration, labelling, and inspectorate priorities. Output: a quarterly NICD brief by suspected product / geography / season, plus an ad-hoc case-spike alert channel. **Closes the regulator-feedback gap and gives DALRRD the evidence base for product-specific action (the explicit prerequisite for the [Terbufos brief](terbufos_policy.qmd) recommendation).** Annual cost: **~R40,000** (NICD analyst + DALRRD liaison), 12 weeks.
-
-### Option C4 — Auto-feedback to notifying clinician
-
-NMC sends the notifying clinician a quarterly case-status summary: outcome of EHP investigation, regulatory action taken, whether their case contributed to a wider investigation. Removes the "I notify into a black hole" disincentive. Annual cost: **~R20,000** (templating + email integration).
-
-### Option C5 — Joint KPI dashboard
-
-A small public dashboard tracking: median time from notification to EHP investigation; % of notifications with a recorded outcome; % of cases with documented DALRRD action; % of notifying clinicians who received feedback. Co-owned by NICD, DALRRD, and provincial DoHs. Annual cost: **~R30,000**.
+| ID | Option | What it does | Annual cost |
+|:---|:-------|:-------------|------------:|
+| **C1** | NMC closure-of-loop field for EHPs | Structured "investigation outcome" field (visited, source identified, sampling, referral); 14-day completion KPI. No new legislation. | ~R30k |
+| **C2** | Structured EHP→DALRRD referral form on NMC | Auto-emails DALRRD Inspectorate with product, location, agent, severity; replaces informal phone/email referral. | ~R25k |
+| **C3** ★ | NICD→DALRRD poisoning intelligence feed | Quarterly NICD brief by product/geography/season + ad-hoc case-spike alerts. Gives DALRRD the evidence base for product-specific action (prerequisite for the [Terbufos brief](terbufos_policy.qmd)). | ~R40k |
+| **C4** | Notifier auto-feedback | Quarterly NMC case-status summary back to the notifying clinician. Removes the "notify into a black hole" disincentive. | ~R20k |
+| **C5** | Joint KPI dashboard | Public dashboard: notification-to-investigation time, % with recorded outcome, % with DALRRD action, % notifiers receiving feedback. Co-owned by NICD, DALRRD, provincial DoHs. | ~R30k |
 
 ### Coordination Full Package (C1 + C2 + C3 + C4 + C5)
 
@@ -204,12 +194,54 @@ p6, 1 - p6,
 
 **Joint P(loop fully closes) ≈ `r sprintf("%.1f %%", 100 * as.numeric(pick("p_loop_closed_status_quo")))`** under the status quo (CSV: `p_loop_closed_status_quo`). Expected coordination cost per suspected case ≈ **R196,400** — virtually the full per-case societal burden of R197,000, because the loop almost never closes.
 
-### 6b. Clinical-outcome subtree
+### 6b. Per-loop yield — the parameter the integrated model consumes
+
+A single fully-closed loop retires one uncontrolled source. The source would otherwise produce a cluster of $\rho_{\text{secondary}}$ further cases. Response efficacy $\eta$ is the fraction of that cluster that is actually averted once the loop closes. Per loop closed:
+
+$$
+\text{cases prevented} = \rho_{\text{secondary}} \times \eta
+\qquad
+\text{deaths prevented} = \rho_{\text{secondary}} \times \eta \times p_{\text{death}}
+$$
+
+```{r}
+#| label: tbl-per-loop-yield
+#| echo: false
+#| tbl-cap: "Preventable cases, deaths, and societal burden per *additional* fully-closed loop, at low/mid/high response efficacy. All inputs from amua_import_parameters_v4.csv. These are the rates that overall_policy_model.qmd multiplies by Δ(loops closed) under each policy scenario."
+
+rho     <- as.numeric(pick("rho_secondary"))
+p_dth   <- as.numeric(pick("p_death"))
+c_morb  <- as.numeric(pick("c_morbidity_headline"))
+c_mort  <- as.numeric(pick("c_mortality_human_capital"))
+
+eta_lo  <- as.numeric(pick("eta_response_lo"))
+eta_mid <- as.numeric(pick("eta_response_mid"))
+eta_hi  <- as.numeric(pick("eta_response_hi"))
+
+tibble::tibble(
+  Scenario          = c("Low engagement (η_lo)", "Base case (η_mid)", "Well-resourced (η_hi)"),
+  `η`               = c(eta_lo, eta_mid, eta_hi),
+  `Cases / loop`    = rho * c(eta_lo, eta_mid, eta_hi),
+  `Deaths / loop`   = rho * c(eta_lo, eta_mid, eta_hi) * p_dth,
+  `Burden retired / loop (R)` =
+    rho * c(eta_lo, eta_mid, eta_hi) * c_morb +
+    rho * c(eta_lo, eta_mid, eta_hi) * p_dth * c_mort
+) |>
+  gt::gt() |>
+  gt::fmt_number(columns = c("η"), decimals = 2) |>
+  gt::fmt_number(columns = c("Cases / loop", "Deaths / loop"), decimals = 2) |>
+  gt::fmt_number(columns = "Burden retired / loop (R)", decimals = 0, use_seps = TRUE, pattern = "R{x}") |>
+  gt::tab_options(table.font.size = "small")
+```
+
+**Headline rule of thumb.** At base case ($\rho = `r rho`$, $\eta = `r eta_mid`$, $p_{\text{death}} = `r p_dth`$): **every loop closed prevents ≈ `r round(rho*eta_mid, 1)` future cases and ≈ `r round(rho*eta_mid*p_dth, 2)` deaths**, retiring **≈ R`r format(round(rho*eta_mid*(c_morb + p_dth*c_mort)), big.mark=",")` of societal burden**. Multiply by the change in number of loops closed under any scenario in [the integrated model](overall_policy_model.qmd) to get the policy yield.
+
+### 6c. Clinical-outcome subtree
 
 Each coordination terminal feeds into a clinical-outcome subtree for the index case *and* for the secondary cases that would otherwise follow from the same source:
 
 ````{r}
-#| label: fig-coord-outcome-tree
+#| label: fig-coord-outcome-tree-v2
 #| echo: false
 #| output: asis
 rho     <- as.numeric(pick("rho_secondary"))
@@ -251,7 +283,7 @@ averted_deaths, extra_deaths
 ))
 ````
 
-### 6c. What changes under each coordination scenario
+### 6d. What changes under each coordination scenario
 
 Burden avoided is split by **who would otherwise have borne it**, so each agency sees the share of the win that flows back to its own budget line or constituency. The avoided-burden split uses the same shares as the canonical stakeholder table above: ~3.4 % health sector (NDoH + NHLS), ~96.6 % households (mortality + OOP).
 
@@ -265,9 +297,11 @@ Burden avoided is split by **who would otherwise have borne it**, so each agency
 
 **Reading by audience.**
 
-- **NDoH / NHLS:** the R50M avoided on your budget line is ~330× the R145k Full-Package operating cost — a credible business case even before counting household mortality.
-- **DALRRD:** you do not bear the R2.34B, but C3 is the lowest-cost route to the evidence base you need for product-specific action (see [Terbufos brief](terbufos_policy.qmd)).
-- **Treasury / Presidency:** ~R1.4B/yr of household and societal cost is structurally retired; this is the cross-departmental coordination return that justifies the joint DG circular.
+- **NDoH / NHLS:** the R50M avoided is ~330× the R145k Full-Package operating cost — a credible business case before counting household mortality.
+- **DALRRD:** C3 is the lowest-cost route to the evidence base needed for product-specific action (see [Terbufos brief](terbufos_policy.qmd)).
+- **Treasury / Presidency:** ~R1.4B/yr of household and societal cost retired; the cross-departmental return that justifies the joint DG circular.
+
+**Beyond terbufos.** The Full Package retires ~957 deaths/yr **today**, dominated by organophosphate and carbamate clusters. As terbufos is withdrawn (see [Terbufos brief](terbufos_policy.qmd)) the residual cluster mix will shift first to other agricultural pesticides (aldicarb, paraquat, carbofuran), and over a 10–20 year development horizon increasingly toward **opioids, methadone substitution, and recreational-drug overdoses** — the toxicology profile that has dominated middle- and high-income countries since the 1990s. The closed loop is the asset that survives that transition; only the product list at C3 changes.
 
 
 ## 7. Implementation considerations

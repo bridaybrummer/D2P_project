@@ -294,8 +294,8 @@ flowchart LR
 
     SQ -->|p=%.6f<br/>Poisoning exposed| SQ_P[Poisoned]
     SQ -->|1 - p<br/>No poisoning| SQ_N[Not poisoned]:::neutral
-    SQ_P -->|%.2f<br/>Terbufos| SQ_T[Outcome | terbufos]:::bad
-    SQ_P -->|%.2f<br/>Other agent| SQ_O[Outcome | other]
+    SQ_P -->|%.2f<br/>Terbufos| SQ_T["Outcome | terbufos"]:::bad
+    SQ_P -->|%.2f<br/>Other agent| SQ_O["Outcome | other"]
     SQ_T --> SQ_TD["Died %.3f"]:::bad
     SQ_T --> SQ_TH["Hospitalised %.3f"]:::warn
     SQ_T --> SQ_TA["Asymptomatic %.3f"]:::neutral
@@ -305,8 +305,8 @@ flowchart LR
 
     BN -->|p=%.6f<br/>Poisoning exposed| BN_P[Poisoned]
     BN -->|1 - p<br/>No poisoning| BN_N[Not poisoned]:::neutral
-    BN_P -->|%.2f<br/>Terbufos residual| BN_T[Outcome | terbufos]:::warn
-    BN_P -->|%.2f<br/>Other agent| BN_O[Outcome | other]:::good
+    BN_P -->|%.2f<br/>Terbufos residual| BN_T["Outcome | terbufos"]:::warn
+    BN_P -->|%.2f<br/>Other agent| BN_O["Outcome | other"]:::good
     BN_T --> BN_TD["Died %.3f"]:::bad
     BN_T --> BN_TH["Hospitalised %.3f"]:::warn
     BN_T --> BN_TA["Asymptomatic %.3f"]:::neutral
