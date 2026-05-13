@@ -2916,23 +2916,23 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
 <p>All numerical claims in this brief draw from a single CSV — <a href="../amua_import_parameters_v4.csv"><code>amua_import_parameters_v4.csv</code></a> — rendered in full at the <a href="../parameters_hub.html">Parameters Hub</a>. The headline values below are pulled from that file at render time; <strong>do not edit the numbers in this brief — edit the CSV and re-render</strong>.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="czasnhqwxn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#czasnhqwxn table {
+<div id="smxnsnpmdu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#smxnsnpmdu table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#czasnhqwxn thead, #czasnhqwxn tbody, #czasnhqwxn tfoot, #czasnhqwxn tr, #czasnhqwxn td, #czasnhqwxn th {
+#smxnsnpmdu thead, #smxnsnpmdu tbody, #smxnsnpmdu tfoot, #smxnsnpmdu tr, #smxnsnpmdu td, #smxnsnpmdu th {
   border-style: none;
 }
 
-#czasnhqwxn p {
+#smxnsnpmdu p {
   margin: 0;
   padding: 0;
 }
 
-#czasnhqwxn .gt_table {
+#smxnsnpmdu .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2958,12 +2958,12 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   border-left-color: #D3D3D3;
 }
 
-#czasnhqwxn .gt_caption {
+#smxnsnpmdu .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#czasnhqwxn .gt_title {
+#smxnsnpmdu .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2975,7 +2975,7 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   border-bottom-width: 0;
 }
 
-#czasnhqwxn .gt_subtitle {
+#smxnsnpmdu .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2987,7 +2987,7 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   border-top-width: 0;
 }
 
-#czasnhqwxn .gt_heading {
+#smxnsnpmdu .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2999,13 +2999,13 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   border-right-color: #D3D3D3;
 }
 
-#czasnhqwxn .gt_bottom_border {
+#smxnsnpmdu .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#czasnhqwxn .gt_col_headings {
+#smxnsnpmdu .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3020,7 +3020,7 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   border-right-color: #D3D3D3;
 }
 
-#czasnhqwxn .gt_col_heading {
+#smxnsnpmdu .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3040,7 +3040,7 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   overflow-x: hidden;
 }
 
-#czasnhqwxn .gt_column_spanner_outer {
+#smxnsnpmdu .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3052,15 +3052,15 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   padding-right: 4px;
 }
 
-#czasnhqwxn .gt_column_spanner_outer:first-child {
+#smxnsnpmdu .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#czasnhqwxn .gt_column_spanner_outer:last-child {
+#smxnsnpmdu .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#czasnhqwxn .gt_column_spanner {
+#smxnsnpmdu .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3072,11 +3072,11 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   width: 100%;
 }
 
-#czasnhqwxn .gt_spanner_row {
+#smxnsnpmdu .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#czasnhqwxn .gt_group_heading {
+#smxnsnpmdu .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3102,7 +3102,7 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   text-align: left;
 }
 
-#czasnhqwxn .gt_empty_group_heading {
+#smxnsnpmdu .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3117,15 +3117,15 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   vertical-align: middle;
 }
 
-#czasnhqwxn .gt_from_md > :first-child {
+#smxnsnpmdu .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#czasnhqwxn .gt_from_md > :last-child {
+#smxnsnpmdu .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#czasnhqwxn .gt_row {
+#smxnsnpmdu .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3144,7 +3144,7 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   overflow-x: hidden;
 }
 
-#czasnhqwxn .gt_stub {
+#smxnsnpmdu .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3157,7 +3157,7 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   padding-right: 5px;
 }
 
-#czasnhqwxn .gt_stub_row_group {
+#smxnsnpmdu .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3171,15 +3171,15 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   vertical-align: top;
 }
 
-#czasnhqwxn .gt_row_group_first td {
+#smxnsnpmdu .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#czasnhqwxn .gt_row_group_first th {
+#smxnsnpmdu .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#czasnhqwxn .gt_summary_row {
+#smxnsnpmdu .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3189,16 +3189,16 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   padding-right: 5px;
 }
 
-#czasnhqwxn .gt_first_summary_row {
+#smxnsnpmdu .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#czasnhqwxn .gt_first_summary_row.thick {
+#smxnsnpmdu .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#czasnhqwxn .gt_last_summary_row {
+#smxnsnpmdu .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3208,7 +3208,7 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   border-bottom-color: #D3D3D3;
 }
 
-#czasnhqwxn .gt_grand_summary_row {
+#smxnsnpmdu .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3218,7 +3218,7 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   padding-right: 5px;
 }
 
-#czasnhqwxn .gt_first_grand_summary_row {
+#smxnsnpmdu .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3228,7 +3228,7 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   border-top-color: #D3D3D3;
 }
 
-#czasnhqwxn .gt_last_grand_summary_row_top {
+#smxnsnpmdu .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3238,11 +3238,11 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   border-bottom-color: #D3D3D3;
 }
 
-#czasnhqwxn .gt_striped {
+#smxnsnpmdu .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#czasnhqwxn .gt_table_body {
+#smxnsnpmdu .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3251,7 +3251,7 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   border-bottom-color: #D3D3D3;
 }
 
-#czasnhqwxn .gt_footnotes {
+#smxnsnpmdu .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3265,7 +3265,7 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   border-right-color: #D3D3D3;
 }
 
-#czasnhqwxn .gt_footnote {
+#smxnsnpmdu .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3274,7 +3274,7 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   padding-right: 5px;
 }
 
-#czasnhqwxn .gt_sourcenotes {
+#smxnsnpmdu .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3288,7 +3288,7 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   border-right-color: #D3D3D3;
 }
 
-#czasnhqwxn .gt_sourcenote {
+#smxnsnpmdu .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3296,72 +3296,72 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   padding-right: 5px;
 }
 
-#czasnhqwxn .gt_left {
+#smxnsnpmdu .gt_left {
   text-align: left;
 }
 
-#czasnhqwxn .gt_center {
+#smxnsnpmdu .gt_center {
   text-align: center;
 }
 
-#czasnhqwxn .gt_right {
+#smxnsnpmdu .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#czasnhqwxn .gt_font_normal {
+#smxnsnpmdu .gt_font_normal {
   font-weight: normal;
 }
 
-#czasnhqwxn .gt_font_bold {
+#smxnsnpmdu .gt_font_bold {
   font-weight: bold;
 }
 
-#czasnhqwxn .gt_font_italic {
+#smxnsnpmdu .gt_font_italic {
   font-style: italic;
 }
 
-#czasnhqwxn .gt_super {
+#smxnsnpmdu .gt_super {
   font-size: 65%;
 }
 
-#czasnhqwxn .gt_footnote_marks {
+#smxnsnpmdu .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#czasnhqwxn .gt_asterisk {
+#smxnsnpmdu .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#czasnhqwxn .gt_indent_1 {
+#smxnsnpmdu .gt_indent_1 {
   text-indent: 5px;
 }
 
-#czasnhqwxn .gt_indent_2 {
+#smxnsnpmdu .gt_indent_2 {
   text-indent: 10px;
 }
 
-#czasnhqwxn .gt_indent_3 {
+#smxnsnpmdu .gt_indent_3 {
   text-indent: 15px;
 }
 
-#czasnhqwxn .gt_indent_4 {
+#smxnsnpmdu .gt_indent_4 {
   text-indent: 20px;
 }
 
-#czasnhqwxn .gt_indent_5 {
+#smxnsnpmdu .gt_indent_5 {
   text-indent: 25px;
 }
 
-#czasnhqwxn .katex-display {
+#smxnsnpmdu .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#czasnhqwxn div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#smxnsnpmdu div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -3442,23 +3442,23 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
 <h3 class="anchored" data-anchor-id="who-bears-the-r2.34b-annual-burden">Who bears the R2.34B annual burden?</h3>
 <div class="cell">
 <div class="cell-output-display">
-<div id="lesxoasaga" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#lesxoasaga table {
+<div id="glmhwuagdv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#glmhwuagdv table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#lesxoasaga thead, #lesxoasaga tbody, #lesxoasaga tfoot, #lesxoasaga tr, #lesxoasaga td, #lesxoasaga th {
+#glmhwuagdv thead, #glmhwuagdv tbody, #glmhwuagdv tfoot, #glmhwuagdv tr, #glmhwuagdv td, #glmhwuagdv th {
   border-style: none;
 }
 
-#lesxoasaga p {
+#glmhwuagdv p {
   margin: 0;
   padding: 0;
 }
 
-#lesxoasaga .gt_table {
+#glmhwuagdv .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3484,12 +3484,12 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   border-left-color: #D3D3D3;
 }
 
-#lesxoasaga .gt_caption {
+#glmhwuagdv .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#lesxoasaga .gt_title {
+#glmhwuagdv .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -3501,7 +3501,7 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   border-bottom-width: 0;
 }
 
-#lesxoasaga .gt_subtitle {
+#glmhwuagdv .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3513,7 +3513,7 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   border-top-width: 0;
 }
 
-#lesxoasaga .gt_heading {
+#glmhwuagdv .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3525,13 +3525,13 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   border-right-color: #D3D3D3;
 }
 
-#lesxoasaga .gt_bottom_border {
+#glmhwuagdv .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#lesxoasaga .gt_col_headings {
+#glmhwuagdv .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3546,7 +3546,7 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   border-right-color: #D3D3D3;
 }
 
-#lesxoasaga .gt_col_heading {
+#glmhwuagdv .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3566,7 +3566,7 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   overflow-x: hidden;
 }
 
-#lesxoasaga .gt_column_spanner_outer {
+#glmhwuagdv .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3578,15 +3578,15 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   padding-right: 4px;
 }
 
-#lesxoasaga .gt_column_spanner_outer:first-child {
+#glmhwuagdv .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#lesxoasaga .gt_column_spanner_outer:last-child {
+#glmhwuagdv .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#lesxoasaga .gt_column_spanner {
+#glmhwuagdv .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3598,11 +3598,11 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   width: 100%;
 }
 
-#lesxoasaga .gt_spanner_row {
+#glmhwuagdv .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#lesxoasaga .gt_group_heading {
+#glmhwuagdv .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3628,7 +3628,7 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   text-align: left;
 }
 
-#lesxoasaga .gt_empty_group_heading {
+#glmhwuagdv .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3643,15 +3643,15 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   vertical-align: middle;
 }
 
-#lesxoasaga .gt_from_md > :first-child {
+#glmhwuagdv .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#lesxoasaga .gt_from_md > :last-child {
+#glmhwuagdv .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#lesxoasaga .gt_row {
+#glmhwuagdv .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3670,7 +3670,7 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   overflow-x: hidden;
 }
 
-#lesxoasaga .gt_stub {
+#glmhwuagdv .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3683,7 +3683,7 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   padding-right: 5px;
 }
 
-#lesxoasaga .gt_stub_row_group {
+#glmhwuagdv .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3697,15 +3697,15 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   vertical-align: top;
 }
 
-#lesxoasaga .gt_row_group_first td {
+#glmhwuagdv .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#lesxoasaga .gt_row_group_first th {
+#glmhwuagdv .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#lesxoasaga .gt_summary_row {
+#glmhwuagdv .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3715,16 +3715,16 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   padding-right: 5px;
 }
 
-#lesxoasaga .gt_first_summary_row {
+#glmhwuagdv .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#lesxoasaga .gt_first_summary_row.thick {
+#glmhwuagdv .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#lesxoasaga .gt_last_summary_row {
+#glmhwuagdv .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3734,7 +3734,7 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   border-bottom-color: #D3D3D3;
 }
 
-#lesxoasaga .gt_grand_summary_row {
+#glmhwuagdv .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3744,7 +3744,7 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   padding-right: 5px;
 }
 
-#lesxoasaga .gt_first_grand_summary_row {
+#glmhwuagdv .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3754,7 +3754,7 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   border-top-color: #D3D3D3;
 }
 
-#lesxoasaga .gt_last_grand_summary_row_top {
+#glmhwuagdv .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3764,11 +3764,11 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   border-bottom-color: #D3D3D3;
 }
 
-#lesxoasaga .gt_striped {
+#glmhwuagdv .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#lesxoasaga .gt_table_body {
+#glmhwuagdv .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3777,7 +3777,7 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   border-bottom-color: #D3D3D3;
 }
 
-#lesxoasaga .gt_footnotes {
+#glmhwuagdv .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3791,7 +3791,7 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   border-right-color: #D3D3D3;
 }
 
-#lesxoasaga .gt_footnote {
+#glmhwuagdv .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3800,7 +3800,7 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   padding-right: 5px;
 }
 
-#lesxoasaga .gt_sourcenotes {
+#glmhwuagdv .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3814,7 +3814,7 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   border-right-color: #D3D3D3;
 }
 
-#lesxoasaga .gt_sourcenote {
+#glmhwuagdv .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3822,72 +3822,72 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   padding-right: 5px;
 }
 
-#lesxoasaga .gt_left {
+#glmhwuagdv .gt_left {
   text-align: left;
 }
 
-#lesxoasaga .gt_center {
+#glmhwuagdv .gt_center {
   text-align: center;
 }
 
-#lesxoasaga .gt_right {
+#glmhwuagdv .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#lesxoasaga .gt_font_normal {
+#glmhwuagdv .gt_font_normal {
   font-weight: normal;
 }
 
-#lesxoasaga .gt_font_bold {
+#glmhwuagdv .gt_font_bold {
   font-weight: bold;
 }
 
-#lesxoasaga .gt_font_italic {
+#glmhwuagdv .gt_font_italic {
   font-style: italic;
 }
 
-#lesxoasaga .gt_super {
+#glmhwuagdv .gt_super {
   font-size: 65%;
 }
 
-#lesxoasaga .gt_footnote_marks {
+#glmhwuagdv .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#lesxoasaga .gt_asterisk {
+#glmhwuagdv .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#lesxoasaga .gt_indent_1 {
+#glmhwuagdv .gt_indent_1 {
   text-indent: 5px;
 }
 
-#lesxoasaga .gt_indent_2 {
+#glmhwuagdv .gt_indent_2 {
   text-indent: 10px;
 }
 
-#lesxoasaga .gt_indent_3 {
+#glmhwuagdv .gt_indent_3 {
   text-indent: 15px;
 }
 
-#lesxoasaga .gt_indent_4 {
+#glmhwuagdv .gt_indent_4 {
   text-indent: 20px;
 }
 
-#lesxoasaga .gt_indent_5 {
+#glmhwuagdv .gt_indent_5 {
   text-indent: 25px;
 }
 
-#lesxoasaga .katex-display {
+#glmhwuagdv .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#lesxoasaga div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#glmhwuagdv div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -3950,23 +3950,23 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
 <h3 class="anchored" data-anchor-id="canonical-option-costs-detect-act-restrict">Canonical option costs (Detect · Act · Restrict)</h3>
 <div class="cell">
 <div class="cell-output-display">
-<div id="iblpwyriob" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#iblpwyriob table {
+<div id="fjxwzxwlqj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#fjxwzxwlqj table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#iblpwyriob thead, #iblpwyriob tbody, #iblpwyriob tfoot, #iblpwyriob tr, #iblpwyriob td, #iblpwyriob th {
+#fjxwzxwlqj thead, #fjxwzxwlqj tbody, #fjxwzxwlqj tfoot, #fjxwzxwlqj tr, #fjxwzxwlqj td, #fjxwzxwlqj th {
   border-style: none;
 }
 
-#iblpwyriob p {
+#fjxwzxwlqj p {
   margin: 0;
   padding: 0;
 }
 
-#iblpwyriob .gt_table {
+#fjxwzxwlqj .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3992,12 +3992,12 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   border-left-color: #D3D3D3;
 }
 
-#iblpwyriob .gt_caption {
+#fjxwzxwlqj .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#iblpwyriob .gt_title {
+#fjxwzxwlqj .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -4009,7 +4009,7 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   border-bottom-width: 0;
 }
 
-#iblpwyriob .gt_subtitle {
+#fjxwzxwlqj .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -4021,7 +4021,7 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   border-top-width: 0;
 }
 
-#iblpwyriob .gt_heading {
+#fjxwzxwlqj .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -4033,13 +4033,13 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   border-right-color: #D3D3D3;
 }
 
-#iblpwyriob .gt_bottom_border {
+#fjxwzxwlqj .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#iblpwyriob .gt_col_headings {
+#fjxwzxwlqj .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4054,7 +4054,7 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   border-right-color: #D3D3D3;
 }
 
-#iblpwyriob .gt_col_heading {
+#fjxwzxwlqj .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4074,7 +4074,7 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   overflow-x: hidden;
 }
 
-#iblpwyriob .gt_column_spanner_outer {
+#fjxwzxwlqj .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4086,15 +4086,15 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   padding-right: 4px;
 }
 
-#iblpwyriob .gt_column_spanner_outer:first-child {
+#fjxwzxwlqj .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#iblpwyriob .gt_column_spanner_outer:last-child {
+#fjxwzxwlqj .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#iblpwyriob .gt_column_spanner {
+#fjxwzxwlqj .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -4106,11 +4106,11 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   width: 100%;
 }
 
-#iblpwyriob .gt_spanner_row {
+#fjxwzxwlqj .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#iblpwyriob .gt_group_heading {
+#fjxwzxwlqj .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4136,7 +4136,7 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   text-align: left;
 }
 
-#iblpwyriob .gt_empty_group_heading {
+#fjxwzxwlqj .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4151,15 +4151,15 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   vertical-align: middle;
 }
 
-#iblpwyriob .gt_from_md > :first-child {
+#fjxwzxwlqj .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#iblpwyriob .gt_from_md > :last-child {
+#fjxwzxwlqj .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#iblpwyriob .gt_row {
+#fjxwzxwlqj .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4178,7 +4178,7 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   overflow-x: hidden;
 }
 
-#iblpwyriob .gt_stub {
+#fjxwzxwlqj .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4191,7 +4191,7 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   padding-right: 5px;
 }
 
-#iblpwyriob .gt_stub_row_group {
+#fjxwzxwlqj .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4205,15 +4205,15 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   vertical-align: top;
 }
 
-#iblpwyriob .gt_row_group_first td {
+#fjxwzxwlqj .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#iblpwyriob .gt_row_group_first th {
+#fjxwzxwlqj .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#iblpwyriob .gt_summary_row {
+#fjxwzxwlqj .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4223,16 +4223,16 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   padding-right: 5px;
 }
 
-#iblpwyriob .gt_first_summary_row {
+#fjxwzxwlqj .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#iblpwyriob .gt_first_summary_row.thick {
+#fjxwzxwlqj .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#iblpwyriob .gt_last_summary_row {
+#fjxwzxwlqj .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4242,7 +4242,7 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   border-bottom-color: #D3D3D3;
 }
 
-#iblpwyriob .gt_grand_summary_row {
+#fjxwzxwlqj .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4252,7 +4252,7 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   padding-right: 5px;
 }
 
-#iblpwyriob .gt_first_grand_summary_row {
+#fjxwzxwlqj .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4262,7 +4262,7 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   border-top-color: #D3D3D3;
 }
 
-#iblpwyriob .gt_last_grand_summary_row_top {
+#fjxwzxwlqj .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4272,11 +4272,11 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   border-bottom-color: #D3D3D3;
 }
 
-#iblpwyriob .gt_striped {
+#fjxwzxwlqj .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#iblpwyriob .gt_table_body {
+#fjxwzxwlqj .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4285,7 +4285,7 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   border-bottom-color: #D3D3D3;
 }
 
-#iblpwyriob .gt_footnotes {
+#fjxwzxwlqj .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4299,7 +4299,7 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   border-right-color: #D3D3D3;
 }
 
-#iblpwyriob .gt_footnote {
+#fjxwzxwlqj .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -4308,7 +4308,7 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   padding-right: 5px;
 }
 
-#iblpwyriob .gt_sourcenotes {
+#fjxwzxwlqj .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4322,7 +4322,7 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   border-right-color: #D3D3D3;
 }
 
-#iblpwyriob .gt_sourcenote {
+#fjxwzxwlqj .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -4330,72 +4330,72 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
   padding-right: 5px;
 }
 
-#iblpwyriob .gt_left {
+#fjxwzxwlqj .gt_left {
   text-align: left;
 }
 
-#iblpwyriob .gt_center {
+#fjxwzxwlqj .gt_center {
   text-align: center;
 }
 
-#iblpwyriob .gt_right {
+#fjxwzxwlqj .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#iblpwyriob .gt_font_normal {
+#fjxwzxwlqj .gt_font_normal {
   font-weight: normal;
 }
 
-#iblpwyriob .gt_font_bold {
+#fjxwzxwlqj .gt_font_bold {
   font-weight: bold;
 }
 
-#iblpwyriob .gt_font_italic {
+#fjxwzxwlqj .gt_font_italic {
   font-style: italic;
 }
 
-#iblpwyriob .gt_super {
+#fjxwzxwlqj .gt_super {
   font-size: 65%;
 }
 
-#iblpwyriob .gt_footnote_marks {
+#fjxwzxwlqj .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#iblpwyriob .gt_asterisk {
+#fjxwzxwlqj .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#iblpwyriob .gt_indent_1 {
+#fjxwzxwlqj .gt_indent_1 {
   text-indent: 5px;
 }
 
-#iblpwyriob .gt_indent_2 {
+#fjxwzxwlqj .gt_indent_2 {
   text-indent: 10px;
 }
 
-#iblpwyriob .gt_indent_3 {
+#fjxwzxwlqj .gt_indent_3 {
   text-indent: 15px;
 }
 
-#iblpwyriob .gt_indent_4 {
+#fjxwzxwlqj .gt_indent_4 {
   text-indent: 20px;
 }
 
-#iblpwyriob .gt_indent_5 {
+#fjxwzxwlqj .gt_indent_5 {
   text-indent: 25px;
 }
 
-#iblpwyriob .katex-display {
+#fjxwzxwlqj .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#iblpwyriob div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#fjxwzxwlqj div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -4766,23 +4766,23 @@ Table&nbsp;1: Preventable cases, deaths, and societal burden per <em>additional<
 </figcaption>
 <div aria-describedby="tbl-per-loop-yield-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="unbnricmqq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#unbnricmqq table {
+<div id="xxmlutulfe" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#xxmlutulfe table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#unbnricmqq thead, #unbnricmqq tbody, #unbnricmqq tfoot, #unbnricmqq tr, #unbnricmqq td, #unbnricmqq th {
+#xxmlutulfe thead, #xxmlutulfe tbody, #xxmlutulfe tfoot, #xxmlutulfe tr, #xxmlutulfe td, #xxmlutulfe th {
   border-style: none;
 }
 
-#unbnricmqq p {
+#xxmlutulfe p {
   margin: 0;
   padding: 0;
 }
 
-#unbnricmqq .gt_table {
+#xxmlutulfe .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -4808,12 +4808,12 @@ Table&nbsp;1: Preventable cases, deaths, and societal burden per <em>additional<
   border-left-color: #D3D3D3;
 }
 
-#unbnricmqq .gt_caption {
+#xxmlutulfe .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#unbnricmqq .gt_title {
+#xxmlutulfe .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -4825,7 +4825,7 @@ Table&nbsp;1: Preventable cases, deaths, and societal burden per <em>additional<
   border-bottom-width: 0;
 }
 
-#unbnricmqq .gt_subtitle {
+#xxmlutulfe .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -4837,7 +4837,7 @@ Table&nbsp;1: Preventable cases, deaths, and societal burden per <em>additional<
   border-top-width: 0;
 }
 
-#unbnricmqq .gt_heading {
+#xxmlutulfe .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -4849,13 +4849,13 @@ Table&nbsp;1: Preventable cases, deaths, and societal burden per <em>additional<
   border-right-color: #D3D3D3;
 }
 
-#unbnricmqq .gt_bottom_border {
+#xxmlutulfe .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#unbnricmqq .gt_col_headings {
+#xxmlutulfe .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4870,7 +4870,7 @@ Table&nbsp;1: Preventable cases, deaths, and societal burden per <em>additional<
   border-right-color: #D3D3D3;
 }
 
-#unbnricmqq .gt_col_heading {
+#xxmlutulfe .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4890,7 +4890,7 @@ Table&nbsp;1: Preventable cases, deaths, and societal burden per <em>additional<
   overflow-x: hidden;
 }
 
-#unbnricmqq .gt_column_spanner_outer {
+#xxmlutulfe .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4902,15 +4902,15 @@ Table&nbsp;1: Preventable cases, deaths, and societal burden per <em>additional<
   padding-right: 4px;
 }
 
-#unbnricmqq .gt_column_spanner_outer:first-child {
+#xxmlutulfe .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#unbnricmqq .gt_column_spanner_outer:last-child {
+#xxmlutulfe .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#unbnricmqq .gt_column_spanner {
+#xxmlutulfe .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -4922,11 +4922,11 @@ Table&nbsp;1: Preventable cases, deaths, and societal burden per <em>additional<
   width: 100%;
 }
 
-#unbnricmqq .gt_spanner_row {
+#xxmlutulfe .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#unbnricmqq .gt_group_heading {
+#xxmlutulfe .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4952,7 +4952,7 @@ Table&nbsp;1: Preventable cases, deaths, and societal burden per <em>additional<
   text-align: left;
 }
 
-#unbnricmqq .gt_empty_group_heading {
+#xxmlutulfe .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4967,15 +4967,15 @@ Table&nbsp;1: Preventable cases, deaths, and societal burden per <em>additional<
   vertical-align: middle;
 }
 
-#unbnricmqq .gt_from_md > :first-child {
+#xxmlutulfe .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#unbnricmqq .gt_from_md > :last-child {
+#xxmlutulfe .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#unbnricmqq .gt_row {
+#xxmlutulfe .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4994,7 +4994,7 @@ Table&nbsp;1: Preventable cases, deaths, and societal burden per <em>additional<
   overflow-x: hidden;
 }
 
-#unbnricmqq .gt_stub {
+#xxmlutulfe .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5007,7 +5007,7 @@ Table&nbsp;1: Preventable cases, deaths, and societal burden per <em>additional<
   padding-right: 5px;
 }
 
-#unbnricmqq .gt_stub_row_group {
+#xxmlutulfe .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5021,15 +5021,15 @@ Table&nbsp;1: Preventable cases, deaths, and societal burden per <em>additional<
   vertical-align: top;
 }
 
-#unbnricmqq .gt_row_group_first td {
+#xxmlutulfe .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#unbnricmqq .gt_row_group_first th {
+#xxmlutulfe .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#unbnricmqq .gt_summary_row {
+#xxmlutulfe .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5039,16 +5039,16 @@ Table&nbsp;1: Preventable cases, deaths, and societal burden per <em>additional<
   padding-right: 5px;
 }
 
-#unbnricmqq .gt_first_summary_row {
+#xxmlutulfe .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#unbnricmqq .gt_first_summary_row.thick {
+#xxmlutulfe .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#unbnricmqq .gt_last_summary_row {
+#xxmlutulfe .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5058,7 +5058,7 @@ Table&nbsp;1: Preventable cases, deaths, and societal burden per <em>additional<
   border-bottom-color: #D3D3D3;
 }
 
-#unbnricmqq .gt_grand_summary_row {
+#xxmlutulfe .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5068,7 +5068,7 @@ Table&nbsp;1: Preventable cases, deaths, and societal burden per <em>additional<
   padding-right: 5px;
 }
 
-#unbnricmqq .gt_first_grand_summary_row {
+#xxmlutulfe .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5078,7 +5078,7 @@ Table&nbsp;1: Preventable cases, deaths, and societal burden per <em>additional<
   border-top-color: #D3D3D3;
 }
 
-#unbnricmqq .gt_last_grand_summary_row_top {
+#xxmlutulfe .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5088,11 +5088,11 @@ Table&nbsp;1: Preventable cases, deaths, and societal burden per <em>additional<
   border-bottom-color: #D3D3D3;
 }
 
-#unbnricmqq .gt_striped {
+#xxmlutulfe .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#unbnricmqq .gt_table_body {
+#xxmlutulfe .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5101,7 +5101,7 @@ Table&nbsp;1: Preventable cases, deaths, and societal burden per <em>additional<
   border-bottom-color: #D3D3D3;
 }
 
-#unbnricmqq .gt_footnotes {
+#xxmlutulfe .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5115,7 +5115,7 @@ Table&nbsp;1: Preventable cases, deaths, and societal burden per <em>additional<
   border-right-color: #D3D3D3;
 }
 
-#unbnricmqq .gt_footnote {
+#xxmlutulfe .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -5124,7 +5124,7 @@ Table&nbsp;1: Preventable cases, deaths, and societal burden per <em>additional<
   padding-right: 5px;
 }
 
-#unbnricmqq .gt_sourcenotes {
+#xxmlutulfe .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5138,7 +5138,7 @@ Table&nbsp;1: Preventable cases, deaths, and societal burden per <em>additional<
   border-right-color: #D3D3D3;
 }
 
-#unbnricmqq .gt_sourcenote {
+#xxmlutulfe .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -5146,72 +5146,72 @@ Table&nbsp;1: Preventable cases, deaths, and societal burden per <em>additional<
   padding-right: 5px;
 }
 
-#unbnricmqq .gt_left {
+#xxmlutulfe .gt_left {
   text-align: left;
 }
 
-#unbnricmqq .gt_center {
+#xxmlutulfe .gt_center {
   text-align: center;
 }
 
-#unbnricmqq .gt_right {
+#xxmlutulfe .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#unbnricmqq .gt_font_normal {
+#xxmlutulfe .gt_font_normal {
   font-weight: normal;
 }
 
-#unbnricmqq .gt_font_bold {
+#xxmlutulfe .gt_font_bold {
   font-weight: bold;
 }
 
-#unbnricmqq .gt_font_italic {
+#xxmlutulfe .gt_font_italic {
   font-style: italic;
 }
 
-#unbnricmqq .gt_super {
+#xxmlutulfe .gt_super {
   font-size: 65%;
 }
 
-#unbnricmqq .gt_footnote_marks {
+#xxmlutulfe .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#unbnricmqq .gt_asterisk {
+#xxmlutulfe .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#unbnricmqq .gt_indent_1 {
+#xxmlutulfe .gt_indent_1 {
   text-indent: 5px;
 }
 
-#unbnricmqq .gt_indent_2 {
+#xxmlutulfe .gt_indent_2 {
   text-indent: 10px;
 }
 
-#unbnricmqq .gt_indent_3 {
+#xxmlutulfe .gt_indent_3 {
   text-indent: 15px;
 }
 
-#unbnricmqq .gt_indent_4 {
+#xxmlutulfe .gt_indent_4 {
   text-indent: 20px;
 }
 
-#unbnricmqq .gt_indent_5 {
+#xxmlutulfe .gt_indent_5 {
   text-indent: 25px;
 }
 
-#unbnricmqq .katex-display {
+#xxmlutulfe .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#unbnricmqq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#xxmlutulfe div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -5380,23 +5380,23 @@ Table&nbsp;2: Cost per loop closed and per future case prevented, derived from C
 </figcaption>
 <div aria-describedby="tbl-cost-per-loop-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="ibsjukgqgo" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ibsjukgqgo table {
+<div id="gsjjyssqun" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#gsjjyssqun table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ibsjukgqgo thead, #ibsjukgqgo tbody, #ibsjukgqgo tfoot, #ibsjukgqgo tr, #ibsjukgqgo td, #ibsjukgqgo th {
+#gsjjyssqun thead, #gsjjyssqun tbody, #gsjjyssqun tfoot, #gsjjyssqun tr, #gsjjyssqun td, #gsjjyssqun th {
   border-style: none;
 }
 
-#ibsjukgqgo p {
+#gsjjyssqun p {
   margin: 0;
   padding: 0;
 }
 
-#ibsjukgqgo .gt_table {
+#gsjjyssqun .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -5422,12 +5422,12 @@ Table&nbsp;2: Cost per loop closed and per future case prevented, derived from C
   border-left-color: #D3D3D3;
 }
 
-#ibsjukgqgo .gt_caption {
+#gsjjyssqun .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ibsjukgqgo .gt_title {
+#gsjjyssqun .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -5439,7 +5439,7 @@ Table&nbsp;2: Cost per loop closed and per future case prevented, derived from C
   border-bottom-width: 0;
 }
 
-#ibsjukgqgo .gt_subtitle {
+#gsjjyssqun .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -5451,7 +5451,7 @@ Table&nbsp;2: Cost per loop closed and per future case prevented, derived from C
   border-top-width: 0;
 }
 
-#ibsjukgqgo .gt_heading {
+#gsjjyssqun .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -5463,13 +5463,13 @@ Table&nbsp;2: Cost per loop closed and per future case prevented, derived from C
   border-right-color: #D3D3D3;
 }
 
-#ibsjukgqgo .gt_bottom_border {
+#gsjjyssqun .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ibsjukgqgo .gt_col_headings {
+#gsjjyssqun .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5484,7 +5484,7 @@ Table&nbsp;2: Cost per loop closed and per future case prevented, derived from C
   border-right-color: #D3D3D3;
 }
 
-#ibsjukgqgo .gt_col_heading {
+#gsjjyssqun .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5504,7 +5504,7 @@ Table&nbsp;2: Cost per loop closed and per future case prevented, derived from C
   overflow-x: hidden;
 }
 
-#ibsjukgqgo .gt_column_spanner_outer {
+#gsjjyssqun .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5516,15 +5516,15 @@ Table&nbsp;2: Cost per loop closed and per future case prevented, derived from C
   padding-right: 4px;
 }
 
-#ibsjukgqgo .gt_column_spanner_outer:first-child {
+#gsjjyssqun .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ibsjukgqgo .gt_column_spanner_outer:last-child {
+#gsjjyssqun .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ibsjukgqgo .gt_column_spanner {
+#gsjjyssqun .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -5536,11 +5536,11 @@ Table&nbsp;2: Cost per loop closed and per future case prevented, derived from C
   width: 100%;
 }
 
-#ibsjukgqgo .gt_spanner_row {
+#gsjjyssqun .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ibsjukgqgo .gt_group_heading {
+#gsjjyssqun .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5566,7 +5566,7 @@ Table&nbsp;2: Cost per loop closed and per future case prevented, derived from C
   text-align: left;
 }
 
-#ibsjukgqgo .gt_empty_group_heading {
+#gsjjyssqun .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -5581,15 +5581,15 @@ Table&nbsp;2: Cost per loop closed and per future case prevented, derived from C
   vertical-align: middle;
 }
 
-#ibsjukgqgo .gt_from_md > :first-child {
+#gsjjyssqun .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ibsjukgqgo .gt_from_md > :last-child {
+#gsjjyssqun .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ibsjukgqgo .gt_row {
+#gsjjyssqun .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5608,7 +5608,7 @@ Table&nbsp;2: Cost per loop closed and per future case prevented, derived from C
   overflow-x: hidden;
 }
 
-#ibsjukgqgo .gt_stub {
+#gsjjyssqun .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5621,7 +5621,7 @@ Table&nbsp;2: Cost per loop closed and per future case prevented, derived from C
   padding-right: 5px;
 }
 
-#ibsjukgqgo .gt_stub_row_group {
+#gsjjyssqun .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5635,15 +5635,15 @@ Table&nbsp;2: Cost per loop closed and per future case prevented, derived from C
   vertical-align: top;
 }
 
-#ibsjukgqgo .gt_row_group_first td {
+#gsjjyssqun .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ibsjukgqgo .gt_row_group_first th {
+#gsjjyssqun .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ibsjukgqgo .gt_summary_row {
+#gsjjyssqun .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5653,16 +5653,16 @@ Table&nbsp;2: Cost per loop closed and per future case prevented, derived from C
   padding-right: 5px;
 }
 
-#ibsjukgqgo .gt_first_summary_row {
+#gsjjyssqun .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ibsjukgqgo .gt_first_summary_row.thick {
+#gsjjyssqun .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ibsjukgqgo .gt_last_summary_row {
+#gsjjyssqun .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5672,7 +5672,7 @@ Table&nbsp;2: Cost per loop closed and per future case prevented, derived from C
   border-bottom-color: #D3D3D3;
 }
 
-#ibsjukgqgo .gt_grand_summary_row {
+#gsjjyssqun .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5682,7 +5682,7 @@ Table&nbsp;2: Cost per loop closed and per future case prevented, derived from C
   padding-right: 5px;
 }
 
-#ibsjukgqgo .gt_first_grand_summary_row {
+#gsjjyssqun .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5692,7 +5692,7 @@ Table&nbsp;2: Cost per loop closed and per future case prevented, derived from C
   border-top-color: #D3D3D3;
 }
 
-#ibsjukgqgo .gt_last_grand_summary_row_top {
+#gsjjyssqun .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5702,11 +5702,11 @@ Table&nbsp;2: Cost per loop closed and per future case prevented, derived from C
   border-bottom-color: #D3D3D3;
 }
 
-#ibsjukgqgo .gt_striped {
+#gsjjyssqun .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ibsjukgqgo .gt_table_body {
+#gsjjyssqun .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5715,7 +5715,7 @@ Table&nbsp;2: Cost per loop closed and per future case prevented, derived from C
   border-bottom-color: #D3D3D3;
 }
 
-#ibsjukgqgo .gt_footnotes {
+#gsjjyssqun .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5729,7 +5729,7 @@ Table&nbsp;2: Cost per loop closed and per future case prevented, derived from C
   border-right-color: #D3D3D3;
 }
 
-#ibsjukgqgo .gt_footnote {
+#gsjjyssqun .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -5738,7 +5738,7 @@ Table&nbsp;2: Cost per loop closed and per future case prevented, derived from C
   padding-right: 5px;
 }
 
-#ibsjukgqgo .gt_sourcenotes {
+#gsjjyssqun .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5752,7 +5752,7 @@ Table&nbsp;2: Cost per loop closed and per future case prevented, derived from C
   border-right-color: #D3D3D3;
 }
 
-#ibsjukgqgo .gt_sourcenote {
+#gsjjyssqun .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -5760,72 +5760,72 @@ Table&nbsp;2: Cost per loop closed and per future case prevented, derived from C
   padding-right: 5px;
 }
 
-#ibsjukgqgo .gt_left {
+#gsjjyssqun .gt_left {
   text-align: left;
 }
 
-#ibsjukgqgo .gt_center {
+#gsjjyssqun .gt_center {
   text-align: center;
 }
 
-#ibsjukgqgo .gt_right {
+#gsjjyssqun .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ibsjukgqgo .gt_font_normal {
+#gsjjyssqun .gt_font_normal {
   font-weight: normal;
 }
 
-#ibsjukgqgo .gt_font_bold {
+#gsjjyssqun .gt_font_bold {
   font-weight: bold;
 }
 
-#ibsjukgqgo .gt_font_italic {
+#gsjjyssqun .gt_font_italic {
   font-style: italic;
 }
 
-#ibsjukgqgo .gt_super {
+#gsjjyssqun .gt_super {
   font-size: 65%;
 }
 
-#ibsjukgqgo .gt_footnote_marks {
+#gsjjyssqun .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ibsjukgqgo .gt_asterisk {
+#gsjjyssqun .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ibsjukgqgo .gt_indent_1 {
+#gsjjyssqun .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ibsjukgqgo .gt_indent_2 {
+#gsjjyssqun .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ibsjukgqgo .gt_indent_3 {
+#gsjjyssqun .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ibsjukgqgo .gt_indent_4 {
+#gsjjyssqun .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ibsjukgqgo .gt_indent_5 {
+#gsjjyssqun .gt_indent_5 {
   text-indent: 25px;
 }
 
-#ibsjukgqgo .katex-display {
+#gsjjyssqun .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#ibsjukgqgo div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#gsjjyssqun div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -5883,23 +5883,23 @@ Table&nbsp;3: Future poisonings prevented per year as a function of achieved loo
 </figcaption>
 <div aria-describedby="tbl-sens-coord-poisonings-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="uzvxkdakkr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#uzvxkdakkr table {
+<div id="pszgaezeyh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#pszgaezeyh table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#uzvxkdakkr thead, #uzvxkdakkr tbody, #uzvxkdakkr tfoot, #uzvxkdakkr tr, #uzvxkdakkr td, #uzvxkdakkr th {
+#pszgaezeyh thead, #pszgaezeyh tbody, #pszgaezeyh tfoot, #pszgaezeyh tr, #pszgaezeyh td, #pszgaezeyh th {
   border-style: none;
 }
 
-#uzvxkdakkr p {
+#pszgaezeyh p {
   margin: 0;
   padding: 0;
 }
 
-#uzvxkdakkr .gt_table {
+#pszgaezeyh .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -5925,12 +5925,12 @@ Table&nbsp;3: Future poisonings prevented per year as a function of achieved loo
   border-left-color: #D3D3D3;
 }
 
-#uzvxkdakkr .gt_caption {
+#pszgaezeyh .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#uzvxkdakkr .gt_title {
+#pszgaezeyh .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -5942,7 +5942,7 @@ Table&nbsp;3: Future poisonings prevented per year as a function of achieved loo
   border-bottom-width: 0;
 }
 
-#uzvxkdakkr .gt_subtitle {
+#pszgaezeyh .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -5954,7 +5954,7 @@ Table&nbsp;3: Future poisonings prevented per year as a function of achieved loo
   border-top-width: 0;
 }
 
-#uzvxkdakkr .gt_heading {
+#pszgaezeyh .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -5966,13 +5966,13 @@ Table&nbsp;3: Future poisonings prevented per year as a function of achieved loo
   border-right-color: #D3D3D3;
 }
 
-#uzvxkdakkr .gt_bottom_border {
+#pszgaezeyh .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#uzvxkdakkr .gt_col_headings {
+#pszgaezeyh .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5987,7 +5987,7 @@ Table&nbsp;3: Future poisonings prevented per year as a function of achieved loo
   border-right-color: #D3D3D3;
 }
 
-#uzvxkdakkr .gt_col_heading {
+#pszgaezeyh .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6007,7 +6007,7 @@ Table&nbsp;3: Future poisonings prevented per year as a function of achieved loo
   overflow-x: hidden;
 }
 
-#uzvxkdakkr .gt_column_spanner_outer {
+#pszgaezeyh .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6019,15 +6019,15 @@ Table&nbsp;3: Future poisonings prevented per year as a function of achieved loo
   padding-right: 4px;
 }
 
-#uzvxkdakkr .gt_column_spanner_outer:first-child {
+#pszgaezeyh .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#uzvxkdakkr .gt_column_spanner_outer:last-child {
+#pszgaezeyh .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#uzvxkdakkr .gt_column_spanner {
+#pszgaezeyh .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -6039,11 +6039,11 @@ Table&nbsp;3: Future poisonings prevented per year as a function of achieved loo
   width: 100%;
 }
 
-#uzvxkdakkr .gt_spanner_row {
+#pszgaezeyh .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#uzvxkdakkr .gt_group_heading {
+#pszgaezeyh .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6069,7 +6069,7 @@ Table&nbsp;3: Future poisonings prevented per year as a function of achieved loo
   text-align: left;
 }
 
-#uzvxkdakkr .gt_empty_group_heading {
+#pszgaezeyh .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -6084,15 +6084,15 @@ Table&nbsp;3: Future poisonings prevented per year as a function of achieved loo
   vertical-align: middle;
 }
 
-#uzvxkdakkr .gt_from_md > :first-child {
+#pszgaezeyh .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#uzvxkdakkr .gt_from_md > :last-child {
+#pszgaezeyh .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#uzvxkdakkr .gt_row {
+#pszgaezeyh .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6111,7 +6111,7 @@ Table&nbsp;3: Future poisonings prevented per year as a function of achieved loo
   overflow-x: hidden;
 }
 
-#uzvxkdakkr .gt_stub {
+#pszgaezeyh .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6124,7 +6124,7 @@ Table&nbsp;3: Future poisonings prevented per year as a function of achieved loo
   padding-right: 5px;
 }
 
-#uzvxkdakkr .gt_stub_row_group {
+#pszgaezeyh .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6138,15 +6138,15 @@ Table&nbsp;3: Future poisonings prevented per year as a function of achieved loo
   vertical-align: top;
 }
 
-#uzvxkdakkr .gt_row_group_first td {
+#pszgaezeyh .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#uzvxkdakkr .gt_row_group_first th {
+#pszgaezeyh .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#uzvxkdakkr .gt_summary_row {
+#pszgaezeyh .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -6156,16 +6156,16 @@ Table&nbsp;3: Future poisonings prevented per year as a function of achieved loo
   padding-right: 5px;
 }
 
-#uzvxkdakkr .gt_first_summary_row {
+#pszgaezeyh .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#uzvxkdakkr .gt_first_summary_row.thick {
+#pszgaezeyh .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#uzvxkdakkr .gt_last_summary_row {
+#pszgaezeyh .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6175,7 +6175,7 @@ Table&nbsp;3: Future poisonings prevented per year as a function of achieved loo
   border-bottom-color: #D3D3D3;
 }
 
-#uzvxkdakkr .gt_grand_summary_row {
+#pszgaezeyh .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -6185,7 +6185,7 @@ Table&nbsp;3: Future poisonings prevented per year as a function of achieved loo
   padding-right: 5px;
 }
 
-#uzvxkdakkr .gt_first_grand_summary_row {
+#pszgaezeyh .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6195,7 +6195,7 @@ Table&nbsp;3: Future poisonings prevented per year as a function of achieved loo
   border-top-color: #D3D3D3;
 }
 
-#uzvxkdakkr .gt_last_grand_summary_row_top {
+#pszgaezeyh .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6205,11 +6205,11 @@ Table&nbsp;3: Future poisonings prevented per year as a function of achieved loo
   border-bottom-color: #D3D3D3;
 }
 
-#uzvxkdakkr .gt_striped {
+#pszgaezeyh .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#uzvxkdakkr .gt_table_body {
+#pszgaezeyh .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -6218,7 +6218,7 @@ Table&nbsp;3: Future poisonings prevented per year as a function of achieved loo
   border-bottom-color: #D3D3D3;
 }
 
-#uzvxkdakkr .gt_footnotes {
+#pszgaezeyh .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -6232,7 +6232,7 @@ Table&nbsp;3: Future poisonings prevented per year as a function of achieved loo
   border-right-color: #D3D3D3;
 }
 
-#uzvxkdakkr .gt_footnote {
+#pszgaezeyh .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -6241,7 +6241,7 @@ Table&nbsp;3: Future poisonings prevented per year as a function of achieved loo
   padding-right: 5px;
 }
 
-#uzvxkdakkr .gt_sourcenotes {
+#pszgaezeyh .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -6255,7 +6255,7 @@ Table&nbsp;3: Future poisonings prevented per year as a function of achieved loo
   border-right-color: #D3D3D3;
 }
 
-#uzvxkdakkr .gt_sourcenote {
+#pszgaezeyh .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -6263,72 +6263,72 @@ Table&nbsp;3: Future poisonings prevented per year as a function of achieved loo
   padding-right: 5px;
 }
 
-#uzvxkdakkr .gt_left {
+#pszgaezeyh .gt_left {
   text-align: left;
 }
 
-#uzvxkdakkr .gt_center {
+#pszgaezeyh .gt_center {
   text-align: center;
 }
 
-#uzvxkdakkr .gt_right {
+#pszgaezeyh .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#uzvxkdakkr .gt_font_normal {
+#pszgaezeyh .gt_font_normal {
   font-weight: normal;
 }
 
-#uzvxkdakkr .gt_font_bold {
+#pszgaezeyh .gt_font_bold {
   font-weight: bold;
 }
 
-#uzvxkdakkr .gt_font_italic {
+#pszgaezeyh .gt_font_italic {
   font-style: italic;
 }
 
-#uzvxkdakkr .gt_super {
+#pszgaezeyh .gt_super {
   font-size: 65%;
 }
 
-#uzvxkdakkr .gt_footnote_marks {
+#pszgaezeyh .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#uzvxkdakkr .gt_asterisk {
+#pszgaezeyh .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#uzvxkdakkr .gt_indent_1 {
+#pszgaezeyh .gt_indent_1 {
   text-indent: 5px;
 }
 
-#uzvxkdakkr .gt_indent_2 {
+#pszgaezeyh .gt_indent_2 {
   text-indent: 10px;
 }
 
-#uzvxkdakkr .gt_indent_3 {
+#pszgaezeyh .gt_indent_3 {
   text-indent: 15px;
 }
 
-#uzvxkdakkr .gt_indent_4 {
+#pszgaezeyh .gt_indent_4 {
   text-indent: 20px;
 }
 
-#uzvxkdakkr .gt_indent_5 {
+#pszgaezeyh .gt_indent_5 {
   text-indent: 25px;
 }
 
-#uzvxkdakkr .katex-display {
+#pszgaezeyh .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#uzvxkdakkr div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#pszgaezeyh div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -6383,6 +6383,1022 @@ Table&nbsp;3: Future poisonings prevented per year as a function of achieved loo
 </div>
 </div>
 <p><strong>Reading.</strong> Even at the <em>low</em> response-efficacy edge (η = 15 %), the Full Package prevents <strong>~1225 future poisonings/yr</strong>; at the well-resourced edge (η = 50 %) it prevents <strong>~4082/yr</strong>. The policy claim is therefore robust across the full CSV-anchored parameter range: every realistic combination of <img src="https://latex.codecogs.com/png.latex?(P_%7B%5Ctext%7Bloop%7D%7D,%20%5Ceta)"> produces a four-figure annual reduction in future cases. The integrated model uses these two scalars (<code>p_loop_closed_FP</code>, <code>eta_response_mid</code>) as toggleable inputs alongside the surveillance and source-control levers.</p>
+</section>
+<section id="g.-per-action-workload-what-each-loop-step-actually-costs" class="level3">
+<h3 class="anchored" data-anchor-id="g.-per-action-workload-what-each-loop-step-actually-costs">6g. Per-action workload — what each loop-step actually costs</h3>
+<p>Closing a loop is not free at the operational tier. Each <em>gross</em> alert that enters the system (true case + false positive) costs an <strong>EHP environmental investigation</strong> (CSV: <code>c_per_ehp_investigation_mid</code> ≈ R4,000); a fraction <img src="https://latex.codecogs.com/png.latex?p_%7B%5Ctext%7BDALRRD%7D%7D"> ≈ 0.3 of those trigger a <strong>DALRRD inspectorate site visit</strong> (CSV: <code>c_per_dalrrd_inspection_mid</code> ≈ R12,000). Both unit costs have lo/hi ranges in the CSV.</p>
+<div class="cell">
+<div id="tbl-per-action-cost" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-per-action-cost-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;4: Per-action workload cost components (CSV-anchored). Each fully-closed loop consumes one EHP investigation; a fraction p_DALRRD trigger an inspectorate visit. These are the unit inputs overall_policy_model.qmd uses to translate alert volume into induced regulator workload.
+</figcaption>
+<div aria-describedby="tbl-per-action-cost-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div id="qmagoadfmp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#qmagoadfmp table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#qmagoadfmp thead, #qmagoadfmp tbody, #qmagoadfmp tfoot, #qmagoadfmp tr, #qmagoadfmp td, #qmagoadfmp th {
+  border-style: none;
+}
+
+#qmagoadfmp p {
+  margin: 0;
+  padding: 0;
+}
+
+#qmagoadfmp .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: small;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#qmagoadfmp .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#qmagoadfmp .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#qmagoadfmp .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#qmagoadfmp .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#qmagoadfmp .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#qmagoadfmp .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#qmagoadfmp .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#qmagoadfmp .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#qmagoadfmp .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#qmagoadfmp .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#qmagoadfmp .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#qmagoadfmp .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#qmagoadfmp .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#qmagoadfmp .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#qmagoadfmp .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#qmagoadfmp .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#qmagoadfmp .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#qmagoadfmp .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#qmagoadfmp .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#qmagoadfmp .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#qmagoadfmp .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#qmagoadfmp .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#qmagoadfmp .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#qmagoadfmp .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#qmagoadfmp .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#qmagoadfmp .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#qmagoadfmp .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#qmagoadfmp .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#qmagoadfmp .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#qmagoadfmp .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#qmagoadfmp .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#qmagoadfmp .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#qmagoadfmp .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#qmagoadfmp .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#qmagoadfmp .gt_left {
+  text-align: left;
+}
+
+#qmagoadfmp .gt_center {
+  text-align: center;
+}
+
+#qmagoadfmp .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#qmagoadfmp .gt_font_normal {
+  font-weight: normal;
+}
+
+#qmagoadfmp .gt_font_bold {
+  font-weight: bold;
+}
+
+#qmagoadfmp .gt_font_italic {
+  font-style: italic;
+}
+
+#qmagoadfmp .gt_super {
+  font-size: 65%;
+}
+
+#qmagoadfmp .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#qmagoadfmp .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#qmagoadfmp .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#qmagoadfmp .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#qmagoadfmp .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#qmagoadfmp .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#qmagoadfmp .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#qmagoadfmp .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#qmagoadfmp div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_col_headings header">
+<th id="Component" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Component</th>
+<th id="Low" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Low</th>
+<th id="Mid" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Mid</th>
+<th id="High" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">High</th>
+<th id="CSV" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">CSV</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="Component">EHP environmental investigation (per gross alert)</td>
+<td class="gt_row gt_right" headers="Low">R2,500</td>
+<td class="gt_row gt_right" headers="Mid">R4,000</td>
+<td class="gt_row gt_right" headers="High">R7,000</td>
+<td class="gt_row gt_left" headers="CSV">c_per_ehp_investigation_*</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Component">DALRRD inspectorate site visit (per referred case)</td>
+<td class="gt_row gt_right" headers="Low">R6,000</td>
+<td class="gt_row gt_right" headers="Mid">R12,000</td>
+<td class="gt_row gt_right" headers="High">R25,000</td>
+<td class="gt_row gt_left" headers="CSV">c_per_dalrrd_inspection_*</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Component">P(DALRRD action | confirmed referral)</td>
+<td class="gt_row gt_right" headers="Low">—</td>
+<td class="gt_row gt_right" headers="Mid">0.30</td>
+<td class="gt_row gt_right" headers="High">—</td>
+<td class="gt_row gt_left" headers="CSV">p_dalrrd_action_given_referral</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</section>
+<section id="h.-false-positives-bite-induced-workload-under-community-surveillance" class="level3">
+<h3 class="anchored" data-anchor-id="h.-false-positives-bite-induced-workload-under-community-surveillance">6h. False positives bite: induced workload under community surveillance</h3>
+<p>Administrative-tier feeds (NMC, NHLS BChE auto-notify, PIH) produce alerts that are essentially all true cases — false-positive rate ≈ 0. Community-tier surveillance (S1b in the <a href="../posts/surveillance_policy.html">Surveillance brief</a>) produces alerts at a CSV-benchmarked <strong>false-positive rate of 20–50 %</strong>. Every alert — true or false — still consumes an EHP investigation before it can be discarded. Per <em>true</em> case detected:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Ctext%7Bgross%20alerts%7D%20=%20%5Cfrac%7B1%7D%7B1%20-%20p_%7B%5Ctext%7Bfp%7D%7D%7D%0A%5Cqquad%0A%5Ctext%7Bcost%20per%20true%20case%7D%20=%20%5Cfrac%7Bc_%7B%5Ctext%7BEHP%7D%7D%20+%20p_%7B%5Ctext%7BDALRRD%7D%7D%20%5Ccdot%20c_%7B%5Ctext%7BDALRRD%7D%7D%7D%7B1%20-%20p_%7B%5Ctext%7Bfp%7D%7D%7D%0A"></p>
+<div class="cell">
+<div id="tbl-fp-induced-workload" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-fp-induced-workload-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected, as community-surveillance false-positive rate is varied (rows) against EHP unit cost (columns). Holds p_DALRRD = 0.30 and c_DALRRD at working value. All inputs from amua_import_parameters_v4.csv.
+</figcaption>
+<div aria-describedby="tbl-fp-induced-workload-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div id="npkiffunxs" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#npkiffunxs table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#npkiffunxs thead, #npkiffunxs tbody, #npkiffunxs tfoot, #npkiffunxs tr, #npkiffunxs td, #npkiffunxs th {
+  border-style: none;
+}
+
+#npkiffunxs p {
+  margin: 0;
+  padding: 0;
+}
+
+#npkiffunxs .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: small;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#npkiffunxs .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#npkiffunxs .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#npkiffunxs .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#npkiffunxs .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#npkiffunxs .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#npkiffunxs .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#npkiffunxs .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#npkiffunxs .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#npkiffunxs .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#npkiffunxs .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#npkiffunxs .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#npkiffunxs .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#npkiffunxs .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#npkiffunxs .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#npkiffunxs .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#npkiffunxs .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#npkiffunxs .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#npkiffunxs .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#npkiffunxs .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#npkiffunxs .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#npkiffunxs .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#npkiffunxs .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#npkiffunxs .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#npkiffunxs .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#npkiffunxs .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#npkiffunxs .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#npkiffunxs .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#npkiffunxs .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#npkiffunxs .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#npkiffunxs .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#npkiffunxs .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#npkiffunxs .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#npkiffunxs .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#npkiffunxs .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#npkiffunxs .gt_left {
+  text-align: left;
+}
+
+#npkiffunxs .gt_center {
+  text-align: center;
+}
+
+#npkiffunxs .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#npkiffunxs .gt_font_normal {
+  font-weight: normal;
+}
+
+#npkiffunxs .gt_font_bold {
+  font-weight: bold;
+}
+
+#npkiffunxs .gt_font_italic {
+  font-style: italic;
+}
+
+#npkiffunxs .gt_super {
+  font-size: 65%;
+}
+
+#npkiffunxs .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#npkiffunxs .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#npkiffunxs .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#npkiffunxs .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#npkiffunxs .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#npkiffunxs .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#npkiffunxs .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#npkiffunxs .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#npkiffunxs div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_col_headings header">
+<th id="a::stub" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">FP \ EHP unit cost</th>
+<th id="EHP-lo-(R2,500)" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">EHP lo (R2,500)</th>
+<th id="EHP-mid-(R4,000)" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">EHP mid (R4,000)</th>
+<th id="EHP-hi-(R7,000)" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">EHP hi (R7,000)</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<th id="stub_1_1" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Administrative only (0 %)</th>
+<td class="gt_row gt_right" headers="stub_1_1 EHP lo (R2,500)" style="background-color: #1A9850; color: #FFFFFF">R6,100</td>
+<td class="gt_row gt_right" headers="stub_1_1 EHP mid (R4,000)" style="background-color: #1A9850; color: #FFFFFF">R7,600</td>
+<td class="gt_row gt_right" headers="stub_1_1 EHP hi (R7,000)" style="background-color: #1A9850; color: #FFFFFF">R10,600</td>
+</tr>
+<tr class="even">
+<th id="stub_1_2" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">S1b lo (20 %)</th>
+<td class="gt_row gt_right" headers="stub_1_2 EHP lo (R2,500)" style="background-color: #9CBD6D; color: #000000">R7,625</td>
+<td class="gt_row gt_right" headers="stub_1_2 EHP mid (R4,000)" style="background-color: #9CBD6D; color: #000000">R9,500</td>
+<td class="gt_row gt_right" headers="stub_1_2 EHP hi (R7,000)" style="background-color: #9CBD6D; color: #000000">R13,250</td>
+</tr>
+<tr class="odd">
+<th id="stub_1_3" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">S1b mid (35 %)</th>
+<td class="gt_row gt_right" headers="stub_1_3 EHP lo (R2,500)" style="background-color: #FDD483; color: #000000">R9,385</td>
+<td class="gt_row gt_right" headers="stub_1_3 EHP mid (R4,000)" style="background-color: #FDD483; color: #000000">R11,692</td>
+<td class="gt_row gt_right" headers="stub_1_3 EHP hi (R7,000)" style="background-color: #FDD483; color: #000000">R16,308</td>
+</tr>
+<tr class="even">
+<th id="stub_1_4" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">S1b hi (50 %)</th>
+<td class="gt_row gt_right" headers="stub_1_4 EHP lo (R2,500)" style="background-color: #D73027; color: #FFFFFF">R12,200</td>
+<td class="gt_row gt_right" headers="stub_1_4 EHP mid (R4,000)" style="background-color: #D73027; color: #FFFFFF">R15,200</td>
+<td class="gt_row gt_right" headers="stub_1_4 EHP hi (R7,000)" style="background-color: #D73027; color: #FFFFFF">R21,200</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p><strong>What the table says.</strong> At the <strong>working values</strong> (<code>p_fp_S1b_mid</code> = 35 %, EHP mid = R4,000, DALRRD mid = R12,000, <code>p_DALRRD</code> = 0.3), induced workload is <strong>≈ R11,692 per true case detected</strong> — roughly 1.5× the administrative-tier figure. At the high-FP edge (50 %, early roll-out) it is <strong>≈ R21,200 per true case</strong>.</p>
+<p><strong>Implication for the integrated model.</strong> When the <a href="../posts/overall_policy_model.html">overall model</a> layers community-tier surveillance (S1b) on top of the coordination Full Package, induced EHP + DALRRD workload becomes the <em>fastest-growing</em> line in the regulator budget — faster than C1–C5 shared overhead, faster than NHLS test volume. The brief therefore proposes a <strong>two-step roll-out</strong>:</p>
+<ol type="1">
+<li><strong>Administrative tier first</strong> (NMC closure-of-loop + NHLS auto-notify + PIH MVD): near-zero FP, full coordination workload increment ≈ R145k + R7,600 × Δ alerts.</li>
+<li><strong>Community tier (S1b) piloted with explicit measurement of <code>p_fp_S1b</code></strong> before national rollout. The pilot must collect (a) confirmed-positive rate, (b) EHP time per investigation, and (c) DALRRD referral rate. These three numbers are the parameters that decide whether community surveillance is affordable at scale.</li>
+</ol>
+<p>This is the explicit operational hand-off between the coordination loop (this brief) and the surveillance ladder (<a href="../posts/surveillance_policy.html">Surveillance brief</a>): <strong>the loop only works as cheaply as the false-positive rate of its input feed.</strong></p>
 </section>
 </section>
 <section id="implementation-considerations" class="level2">

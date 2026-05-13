@@ -213,3 +213,10 @@ c_S3a_BChE_autonotify_setup,200000,"DEPRECATED in v4: use c_S2_BChE_autonotify_s
 c_S3a_BChE_autonotify_op,55000,"DEPRECATED in v4: use c_S2_BChE_autonotify_op | dist=gamma(25,2200) | Alias",costs.deprecated
 c_S4_PIH_dashboard_setup,40000,"DEPRECATED in v4: use c_S1_PIH_MVD_setup | dist=gamma(25,1600) | Alias",costs.deprecated
 c_S4_PIH_dashboard_op,82000,"DEPRECATED in v4: use c_S1_PIH_MVD_op | dist=gamma(25,3280) | Alias",costs.deprecated
+c_per_ehp_investigation_lo,2500,"EHP environmental investigation cost per alert (lower): travel + site visit + interviews + write-up | dist=gamma(25,100) | NDoH EHP unit costing",costs.coord_per_action
+c_per_ehp_investigation_mid,4000,"EHP environmental investigation cost per alert (working): travel + site visit + sampling + interviews + write-up + supervisor review | dist=gamma(25,160) | NDoH EHP unit costing",costs.coord_per_action
+c_per_ehp_investigation_hi,7000,"EHP environmental investigation cost per alert (upper): remote/rural site with overnight, full sampling panel, follow-up visit | dist=gamma(25,280) | NDoH EHP unit costing",costs.coord_per_action
+c_per_dalrrd_inspection_lo,6000,"DALRRD inspectorate site visit + sampling cost per referral (lower): urban, single-product, single visit | dist=gamma(25,240) | DALRRD inspectorate unit cost",costs.coord_per_action
+c_per_dalrrd_inspection_mid,12000,"DALRRD inspectorate site visit + sampling + enforcement letter per referral (working): mid-distance, single-site, sample dispatch, follow-up | dist=gamma(25,480) | DALRRD inspectorate unit cost",costs.coord_per_action
+c_per_dalrrd_inspection_hi,25000,"DALRRD inspectorate cost per referral (upper): rural/multi-site, full sampling, legal-letter and follow-up enforcement | dist=gamma(25,1000) | DALRRD inspectorate unit cost",costs.coord_per_action
+p_dalrrd_action_given_referral,0.30,"P(DALRRD inspectorate takes site action | confirmed EHP referral worth referring): includes both true positives and confirmed FPs warranting any inspection | dist=beta(30,70) | DALRRD inspectorate working assumption",costs.coord_per_action
