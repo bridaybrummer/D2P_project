@@ -278,7 +278,217 @@ The tree reports **per-case detection uplift in percentage points**. The status-
 
 **For burden impact, see the next brief.** The same P_detect figures feed into the [Coordination brief](coordination_policy.qmd) decision tree, where response efficacy η converts detection into cases averted, and into the [Terbufos brief](terbufos_policy.qmd), where regulatory restriction converts cases into deaths averted.
 
-## 7. Implementation considerations
+## 7. Status-quo costing — what surveillance costs today {#sec-costing}
+
+::: {.callout-note icon=false}
+## How to read & edit this section
+
+The tables below are the **average-cost economic build-up of running surveillance for pesticide poisoning today** (status quo, 2024–25 ZAR). They are sourced from an editable workbook — [`data/surveillance_costing.xlsx`](../data/surveillance_costing.xlsx) — with three sheets:
+
+- **`personnel`** — staff time (CTE × FTE %) by stream
+- **`system`** — infrastructure, hosting, SMS, reagents by stream
+- **`allocation`** — what share of each stream's total volume is pesticide-related (e.g. ~100 pesticide notifications/month out of ~10,000 total NMC notifications ≈ **0.84 %** of NMC platform OPEX is attributable to pesticide work)
+
+To revise a unit cost or FTE, **edit a cell in the .xlsx and re-render** — every number below updates. The CSV (`amua_import_parameters_v3.csv`) remains the source of truth for *model* parameters and *marginal* policy-option costs (S1 / S2 / MVP). Salary anchors come from the DPSA scales (L10–11), NHLS Patterson grades (D/E), DoH OSD scales (MO, pharmacy), NICD recruitment notices and SITA contracting benchmarks; system anchors come from NHLS State Tender RT-262, AWS af-south-1 pricing, Clickatell/BulkSMS SA, and the NICD ICT budget — full citations are in each row's `source` column.
+:::
+
+```{r}
+#| label: load-costing
+#| message: false
+#| warning: false
+
+library(readxl)
+library(scales)
+library(gt)
+library(dplyr)
+
+cost_path <- "../data/surveillance_costing.xlsx"
+personnel  <- read_excel(cost_path, sheet = "personnel")
+system_dat <- read_excel(cost_path, sheet = "system")
+allocation <- read_excel(cost_path, sheet = "allocation")
+
+# Allocation factor: share of stream activity that is pesticide-related.
+alloc_factor <- function(stream_name) {
+  a <- allocation %>% filter(stream == stream_name)
+  if (nrow(a) == 0) return(1)
+  a$allocation_pct[1] / 100
+}
+
+# Apply pesticide-share allocation to platform-level OPEX rows (rationale
+# contains the literal phrase "pesticide share").
+system_alloc <- system_dat %>%
+  mutate(
+    is_platform = grepl("pesticide share", rationale, ignore.case = TRUE),
+    pesticide_share_pct = if_else(
+      is_platform,
+      vapply(stream, function(s) alloc_factor(s) * 100, numeric(1)),
+      100
+    ),
+    pesticide_cost_zar = round(annual_cost_zar * pesticide_share_pct / 100)
+  )
+
+zar <- function(x) paste0("R", scales::comma(round(x)))
+```
+
+::: {.panel-tabset}
+
+### 1. Personnel
+
+Annual cost-to-employer × FTE share attributable to pesticide surveillance, by stream.
+
+```{r}
+#| label: tbl-cost-personnel
+
+personnel %>%
+  arrange(stream, desc(annual_cost_zar)) %>%
+  select(stream, role, annual_cte_zar, fte_pct, annual_cost_zar, rationale, source) %>%
+  gt(rowname_col = "role", groupname_col = "stream") %>%
+  fmt_number(columns = c(annual_cte_zar, annual_cost_zar), decimals = 0) %>%
+  fmt_number(columns = fte_pct, decimals = 1, suffixing = FALSE, pattern = "{x}%") %>%
+  cols_label(
+    annual_cte_zar  = "Annual CTE (R)",
+    fte_pct         = "FTE %",
+    annual_cost_zar = "Allocated cost (R/yr)",
+    rationale       = "Rationale",
+    source          = "Source"
+  ) %>%
+  grand_summary_rows(
+    columns = annual_cost_zar,
+    fns = list("Total personnel" = ~ sum(.)),
+    fmt = list(~ fmt_number(., decimals = 0))
+  ) %>%
+  tab_options(table.font.size = 11)
+```
+
+### 2. System
+
+Infrastructure, hosting, SMS, reagents and licences — unit cost × annual volume, then allocated to the pesticide share of stream activity where applicable.
+
+```{r}
+#| label: tbl-cost-system
+
+system_alloc %>%
+  arrange(stream, desc(pesticide_cost_zar)) %>%
+  select(stream, item, unit_cost_zar, units_per_yr, annual_cost_zar,
+         pesticide_share_pct, pesticide_cost_zar, rationale, source) %>%
+  gt(rowname_col = "item", groupname_col = "stream") %>%
+  fmt_number(columns = c(unit_cost_zar, units_per_yr,
+                         annual_cost_zar, pesticide_cost_zar),
+             decimals = 0) %>%
+  fmt_number(columns = pesticide_share_pct, decimals = 1, pattern = "{x}%") %>%
+  cols_label(
+    unit_cost_zar       = "Unit cost (R)",
+    units_per_yr        = "Units/yr",
+    annual_cost_zar     = "Raw cost (R/yr)",
+    pesticide_share_pct = "Pesticide share",
+    pesticide_cost_zar  = "Allocated cost (R/yr)",
+    rationale           = "Rationale",
+    source              = "Source"
+  ) %>%
+  grand_summary_rows(
+    columns = pesticide_cost_zar,
+    fns = list("Total system (pesticide-allocated)" = ~ sum(.)),
+    fmt = list(~ fmt_number(., decimals = 0))
+  ) %>%
+  tab_options(table.font.size = 11)
+```
+
+### 3. Allocation factors
+
+Why these proportions matter: platform-level OPEX (NMC hosting, PIH telephony, AfriTox licence) covers *all* notifiable / call activity, of which pesticide poisoning is only a slice. The denominator drives the allocated cost.
+
+```{r}
+#| label: tbl-cost-allocation
+
+allocation %>%
+  select(stream, basis, pesticide_count_yr, total_count_yr,
+         allocation_pct, rationale, source) %>%
+  gt(rowname_col = "basis", groupname_col = "stream") %>%
+  fmt_number(columns = c(pesticide_count_yr, total_count_yr), decimals = 0) %>%
+  fmt_number(columns = allocation_pct, decimals = 2, pattern = "{x}%") %>%
+  cols_label(
+    pesticide_count_yr = "Pesticide (n/yr)",
+    total_count_yr     = "Total (n/yr)",
+    allocation_pct     = "Share",
+    rationale          = "Rationale",
+    source             = "Source"
+  ) %>%
+  tab_options(table.font.size = 11)
+```
+
+### 4. Status-quo total
+
+Status-quo annual cost of running pesticide-poisoning surveillance across the three streams, summed from the personnel and system sheets.
+
+```{r}
+#| label: tbl-cost-total
+
+pers_by_stream <- personnel %>%
+  group_by(stream) %>%
+  summarise(personnel_zar = sum(annual_cost_zar), .groups = "drop")
+
+sys_by_stream <- system_alloc %>%
+  group_by(stream) %>%
+  summarise(system_zar = sum(pesticide_cost_zar), .groups = "drop")
+
+totals <- full_join(pers_by_stream, sys_by_stream, by = "stream") %>%
+  mutate(across(c(personnel_zar, system_zar), ~ replace_na(., 0)),
+         total_zar = personnel_zar + system_zar) %>%
+  arrange(desc(total_zar))
+
+totals %>%
+  gt(rowname_col = "stream") %>%
+  fmt_number(columns = c(personnel_zar, system_zar, total_zar), decimals = 0) %>%
+  cols_label(
+    personnel_zar = "Personnel (R/yr)",
+    system_zar    = "System (R/yr)",
+    total_zar     = "Total (R/yr)"
+  ) %>%
+  grand_summary_rows(
+    columns = c(personnel_zar, system_zar, total_zar),
+    fns = list("Status-quo total" = ~ sum(.)),
+    fmt = list(~ fmt_number(., decimals = 0))
+  ) %>%
+  tab_options(table.font.size = 11)
+```
+
+### 5. Marginal cost of policy options
+
+For comparison: the **additional** annual operating cost of each surveillance investment, pulled directly from [`amua_import_parameters_v3.csv`](../amua_import_parameters_v3.csv) (these are the same numbers driving the decision tree in §6).
+
+```{r}
+#| label: tbl-cost-marginal
+
+marginal <- tibble::tribble(
+  ~option, ~setup_param, ~op_param,
+  "S1 — PIH dashboard + MVD (+ AfriTox harmonisation)", "c_S4_PIH_dashboard_setup",      "c_S4_PIH_dashboard_op",
+  "S2 — BChE auto-notification",                         "c_S3a_BChE_autonotify_setup",  "c_S3a_BChE_autonotify_op",
+  "Surveillance MVP (S1 + S2)",                          "c_surv_MVP_setup",             "c_surv_MVP_op",
+  "S1 — NHLS-NMC IT feed (now operational)",             "c_S1_NHLS_NMC_feed_setup",     "c_S1_NHLS_NMC_feed_op"
+) %>%
+  mutate(
+    setup_zar = vapply(setup_param, function(n) as.numeric(pick(n)), numeric(1)),
+    op_zar    = vapply(op_param,    function(n) as.numeric(pick(n)), numeric(1))
+  ) %>%
+  select(option, setup_zar, op_zar, setup_param, op_param)
+
+marginal %>%
+  gt(rowname_col = "option") %>%
+  fmt_number(columns = c(setup_zar, op_zar), decimals = 0) %>%
+  cols_label(
+    setup_zar   = "Setup (R, one-off)",
+    op_zar      = "Operating (R/yr)",
+    setup_param = "CSV: setup",
+    op_param    = "CSV: operating"
+  ) %>%
+  tab_options(table.font.size = 11)
+```
+
+:::
+
+**Headline read.** The status-quo surveillance system already costs roughly **`r zar(sum(totals$total_zar))`/yr** in personnel + pesticide-allocated system spend across NMC, PIH, and NHLS BChE — borne almost entirely by NDoH, NHLS, and Stellenbosch FoMHS rather than appearing as a line item. Against that base, the **Surveillance MVP (S1 + S2) adds only `r zar(as.numeric(pick("c_surv_MVP_op")))`/yr** — a **`r sprintf("%.1f%%", 100 * as.numeric(pick("c_surv_MVP_op")) / sum(totals$total_zar))` uplift on current spend** for a +14 pp jump in P_detect. The marginal investment is small relative to the in-place baseline.
+
+## 8. Implementation considerations
 
 | Component | Lead agency | Year-1 cost | Critical path |
 |:----------|:------------|------------:|:--------------|
@@ -290,7 +500,7 @@ The tree reports **per-case detection uplift in percentage points**. The status-
 
 **Risks.** (i) Low BChE testing uptake by clinicians — S2 fires only on tests ordered. (ii) Data-quality drift if facility metadata is incomplete. (iii) Capacity bottleneck at provincial response level — the [Coordination brief](coordination_policy.qmd) addresses this.
 
-## 8. Recommended next step
+## 9. Recommended next step
 
 **Adopt the Surveillance MVP (S1 + S2) and pilot in 3 provinces (Gauteng, Western Cape, KZN) for 6 months.** Approximate pilot budget: **~R117,000 operating** (NHLS–NMC IT feed is now operational). Lead agency: NICD as national coordinator.
 

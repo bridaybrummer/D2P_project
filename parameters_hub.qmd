@@ -154,6 +154,158 @@ section_table(params, "detection probabilities")
 section_table(params, "option costs")
 ```
 
+## 8a. Surveillance costing build-up — audit detail
+
+The decision-tree scalars in §8 (e.g. `c_full_package_narrow_operating`) are the **conclusion**. The line-by-line **workings** — every FTE %, every salary anchor, every system line item — live in the editable workbook [`data/surveillance_costing.xlsx`](data/surveillance_costing.xlsx). The three tables below are pulled directly from that workbook at render time; **edit the .xlsx, re-render, and these tables (and the surveillance brief §7) update together**.
+
+```{r}
+#| label: costing-load
+#| message: false
+#| warning: false
+
+library(readxl)
+
+cost_path  <- "data/surveillance_costing.xlsx"
+personnel  <- read_excel(cost_path, sheet = "personnel")
+system_lvl <- read_excel(cost_path, sheet = "system")
+allocation <- read_excel(cost_path, sheet = "allocation")
+
+zar_fmt <- function(x) {
+  scales::label_currency(prefix = "R", big.mark = ",", accuracy = 1)(x)
+}
+```
+
+### 8a.1 Personnel — salary × FTE % allocated to pesticide surveillance
+
+```{r}
+#| label: tbl-cost-personnel-hub
+#| tbl-cap: "Personnel costs: each role's annual cost-to-employer (CTE) × % of time on pesticide surveillance. Salary anchors: DPSA L10–11 2024, NHLS Patterson D/E 2024, DoH OSD scales 2024."
+
+personnel |>
+  mutate(
+    `Annual CTE`       = zar_fmt(annual_cte_zar),
+    `FTE %`            = sprintf("%.0f%%", fte_pct),
+    `Allocated cost`   = zar_fmt(annual_cost_zar)
+  ) |>
+  select(Stream = stream, Role = role,
+         `Annual CTE`, `FTE %`, `Allocated cost`,
+         Rationale = rationale, Source = source) |>
+  gt() |>
+  grand_summary_rows(
+    columns = `Allocated cost`,
+    fns = list(Total ~ zar_fmt(sum(personnel$annual_cost_zar)))
+  ) |>
+  opt_row_striping() |>
+  tab_options(table.font.size = "small")
+```
+
+### 8a.2 System — platforms, assays, courier, hosting
+
+```{r}
+#| label: tbl-cost-system-hub
+#| tbl-cap: "System costs: unit cost × annual volume. BChE reagent and courier scale with assay volume; platform/hosting/telephony are fixed annual."
+
+system_lvl |>
+  mutate(
+    `Unit cost`    = zar_fmt(unit_cost_zar),
+    Units          = format(units_per_yr, big.mark = ",", scientific = FALSE),
+    `Annual cost`  = zar_fmt(annual_cost_zar)
+  ) |>
+  select(Stream = stream, Item = item,
+         `Unit cost`, Units, `Annual cost`,
+         Rationale = rationale, Source = source) |>
+  gt() |>
+  grand_summary_rows(
+    columns = `Annual cost`,
+    fns = list(Total ~ zar_fmt(sum(system_lvl$annual_cost_zar)))
+  ) |>
+  opt_row_striping() |>
+  tab_options(table.font.size = "small")
+```
+
+### 8a.3 Allocation keys — pesticide share of each stream's total throughput
+
+```{r}
+#| label: tbl-cost-allocation-hub
+#| tbl-cap: "Allocation keys: pesticide cases ÷ total stream throughput. The BChE stream is 100% pesticide-relevant by construction (assay is ordered when OP/carbamate poisoning is suspected); NMC and PIH carry broad notification mandates so only a fraction is pesticide-attributable."
+
+allocation |>
+  mutate(
+    `Pesticide cases / yr` = format(pesticide_count_yr, big.mark = ",", scientific = FALSE),
+    `Total stream / yr`    = format(total_count_yr,    big.mark = ",", scientific = FALSE),
+    `Allocation %`         = sprintf("%.2f%%", allocation_pct)
+  ) |>
+  select(Stream = stream, Basis = basis,
+         `Pesticide cases / yr`, `Total stream / yr`, `Allocation %`,
+         Rationale = rationale, Source = source) |>
+  gt() |>
+  opt_row_striping() |>
+  tab_options(table.font.size = "small")
+```
+
+### 8a.4 Reconciliation — xlsx build-up vs. CSV scalars
+
+This block proves the workbook and the CSV agree. If the discrepancy column is non-zero, **the model and the audit trail have drifted** — either the xlsx needs re-saving with current line items, or the CSV scalar needs updating to match.
+
+```{r}
+#| label: tbl-cost-reconciliation
+#| tbl-cap: "Reconciliation: xlsx line-item build-up vs. CSV decision-tree scalars. The xlsx is the wider system view (NMC + PIH + BChE personnel + system, allocated to pesticide share); c_status_quo_program in the CSV is the NICD-only slice that already appears in the decision tree as the status-quo arm cost."
+
+xlsx_total <- sum(personnel$annual_cost_zar) + sum(system_lvl$annual_cost_zar)
+
+by_stream <- bind_rows(
+  personnel  |> select(stream, annual_cost_zar) |> mutate(layer = "Personnel"),
+  system_lvl |> select(stream, annual_cost_zar) |> mutate(layer = "System")
+) |>
+  group_by(stream) |>
+  summarise(total = sum(annual_cost_zar), .groups = "drop")
+
+csv_status_quo <- as.numeric(
+  raw |> filter(Name == "c_status_quo_program") |> pull(Expression)
+)
+csv_pkg_narrow <- as.numeric(
+  raw |> filter(Name == "c_full_package_narrow_operating") |> pull(Expression)
+)
+
+tibble::tibble(
+  Item = c(
+    paste0("xlsx — NMC stream (personnel + system)"),
+    paste0("xlsx — PIH stream (personnel + system)"),
+    paste0("xlsx — BChE stream (personnel + system)"),
+    paste0("xlsx — Cross-cutting (data eng, biostats, warehouse)"),
+    "xlsx — Grand total (status-quo, allocated to pesticide)",
+    "CSV — c_status_quo_program (NICD slice only, used in tree)",
+    "CSV — c_full_package_narrow_operating (MVP marginal uplift)"
+  ),
+  Value = c(
+    by_stream |> filter(stream == "NMC")   |> pull(total) |> sum(),
+    by_stream |> filter(stream == "PIH")   |> pull(total) |> sum(),
+    by_stream |> filter(stream == "BChE")  |> pull(total) |> sum(),
+    by_stream |> filter(stream == "Cross") |> pull(total) |> sum(),
+    xlsx_total,
+    csv_status_quo,
+    csv_pkg_narrow
+  )
+) |>
+  mutate(`Annual cost (ZAR)` = zar_fmt(Value)) |>
+  select(Item, `Annual cost (ZAR)`) |>
+  gt() |>
+  tab_row_group(label = "Build-up (workings — data/surveillance_costing.xlsx)",
+                rows = 1:5) |>
+  tab_row_group(label = "Conclusion (decision-tree scalars — CSV)",
+                rows = 6:7) |>
+  row_group_order(groups = c("Build-up (workings — data/surveillance_costing.xlsx)",
+                             "Conclusion (decision-tree scalars — CSV)")) |>
+  opt_row_striping() |>
+  tab_options(table.font.size = "small")
+```
+
+**How to read this.** The xlsx grand total is the **whole** annual cost of the existing surveillance system (every salary slice + every platform + every assay) allocated to pesticide work. The CSV's `c_status_quo_program` is the **NICD-only slice** that already sits in the decision tree's status-quo arm — the wider build-up is *not* double-counted there because PIH and NHLS are funded outside the NICD vote. The CSV's `c_full_package_narrow_operating` is the **marginal uplift** the MVP adds on top of the status-quo. Auditors can therefore check three independent things:
+
+1. **xlsx grand total** matches the surveillance brief §7 headline ("status-quo R1,853,956/yr");
+2. **xlsx NMC stream** is consistent with the CSV `c_status_quo_program` order-of-magnitude (the NICD slice within NMC + cross-cutting);
+3. **CSV `c_full_package_narrow_operating`** is the figure the decision tree actually uses to compute incremental cost per detected case.
+
 ## 9. Whole-system induced demand
 
 ```{r}
