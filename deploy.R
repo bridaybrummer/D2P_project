@@ -34,7 +34,12 @@
 
 deploy <- function(commit_msg = "Update site",
                    target     = NULL,
-                   skip_push  = FALSE) {
+                   skip_push  = FALSE,
+                   data_files = c(
+                     "data/surveillance_costing.xlsx",
+                     "amua_import_parameters_v3.csv"
+                   ),
+                   refresh_freeze = TRUE) {
 
   repo_root <- tryCatch(
     normalizePath(dirname(sys.frame(1)$ofile %||% "."), mustWork = FALSE),
@@ -81,6 +86,19 @@ deploy <- function(commit_msg = "Update site",
       "    git config --global user.name  \"Your Name\"\n",
       "    git config --global user.email \"you@example.com\""
     )
+  }
+
+  # -------------------------------------------------------------------------
+  # 1b. Bust stale freeze caches when source data files have been edited
+  # -------------------------------------------------------------------------
+  # Quarto's `freeze: auto` only re-executes a chunk when the .qmd source
+  # changes -- NOT when an external data file (xlsx, csv) the chunk reads
+  # changes. This step compares each tracked data file's mtime against every
+  # _freeze/.../html.json and removes the stale freeze directory so the next
+  # render re-executes the affected chunks.
+  if (isTRUE(refresh_freeze) && length(data_files) > 0) {
+    step("Checking for stale freeze caches against data files...")
+    invalidate_stale_freezes(data_files)
   }
 
   # -------------------------------------------------------------------------
@@ -204,6 +222,39 @@ stop_friendly <- function(...) {
   stop(msg, call. = FALSE)
 }
 
+invalidate_stale_freezes <- function(data_files) {
+  data_files <- data_files[file.exists(data_files)]
+  if (length(data_files) == 0) return(invisible(NULL))
+
+  newest_data <- max(file.info(data_files)$mtime)
+
+  freeze_results <- list.files(
+    "_freeze",
+    pattern    = "^html\\.json$",
+    recursive  = TRUE,
+    full.names = TRUE
+  )
+  if (length(freeze_results) == 0) return(invisible(NULL))
+
+  removed <- 0L
+  for (f in freeze_results) {
+    if (file.info(f)$mtime < newest_data) {
+      # _freeze/<doc>/execute-results/html.json -> remove _freeze/<doc>/
+      doc_freeze_dir <- dirname(dirname(f))
+      message("    Stale freeze (", basename(doc_freeze_dir),
+              ") -- removing to force re-execute.")
+      unlink(doc_freeze_dir, recursive = TRUE)
+      removed <- removed + 1L
+    }
+  }
+  if (removed == 0L) {
+    message("    All freeze caches are current.")
+  } else {
+    message("    Cleared ", removed, " stale freeze cache(s).")
+  }
+  invisible(removed)
+}
+
 guess_site_url <- function(remote) {
   # Convert e.g. git@github.com:user/repo.git or https://github.com/user/repo.git
   # into https://user.github.io/repo/
@@ -226,3 +277,23 @@ if (invoked_as_script) {
   tgt  <- if (length(args) >= 2) args[[2]] else NULL
   deploy(commit_msg = msg, target = tgt)
 }
+
+# -----------------------------------------------------------------------------
+# Usage notes for `data_files` and `refresh_freeze`
+# -----------------------------------------------------------------------------
+# By default deploy() invalidates any _freeze/<doc>/ whose cached results are
+# OLDER than the most-recently-edited file in `data_files`. This guarantees
+# that edits to surveillance_costing.xlsx or amua_import_parameters_v3.csv
+# always flow through to the next render.
+#
+# To track an additional source file (e.g. a new costing workbook):
+#     deploy("msg", data_files = c(
+#         "data/surveillance_costing.xlsx",
+#         "data/coordination_costing.xlsx",
+#         "amua_import_parameters_v3.csv"
+#     ))
+#
+# To skip the freeze check (faster re-render of a small text-only edit):
+#     deploy("typo fix", refresh_freeze = FALSE)
+# -----------------------------------------------------------------------------
+
