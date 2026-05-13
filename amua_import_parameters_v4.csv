@@ -1,0 +1,180 @@
+Name,Expression,Notes,Group
+# === BURDEN PARAMETERS (mutually-exclusive sum across NMC + NHLS + PIH) ===,,,
+n_nmc_annual,1013,"Annual NMC pesticide notifications, 2023 | dist=fixed(,) | NICD NMC Annual Report 2023",burden.counts
+n_nhls_severe_annual,1779,"Annual NHLS severe BChE inhibitions (<50% normal), 2023 | dist=fixed(,) | NHLS LIS 2023",burden.counts
+n_nhls_total_annual,10626,"Annual NHLS BChE tests performed (all severities), 2023 — denominator for S3a auto-notify | dist=fixed(,) | NHLS LIS 2023",burden.counts
+n_pih_annual,1158,"Annual PIH clinician-initiated pesticide calls, 2023 (clinical contacts only; total helpline volume is higher) | dist=fixed(,) | PIH 2023 annual data",burden.counts
+n_burden_true,3950,"Observed annual cases = NMC + NHLS-severe + PIH-clinician (2023 volumes, mutually exclusive assumption) = 1013+1779+1158 | dist=fixed(,) | Sum of three streams 2023",burden.counts
+p_burden_overlap_correction,0.30,"Plausible overstatement from undeduplicated overlap (sensitivity) | dist=beta(30,70) | Conservative cap",burden.counts
+# === CASE FATALITY RATE — STRATIFIED BY SEVERITY ===,,,
+cfr_pih_mild,0.005,"PIH-call-only cases (mostly mild/moderate, often no admission) | dist=beta(5,995) | Estimated; PIH manages many at home",burden.cfr
+cfr_nhls_severe,0.30,"Severe BChE inhibition hospitalised cases | dist=beta(30,70) | Buckley 2021 Sri Lanka cohort",burden.cfr
+cfr_nmc_hospitalised,0.15,"NMC-notified (clinically significant, hospitalised) | dist=beta(15,85) | Free State 2018-19 + NMC observed",burden.cfr
+cfr_blended_observed,0.175,"Implied blended CFR from stratified weights = (1158*0.005 + 1779*0.30 + 1013*0.15)/3950 | dist=fixed(,) | Derived",burden.cfr
+cfr_headline_lo,0.10,"Headline lower bound for sensitivity (NMC observed range) | dist=fixed(,) | Decision model base",burden.cfr
+cfr_headline_mid,0.125,"Headline midpoint | dist=fixed(,) | Decision model base",burden.cfr
+cfr_headline_hi,0.15,"Headline upper bound | dist=fixed(,) | Decision model base",burden.cfr
+# Note: stratified CFR yields ~830 deaths/yr; flat 12.5% yields ~1460. StatsSA MACOD anchor (n_deaths_statssa_macod) is the canonical truth source for deaths and should be updated as new StatsSA releases land.,,,
+n_deaths_stratified,830,"Deaths from stratified CFR application | dist=fixed(,) | Internal consistency check",burden.deaths
+n_deaths_headline,2620,"Headline annual deaths = n_deaths_statssa_macod (canonical truth, replaces v1 advocacy figure of 1500) | dist=fixed(,) | StatsSA MACOD 2023 (X40-X49)",burden.deaths
+# === StatsSA MORTALITY ANCHOR (CANONICAL TRUTH SOURCE for deaths; used to derive d_status_quo and implied true burden) ===,,,
+n_deaths_statssa_macod,2620,"StatsSA MACOD pesticide-poisoning deaths per year. CANONICAL truth source — update as new StatsSA releases land. Current = StatsSA Causes of Death 2023, Table 4.12 (Accidental poisoning by and exposure to noxious substance, X40-X49). | dist=gamma(25,105) | StatsSA Causes of Death 2023, Table 4.12",burden.statssa_anchor
+n_true_burden_from_statssa_lo,17467,"Implied true annual burden, upper-CFR scenario = n_deaths_statssa_macod / cfr_headline_hi = 2620/0.15 | dist=fixed(,) | Derived",burden.statssa_anchor
+n_true_burden_from_statssa_mid,20960,"Implied true annual burden, mid-CFR scenario = n_deaths_statssa_macod / cfr_headline_mid = 2620/0.125 | dist=fixed(,) | Derived",burden.statssa_anchor
+n_true_burden_from_statssa_hi,26200,"Implied true annual burden, lower-CFR scenario = n_deaths_statssa_macod / cfr_headline_lo = 2620/0.10 | dist=fixed(,) | Derived",burden.statssa_anchor
+# === PER-CASE COSTS (CASE-MIX-WEIGHTED,ZAR 2025) ===,",",
+c_pih_call_only,500,"Per-case cost for PIH-managed cases (helpline call + brief OPD + caregiver time) | dist=gamma(25,20) | PIH operational + Stats SA wage",burden.per_case_costs
+c_ward_admission_per_day,1800,"Public-sector general ward UPFS day fee | dist=gamma(25,72) | UPFS 2024",burden.per_case_costs
+c_highcare_per_day,5500,"Public-sector high-care UPFS day fee | dist=gamma(25,220) | UPFS 2024",burden.per_case_costs
+c_icu_per_day,13500,"Public-sector ICU UPFS day fee | dist=gamma(25,540) | UPFS 2024",burden.per_case_costs
+c_ventilation_surcharge_per_day,4000,"Mechanical ventilation surcharge per day | dist=gamma(25,160) | UPFS 2024",burden.per_case_costs
+c_atropine_full_course,1500,"Full atropine course for OP poisoning (high-dose protocol, 2-5 days) | dist=gamma(25,60) | EML pricing",burden.per_case_costs
+c_pralidoxime_course,4500,"PAM course (3-5 days at therapeutic dose) | dist=gamma(25,180) | EML pricing",burden.per_case_costs
+los_ward_median_days,3,"Median ward LoS for moderate poisoning admission | dist=fixed(,) | Free State 2018-19 + Buckley 2021",burden.per_case_costs
+los_icu_median_days,5,"Median ICU LoS for severe poisoning requiring intensive care | dist=fixed(,) | Buckley 2021",burden.per_case_costs
+p_icu_among_severe,0.30,"Proportion of severe (NMC-notified) cases requiring ICU | dist=beta(30,70) | Estimated SA tertiary mix",burden.per_case_costs
+p_ventilation_among_icu,0.60,"Proportion of ICU pesticide cases requiring mechanical ventilation | dist=beta(60,40) | Buckley 2021",burden.per_case_costs
+c_morbidity_mild_PIH,500,"Per-case morbidity cost for PIH-only stratum | dist=fixed(,) | = c_pih_call_only",burden.per_case_costs
+c_morbidity_moderate_NHLS,15000,"Per-case morbidity cost for NHLS ward-admitted (3 days * R1,800 + investigations + R7k OOP/lost wages) | dist=gamma(25,600) | UPFS + Stats SA",burden.per_case_costs
+c_morbidity_severe_NMC,80000,"Per-case morbidity cost for NMC-notified severe (mix of ward + ICU + interventions) | dist=gamma(25,3200) | Weighted: 70%*R20k_ward + 30%*R220k_ICU",burden.per_case_costs
+c_morbidity_blended,27419,"Case-mix-weighted blended morbidity cost = (1158*500 + 1779*15000 + 1013*80000)/3950 | dist=fixed(,) | Derived",burden.per_case_costs
+c_morbidity_headline,12000,"Headline blended morbidity used in burden model (round number; sensitivity R6k-R25k) | dist=gamma(25,480) | Decision model",burden.per_case_costs
+# === MORTALITY COST (HUMAN-CAPITAL APPROACH) ===,,,
+yll_per_death,30,"Years of life lost per pesticide death (median age 30, e64 SA life table) | dist=gamma(30,1) | StatsSA + VR analysis",burden.mortality_costs
+median_annual_income_zar,60000,"SA median annual income (StatsSA Quarterly Labour Force Survey 2024) | dist=gamma(25,2400) | StatsSA",burden.mortality_costs
+productive_years_lost,25,"Productive YLL per death (15-65 working life truncated at median age 30) | dist=fixed(,) | Human-capital convention",burden.mortality_costs
+c_mortality_human_capital,1500000,"Per-death cost: 25 productive yr * R60k income | dist=gamma(25,60000) | Human-capital approach",burden.mortality_costs
+c_mortality_DALY_threshold,1155000,"Alternative: 30 YLL * R38,500/DALY (Edoka & Stacey 2020) | dist=fixed(,) | Cost-eff threshold approach",burden.mortality_costs
+c_mortality_VSL_lower,5000000,"Alternative: VSL lower (3.3x annual income, OECD-derived for LMIC) | dist=fixed(,) | Robinson et al.",burden.mortality_costs
+# === TOTAL ECONOMIC BURDEN ===,,,
+C_burden_morbidity,90000000,"Annual morbidity cost = sum(c_morbidity_stratum * n_stratum) ~ R90M | dist=fixed(,) | Derived",burden.total
+C_burden_mortality_stratified,1245000000,"Mortality cost using stratified CFR (830 deaths * R1.5M) ~ R1.25B | dist=fixed(,) | Conservative",burden.total
+C_burden_mortality_headline,2250000000,"Mortality cost using headline 1,500 deaths * R1.5M = R2.25B | dist=fixed(,) | Headline",burden.total
+C_burden_total_conservative,1335000000,"Conservative total ~ R1.34B/year (stratified CFR) | dist=fixed(,) | Lower bound for advocacy",burden.total
+C_burden_total_headline,2340000000,"Headline total ~ R2.3B/year | dist=fixed(,) | Used in all advocacy products",burden.total
+# === STAKEHOLDER SHARES OF ANNUAL BURDEN (ZAR 2025,headline scenario) — who bears the R2.34B ===,",",
+share_doh_morbidity,70000000,"NDoH (public hospitals): UPFS ward + ICU + ventilation + atropine/PAM + repeat care | dist=fixed(,) | Derived from C_burden_morbidity × hospital-care fraction (~78%)",burden.stakeholder_shares
+share_nhls_morbidity,10000000,"NHLS (laboratory): BChE + LFT + U&E + GC-MS confirmatory volume | dist=fixed(,) | Derived from C_burden_morbidity × lab fraction (~11%)",burden.stakeholder_shares
+share_individual_oop_morbidity,10000000,"Individuals / households out-of-pocket: transport, lost wages during admission, caregiver time | dist=fixed(,) | Derived from C_burden_morbidity × OOP fraction (~11%)",burden.stakeholder_shares
+share_dalrrd_burden,0,"DALRRD (regulator): R0 of burden side by construction — DALRRD cost sits on the intervention side (enforcement, recalls) | dist=fixed(,) | By construction",burden.stakeholder_shares
+share_household_mortality,2250000000,"Households / wider society: lost lifetime earnings (1500 deaths × R1.5M human-capital) | dist=fixed(,) | = C_burden_mortality_headline",burden.stakeholder_shares
+share_health_system_total,80000000,"Health-sector subtotal (NDoH + NHLS) — the budget-line burden | dist=fixed(,) | = share_doh_morbidity + share_nhls_morbidity",burden.stakeholder_shares
+share_household_total,2260000000,"Household + society subtotal (OOP + lost lifetime earnings) | dist=fixed(,) | = share_individual_oop_morbidity + share_household_mortality",burden.stakeholder_shares
+share_total_check,2340000000,"Sum check vs C_burden_total_headline | dist=fixed(,) | Internal consistency",burden.stakeholder_shares
+# === RESPONSE EFFICACY ===,,,
+eta_response_lo,0.15,"Response efficacy lower (low-engagement scenario) | dist=fixed(,) | Sensitivity",shared.response_efficacy
+eta_response_mid,0.30,"Response efficacy base case | dist=beta(30,70) | Buckley source-control literature",shared.response_efficacy
+eta_response_hi,0.50,"Response efficacy upper (well-resourced scenario) | dist=fixed(,) | Sensitivity",shared.response_efficacy
+# === DETECTION PROBABILITIES BY OPTION (per-case scale,anchored to StatsSA mid-burden 20,"960) ===,,",
+d_status_quo,0.048,"NMC-only per-case detection probability = n_nmc_annual * cfr_headline_mid / n_deaths_statssa_macod = 1013*0.125/2620 | dist=beta(5,95) | Derived from StatsSA MACOD 2023 anchor (replaces v1 expert-elicited 0.45)",detect.status_quo
+d_status_quo_lo,0.039,"d_status_quo lower bound = 1013*0.10/2620 | dist=fixed(,) | Derived",detect.status_quo
+d_status_quo_hi,0.058,"d_status_quo upper bound = 1013*0.15/2620 | dist=fixed(,) | Derived",detect.status_quo
+d_status_quo_v1_hotspot,0.45,"LEGACY/DEPRECATED: v1 expert-elicited hotspot-cluster detection probability (binomial-cluster argument, not per-case). Retained for analysis_report_v2.qmd back-compat only — do not use in active policy briefs. | dist=beta(45,55) | Expert elicitation, deprecated",detect.deprecated
+d_option1_NHLS_MOU,0.52,"LEGACY/DEPRECATED v1 hotspot-cluster figure. Do not use in active briefs. | dist=beta(52,48) | Expert elicitation, deprecated",detect.deprecated
+d_option2_DALRRD_data,0.58,"LEGACY/DEPRECATED v1 hotspot-cluster figure. Do not use in active briefs. | dist=beta(58,42) | Expert elicitation, deprecated",detect.deprecated
+d_S2_BChE_autonotify,0.133,"S2 BChE auto-notify per-case detection = (n_nmc_annual + n_nhls_severe_annual)/n_true_burden_from_statssa_mid = (1013+1779)/20960 | dist=beta(13,87) | Derived from StatsSA MACOD 2023 anchor (was d_option3_BChE_autonotify in v3)",detect.S2_BChE
+d_S1_PIH_MVD,0.104,"S1 PIH MVD + dashboard per-case detection = (n_nmc_annual + n_pih_annual)/n_true_burden_from_statssa_mid = (1013+1158)/20960 | dist=beta(10,90) | Derived from StatsSA MACOD 2023 anchor (was d_option4_PIH_quarterly in v3)",detect.S1_PIH_MVD
+d_option5_provincial_response,0.74,"LEGACY/DEPRECATED v1 hotspot-cluster figure. Do not use in active briefs. | dist=beta(74,26) | Expert elicitation, deprecated",detect.deprecated
+d_full_package,0.83,"LEGACY/DEPRECATED v1 hotspot-cluster figure. Do not use in active briefs. | dist=beta(83,17) | Expert elicitation, deprecated",detect.deprecated
+# === OPTION COSTS — SETUP & ANNUAL OPERATING (REVISED,ZAR 2025) ===,",",
+c_status_quo_program,300000,"Current NICD NMC pesticide program: 0.2 FTE analyst R250k + dashboard R30k + travel R20k | dist=gamma(25,12000) | NICD costing",costs.status_quo
+c_option1_NHLS_MOU_setup,80000,"Legal + governance + data-mapping (one-off) | dist=gamma(25,3200) | NICD legal + data engineer",costs.deprecated
+c_option1_NHLS_MOU_operating,60000,"Monthly analyst time + QA + reporting | dist=gamma(25,2400) | 0.05 FTE analyst",costs.deprecated
+c_option2_DALRRD_setup,80000,"Inter-agency MOU + product database mapping | dist=gamma(25,3200) | Comparable to Option 1",costs.deprecated
+c_option2_DALRRD_operating,60000,"Annual data refresh + analyst time | dist=gamma(25,2400) | 0.05 FTE analyst",costs.deprecated
+c_option3_BChE_setup,200000,"NHLS LIS reconfiguration: HL7 message dev + UAT + go-live | dist=gamma(25,8000) | NHLS IT estimate (was missing)",costs.deprecated
+c_option3_BChE_operating,55000,"Auto-notification middleware hosting + maintenance | dist=gamma(25,2200) | NHLS IT operating",costs.deprecated
+c_option4_PIH_setup,40000,"Reporting template + data dictionary (one-off) | dist=gamma(25,1600) | PIH admin",costs.deprecated
+c_option4_PIH_operating,187000,"PIH analyst 0.15 FTE + reporting infrastructure | dist=gamma(25,7480) | REVISED UP - was R62k underestimate",costs.deprecated
+c_option5_per_province_baseline,40000,"Per-province training + SOP + field kit + coordination | dist=gamma(25,1600) | Provincial DoH",costs.deprecated
+c_option5_national_baseline,360000,"All 9 provinces baseline (9 * R40k) | dist=fixed(,) | Sum",costs.deprecated
+c_response_per_hotspot,55000,"Per-hotspot field investigation: 2 staff*2 days + travel + 7 env samples * R1.5k + 7 GC-MS analyses * R2.5k + reporting | dist=gamma(25,2200) | REVISED UP - was R15k (3.5x underestimate)",costs.full_package
+c_full_package_narrow_setup,400000,"All Options 1-5 setup combined | dist=gamma(25,16000) | Sum of setups",costs.full_package
+c_full_package_narrow_operating,237000,"Narrow surveillance coordination ongoing | dist=fixed(,) | Decision model headline",costs.full_package
+c_full_package_wholesystem_operating,1193000,"Whole-system: + induced hospital + lab + EHP + DALRRD enforcement demand | dist=fixed(,) | Decision model headline",costs.full_package
+# === WHOLE-SYSTEM (INDUCED-DEMAND) COMPONENTS ===,,,
+c_induced_hospital_workload,188000,"Additional ED + ward workload from improved case finding | dist=gamma(25,7520) | Costing analysis",costs.induced_demand
+c_induced_lab_volume,493000,"NHLS BChE + repeat tests + confirmatory at higher detection rate | dist=gamma(25,19720) | NHLS volume modelling",costs.induced_demand
+c_induced_EHP_investigations,154000,"Additional EHP field investigations beyond Option 5 baseline | dist=gamma(25,6160) | Provincial DoH",costs.induced_demand
+c_induced_DALRRD_enforcement,121000,"DALRRD inspections + recalls + compliance follow-up | dist=gamma(25,4840) | DALRRD",costs.induced_demand
+# === OPTION 6 — SENTINEL TOXICOLOGY (PARALLEL RESEARCH INVESTMENT) ===,,,
+c_option6_pilot_year1,1200000,"CHB pilot 12 months: research nurse 0.5 FTE + GC-MS testing + clinical battery | dist=gamma(25,48000) | Concept Note DRAFT 3",costs.S3_sentinel
+c_option6_full_5site_annual,3625000,"5 sentinel sites full rollout annual | dist=gamma(25,145000) | Concept Note DRAFT 3",costs.S3_sentinel
+c_gcms_screen_per_specimen,2500,"GC-MS / LC-MS multi-residue pesticide screen, per specimen | dist=gamma(25,100) | NHLS Forensic Chem",costs.S3_sentinel
+c_clinical_battery_per_patient,1500,"Enhanced clinical battery: BChE + LFT + U&E + repeat | dist=gamma(25,60) | NHLS price list",costs.S3_sentinel
+c_research_nurse_05FTE_per_site,175000,"0.5 FTE research nurse per sentinel site | dist=gamma(25,7000) | Salary band TASK research",costs.S3_sentinel
+n_specimens_per_site_per_year,646,"2 specimens (gastric + urine) * 323 patients per site | dist=fixed(,) | Sample-size calc, p=0.3, d=0.05",costs.S3_sentinel
+# === DALY MONETISATION ===,,,
+lambda_DALY_threshold,38500,"SA cost-effectiveness threshold per DALY averted | dist=gamma(25,1540) | Edoka & Stacey 2020",burden.daly
+yld_per_survivor_no_sequelae,0.05,"Acute illness ~3 weeks, disability weight 0.4 | dist=gamma(5,0.01) | GBD weights",burden.daly
+yld_per_survivor_with_OPIDN,2.5,"Long-term neuropathy (intermediate syndrome / OPIDN), 5-yr partial disability | dist=gamma(25,0.1) | GBD",burden.daly
+p_OPIDN_among_severe_OP,0.10,"Proportion of severe OP survivors developing OPIDN/intermediate syndrome | dist=beta(10,90) | OP literature",burden.daly
+yld_blended_per_survivor,0.30,"Blended YLD per survivor (90% no sequelae * 0.05 + 10% OPIDN * 2.5) | dist=fixed(,) | Derived",burden.daly
+# === NET MONETARY BENEFIT FRAMEWORK ===,,,
+NMB_full_package_narrow,259763000,"NMB(PKG) = (C0 - C_PKG) - K_PKG_narrow ~ R260M | dist=fixed(,) | Burden-economics model",shared.nmb
+NMB_full_package_wholesystem,258807000,"NMB whole-system perspective | dist=fixed(,) | Burden-economics model",shared.nmb
+ROI_narrow_base,1100,"Avoided burden / narrow cost ~ 1100x | dist=fixed(,) | Base case",shared.nmb
+ROI_wholesystem_base,220,"Avoided burden / whole-system cost ~ 220x | dist=fixed(,) | Base case",shared.nmb
+# === SURVEILLANCE OPTIONS — CANONICAL (S-taxonomy,refactored 2026) ===,",",
+c_S0_NHLS_NMC_feed_setup,80000,"S0 (operational) NHLS→NMC IT feed: legal + governance + data-mapping (one-off). Now operational; included in status-quo baseline. | dist=gamma(25,3200) | NICD (was c_S1_NHLS_NMC_feed_setup in v3)",costs.S0_NHLS
+c_S0_NHLS_NMC_feed_op,60000,"S0 (operational) NHLS→NMC IT feed operating: 0.05 FTE analyst + QA. Included in status-quo cost baseline. | dist=gamma(25,2400) | NICD (was c_S1_NHLS_NMC_feed_op in v3)",costs.S0_NHLS
+c_S2_BChE_autonotify_setup,200000,"S2 BChE auto-notify setup: NHLS LIS HL7 reconfiguration + UAT | dist=gamma(25,8000) | NHLS IT (was c_S3a_BChE_autonotify_setup in v3)",costs.S2_BChE
+c_S2_BChE_autonotify_op,55000,"S2 BChE auto-notify operating: middleware hosting + maintenance | dist=gamma(25,2200) | NHLS IT (was c_S3a_BChE_autonotify_op in v3)",costs.S2_BChE
+c_S1_PIH_MVD_setup,40000,"S1 PIH live dashboard + MVD setup: reporting template + data dictionary (one-off) | dist=gamma(25,1600) | PIH admin (was c_S4_PIH_dashboard_setup in v3)",costs.S1_PIH_MVD
+c_S1_PIH_MVD_op,82000,"S1 PIH live dashboard + MVD operating (includes AfriTox agent-name harmonisation for PIH+NMC) | dist=gamma(25,3280) | PIH revised, AfriTox harmonisation (was c_S4_PIH_dashboard_op in v3)",costs.S1_PIH_MVD
+c_surv_MVP_setup,80000,"Surveillance MVP setup (S0 NHLS-NMC feed + S1 PIH MVD + S2 BChE, IT one-off; S2 BChE HL7 work dominates) | dist=fixed(,) | Sum, S2 BChE setup dominates",costs.MVP
+c_surv_MVP_op,137000,"Surveillance MVP annual operating = S1 PIH MVD (R82k, AfriTox harmonisation) + S2 BChE auto-notify (R55k) = R137k | dist=fixed(,) | Sum",costs.MVP
+# === COORDINATION OPTIONS — CANONICAL (C-taxonomy) ===,,,
+c_C1_NMC_closure_op,30000,"C1 NMC closure-of-loop field: schema change + EHP training material | dist=gamma(25,1200) | NICD NMC team",costs.coord_C1_C5
+c_C2_referral_form_op,25000,"C2 Structured DALRRD referral form on NMC: form build + DALRRD inbox workflow | dist=gamma(25,1000) | NICD + DALRRD",costs.coord_C1_C5
+c_C3_intel_feed_op,40000,"C3 NICD→DALRRD intelligence feed: quarterly brief + cluster-alert SOP | dist=gamma(25,1600) | NICD analyst + DALRRD liaison",costs.coord_C1_C5
+c_C4_clinician_fb_op,20000,"C4 Clinician auto-feedback: email templating + integration | dist=gamma(25,800) | NICD NMC team",costs.coord_C1_C5
+c_C5_KPI_dashboard_op,30000,"C5 Joint KPI dashboard: KPI definitions + public hosting | dist=gamma(25,1200) | NICD + DALRRD + Provinces",costs.coord_C1_C5
+c_coord_FP_op,145000,"Coordination Full Package annual operating = C1+C2+C3+C4+C5 | dist=fixed(,) | Sum",costs.coord_C1_C5
+p_loop_closed_status_quo,0.011,"P(coordination loop fully closes) under status quo | dist=beta(11,989) | Decision-tree joint product",coord.probabilities
+p_loop_closed_C3_only,0.40,"P(loop closed) after C3 NICD→DALRRD feed alone | dist=beta(40,60) | Decision-tree placeholder",coord.probabilities
+p_loop_closed_FP,0.70,"P(loop closed) under Coordination Full Package | dist=beta(70,30) | Decision-tree placeholder",coord.probabilities
+n_deaths_averted_coord_C3,547,"Deaths averted/yr under C3 only at national scale | dist=fixed(,) | Decision-tree output",coord.outcomes
+n_deaths_averted_coord_FP,957,"Deaths averted/yr under Coordination Full Package at national scale | dist=fixed(,) | Decision-tree output",coord.outcomes
+# === TERBUFOS REGULATORY OPTIONS — CANONICAL (T-taxonomy) ===,,,
+frac_terbufos_attributable_lo,0.20,"Terbufos attributable fraction of fatal SA pesticide poisonings, lower | dist=fixed(,) | Sri Lanka single-agent withdrawals Gunnell 2017",terb.burden
+frac_terbufos_attributable_mid,0.25,"Terbufos attributable fraction, working value | dist=beta(25,75) | Gunnell 2017 + Davies 2023 SA paediatric dominance",terb.burden
+frac_terbufos_attributable_hi,0.35,"Terbufos attributable fraction, upper | dist=fixed(,) | Sri Lanka upper end",terb.burden
+n_deaths_terbufos_attributable_mid,375,"= frac_terbufos_attributable_mid × n_deaths_headline = 0.25 × 1500 | dist=fixed(,) | Derived",terb.burden
+frac_T3_burden_retired,0.70,"Fraction of terbufos-attributable burden retired under Option T3 full withdrawal | dist=beta(70,30) | Sri Lanka substitution-incompleteness 60-80%",terb.burden
+n_deaths_averted_T3_lo,200,"Deaths averted/yr under Option T3, lower bound | dist=fixed(,) | = 0.20 × 0.60 × 1500 × adj",terb.outcomes
+n_deaths_averted_T3_hi,400,"Deaths averted/yr under Option T3, upper bound | dist=fixed(,) | = 0.35 × 0.80 × 1500 × adj",terb.outcomes
+n_deaths_averted_T2_lo,80,"Deaths averted/yr under Option T2, lower bound | dist=fixed(,) | Partial informal-market coverage",terb.outcomes
+n_deaths_averted_T2_hi,180,"Deaths averted/yr under Option T2, upper bound | dist=fixed(,) | Partial informal-market coverage",terb.outcomes
+c_T2_RUP_enforcement_lo,1000000,"Option T2 RUP + audit + formulation restriction enforcement, lower (DALRRD inspectorate) | dist=fixed(,) | US EPA RUP cost scaled to SA",terb.costs
+c_T2_RUP_enforcement_mid,2000000,"Option T2 enforcement, working value | dist=gamma(25,80000) | US EPA anchor",terb.costs
+c_T2_RUP_enforcement_hi,3000000,"Option T2 enforcement, upper | dist=fixed(,) | US EPA upper",terb.costs
+yield_impact_terbufos_withdrawal_mid,0.03,"SA maize yield impact under T3 full withdrawal, working value (Bt traits cover stalk borer use case) | dist=beta(3,97) | EU 2009 no documented collapse + SA Bt penetration ~85%",terb.costs
+yield_impact_terbufos_withdrawal_hi,0.07,"Yield impact upper sensitivity | dist=fixed(,) | Smallholder non-Bt maize exposure",terb.costs
+leverage_ratio_terbufos_T2,500,"Ratio of household mortality cost retired per rand of T2 regulatory spend | dist=fixed(,) | Lower bound, 200 deaths × R1.5M / R2M",terb.costs
+# === DECISION-TREE NODE PROBABILITIES — CANONICAL (consumed by brief mermaid trees) ===,,,
+p_death,0.13,"Case-fatality among suspected pesticide-poisoning cases | dist=beta(13,87) | NHLS BChE severe cohort",shared.outcomes
+p_severe,0.27,"Proportion of survivors with severe morbidity (OPIDN / intermediate syndrome trajectory) | dist=beta(27,73) | OP literature",shared.outcomes
+p_recover,0.60,"Proportion of survivors with full recovery | dist=beta(60,40) | Complement = 1 - p_severe (rounded)",shared.outcomes
+rho_secondary,3.0,"Secondary cases per index case from a single uncontrolled source (cluster multiplier) | dist=gamma(9,0.33) | NICD outbreak debriefs",shared.outcomes
+d_surveillance_mvp,0.189,"Per-case detection under Surveillance MVP (S1 PIH MVD + S2 BChE auto-notify) = (n_nmc_annual + n_nhls_severe_annual + n_pih_annual)/n_true_burden_from_statssa_mid = (1013+1779+1158)/20960 | dist=beta(19,81) | Derived from StatsSA MACOD 2023 anchor",detect.MVP
+d_surveillance_full_S3b,0.189,"DEPRECATED key (S3 is now agent-attribution, not a detection-coverage uplift) — retained for back-compat as alias to d_surveillance_mvp. S3 sentinel toxicology identifies the proportion of chemical agents in severely-poisoned live patients; it informs product-banning (terbufos brief) rather than coverage. | dist=beta(19,81) | Derived (alias)",detect.deprecated
+p_coord_sq_nmc_notified,0.30,"P(case notified on NMC | suspected) under status quo | dist=beta(30,70) | NICD audit",coord.probabilities
+p_coord_sq_sms_reaches_ehp,0.95,"P(SMS reaches EHP | notified) | dist=beta(95,5) | NICD system check",coord.probabilities
+p_coord_sq_ehp_investigates,0.60,"P(EHP investigates | SMS received) | dist=beta(60,40) | EHP survey",coord.probabilities
+p_coord_sq_recorded_on_nmc,0.05,"P(investigation outcome recorded back on NMC | EHP investigates) | dist=beta(5,95) | NICD audit — almost never",coord.probabilities
+p_coord_sq_refer_dalrrd,0.30,"P(EHP refers to DALRRD | investigates) | dist=beta(30,70) | Informal pathway",coord.probabilities
+p_coord_sq_dalrrd_acts,0.50,"P(DALRRD takes regulatory action | referred) | dist=beta(50,50) | DALRRD inspectorate",coord.probabilities
+p_coord_sq_feedback_full,0.10,"P(action fed back to NMC + clinician | DALRRD acts) | dist=beta(10,90) | Typically EHP-only",coord.probabilities
+# === LEGACY ROWS (v1 5-option taxonomy) — DEPRECATED,retained for back-compat with analysis_report.qmd ===,",",
+# Use the S/C/T canonical rows above for all new work. The c_option1..c_option5 rows below are v1 and have been superseded.,,,
+# === DEPRECATED ALIASES — v3 S-taxonomy names (use v4 names for all new work) ===,,,
+"# Use v4 canonical names: d_S1_PIH_MVD, d_S2_BChE_autonotify, c_S1_PIH_MVD_*, c_S2_BChE_*, c_S0_NHLS_NMC_feed_*",,,
+d_option3_BChE_autonotify,0.133,"DEPRECATED in v4: use d_S2_BChE_autonotify. Retained for back-compat with analysis_report.qmd | dist=beta(13,87) | Alias",detect.deprecated
+d_option4_PIH_quarterly,0.104,"DEPRECATED in v4: use d_S1_PIH_MVD. Retained for back-compat with analysis_report.qmd | dist=beta(10,90) | Alias",detect.deprecated
+c_S1_NHLS_NMC_feed_setup,80000,"DEPRECATED in v4: use c_S0_NHLS_NMC_feed_setup (now operational baseline) | dist=gamma(25,3200) | Alias",costs.deprecated
+c_S1_NHLS_NMC_feed_op,60000,"DEPRECATED in v4: use c_S0_NHLS_NMC_feed_op (now operational baseline) | dist=gamma(25,2400) | Alias",costs.deprecated
+c_S3a_BChE_autonotify_setup,200000,"DEPRECATED in v4: use c_S2_BChE_autonotify_setup | dist=gamma(25,8000) | Alias",costs.deprecated
+c_S3a_BChE_autonotify_op,55000,"DEPRECATED in v4: use c_S2_BChE_autonotify_op | dist=gamma(25,2200) | Alias",costs.deprecated
+c_S4_PIH_dashboard_setup,40000,"DEPRECATED in v4: use c_S1_PIH_MVD_setup | dist=gamma(25,1600) | Alias",costs.deprecated
+c_S4_PIH_dashboard_op,82000,"DEPRECATED in v4: use c_S1_PIH_MVD_op | dist=gamma(25,3280) | Alias",costs.deprecated
