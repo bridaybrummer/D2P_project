@@ -3,7 +3,7 @@ title: "Costing Analysis: Improved Pesticide Surveillance"
 subtitle: "Detailed Cost Estimates for Implementation and Operations"
 author: "D2P Project Team"
 date: "2025-09-05"
-date-modified: today
+date-modified: "2025-09-05"
 categories: [costing, budget, implementation]
 format:
   html:

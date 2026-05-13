@@ -22,6 +22,64 @@ format:
 **Status:** **DRAFT.** One genuine SA evidence gap remains (the adult **live-patient** attributable fraction, resolved only by Surveillance Option S3). The other quantitative inputs — market volume, yield impact, substitute hazard, substitute pricing, enforcement cost — are **not epistemic gaps**: they are either administrative numbers DALRRD can pull, or values defensibly anchored to the EU/US/Sri Lanka evidence base (see [§2b](#international-natural-experiment-evidence) and [Interim assumptions](#interim-assumptions-anchored-to-international-evidence)).
 :::
 
+```{r}
+#| label: headline-numbers
+#| echo: false
+#| message: false
+#| warning: false
+
+# Pull all headline inputs from the canonical CSV — no inline magic numbers.
+source("../R/terbufos_tree.r")  # also sources decision_tree_engine.r
+params <- load_params()
+
+f_lo    <- params$frac_terbufos_attributable_lo
+f_mid   <- params$frac_terbufos_attributable_mid
+f_hi    <- params$frac_terbufos_attributable_hi
+phi     <- params$frac_T3_burden_retired
+N_d     <- params$n_deaths_headline
+N_cases <- params$n_true_burden_from_statssa_mid
+C_tot   <- params$C_burden_total_headline
+c_enf   <- params$c_T2_RUP_enforcement_mid
+
+# Headline averted (working / mid)
+deaths_av_mid    <- f_mid * phi * N_d
+deaths_av_lo     <- f_lo  * phi * N_d
+deaths_av_hi     <- f_hi  * phi * N_d
+poisonings_av_mid <- f_mid * phi * N_cases
+poisonings_av_lo  <- f_lo  * phi * N_cases
+poisonings_av_hi  <- f_hi  * phi * N_cases
+cost_av_mid      <- f_mid * phi * C_tot
+cost_av_lo       <- f_lo  * phi * C_tot
+cost_av_hi       <- f_hi  * phi * C_tot
+leverage_mid     <- cost_av_mid / c_enf
+
+fnum <- function(x) format(round(x), big.mark = ",")
+fbn  <- function(x) sprintf("%.2f", x / 1e9)
+fmn  <- function(x) sprintf("%.0f", x / 1e6)
+fpct <- function(x) sprintf("%.0f%%", 100 * x)
+```
+
+::: {.callout-tip icon=false}
+## Headlines — what banning terbufos buys SA per year
+
+> **`r fnum(deaths_av_mid)` deaths averted/yr**  *(range `r fnum(deaths_av_lo)`–`r fnum(deaths_av_hi)`)*<br>
+> **`r fnum(poisonings_av_mid)` poisonings averted/yr**  *(range `r fnum(poisonings_av_lo)`–`r fnum(poisonings_av_hi)`)*<br>
+> **~R`r fbn(cost_av_mid)`B/yr in retired economic burden**  *(range R`r fbn(cost_av_lo)`–R`r fbn(cost_av_hi)`B)*<br>
+> **at a DALRRD enforcement cost of ~R`r fmn(c_enf)`M/yr** — a household-burden-retired : regulator-spend leverage ratio of roughly **`r fnum(leverage_mid)` : 1**.
+
+**Arithmetic (working / mid value).** Every number above is the product of three CSV-driven inputs and a stakeholder share:
+
+| Quantity | Formula | Working value |
+|:---|:---|---:|
+| Deaths averted | $f_\text{attr} \times \varphi_\text{retired} \times N_\text{deaths}$ | `r fpct(f_mid)` × `r fpct(phi)` × `r fnum(N_d)` = **`r fnum(deaths_av_mid)`/yr** |
+| Poisonings averted | $f_\text{attr} \times \varphi_\text{retired} \times N_\text{true cases}$ | `r fpct(f_mid)` × `r fpct(phi)` × `r fnum(N_cases)` = **`r fnum(poisonings_av_mid)`/yr** |
+| Burden retired | $f_\text{attr} \times \varphi_\text{retired} \times C_\text{burden total}$ | `r fpct(f_mid)` × `r fpct(phi)` × R`r fbn(C_tot)`B = **R`r fbn(cost_av_mid)`B/yr** |
+| Regulator spend | `c_T2_RUP_enforcement_mid` | **R`r fmn(c_enf)`M/yr** |
+| Leverage | $C_\text{burden retired} \div C_\text{enforcement}$ | R`r fbn(cost_av_mid)`B ÷ R`r fmn(c_enf)`M ≈ **`r fnum(leverage_mid)` : 1** |
+
+Where: $f_\text{attr}$ = terbufos attributable fraction of fatal SA pesticide events (Davies 2023 + Gunnell 2017); $\varphi_\text{retired}$ = fraction of attributable burden retired post-ban (Sri Lanka substitution-incompleteness, `r fpct(phi)`); $N_\text{deaths}$, $N_\text{true cases}$, $C_\text{burden total}$ = StatsSA MACOD 2023 + implied true burden + total annual economic burden.
+:::
+
 ## 1. Policy question
 
 **Should South Africa ban terbufos as a registered agricultural pesticide?**
@@ -190,6 +248,121 @@ deaths_residual_mid, 100*(1 - phi)
 - **Maize yield** — bounded at <5 % (see §7).
 
 The full closed-form derivation, with the deaths-averted bracket calculated under every $f_\text{attr} \times \varphi_\text{retired}$ combination, lives in [Technical Appendix C](../technical_appendix_terbufos.qmd).
+
+## 6b. Alternative view — per-individual decision tree (Amua-style)
+
+The tree in §6 is a **population-aggregate** model: it takes the StatsSA mortality total as given and asks what share is retired by a ban. An alternative — drafted in Amua — is a **per-individual** tree that walks a single SA resident through one year, splits on whether they experience a pesticide poisoning, then splits on whether the agent is terbufos, and finally splits on clinical outcome (died / hospitalised / asymptomatic). Each terminal carries a per-person cost; the rollback returns expected deaths, hospitalisations and ZAR cost **per individual per year**, which can be multiplied by the SA population to recover annual national totals.
+
+The two trees answer the same policy question from opposite ends. The aggregate tree is more compact and audits cleanly against StatsSA; the per-individual tree exposes the *clinical-pathway logic* (CFR by agent) that drives the effect, and makes the personal stakes of registration policy explicit. The numbers below come from the same CSV-driven parameter set as §6.
+
+````{r}
+#| label: fig-terb-tree-personal
+#| echo: false
+#| output: asis
+
+source("../R/terbufos_tree_personal.r")
+
+params_p <- load_params()
+tree_p   <- build_terbufos_tree_personal(params_p)
+res_p    <- evs_to_df(eval_tree(tree_p), decision_name = "ban_terbufos_personal")
+av_p     <- compute_avertedness_personal(res_p, params_p$sa_population_ref)
+
+# Pull mid values for the diagram labels.
+ppe_sq   <- params_p$p_p_exposed_sq
+ppe_ban  <- params_p$p_p_exposed_ban
+pterb_sq <- params_p$p_terbufos_among_poisoned_sq
+pterb_bn <- params_p$p_terbufos_among_poisoned_ban
+pd_t     <- params_p$p_die_given_terbufos
+ph_t     <- params_p$p_hosp_given_terbufos
+pa_t     <- params_p$p_asymp_given_terbufos
+pd_o     <- params_p$p_die_given_other
+ph_o     <- params_p$p_hosp_given_other
+pa_o     <- params_p$p_asymp_given_other
+
+# Averted (national) — for caption.
+d_av <- av_p %>% filter(metric == "deaths/yr (national)")
+h_av <- av_p %>% filter(metric == "hospitalisations/yr (national)")
+c_av <- av_p %>% filter(metric == "cost ZAR/yr (national)")
+
+cat(sprintf('```{mermaid}
+%%%%| fig-cap: "Per-individual decision tree (Amua draft). An SA resident is followed for one year. Probabilities are CSV-driven (see <code>terb.personal_tree</code> block). Scaled to a population of %s, this tree gives **%s deaths averted/yr**, **%s hospitalisations averted/yr**, and **~R%sB/yr** in retired cost under a ban. Compare with the aggregate tree in §6: the two trees should give numbers in the same order of magnitude."
+flowchart LR
+    Q{Ban terbufos?}
+
+    Q -->|No — T1<br/>Status quo| SQ[Status quo]:::bad
+    Q -->|Yes — T2<br/>Cancel registration| BN[Ban]:::good
+
+    SQ -->|p=%.6f<br/>Poisoning exposed| SQ_P[Poisoned]
+    SQ -->|1 - p<br/>No poisoning| SQ_N[Not poisoned]:::neutral
+    SQ_P -->|%.2f<br/>Terbufos| SQ_T[Outcome | terbufos]:::bad
+    SQ_P -->|%.2f<br/>Other agent| SQ_O[Outcome | other]
+    SQ_T --> SQ_TD["Died %.3f"]:::bad
+    SQ_T --> SQ_TH["Hospitalised %.3f"]:::warn
+    SQ_T --> SQ_TA["Asymptomatic %.3f"]:::neutral
+    SQ_O --> SQ_OD["Died %.3f"]:::warn
+    SQ_O --> SQ_OH["Hospitalised %.3f"]:::neutral
+    SQ_O --> SQ_OA["Asymptomatic %.3f"]:::neutral
+
+    BN -->|p=%.6f<br/>Poisoning exposed| BN_P[Poisoned]
+    BN -->|1 - p<br/>No poisoning| BN_N[Not poisoned]:::neutral
+    BN_P -->|%.2f<br/>Terbufos residual| BN_T[Outcome | terbufos]:::warn
+    BN_P -->|%.2f<br/>Other agent| BN_O[Outcome | other]:::good
+    BN_T --> BN_TD["Died %.3f"]:::bad
+    BN_T --> BN_TH["Hospitalised %.3f"]:::warn
+    BN_T --> BN_TA["Asymptomatic %.3f"]:::neutral
+    BN_O --> BN_OD["Died %.3f"]:::warn
+    BN_O --> BN_OH["Hospitalised %.3f"]:::neutral
+    BN_O --> BN_OA["Asymptomatic %.3f"]:::neutral
+
+    classDef bad fill:#fdd,stroke:#cc0000,stroke-width:1.5px
+    classDef good fill:#cfc,stroke:#060,stroke-width:2px
+    classDef warn fill:#ffe9b3,stroke:#cc8800,stroke-width:1.5px
+    classDef neutral fill:#eee,stroke:#666
+```
+',
+format(params_p$sa_population_ref, big.mark = ","),
+format(round(d_av$averted), big.mark = ","),
+format(round(h_av$averted), big.mark = ","),
+sprintf("%.2f", c_av$averted / 1e9),
+ppe_sq, pterb_sq, 1 - pterb_sq, pd_t, ph_t, pa_t, pd_o, ph_o, pa_o,
+ppe_ban, pterb_bn, 1 - pterb_bn, pd_t, ph_t, pa_t, pd_o, ph_o, pa_o
+))
+````
+
+**Per-individual rollback (expected values per SA resident per year).**
+
+```{r}
+#| label: tbl-terb-tree-personal-pp
+#| echo: false
+knitr::kable(
+  res_p %>%
+    mutate(across(where(is.numeric), ~signif(.x, 3))),
+  caption = "Expected deaths, hospitalisations, asymptomatic events, and ZAR cost per individual per year, by arm. Multiply by the SA population reference to get annual national totals."
+)
+```
+
+**Scaled to SA population.**
+
+```{r}
+#| label: tbl-terb-tree-personal-national
+#| echo: false
+knitr::kable(
+  av_p %>%
+    mutate(status_quo    = format(round(status_quo), big.mark = ","),
+           ban           = format(round(ban),        big.mark = ","),
+           averted       = format(round(averted),    big.mark = ","),
+           pct_reduction = sprintf("%.1f%%", 100 * pct_reduction)),
+  caption = sprintf("National annual totals under each arm, and the reduction (status quo - ban) delivered by an enforced ban. Compare with the §6 headline of ~%s deaths averted/yr from the aggregate tree.",
+                    format(round(f_mid * phi * N_d), big.mark = ","))
+)
+```
+
+**Reading this against §6.** The two trees use the same upstream data but parameterise the effect differently:
+
+- The **§6 aggregate tree** multiplies the StatsSA total by $f_\text{attr} \times \varphi_\text{retired}$. The effect size is bounded by the attributable-fraction literature (Davies 2023, Gunnell 2017).
+- The **per-individual tree** above derives the effect from the *case-fatality differential* between terbufos (`r sprintf("%.1f%%", 100*pd_t)`) and substitute agents (`r sprintf("%.1f%%", 100*pd_o)`), applied to the agent-mix shift (`r sprintf("%.0f%% → %.0f%%", 100*pterb_sq, 100*pterb_bn)`).
+
+If the per-individual tree gives a *much larger* number than §6, the implication is that the personal-tree's CFR-by-agent inputs are more optimistic than the aggregate attributable-fraction literature supports — i.e. the personal tree is implicitly assuming a stronger ban effect. If it gives a *similar* number, the two views corroborate each other. The audience-facing brief should pick ONE — the aggregate view is usually safer for regulator audiences; the per-individual view is more impactful for clinician / parliamentary audiences.
 
 ## 7. Crop-yield impact (brief)
 

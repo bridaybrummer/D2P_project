@@ -48,20 +48,25 @@ The public health system bears **~R80M of the R2.34B annual burden directly on i
 
 ```{mermaid}
 %%| label: fig-surv-current-system
-%%| fig-cap: "Current surveillance architecture. NICD/NMC is the source of truth, but the NHLS laboratory streams (BChE on live patients; chemical toxicology — post-mortem only) and PIH consultations do not feed into NMC in a structured way."
+%%| fig-cap: "Current surveillance architecture. NMC is NDoH-owned and is the source of truth. NHLS BChE results now route to NMC via NHLS CDW → NICD SDW (MOU feed, now operational). Two active gaps remain: PIH consultations have no structured NMC feed, and chemical toxicology is post-mortem only."
 flowchart LR
-    A[Healthcare Facility<br/>Clinician / PHO] -->|NMC notification| E[("NICD / NMC<br/><b>Source of truth</b>")]
-    A --> N[NHLS Laboratory]
+    A[Healthcare Facility<br/>Clinician / PHO] -->|NMC notification| E[("NDoH / NMC<br/><b>NDoH-owned</b><br/>Source of truth")]
+    A --> NHLS
 
-    subgraph N[NHLS Laboratory]
+    subgraph NHLS[NHLS]
         direction TB
         C1[BChE Assay<br/>1,779 severe/year<br/>10,626 tests 2023<br/><i>Live patients</i>]
         C2[Chemical Toxicology<br/><i>Post-mortem only —<br/>not yet done on<br/>live patients</i>]
+        CDW[(NHLS CDW)]
+        C1 -->|monthly extract| CDW
     end
+
+    SDW[(NICD SDW)]
+    CDW -->|"✓ MOU feed<br/>operational"| SDW
+    SDW -->|BChE monthly| E
 
     A --> D[PIH Consultation<br/>~1,158 clinician calls/yr<br/><i>No minimum dataset</i>]
 
-    C1 -.No structured feed.-> E
     C2 -.x Not available for<br/>live-patient surveillance.-x E
     D -.No minimum viable<br/>dataset defined.-> E
 
@@ -70,6 +75,8 @@ flowchart LR
     style C1 fill:#bbf,stroke:#333
     style C2 fill:#ffd9b3,stroke:#cc8800,stroke-dasharray: 5 5
     style D fill:#bfb,stroke:#333
+    style CDW fill:#e6f0ff,stroke:#3366cc
+    style SDW fill:#e6f0ff,stroke:#3366cc
 ```
 
 **What this means in plain numbers.**
@@ -80,6 +87,11 @@ flowchart LR
 - Implied true annual burden: $N_\text{true} = \frac{2,620}{0.125} = 20,960$ ([`n_true_burden_from_statssa_mid`](../parameters_hub.qmd#tbl-burden))
 
 NMC alone captures $P_\text{detect} = \frac{1,013}{20,960} = 0.048$ ([`d_status_quo`](../parameters_hub.qmd#tbl-detection)), i.e. **< 5 %**.
+
+::: {.callout-caution appearance="minimal" collapse="true"}
+## Caveat: this denominator rests on a CFR assumption
+The 20,960 figure is derived by applying a 12.5% case-fatality rate to the StatsSA MACOD death count — but that CFR is drawn from NMC-*notified*, clinically severe cases, which are by definition the sicker end of the spectrum. The undetected ~95% are likely milder, with a lower blended CFR. If the true blended CFR is 3–5%, the implied burden is 52,000–87,000 cases and the status-quo P_detect is 1–2%, not 4.8%. The detection gap would be simultaneously **larger** and harder to fully close. This caveat does not change the **relative rankings** of S1, S2, and MVP — those are stable across the plausible CFR range — but it does affect the absolute scale of the gap. The mid-burden estimate is used as the working denominator throughout this brief for option comparison; it should not be read as a precise point estimate of true annual incidence.
+:::
 
 ### Detection vs. true burden — a critical distinction
 
@@ -130,13 +142,37 @@ The NHLS–NICD LIS-to-NMC connector is operational; monthly BChE data flows to 
 Two layers:
 
 - **Short term (1–2 weeks):** PIH publishes a live dashboard of pesticide-related calls (counts, geography, agent, severity, demographics, **AfriTox agent name**). No new data; just a daily extract from existing call records.
-- **Medium term (3–9 months):** PIH and NICD agree a **Minimum Viable Dataset (MVD)** so the ~1,158 clinician-initiated calls/year can be ingested into NMC as a structured surveillance stream. **Both PIH and NMC should collect the AfriTox agent name for every case as part of the MVD.**
+- **Medium term (3–9 months):** PIH and NICD agree a **Minimum Viable Dataset (MVD)** so the ~1,158 clinician-initiated calls/year can be ingested into NMC as a structured surveillance stream. **Agent-name capture is a mandatory MVD field** — both PIH and NMC must record the AfriTox product name for every case. To make this reciprocal, **NMC should add a structured agent drop-down** (pesticide class → active ingredient → AfriTox product name) to its NDoH-hosted notification form: PIH records what the caller *reports*; NMC records what the clinician *confirms*. Combined, they provide agent-attribution signal across severity strata — the same signal S3 sentinel toxicology provides at tertiary sites, but available system-wide at near-zero marginal cost.
 
-Detection rises to ~10 % of true cases (up from ~5 %) for **R82k/year** (includes AfriTox agent-name harmonization). The dashboard is the lowest-hanging fruit in the whole portfolio: it ships in days.
+Detection rises to ~`r sprintf("%.0f", as.numeric(pick("d_S1_PIH_MVD")) * 100)` % of true cases (up from ~`r sprintf("%.0f", as.numeric(pick("d_status_quo")) * 100)` %) for **`r zar(as.numeric(pick("c_S1_PIH_MVD_op")))`/year** (includes AfriTox agent-name harmonization). The dashboard is the lowest-hanging fruit in the whole portfolio: it ships in days.
+
+### Option S1b — Phase 2 community layer *(commission after MVP pilot if rural/informal gap confirms)*
+
+S1 and S2 improve detection within the **formal healthcare system** — via PIH, NHLS BChE, and NMC-notified facilities. They structurally cannot reach cases that never arrive at a formal facility: the child taken to a traditional healer after ingesting street-sold granules, the farm worker who doesn't present at all, the informal-settlement cluster whose care pathway bypasses formal services entirely. These cases are invisible to S1 and S2 regardless of how well those options are implemented.
+
+**The MVP ceiling (~`r sprintf("%.0f", as.numeric(pick("d_surveillance_mvp")) * 100)`% P_detect) is real and bounded** by the reach of formal administrative streams. S1b is the mechanism for going beyond it — but only after the MVP has established the baseline and confirmed that the remaining gap is structural rather than simply a compliance issue within the formal system.
+
+**Trigger condition.** Commission S1b if, after 6 months of MVP operation, the geographic distribution of PIH + NHLS + NMC cases shows ≥40% of severe cases originating in districts with low formal-facility access (defined as <1 public hospital per 50km radius). This is a data-driven go/no-go, not a discretionary expansion. CSV parameters: `d_S1b_event_community_*`, `c_S1b_setup_*`, `c_S1b_op_*`, `p_fp_S1b_*`.
+
+**False positives are a design parameter, not a disqualifier.** Community reporters without clinical training will flag events that turn out not to be pesticide poisonings. The gross false-positive rate is ~`r sprintf("%.0f%%", as.numeric(pick("p_fp_S1b_mid")) * 100)` (range `r sprintf("%.0f–%.0f%%", as.numeric(pick("p_fp_S1b_lo")) * 100, as.numeric(pick("p_fp_S1b_hi")) * 100)`). At P_detect = `r pick("d_S1b_event_community_mid")` on the mid-burden of `r scales::comma(as.numeric(pick("n_true_burden_from_statssa_mid")))` true cases, the gross notification volume would be ~`r scales::comma(round(as.numeric(pick("n_true_burden_from_statssa_mid")) * as.numeric(pick("d_S1b_event_community_mid")) / (1 - as.numeric(pick("p_fp_S1b_mid")))))` events/yr — of which ~`r scales::comma(round(as.numeric(pick("n_true_burden_from_statssa_mid")) * as.numeric(pick("d_S1b_event_community_mid"))))` are true cases and ~`r scales::comma(round(as.numeric(pick("n_true_burden_from_statssa_mid")) * as.numeric(pick("d_S1b_event_community_mid")) * as.numeric(pick("p_fp_S1b_mid")) / (1 - as.numeric(pick("p_fp_S1b_mid")))))` are false alerts *before filtering*. This is solvable with a **two-tier triage architecture** — the same design used by WHO-EWARN, APSED, and comparable LMIC systems:
+
+1. **Tier 1 — CHW structured checklist**: Community health workers report via a mobile checklist requiring ≥2 of: acute onset, ≥2 affected persons, known or suspected product contact. Events not meeting criteria are logged but no dispatch is triggered.
+2. **Tier 2 — EHP call-back within 24 hours**: A provincial EHP calls back to confirm before committing to on-site investigation.
+
+With a two-tier filter, the effective net FP rate drops to approximately 8–12% — within the investigation capacity modelled in the [Coordination brief](coordination_policy.qmd). The coordination cost implication is therefore driven by the *net* rate after triage, not the gross `r sprintf("%.0f%%", as.numeric(pick("p_fp_S1b_mid")) * 100)`.
+
+**Two-stage rollout — Free State and Gauteng first.** These two provinces account for an estimated **~50% of the annual pesticide-poisoning burden** (working assumption; to be confirmed against the MVP pilot's geographic distribution from NMC, NHLS, and PIH data). Starting there maximises the return on the pilot investment and generates the go/no-go evidence base for national rollout. Comparable LMIC systems have achieved P_detect in the range `r pick("d_S1b_event_community_lo")`–`r pick("d_S1b_event_community_hi")` — `r sprintf("%.1f–%.1f×", as.numeric(pick("d_S1b_event_community_lo")) / as.numeric(pick("d_surveillance_mvp")), as.numeric(pick("d_S1b_event_community_hi")) / as.numeric(pick("d_surveillance_mvp")))` the MVP ceiling.
+
+| Stage | Provinces | Est. burden share | Setup cost | Operating cost/yr | Go/no-go criterion |
+|:------|:----------|------------------:|-----------:|------------------:|:-------------------|
+| **S1b pilot** | Free State + Gauteng | ~50% | ~`r sprintf("R%.0fM", as.numeric(pick("c_S1b_setup_lo"))/1e6)` | ~`r sprintf("R%.1fM/yr", as.numeric(pick("c_S1b_op_lo"))/1e6)` | Month 12: net P_detect >35% and net FP <15% |
+| **S1b national** | All 9 provinces | 100% | ~`r sprintf("R%.1fM", as.numeric(pick("c_S1b_setup_hi"))/1e6)` | ~`r sprintf("R%.1fM/yr", as.numeric(pick("c_S1b_op_hi"))/1e6)` | Conditional on pilot outcome |
+
+The cost range (`r sprintf("R%.0fM–R%.1fM setup; R%.1fM–R%.1fM/yr operating", as.numeric(pick("c_S1b_setup_lo"))/1e6, as.numeric(pick("c_S1b_setup_hi"))/1e6, as.numeric(pick("c_S1b_op_lo"))/1e6, as.numeric(pick("c_S1b_op_hi"))/1e6)` — approximately `r sprintf("%.0f–%.0f×", as.numeric(pick("c_S1b_op_lo")) / as.numeric(pick("c_surv_MVP_op")), as.numeric(pick("c_S1b_op_hi")) / as.numeric(pick("c_surv_MVP_op")))` the MVP operating cost) directly reflects the two-stage choice.
 
 ### Option S2 — BChE auto-notification *(★ recommended — capability exists)*
 
-Configure the NHLS LIS to fire an automatic NICD notification when a BChE result shows severe inhibition (< 50 % of normal), within 24 hours of validation. **No new test, no new reagent contract** — only an IT configuration on top of the ~10,626 BChE tests/year already performed (1,779 severe in 2023). Detection rises to ~13 % of true cases (up from ~5 %) for **R55k/year** in 2–4 weeks. This is the highest-value, fastest option on the menu.
+Configure the NHLS LIS to fire an automatic NICD notification when a BChE result shows severe inhibition (< 50 % of normal), within 24 hours of validation. **No new test, no new reagent contract** — only an IT configuration on top of the ~`r scales::comma(as.numeric(pick("n_nhls_total_annual")))` BChE tests/year already performed (`r scales::comma(as.numeric(pick("n_nhls_severe_annual")))` severe in 2023). Detection rises to ~`r sprintf("%.0f", as.numeric(pick("d_S2_BChE_autonotify")) * 100)` % of true cases (up from ~`r sprintf("%.0f", as.numeric(pick("d_status_quo")) * 100)` %) for **`r zar(as.numeric(pick("c_S2_BChE_autonotify_op")))`/year** in 2–4 weeks. This is the highest-value, fastest option on the menu.
 
 ### Option S3 — Sentinel live-patient toxicology *(★ recommended, medium term — distinct purpose)*
 
@@ -144,7 +180,7 @@ NHLS currently performs chemical toxicology (qualitative/quantitative pesticide 
 
 **S3 has a different purpose from S1 and S2** and is *not* a detection-coverage uplift. S1 and S2 increase the share of true cases that enter the surveillance system. **S3 identifies the proportion of chemical agents being found in severely poisoned living patients at sentinel sites** — the missing evidence base for product-specific regulation (see [Terbufos brief](terbufos_policy.qmd)). Without S3, ~10,000 survivors/year are recorded with agent "unknown / suspected" and targeted product restriction has no quantitative footing.
 
-Cost: ~R1.2M pilot site → ~R3.6M for 5-site rollout, 6–12 months. Funded from research-surveillance streams (SAMRC, Bloomberg, Gates), not the surveillance operating budget. Full quantitative concept in the [sentinel toxicology appendix](surveillance_concept_note.qmd).
+Cost: ~`r sprintf("R%.1fM", round(as.numeric(pick("c_option6_pilot_year1"))/1e6, 1))` pilot site → ~`r sprintf("R%.1fM", round(as.numeric(pick("c_option6_full_5site_annual"))/1e6, 1))` for 5-site rollout, 6–12 months. Funded from research-surveillance streams (SAMRC, Bloomberg, Gates), not the surveillance operating budget. Full quantitative concept in the [sentinel toxicology appendix](surveillance_concept_note.qmd).
 
 ### Summary comparison
 
@@ -155,9 +191,10 @@ Cost: ~R1.2M pilot site → ~R3.6M for 5-site rollout, 6–12 months. Funded fro
 | S1: PIH dashboard + MVD (+AfriTox agent name) | R82k | $\frac{1,013 + 1,158}{20,960} = 0.104$ | +5.6 pp | 1–2 wks dash / 3–9 mo MVD | [`d_S1_PIH_MVD`](../parameters_hub.qmd#tbl-detection) |
 | S2: BChE auto-notify | R55k | $\frac{1,013 + 1,779}{20,960} = 0.133$ | +8.5 pp | 2–4 wks | [`d_S2_BChE_autonotify`](../parameters_hub.qmd#tbl-detection) |
 | **S1 + S2 (Surveillance MVP)** | **~R137k** | $\frac{1,013 + 1,779 + 1,158}{20,960} = 0.189$ | **+14.1 pp** | **12 weeks** | [`d_surveillance_mvp`](../parameters_hub.qmd#tbl-detection) |
+| S1b: Phase 2 community layer *(pilot: FS + Gauteng; national conditional on pilot)* | Pilot `r sprintf("R%.1fM/yr", as.numeric(pick("c_S1b_op_lo"))/1e6)`; national `r sprintf("R%.1fM/yr", as.numeric(pick("c_S1b_op_hi"))/1e6)` | `r pick("d_S1b_event_community_lo")`–`r pick("d_S1b_event_community_hi")` (working: `r pick("d_S1b_event_community_mid")`) | `r sprintf("+%.0f to +%.0f pp", (as.numeric(pick("d_S1b_event_community_lo")) - as.numeric(pick("d_status_quo"))) * 100, (as.numeric(pick("d_S1b_event_community_hi")) - as.numeric(pick("d_status_quo"))) * 100)` | 12 mo pilot → national | [`d_S1b_event_community_mid`](../parameters_hub.qmd) |
 | S3: Sentinel toxicology (agent attribution — distinct purpose) | R1.2M pilot → R3.6M | n/a (not a coverage uplift) | feeds product-banning evidence base | 6–12 mo pilot | — |
 
-: Surveillance options — base-case. P_detect is the per-case detection probability, anchored to the StatsSA MACOD 2023 mid-burden of 20,960 true cases/year. S1 and S2 expand coverage; **S3 is a parallel agent-attribution investment**, not a coverage uplift — see option text above. Translating P_detect into cases or deaths averted requires the response-side parameters (η, agency capacity, regulatory action) covered in the [Coordination](coordination_policy.qmd) and [Terbufos](terbufos_policy.qmd) briefs. {.striped .hover}
+: Surveillance options — base-case. P_detect is the per-case detection probability, anchored to the StatsSA MACOD 2023 mid-burden of 20,960 true cases/year. S1 and S2 expand coverage within the formal healthcare system; **S3 is a parallel agent-attribution investment**, not a coverage uplift — see option text above. **S1b is a Phase 2 community layer**, commissioned conditional on MVP pilot data confirming a structural rural/informal gap (trigger: ≥40% of severe cases in low-facility-access districts after 6 months of MVP operation). Translating P_detect into cases or deaths averted requires the response-side parameters (η, agency capacity, regulatory action) covered in the [Coordination](coordination_policy.qmd) and [Terbufos](terbufos_policy.qmd) briefs. {.striped .hover}
 
 ::: {.callout-note appearance="simple"}
 **Scope of this brief.** Surveillance changes only what is *seen*. The status quo P_detect = 0.048 (§6 below) is a **measurement** of the current detection gap, not a counterfactual against which deaths are averted. Cases-averted and deaths-averted figures therefore live in the [Coordination brief](coordination_policy.qmd) (where the response is parameterised) and the [Terbufos brief](terbufos_policy.qmd) (where regulatory action is parameterised). This separation keeps the surveillance pitch honest: better surveillance is **necessary but not sufficient**.
@@ -173,6 +210,7 @@ Every annual cost and setup cost in this brief is directly linked to a parameter
 | S1 — PIH dashboard + MVD (+ AfriTox harmonisation) | `c_S1_PIH_MVD_setup` | `c_S1_PIH_MVD_op` |
 | S2 — BChE auto-notification | `c_S2_BChE_autonotify_setup` | `c_S2_BChE_autonotify_op` |
 | Surveillance MVP (S1 + S2) | `c_surv_MVP_setup` | `c_surv_MVP_op` |
+| S1b — event-based / community *(sensitivity)* | `c_S1b_setup_mid` (lo/hi also exist) | `c_S1b_op_mid` (lo/hi also exist) |
 | S0 — NHLS-NMC IT feed (now operational) | `c_S0_NHLS_NMC_feed_setup` | `c_S0_NHLS_NMC_feed_op` |
 | Status quo (NICD program) | — | `c_status_quo_program` |
 
@@ -294,6 +332,10 @@ format(c_mvp, big.mark = ","), d_mvp, pp(d_mvp)
 ````
 
 The tree reports **per-case detection uplift in percentage points**. The status-quo node is a **measurement** of the current detection gap (1,013 NMC notifications ÷ ~20,960 implied true cases), not a baseline from which deaths are counted as averted — surveillance has no response attached. Four detection inputs (`d_status_quo`, `d_S2_BChE_autonotify`, `d_S1_PIH_MVD`, `d_surveillance_mvp`) and three operating-cost rows (`c_S1_PIH_MVD_op`, `c_S2_BChE_autonotify_op`, `c_surv_MVP_op`) live in [`amua_import_parameters_v4.csv`](../amua_import_parameters_v4.csv) — edit the CSV and re-render. Option S3 sits outside this tree: it is an agent-attribution investment whose value is parameterised in the [Terbufos brief](terbufos_policy.qmd) and the [sentinel toxicology appendix](surveillance_concept_note.qmd).
+
+::: {.callout-note appearance="minimal"}
+**S1b (Phase 2 community layer) is not modelled in this decision tree.** The MVP arm represents the ceiling achievable by linking existing administrative streams. S1b would require a new arm with P_detect drawn from `d_S1b_event_community_mid` = `r pick("d_S1b_event_community_mid")` (range `r pick("d_S1b_event_community_lo")`–`r pick("d_S1b_event_community_hi")`) and annual operating cost drawn from `c_S1b_op_mid` = `r scales::comma(as.numeric(pick("c_S1b_op_mid")))`. It is excluded from the current tree because it is a Phase 2 option commissioned conditional on MVP pilot results, not a parallel near-term decision; and because its coordination cost depends on the net false-positive rate after two-tier triage (`p_fp_S1b_mid` = `r pick("p_fp_S1b_mid")` gross; ~8–12% net) modelled in the [Coordination brief](coordination_policy.qmd).
+:::
 
 **For burden impact, see the next brief.** The same P_detect figures feed into the [Coordination brief](coordination_policy.qmd) decision tree, where response efficacy η converts detection into cases averted, and into the [Terbufos brief](terbufos_policy.qmd), where regulatory restriction converts cases into deaths averted.
 
@@ -483,7 +525,10 @@ marginal <- tibble::tribble(
   "S1 — PIH dashboard + MVD (+ AfriTox harmonisation)", "c_S1_PIH_MVD_setup",           "c_S1_PIH_MVD_op",
   "S2 — BChE auto-notification",                         "c_S2_BChE_autonotify_setup",   "c_S2_BChE_autonotify_op",
   "Surveillance MVP (S1 + S2)",                          "c_surv_MVP_setup",             "c_surv_MVP_op",
-  "S0 — NHLS-NMC IT feed (now operational)",             "c_S0_NHLS_NMC_feed_setup",     "c_S0_NHLS_NMC_feed_op"
+  "S0 — NHLS-NMC IT feed (now operational)",             "c_S0_NHLS_NMC_feed_setup",     "c_S0_NHLS_NMC_feed_op",
+  "S1b — event-based community (sensitivity, lo)",       "c_S1b_setup_lo",               "c_S1b_op_lo",
+  "S1b — event-based community (sensitivity, mid)",      "c_S1b_setup_mid",              "c_S1b_op_mid",
+  "S1b — event-based community (sensitivity, hi)",       "c_S1b_setup_hi",               "c_S1b_op_hi"
 ) %>%
   mutate(
     setup_zar = vapply(setup_param, function(n) as.numeric(pick(n)), numeric(1)),
@@ -505,15 +550,16 @@ marginal %>%
 
 :::
 
-**Headline read.** The status-quo surveillance system already costs roughly **`r zar(sum(totals$total_zar))`/yr** in personnel + pesticide-allocated system spend across NMC, PIH, and NHLS BChE — borne almost entirely by NDoH, NHLS, and Stellenbosch FoMHS rather than appearing as a line item. Against that base, the **Surveillance MVP (S1 + S2) adds only `r zar(as.numeric(pick("c_surv_MVP_op")))`/yr** — a **`r sprintf("%.1f%%", 100 * as.numeric(pick("c_surv_MVP_op")) / sum(totals$total_zar))` uplift on current spend** for a +14 pp jump in P_detect. The marginal investment is small relative to the in-place baseline.
+**Headline read.** The status-quo surveillance system already costs roughly **`r zar(sum(totals$total_zar))`/yr** in personnel + pesticide-allocated system spend across NMC, PIH, and NHLS BChE — borne almost entirely by NDoH, NHLS, and Stellenbosch FoMHS rather than appearing as a line item. Against that base, the **Surveillance MVP (S1 + S2) adds only `r zar(as.numeric(pick("c_surv_MVP_op")))`/yr** — a **`r sprintf("%.1f%%", 100 * as.numeric(pick("c_surv_MVP_op")) / sum(totals$total_zar))` uplift on current spend** for a **`r sprintf("+%.1f pp", (as.numeric(pick("d_surveillance_mvp")) - as.numeric(pick("d_status_quo"))) * 100)`** jump in P_detect. The marginal investment is small relative to the in-place baseline.
 
 ## 8. Implementation considerations
 
 | Component | Lead agency | Year-1 cost | Critical path |
 |:----------|:------------|------------:|:--------------|
 | S1 PIH dashboard | PIH (Tygerberg) + NICD | `r scales::comma(as.numeric(pick("c_S1_PIH_MVD_op")))` | Daily extract + hosting; MVD workshop |
-| S2 BChE auto-notify | NHLS LIS team | R55k | LIS rule configuration; QA review |
-| S3 Sentinel toxicology | NHLS clinical chemistry + sentinel hospital | R1.2M pilot | Lab method validation; sample logistics |
+| S2 BChE auto-notify | NHLS LIS team | `r scales::comma(as.numeric(pick("c_S2_BChE_autonotify_op")))` | LIS rule configuration; QA review |
+| S3 Sentinel toxicology | NHLS clinical chemistry + sentinel hospital | `r zar(as.numeric(pick("c_option6_pilot_year1")))` pilot | Lab method validation; sample logistics |
+| S1b Phase 2 community layer *(pilot: FS + Gauteng; commission after Month 6 MVP review)* | NICD + provincial DoH EHPs | Pilot: `r sprintf("R%.0fM setup + R%.1fM/yr", as.numeric(pick("c_S1b_setup_lo"))/1e6, as.numeric(pick("c_S1b_op_lo"))/1e6)`; national: `r sprintf("R%.1fM setup + R%.1fM/yr", as.numeric(pick("c_S1b_setup_hi"))/1e6, as.numeric(pick("c_S1b_op_hi"))/1e6)` | CHW two-tier triage training, mobile checklist app, EHP call-back protocol, QA pipeline |
 
 **Privacy & legal.** All flows are de-identified (age, sex, facility, result, date). POPIA-compliant under existing Section 90 NHA authority. **No new legislation required.**
 
@@ -521,12 +567,13 @@ marginal %>%
 
 ## 9. Recommended next step
 
-**Adopt the Surveillance MVP (S1 + S2) and pilot in 3 provinces (Gauteng, Western Cape, KZN) for 6 months.** Approximate pilot budget: **~R117,000 operating** (NHLS–NMC IT feed is now operational). Lead agency: NICD as national coordinator.
+**Adopt the Surveillance MVP (S1 + S2) and pilot in 3 provinces (Gauteng, Western Cape, KZN) for 6 months.** Approximate pilot budget: **~`r zar(as.numeric(pick("c_surv_MVP_op")))` operating** (NHLS–NMC IT feed is now operational). Lead agency: NICD as national coordinator.
 
 - **Weeks 1–2:** S1 PIH dashboard live; S2 BChE LIS configuration begins.
 - **Months 1–3:** S1 MVD workshop with PIH finalised; S2 BChE auto-notify QA review completed.
 - **Month 6:** Evaluate against (a) completeness of NHLS severe results in NMC and (b) signal-to-investigation latency.
 - **Month 9:** Add S3 sentinel toxicology site, funded from a separate research-surveillance stream.
+- **Month 12:** Review MVP geographic distribution. If ≥40% of severe cases originate in low-facility-access districts, commission the S1b Phase 2 pilot (Free State + Gauteng; ~`r sprintf("R%.0fM", as.numeric(pick("c_S1b_setup_lo"))/1e6)` setup + `r sprintf("R%.1fM/yr", as.numeric(pick("c_S1b_op_lo"))/1e6)` operating).
 
 The coordination side of the same system — how NICD, EHPs, DALRRD, and provincial response teams act on the improved signal — is covered in the [Coordination brief](coordination_policy.qmd). The product-specific regulatory action that S3 makes possible is the subject of the [Terbufos brief](terbufos_policy.qmd).
 
