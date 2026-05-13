@@ -14,16 +14,18 @@ format:
 ::: {.callout-important icon=false}
 ## Editing parameters
 
-**The single source of truth is the CSV file [`amua_import_parameters_v3.csv`](amua_import_parameters_v3.csv) at the project root.**
+**The single source of truth is the CSV file [`amua_import_parameters_v4.csv`](amua_import_parameters_v4.csv) at the project root.**
 
 To update or verify a parameter:
 
-1. Open `amua_import_parameters_v3.csv`.
+1. Open `amua_import_parameters_v4.csv`.
 2. Edit the relevant row. Each row has four logical fields packed into the `Notes` column: short note · `dist=<distribution>(<params>)` · source citation.
 3. Save and re-render the site (`./publish.sh "msg"`). Every place this parameter is used — the [Decision Model](posts/decision_model.qmd), the [Costing Analysis](posts/costing_analysis.qmd), the three policy briefs ([Surveillance](posts/surveillance_policy.qmd) · [Coordination](posts/coordination_policy.qmd) · [Terbufos](posts/terbufos_policy.qmd)), and this hub — updates automatically.
 4. If you change a *value* (not just a note), record the rationale in [`parameter_appraisal.qmd`](parameter_appraisal.qmd) under a dated entry.
 
 **Naming convention.** `n_*` = count; `p_*` / `cfr_*` / `d_*` / `eta_*` = probability; `c_*` / `C_*` = cost (lowercase per-unit; uppercase aggregate); `los_*` = length of stay; `yll_*` / `yld_*` = years lost / disabled.
+
+**v4 schema.** The CSV now has four columns: `Name, Expression, Notes, Group`. The `Group` column (e.g. `detect.S1_PIH_MVD`, `costs.S2_BChE`, `terb.burden`) encodes the domain and option each parameter belongs to — useful for programmatic filtering. Rows with `Group = costs.deprecated` or `detect.deprecated` are backward-compatibility aliases; **always use the canonical v4 name** (e.g. `c_S1_PIH_MVD_op`, `d_S2_BChE_autonotify`). Section header rows (`# === ... ===`) have an empty Group field.
 :::
 
 ```{r}
@@ -35,7 +37,7 @@ library(tidyverse)
 library(gt)
 
 raw <- readr::read_csv(
-  "amua_import_parameters_v3.csv",
+  "amua_import_parameters_v4.csv",
   show_col_types = FALSE,
   comment = ""
 )

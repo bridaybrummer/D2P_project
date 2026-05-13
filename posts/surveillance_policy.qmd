@@ -152,8 +152,8 @@ Cost: ~R1.2M pilot site → ~R3.6M for 5-site rollout, 6–12 months. Funded fro
 | Option | Annual cost | P_detect (per-case) | Δ vs. status quo | Time | Parameter |
 |:-------|------------:|---------------------:|----------------:|:-----|:----------|
 | Status quo | R0 | $\frac{1,013}{20,960} = 0.048$ | — | — | [`d_status_quo`](../parameters_hub.qmd#tbl-detection) |
-| S1: PIH dashboard + MVD (+AfriTox agent name) | R82k | $\frac{1,013 + 1,158}{20,960} = 0.104$ | +5.6 pp | 1–2 wks dash / 3–9 mo MVD | [`d_option4_PIH_quarterly`](../parameters_hub.qmd#tbl-detection) |
-| S2: BChE auto-notify | R55k | $\frac{1,013 + 1,779}{20,960} = 0.133$ | +8.5 pp | 2–4 wks | [`d_option3_BChE_autonotify`](../parameters_hub.qmd#tbl-detection) |
+| S1: PIH dashboard + MVD (+AfriTox agent name) | R82k | $\frac{1,013 + 1,158}{20,960} = 0.104$ | +5.6 pp | 1–2 wks dash / 3–9 mo MVD | [`d_S1_PIH_MVD`](../parameters_hub.qmd#tbl-detection) |
+| S2: BChE auto-notify | R55k | $\frac{1,013 + 1,779}{20,960} = 0.133$ | +8.5 pp | 2–4 wks | [`d_S2_BChE_autonotify`](../parameters_hub.qmd#tbl-detection) |
 | **S1 + S2 (Surveillance MVP)** | **~R137k** | $\frac{1,013 + 1,779 + 1,158}{20,960} = 0.189$ | **+14.1 pp** | **12 weeks** | [`d_surveillance_mvp`](../parameters_hub.qmd#tbl-detection) |
 | S3: Sentinel toxicology (agent attribution — distinct purpose) | R1.2M pilot → R3.6M | n/a (not a coverage uplift) | feeds product-banning evidence base | 6–12 mo pilot | — |
 
@@ -161,6 +161,25 @@ Cost: ~R1.2M pilot site → ~R3.6M for 5-site rollout, 6–12 months. Funded fro
 
 ::: {.callout-note appearance="simple"}
 **Scope of this brief.** Surveillance changes only what is *seen*. The status quo P_detect = 0.048 (§6 below) is a **measurement** of the current detection gap, not a counterfactual against which deaths are averted. Cases-averted and deaths-averted figures therefore live in the [Coordination brief](coordination_policy.qmd) (where the response is parameterised) and the [Terbufos brief](terbufos_policy.qmd) (where regulatory action is parameterised). This separation keeps the surveillance pitch honest: better surveillance is **necessary but not sufficient**.
+:::
+
+::: {.callout-note}
+## Audit: parameter names for costing each policy option
+
+Every annual cost and setup cost in this brief is directly linked to a parameter in [`amua_import_parameters_v4.csv`](../amua_import_parameters_v4.csv). These are the exact parameter names used in the model and costing tables:
+
+| Option | Setup cost parameter | Operating cost parameter |
+|:-------|:--------------------|:------------------------|
+| S1 — PIH dashboard + MVD (+ AfriTox harmonisation) | `c_S1_PIH_MVD_setup` | `c_S1_PIH_MVD_op` |
+| S2 — BChE auto-notification | `c_S2_BChE_autonotify_setup` | `c_S2_BChE_autonotify_op` |
+| Surveillance MVP (S1 + S2) | `c_surv_MVP_setup` | `c_surv_MVP_op` |
+| S0 — NHLS-NMC IT feed (now operational) | `c_S0_NHLS_NMC_feed_setup` | `c_S0_NHLS_NMC_feed_op` |
+| Status quo (NICD program) | — | `c_status_quo_program` |
+
+**How to audit:**
+- Each parameter above is a row in the CSV, with value, distribution, and source citation.
+- The same parameter names are used in the decision tree (see §6) and the marginal cost table (§7, Tab 5).
+- To update a cost, edit the value in the CSV and re-render — all outputs update automatically.
 :::
 
 ## 6. Decision tree — from surveillance investment to detection uplift {#sec-decision-tree}
@@ -203,8 +222,8 @@ Each option adds one or more streams to the NMC base. The numerator is the sum o
 | Option | Streams summed | Arithmetic | P_detect | CSV row |
 |--|--|--:|--:|--|
 | Status quo | NMC only | $1{,}013 / 20{,}960$ | **0.048** | `d_status_quo` |
-| S1 — PIH MVD + dashboard | NMC + PIH | $(1{,}013 + 1{,}158) / 20{,}960 = 2{,}171 / 20{,}960$ | **0.104** | `d_option4_PIH_quarterly` |
-| S2 — BChE auto-notify | NMC + NHLS severe | $(1{,}013 + 1{,}779) / 20{,}960 = 2{,}792 / 20{,}960$ | **0.133** | `d_option3_BChE_autonotify` |
+| S1 — PIH MVD + dashboard | NMC + PIH | $(1{,}013 + 1{,}158) / 20{,}960 = 2{,}171 / 20{,}960$ | **0.104** | `d_S1_PIH_MVD` |
+| S2 — BChE auto-notify | NMC + NHLS severe | $(1{,}013 + 1{,}779) / 20{,}960 = 2{,}792 / 20{,}960$ | **0.133** | `d_S2_BChE_autonotify` |
 | **Surveillance MVP (S1 + S2)** | NMC + NHLS severe + PIH | $(1{,}013 + 1{,}779 + 1{,}158) / 20{,}960 = 3{,}950 / 20{,}960$ | **0.189** | `d_surveillance_mvp` |
 
 ### Step 4 — CFR sensitivity bracket on the status-quo anchor
@@ -219,7 +238,7 @@ The same CFR bracket applies proportionally to S1/S2/MVP — e.g. the MVP varies
 
 ### Step 5 — why this replaces the v1 value of 0.45
 
-The legacy v1 figure was an expert-elicited estimate on a different scale, derived from a model of spatial event sensitivity rather than per-case detection. That quantity answered a different question and is not comparable to a per-case detection probability. This brief now uses the **per-case** framing throughout — every value above is directly auditable from NICD + NHLS + PIH + StatsSA published figures and the canonical [`amua_import_parameters_v3.csv`](../amua_import_parameters_v3.csv).
+The legacy v1 figure was an expert-elicited estimate on a different scale, derived from a model of spatial event sensitivity rather than per-case detection. That quantity answered a different question and is not comparable to a per-case detection probability. This brief now uses the **per-case** framing throughout — every value above is directly auditable from NICD + NHLS + PIH + StatsSA published figures and the canonical [`amua_import_parameters_v4.csv`](../amua_import_parameters_v4.csv).
 :::
 
 ````{r}
@@ -230,7 +249,7 @@ The legacy v1 figure was an expert-elicited estimate on a different scale, deriv
 # Source the decision-tree engine and the surveillance tree builder.
 # Both scripts auto-resolve their paths whether rendered from the project
 # root or from posts/. All numbers below come from the rollback of the tree
-# object built off amua_import_parameters_v3.csv -- no inline arithmetic.
+# object built off amua_import_parameters_v4.csv -- no inline arithmetic.
 source("../R/surveillance_tree.r")
 
 params   <- load_params()                          # named list from CSV
@@ -253,7 +272,7 @@ c_mvp  <- arm("MVP_S1_plus_S2")$annual_cost_zar
 pp <- function(d) sprintf("%+.1f pp", (d - d_sq) * 100)
 
 cat(sprintf('```{mermaid}
-%%%%| fig-cap: "Surveillance investment decision tree — per-case detection uplift only. Each option raises P_detect, the share of true annual cases (~20,960 StatsSA-anchored mid-burden) that enter the surveillance system. The absolute burden impact of these uplifts depends on response-side parameters covered in the coordination and terbufos briefs. S3 (sentinel toxicology) is shown separately because it is an agent-attribution investment, not a coverage uplift. All numerical values pulled from amua_import_parameters_v3.csv at render time."
+%%%%| fig-cap: "Surveillance investment decision tree — per-case detection uplift only. Each option raises P_detect, the share of true annual cases (~20,960 StatsSA-anchored mid-burden) that enter the surveillance system. The absolute burden impact of these uplifts depends on response-side parameters covered in the coordination and terbufos briefs. S3 (sentinel toxicology) is shown separately because it is an agent-attribution investment, not a coverage uplift. All numerical values pulled from amua_import_parameters_v4.csv at render time."
 flowchart TD
     INV{Surveillance<br/>investment?} -->|None| SQ[Status quo<br/>P_detect = %.3f<br/>~5%% of true cases]:::bad
     INV -->|S1 only<br/>R%s/yr| O1[+ PIH MVD<br/>P_detect = %.3f<br/>%s vs SQ]:::warn
@@ -274,7 +293,7 @@ format(c_mvp, big.mark = ","), d_mvp, pp(d_mvp)
 ))
 ````
 
-The tree reports **per-case detection uplift in percentage points**. The status-quo node is a **measurement** of the current detection gap (1,013 NMC notifications ÷ ~20,960 implied true cases), not a baseline from which deaths are counted as averted — surveillance has no response attached. Four detection inputs (`d_status_quo`, `d_option3_BChE_autonotify`, `d_option4_PIH_quarterly`, `d_surveillance_mvp`) and three operating-cost rows (`c_S4_PIH_dashboard_op`, `c_S3a_BChE_autonotify_op`, `c_surv_MVP_op`) live in [`amua_import_parameters_v3.csv`](../amua_import_parameters_v3.csv) — edit the CSV and re-render. Option S3 sits outside this tree: it is an agent-attribution investment whose value is parameterised in the [Terbufos brief](terbufos_policy.qmd) and the [sentinel toxicology appendix](surveillance_concept_note.qmd).
+The tree reports **per-case detection uplift in percentage points**. The status-quo node is a **measurement** of the current detection gap (1,013 NMC notifications ÷ ~20,960 implied true cases), not a baseline from which deaths are counted as averted — surveillance has no response attached. Four detection inputs (`d_status_quo`, `d_S2_BChE_autonotify`, `d_S1_PIH_MVD`, `d_surveillance_mvp`) and three operating-cost rows (`c_S1_PIH_MVD_op`, `c_S2_BChE_autonotify_op`, `c_surv_MVP_op`) live in [`amua_import_parameters_v4.csv`](../amua_import_parameters_v4.csv) — edit the CSV and re-render. Option S3 sits outside this tree: it is an agent-attribution investment whose value is parameterised in the [Terbufos brief](terbufos_policy.qmd) and the [sentinel toxicology appendix](surveillance_concept_note.qmd).
 
 **For burden impact, see the next brief.** The same P_detect figures feed into the [Coordination brief](coordination_policy.qmd) decision tree, where response efficacy η converts detection into cases averted, and into the [Terbufos brief](terbufos_policy.qmd), where regulatory restriction converts cases into deaths averted.
 
@@ -289,7 +308,7 @@ The tables below are the **average-cost economic build-up of running surveillanc
 - **`system`** — infrastructure, hosting, SMS, reagents by stream
 - **`allocation`** — what share of each stream's total volume is pesticide-related (e.g. ~100 pesticide notifications/month out of ~10,000 total NMC notifications ≈ **0.84 %** of NMC platform OPEX is attributable to pesticide work)
 
-To revise a unit cost or FTE, **edit a cell in the .xlsx and re-render** — every number below updates. The CSV (`amua_import_parameters_v3.csv`) remains the source of truth for *model* parameters and *marginal* policy-option costs (S1 / S2 / MVP). Salary anchors come from the DPSA scales (L10–11), NHLS Patterson grades (D/E), DoH OSD scales (MO, pharmacy), NICD recruitment notices and SITA contracting benchmarks; system anchors come from NHLS State Tender RT-262, AWS af-south-1 pricing, Clickatell/BulkSMS SA, and the NICD ICT budget — full citations are in each row's `source` column.
+To revise a unit cost or FTE, **edit a cell in the .xlsx and re-render** — every number below updates. The CSV (`amua_import_parameters_v4.csv`) remains the source of truth for *model* parameters and *marginal* policy-option costs (S1 / S2 / MVP). Salary anchors come from the DPSA scales (L10–11), NHLS Patterson grades (D/E), DoH OSD scales (MO, pharmacy), NICD recruitment notices and SITA contracting benchmarks; system anchors come from NHLS State Tender RT-262, AWS af-south-1 pricing, Clickatell/BulkSMS SA, and the NICD ICT budget — full citations are in each row's `source` column.
 :::
 
 ```{r}
@@ -454,17 +473,17 @@ totals %>%
 
 ### 5. Marginal cost of policy options
 
-For comparison: the **additional** annual operating cost of each surveillance investment, pulled directly from [`amua_import_parameters_v3.csv`](../amua_import_parameters_v3.csv) (these are the same numbers driving the decision tree in §6).
+For comparison: the **additional** annual operating cost of each surveillance investment, pulled directly from [`amua_import_parameters_v4.csv`](../amua_import_parameters_v4.csv) (these are the same numbers driving the decision tree in §6).
 
 ```{r}
 #| label: tbl-cost-marginal
 
 marginal <- tibble::tribble(
   ~option, ~setup_param, ~op_param,
-  "S1 — PIH dashboard + MVD (+ AfriTox harmonisation)", "c_S4_PIH_dashboard_setup",      "c_S4_PIH_dashboard_op",
-  "S2 — BChE auto-notification",                         "c_S3a_BChE_autonotify_setup",  "c_S3a_BChE_autonotify_op",
+  "S1 — PIH dashboard + MVD (+ AfriTox harmonisation)", "c_S1_PIH_MVD_setup",           "c_S1_PIH_MVD_op",
+  "S2 — BChE auto-notification",                         "c_S2_BChE_autonotify_setup",   "c_S2_BChE_autonotify_op",
   "Surveillance MVP (S1 + S2)",                          "c_surv_MVP_setup",             "c_surv_MVP_op",
-  "S1 — NHLS-NMC IT feed (now operational)",             "c_S1_NHLS_NMC_feed_setup",     "c_S1_NHLS_NMC_feed_op"
+  "S0 — NHLS-NMC IT feed (now operational)",             "c_S0_NHLS_NMC_feed_setup",     "c_S0_NHLS_NMC_feed_op"
 ) %>%
   mutate(
     setup_zar = vapply(setup_param, function(n) as.numeric(pick(n)), numeric(1)),
@@ -492,7 +511,7 @@ marginal %>%
 
 | Component | Lead agency | Year-1 cost | Critical path |
 |:----------|:------------|------------:|:--------------|
-| S1 PIH dashboard | PIH (Tygerberg) + NICD | R62k | Daily extract + hosting; MVD workshop |
+| S1 PIH dashboard | PIH (Tygerberg) + NICD | `r scales::comma(as.numeric(pick("c_S1_PIH_MVD_op")))` | Daily extract + hosting; MVD workshop |
 | S2 BChE auto-notify | NHLS LIS team | R55k | LIS rule configuration; QA review |
 | S3 Sentinel toxicology | NHLS clinical chemistry + sentinel hospital | R1.2M pilot | Lab method validation; sample logistics |
 

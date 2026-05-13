@@ -1,7 +1,7 @@
 ::: {.callout-note icon=false collapse="true"}
 ## Canonical model parameters (auto-loaded from the [Parameters Hub](../parameters_hub.html))
 
-All numerical claims in this brief draw from a single CSV — [`amua_import_parameters_v3.csv`](../amua_import_parameters_v3.csv) — rendered in full at the [Parameters Hub](../parameters_hub.html). The headline values below are pulled from that file at render time; **do not edit the numbers in this brief — edit the CSV and re-render**.
+All numerical claims in this brief draw from a single CSV — [`amua_import_parameters_v4.csv`](../amua_import_parameters_v4.csv) — rendered in full at the [Parameters Hub](../parameters_hub.html). The headline values below are pulled from that file at render time; **do not edit the numbers in this brief — edit the CSV and re-render**.
 
 ```{r}
 #| label: shared-params-pull
@@ -12,7 +12,7 @@ All numerical claims in this brief draw from a single CSV — [`amua_import_para
 library(tidyverse)
 library(gt)
 
-raw <- readr::read_csv("../amua_import_parameters_v3.csv", show_col_types = FALSE)
+raw <- readr::read_csv("../amua_import_parameters_v4.csv", show_col_types = FALSE)
 
 pick <- function(name) {
   v <- raw |> dplyr::filter(Name == name) |> dplyr::pull(Expression)
@@ -45,7 +45,7 @@ tibble::tribble(
 ) |>
   gt() |>
   tab_header(title = "Headline parameters used in this brief",
-             subtitle = "Pulled from amua_import_parameters_v3.csv at render time") |>
+             subtitle = "Pulled from amua_import_parameters_v4.csv at render time") |>
   opt_row_striping() |>
   tab_options(table.font.size = "small")
 ```

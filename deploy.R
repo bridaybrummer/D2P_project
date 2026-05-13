@@ -37,7 +37,7 @@ deploy <- function(commit_msg = "Update site",
                    skip_push  = FALSE,
                    data_files = c(
                      "data/surveillance_costing.xlsx",
-                     "amua_import_parameters_v3.csv"
+                     "amua_import_parameters_v4.csv"
                    ),
                    refresh_freeze = TRUE) {
 
@@ -283,14 +283,14 @@ if (invoked_as_script) {
 # -----------------------------------------------------------------------------
 # By default deploy() invalidates any _freeze/<doc>/ whose cached results are
 # OLDER than the most-recently-edited file in `data_files`. This guarantees
-# that edits to surveillance_costing.xlsx or amua_import_parameters_v3.csv
+# that edits to surveillance_costing.xlsx or amua_import_parameters_v4.csv
 # always flow through to the next render.
 #
 # To track an additional source file (e.g. a new costing workbook):
 #     deploy("msg", data_files = c(
 #         "data/surveillance_costing.xlsx",
 #         "data/coordination_costing.xlsx",
-#         "amua_import_parameters_v3.csv"
+#         "amua_import_parameters_v4.csv"
 #     ))
 #
 # To skip the freeze check (faster re-render of a small text-only edit):

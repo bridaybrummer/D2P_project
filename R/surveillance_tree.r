@@ -83,9 +83,9 @@ build_surveillance_arm <- function(arm_name, p_detect, annual_cost_zar, N_true) 
 
 build_surveillance_tree <- function(p) {
 
-  need <- c("d_status_quo", "d_option4_PIH_quarterly",
-            "d_option3_BChE_autonotify", "d_surveillance_mvp",
-            "c_S4_PIH_dashboard_op", "c_S3a_BChE_autonotify_op",
+  need <- c("d_status_quo", "d_S1_PIH_MVD",
+            "d_S2_BChE_autonotify", "d_surveillance_mvp",
+            "c_S1_PIH_MVD_op", "c_S2_BChE_autonotify_op",
             "c_surv_MVP_op", "n_true_burden_from_statssa_mid")
   miss <- setdiff(need, names(p))
   if (length(miss)) stop("Missing CSV parameters: ", paste(miss, collapse = ", "))
@@ -99,13 +99,13 @@ build_surveillance_tree <- function(p) {
                    N_true          = N_true),
 
     S1_PIH_MVD = build_surveillance_arm("S1_PIH_MVD",
-                   p_detect        = p$d_option4_PIH_quarterly,
-                   annual_cost_zar = p$c_S4_PIH_dashboard_op,
+                   p_detect        = p$d_S1_PIH_MVD,
+                   annual_cost_zar = p$c_S1_PIH_MVD_op,
                    N_true          = N_true),
 
     S2_BChE_autonotify = build_surveillance_arm("S2_BChE_autonotify",
-                   p_detect        = p$d_option3_BChE_autonotify,
-                   annual_cost_zar = p$c_S3a_BChE_autonotify_op,
+                   p_detect        = p$d_S2_BChE_autonotify,
+                   annual_cost_zar = p$c_S2_BChE_autonotify_op,
                    N_true          = N_true),
 
     MVP_S1_plus_S2 = build_surveillance_arm("MVP_S1_plus_S2",

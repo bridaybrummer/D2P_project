@@ -62,8 +62,8 @@ load_params <- function(csv_path = NULL) {
   # Auto-resolve: works from project root or from posts/ during qmd render.
   if (is.null(csv_path)) {
     csv_path <- Filter(file.exists, c(
-      "amua_import_parameters_v3.csv",
-      "../amua_import_parameters_v3.csv"
+      "amua_import_parameters_v4.csv",
+      "../amua_import_parameters_v4.csv"
     ))[1]
   }
   if (is.na(csv_path) || !file.exists(csv_path)) {
