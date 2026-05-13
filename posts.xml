@@ -22856,23 +22856,23 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
 <p>All numerical claims in this brief draw from a single CSV — <a href="../amua_import_parameters_v3.csv"><code>amua_import_parameters_v3.csv</code></a> — rendered in full at the <a href="../parameters_hub.html">Parameters Hub</a>. The headline values below are pulled from that file at render time; <strong>do not edit the numbers in this brief — edit the CSV and re-render</strong>.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="vjlybaiack" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#vjlybaiack table {
+<div id="jvvmhhhdfu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#jvvmhhhdfu table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#vjlybaiack thead, #vjlybaiack tbody, #vjlybaiack tfoot, #vjlybaiack tr, #vjlybaiack td, #vjlybaiack th {
+#jvvmhhhdfu thead, #jvvmhhhdfu tbody, #jvvmhhhdfu tfoot, #jvvmhhhdfu tr, #jvvmhhhdfu td, #jvvmhhhdfu th {
   border-style: none;
 }
 
-#vjlybaiack p {
+#jvvmhhhdfu p {
   margin: 0;
   padding: 0;
 }
 
-#vjlybaiack .gt_table {
+#jvvmhhhdfu .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -22898,12 +22898,12 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-left-color: #D3D3D3;
 }
 
-#vjlybaiack .gt_caption {
+#jvvmhhhdfu .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#vjlybaiack .gt_title {
+#jvvmhhhdfu .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -22915,7 +22915,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-bottom-width: 0;
 }
 
-#vjlybaiack .gt_subtitle {
+#jvvmhhhdfu .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -22927,7 +22927,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-top-width: 0;
 }
 
-#vjlybaiack .gt_heading {
+#jvvmhhhdfu .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -22939,13 +22939,13 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-right-color: #D3D3D3;
 }
 
-#vjlybaiack .gt_bottom_border {
+#jvvmhhhdfu .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#vjlybaiack .gt_col_headings {
+#jvvmhhhdfu .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -22960,7 +22960,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-right-color: #D3D3D3;
 }
 
-#vjlybaiack .gt_col_heading {
+#jvvmhhhdfu .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -22980,7 +22980,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   overflow-x: hidden;
 }
 
-#vjlybaiack .gt_column_spanner_outer {
+#jvvmhhhdfu .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -22992,15 +22992,15 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 4px;
 }
 
-#vjlybaiack .gt_column_spanner_outer:first-child {
+#jvvmhhhdfu .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#vjlybaiack .gt_column_spanner_outer:last-child {
+#jvvmhhhdfu .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#vjlybaiack .gt_column_spanner {
+#jvvmhhhdfu .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -23012,11 +23012,11 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   width: 100%;
 }
 
-#vjlybaiack .gt_spanner_row {
+#jvvmhhhdfu .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#vjlybaiack .gt_group_heading {
+#jvvmhhhdfu .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -23042,7 +23042,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   text-align: left;
 }
 
-#vjlybaiack .gt_empty_group_heading {
+#jvvmhhhdfu .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -23057,15 +23057,15 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   vertical-align: middle;
 }
 
-#vjlybaiack .gt_from_md > :first-child {
+#jvvmhhhdfu .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#vjlybaiack .gt_from_md > :last-child {
+#jvvmhhhdfu .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#vjlybaiack .gt_row {
+#jvvmhhhdfu .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -23084,7 +23084,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   overflow-x: hidden;
 }
 
-#vjlybaiack .gt_stub {
+#jvvmhhhdfu .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -23097,7 +23097,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#vjlybaiack .gt_stub_row_group {
+#jvvmhhhdfu .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -23111,15 +23111,15 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   vertical-align: top;
 }
 
-#vjlybaiack .gt_row_group_first td {
+#jvvmhhhdfu .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#vjlybaiack .gt_row_group_first th {
+#jvvmhhhdfu .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#vjlybaiack .gt_summary_row {
+#jvvmhhhdfu .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -23129,16 +23129,16 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#vjlybaiack .gt_first_summary_row {
+#jvvmhhhdfu .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#vjlybaiack .gt_first_summary_row.thick {
+#jvvmhhhdfu .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#vjlybaiack .gt_last_summary_row {
+#jvvmhhhdfu .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -23148,7 +23148,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-bottom-color: #D3D3D3;
 }
 
-#vjlybaiack .gt_grand_summary_row {
+#jvvmhhhdfu .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -23158,7 +23158,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#vjlybaiack .gt_first_grand_summary_row {
+#jvvmhhhdfu .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -23168,7 +23168,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-top-color: #D3D3D3;
 }
 
-#vjlybaiack .gt_last_grand_summary_row_top {
+#jvvmhhhdfu .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -23178,11 +23178,11 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-bottom-color: #D3D3D3;
 }
 
-#vjlybaiack .gt_striped {
+#jvvmhhhdfu .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#vjlybaiack .gt_table_body {
+#jvvmhhhdfu .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -23191,7 +23191,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-bottom-color: #D3D3D3;
 }
 
-#vjlybaiack .gt_footnotes {
+#jvvmhhhdfu .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -23205,7 +23205,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-right-color: #D3D3D3;
 }
 
-#vjlybaiack .gt_footnote {
+#jvvmhhhdfu .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -23214,7 +23214,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#vjlybaiack .gt_sourcenotes {
+#jvvmhhhdfu .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -23228,7 +23228,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-right-color: #D3D3D3;
 }
 
-#vjlybaiack .gt_sourcenote {
+#jvvmhhhdfu .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -23236,72 +23236,72 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#vjlybaiack .gt_left {
+#jvvmhhhdfu .gt_left {
   text-align: left;
 }
 
-#vjlybaiack .gt_center {
+#jvvmhhhdfu .gt_center {
   text-align: center;
 }
 
-#vjlybaiack .gt_right {
+#jvvmhhhdfu .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#vjlybaiack .gt_font_normal {
+#jvvmhhhdfu .gt_font_normal {
   font-weight: normal;
 }
 
-#vjlybaiack .gt_font_bold {
+#jvvmhhhdfu .gt_font_bold {
   font-weight: bold;
 }
 
-#vjlybaiack .gt_font_italic {
+#jvvmhhhdfu .gt_font_italic {
   font-style: italic;
 }
 
-#vjlybaiack .gt_super {
+#jvvmhhhdfu .gt_super {
   font-size: 65%;
 }
 
-#vjlybaiack .gt_footnote_marks {
+#jvvmhhhdfu .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#vjlybaiack .gt_asterisk {
+#jvvmhhhdfu .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#vjlybaiack .gt_indent_1 {
+#jvvmhhhdfu .gt_indent_1 {
   text-indent: 5px;
 }
 
-#vjlybaiack .gt_indent_2 {
+#jvvmhhhdfu .gt_indent_2 {
   text-indent: 10px;
 }
 
-#vjlybaiack .gt_indent_3 {
+#jvvmhhhdfu .gt_indent_3 {
   text-indent: 15px;
 }
 
-#vjlybaiack .gt_indent_4 {
+#jvvmhhhdfu .gt_indent_4 {
   text-indent: 20px;
 }
 
-#vjlybaiack .gt_indent_5 {
+#jvvmhhhdfu .gt_indent_5 {
   text-indent: 25px;
 }
 
-#vjlybaiack .katex-display {
+#jvvmhhhdfu .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#vjlybaiack div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#jvvmhhhdfu div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -23382,23 +23382,23 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
 <h3 class="anchored" data-anchor-id="who-bears-the-r2.34b-annual-burden">Who bears the R2.34B annual burden?</h3>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fwuwnpcyvq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#fwuwnpcyvq table {
+<div id="flkqcejkpa" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#flkqcejkpa table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#fwuwnpcyvq thead, #fwuwnpcyvq tbody, #fwuwnpcyvq tfoot, #fwuwnpcyvq tr, #fwuwnpcyvq td, #fwuwnpcyvq th {
+#flkqcejkpa thead, #flkqcejkpa tbody, #flkqcejkpa tfoot, #flkqcejkpa tr, #flkqcejkpa td, #flkqcejkpa th {
   border-style: none;
 }
 
-#fwuwnpcyvq p {
+#flkqcejkpa p {
   margin: 0;
   padding: 0;
 }
 
-#fwuwnpcyvq .gt_table {
+#flkqcejkpa .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -23424,12 +23424,12 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-left-color: #D3D3D3;
 }
 
-#fwuwnpcyvq .gt_caption {
+#flkqcejkpa .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#fwuwnpcyvq .gt_title {
+#flkqcejkpa .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -23441,7 +23441,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-bottom-width: 0;
 }
 
-#fwuwnpcyvq .gt_subtitle {
+#flkqcejkpa .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -23453,7 +23453,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-top-width: 0;
 }
 
-#fwuwnpcyvq .gt_heading {
+#flkqcejkpa .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -23465,13 +23465,13 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-right-color: #D3D3D3;
 }
 
-#fwuwnpcyvq .gt_bottom_border {
+#flkqcejkpa .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#fwuwnpcyvq .gt_col_headings {
+#flkqcejkpa .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -23486,7 +23486,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-right-color: #D3D3D3;
 }
 
-#fwuwnpcyvq .gt_col_heading {
+#flkqcejkpa .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -23506,7 +23506,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   overflow-x: hidden;
 }
 
-#fwuwnpcyvq .gt_column_spanner_outer {
+#flkqcejkpa .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -23518,15 +23518,15 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 4px;
 }
 
-#fwuwnpcyvq .gt_column_spanner_outer:first-child {
+#flkqcejkpa .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#fwuwnpcyvq .gt_column_spanner_outer:last-child {
+#flkqcejkpa .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#fwuwnpcyvq .gt_column_spanner {
+#flkqcejkpa .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -23538,11 +23538,11 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   width: 100%;
 }
 
-#fwuwnpcyvq .gt_spanner_row {
+#flkqcejkpa .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#fwuwnpcyvq .gt_group_heading {
+#flkqcejkpa .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -23568,7 +23568,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   text-align: left;
 }
 
-#fwuwnpcyvq .gt_empty_group_heading {
+#flkqcejkpa .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -23583,15 +23583,15 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   vertical-align: middle;
 }
 
-#fwuwnpcyvq .gt_from_md > :first-child {
+#flkqcejkpa .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#fwuwnpcyvq .gt_from_md > :last-child {
+#flkqcejkpa .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#fwuwnpcyvq .gt_row {
+#flkqcejkpa .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -23610,7 +23610,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   overflow-x: hidden;
 }
 
-#fwuwnpcyvq .gt_stub {
+#flkqcejkpa .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -23623,7 +23623,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#fwuwnpcyvq .gt_stub_row_group {
+#flkqcejkpa .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -23637,15 +23637,15 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   vertical-align: top;
 }
 
-#fwuwnpcyvq .gt_row_group_first td {
+#flkqcejkpa .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#fwuwnpcyvq .gt_row_group_first th {
+#flkqcejkpa .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#fwuwnpcyvq .gt_summary_row {
+#flkqcejkpa .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -23655,16 +23655,16 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#fwuwnpcyvq .gt_first_summary_row {
+#flkqcejkpa .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#fwuwnpcyvq .gt_first_summary_row.thick {
+#flkqcejkpa .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#fwuwnpcyvq .gt_last_summary_row {
+#flkqcejkpa .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -23674,7 +23674,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-bottom-color: #D3D3D3;
 }
 
-#fwuwnpcyvq .gt_grand_summary_row {
+#flkqcejkpa .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -23684,7 +23684,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#fwuwnpcyvq .gt_first_grand_summary_row {
+#flkqcejkpa .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -23694,7 +23694,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-top-color: #D3D3D3;
 }
 
-#fwuwnpcyvq .gt_last_grand_summary_row_top {
+#flkqcejkpa .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -23704,11 +23704,11 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-bottom-color: #D3D3D3;
 }
 
-#fwuwnpcyvq .gt_striped {
+#flkqcejkpa .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#fwuwnpcyvq .gt_table_body {
+#flkqcejkpa .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -23717,7 +23717,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-bottom-color: #D3D3D3;
 }
 
-#fwuwnpcyvq .gt_footnotes {
+#flkqcejkpa .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -23731,7 +23731,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-right-color: #D3D3D3;
 }
 
-#fwuwnpcyvq .gt_footnote {
+#flkqcejkpa .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -23740,7 +23740,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#fwuwnpcyvq .gt_sourcenotes {
+#flkqcejkpa .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -23754,7 +23754,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-right-color: #D3D3D3;
 }
 
-#fwuwnpcyvq .gt_sourcenote {
+#flkqcejkpa .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -23762,72 +23762,72 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#fwuwnpcyvq .gt_left {
+#flkqcejkpa .gt_left {
   text-align: left;
 }
 
-#fwuwnpcyvq .gt_center {
+#flkqcejkpa .gt_center {
   text-align: center;
 }
 
-#fwuwnpcyvq .gt_right {
+#flkqcejkpa .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#fwuwnpcyvq .gt_font_normal {
+#flkqcejkpa .gt_font_normal {
   font-weight: normal;
 }
 
-#fwuwnpcyvq .gt_font_bold {
+#flkqcejkpa .gt_font_bold {
   font-weight: bold;
 }
 
-#fwuwnpcyvq .gt_font_italic {
+#flkqcejkpa .gt_font_italic {
   font-style: italic;
 }
 
-#fwuwnpcyvq .gt_super {
+#flkqcejkpa .gt_super {
   font-size: 65%;
 }
 
-#fwuwnpcyvq .gt_footnote_marks {
+#flkqcejkpa .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#fwuwnpcyvq .gt_asterisk {
+#flkqcejkpa .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#fwuwnpcyvq .gt_indent_1 {
+#flkqcejkpa .gt_indent_1 {
   text-indent: 5px;
 }
 
-#fwuwnpcyvq .gt_indent_2 {
+#flkqcejkpa .gt_indent_2 {
   text-indent: 10px;
 }
 
-#fwuwnpcyvq .gt_indent_3 {
+#flkqcejkpa .gt_indent_3 {
   text-indent: 15px;
 }
 
-#fwuwnpcyvq .gt_indent_4 {
+#flkqcejkpa .gt_indent_4 {
   text-indent: 20px;
 }
 
-#fwuwnpcyvq .gt_indent_5 {
+#flkqcejkpa .gt_indent_5 {
   text-indent: 25px;
 }
 
-#fwuwnpcyvq .katex-display {
+#flkqcejkpa .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#fwuwnpcyvq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#flkqcejkpa div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -23890,23 +23890,23 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
 <h3 class="anchored" data-anchor-id="canonical-option-costs-detect-act-restrict">Canonical option costs (Detect · Act · Restrict)</h3>
 <div class="cell">
 <div class="cell-output-display">
-<div id="xwjdcdtutw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#xwjdcdtutw table {
+<div id="tpsjjzdndh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#tpsjjzdndh table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#xwjdcdtutw thead, #xwjdcdtutw tbody, #xwjdcdtutw tfoot, #xwjdcdtutw tr, #xwjdcdtutw td, #xwjdcdtutw th {
+#tpsjjzdndh thead, #tpsjjzdndh tbody, #tpsjjzdndh tfoot, #tpsjjzdndh tr, #tpsjjzdndh td, #tpsjjzdndh th {
   border-style: none;
 }
 
-#xwjdcdtutw p {
+#tpsjjzdndh p {
   margin: 0;
   padding: 0;
 }
 
-#xwjdcdtutw .gt_table {
+#tpsjjzdndh .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -23932,12 +23932,12 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-left-color: #D3D3D3;
 }
 
-#xwjdcdtutw .gt_caption {
+#tpsjjzdndh .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#xwjdcdtutw .gt_title {
+#tpsjjzdndh .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -23949,7 +23949,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-bottom-width: 0;
 }
 
-#xwjdcdtutw .gt_subtitle {
+#tpsjjzdndh .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -23961,7 +23961,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-top-width: 0;
 }
 
-#xwjdcdtutw .gt_heading {
+#tpsjjzdndh .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -23973,13 +23973,13 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-right-color: #D3D3D3;
 }
 
-#xwjdcdtutw .gt_bottom_border {
+#tpsjjzdndh .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#xwjdcdtutw .gt_col_headings {
+#tpsjjzdndh .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -23994,7 +23994,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-right-color: #D3D3D3;
 }
 
-#xwjdcdtutw .gt_col_heading {
+#tpsjjzdndh .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -24014,7 +24014,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   overflow-x: hidden;
 }
 
-#xwjdcdtutw .gt_column_spanner_outer {
+#tpsjjzdndh .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -24026,15 +24026,15 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 4px;
 }
 
-#xwjdcdtutw .gt_column_spanner_outer:first-child {
+#tpsjjzdndh .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#xwjdcdtutw .gt_column_spanner_outer:last-child {
+#tpsjjzdndh .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#xwjdcdtutw .gt_column_spanner {
+#tpsjjzdndh .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -24046,11 +24046,11 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   width: 100%;
 }
 
-#xwjdcdtutw .gt_spanner_row {
+#tpsjjzdndh .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#xwjdcdtutw .gt_group_heading {
+#tpsjjzdndh .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -24076,7 +24076,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   text-align: left;
 }
 
-#xwjdcdtutw .gt_empty_group_heading {
+#tpsjjzdndh .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -24091,15 +24091,15 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   vertical-align: middle;
 }
 
-#xwjdcdtutw .gt_from_md > :first-child {
+#tpsjjzdndh .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#xwjdcdtutw .gt_from_md > :last-child {
+#tpsjjzdndh .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#xwjdcdtutw .gt_row {
+#tpsjjzdndh .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -24118,7 +24118,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   overflow-x: hidden;
 }
 
-#xwjdcdtutw .gt_stub {
+#tpsjjzdndh .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -24131,7 +24131,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#xwjdcdtutw .gt_stub_row_group {
+#tpsjjzdndh .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -24145,15 +24145,15 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   vertical-align: top;
 }
 
-#xwjdcdtutw .gt_row_group_first td {
+#tpsjjzdndh .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#xwjdcdtutw .gt_row_group_first th {
+#tpsjjzdndh .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#xwjdcdtutw .gt_summary_row {
+#tpsjjzdndh .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -24163,16 +24163,16 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#xwjdcdtutw .gt_first_summary_row {
+#tpsjjzdndh .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#xwjdcdtutw .gt_first_summary_row.thick {
+#tpsjjzdndh .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#xwjdcdtutw .gt_last_summary_row {
+#tpsjjzdndh .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -24182,7 +24182,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-bottom-color: #D3D3D3;
 }
 
-#xwjdcdtutw .gt_grand_summary_row {
+#tpsjjzdndh .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -24192,7 +24192,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#xwjdcdtutw .gt_first_grand_summary_row {
+#tpsjjzdndh .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -24202,7 +24202,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-top-color: #D3D3D3;
 }
 
-#xwjdcdtutw .gt_last_grand_summary_row_top {
+#tpsjjzdndh .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -24212,11 +24212,11 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-bottom-color: #D3D3D3;
 }
 
-#xwjdcdtutw .gt_striped {
+#tpsjjzdndh .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#xwjdcdtutw .gt_table_body {
+#tpsjjzdndh .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -24225,7 +24225,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-bottom-color: #D3D3D3;
 }
 
-#xwjdcdtutw .gt_footnotes {
+#tpsjjzdndh .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -24239,7 +24239,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-right-color: #D3D3D3;
 }
 
-#xwjdcdtutw .gt_footnote {
+#tpsjjzdndh .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -24248,7 +24248,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#xwjdcdtutw .gt_sourcenotes {
+#tpsjjzdndh .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -24262,7 +24262,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-right-color: #D3D3D3;
 }
 
-#xwjdcdtutw .gt_sourcenote {
+#tpsjjzdndh .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -24270,72 +24270,72 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#xwjdcdtutw .gt_left {
+#tpsjjzdndh .gt_left {
   text-align: left;
 }
 
-#xwjdcdtutw .gt_center {
+#tpsjjzdndh .gt_center {
   text-align: center;
 }
 
-#xwjdcdtutw .gt_right {
+#tpsjjzdndh .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#xwjdcdtutw .gt_font_normal {
+#tpsjjzdndh .gt_font_normal {
   font-weight: normal;
 }
 
-#xwjdcdtutw .gt_font_bold {
+#tpsjjzdndh .gt_font_bold {
   font-weight: bold;
 }
 
-#xwjdcdtutw .gt_font_italic {
+#tpsjjzdndh .gt_font_italic {
   font-style: italic;
 }
 
-#xwjdcdtutw .gt_super {
+#tpsjjzdndh .gt_super {
   font-size: 65%;
 }
 
-#xwjdcdtutw .gt_footnote_marks {
+#tpsjjzdndh .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#xwjdcdtutw .gt_asterisk {
+#tpsjjzdndh .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#xwjdcdtutw .gt_indent_1 {
+#tpsjjzdndh .gt_indent_1 {
   text-indent: 5px;
 }
 
-#xwjdcdtutw .gt_indent_2 {
+#tpsjjzdndh .gt_indent_2 {
   text-indent: 10px;
 }
 
-#xwjdcdtutw .gt_indent_3 {
+#tpsjjzdndh .gt_indent_3 {
   text-indent: 15px;
 }
 
-#xwjdcdtutw .gt_indent_4 {
+#tpsjjzdndh .gt_indent_4 {
   text-indent: 20px;
 }
 
-#xwjdcdtutw .gt_indent_5 {
+#tpsjjzdndh .gt_indent_5 {
   text-indent: 25px;
 }
 
-#xwjdcdtutw .katex-display {
+#tpsjjzdndh .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#xwjdcdtutw div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#tpsjjzdndh div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -25015,23 +25015,23 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
 <p>All numerical claims in this brief draw from a single CSV — <a href="../amua_import_parameters_v3.csv"><code>amua_import_parameters_v3.csv</code></a> — rendered in full at the <a href="../parameters_hub.html">Parameters Hub</a>. The headline values below are pulled from that file at render time; <strong>do not edit the numbers in this brief — edit the CSV and re-render</strong>.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="sbbeoxwfvf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#sbbeoxwfvf table {
+<div id="nmwawrgebz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#nmwawrgebz table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#sbbeoxwfvf thead, #sbbeoxwfvf tbody, #sbbeoxwfvf tfoot, #sbbeoxwfvf tr, #sbbeoxwfvf td, #sbbeoxwfvf th {
+#nmwawrgebz thead, #nmwawrgebz tbody, #nmwawrgebz tfoot, #nmwawrgebz tr, #nmwawrgebz td, #nmwawrgebz th {
   border-style: none;
 }
 
-#sbbeoxwfvf p {
+#nmwawrgebz p {
   margin: 0;
   padding: 0;
 }
 
-#sbbeoxwfvf .gt_table {
+#nmwawrgebz .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -25057,12 +25057,12 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-left-color: #D3D3D3;
 }
 
-#sbbeoxwfvf .gt_caption {
+#nmwawrgebz .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#sbbeoxwfvf .gt_title {
+#nmwawrgebz .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -25074,7 +25074,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-bottom-width: 0;
 }
 
-#sbbeoxwfvf .gt_subtitle {
+#nmwawrgebz .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -25086,7 +25086,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-top-width: 0;
 }
 
-#sbbeoxwfvf .gt_heading {
+#nmwawrgebz .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -25098,13 +25098,13 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-right-color: #D3D3D3;
 }
 
-#sbbeoxwfvf .gt_bottom_border {
+#nmwawrgebz .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#sbbeoxwfvf .gt_col_headings {
+#nmwawrgebz .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -25119,7 +25119,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-right-color: #D3D3D3;
 }
 
-#sbbeoxwfvf .gt_col_heading {
+#nmwawrgebz .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -25139,7 +25139,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   overflow-x: hidden;
 }
 
-#sbbeoxwfvf .gt_column_spanner_outer {
+#nmwawrgebz .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -25151,15 +25151,15 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   padding-right: 4px;
 }
 
-#sbbeoxwfvf .gt_column_spanner_outer:first-child {
+#nmwawrgebz .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#sbbeoxwfvf .gt_column_spanner_outer:last-child {
+#nmwawrgebz .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#sbbeoxwfvf .gt_column_spanner {
+#nmwawrgebz .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -25171,11 +25171,11 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   width: 100%;
 }
 
-#sbbeoxwfvf .gt_spanner_row {
+#nmwawrgebz .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#sbbeoxwfvf .gt_group_heading {
+#nmwawrgebz .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -25201,7 +25201,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   text-align: left;
 }
 
-#sbbeoxwfvf .gt_empty_group_heading {
+#nmwawrgebz .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -25216,15 +25216,15 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   vertical-align: middle;
 }
 
-#sbbeoxwfvf .gt_from_md > :first-child {
+#nmwawrgebz .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#sbbeoxwfvf .gt_from_md > :last-child {
+#nmwawrgebz .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#sbbeoxwfvf .gt_row {
+#nmwawrgebz .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -25243,7 +25243,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   overflow-x: hidden;
 }
 
-#sbbeoxwfvf .gt_stub {
+#nmwawrgebz .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -25256,7 +25256,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   padding-right: 5px;
 }
 
-#sbbeoxwfvf .gt_stub_row_group {
+#nmwawrgebz .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -25270,15 +25270,15 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   vertical-align: top;
 }
 
-#sbbeoxwfvf .gt_row_group_first td {
+#nmwawrgebz .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#sbbeoxwfvf .gt_row_group_first th {
+#nmwawrgebz .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#sbbeoxwfvf .gt_summary_row {
+#nmwawrgebz .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -25288,16 +25288,16 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   padding-right: 5px;
 }
 
-#sbbeoxwfvf .gt_first_summary_row {
+#nmwawrgebz .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#sbbeoxwfvf .gt_first_summary_row.thick {
+#nmwawrgebz .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#sbbeoxwfvf .gt_last_summary_row {
+#nmwawrgebz .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -25307,7 +25307,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-bottom-color: #D3D3D3;
 }
 
-#sbbeoxwfvf .gt_grand_summary_row {
+#nmwawrgebz .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -25317,7 +25317,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   padding-right: 5px;
 }
 
-#sbbeoxwfvf .gt_first_grand_summary_row {
+#nmwawrgebz .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -25327,7 +25327,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-top-color: #D3D3D3;
 }
 
-#sbbeoxwfvf .gt_last_grand_summary_row_top {
+#nmwawrgebz .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -25337,11 +25337,11 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-bottom-color: #D3D3D3;
 }
 
-#sbbeoxwfvf .gt_striped {
+#nmwawrgebz .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#sbbeoxwfvf .gt_table_body {
+#nmwawrgebz .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -25350,7 +25350,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-bottom-color: #D3D3D3;
 }
 
-#sbbeoxwfvf .gt_footnotes {
+#nmwawrgebz .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -25364,7 +25364,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-right-color: #D3D3D3;
 }
 
-#sbbeoxwfvf .gt_footnote {
+#nmwawrgebz .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -25373,7 +25373,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   padding-right: 5px;
 }
 
-#sbbeoxwfvf .gt_sourcenotes {
+#nmwawrgebz .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -25387,7 +25387,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-right-color: #D3D3D3;
 }
 
-#sbbeoxwfvf .gt_sourcenote {
+#nmwawrgebz .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -25395,72 +25395,72 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   padding-right: 5px;
 }
 
-#sbbeoxwfvf .gt_left {
+#nmwawrgebz .gt_left {
   text-align: left;
 }
 
-#sbbeoxwfvf .gt_center {
+#nmwawrgebz .gt_center {
   text-align: center;
 }
 
-#sbbeoxwfvf .gt_right {
+#nmwawrgebz .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#sbbeoxwfvf .gt_font_normal {
+#nmwawrgebz .gt_font_normal {
   font-weight: normal;
 }
 
-#sbbeoxwfvf .gt_font_bold {
+#nmwawrgebz .gt_font_bold {
   font-weight: bold;
 }
 
-#sbbeoxwfvf .gt_font_italic {
+#nmwawrgebz .gt_font_italic {
   font-style: italic;
 }
 
-#sbbeoxwfvf .gt_super {
+#nmwawrgebz .gt_super {
   font-size: 65%;
 }
 
-#sbbeoxwfvf .gt_footnote_marks {
+#nmwawrgebz .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#sbbeoxwfvf .gt_asterisk {
+#nmwawrgebz .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#sbbeoxwfvf .gt_indent_1 {
+#nmwawrgebz .gt_indent_1 {
   text-indent: 5px;
 }
 
-#sbbeoxwfvf .gt_indent_2 {
+#nmwawrgebz .gt_indent_2 {
   text-indent: 10px;
 }
 
-#sbbeoxwfvf .gt_indent_3 {
+#nmwawrgebz .gt_indent_3 {
   text-indent: 15px;
 }
 
-#sbbeoxwfvf .gt_indent_4 {
+#nmwawrgebz .gt_indent_4 {
   text-indent: 20px;
 }
 
-#sbbeoxwfvf .gt_indent_5 {
+#nmwawrgebz .gt_indent_5 {
   text-indent: 25px;
 }
 
-#sbbeoxwfvf .katex-display {
+#nmwawrgebz .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#sbbeoxwfvf div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#nmwawrgebz div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -25541,23 +25541,23 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
 <h3 class="anchored" data-anchor-id="who-bears-the-r2.34b-annual-burden">Who bears the R2.34B annual burden?</h3>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fsjxackfff" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#fsjxackfff table {
+<div id="msdkxhgiss" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#msdkxhgiss table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#fsjxackfff thead, #fsjxackfff tbody, #fsjxackfff tfoot, #fsjxackfff tr, #fsjxackfff td, #fsjxackfff th {
+#msdkxhgiss thead, #msdkxhgiss tbody, #msdkxhgiss tfoot, #msdkxhgiss tr, #msdkxhgiss td, #msdkxhgiss th {
   border-style: none;
 }
 
-#fsjxackfff p {
+#msdkxhgiss p {
   margin: 0;
   padding: 0;
 }
 
-#fsjxackfff .gt_table {
+#msdkxhgiss .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -25583,12 +25583,12 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-left-color: #D3D3D3;
 }
 
-#fsjxackfff .gt_caption {
+#msdkxhgiss .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#fsjxackfff .gt_title {
+#msdkxhgiss .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -25600,7 +25600,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-bottom-width: 0;
 }
 
-#fsjxackfff .gt_subtitle {
+#msdkxhgiss .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -25612,7 +25612,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-top-width: 0;
 }
 
-#fsjxackfff .gt_heading {
+#msdkxhgiss .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -25624,13 +25624,13 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-right-color: #D3D3D3;
 }
 
-#fsjxackfff .gt_bottom_border {
+#msdkxhgiss .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#fsjxackfff .gt_col_headings {
+#msdkxhgiss .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -25645,7 +25645,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-right-color: #D3D3D3;
 }
 
-#fsjxackfff .gt_col_heading {
+#msdkxhgiss .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -25665,7 +25665,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   overflow-x: hidden;
 }
 
-#fsjxackfff .gt_column_spanner_outer {
+#msdkxhgiss .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -25677,15 +25677,15 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   padding-right: 4px;
 }
 
-#fsjxackfff .gt_column_spanner_outer:first-child {
+#msdkxhgiss .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#fsjxackfff .gt_column_spanner_outer:last-child {
+#msdkxhgiss .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#fsjxackfff .gt_column_spanner {
+#msdkxhgiss .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -25697,11 +25697,11 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   width: 100%;
 }
 
-#fsjxackfff .gt_spanner_row {
+#msdkxhgiss .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#fsjxackfff .gt_group_heading {
+#msdkxhgiss .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -25727,7 +25727,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   text-align: left;
 }
 
-#fsjxackfff .gt_empty_group_heading {
+#msdkxhgiss .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -25742,15 +25742,15 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   vertical-align: middle;
 }
 
-#fsjxackfff .gt_from_md > :first-child {
+#msdkxhgiss .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#fsjxackfff .gt_from_md > :last-child {
+#msdkxhgiss .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#fsjxackfff .gt_row {
+#msdkxhgiss .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -25769,7 +25769,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   overflow-x: hidden;
 }
 
-#fsjxackfff .gt_stub {
+#msdkxhgiss .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -25782,7 +25782,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   padding-right: 5px;
 }
 
-#fsjxackfff .gt_stub_row_group {
+#msdkxhgiss .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -25796,15 +25796,15 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   vertical-align: top;
 }
 
-#fsjxackfff .gt_row_group_first td {
+#msdkxhgiss .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#fsjxackfff .gt_row_group_first th {
+#msdkxhgiss .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#fsjxackfff .gt_summary_row {
+#msdkxhgiss .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -25814,16 +25814,16 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   padding-right: 5px;
 }
 
-#fsjxackfff .gt_first_summary_row {
+#msdkxhgiss .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#fsjxackfff .gt_first_summary_row.thick {
+#msdkxhgiss .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#fsjxackfff .gt_last_summary_row {
+#msdkxhgiss .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -25833,7 +25833,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-bottom-color: #D3D3D3;
 }
 
-#fsjxackfff .gt_grand_summary_row {
+#msdkxhgiss .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -25843,7 +25843,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   padding-right: 5px;
 }
 
-#fsjxackfff .gt_first_grand_summary_row {
+#msdkxhgiss .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -25853,7 +25853,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-top-color: #D3D3D3;
 }
 
-#fsjxackfff .gt_last_grand_summary_row_top {
+#msdkxhgiss .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -25863,11 +25863,11 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-bottom-color: #D3D3D3;
 }
 
-#fsjxackfff .gt_striped {
+#msdkxhgiss .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#fsjxackfff .gt_table_body {
+#msdkxhgiss .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -25876,7 +25876,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-bottom-color: #D3D3D3;
 }
 
-#fsjxackfff .gt_footnotes {
+#msdkxhgiss .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -25890,7 +25890,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-right-color: #D3D3D3;
 }
 
-#fsjxackfff .gt_footnote {
+#msdkxhgiss .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -25899,7 +25899,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   padding-right: 5px;
 }
 
-#fsjxackfff .gt_sourcenotes {
+#msdkxhgiss .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -25913,7 +25913,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-right-color: #D3D3D3;
 }
 
-#fsjxackfff .gt_sourcenote {
+#msdkxhgiss .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -25921,72 +25921,72 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   padding-right: 5px;
 }
 
-#fsjxackfff .gt_left {
+#msdkxhgiss .gt_left {
   text-align: left;
 }
 
-#fsjxackfff .gt_center {
+#msdkxhgiss .gt_center {
   text-align: center;
 }
 
-#fsjxackfff .gt_right {
+#msdkxhgiss .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#fsjxackfff .gt_font_normal {
+#msdkxhgiss .gt_font_normal {
   font-weight: normal;
 }
 
-#fsjxackfff .gt_font_bold {
+#msdkxhgiss .gt_font_bold {
   font-weight: bold;
 }
 
-#fsjxackfff .gt_font_italic {
+#msdkxhgiss .gt_font_italic {
   font-style: italic;
 }
 
-#fsjxackfff .gt_super {
+#msdkxhgiss .gt_super {
   font-size: 65%;
 }
 
-#fsjxackfff .gt_footnote_marks {
+#msdkxhgiss .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#fsjxackfff .gt_asterisk {
+#msdkxhgiss .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#fsjxackfff .gt_indent_1 {
+#msdkxhgiss .gt_indent_1 {
   text-indent: 5px;
 }
 
-#fsjxackfff .gt_indent_2 {
+#msdkxhgiss .gt_indent_2 {
   text-indent: 10px;
 }
 
-#fsjxackfff .gt_indent_3 {
+#msdkxhgiss .gt_indent_3 {
   text-indent: 15px;
 }
 
-#fsjxackfff .gt_indent_4 {
+#msdkxhgiss .gt_indent_4 {
   text-indent: 20px;
 }
 
-#fsjxackfff .gt_indent_5 {
+#msdkxhgiss .gt_indent_5 {
   text-indent: 25px;
 }
 
-#fsjxackfff .katex-display {
+#msdkxhgiss .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#fsjxackfff div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#msdkxhgiss div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -26049,23 +26049,23 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
 <h3 class="anchored" data-anchor-id="canonical-option-costs-detect-act-restrict">Canonical option costs (Detect · Act · Restrict)</h3>
 <div class="cell">
 <div class="cell-output-display">
-<div id="nxcyhdqdnd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#nxcyhdqdnd table {
+<div id="nqjpqgirdi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#nqjpqgirdi table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#nxcyhdqdnd thead, #nxcyhdqdnd tbody, #nxcyhdqdnd tfoot, #nxcyhdqdnd tr, #nxcyhdqdnd td, #nxcyhdqdnd th {
+#nqjpqgirdi thead, #nqjpqgirdi tbody, #nqjpqgirdi tfoot, #nqjpqgirdi tr, #nqjpqgirdi td, #nqjpqgirdi th {
   border-style: none;
 }
 
-#nxcyhdqdnd p {
+#nqjpqgirdi p {
   margin: 0;
   padding: 0;
 }
 
-#nxcyhdqdnd .gt_table {
+#nqjpqgirdi .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -26091,12 +26091,12 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-left-color: #D3D3D3;
 }
 
-#nxcyhdqdnd .gt_caption {
+#nqjpqgirdi .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#nxcyhdqdnd .gt_title {
+#nqjpqgirdi .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -26108,7 +26108,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-bottom-width: 0;
 }
 
-#nxcyhdqdnd .gt_subtitle {
+#nqjpqgirdi .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -26120,7 +26120,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-top-width: 0;
 }
 
-#nxcyhdqdnd .gt_heading {
+#nqjpqgirdi .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -26132,13 +26132,13 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-right-color: #D3D3D3;
 }
 
-#nxcyhdqdnd .gt_bottom_border {
+#nqjpqgirdi .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#nxcyhdqdnd .gt_col_headings {
+#nqjpqgirdi .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -26153,7 +26153,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-right-color: #D3D3D3;
 }
 
-#nxcyhdqdnd .gt_col_heading {
+#nqjpqgirdi .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -26173,7 +26173,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   overflow-x: hidden;
 }
 
-#nxcyhdqdnd .gt_column_spanner_outer {
+#nqjpqgirdi .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -26185,15 +26185,15 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   padding-right: 4px;
 }
 
-#nxcyhdqdnd .gt_column_spanner_outer:first-child {
+#nqjpqgirdi .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#nxcyhdqdnd .gt_column_spanner_outer:last-child {
+#nqjpqgirdi .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#nxcyhdqdnd .gt_column_spanner {
+#nqjpqgirdi .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -26205,11 +26205,11 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   width: 100%;
 }
 
-#nxcyhdqdnd .gt_spanner_row {
+#nqjpqgirdi .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#nxcyhdqdnd .gt_group_heading {
+#nqjpqgirdi .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -26235,7 +26235,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   text-align: left;
 }
 
-#nxcyhdqdnd .gt_empty_group_heading {
+#nqjpqgirdi .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -26250,15 +26250,15 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   vertical-align: middle;
 }
 
-#nxcyhdqdnd .gt_from_md > :first-child {
+#nqjpqgirdi .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#nxcyhdqdnd .gt_from_md > :last-child {
+#nqjpqgirdi .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#nxcyhdqdnd .gt_row {
+#nqjpqgirdi .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -26277,7 +26277,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   overflow-x: hidden;
 }
 
-#nxcyhdqdnd .gt_stub {
+#nqjpqgirdi .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -26290,7 +26290,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   padding-right: 5px;
 }
 
-#nxcyhdqdnd .gt_stub_row_group {
+#nqjpqgirdi .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -26304,15 +26304,15 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   vertical-align: top;
 }
 
-#nxcyhdqdnd .gt_row_group_first td {
+#nqjpqgirdi .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#nxcyhdqdnd .gt_row_group_first th {
+#nqjpqgirdi .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#nxcyhdqdnd .gt_summary_row {
+#nqjpqgirdi .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -26322,16 +26322,16 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   padding-right: 5px;
 }
 
-#nxcyhdqdnd .gt_first_summary_row {
+#nqjpqgirdi .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#nxcyhdqdnd .gt_first_summary_row.thick {
+#nqjpqgirdi .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#nxcyhdqdnd .gt_last_summary_row {
+#nqjpqgirdi .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -26341,7 +26341,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-bottom-color: #D3D3D3;
 }
 
-#nxcyhdqdnd .gt_grand_summary_row {
+#nqjpqgirdi .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -26351,7 +26351,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   padding-right: 5px;
 }
 
-#nxcyhdqdnd .gt_first_grand_summary_row {
+#nqjpqgirdi .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -26361,7 +26361,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-top-color: #D3D3D3;
 }
 
-#nxcyhdqdnd .gt_last_grand_summary_row_top {
+#nqjpqgirdi .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -26371,11 +26371,11 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-bottom-color: #D3D3D3;
 }
 
-#nxcyhdqdnd .gt_striped {
+#nqjpqgirdi .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#nxcyhdqdnd .gt_table_body {
+#nqjpqgirdi .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -26384,7 +26384,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-bottom-color: #D3D3D3;
 }
 
-#nxcyhdqdnd .gt_footnotes {
+#nqjpqgirdi .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -26398,7 +26398,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-right-color: #D3D3D3;
 }
 
-#nxcyhdqdnd .gt_footnote {
+#nqjpqgirdi .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -26407,7 +26407,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   padding-right: 5px;
 }
 
-#nxcyhdqdnd .gt_sourcenotes {
+#nqjpqgirdi .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -26421,7 +26421,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   border-right-color: #D3D3D3;
 }
 
-#nxcyhdqdnd .gt_sourcenote {
+#nqjpqgirdi .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -26429,72 +26429,72 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
   padding-right: 5px;
 }
 
-#nxcyhdqdnd .gt_left {
+#nqjpqgirdi .gt_left {
   text-align: left;
 }
 
-#nxcyhdqdnd .gt_center {
+#nqjpqgirdi .gt_center {
   text-align: center;
 }
 
-#nxcyhdqdnd .gt_right {
+#nqjpqgirdi .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#nxcyhdqdnd .gt_font_normal {
+#nqjpqgirdi .gt_font_normal {
   font-weight: normal;
 }
 
-#nxcyhdqdnd .gt_font_bold {
+#nqjpqgirdi .gt_font_bold {
   font-weight: bold;
 }
 
-#nxcyhdqdnd .gt_font_italic {
+#nqjpqgirdi .gt_font_italic {
   font-style: italic;
 }
 
-#nxcyhdqdnd .gt_super {
+#nqjpqgirdi .gt_super {
   font-size: 65%;
 }
 
-#nxcyhdqdnd .gt_footnote_marks {
+#nqjpqgirdi .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#nxcyhdqdnd .gt_asterisk {
+#nqjpqgirdi .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#nxcyhdqdnd .gt_indent_1 {
+#nqjpqgirdi .gt_indent_1 {
   text-indent: 5px;
 }
 
-#nxcyhdqdnd .gt_indent_2 {
+#nqjpqgirdi .gt_indent_2 {
   text-indent: 10px;
 }
 
-#nxcyhdqdnd .gt_indent_3 {
+#nqjpqgirdi .gt_indent_3 {
   text-indent: 15px;
 }
 
-#nxcyhdqdnd .gt_indent_4 {
+#nqjpqgirdi .gt_indent_4 {
   text-indent: 20px;
 }
 
-#nxcyhdqdnd .gt_indent_5 {
+#nqjpqgirdi .gt_indent_5 {
   text-indent: 25px;
 }
 
-#nxcyhdqdnd .katex-display {
+#nqjpqgirdi .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#nxcyhdqdnd div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#nqjpqgirdi div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
