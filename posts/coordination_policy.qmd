@@ -407,6 +407,96 @@ sens_df |>
 
 **Reading.** Even at the *low* response-efficacy edge (η = 15 %), the Full Package prevents **~`r round((p_FP-p_sq)*n_obs*rho*eta_levels[1])` future poisonings/yr**; at the well-resourced edge (η = 50 %) it prevents **~`r round((p_FP-p_sq)*n_obs*rho*eta_levels[3])`/yr**. The policy claim is therefore robust across the full CSV-anchored parameter range: every realistic combination of $(P_{\text{loop}}, \eta)$ produces a four-figure annual reduction in future cases. The integrated model uses these two scalars (`p_loop_closed_FP`, `eta_response_mid`) as toggleable inputs alongside the surveillance and source-control levers.
 
+### 6g. Per-action workload — what each loop-step actually costs
+
+Closing a loop is not free at the operational tier. Each *gross* alert that enters the system (true case + false positive) costs an **EHP environmental investigation** (CSV: `c_per_ehp_investigation_mid` ≈ R`r format(as.numeric(pick("c_per_ehp_investigation_mid")), big.mark=",")`); a fraction $p_{\text{DALRRD}}$ ≈ `r as.numeric(pick("p_dalrrd_action_given_referral"))` of those trigger a **DALRRD inspectorate site visit** (CSV: `c_per_dalrrd_inspection_mid` ≈ R`r format(as.numeric(pick("c_per_dalrrd_inspection_mid")), big.mark=",")`). Both unit costs have lo/hi ranges in the CSV.
+
+```{r}
+#| label: tbl-per-action-cost
+#| echo: false
+#| tbl-cap: "Per-action workload cost components (CSV-anchored). Each fully-closed loop consumes one EHP investigation; a fraction p_DALRRD trigger an inspectorate visit. These are the unit inputs overall_policy_model.qmd uses to translate alert volume into induced regulator workload."
+
+tibble::tibble(
+  Component = c("EHP environmental investigation (per gross alert)",
+                "DALRRD inspectorate site visit (per referred case)",
+                "P(DALRRD action | confirmed referral)"),
+  Low  = c(as.numeric(pick("c_per_ehp_investigation_lo")),
+           as.numeric(pick("c_per_dalrrd_inspection_lo")),
+           NA),
+  Mid  = c(as.numeric(pick("c_per_ehp_investigation_mid")),
+           as.numeric(pick("c_per_dalrrd_inspection_mid")),
+           as.numeric(pick("p_dalrrd_action_given_referral"))),
+  High = c(as.numeric(pick("c_per_ehp_investigation_hi")),
+           as.numeric(pick("c_per_dalrrd_inspection_hi")),
+           NA),
+  CSV  = c("c_per_ehp_investigation_*",
+           "c_per_dalrrd_inspection_*",
+           "p_dalrrd_action_given_referral")
+) |>
+  gt::gt() |>
+  gt::fmt_number(columns = c("Low", "Mid", "High"),
+                 rows = 1:2, decimals = 0, use_seps = TRUE, pattern = "R{x}") |>
+  gt::fmt_number(columns = "Mid", rows = 3, decimals = 2) |>
+  gt::sub_missing(missing_text = "—") |>
+  gt::tab_options(table.font.size = "small")
+```
+
+### 6h. False positives bite: induced workload under community surveillance
+
+Administrative-tier feeds (NMC, NHLS BChE auto-notify, PIH) produce alerts that are essentially all true cases — false-positive rate ≈ 0. Community-tier surveillance (S1b in the [Surveillance brief](surveillance_policy.qmd)) produces alerts at a CSV-benchmarked **false-positive rate of `r sprintf("%.0f–%.0f %%", as.numeric(pick("p_fp_S1b_lo"))*100, as.numeric(pick("p_fp_S1b_hi"))*100)`**. Every alert — true or false — still consumes an EHP investigation before it can be discarded. Per *true* case detected:
+
+$$
+\text{gross alerts} = \frac{1}{1 - p_{\text{fp}}}
+\qquad
+\text{cost per true case} = \frac{c_{\text{EHP}} + p_{\text{DALRRD}} \cdot c_{\text{DALRRD}}}{1 - p_{\text{fp}}}
+$$
+
+```{r}
+#| label: tbl-fp-induced-workload
+#| echo: false
+#| tbl-cap: "Induced EHP + DALRRD workload cost per *true* case detected, as community-surveillance false-positive rate is varied (rows) against EHP unit cost (columns). Holds p_DALRRD = 0.30 and c_DALRRD at working value. All inputs from amua_import_parameters_v4.csv."
+
+c_ehp_lo  <- as.numeric(pick("c_per_ehp_investigation_lo"))
+c_ehp_mid <- as.numeric(pick("c_per_ehp_investigation_mid"))
+c_ehp_hi  <- as.numeric(pick("c_per_ehp_investigation_hi"))
+c_dal_mid <- as.numeric(pick("c_per_dalrrd_inspection_mid"))
+p_dal     <- as.numeric(pick("p_dalrrd_action_given_referral"))
+
+fp_levels  <- c(0, as.numeric(pick("p_fp_S1b_lo")),
+                   as.numeric(pick("p_fp_S1b_mid")),
+                   as.numeric(pick("p_fp_S1b_hi")))
+fp_labels  <- c("Administrative only (0 %)",
+                sprintf("S1b lo (%.0f %%)", fp_levels[2]*100),
+                sprintf("S1b mid (%.0f %%)", fp_levels[3]*100),
+                sprintf("S1b hi (%.0f %%)", fp_levels[4]*100))
+ehp_levels <- c(c_ehp_lo, c_ehp_mid, c_ehp_hi)
+ehp_labels <- c(sprintf("EHP lo (R%s)", format(c_ehp_lo, big.mark=",")),
+                sprintf("EHP mid (R%s)", format(c_ehp_mid, big.mark=",")),
+                sprintf("EHP hi (R%s)", format(c_ehp_hi, big.mark=",")))
+
+mat <- outer(fp_levels, ehp_levels,
+             FUN = function(fp, e) (e + p_dal * c_dal_mid) / (1 - fp))
+colnames(mat) <- ehp_labels
+fp_df <- as.data.frame(mat) |>
+  dplyr::mutate(`FP rate` = fp_labels, .before = 1)
+
+fp_df |>
+  gt::gt(rowname_col = "FP rate") |>
+  gt::fmt_number(columns = -1, decimals = 0, use_seps = TRUE, pattern = "R{x}") |>
+  gt::data_color(columns = -1, palette = c("#1a9850", "#fee08b", "#d73027")) |>
+  gt::tab_stubhead(label = "FP \\ EHP unit cost") |>
+  gt::tab_options(table.font.size = "small")
+```
+
+**What the table says.** At the **working values** (`p_fp_S1b_mid` = `r sprintf("%.0f %%", as.numeric(pick("p_fp_S1b_mid"))*100)`, EHP mid = R`r format(c_ehp_mid, big.mark=",")`, DALRRD mid = R`r format(c_dal_mid, big.mark=",")`, `p_DALRRD` = `r p_dal`), induced workload is **≈ R`r format(round((c_ehp_mid + p_dal*c_dal_mid)/(1 - as.numeric(pick("p_fp_S1b_mid")))), big.mark=",")` per true case detected** — roughly `r sprintf("%.1f×", ((c_ehp_mid + p_dal*c_dal_mid)/(1 - as.numeric(pick("p_fp_S1b_mid")))) / (c_ehp_mid + p_dal*c_dal_mid))` the administrative-tier figure. At the high-FP edge (`r sprintf("%.0f %%", as.numeric(pick("p_fp_S1b_hi"))*100)`, early roll-out) it is **≈ R`r format(round((c_ehp_hi + p_dal*c_dal_mid)/(1 - as.numeric(pick("p_fp_S1b_hi")))), big.mark=",")` per true case**.
+
+**Implication for the integrated model.** When the [overall model](overall_policy_model.qmd) layers community-tier surveillance (S1b) on top of the coordination Full Package, induced EHP + DALRRD workload becomes the *fastest-growing* line in the regulator budget — faster than C1–C5 shared overhead, faster than NHLS test volume. The brief therefore proposes a **two-step roll-out**:
+
+1. **Administrative tier first** (NMC closure-of-loop + NHLS auto-notify + PIH MVD): near-zero FP, full coordination workload increment ≈ R145k + R`r format(round(c_ehp_mid + p_dal*c_dal_mid), big.mark=",")` × Δ alerts.
+2. **Community tier (S1b) piloted with explicit measurement of `p_fp_S1b`** before national rollout. The pilot must collect (a) confirmed-positive rate, (b) EHP time per investigation, and (c) DALRRD referral rate. These three numbers are the parameters that decide whether community surveillance is affordable at scale.
+
+This is the explicit operational hand-off between the coordination loop (this brief) and the surveillance ladder ([Surveillance brief](surveillance_policy.qmd)): **the loop only works as cheaply as the false-positive rate of its input feed.**
+
 ## 7. Implementation considerations
 
 | Component | Lead agency | Year-1 cost | Critical path |
