@@ -29,6 +29,8 @@ website:
         menu:
           - text: "Overall Policy Model"
             href: posts/overall_policy_model.html
+          - text: "Overall Policy Model v2"
+            href: posts/overall_policy_model_v2.html
           - text: "Decision Tree Model"
             href: posts/decision_model.html
           - text: "Costing Analysis"

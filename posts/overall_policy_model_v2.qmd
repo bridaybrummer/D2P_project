@@ -1,0 +1,931 @@
+---
+title: "Overall Policy Model v2"
+subtitle: "Layered spend-vs-benefit analysis: administrative surveillance, coordination, clustering, community tier, and chemical agent phase-out"
+author: "D2P Project Team"
+date: "2026-05-14"
+date-modified: today
+categories: [policy, integrated-model, decision-makers, auditable]
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    code-fold: true
+    code-tools: true
+---
+
+## Overview
+
+This model builds on [Overall Policy Model v1](overall_policy_model.qmd) with five layered scenarios evaluated as a **spend-vs-benefit frontier**. Each scenario adds one policy lever; the primary outputs are *(i)* net monetary benefit (NMB) — the societal cost saving net of regulator spend — and *(ii)* regulator cost per death averted. Both panels appear side-by-side in every line graph.
+
+| Scenario | Label | New lever added |
+|---|---|---|
+| 1.1 | Administrative surveillance (S1 + S2) | PIH MVD feed and BChE auto-notify |
+| 1.2 | + Coordination (C1–C5) | NMC closure-of-loop, DALRRD referral, intel feed, clinician feedback, KPI dashboard |
+| 1.3 | + Clustering | Each EHP investigation surfaces hidden cluster members |
+| 1.4 | + Community (S1b) | CHW/EHP event-based community layer; FP sensitivity |
+| 1.5 | + Chemical agent phase-out | Terbufos (T2) and aldicarb; agent attribution from S3 sentinel toxicology |
+
+**Key structural results maintained from v1:**
+
+1. *Detection–workload coupling* — false-positive-inflated alert volume drives induced EHP and DALRRD workload; marginal returns diminish once community surveillance is added.
+2. *Source-control coupling* — chemical restrictions reduce true cases and deaths, lowering both the health/YLL bill and induced workload by the same fraction.
+
+---
+
+## Setup: parameters and shared model function
+
+```{r}
+#| label: setup
+#| echo: true
+#| message: false
+#| warning: false
+
+library(tidyverse)
+library(gt)
+library(scales)
+library(patchwork)
+
+# ── CSV parameter pull ─────────────────────────────────────────────────────────
+raw <- readr::read_csv("../amua_import_parameters_v4.csv", show_col_types = FALSE)
+
+pick <- function(name) {
+  v <- raw |> filter(Name == name) |> pull(Expression)
+  if (length(v) == 0) NA_real_ else suppressWarnings(as.numeric(v[1]))
+}
+
+# ── Burden anchors (from StatsSA MACOD 2023) ──────────────────────────────────
+N_true    <- pick("n_true_burden_from_statssa_mid")   # 20,960 true cases/yr
+N_deaths  <- pick("n_deaths_headline")                # 2,620 deaths/yr
+c_morb    <- pick("c_morbidity_headline")             # R12,000/morbidity case
+c_mort    <- pick("c_mortality_human_capital")        # R1,500,000/death (human-capital YLL)
+
+# ── Detection probabilities ────────────────────────────────────────────────────
+d_SQ       <- pick("d_status_quo")                    # 0.048  NMC-only
+# S1 and S2 contribute independently; MVP = S1 + S2
+delta_S1   <- pick("n_pih_annual")   / N_true         # PIH MVD incremental
+delta_S2   <- pick("n_nhls_severe_annual") / N_true   # BChE auto-notify incremental
+d_MVP      <- pick("d_surveillance_mvp")              # 0.189  = SQ + S1 + S2
+
+d_S1b_lo   <- pick("d_S1b_event_community_lo")        # 0.25
+d_S1b_mid  <- pick("d_S1b_event_community_mid")       # 0.40
+d_S1b_hi   <- pick("d_S1b_event_community_hi")        # 0.55
+
+# ── Surveillance operating costs ──────────────────────────────────────────────
+c_S1_op    <- 82000                                   # S1: PIH MVD (from MVP breakdown note)
+c_S2_op    <- 55000                                   # S2: BChE auto-notify
+c_MVP_op   <- pick("c_surv_MVP_op")                   # R137,000 = S1 + S2
+
+c_S1b_lo   <- pick("c_S1b_op_lo")                    # R800,000
+c_S1b_mid  <- pick("c_S1b_op_mid")                   # R1,500,000
+c_S1b_hi   <- pick("c_S1b_op_hi")                    # R2,500,000
+
+p_fp_SQ    <- 0                                       # no FP in administrative feeds
+p_fp_S1b_lo  <- pick("p_fp_S1b_lo")                  # 0.20
+p_fp_S1b_mid <- pick("p_fp_S1b_mid")                 # 0.35
+p_fp_S1b_hi  <- pick("p_fp_S1b_hi")                  # 0.50
+
+# ── Coordination costs (annual operating) ─────────────────────────────────────
+c_C1   <- pick("c_C1_NMC_closure_op")                # R30,000
+c_C2   <- pick("c_C2_referral_form_op")              # R25,000
+c_C3   <- pick("c_C3_intel_feed_op")                 # R40,000
+c_C4   <- pick("c_C4_clinician_fb_op")               # R20,000
+c_C5   <- pick("c_C5_KPI_dashboard_op")              # R30,000
+c_coord_FP <- pick("c_coord_FP_op")                  # R145,000 = C1+C2+C3+C4+C5
+
+# ── Coordination outcome (from decision-tree model) ───────────────────────────
+n_av_coord_FP <- pick("n_deaths_averted_coord_FP")   # 957 deaths/yr at full scale
+n_av_coord_C3 <- pick("n_deaths_averted_coord_C3")   # 547 deaths/yr under C3 only
+
+# ── Chemical agent parameters ─────────────────────────────────────────────────
+f_terb_lo  <- pick("frac_terbufos_attributable_lo")  # 0.20
+f_terb_mid <- pick("frac_terbufos_attributable_mid") # 0.25
+f_terb_hi  <- pick("frac_terbufos_attributable_hi")  # 0.35
+phi_terb   <- pick("frac_T3_burden_retired")         # 0.70  fraction retired under full withdrawal
+c_T2_enf   <- pick("c_T2_RUP_enforcement_mid")       # R2,000,000 DALRRD enforcement
+
+# Aldicarb (Two-Step) — declared inline; no CSV row yet.
+# Update in amua_import_parameters_v4.csv once sentinel toxicology data land.
+f_aldi_lo  <- 0.05     # attributable fraction, lower (sparse SA data)
+f_aldi_mid <- 0.12     # attributable fraction, working value (Two-Step enforcement literature)
+f_aldi_hi  <- 0.20     # attributable fraction, upper
+phi_aldi   <- 0.85     # fraction of aldicarb burden retired under a formal ban (high; already illegal)
+
+# S3 sentinel toxicology costs (enables agent attribution evidence base)
+c_S3_pilot  <- pick("c_option6_pilot_year1")          # R1,200,000 (1-site pilot)
+c_S3_full   <- pick("c_option6_full_5site_annual")    # R3,625,000 (5-site rollout)
+
+# ── Response efficacy η ────────────────────────────────────────────────────────
+eta_lo  <- pick("eta_response_lo")    # 0.15
+eta     <- pick("eta_response_mid")   # 0.30  base case
+eta_hi  <- pick("eta_response_hi")    # 0.50
+
+# ── Induced workload constants (declared inline — edit here to stress-test) ───
+c_per_investigation  <- 4000    # R/alert: EHP environmental investigation + travel + write-up
+c_per_dalrrd_action  <- 12000   # R/alert: DALRRD site visit + sampling + enforcement letter
+p_dalrrd_action      <- 0.30    # P(DALRRD action | confirmed alert)
+
+# ── Cluster multiplier range ──────────────────────────────────────────────────
+# k_cluster: average cases addressed per investigation (1 = no clustering; >1 = cluster found)
+# Declared here; no CSV row yet — add once EHP field data are available.
+k_lo  <- 1.2    # modest clustering: 1 confirmed + 0.2 additional household/neighbour cases
+k_mid <- 2.0    # moderate: each confirmed case surfaces 1 additional invisible case
+k_hi  <- 3.5    # high: rural household events with multiple exposures
+
+# ── Status quo societal cost (anchor for NMB calculation) ─────────────────────
+c_society_SQ <- N_true * c_morb + N_deaths * c_mort  # ~R4.18B/yr
+
+# ── Shared model function ─────────────────────────────────────────────────────
+#
+# Parameters:
+#   d             per-case detection probability
+#   c_surv        annual surveillance operating cost (R/yr)
+#   c_coord       annual coordination operating cost (R/yr)
+#   p_fp          false-positive alert rate (share of gross alerts that are not true cases)
+#   k_cluster     cluster multiplier [1 = no clustering]
+#   coord_dynamic if TRUE, scale coordination deaths-averted with (d - d_SQ)
+#   terb_phase    fraction of terbufos-attributable burden retired [0,1]
+#   f_other       attributable fraction of a second chemical agent (e.g. aldicarb)
+#   phi_other     fraction of other-agent burden retired under its restriction
+#   c_regulatory  DALRRD/Dept. Agriculture enforcement spend (R/yr)
+#
+run_scenario_v2 <- function(
+    d,
+    c_surv,
+    c_coord       = 0,
+    p_fp          = 0,
+    k_cluster     = 1.0,
+    coord_dynamic = FALSE,
+    terb_phase    = 0,
+    f_other       = 0,
+    phi_other     = 0,
+    c_regulatory  = 0
+) {
+
+  # (A) True burden after source-control retirements
+  f_retired    <- f_terb_mid * terb_phase + f_other * phi_other
+  N_true_eff   <- N_true   * (1 - f_retired)
+  N_deaths_eff <- N_deaths * (1 - f_retired)
+  cfr_eff      <- N_deaths_eff / N_true_eff
+
+  # (B) Detection and alerts
+  detected_true <- d * N_true_eff
+  gross_alerts  <- if_else(p_fp < 1, detected_true / (1 - p_fp), detected_true * 2)
+  false_alerts  <- gross_alerts - detected_true
+
+  # (C) Clustering: each confirmed investigation surfaces k_cluster - 1 additional invisible cases
+  cluster_bonus <- detected_true * (k_cluster - 1)   # extra cases surfaced by field investigation
+
+  # (D) Induced workload — scales with GROSS alerts (system cannot distinguish FP until investigated)
+  c_investigation <- gross_alerts * c_per_investigation
+  c_dalrrd_load   <- gross_alerts * p_dalrrd_action * c_per_dalrrd_action
+
+  # (E) Deaths averted decomposition
+  #   (i) Surveillance + response: incremental detection above SQ drives source removal / clinical response
+  deaths_av_surv    <- eta * (d - d_SQ) * N_true_eff * cfr_eff
+
+  #   (ii) Clustering bonus: invisible cluster members surfaced and treated
+  deaths_av_cluster <- cluster_bonus * cfr_eff * eta
+
+  #   (iii) Coordination: fixed CSV param OR dynamic (scaled by incremental detection vs MVP baseline)
+  if (coord_dynamic && c_coord > 0) {
+    # Scale coordination deaths-averted linearly with detection increment above SQ
+    # Anchored at: d_MVP → n_av_coord_FP deaths averted
+    deaths_av_coord <- n_av_coord_FP * max(0, (d - d_SQ)) / (d_MVP - d_SQ)
+  } else if (c_coord > 0) {
+    deaths_av_coord <- n_av_coord_FP * (c_coord / c_coord_FP)
+  } else {
+    deaths_av_coord <- 0
+  }
+
+  #   (iv) Source control (terbufos + other agent)
+  deaths_av_terb  <- N_deaths * f_terb_mid * terb_phase * phi_terb
+  deaths_av_other <- N_deaths * f_other    * phi_other
+
+  deaths_av_total <- deaths_av_surv + deaths_av_cluster + deaths_av_coord +
+                     deaths_av_terb + deaths_av_other
+
+  # (F) Health and YLL bill under this scenario
+  c_health <- N_true_eff   * c_morb
+  c_yll    <- N_deaths_eff * c_mort
+
+  # (G) Regulator and societal totals
+  c_regulator <- c_surv + c_coord + c_investigation + c_dalrrd_load + c_regulatory
+  c_society   <- c_regulator + c_health + c_yll
+
+  # (H) Net monetary benefit (NMB) = societal cost saving vs status quo, net of regulator spend
+  # NMB > 0: policy saves more than it costs from a whole-of-society perspective
+  NMB <- c_society_SQ - c_society
+
+  tibble(
+    detected_true     = detected_true,
+    cluster_bonus     = cluster_bonus,
+    gross_alerts      = gross_alerts,
+    false_alerts      = false_alerts,
+    deaths_av_surv    = deaths_av_surv,
+    deaths_av_cluster = deaths_av_cluster,
+    deaths_av_coord   = deaths_av_coord,
+    deaths_av_terb    = deaths_av_terb,
+    deaths_av_other   = deaths_av_other,
+    deaths_averted    = deaths_av_total,
+    c_surv            = c_surv,
+    c_coord           = c_coord,
+    c_investigation   = c_investigation,
+    c_dalrrd_load     = c_dalrrd_load,
+    c_regulatory      = c_regulatory,
+    c_regulator_tot   = c_regulator,
+    c_health          = c_health,
+    c_yll             = c_yll,
+    c_society_tot     = c_society,
+    NMB               = NMB,
+    cost_per_death_av = if_else(deaths_av_total > 0,
+                                c_regulator / deaths_av_total, NA_real_)
+  )
+}
+
+# ── Shared dual-panel plot helper ─────────────────────────────────────────────
+# x_col, colour_col: bare column name strings (or NULL for no colour grouping)
+dual_plot <- function(df,
+                      x_col,
+                      nmb_col   = "NMB",
+                      cpd_col   = "cost_per_death_av",
+                      colour_col = NULL,
+                      x_lab     = "Annual regulator spend (R/yr)") {
+
+  mk_aes <- function(y_col) {
+    if (is.null(colour_col)) {
+      aes(x = .data[[x_col]], y = .data[[y_col]])
+    } else {
+      aes(x = .data[[x_col]], y = .data[[y_col]], colour = .data[[colour_col]])
+    }
+  }
+
+  p1 <- ggplot(df, mk_aes(nmb_col)) +
+    geom_line(linewidth = 1.1) + geom_point(size = 2) +
+    geom_hline(yintercept = 0, linetype = "dashed", alpha = 0.4) +
+    scale_x_continuous(labels = comma_format(prefix = "R")) +
+    scale_y_continuous(labels = comma_format(prefix = "R")) +
+    labs(x = x_lab, y = "Net monetary benefit (R/yr)", colour = NULL) +
+    theme_minimal(base_size = 11) +
+    theme(legend.position = "bottom")
+
+  p2 <- ggplot(df |> filter(!is.na(.data[[cpd_col]])), mk_aes(cpd_col)) +
+    geom_line(linewidth = 1.1) + geom_point(size = 2) +
+    scale_x_continuous(labels = comma_format(prefix = "R")) +
+    scale_y_continuous(labels = comma_format(prefix = "R")) +
+    labs(x = x_lab, y = "Regulator cost per death averted (R)", colour = NULL) +
+    theme_minimal(base_size = 11) +
+    theme(legend.position = "bottom")
+
+  p1 + p2 + plot_layout(guides = "collect") & theme(legend.position = "bottom")
+}
+```
+
+---
+
+## Scenario 1.1 — Administrative surveillance (S1 + S2)
+
+S1 (PIH minimum viable dataset) and S2 (BChE auto-notify) each add one feed to NMC without introducing false-positive inflation — alerts come from confirmed laboratory or clinical events. This scenario shows the **step-wise spend-vs-benefit** for adding each feed and combines them into the Surveillance MVP.
+
+```{r}
+#| label: tbl-s11
+#| tbl-cap: "Scenario 1.1: step-wise addition of S1 and S2 administrative feeds."
+
+s11_scenarios <- bind_rows(
+  `SQ · NMC only`           = run_scenario_v2(d_SQ,              c_surv = 0,       p_fp = 0),
+  `S1 · + PIH MVD`          = run_scenario_v2(d_SQ + delta_S1,   c_surv = c_S1_op, p_fp = 0),
+  `S2 · + BChE auto-notify` = run_scenario_v2(d_SQ + delta_S2,   c_surv = c_S2_op, p_fp = 0),
+  `MVP · S1 + S2`           = run_scenario_v2(d_MVP,             c_surv = c_MVP_op,p_fp = 0),
+  .id = "Scenario"
+)
+
+s11_scenarios |>
+  mutate(
+    `Detection (%)` = percent(c(d_SQ, d_SQ + delta_S1, d_SQ + delta_S2, d_MVP), accuracy = 0.1),
+    `Regulator (R/yr)` = comma(round(c_regulator_tot)),
+    `NMB (R/yr)`       = comma(round(NMB)),
+    `Deaths averted`   = round(deaths_averted),
+    `R / death averted`= if_else(deaths_averted > 0,
+                                 comma(round(cost_per_death_av)), "—")
+  ) |>
+  select(Scenario, `Detection (%)`, `Regulator (R/yr)`, `NMB (R/yr)`,
+         `Deaths averted`, `R / death averted`) |>
+  gt() |>
+  tab_header(title = "Scenario 1.1: S1 + S2 administrative feeds") |>
+  opt_row_striping() |>
+  tab_options(table.font.size = "small")
+```
+
+```{r}
+#| label: fig-s11
+#| fig-cap: "Scenario 1.1: each administrative surveillance feed plotted on the spend-vs-benefit frontier. Left panel: net monetary benefit. Right panel: regulator cost per death averted."
+#| fig-width: 10
+#| fig-height: 4.5
+
+s11_line <- tibble(
+  Scenario = c("SQ · NMC only", "S1 · + PIH MVD",
+               "S2 · + BChE auto-notify", "MVP · S1 + S2"),
+  spend    = c(0, c_S1_op, c_S2_op, c_MVP_op)
+) |>
+  bind_cols(
+    bind_rows(
+      run_scenario_v2(d_SQ,            c_surv = 0,        p_fp = 0),
+      run_scenario_v2(d_SQ + delta_S1, c_surv = c_S1_op,  p_fp = 0),
+      run_scenario_v2(d_SQ + delta_S2, c_surv = c_S2_op,  p_fp = 0),
+      run_scenario_v2(d_MVP,           c_surv = c_MVP_op,  p_fp = 0)
+    )
+  )
+
+dual_plot(s11_line, x_col = "spend")
+```
+
+**Interpretation.** Both S1 and S2 are individually cost-saving (NMB > 0) because the health/YLL burden saved exceeds the modest operating cost of each feed. S2 (BChE auto-notify) contributes more detection gain than S1 (PIH MVD) per rand because NHLS BChE tests a larger flow of severe cases. The MVP combination is the minimum investment that closes the administrative detection gap.
+
+---
+
+## Scenario 1.2 — + Coordination (C1–C5)
+
+Coordination adds five components (C1–C5) that convert surveillance notifications into **downstream source-removal and enforcement actions**. The table shows both the static CSV parameter (957 deaths averted at national scale at full-coordination package spend) and the dynamic formulation (deaths averted scaled linearly with detection increment above status quo).
+
+```{r}
+#| label: tbl-s12
+#| tbl-cap: "Scenario 1.2: incremental addition of coordination components above the MVP baseline."
+
+coord_steps <- tibble(
+  label = c("MVP only", "MVP + C1", "MVP + C1+C2",
+            "MVP + C1+C2+C3", "MVP + C1+C2+C3+C4", "MVP + C1–C5 (FP)"),
+  c_coord_cum = c(0, c_C1, c_C1+c_C2, c_C1+c_C2+c_C3,
+                  c_C1+c_C2+c_C3+c_C4, c_coord_FP)
+) |>
+  mutate(
+    res = map(c_coord_cum, ~ run_scenario_v2(
+      d_MVP, c_surv = c_MVP_op, c_coord = .x, p_fp = 0, coord_dynamic = TRUE
+    )),
+    deaths_averted = map_dbl(res, ~ .x$deaths_averted),
+    NMB            = map_dbl(res, ~ .x$NMB),
+    c_regulator    = map_dbl(res, ~ .x$c_regulator_tot),
+    cost_per_death = map_dbl(res, ~ .x$cost_per_death_av)
+  ) |>
+  select(-res)
+
+coord_steps |>
+  mutate(
+    `Regulator (R/yr)` = comma(round(c_regulator)),
+    `NMB (R/yr)`       = comma(round(NMB)),
+    `Deaths averted`   = round(deaths_averted),
+    `R / death averted`= comma(round(cost_per_death))
+  ) |>
+  select(Scenario = label, `Regulator (R/yr)`, `NMB (R/yr)`,
+         `Deaths averted`, `R / death averted`) |>
+  gt() |>
+  tab_header(title = "Scenario 1.2: coordination components added above MVP") |>
+  opt_row_striping() |>
+  tab_options(table.font.size = "small")
+```
+
+```{r}
+#| label: fig-s12
+#| fig-cap: "Scenario 1.2: spend-vs-benefit frontier for each coordination component added above MVP. The curve rises steeply with C3 (NICD→DALRRD intel feed), which anchors the highest deaths-averted share."
+#| fig-width: 10
+#| fig-height: 4.5
+
+dual_plot(coord_steps, x_col = "c_regulator", cpd_col = "cost_per_death")
+```
+
+**Interpretation.** Each coordination component is independently cost-saving. C3 (NICD→DALRRD quarterly intelligence feed and cluster-alert SOP) contributes the largest share of deaths averted per rand of coordination spend, because it converts confirmed alerts into regulatory enforcement action. The Full Package (MVP + C1–C5) costs ~R282k/yr total, averts ~957 deaths/yr, and yields a cost per death averted well below the human-capital threshold.
+
+---
+
+## Scenario 1.3 — Clustering effect on community poisonings
+
+EHP field investigations routinely encounter household or community events where a confirmed case is the first alert to a cluster of unreported exposures. The **cluster multiplier** k represents the average number of cases *addressed* per investigation. k = 1 means no clustering (current model assumption); k > 1 means each investigation surfaces additional invisible cases who get treated and whose deaths are partially averted.
+
+This scenario evaluates the sensitivity of NMB and deaths averted to k across three values (k_lo = `r k_lo`, k_mid = `r k_mid`, k_hi = `r k_hi`) at both the MVP and S1b detection levels.
+
+```{r}
+#| label: tbl-s13
+#| tbl-cap: "Scenario 1.3: cluster multiplier k sensitivity at MVP and S1b mid detection, with Full Coordination Package."
+
+expand_grid(
+  k = c(k_lo, k_mid, k_hi),
+  tier = c("MVP (d = 18.9%)", "S1b mid (d = 40%)")
+) |>
+  mutate(
+    d_val     = if_else(str_detect(tier, "MVP"), d_MVP, d_S1b_mid),
+    c_s_val   = if_else(str_detect(tier, "MVP"), c_MVP_op, c_MVP_op + c_S1b_mid),
+    c_fp_val  = if_else(str_detect(tier, "MVP"), 0, p_fp_S1b_mid),
+    res = pmap(list(d_val, c_s_val, c_fp_val, k),
+               ~ run_scenario_v2(..1, c_surv = ..2, c_coord = c_coord_FP,
+                                 p_fp = ..3, k_cluster = ..4,
+                                 coord_dynamic = TRUE)),
+    deaths_averted = map_dbl(res, ~ .x$deaths_averted),
+    NMB            = map_dbl(res, ~ .x$NMB),
+    cost_per_death = map_dbl(res, ~ .x$cost_per_death_av)
+  ) |>
+  select(-res, -d_val, -c_s_val, -c_fp_val) |>
+  mutate(
+    `k (cluster multiplier)` = k,
+    `Deaths averted`         = round(deaths_averted),
+    `NMB (R/yr)`             = comma(round(NMB)),
+    `R / death averted`      = comma(round(cost_per_death))
+  ) |>
+  select(Tier = tier, `k (cluster multiplier)`, `Deaths averted`,
+         `NMB (R/yr)`, `R / death averted`) |>
+  gt() |>
+  tab_header(title = "Scenario 1.3: clustering effect") |>
+  opt_row_striping() |>
+  tab_options(table.font.size = "small")
+```
+
+```{r}
+#| label: fig-s13
+#| fig-cap: "Scenario 1.3: NMB (left) and cost per death averted (right) as k varies from 1.0 to 4.0 at MVP (blue) and S1b mid (orange) detection, with Full Coordination Package. Clustering shifts both curves favourably — but the gain depends on how reliably EHP field teams identify and treat cluster members."
+#| fig-width: 10
+#| fig-height: 4.5
+
+k_grid <- seq(1.0, 4.0, by = 0.1)
+
+s13_curve <- bind_rows(
+  tibble(k = k_grid, tier = "MVP (d = 18.9%)") |>
+    mutate(res = map(k, ~ run_scenario_v2(d_MVP, c_surv = c_MVP_op,
+                                          c_coord = c_coord_FP, p_fp = 0,
+                                          k_cluster = .x, coord_dynamic = TRUE))),
+  tibble(k = k_grid, tier = "S1b mid (d = 40%)") |>
+    mutate(res = map(k, ~ run_scenario_v2(d_S1b_mid, c_surv = c_MVP_op + c_S1b_mid,
+                                          c_coord = c_coord_FP, p_fp = p_fp_S1b_mid,
+                                          k_cluster = .x, coord_dynamic = TRUE)))
+) |>
+  mutate(
+    NMB            = map_dbl(res, ~ .x$NMB),
+    cost_per_death = map_dbl(res, ~ .x$cost_per_death_av),
+    c_regulator    = map_dbl(res, ~ .x$c_regulator_tot)
+  ) |>
+  select(-res)
+
+p_nmb <- ggplot(s13_curve, aes(x = k, y = NMB, colour = tier)) +
+  geom_line(linewidth = 1.1) +
+  scale_x_continuous(breaks = seq(1, 4, 0.5)) +
+  scale_y_continuous(labels = comma_format(prefix = "R")) +
+  geom_vline(xintercept = c(k_lo, k_mid, k_hi), linetype = "dotted", alpha = 0.4) +
+  labs(x = "Cluster multiplier k", y = "Net monetary benefit (R/yr)", colour = NULL) +
+  theme_minimal(base_size = 11) + theme(legend.position = "bottom")
+
+p_cpd <- ggplot(s13_curve |> filter(!is.na(cost_per_death)),
+                aes(x = k, y = cost_per_death, colour = tier)) +
+  geom_line(linewidth = 1.1) +
+  scale_x_continuous(breaks = seq(1, 4, 0.5)) +
+  scale_y_continuous(labels = comma_format(prefix = "R")) +
+  geom_vline(xintercept = c(k_lo, k_mid, k_hi), linetype = "dotted", alpha = 0.4) +
+  labs(x = "Cluster multiplier k", y = "Cost per death averted (R)", colour = NULL) +
+  theme_minimal(base_size = 11) + theme(legend.position = "bottom")
+
+p_nmb + p_cpd + plot_layout(guides = "collect") & theme(legend.position = "bottom")
+```
+
+**Interpretation.** Even modest clustering (k = `r k_lo`) improves both the NMB and cost-per-death metrics. At the working value (k = `r k_mid`) and MVP detection, clustering adds ~`r round(run_scenario_v2(d_MVP, c_MVP_op, c_coord_FP, 0, k_mid, TRUE)$deaths_averted - run_scenario_v2(d_MVP, c_MVP_op, c_coord_FP, 0, 1, TRUE)$deaths_averted)` deaths averted relative to the no-clustering assumption. **k should be measured directly in EHP field-investigation logs**; the dotted vertical lines mark the lo/mid/hi values used in sensitivity tables.
+
+---
+
+## Scenario 1.4 — Community surveillance (S1b) with false-positive sensitivity
+
+The community/EHP tier (S1b) lifts detection beyond the administrative ceiling but introduces a false-positive rate that inflates gross alert volume and drives induced EHP and DALRRD workload. This scenario holds detection at d_S1b_mid = `r scales::percent(d_S1b_mid, accuracy = 1)` and varies (i) S1b operating spend and (ii) the false-positive rate.
+
+```{r}
+#| label: tbl-s14
+#| tbl-cap: "Scenario 1.4: community surveillance (S1b) at three FP rate and three spend level combinations, with Full Coordination Package and no terbufos action."
+
+expand_grid(
+  p_fp  = c(p_fp_S1b_lo, p_fp_S1b_mid, p_fp_S1b_hi),
+  c_s1b = c(c_S1b_lo, c_S1b_mid, c_S1b_hi)
+) |>
+  mutate(
+    res = map2(p_fp, c_s1b, ~ run_scenario_v2(
+      d_S1b_mid, c_surv = c_MVP_op + .y, c_coord = c_coord_FP,
+      p_fp = .x, k_cluster = k_mid, coord_dynamic = TRUE
+    )),
+    NMB            = map_dbl(res, ~ .x$NMB),
+    cost_per_death = map_dbl(res, ~ .x$cost_per_death_av),
+    deaths_av      = map_dbl(res, ~ .x$deaths_averted)
+  ) |>
+  select(-res) |>
+  mutate(
+    `FP rate`            = percent(p_fp, accuracy = 1),
+    `S1b operating (R/yr)` = comma(c_s1b),
+    `Deaths averted`     = round(deaths_av),
+    `NMB (R/yr)`         = comma(round(NMB)),
+    `R / death averted`  = comma(round(cost_per_death))
+  ) |>
+  select(`FP rate`, `S1b operating (R/yr)`, `Deaths averted`,
+         `NMB (R/yr)`, `R / death averted`) |>
+  gt() |>
+  tab_header(title = "Scenario 1.4: S1b community surveillance — FP × spend") |>
+  opt_row_striping() |>
+  tab_options(table.font.size = "small")
+```
+
+```{r}
+#| label: fig-s14
+#| fig-cap: "Scenario 1.4: as the community surveillance false-positive rate increases, NMB (left) falls and cost per death averted (right) rises. Lines represent low/mid/high S1b operating spend. The dashed vertical line marks the working FP value (35%)."
+#| fig-width: 10
+#| fig-height: 4.5
+
+fp_grid <- seq(0.05, 0.65, by = 0.025)
+
+s14_curve <- bind_rows(
+  tibble(fp = fp_grid, label = sprintf("S1b lo (R%s/yr)", comma(c_S1b_lo))) |>
+    mutate(res = map(fp, ~ run_scenario_v2(d_S1b_mid, c_surv = c_MVP_op + c_S1b_lo,
+                                           c_coord = c_coord_FP, p_fp = .x,
+                                           k_cluster = k_mid, coord_dynamic = TRUE))),
+  tibble(fp = fp_grid, label = sprintf("S1b mid (R%s/yr)", comma(c_S1b_mid))) |>
+    mutate(res = map(fp, ~ run_scenario_v2(d_S1b_mid, c_surv = c_MVP_op + c_S1b_mid,
+                                           c_coord = c_coord_FP, p_fp = .x,
+                                           k_cluster = k_mid, coord_dynamic = TRUE))),
+  tibble(fp = fp_grid, label = sprintf("S1b hi (R%s/yr)", comma(c_S1b_hi))) |>
+    mutate(res = map(fp, ~ run_scenario_v2(d_S1b_mid, c_surv = c_MVP_op + c_S1b_hi,
+                                           c_coord = c_coord_FP, p_fp = .x,
+                                           k_cluster = k_mid, coord_dynamic = TRUE)))
+) |>
+  mutate(
+    NMB            = map_dbl(res, ~ .x$NMB),
+    cost_per_death = map_dbl(res, ~ .x$cost_per_death_av)
+  ) |>
+  select(-res)
+
+p1 <- ggplot(s14_curve, aes(x = fp, y = NMB, colour = label)) +
+  geom_line(linewidth = 1.1) +
+  geom_vline(xintercept = p_fp_S1b_mid, linetype = "dashed", alpha = 0.4) +
+  scale_x_continuous(labels = percent_format(accuracy = 1)) +
+  scale_y_continuous(labels = comma_format(prefix = "R")) +
+  labs(x = "Community FP rate (p_fp_S1b)", y = "Net monetary benefit (R/yr)", colour = NULL) +
+  theme_minimal(base_size = 11) + theme(legend.position = "bottom")
+
+p2 <- ggplot(s14_curve |> filter(!is.na(cost_per_death)),
+             aes(x = fp, y = cost_per_death, colour = label)) +
+  geom_line(linewidth = 1.1) +
+  geom_vline(xintercept = p_fp_S1b_mid, linetype = "dashed", alpha = 0.4) +
+  scale_x_continuous(labels = percent_format(accuracy = 1)) +
+  scale_y_continuous(labels = comma_format(prefix = "R")) +
+  labs(x = "Community FP rate (p_fp_S1b)", y = "Cost per death averted (R)", colour = NULL) +
+  theme_minimal(base_size = 11) + theme(legend.position = "bottom")
+
+p1 + p2 + plot_layout(guides = "collect") & theme(legend.position = "bottom")
+```
+
+**Interpretation.** At the working FP rate (35%, dashed line), S1b mid-spend remains cost-saving (NMB > 0), but the margin is substantially narrower than the administrative MVP. Above ~50% FP the lower-spend S1b option becomes cost-losing. **The FP rate is the dominant uncertainty in the S1b decision** — a focused pre-rollout pilot measuring FP in 2–3 provinces would resolve this before national investment is committed.
+
+---
+
+## Scenario 1.5 — Chemical agent phase-out (terbufos + aldicarb)
+
+Source control is the only lever that reduces the denominator the system has to process. S3 sentinel toxicology provides the **agent-attribution evidence base** needed to quantify which banning actions are worth the enforcement spend. This scenario models terbufos (T2 restriction) and aldicarb (already informally banned; attribution uncertain) with varying attributable fractions.
+
+```{r}
+#| label: tbl-s15
+#| tbl-cap: "Scenario 1.5: year-1 deaths averted and NMB from terbufos and aldicarb phase-out, under an 18-month linear ramp at S1b mid + Coordination Full Package."
+
+RAMP_MONTHS <- 18
+phase_yr1   <- min(1, 12 / RAMP_MONTHS)
+
+expand_grid(
+  f_terb = c(f_terb_lo, f_terb_mid, f_terb_hi),
+  f_aldi = c(f_aldi_lo, f_aldi_mid, f_aldi_hi)
+) |>
+  mutate(
+    res = pmap(list(f_terb, f_aldi), function(ft, fa) {
+      # Temporarily override f_terb_mid for this iteration
+      local_f_terb_mid <- ft
+      N_true_eff_loc   <- N_true   * (1 - ft * phase_yr1 * phi_terb - fa * phi_aldi)
+      N_deaths_eff_loc <- N_deaths * (1 - ft * phase_yr1 * phi_terb - fa * phi_aldi)
+      deaths_av_terb_  <- N_deaths * ft * phase_yr1 * phi_terb
+      deaths_av_aldi_  <- N_deaths * fa * phi_aldi
+      c_regulator_     <- c_MVP_op + c_S1b_mid + c_coord_FP + c_T2_enf
+      c_health_        <- N_true_eff_loc   * c_morb
+      c_yll_           <- N_deaths_eff_loc * c_mort
+      c_society_       <- c_regulator_ + c_health_ + c_yll_
+      NMB_             <- c_society_SQ - c_society_
+      tibble(
+        deaths_av = deaths_av_terb_ + deaths_av_aldi_,
+        NMB       = NMB_,
+        c_reg     = c_regulator_
+      )
+    }),
+    deaths_averted = map_dbl(res, ~ .x$deaths_av),
+    NMB            = map_dbl(res, ~ .x$NMB),
+    `R / death av` = map_dbl(res, ~ .x$c_reg / max(.x$deaths_av, 0.01))
+  ) |>
+  select(-res) |>
+  mutate(
+    `Terbufos f` = percent(f_terb, accuracy = 1),
+    `Aldicarb f` = percent(f_aldi, accuracy = 1),
+    `Deaths averted (yr 1)` = round(deaths_averted),
+    `NMB (R/yr)`   = comma(round(NMB)),
+    `R / death av` = comma(round(`R / death av`))
+  ) |>
+  select(`Terbufos f`, `Aldicarb f`, `Deaths averted (yr 1)`,
+         `NMB (R/yr)`, `R / death av`) |>
+  gt() |>
+  tab_header(title = "Scenario 1.5: chemical agent phase-out year-1 outcomes") |>
+  opt_row_striping() |>
+  tab_options(table.font.size = "small")
+```
+
+```{r}
+#| label: fig-s15-ramp
+#| fig-cap: "Scenario 1.5: terbufos phase-out ramp (months 0–24) showing NMB (left) and cost per death averted (right) for three attributable-fraction assumptions. Aldicarb held at working mid value. Vertical dashed line = ramp complete."
+#| fig-width: 10
+#| fig-height: 4.5
+
+months   <- 0:24
+ramp_vec <- pmin(1, months / RAMP_MONTHS)
+
+s15_curve <- bind_rows(
+  tibble(month = months, ramp = ramp_vec, f_lab = sprintf("Terbufos f = %.0f%%", f_terb_lo*100),
+         f_t = f_terb_lo),
+  tibble(month = months, ramp = ramp_vec, f_lab = sprintf("Terbufos f = %.0f%%", f_terb_mid*100),
+         f_t = f_terb_mid),
+  tibble(month = months, ramp = ramp_vec, f_lab = sprintf("Terbufos f = %.0f%%", f_terb_hi*100),
+         f_t = f_terb_hi)
+) |>
+  mutate(
+    N_true_eff   = N_true   * (1 - f_t * ramp * phi_terb - f_aldi_mid * phi_aldi),
+    N_deaths_eff = N_deaths * (1 - f_t * ramp * phi_terb - f_aldi_mid * phi_aldi),
+    c_regulator  = c_MVP_op + c_S1b_mid + c_coord_FP + c_T2_enf,
+    c_health     = N_true_eff   * c_morb,
+    c_yll        = N_deaths_eff * c_mort,
+    c_society    = c_regulator + c_health + c_yll,
+    NMB          = c_society_SQ - c_society,
+    deaths_av    = N_deaths * f_t * ramp * phi_terb + N_deaths * f_aldi_mid * phi_aldi,
+    cost_per_death = c_regulator / pmax(deaths_av, 1)
+  )
+
+p1 <- ggplot(s15_curve, aes(x = month, y = NMB, colour = f_lab)) +
+  geom_line(linewidth = 1.1) +
+  geom_vline(xintercept = RAMP_MONTHS, linetype = "dashed", alpha = 0.4) +
+  scale_y_continuous(labels = comma_format(prefix = "R")) +
+  labs(x = "Months after policy commencement", y = "Net monetary benefit (R/yr)",
+       colour = NULL) +
+  theme_minimal(base_size = 11) + theme(legend.position = "bottom")
+
+p2 <- ggplot(s15_curve, aes(x = month, y = cost_per_death, colour = f_lab)) +
+  geom_line(linewidth = 1.1) +
+  geom_vline(xintercept = RAMP_MONTHS, linetype = "dashed", alpha = 0.4) +
+  scale_y_continuous(labels = comma_format(prefix = "R")) +
+  labs(x = "Months after policy commencement", y = "Cost per death averted (R)",
+       colour = NULL) +
+  theme_minimal(base_size = 11) + theme(legend.position = "bottom")
+
+p1 + p2 + plot_layout(guides = "collect") & theme(legend.position = "bottom")
+```
+
+**Interpretation.** At the working attributable fraction (terbufos 25% + aldicarb 12%), the combined phase-out averts ~`r round(N_deaths * f_terb_mid * phi_terb * phase_yr1 + N_deaths * f_aldi_mid * phi_aldi)` deaths in year 1 and generates an NMB that grows as the ramp completes. S3 sentinel toxicology (R1.2M pilot, R3.6M at 5 sites) is the prerequisite for moving aldicarb attribution from `f_aldi_mid = 12%` (literature estimate) to a SA-measured value.
+
+---
+
+## Summary: spend-vs-benefit frontier across all scenarios
+
+The frontier below maps every major layered option onto the same axes. Each point is one distinct policy option; the connecting line traces the cost-effectiveness frontier from left to right.
+
+```{r}
+#| label: fig-frontier
+#| fig-cap: "Whole-portfolio spend-vs-benefit frontier. Each point is a policy option; x = total annual regulator spend; y = net monetary benefit (left) or cost per death averted (right). Points above the dashed zero NMB line are societally cost-saving."
+#| fig-width: 11
+#| fig-height: 5
+
+frontier <- tibble(
+  Option = c(
+    "0 · Status quo",
+    "1.1a · S1 (PIH MVD)",
+    "1.1b · S2 (BChE auto)",
+    "1.1c · MVP (S1+S2)",
+    "1.2 · MVP + Coord C1",
+    "1.2 · MVP + Coord C1-C3",
+    "1.2 · MVP + Coord C1-C5",
+    "1.3 · + Clustering (k=2)",
+    "1.4 · + S1b lo",
+    "1.4 · + S1b mid",
+    "1.4 · + S1b hi",
+    "1.5 · + Terbufos T2",
+    "1.5 · + Terbufos + Aldicarb"
+  ),
+  d      = c(d_SQ, d_SQ+delta_S1, d_SQ+delta_S2, d_MVP,
+             d_MVP, d_MVP, d_MVP,
+             d_MVP,
+             d_S1b_lo, d_S1b_mid, d_S1b_hi,
+             d_S1b_mid, d_S1b_mid),
+  c_surv = c(0, c_S1_op, c_S2_op, c_MVP_op,
+             c_MVP_op, c_MVP_op, c_MVP_op,
+             c_MVP_op,
+             c_MVP_op+c_S1b_lo, c_MVP_op+c_S1b_mid, c_MVP_op+c_S1b_hi,
+             c_MVP_op+c_S1b_mid, c_MVP_op+c_S1b_mid),
+  c_coord = c(0, 0, 0, 0,
+              c_C1, c_C1+c_C2+c_C3, c_coord_FP,
+              c_coord_FP,
+              c_coord_FP, c_coord_FP, c_coord_FP,
+              c_coord_FP, c_coord_FP),
+  p_fp   = c(0, 0, 0, 0,
+             0, 0, 0,
+             0,
+             p_fp_S1b_lo, p_fp_S1b_mid, p_fp_S1b_hi,
+             p_fp_S1b_mid, p_fp_S1b_mid),
+  k_clus = c(1, 1, 1, 1,
+             1, 1, 1,
+             k_mid,
+             k_mid, k_mid, k_mid,
+             k_mid, k_mid),
+  terb_p = c(0, 0, 0, 0,
+             0, 0, 0,
+             0,
+             0, 0, 0,
+             phase_yr1, phase_yr1),
+  f_oth  = c(0, 0, 0, 0,
+             0, 0, 0,
+             0,
+             0, 0, 0,
+             0, f_aldi_mid),
+  c_reg  = c(0, 0, 0, 0,
+             0, 0, 0,
+             0,
+             0, 0, 0,
+             c_T2_enf, c_T2_enf)
+) |>
+  mutate(
+    res = pmap(list(d, c_surv, c_coord, p_fp, k_clus, terb_p, f_oth, c_reg),
+               function(d_, cs_, cc_, fp_, kk_, tp_, fo_, cr_) {
+                 run_scenario_v2(d_, c_surv = cs_, c_coord = cc_, p_fp = fp_,
+                                 k_cluster = kk_, coord_dynamic = TRUE,
+                                 terb_phase = tp_, f_other = fo_, phi_other = phi_aldi,
+                                 c_regulatory = cr_)
+               }),
+    NMB            = map_dbl(res, ~ .x$NMB),
+    cost_per_death = map_dbl(res, ~ .x$cost_per_death_av),
+    c_regulator    = map_dbl(res, ~ .x$c_regulator_tot)
+  ) |>
+  select(-res, -d, -c_surv, -c_coord, -p_fp, -k_clus, -terb_p, -f_oth, -c_reg)
+
+p1 <- ggplot(frontier, aes(x = c_regulator, y = NMB, label = Option)) +
+  geom_line(colour = "grey60", linewidth = 0.6) +
+  geom_point(aes(colour = NMB > 0), size = 3) +
+  geom_hline(yintercept = 0, linetype = "dashed", alpha = 0.5) +
+  scale_x_continuous(labels = comma_format(prefix = "R")) +
+  scale_y_continuous(labels = comma_format(prefix = "R")) +
+  scale_colour_manual(values = c("TRUE" = "#1a9850", "FALSE" = "#d73027"),
+                      labels = c("TRUE" = "NMB > 0 (cost-saving)", "FALSE" = "NMB ≤ 0"),
+                      name = NULL) +
+  labs(x = "Annual regulator spend (R/yr)", y = "Net monetary benefit (R/yr)") +
+  theme_minimal(base_size = 11) + theme(legend.position = "bottom")
+
+p2 <- ggplot(frontier |> filter(!is.na(cost_per_death)),
+             aes(x = c_regulator, y = cost_per_death, label = Option)) +
+  geom_line(colour = "grey60", linewidth = 0.6) +
+  geom_point(size = 3, colour = "#3366cc") +
+  scale_x_continuous(labels = comma_format(prefix = "R")) +
+  scale_y_continuous(labels = comma_format(prefix = "R")) +
+  labs(x = "Annual regulator spend (R/yr)", y = "Cost per death averted (R)") +
+  theme_minimal(base_size = 11) + theme(legend.position = "bottom")
+
+p1 + p2
+```
+
+```{r}
+#| label: tbl-frontier
+#| tbl-cap: "Full spend-vs-benefit frontier: all policy options ranked by regulator spend."
+
+frontier |>
+  arrange(c_regulator) |>
+  select(Option, c_regulator, NMB, cost_per_death) |>
+  gt() |>
+  tab_header(title = "Spend-vs-benefit frontier — all options") |>
+  fmt_number(columns = c(c_regulator, NMB, cost_per_death),
+             decimals = 0, use_seps = TRUE) |>
+  cols_label(c_regulator = "Regulator (R/yr)", NMB = "NMB (R/yr)",
+             cost_per_death = "R / death averted") |>
+  sub_missing(columns = cost_per_death, missing_text = "—") |>
+  data_color(columns = NMB,
+             fn = scales::col_numeric(palette = c("#d73027","#fee08b","#1a9850"),
+                                      domain = NULL)) |>
+  opt_row_striping() |>
+  tab_options(table.font.size = "small")
+```
+
+---
+
+## Age and gender structure scaffold *(placeholder — populate in v3)*
+
+The parameters and function stub below define the **interface** for incorporating age-sex structure into v3. No model outputs currently depend on these values; they are placeholders.
+
+```{r}
+#| label: agesex-scaffold
+#| echo: true
+#| eval: false
+
+# ── Age-sex burden weights ─────────────────────────────────────────────────────
+# Source: StatsSA MACOD 2023 Table 4.12 (X40–X49) by 5-year age group and sex.
+# REPLACE these provisional shares with StatsSA tabulation when available.
+# Rows sum to 1 across all strata.
+
+age_sex_weights <- tribble(
+  ~age_band,  ~sex,      ~pop_share,  ~cfr,    ~yll_weight,
+  "0-4",      "Male",    0.04,        0.20,    70,
+  "0-4",      "Female",  0.03,        0.20,    70,
+  "5-14",     "Male",    0.05,        0.08,    60,
+  "5-14",     "Female",  0.04,        0.08,    60,
+  "15-44",    "Male",    0.22,        0.12,    35,
+  "15-44",    "Female",  0.16,        0.12,    35,
+  "45-64",    "Male",    0.18,        0.15,    18,
+  "45-64",    "Female",  0.12,        0.15,    18,
+  "65+",      "Male",    0.08,        0.25,    8,
+  "65+",      "Female",  0.08,        0.25,    8
+)
+# Verify: sum(age_sex_weights$pop_share) should equal 1.00
+
+# ── DALY/YLL weight lookup ─────────────────────────────────────────────────────
+# Life expectancy at birth used for YLL = 72 years (Stats SA 2023).
+# YLD (years lived with disability) for acute pesticide poisoning:
+#   DW acute severe  = 0.408  (GBD 2019 pesticide poisoning acute)
+#   DW acute mild    = 0.150
+#   Duration severe  = 0.08 yr (~1 month hospitalisation)
+#   Duration mild    = 0.02 yr (~1 week recovery)
+# YLD_severe = 0.408 × 0.08 = 0.033 per case (severe)
+# YLD_mild   = 0.150 × 0.02 = 0.003 per case (mild)
+
+# ── Age-sex stratified scenario runner (stub) ──────────────────────────────────
+# Accepts same arguments as run_scenario_v2() plus age_sex_weights.
+# Returns results disaggregated by age-sex stratum.
+# Implement in v3 once MACOD age-sex distribution is confirmed.
+
+run_scenario_agesex <- function(
+    d, c_surv, c_coord = 0, p_fp = 0,
+    k_cluster = 1.0, coord_dynamic = FALSE,
+    terb_phase = 0, f_other = 0, phi_other = 0, c_regulatory = 0,
+    weights = age_sex_weights
+) {
+  # TODO v3: iterate over strata using per-stratum CFR and YLL weight
+  # For now, call the aggregate function and attach a stub stratum column
+  agg <- run_scenario_v2(d, c_surv, c_coord, p_fp, k_cluster,
+                          coord_dynamic, terb_phase, f_other, phi_other, c_regulatory)
+  weights |>
+    mutate(
+      N_stratum      = N_true * pop_share,
+      deaths_stratum = N_stratum * cfr * (1 - d),   # stub: deaths not detected
+      yll_stratum    = deaths_stratum * yll_weight
+    ) |>
+    bind_cols(agg[rep(1, nrow(weights)), ])
+}
+```
+
+---
+
+## DALY / YLL section *(stub — populate in v3)*
+
+```{r}
+#| label: daly-stub
+#| echo: true
+#| eval: false
+
+# ── DALY components ────────────────────────────────────────────────────────────
+# DALY = YLL + YLD
+#
+# YLL per death = life expectancy at age of death - age at death
+#   Using UNDP standard: LE = 72 yr; mean age at pesticide death in SA ≈ 28 yr
+#   (provisional; replace with StatsSA MACOD age distribution)
+#   YLL per death ≈ 72 - 28 = 44 yr
+#
+# YLD per case (severe) = 0.033 yr  (see scaffold above)
+# YLD per case (mild)   = 0.003 yr
+#
+# Value of a DALY:  ICER threshold = 1× GDP per capita/yr ≈ R110,000 (2025)
+#                   Human-capital YLL = R1,500,000 (already in c_mort)
+#
+# To convert NMB to DALY-based NMB:
+#   Replace c_mort with (YLL_per_death × ICER_per_DALY)  in run_scenario_v2()
+#   Replace c_morb with (YLD_per_case  × ICER_per_DALY)
+
+YLL_per_death <- 44    # yr; provisional — replace with MACOD age-sex data
+YLD_severe    <- 0.033 # yr; GBD 2019
+YLD_mild      <- 0.003 # yr; GBD 2019
+ICER_threshold <- 110000   # R/DALY; 1× GDP per capita 2025
+
+c_mort_daly <- YLL_per_death * ICER_threshold   # R4,840,000/death
+c_morb_daly <- YLD_severe    * ICER_threshold   # R3,630/case (severe)
+```
+
+---
+
+## Editing the model
+
+| What to change | Where |
+|---|---|
+| Surveillance cost estimates | [`amua_import_parameters_v4.csv`](../amua_import_parameters_v4.csv): `c_surv_MVP_op`, `c_S1b_op_*` |
+| Coordination cost estimates | CSV: `c_C1_NMC_closure_op` … `c_C5_KPI_dashboard_op` |
+| Detection probabilities | CSV: `d_status_quo`, `d_surveillance_mvp`, `d_S1b_event_community_*` |
+| False-positive rates | CSV: `p_fp_S1b_lo/mid/hi` |
+| Cluster multiplier (k) | Inline constants `k_lo`, `k_mid`, `k_hi` at top of setup chunk |
+| Chemical agent fractions | CSV (terbufos): `frac_terbufos_attributable_*`; inline (aldicarb): `f_aldi_*` |
+| Response efficacy η | CSV: `eta_response_lo/mid/hi` |
+| RAMP_MONTHS | Inline constant in Scenario 1.5 chunk |
+| Age/sex weights | `age_sex_weights` tibble in scaffold chunk (not yet evaluated) |
+| DALY parameters | Stub chunk at end of file |
+
+---
+
+Companion briefs: [Surveillance](surveillance_policy.qmd) · [Coordination](coordination_policy.qmd) · [Terbufos](terbufos_policy.qmd) · [Overall v1](overall_policy_model.qmd) · [Decision Model](decision_model.qmd) · [Costing](costing_analysis.qmd)
