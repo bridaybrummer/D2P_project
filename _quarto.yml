@@ -19,21 +19,28 @@ website:
         href: index.qmd
       - text: "One-Pager"
         href: one_pager.qmd
-      - text: "Research Outputs"
+      - text: "Policy Briefs"
         href: posts.html
       - text: "Parameters Hub"
         href: parameters_hub.html
       - text: "Playground"
         href: parameter_playground.html
-      - text: "Technical Appendices"
+      - text: "Technical"
         menu:
-          - text: "A — Surveillance (decision analysis)"
+          - text: "Overall Policy Model"
+            href: posts/overall_policy_model.html
+          - text: "Decision Tree Model"
+            href: posts/decision_model.html
+          - text: "Costing Analysis"
+            href: posts/costing_analysis.html
+          - text: "---"
+          - text: "Appendix A — Surveillance (decision analysis)"
             href: analysis_report_v2.html
-          - text: "B — Coordination (joint-probability model)"
+          - text: "Appendix B — Coordination (joint-probability model)"
             href: technical_appendix_coordination.html
-          - text: "C — Terbufos (bracketed deaths averted)"
+          - text: "Appendix C — Terbufos (bracketed deaths averted)"
             href: technical_appendix_terbufos.html
-          - text: "D — Sentinel toxicology (live-patient testing, S3b)"
+          - text: "Appendix D — Sentinel toxicology (live-patient testing, S3)"
             href: posts/surveillance_concept_note.html
     right:
       - icon: github

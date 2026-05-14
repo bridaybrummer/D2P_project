@@ -210,6 +210,24 @@ flowchart LR
 The NHLS–NICD LIS-to-NMC connector is operational; monthly BChE data flows to NICD under the existing MOU. The three active options below build on this.
 :::
 
+::: {.callout-note collapse="true"}
+## Audit trail — mini-budget backing the S0 operating cost (R60,000/yr, now in baseline) {#sec-s0-mini-budget}
+
+`c_S0_NHLS_NMC_feed_op` = R60,000/yr (gamma(25, 2400)); `c_S0_NHLS_NMC_feed_setup` = R80,000 one-off (already incurred). This feed is **in the status-quo baseline** — it is not a marginal cost of adopting the Surveillance MVP, but its operating cost is relevant context for decision-makers auditing total program spend.
+
+| # | Line item | Driver | Annual (R) | Source / anchor |
+|:-:|:----------|:-------|-----------:|:----------------|
+| 1 | NICD analyst data extraction + cleaning | 0.05 FTE × R650k DPSA L10-11 | 32,500 | DPSA L10-11 scale 2024 (Tab 1 NMC analyst CTE) |
+| 2 | NHLS CDW data extract QA (monthly BChE pull validation) | 0.02 FTE × R900k NHLS medical scientist | 18,000 | NHLS Patterson grade D 2024 (Tab 1 NHLS scientist CTE) |
+| 3 | NICD SDW hosting + data-feed monitoring (shared cloud, pesticide slice) | AWS af-south-1 shared allocation | 6,000 | NICD data platform budget 2024 (Tab 2 "Data warehouse / ETL") |
+| 4 | Annual MOU compliance review + governance documentation | Inter-agency MOU review + admin | 3,500 | NICD legal + NHLS MOU management |
+|   | **Total** |   | **60,000** | matches `c_S0_NHLS_NMC_feed_op` in [`amua_import_parameters_v4.csv`](../amua_import_parameters_v4.csv) |
+
+**Distribution.** gamma(shape = 25, scale = 2,400) → mean R60,000, SD ≈ R12,000. Items 1 and 2 are time-allocated personnel cost at standard CTE rates; items 3 and 4 are direct cash outlays. The same analyst CTE anchor (R650k DPSA L10-11) underpins the NMC baseline in §7 Tab 1, so S0 is consistent with and additive to the status-quo build-up.
+
+**Setup.** `c_S0_NHLS_NMC_feed_setup` = R80,000 (one-off) covered: legal/MOU negotiation, data-mapping and schema agreement, NICD SDW ingestion script development, UAT. Already incurred; not a cost of adopting the MVP.
+:::
+
 ### Option S1 — PIH live dashboard + Minimum Viable Dataset *(★ recommended)*
 
 Two layers:
@@ -218,6 +236,29 @@ Two layers:
 - **Medium term (3–9 months):** PIH and NICD agree a **Minimum Viable Dataset (MVD)** so the ~1,158 clinician-initiated calls/year can be ingested into NMC as a structured surveillance stream. **Agent-name capture is a mandatory MVD field** — both PIH and NMC must record the AfriTox product name for every case. To make this reciprocal, **NMC should add a structured agent drop-down** (pesticide class → active ingredient → AfriTox product name) to its NDoH-hosted notification form: PIH records what the caller *reports*; NMC records what the clinician *confirms*. Combined: agent-attribution signal system-wide at near-zero marginal cost.
 
 Detection rises to ~`r sprintf("%.0f", as.numeric(pick("d_S1_PIH_MVD")) * 100)` % of true cases (up from ~`r sprintf("%.0f", as.numeric(pick("d_status_quo")) * 100)` %) for **`r zar(as.numeric(pick("c_S1_PIH_MVD_op")))`/year** (includes AfriTox agent-name harmonization). The dashboard is the lowest-hanging fruit in the whole portfolio: it ships in days.
+
+::: {.callout-note collapse="true"}
+## Audit trail — mini-budget backing the R82,000/yr operating cost {#sec-s1-mini-budget}
+
+The `c_S1_PIH_MVD_op` parameter (mean R82,000/yr; gamma(25, 3280)) is **not a single quoted price** — it is the sum of seven small recurring line items required to keep the PIH dashboard live, the MVD pipeline running, and the AfriTox agent drop-down synchronised between PIH and NMC. All figures are 2024–2025 ZAR, marginal over the status-quo PIH operation (which is already costed in §7 Tab 1–2 from [`data/surveillance_costing.xlsx`](../data/surveillance_costing.xlsx)).
+
+| # | Line item | Driver | Annual (R) | Source / anchor |
+|:-:|:----------|:-------|-----------:|:----------------|
+| 1 | Dashboard hosting (PIH Tygerberg cloud VM) | AWS af-south-1 t3.small + RDS + backup, 12 mo | 18,000 | AWS af-south-1 pricing 2024 (also Tab 2 of [`surveillance_costing.xlsx`](../data/surveillance_costing.xlsx), row "Dashboard hosting (Tygerberg cloud VM)", pesticide share) |
+| 2 | Daily PIH→dashboard extract pipeline (script + on-call) | 0.02 FTE × R780k poisons specialist | 15,600 | DoH pharmacy OSD scale 2024 (PIH specialist CTE used in Tab 1) |
+| 3 | AfriTox agent-name harmonisation maintenance (PIH ↔ NMC drop-down sync, quarterly refresh) | 0.02 FTE × R650k NICD epidemiologist | 13,000 | DPSA L10-11 scale 2024 (Tab 1 NMC analyst CTE) |
+| 4 | MVD ingest pipeline operations (ETL run, error handling, schema drift) | NICD data engineer 0.015 FTE × R750k | 11,250 | SITA / state IT contracting 2024 (Tab 1 Cross-cutting) |
+| 5 | QA + monthly NMC reconciliation (PIH-ingested rows vs NMC) | 1 h/wk × R650k NICD analyst (0.01 FTE) | 6,500 | DPSA L10-11 scale 2024 |
+| 6 | Annual data-dictionary review + minor MVD releases | PIH + NICD workshop, 2 d/yr; consumables | 10,000 | PIH admin estimate (consistent with `c_S1_PIH_MVD_setup` R40,000 one-off) |
+| 7 | Licences + alert SMS (Power BI workspace seats, ~5,000 outbound SMS/yr @ R0.20) | Microsoft ZA EA + Clickatell rate | 7,650 | Microsoft ZA EA 2024; Clickatell / BulkSMS ZA 2024 (same anchors as §7 Tab 2) |
+|   | **Total** |   | **82,000** | matches `c_S1_PIH_MVD_op` in [`amua_import_parameters_v4.csv`](../amua_import_parameters_v4.csv) |
+
+**How to interpret.** Items 1, 4 and 7 are direct cash outlays (cloud, ETL, licences, SMS). Items 2, 3, 5 and 6 are **time-allocated personnel cost** at standard public-sector cost-to-employer rates — i.e. they do not require new hires; they ring-fence small fractions of existing PIH and NICD posts. The same CTE anchors and unit-cost sources are used in the §7 status-quo build-up, so the marginal S1 line is consistent with — and additive to — the costed baseline.
+
+**Distribution.** The CSV models this as gamma(shape = 25, scale = 3,280) → mean R82,000, SD ≈ R16,400 (95% CI ≈ R53k–R116k). This range absorbs reasonable variation across all seven items (e.g. cloud-VM sizing, AfriTox refresh frequency, FTE %).
+
+**Sensitivity — what would push it materially higher.** (i) Hosting the dashboard on Power BI Premium dedicated capacity rather than a small VM (+R30–50k/yr); (ii) replacing the 0.02 FTE pharmacist time on the daily extract with a dedicated data engineer FTE (+R60k/yr if 0.1 FTE); (iii) extending alert-SMS volume 5× during outbreak periods (+R3–5k/yr). None of these move the option out of the "lowest-hanging fruit" tier vs S2 (R55,000/yr) or S1b (R-millions/yr).
+:::
 
 ### Option S1b — Phase 2 community layer *(commission after MVP pilot if rural/informal gap confirms)*
 
@@ -243,9 +284,79 @@ With a two-tier filter, the effective net FP rate drops to approximately 8–12%
 
 The cost range (`r sprintf("R%.0fM–R%.1fM setup; R%.1fM–R%.1fM/yr operating", as.numeric(pick("c_S1b_setup_lo"))/1e6, as.numeric(pick("c_S1b_setup_hi"))/1e6, as.numeric(pick("c_S1b_op_lo"))/1e6, as.numeric(pick("c_S1b_op_hi"))/1e6)` — approximately `r sprintf("%.0f–%.0f×", as.numeric(pick("c_S1b_op_lo")) / as.numeric(pick("c_surv_MVP_op")), as.numeric(pick("c_S1b_op_hi")) / as.numeric(pick("c_surv_MVP_op")))` the MVP operating cost) directly reflects the two-stage choice.
 
+::: {.callout-note collapse="true"}
+## Audit trail — mini-budget backing the S1b operating cost range {#sec-s1b-mini-budget}
+
+The three `c_S1b_op_*` parameters reflect **distinct deployment footprints**, not sensitivity bounds around a single estimate. All figures are 2024–2025 ZAR, marginal over the Surveillance MVP baseline.
+
+**Lo scenario — pilot (2 provinces: Free State + Gauteng) | `c_S1b_op_lo` = R800,000/yr**
+
+| # | Line item | Driver | Annual (R) | Source / anchor |
+|:-:|:----------|:-------|-----------:|:----------------|
+| 1 | Provincial coordinators ×4 (FS + Gauteng) | 4 × R120,000 DPSA L8 pesticide-surveillance allocation | 480,000 | DPSA L8 mid-step CTE ~R600k–R750k; R120k = ~17% FTE allocation |
+| 2 | Platform hosting + mobile checklist app | AWS af-south-1 + off-the-shelf EBS mobile app, 2-province scale | 120,000 | AWS af-south-1 pricing 2024 |
+| 3 | CHW structured training + annual refresher | 2 provinces × 2 training cohorts + consumables | 120,000 | LMIC community surveillance analogue (IDSR pilot) |
+| 4 | NICD data analyst + monthly reporting | 0.1 FTE × R650k DPSA L10-11 | 65,000 | DPSA L10-11 scale 2024 |
+| 5 | EHP call-back protocol management + QA | 0.015 FTE × R650k NICD analyst | 15,000 | DPSA L10-11 scale 2024 |
+|   | **Total (lo / pilot)** |   | **800,000** | matches `c_S1b_op_lo` |
+
+**Mid scenario — working value (8 provinces) | `c_S1b_op_mid` = R1,500,000/yr**
+
+From CSV note: *"~8 provincial coordinators (DPSA L8, R120k each) + national analyst + platform hosting + annual CHW refresher."*
+
+| # | Line item | Driver | Annual (R) | Source / anchor |
+|:-:|:----------|:-------|-----------:|:----------------|
+| 1 | Provincial coordinators ×8 | 8 × R120,000 DPSA L8 | 960,000 | DPSA L8 scale 2024 (same unit cost as lo) |
+| 2 | National NICD analyst | 0.2 FTE × R650k DPSA L10-11 | 130,000 | DPSA L10-11 scale 2024 |
+| 3 | Platform hosting + app maintenance | AWS multi-province scale + maintenance | 180,000 | AWS af-south-1 pricing 2024 |
+| 4 | Annual CHW refresher training | 8 provinces × cohort costs | 230,000 | EWARN/IDSR analogues |
+|   | **Total (mid / working)** |   | **1,500,000** | matches `c_S1b_op_mid` |
+
+**Hi scenario — full 9-province + dedicated EHP nodes | `c_S1b_op_hi` = R2,500,000/yr**
+
+From CSV note: *"full 9-province deployment with dedicated EHP nodes and enhanced data cleaning."*
+
+| # | Line item | Driver | Annual (R) | Source / anchor |
+|:-:|:----------|:-------|-----------:|:----------------|
+| 1 | Provincial coordinators + dedicated EHP nodes ×9 | 9 × R160,000 DPSA L8-9 (dedicated EHP grade) | 1,440,000 | DPSA L8-L9 scale 2024 |
+| 2 | National NICD analyst (enhanced share) | 0.3 FTE × R650k | 195,000 | DPSA L10-11 scale 2024 |
+| 3 | Platform hosting + enhanced data-cleaning infrastructure | 9-province scale + QA pipeline | 350,000 | AWS af-south-1 + QA infrastructure estimate |
+| 4 | Annual CHW refresher training (9 provinces) | 9 provinces × full cohort | 515,000 | WHO-EWARN mature deployment analogue |
+|   | **Total (hi / full)** |   | **2,500,000** | matches `c_S1b_op_hi` |
+
+**DPSA L8 anchor.** R120,000 represents ~16–20% FTE of a DPSA L8 mid-step CTE (~R600k–R750k/yr). In practice this is an existing EHP or health-promotion officer whose pesticide-poisoning community-surveillance duties are ring-fenced at that fraction — not a new hire. The same unit cost applies across all three scenarios; the scenarios differ in the number of provinces covered and whether dedicated EHP nodes (requiring L8-9 grade) are included.
+
+**Setup parameters.** `c_S1b_setup_lo/mid/hi` = R1M / R2M / R3.5M (one-off) cover mobile-app development, protocol design, and initial CHW training. They are separately parameterised and not included in the operating cost rows above.
+:::
+
 ### Option S2 — BChE auto-notification *(★ recommended — capability exists)*
 
 Configure the NHLS LIS to fire an automatic NICD notification when a BChE result shows severe inhibition (< 50 % of normal), within 24 hours of validation. **No new test, no new reagent contract** — only an IT configuration on top of the ~`r scales::comma(as.numeric(pick("n_nhls_total_annual")))` BChE tests/year already performed (`r scales::comma(as.numeric(pick("n_nhls_severe_annual")))` severe in 2023). Detection rises to ~`r sprintf("%.0f", as.numeric(pick("d_S2_BChE_autonotify")) * 100)` % of true cases (up from ~`r sprintf("%.0f", as.numeric(pick("d_status_quo")) * 100)` %) for **`r zar(as.numeric(pick("c_S2_BChE_autonotify_op")))`/year** in 2–4 weeks. This is the highest-value, fastest option on the menu.
+
+::: {.callout-note collapse="true"}
+## Audit trail — mini-budget backing the R55,000/yr operating cost {#sec-s2-mini-budget}
+
+`c_S2_BChE_autonotify_op` = R55,000/yr (gamma(25, 2200)) covers the pure IT infrastructure required to keep the HL7 auto-notification middleware running — **no new laboratory tests, no new reagent contract, no new hires.** The one-off LIS reconfiguration and UAT cost (`c_S2_BChE_autonotify_setup` = R200,000) is separately parameterised. All figures are 2024–2025 ZAR, marginal over the status-quo NHLS BChE baseline.
+
+| # | Line item | Driver | Annual (R) | Source / anchor |
+|:-:|:----------|:-------|-----------:|:----------------|
+| 1 | HL7 middleware hosting (Mirth Connect; af-south-1 t3.small VM) | VM + storage, 12 mo | 18,000 | AWS af-south-1 pricing 2024 (same tier as §7 Tab 2 "LIS rule engine middleware") |
+| 2 | NHLS LIS IT engineer maintenance | 0.02 FTE × R750k SITA/state IT rate | 15,000 | SITA / state IT contracting 2024 (Tab 1 Cross-cutting data engineer CTE) |
+| 3 | NHLS medical scientist alert QA review | 0.005 FTE × R900k NHLS Patterson grade D | 4,500 | NHLS Patterson grade D 2024 (Tab 1 NHLS scientist CTE) |
+| 4 | NICD epidemiologist alert triage + NMC routing | 0.01 FTE × R650k DPSA L10-11 | 6,500 | DPSA L10-11 scale 2024 (Tab 1 NMC analyst CTE) |
+| 5 | Mirth Connect enterprise support licence / maintenance agreement | Annual contract | 7,000 | NHLS IT estimate (cited in `c_S2_BChE_autonotify_op` source note) |
+| 6 | NICD analyst QA reconciliation (NHLS→NMC matching spot-checks) | 0.005 FTE × R650k | 3,250 | DPSA L10-11 scale 2024 |
+| 7 | On-call incident-response allowance (middleware outage cover) | Annual allowance | 750 | NHLS IT estimate |
+|   | **Total** |   | **55,000** | matches `c_S2_BChE_autonotify_op` in [`amua_import_parameters_v4.csv`](../amua_import_parameters_v4.csv) |
+
+**How to interpret.** Items 1 and 5 are direct cash outlays (cloud hosting + licence). Items 2, 3, 4 and 6 are time-allocated personnel cost at standard public-sector CTE rates — the same anchors used in §7 Tab 1. The NHLS medical scientist and data-engineer CTE rows already appear in the status-quo build-up; the S2 marginal allocation is additive to the existing pesticide share of those posts.
+
+**Distribution.** gamma(shape = 25, scale = 2,200) → mean R55,000, SD ≈ R11,000 (95% CI ≈ R36k–R78k).
+
+**Sensitivity.** Dominant driver: middleware hosting tier (upgrading t3.small → t3.medium adds ~R12,000/yr). Doubling the NHLS IT maintenance FTE share adds ~R15,000/yr. Neither moves S2 above S1 in operating cost (R82,000/yr).
+
+**Setup.** `c_S2_BChE_autonotify_setup` = R200,000 (one-off) covers NHLS LIS HL7 rule development, configuration of the severity threshold (< 50% inhibition), UAT across NHLS network sites, and go-live sign-off. Spent once; not part of the recurring R55,000/yr.
+:::
 
 ### Option S3 — Sentinel live-patient toxicology *(★ recommended, medium term — distinct purpose)*
 
@@ -258,6 +369,40 @@ NHLS currently performs chemical toxicology (qualitative/quantitative pesticide 
 **S3 has a different purpose from S1 and S2** and is *not* a detection-coverage uplift. S1 and S2 increase the share of true cases that enter the surveillance system. **S3 identifies the proportion of chemical agents being found in severely poisoned living patients at sentinel sites** — the missing evidence base for product-specific regulation (see [Terbufos brief](terbufos_policy.qmd)). Without S3, ~10,000 survivors/year are recorded with agent "unknown / suspected" and targeted product restriction has no quantitative footing.
 
 Cost: ~`r sprintf("R%.1fM", round(as.numeric(pick("c_option6_pilot_year1"))/1e6, 1))` pilot site → ~`r sprintf("R%.1fM", round(as.numeric(pick("c_option6_full_5site_annual"))/1e6, 1))` for 5-site rollout, 6–12 months. Funded from research-surveillance streams (SAMRC, Bloomberg, Gates), not the surveillance operating budget. Full quantitative concept in the [sentinel toxicology appendix](surveillance_concept_note.qmd).
+
+::: {.callout-note collapse="true"}
+## Audit trail — mini-budget backing the S3 sentinel toxicology costs {#sec-s3-mini-budget}
+
+Four component-level parameters in [`amua_import_parameters_v4.csv`](../amua_import_parameters_v4.csv) underpin both S3 cost rows. The pilot and 5-site budgets run **below the maximum specimen capacity** (`n_specimens_per_site_per_year` = 646): the pilot targets ~150 GC-MS screens and ~200 clinical batteries (ramp-up year); the 5-site rollout targets ~100 screens and ~133 batteries per site per year (steady-state research enrolment).
+
+**Pilot — 1 sentinel site (CHB) | `c_option6_pilot_year1` = R1,200,000/yr**
+
+| # | Line item | Driver | Annual (R) | CSV parameter / source |
+|:-:|:----------|:-------|-----------:|:----------------------|
+| 1 | Research nurse 0.5 FTE (TASK research band) | Per-site personnel anchor | 175,000 | `c_research_nurse_05FTE_per_site` |
+| 2 | GC-MS / LC-MS multi-residue screens (~150 specimens × R2,500) | Pilot ramp-up volume | 375,000 | `c_gcms_screen_per_specimen` × pilot volume |
+| 3 | Enhanced clinical batteries (~200 patients × R1,500; BChE + LFT + U&E + repeat) | All enrolled patients | 300,000 | `c_clinical_battery_per_patient` × pilot volume |
+| 4 | Chemical pathologist co-investigator time (0.07 FTE × R1,500k NHLS Patterson grade E) | Sign-out + supervision | 105,000 | NHLS Patterson grade E 2024 (Tab 1 NHLS chemical pathologist CTE) |
+| 5 | REDCap data management + statistical reporting | 1-site platform + annual report | 80,000 | Concept Note DRAFT 3 |
+| 6 | Site consumables, specimen transport + cold chain, overheads | ~150 specimens × ~R1,100 blended overhead | 165,000 | NHLS logistics tariff 2024 + consumables estimate |
+|   | **Total (pilot, 1 site)** |   | **1,200,000** | matches `c_option6_pilot_year1` |
+
+**Full rollout — 5 sentinel sites | `c_option6_full_5site_annual` = R3,625,000/yr**
+
+| # | Line item | Driver | Annual (R) | CSV parameter / source |
+|:-:|:----------|:-------|-----------:|:----------------------|
+| 1 | Research nurses ×5 (0.5 FTE each) | 5 × `c_research_nurse_05FTE_per_site` | 875,000 | `c_research_nurse_05FTE_per_site` × 5 |
+| 2 | GC-MS screens (5 sites × ~100 specimens × R2,500) | Steady-state research volume | 1,250,000 | `c_gcms_screen_per_specimen` × 5-site volume |
+| 3 | Enhanced clinical batteries (5 sites × ~133 patients × R1,500) | BChE + LFT + U&E + repeat | 997,500 | `c_clinical_battery_per_patient` × 5-site volume |
+| 4 | Multi-site coordination (NHLS + NICD; 0.2 FTE × R750k data engineer) | Network coordination | 150,000 | SITA / state IT contracting 2024 (Tab 1 Cross-cutting) |
+| 5 | Data management + reporting (multi-site REDCap + analysis) | 5-site QA + annual report | 202,500 | Concept Note DRAFT 3 |
+| 6 | Site consumables, transport, cold chain (5 sites × R30k) | Per-site recurring overhead | 150,000 | NHLS logistics tariff 2024 |
+|   | **Total (5-site)** |   | **3,625,000** | matches `c_option6_full_5site_annual` |
+
+**Why S3 is funded from research streams, not the surveillance operating budget.** S3 is a **research investment** — it generates the agent-attribution evidence base for targeted regulatory action. It does not increase P_detect (the share of true cases entering the surveillance system) and therefore does not appear in the S1/S2/MVP operating-cost parameters. Its value is quantified in the [Terbufos brief](terbufos_policy.qmd) where regulatory restriction converts agent-attribution evidence into deaths averted.
+
+**Why specimens run below the per-site capacity of 646.** `n_specimens_per_site_per_year` (= 646) is the *anatomically derived maximum* (2 specimens per patient × 323 patients — the sample-size calculation for the agent-attribution study at p = 0.3, d = 0.05). Actual enrolment ramps up over the pilot year (~150 screens) and reaches a steady-state of ~100–133 screens per site in a funded 5-site network constrained by the research budget, not by specimen throughput.
+:::
 
 ### Summary comparison
 
@@ -277,6 +422,27 @@ Cost: ~`r sprintf("R%.1fM", round(as.numeric(pick("c_option6_pilot_year1"))/1e6,
 **Scope of this brief.** Surveillance changes only what is *seen*. The status quo P_detect = `r pick("d_status_quo")` (§6 below) is a **measurement** of the current detection gap, not a counterfactual against which deaths are averted. Cases-averted and deaths-averted figures live in the [Coordination brief](coordination_policy.qmd) and [Terbufos brief](terbufos_policy.qmd) respectively.
 :::
 
+::: {.callout-note collapse="true"}
+## Audit trail — mini-budget backing the R137,000/yr Surveillance MVP operating cost {#sec-mvp-mini-budget}
+
+`c_surv_MVP_op` = R137,000/yr is a **deterministic sum** of two independent components. No distributional assumption is placed on the total; uncertainty propagates through the component gamma distributions in any PSA.
+
+| Component | CSV parameter | Annual (R) | Mini-budget |
+|:----------|:-------------|----------:|:-----------|
+| S1 PIH dashboard + MVD (+ AfriTox harmonisation) | `c_S1_PIH_MVD_op` | 82,000 | [S1 audit trail](#sec-s1-mini-budget) |
+| S2 BChE auto-notification | `c_S2_BChE_autonotify_op` | 55,000 | [S2 audit trail](#sec-s2-mini-budget) |
+| **Surveillance MVP total** | `c_surv_MVP_op` | **137,000** | |
+
+**No double-counting.** The S1 and S2 cost items sit on entirely separate operational pathways:
+
+- **S1 items** (PIH cloud hosting, MVD ETL pipeline, AfriTox harmonisation, QA, licences/SMS) are driven by PIH call-record flows and the NICD/PIH data-dictionary agreement.
+- **S2 items** (NHLS HL7 middleware, LIS IT maintenance, NHLS scientist QA, NICD alert triage) are driven by the NHLS LIS auto-notification rule.
+
+The two NICD analyst FTE allocations sum to ~0.05 FTE total (S1: ~0.035 FTE; S2: ~0.015 FTE) — within the 0.2 FTE analyst post already costed in the §7 Tab 1 NMC baseline. **The MVP does not require a new NICD headcount.**
+
+**Setup.** `c_surv_MVP_setup` = R80,000 (one-off). The CSV note reads: *"S2 BChE HL7 work dominates."* This appears low relative to `c_S2_BChE_autonotify_setup` = R200,000 because `c_surv_MVP_setup` is the **incremental** setup cost when all three components are adopted together — the S0 NHLS-NMC feed governance and data-mapping infrastructure (already incurred, `c_S0_NHLS_NMC_feed_setup` = R80,000) is shared and not double-counted; S1 PIH setup (`c_S1_PIH_MVD_setup` = R40,000) is also separately parameterised. The R80,000 MVP setup row covers the marginal IT integration work above what S0 already established.
+:::
+
 ::: {.callout-note}
 ## Audit: parameter names for costing each policy option
 
@@ -294,6 +460,8 @@ Every annual cost and setup cost in this brief is directly linked to a parameter
 **How to audit:**
 - Each parameter above is a row in the CSV, with value, distribution, and source citation.
 - The same parameter names are used in the decision tree (see §6) and the marginal cost table (§7, Tab 5).
+- Every option has a **collapsible mini-budget audit trail** directly below its option text showing how each bottom-line figure is built up from unit-cost and personnel-time components: [S0](#sec-s0-mini-budget) · [S1](#sec-s1-mini-budget) · [S1b](#sec-s1b-mini-budget) · [S2](#sec-s2-mini-budget) · [S3](#sec-s3-mini-budget) · [MVP](#sec-mvp-mini-budget).
+- All mini-budgets use the same CTE anchors as the §7 status-quo build-up (DPSA salary scales, NHLS Patterson grades, SITA contracting benchmarks, AWS af-south-1 pricing), so the marginal option costs are consistent with and additive to the costed baseline.
 - To update a cost, edit the value in the CSV and re-render — all outputs update automatically.
 :::
 
@@ -660,4 +828,106 @@ The coordination side of the same system — how NICD, EHPs, DALRRD, and provinc
 **Companion briefs:** [Coordination](coordination_policy.qmd) · [Terbufos restriction](terbufos_policy.qmd) · [Decision Model](decision_model.qmd) · [Costing Analysis](costing_analysis.qmd)
 
 **Technical appendices:** [A — Surveillance decision analysis](../analysis_report_v2.qmd) · [D — Sentinel toxicology (S3 deep dive)](surveillance_concept_note.qmd)
+
+**Appendices (this brief):** [Appendix A — MVD specifications (NMC + PIH)](#sec-mvd)
+:::
+
+---
+
+## Appendix A — Minimum Viable Dataset (MVD) specifications {#sec-mvd}
+
+### A1. NMC MVD — required fields for PIH-to-NMC structured feed
+
+The table below specifies the **Minimum Viable Dataset** for ingesting PIH clinician-initiated calls into the National Microbiology and Communicable Disease Notification (NMC) system as a structured surveillance stream. These fields must be captured at the point of PIH call (what the *caller reports*) and confirmed/updated by the notifying clinician (what the clinician *confirms*). The pesticide-type and circumstances classification is drawn from the existing NMC notification form; the MVD mandates their structured capture for every pesticide-poisoning case.
+
+::: {.callout-note appearance="minimal"}
+**Agent-name capture is mandatory.** Both PIH and NMC must record the **AfriTox product name** for every case. NMC should add a structured agent drop-down (pesticide class → active ingredient → AfriTox product name) to the NDoH-hosted notification form to make this reciprocal with PIH. Cases with agent "unknown" are acceptable (do not exclude), but the field must be present.
+:::
+
+**Pesticide type (structured drop-down — mandatory)**
+
+| Code | Pesticide type | Example active ingredients |
+|:-----|:--------------|:--------------------------|
+| OPC  | Organophosphates | Chlorpyrifos, dimethoate, profenofos |
+| CAR  | Carbamates | Aldicarb, methomyl, carbofuran |
+| PYR  | Pyrethroids | Cypermethrin, deltamethrin, permethrin |
+| PAR  | Paraquat & Diquat | Paraquat dichloride, diquat dibromide |
+| PHO  | Phosphine & Phosphides | Aluminium phosphide, zinc phosphide |
+| NEO  | Neonicotinoid Insecticides | Imidacloprid, thiamethoxam |
+| ORG  | Organochlorines | DDT, endosulfan, lindane |
+| CPH  | Chlorophenoxy Herbicides | 2,4-D, MCPA, triclopyr |
+| GLY  | Glyphosates | Glyphosate-IPA, glyphosate-ammonium |
+| COU  | Coumarin Rodenticides | Brodifacoum, bromadiolone, chlorophacinone |
+| FOR  | Formamidines | Amitraz, chlordimeform |
+| FUN  | Fungicides — Unspecified | — |
+| HRB  | Herbicides — Unspecified | — |
+| INS  | Insecticides — Unspecified | — |
+| DEE  | Diethyl-m-toluamide (DEET) | DEET |
+| AFX  | Aflatoxin | Aflatoxin B1/B2/G1/G2 |
+| NAP  | Naphthalene (marbles) | Naphthalene |
+| OTH  | Other | (free text required) |
+| UNK  | Unknown | — |
+
+: NMC pesticide-type classification. Source: existing NMC notification form. AfriTox product-name lookup linked to each class at data entry. {#tbl-mvd-pesticide-type .striped .hover}
+
+**Circumstances / intent (structured drop-down — mandatory)**
+
+| Code | Circumstance | ICD-10 intent mapping |
+|:-----|:------------|:----------------------|
+| UI-OCC | Unintentional — Occupational | X48 (farm, pest control, industrial) |
+| UI-DOM | Unintentional — Domestic | X40–X44 |
+| INT-SH | Intentional — Self-harm | X60–X69 |
+| INT-AH | Intentional — Assault/Homicide | X85–X90 |
+| ENV-DR | Environmental / Drift | X48 (environmental context) |
+| ACC-CN | Accidental contamination (food/water) | X49 |
+| UNK-UI | Unknown / Under investigation | — |
+
+: NMC circumstances/intent classification. Source: existing NMC notification form. Must be captured at both PIH call (caller-reported) and NMC notification (clinician-confirmed); these may differ and both values should be retained. {#tbl-mvd-circumstances .striped .hover}
+
+**Remaining mandatory MVD fields for NMC notification**
+
+| Field | Format | Notes |
+|:------|:-------|:------|
+| Case date (date of exposure / presentation) | ISO 8601 (YYYY-MM-DD) | Date of poisoning event or first clinical presentation |
+| Facility / point of care | Facility NHIS code | Or "PIH referral" if never attended facility |
+| Province | 2-letter code (e.g. WC, GP, FS) | Province of exposure, not of facility |
+| District | LIM-code or free text | For geographic clustering analysis |
+| Outcome at notification | Survived / Died / Unknown | MUST be updated if outcome changes |
+| AfriTox product name | Free text + drop-down lookup | Mandatory field; "unknown" is valid if product unidentified |
+| Notification source | NMC-direct / PIH-MVD / NHLS-autonotify | Tracks which stream generated the case |
+
+: MVD — additional mandatory fields. These are the minimum set required to (a) link across streams, (b) support geographic clustering, and (c) support product-specific attribution. Fields marked "unknown" are acceptable; empty/null is not. {#tbl-mvd-core .striped .hover}
+
+---
+
+### A2. PIH MVD — required fields including demographic variables
+
+PIH captures call data in its existing Toxicology Management System (TMS). The following fields must be structured (coded, not free-text) in the PIH-to-NMC MVD feed to ensure the data are surveillance-ready. **Demographic variables are mandatory** — they are the primary tool for detecting vulnerable sub-populations (occupational exposure in farm workers, paediatric accidental ingestion, gender asymmetry in intentional self-harm) and for geographic clustering.
+
+| Domain | Field | Format | Rationale |
+|:-------|:------|:-------|:---------|
+| **Demographics** | Age | Integer (years) or age-band (0–4, 5–14, 15–24, 25–34, 35–49, 50–64, ≥65) | Paediatric vs. adult exposure patterns differ; required for burden modelling |
+| **Demographics** | Sex | M / F / Unknown | Gender asymmetry in intentional self-harm is a known signal |
+| **Demographics** | Caller type | Patient / Clinician / Caregiver / Other | Distinguishes clinician-initiated (surveillance-relevant) from lay calls |
+| **Demographics** | Occupation (if stated) | Free text + coded: farm worker / pesticide applicator / domestic worker / child / other / unknown | Occupational exposure is systematically under-identified |
+| **Geography** | Province of caller | 2-letter code | Derived from caller area code or stated by caller |
+| **Geography** | District (if known) | LIM-code or free text | Optional but captures rural/urban signal |
+| **Exposure** | Pesticide type | NMC drop-down (see A1) | Must align with NMC classification for linkage |
+| **Exposure** | AfriTox product name | Free text + drop-down lookup | Mandatory; "unknown" valid |
+| **Exposure** | Route | Ingestion / Dermal / Inhalation / Ocular / Unknown | Route influences clinical management and surveillance signal |
+| **Circumstances** | Intent | NMC circumstance codes (see A1) | Caller-reported; may be updated by treating clinician |
+| **Clinical** | Severity (caller-assessed) | Mild / Moderate / Severe / Unknown | PSS (Poisoning Severity Score) if TMS supports it |
+| **Clinical** | Referred to facility | Yes / No / Unknown | Links call record to potential NMC notification |
+| **Linkage** | NMC notification number | Free text (if referred and notified) | Enables de-duplicated case linking across PIH + NMC streams |
+| **System** | Call date and time | ISO 8601 (YYYY-MM-DDTHH:MM) | Required for temporal clustering and latency audit |
+| **System** | TMS call ID | Alphanumeric | Internal identifier; retained for audit; not transmitted externally |
+
+: PIH MVD — full field specification including demographic variables. Demographic fields (age, sex, caller type, occupation) are mandatory for all calls; a structured unknown code is required if data are not available — blank fields will be rejected in the NMC ingest pipeline. {#tbl-pih-mvd .striped .hover}
+
+::: {.callout-note appearance="minimal"}
+**POPIA compliance.** All PIH-to-NMC transmissions must be de-identified before transmission: no name, phone number, or exact address. Age-band (not exact age), province/district (not street address), and anonymised TMS call ID are sufficient for surveillance linkage and comply with Section 90 of the National Health Act (2003) and POPIA. Exact age may be retained internally within PIH TMS for clinical purposes and transmitted as age-band only.
+:::
+
+::: {.callout-tip appearance="minimal"}
+**AfriTox agent-name harmonisation.** Both PIH (TMS) and NMC (notification form) must use the same AfriTox product-name controlled vocabulary so that product-level attribution is consistent across streams. The harmonisation workshop (S1 MVD workshop, Months 1–3) should produce a shared AfriTox lookup table embedded in both systems. This is the lowest-cost, highest-value interoperability intervention in the MVD: it costs a single workshop and yields cross-stream agent attribution at scale.
 :::
