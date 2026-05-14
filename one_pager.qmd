@@ -1,6 +1,6 @@
 ---
 title: "D2P One-Pager"
-subtitle: "Detect → Act → Restrict — three asks, one system, R300k/year"
+subtitle: "Detect → Act → Restrict — three asks, one system, ~R280k/year"
 author: "D2P Project Team"
 date: today
 format:
@@ -14,39 +14,37 @@ execute:
 ::: {.one-pager}
 
 ::: {.header-box}
-# Pesticide poisoning in South Africa
+# Pesticide poisoning is a hidden public-health emergency in South Africa
 
-**11,690 cases · 1,500 deaths · R2.34 billion · per year.**
+**≈20,960 poisonings · 2,620 deaths · R2.34 billion lost — every year.**
 
-*Three coordinated policy actions retire most of it at ~R300k/year — no new legislation required.*
+*StatsSA MACOD 2023 (X40–X49 accidental poisoning). Fewer than 1 in 20 cases is formally detected. You cannot manage what you cannot see — so **surveillance is step one**.*
 :::
 
 ## The problem in one line
 
 ::: {.key-stat}
-**Detection is incomplete, the response loop is broken, and the worst single product is still freely registered.** Three problems → three briefs → one integrated system.
+**South Africa is flying blind.** The country detects <5% of poisonings, the response loop is not closed, and the single most lethal product — terbufos — remains freely registered. **Fix detection first, and the rest of the system becomes actionable.**
 :::
 
-## Three briefs, three asks
+## Three briefs, three asks — sequenced
 
 ::: {.grid-2col}
 
 ::: {.option-summary}
-### 1 · Detect — Surveillance ★
-**Ask:** Adopt the Surveillance MVP — PIH dashboard/MVD (S1) + BChE auto-notify (S2). NHLS→NMC IT feed now operational.
-**Cost:** R117,000/yr
-**Impact:** Per-case detection 5 % → 19 % (almost 4×); enables faster, targeted response.
-**Time:** 12 weeks
-**Owner:** NICD · NHLS · PIH
+### 1 · Detect — Surveillance ★ *(first step)*
+**Ask:** Adopt the Surveillance MVP — PIH live dashboard + minimum viable dataset (S1) and NHLS BChE auto-notification (S2). The NHLS→NMC IT feed is already operational.
+**Cost:** ~R137,000/yr (+ R80k one-off setup).
+**Impact:** Per-case detection **4.8% → 18.9%** (≈4× uplift) within 12 weeks. Without this signal, Act and Restrict are guesswork.
+**Owner:** NDoH-led — NICD · NHLS · PIH.
 :::
 
 ::: {.option-summary}
 ### 2 · Act — Coordination ★
-**Ask:** Joint NDoH–DALRRD DG circular adopting the Coordination Full Package — closure-of-loop NMC field, structured DALRRD referral, NICD→DALRRD intelligence feed, clinician feedback, joint KPI dashboard.
-**Cost:** R145,000/yr
-**Impact:** P(loop closed) 1.1 % → ~70 %; ~957 deaths averted/yr at scale
-**Time:** 12 weeks for MVP (C1+C3), 12 months for full package
-**Owner:** NICD-led, DALRRD partner
+**Ask:** Joint NDoH–DALRRD DG circular adopting the Coordination Full Package — NMC closure-of-loop field, structured DALRRD referral, NICD→DALRRD intelligence feed, clinician auto-feedback, joint KPI dashboard.
+**Cost:** ~R145,000/yr.
+**Impact:** P(loop closed) 1.1% → ~70%; **~957 deaths averted/yr** at scale.
+**Owner:** NICD-led, DALRRD partner.
 :::
 
 :::
@@ -55,19 +53,16 @@ execute:
 
 ::: {.option-summary}
 ### 3 · Restrict — Terbufos ★
-**Ask:** DALRRD adopt Option T2 (formulation restriction + RUP designation + distributor audit), with a hard-coded 24-month evaluation gate to Option T3 (full ban) if attributable serious cases do not fall by a pre-agreed margin.
-**Cost:** ~R1–3M/yr DALRRD enforcement
-**Impact:** Removes the dominant agent in fatal SA paediatric pesticide poisoning; leverage ratio ~1 : 500 on household mortality.
-**Time:** Gazette T2 within 3 months; T3 decision at 24 months.
-**Owner:** DALRRD Pesticide Registrar
+**Ask:** DALRRD adopt Option T2 (Restricted-Use designation + formulation restriction + distributor audit) now, with a **hard-coded 24-month evaluation gate** that escalates to Option T3 (full ban) if attributable serious cases do not fall by a pre-agreed margin.
+**Cost:** ~R1–3M/yr enforcement.
+**Impact:** Targets the dominant agent in fatal SA paediatric pesticide poisoning (Davies 2023; Sri Lanka natural-experiment evidence). Leverage on household burden ≈ **500 : 1**.
+**Owner:** DALRRD Pesticide Registrar.
 :::
 
 ::: {.option-summary}
 ### How the three connect
-**Detect** generates the evidence the **Act** loop needs.
-The closed loop terminates in **Restrict** decisions (starting with terbufos).
-Outcomes of those decisions feed back into the surveillance system.
-**Each ask stands alone; together they are strictly more valuable.**
+**Detect** generates the evidence the **Act** loop needs. The closed loop terminates in **Restrict** decisions — terbufos is the first product the upgraded system should deliver, not the last. Outcomes feed back into surveillance and prove the system is working.
+**Each ask stands alone. Together they are strictly more valuable.**
 :::
 
 :::
@@ -85,20 +80,20 @@ Outcomes of those decisions feed back into the surveillance system.
 | Households / wider society — lost lifetime earnings | ~R2.25B | 96.2 % |
 | **Total** | **R2.34B** | **100 %** |
 
-: Audited decomposition. Mortality (~96 %) falls on households via lost lifetime earnings (25 productive yr × R60k median income, undiscounted). Health-sector share is modest in absolute terms but it is the only column on a departmental budget line. {.striped}
+: Audited decomposition. Mortality (~96 %) falls on households via lost lifetime earnings (25 productive yr × R60k median income, undiscounted). The health-sector share is modest in absolute terms but is the only column on a departmental budget line — and the only one a Minister can act on directly. {.striped}
 
 ---
 
 ## The economics
 
 ::: {.recommendation-box}
-### ~R300k of operating spend retires ~R1.5B of preventable burden
+### ~R280k of operating spend can retire ~R1.5B of preventable burden
 
-**Total annual operating cost (Detect + Act):** ~R300,000 (less than one additional epidemiologist's salary).
+**Total annual operating cost (Detect + Act):** ~R282,000 — less than one mid-grade epidemiologist's salary.
 **Modelled burden avoided at scale:** ~R1.45 billion / year (Coordination Full Package; see [Coordination brief §6c](posts/coordination_policy.qmd#what-changes-under-each-coordination-scenario)).
-**Stakeholder split of that avoided burden:** ~R50M to NDoH+NHLS budget lines; ~R1.4B to households.
-**ROI:** ~1,000× on narrow surveillance cost; ~220× on whole-system cost.
-**Legal basis:** NHA §90 + existing NMC regulations + Act 36 of 1947.
+**Stakeholder split of avoided burden:** ~R50M back to NDoH+NHLS budget lines; ~R1.4B to households.
+**ROI:** ~1,000× on the narrow surveillance cost; ~220× on whole-system cost.
+**Legal basis:** NHA §90 + existing NMC regulations + Act 36 of 1947. **No new legislation required.**
 :::
 
 ---
@@ -106,9 +101,9 @@ Outcomes of those decisions feed back into the surveillance system.
 ## What we are *not* asking for
 
 - No new legislation.
-- No new test, no new reagent contract (S2 is an LIS configuration).
+- No new test, no new reagent contract (S2 is an LIS configuration of an existing NHLS assay).
 - No new agency.
-- No single point-estimate masquerading as certainty — every figure traces back to [`amua_import_parameters_v3.csv`](amua_import_parameters_v3.csv); open evidence gaps are listed in the [Parameters Hub](parameters_hub.qmd).
+- No single point-estimate masquerading as certainty — every figure traces back to [`amua_import_parameters_v4.csv`](amua_import_parameters_v4.csv); open evidence gaps are listed in the [Parameters Hub](parameters_hub.qmd).
 
 ---
 
@@ -116,10 +111,10 @@ Outcomes of those decisions feed back into the surveillance system.
 
 | From | Action | By when |
 |:-----|:-------|:--------|
-| MAC + NDoH | Approve Surveillance MVP pilot (3 provinces, R157k + R80k setup) | Q3 2026 |
-| NDoH + DALRRD DGs | Issue joint circular adopting Coordination Full Package | Q3 2026 |
-| DALRRD Pesticide Registrar | Gazette Terbufos Option T2 with 24-month evaluation gate | Q4 2026 |
-| MAC | Stand up the Joint Coordination Forum (quarterly, NICD chair) | Q3 2026 |
+| MAC + NDoH | Approve **Surveillance MVP** pilot (3 provinces; R137k op + R80k setup) — *the first step* | Q3 2026 |
+| NDoH + DALRRD DGs | Issue joint circular adopting the **Coordination Full Package** | Q3 2026 |
+| DALRRD Pesticide Registrar | Gazette **Terbufos Option T2** with 24-month evaluation gate | Q4 2026 |
+| MAC | Stand up the **Joint Coordination Forum** (quarterly, NICD chair) | Q3 2026 |
 
 ---
 

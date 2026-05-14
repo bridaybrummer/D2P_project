@@ -238,6 +238,47 @@ deaths_residual_mid, 100*(1 - phi)
 ))
 ````
 
+**Summary — aggregate tree (national, annual).**
+
+```{r}
+#| label: tbl-terb-aggregate-summary
+#| echo: false
+knitr::kable(
+  averted %>%
+    mutate(
+      label = case_when(
+        metric == "deaths/yr"        ~ "Deaths/yr",
+        metric == "burden ZAR/yr"    ~ "Economic burden (ZAR/yr)",
+        metric == "maize yield (pp)" ~ "Maize yield impact (pp)",
+        TRUE ~ metric
+      ),
+      status_quo = case_when(
+        metric == "burden ZAR/yr"    ~ sprintf("R%.2fB", status_quo / 1e9),
+        metric == "maize yield (pp)" ~ sprintf("%.1f pp", status_quo),
+        TRUE ~ format(round(status_quo), big.mark = ",")
+      ),
+      ban = case_when(
+        metric == "burden ZAR/yr"    ~ sprintf("R%.2fB", ban / 1e9),
+        metric == "maize yield (pp)" ~ sprintf("%.1f pp", ban),
+        TRUE ~ format(round(ban), big.mark = ",")
+      ),
+      averted_fmt = case_when(
+        metric == "burden ZAR/yr"    ~ sprintf("R%.2fB (range R%.2f–R%.2fB)",
+                                               averted / 1e9, burden_avert_lo, burden_avert_hi),
+        metric == "deaths/yr"        ~ sprintf("%s (range %s–%s)",
+                                               format(round(averted), big.mark = ","),
+                                               format(deaths_avert_lo, big.mark = ","),
+                                               format(deaths_avert_hi, big.mark = ",")),
+        metric == "maize yield (pp)" ~ sprintf("%.1f pp", averted),
+        TRUE ~ format(round(averted), big.mark = ",")
+      )
+    ) %>%
+    select(Metric = label, `Status quo (T1)` = status_quo,
+           `Ban (T2)` = ban, `Averted by ban` = averted_fmt),
+  caption = "Aggregate decision tree: national annual outcomes under each arm and the reduction delivered by an enforced ban (mid-point estimate). Deaths/burden range reflects attributable-fraction bracket (Davies 2023 + Gunnell 2017)."
+)
+```
+
 **Reading the tree.** The decision is binary because the upstream driver — high-intrinsic-toxicity granular OP in informal circulation — is binary: either the product is on the register or it isn't. Each branch terminates in three parallel outcomes:
 
 - **Deaths** — the headline public-health metric. Computed as $f_\text{attr} \times \varphi_\text{retired} \times N_\text{deaths}$. The working value pulls from three CSV parameters:
@@ -341,19 +382,65 @@ knitr::kable(
 )
 ```
 
-**Scaled to SA population.**
+**Apples-to-apples comparison — both trees on the same national scale.**
 
 ```{r}
-#| label: tbl-terb-tree-personal-national
+#| label: tbl-terb-trees-comparison
 #| echo: false
+
+# Aggregate tree national numbers (already computed above)
+ban_row        <- res %>% filter(arm == "ban")
+agg_sq_deaths  <- sq$deaths_per_yr
+agg_ban_deaths <- ban_row$deaths_per_yr
+agg_sq_burden  <- sq$burden_zar_per_yr
+agg_ban_burden <- ban_row$burden_zar_per_yr
+
+# Personal tree national numbers (from av_p, already scaled)
+d_av_pp   <- av_p %>% filter(metric == "deaths/yr (national)")
+h_av_pp   <- av_p %>% filter(metric == "hospitalisations/yr (national)")
+c_av_pp   <- av_p %>% filter(metric == "cost ZAR/yr (national)")
+
+comparison <- tibble(
+  Metric = c(
+    "Deaths/yr — status quo",
+    "Deaths/yr — ban",
+    "Deaths averted/yr",
+    "Hospitalisations averted/yr",
+    "Economic burden averted/yr"
+  ),
+  `Aggregate tree (§6)` = c(
+    format(round(agg_sq_deaths),  big.mark = ","),
+    format(round(agg_ban_deaths), big.mark = ","),
+    sprintf("%s (range %s–%s)",
+            format(round(da$averted),      big.mark = ","),
+            format(deaths_avert_lo,        big.mark = ","),
+            format(deaths_avert_hi,        big.mark = ",")),
+    "— (not modelled)",
+    sprintf("R%.2fB (range R%.2f–R%.2fB)",
+            ba$averted / 1e9, burden_avert_lo, burden_avert_hi)
+  ),
+  `Per-individual tree (§6b)` = c(
+    format(round(d_av_pp$status_quo), big.mark = ","),
+    format(round(d_av_pp$ban),        big.mark = ","),
+    sprintf("%s (%.1f%% reduction)",
+            format(round(d_av_pp$averted), big.mark = ","),
+            100 * d_av_pp$pct_reduction),
+    sprintf("%s (%.1f%% reduction)",
+            format(round(h_av_pp$averted), big.mark = ","),
+            100 * h_av_pp$pct_reduction),
+    sprintf("R%.2fB (%.1f%% reduction)",
+            c_av_pp$averted / 1e9,
+            100 * c_av_pp$pct_reduction)
+  )
+)
+
 knitr::kable(
-  av_p %>%
-    mutate(status_quo    = format(round(status_quo), big.mark = ","),
-           ban           = format(round(ban),        big.mark = ","),
-           averted       = format(round(averted),    big.mark = ","),
-           pct_reduction = sprintf("%.1f%%", 100 * pct_reduction)),
-  caption = sprintf("National annual totals under each arm, and the reduction (status quo - ban) delivered by an enforced ban. Compare with the §6 headline of ~%s deaths averted/yr from the aggregate tree.",
-                    format(round(f_mid * phi * N_d), big.mark = ","))
+  comparison,
+  caption = sprintf(
+    "Side-by-side comparison of the two decision trees on a common national annual scale (SA population reference: %s). The aggregate tree (§6) uses f_attr × φ_retired × StatsSA totals; the per-individual tree (§6b) derives the effect from the CFR differential (terbufos %.1f%% vs other agents %.1f%%) applied to the agent-mix shift (%.0f%% → %.0f%% terbufos among poisonings). Close agreement validates the parameter set; large divergence flags inconsistency between CFR inputs and the attributable-fraction literature.",
+    format(params_p$sa_population_ref, big.mark = ","),
+    100 * pd_t, 100 * pd_o, 100 * pterb_sq, 100 * pterb_bn
+  )
 )
 ```
 

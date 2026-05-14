@@ -8,34 +8,48 @@ format:
 ---
 
 ::: {.hero-banner}
-## Three policy briefs. One system. {.hero-title}
+## A hidden public-health emergency — fix detection first {.hero-title}
 
-**Strengthen detection. Close the response loop. Act on the worst product first.**
+**≈20,960 poisonings · 2,620 deaths · R2.34 billion lost — every year.** Yet South Africa formally detects fewer than 1 in 20 cases. **Strengthen surveillance, close the response loop, act on the worst product.**
+:::
+
+## The public-health problem in five lines
+
+- South Africa records **2,620 pesticide-poisoning deaths per year** (StatsSA MACOD 2023, X40–X49) and an estimated **20,960 poisonings**, costing **R2.34 billion** annually.
+- **Detection is < 5%**: NMC, NHLS, and PIH each see a slice of the burden; none sees the whole. Decision-makers act on the visible 1,013 NMC notifications while the other ~95% remain invisible.
+- The **response loop is broken**: ~99% of notifications end without a recorded investigation, referral, or regulatory follow-up.
+- **One product** — **terbufos**, WHO Class Ia — dominates fatal paediatric pesticide poisoning (Davies 2023) and remains freely registered.
+- **96% of the cost falls on households** (lost lifetime earnings), but the only people who can change the upstream exposure sit in DALRRD and NDoH.
+
+::: {.callout-important icon=false}
+## Why surveillance is step one
+You cannot prioritise, target, or evaluate a response to a problem you cannot see. **Detection is the precondition for credible action on coordination and on terbufos.** The Surveillance MVP costs ~R137k/year, takes 12 weeks, and lifts per-case detection from 4.8% to 18.9% — a ≈4× uplift using assets that already exist (NMC, NHLS BChE, PIH).
 :::
 
 ## The headline numbers
 
 | Indicator | Value | Source |
 |:----------|------:|:-------|
-| True annual burden (cases) | **11,690** | NMC + NHLS + PIH |
-| Headline annual deaths | **1,500** | Stratified CFR + VR triangulation |
+| Annual deaths (canonical) | **2,620** | StatsSA MACOD 2023, Table 4.12 (X40–X49) |
+| True annual burden (mid-CFR) | **~20,960 cases** | StatsSA ÷ 12.5 % CFR |
+| Currently detected (NMC) | **1,013 (4.8 %)** | NICD NMC Annual Report 2023 |
 | Annual economic burden | **R2.34 billion** | Morbidity (R90M) + mortality (R2.25B) |
 | Health-sector share (NDoH + NHLS) | **~R80M (3.4 %)** | Direct budget-line cost |
 | Household / societal share | **~R2.26B (96.6 %)** | OOP + lost lifetime earnings |
 
-: All numbers pulled from the canonical [Parameters Hub](parameters_hub.qmd) — single source of truth. {.striped}
+: All numbers pulled from the canonical [Parameters Hub](parameters_hub.qmd) — single source of truth ([`amua_import_parameters_v4.csv`](amua_import_parameters_v4.csv)). {.striped}
 
-## The three briefs
+## The three briefs — sequenced
 
 ::: {.card-grid}
 
 ::: {.feature-card}
-### 1 · [Detect](posts/surveillance_policy.qmd)
+### 1 · [Detect](posts/surveillance_policy.qmd) — *start here*
 
-**Surveillance brief.** Close the gap between NMC, NHLS, and PIH so cases are seen in days, not weeks.
+**Surveillance brief.** Close the gap between NMC, NHLS, and PIH so cases are seen in days, not weeks. **You cannot act on what you cannot see.**
 
-**MVP — R157k/year, +73 % detection, 12 weeks.**
-NHLS→NMC feed + BChE auto-notify + PIH dashboard/MVD.
+**MVP — ~R137k/year, detection 4.8% → 18.9%, 12 weeks.**
+NHLS→NMC feed (live) + BChE auto-notify + PIH dashboard / minimum viable dataset.
 
 *Audience: NDoH, NICD, NHLS, MAC.*
 :::
@@ -45,7 +59,7 @@ NHLS→NMC feed + BChE auto-notify + PIH dashboard/MVD.
 
 **Coordination brief.** Make every NMC notification trigger a recorded EHP investigation and a DALRRD-acknowledged referral.
 
-**Full Package — R145k/year, ~957 deaths averted/year.**
+**Full Package — ~R145k/year, ~957 deaths averted/year at scale.**
 Closure-of-loop field + structured DALRRD referral + NICD→DALRRD intelligence feed + clinician feedback + joint KPI dashboard.
 
 *Audience: NDoH + DALRRD DGs, MAC, Treasury.*
@@ -54,10 +68,10 @@ Closure-of-loop field + structured DALRRD referral + NICD→DALRRD intelligence 
 ::: {.feature-card}
 ### 3 · [Restrict](posts/terbufos_policy.qmd)
 
-**Terbufos brief.** Act on the WHO Class Ia product that drives a disproportionate share of fatal pesticide poisonings.
+**Terbufos brief.** Act on the WHO Class Ia product driving a disproportionate share of fatal pesticide poisonings.
 
-**Option T2 now, 24-month evaluation gate to T3 (full ban).**
-DALRRD-led; ~R1–3M/year of enforcement retires household-borne mortality cost at a leverage ratio of ~1 : 500.
+**Option T2 now; 24-month evaluation gate to T3 (full ban).**
+DALRRD-led; ~R1–3M/year of enforcement retires household-borne mortality cost at a leverage ratio of **~500 : 1**.
 
 *Audience: DALRRD Pesticide Registrar, MAC, NDoH.*
 :::
@@ -68,18 +82,18 @@ DALRRD-led; ~R1–3M/year of enforcement retires household-borne mortality cost 
 
 ```{mermaid}
 %%| label: fig-golden-thread
-%%| fig-cap: "Golden thread of the D2P briefs. Better detection generates the evidence the coordination loop needs; the closed loop terminates in product-specific regulatory action; outcomes of that action are picked up by the same surveillance system that started the chain."
+%%| fig-cap: "Golden thread of the D2P briefs. Surveillance comes first because it is the precondition for credible action on the other two. Better detection generates the evidence the coordination loop needs; the closed loop terminates in product-specific regulatory action (starting with terbufos); outcomes of that action are picked up by the same surveillance system that started the chain."
 flowchart LR
-    S[1 · Detect<br/><b>Surveillance</b><br/>NMC + NHLS + PIH] --> C[2 · Act<br/><b>Coordination</b><br/>NICD → EHP → DALRRD]
+    S[1 · Detect<br/><b>Surveillance</b><br/>NMC + NHLS + PIH<br/><i>FIRST STEP</i>] --> C[2 · Act<br/><b>Coordination</b><br/>NICD → EHP → DALRRD]
     C --> R[3 · Restrict<br/><b>Terbufos</b><br/>RUP → 24-month gate → ban]
     R -.Outcome<br/>feedback.-> S
 
-    style S fill:#cce5ff,stroke:#333,stroke-width:2px
+    style S fill:#cce5ff,stroke:#0050a0,stroke-width:3px
     style C fill:#9f9,stroke:#333,stroke-width:2px
     style R fill:#ffd9b3,stroke:#cc8800,stroke-width:2px
 ```
 
-Three stages, one system. Each affordable on its own; each strictly more valuable paired with the others. **Total annual operating cost ~R300k against an annual burden of R2.34 billion.**
+Three stages, one system. Each affordable on its own; each strictly more valuable paired with the others. **Total annual operating cost ~R280k against an annual burden of R2.34 billion (~1,000× ROI on the narrow case).**
 
 ## Where to start
 
@@ -110,7 +124,7 @@ Three stages, one system. Each affordable on its own; each strictly more valuabl
 ## What this site does *not* claim
 
 - **A new legislative ask.** Every recommendation is implementable under existing authority (NHA §90; Act 36 of 1947).
-- **Unsourced numbers.** Every figure traces back to [`amua_import_parameters_v3.csv`](amua_import_parameters_v3.csv) and the references in the [Parameters Hub](parameters_hub.qmd).
+- **Unsourced numbers.** Every figure traces back to [`amua_import_parameters_v4.csv`](amua_import_parameters_v4.csv) and the references in the [Parameters Hub](parameters_hub.qmd).
 - **A single point estimate masquerading as certainty.** Headline numbers are anchored to ranges; open evidence gaps are listed explicitly.
 
 ---

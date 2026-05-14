@@ -127,6 +127,81 @@ flowchart LR
 
 Three active root causes remain **executional, not legislative**, and are each already legally permissible under Section 90 of the National Health Act (2003) and the existing NMC regulations. The fourth root cause (NHLS–NMC IT connectivity) has been resolved — the LIS-to-NMC feed is now operational.
 
+### 4b. System-wide root cause analysis — what is in scope, and what is not
+
+The fishbone above is deliberately narrow to surveillance under-detection. The figure below widens the lens to the **full set of root causes of pesticide-poisoning harm in South Africa** — surveillance, coordination, regulatory, and contextual — and maps each to a policy option in the D2P portfolio (this brief, the [Coordination brief](coordination_policy.qmd), and the [Terbufos brief](terbufos_policy.qmd)). **Drivers that are not connected to a policy option are explicitly out of scope** for the current D2P workstream: they are real problems, but addressing them sits outside this project's mandate, funding window, or institutional authority.
+
+This chunk is intentionally self-contained (Mermaid only, no R dependencies) so it can be copied verbatim into the coordination or terbufos briefs, the analysis report, or a standalone slide deck.
+
+
+```{mermaid}
+%%| label: fig-system-rca
+%%| fig-cap: "System-wide root cause analysis of pesticide-poisoning harm in South Africa, with each driver mapped to a D2P policy option. Green = addressed by a D2P option; grey-dashed = explicitly out of scope for D2P (real problem, but not the mandate of this workstream)."
+flowchart LR
+    HARM[Pesticide-poisoning<br/>harm in SA<br/>~2,620 deaths/yr<br/>~R2.34B/yr burden]:::harm
+
+    %% ===== Four root-cause domains =====
+    HARM --> SURV[Surveillance gaps]:::dom
+    HARM --> COORD[Coordination &<br/>response gaps]:::dom
+    HARM --> BAN[Regulatory /<br/>banning gaps]:::dom
+    HARM --> CTX[Contextual<br/>upstream drivers]:::dom
+
+    %% ===== Surveillance drivers =====
+    SURV --> SV1[No integrated 3-stream<br/>system NMC + NHLS + PIH]
+    SURV --> SV2[No live-patient<br/>chemical toxicology]
+    SURV --> SV3[Hospital-only<br/>surveillance reach]
+    SURV --> SV4[Limited EBS / community<br/>signal capture]
+    SURV --> SV5[Poor data standardisation<br/>NMC does not follow<br/>AfriTox agent naming]
+    SURV --> SV6[Forensic chemistry<br/>fully de-identified —<br/>no demographics]:::oos
+    SURV --> SV7[MLDI system limited<br/>for surveillance utility]:::oos
+    SURV --> SV8[CRVS / StatsSA MACOD<br/>3–4 year publication lag]:::oos
+    SURV --> SV9[CRVS does not capture<br/>manner of death]:::oos
+
+    SV1 --> OS_MVP[Surveillance MVP<br/>S1 + S2]:::opt
+    SV2 --> OS3[Surveillance S3<br/>sentinel toxicology]:::opt
+    SV3 --> OS1b[Surveillance S1b<br/>community / EBS layer<br/><i>Phase 2, conditional</i>]:::opt
+    SV4 --> OS1b
+    SV5 --> OS1[Surveillance S1<br/>AfriTox harmonisation<br/>+ NMC agent drop-down]:::opt
+
+    %% ===== Coordination drivers =====
+    COORD --> CO1[EHP investigation<br/>outcome not recorded<br/>back on NMC]
+    COORD --> CO2[EHP → DALRRD referral<br/>has no SOP, no audit trail]
+    COORD --> CO3[Clinicians get no<br/>case-status feedback]
+    COORD --> CO4[No M&E of investigation,<br/>source removal, or<br/>regulatory action]
+    COORD --> CO5[Unknown chemical agent<br/>registries — storage / use<br/>locations not shared<br/>with health sector]:::oos
+
+    CO1 --> OC1[Coordination C1<br/>NMC closure-of-loop<br/>EHP field]:::opt
+    CO2 --> OC2[Coordination C2<br/>structured EHP → DALRRD<br/>referral form]:::opt
+    CO3 --> OC4[Coordination C4<br/>notifier auto-feedback]:::opt
+    CO4 --> OC5[Coordination C5<br/>joint KPI dashboard]:::opt
+    CO4 --> OC3[Coordination C3<br/>NICD → DALRRD<br/>intelligence feed]:::opt
+
+    %% ===== Banning / regulatory drivers =====
+    BAN --> BN1[Most toxic agent in recent<br/>mass-poisonings still legally<br/>registered Terbufos<br/>contrary to international std]
+    BAN --> BN2[Informally traded<br/>street-pesticide market]
+    BAN --> BN3[Repackaged into<br/>unlabelled containers]
+
+    BN1 --> OT2[Terbufos T2<br/>cancel registration<br/>12–24 mo phase-out]:::opt
+    BN2 --> OT2
+    BN3 --> OT2
+
+    %% ===== Contextual / upstream drivers — explicitly out of scope =====
+    CTX --> CX1[HHPs used as<br/>vermin control<br/>in informal settlements]:::oos
+    CTX --> CX2[Industry / trade pushback<br/>to protect crop yield<br/>despite safer substitutes]:::oos
+    CTX --> CX3[Mental health burden<br/>and suicide pathway]:::oos
+    CTX --> CX4[Low public awareness<br/>of informal-pesticide toxicity]:::oos
+    CTX --> CX5[Low / unknown occupational<br/>health & safety on farms]:::oos
+
+    %% ===== Styling =====
+    classDef harm  fill:#f99,stroke:#900,stroke-width:2px,color:#000
+    classDef dom   fill:#fde,stroke:#333,stroke-width:1.5px,color:#000
+    classDef opt   fill:#cfc,stroke:#060,stroke-width:1.5px,color:#000
+    classDef oos   fill:#eee,stroke:#999,stroke-dasharray: 5 5,color:#555
+```
+
+
+**How to read.** Each domain (surveillance / coordination / banning / contextual) lists every root cause raised in the D2P scoping work. **Green nodes** flow to a concrete policy option in this portfolio. **Grey-dashed nodes** are explicitly *not* addressed: forensic-chemistry de-identification and MLDI redesign are separate NHLS / NICD workstreams; CRVS lag and manner-of-death capture sit with StatsSA and Home Affairs; the chemical-agent storage registry sits with DALRRD and DTIC; and the contextual drivers (HHPs-as-rodenticide, industry pushback, mental health, public awareness, farm OHS) are real upstream determinants but are owned by departments and disciplines outside the D2P remit. Calling them out as out-of-scope here is the honest alternative to either pretending the portfolio addresses them or pretending they do not matter.
+
 ## 5. Policy options
 
 ::: {.callout-tip icon=false}
