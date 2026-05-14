@@ -122,7 +122,7 @@ c_S2_BChE_autonotify_setup,200000,"S2 BChE auto-notify setup: NHLS LIS HL7 recon
 c_S2_BChE_autonotify_op,55000,"S2 BChE auto-notify operating: middleware hosting + maintenance | dist=gamma(25,2200) | NHLS IT (was c_S3a_BChE_autonotify_op in v3)",costs.S2_BChE
 c_S1_PIH_MVD_setup,40000,"S1 PIH live dashboard + MVD setup: reporting template + data dictionary (one-off) | dist=gamma(25,1600) | PIH admin (was c_S4_PIH_dashboard_setup in v3)",costs.S1_PIH_MVD
 c_S1_PIH_MVD_op,82000,"S1 PIH live dashboard + MVD operating (includes AfriTox agent-name harmonisation for PIH+NMC) | dist=gamma(25,3280) | PIH revised, AfriTox harmonisation (was c_S4_PIH_dashboard_op in v3)",costs.S1_PIH_MVD
-c_surv_MVP_setup,80000,"Surveillance MVP setup (S0 NHLS-NMC feed + S1 PIH MVD + S2 BChE, IT one-off; S2 BChE HL7 work dominates) | dist=fixed(,) | Sum, S2 BChE setup dominates",costs.MVP
+c_surv_MVP_setup,240000,"Surveillance MVP setup = S1 PIH MVD setup (R40k) + S2 BChE auto-notify setup (R200k) | dist=fixed(,) | Sum of c_S1_PIH_MVD_setup + c_S2_BChE_autonotify_setup",costs.MVP
 c_surv_MVP_op,137000,"Surveillance MVP annual operating = S1 PIH MVD (R82k, AfriTox harmonisation) + S2 BChE auto-notify (R55k) = R137k | dist=fixed(,) | Sum",costs.MVP
 # === SENSITIVITY — EVENT-BASED / COMMUNITY SURVEILLANCE (S1b) ===,,,
 # S1b is NOT a current recommendation — it is a sensitivity analysis showing what a,,,
@@ -160,6 +160,29 @@ frac_terbufos_attributable_mid,0.25,"Terbufos attributable fraction, working val
 frac_terbufos_attributable_hi,0.35,"Terbufos attributable fraction, upper | dist=fixed(,) | Sri Lanka upper end",terb.burden
 n_deaths_terbufos_attributable_mid,375,"= frac_terbufos_attributable_mid × n_deaths_headline = 0.25 × 1500 | dist=fixed(,) | Derived",terb.burden
 frac_T3_burden_retired,0.70,"Fraction of terbufos-attributable burden retired under Option T3 full withdrawal | dist=beta(70,30) | Sri Lanka substitution-incompleteness 60-80%",terb.burden
+# === ALDICARB (Two-Step / street pesticide) — chemical agent phase-out parameters ===,,,
+# Aldicarb is already informally banned but continues to circulate in informal markets.,,,
+# Attributable fractions are literature-derived (sparse SA data); replace with S3 sentinel toxicology data when available.,,,
+frac_aldicarb_attributable_lo,0.05,"Aldicarb attributable fraction of fatal SA pesticide poisonings, lower | dist=fixed(,) | Sparse SA data; informal-market enforcement literature",aldi.burden
+frac_aldicarb_attributable_mid,0.12,"Aldicarb attributable fraction, working value | dist=beta(12,88) | Two-Step enforcement literature + informal-market SA case reports",aldi.burden
+frac_aldicarb_attributable_hi,0.20,"Aldicarb attributable fraction, upper | dist=fixed(,) | Worst-case informal-market scenario pre-enforcement",aldi.burden
+frac_aldicarb_burden_retired,0.85,"Fraction of aldicarb-attributable burden retired under formal enforcement of existing ban | dist=beta(85,15) | Already informally banned; formal enforcement achieves high compliance per Sri Lanka + EU analogues",aldi.burden
+# === DALY / GBD PARAMETERS (GBD 2019 pesticide poisoning; provisional pending StatsSA MACOD age-sex tabulation) ===,,,
+# YLL values use a provisional mean-age-at-death. Replace yll_mean_age_at_death with StatsSA MACOD tabulation when available.,,,
+yll_life_expectancy,72,"Standard life expectancy at birth for YLL calculation (years) | dist=fixed(,) | StatsSA 2023 life tables",daly.gbd
+yll_mean_age_at_death,28,"Mean age at pesticide poisoning death SA (years; PROVISIONAL) | dist=fixed(,) | PROVISIONAL — replace with StatsSA MACOD age-sex distribution when tabulation available",daly.gbd
+yll_per_death_gbd,44,"YLL per death = yll_life_expectancy - yll_mean_age_at_death = 72-28 | dist=fixed(,) | Derived; provisional pending MACOD",daly.gbd
+yld_dw_severe,0.408,"GBD 2019 disability weight: acute severe pesticide poisoning | dist=fixed(,) | GBD 2019 Collaborators, Lancet 2020",daly.gbd
+yld_dw_mild,0.150,"GBD 2019 disability weight: acute mild-moderate pesticide poisoning | dist=fixed(,) | GBD 2019 Collaborators",daly.gbd
+yld_duration_severe,0.082,"Duration of acute severe episode (years) = ~1 month hospitalisation | dist=fixed(,) | Buckley 2021 median LoS",daly.gbd
+yld_duration_mild,0.019,"Duration of acute mild episode (years) = ~1 week recovery | dist=fixed(,) | Clinical consensus",daly.gbd
+yld_per_case_severe,0.033,"YLD per severe case = yld_dw_severe × yld_duration_severe = 0.408×0.082 | dist=fixed(,) | Derived",daly.gbd
+yld_per_case_mild,0.003,"YLD per mild case = yld_dw_mild × yld_duration_mild = 0.150×0.019 | dist=fixed(,) | Derived",daly.gbd
+p_severe_among_detected,0.45,"Proportion of detected cases classified as severe (NHLS BChE severe + NMC hospitalised share of all detected) | dist=beta(45,55) | NMC + NHLS burden split 2023",daly.gbd
+icer_per_daly_gdp,110000,"ICER threshold = 1× GDP per capita per DALY averted (R/DALY) | dist=fixed(,) | SA GDP per capita 2025; WHO cost-effectiveness threshold convention",daly.gbd
+c_mort_daly_icer,4840000,"Per-death cost under ICER-DALY approach = yll_per_death_gbd × icer_per_daly_gdp = 44×110000 | dist=fixed(,) | Derived",daly.gbd
+c_morb_daly_icer_severe,3630,"Per-severe-case cost under ICER-DALY approach = yld_per_case_severe × icer_per_daly_gdp = 0.033×110000 | dist=fixed(,) | Derived",daly.gbd
+c_morb_daly_icer_mild,330,"Per-mild-case cost under ICER-DALY approach = yld_per_case_mild × icer_per_daly_gdp = 0.003×110000 | dist=fixed(,) | Derived",daly.gbd
 n_deaths_averted_T3_lo,200,"Deaths averted/yr under Option T3, lower bound | dist=fixed(,) | = 0.20 × 0.60 × 1500 × adj",terb.outcomes
 n_deaths_averted_T3_hi,400,"Deaths averted/yr under Option T3, upper bound | dist=fixed(,) | = 0.35 × 0.80 × 1500 × adj",terb.outcomes
 n_deaths_averted_T2_lo,80,"Deaths averted/yr under Option T2, lower bound | dist=fixed(,) | Partial informal-market coverage",terb.outcomes

@@ -440,7 +440,7 @@ Four component-level parameters in [`amua_import_parameters_v4.csv`](../amua_imp
 
 The two NICD analyst FTE allocations sum to ~0.05 FTE total (S1: ~0.035 FTE; S2: ~0.015 FTE) — within the 0.2 FTE analyst post already costed in the §7 Tab 1 NMC baseline. **The MVP does not require a new NICD headcount.**
 
-**Setup.** `c_surv_MVP_setup` = R80,000 (one-off). The CSV note reads: *"S2 BChE HL7 work dominates."* This appears low relative to `c_S2_BChE_autonotify_setup` = R200,000 because `c_surv_MVP_setup` is the **incremental** setup cost when all three components are adopted together — the S0 NHLS-NMC feed governance and data-mapping infrastructure (already incurred, `c_S0_NHLS_NMC_feed_setup` = R80,000) is shared and not double-counted; S1 PIH setup (`c_S1_PIH_MVD_setup` = R40,000) is also separately parameterised. The R80,000 MVP setup row covers the marginal IT integration work above what S0 already established.
+**Setup.** `c_surv_MVP_setup` = R240,000 (one-off) = `c_S1_PIH_MVD_setup` (R40,000) + `c_S2_BChE_autonotify_setup` (R200,000). S0 is already operational and its setup cost was separately incurred; it is not double-counted here. The S2 LIS HL7 reconfiguration (R200,000) dominates.
 :::
 
 ::: {.callout-note}
