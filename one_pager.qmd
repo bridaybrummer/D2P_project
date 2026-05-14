@@ -35,7 +35,7 @@ execute:
 ### 1 · Detect — Surveillance ★ *(first step)*
 **Ask:** Adopt the Surveillance MVP — PIH live dashboard + minimum viable dataset (S1) and NHLS BChE auto-notification (S2). The NHLS→NMC IT feed is already operational.
 **Cost:** ~R137,000/yr (+ R80k one-off setup).
-**Impact:** Per-case detection **4.8% → 18.9%** (≈4× uplift) within 12 weeks. Without this signal, Act and Restrict are guesswork.
+**Impact:** Per-case detection **<5% → ~19%** (4.8% → 18.9%; ≈4× uplift) within 12 weeks. Without this signal, Act and Restrict are guesswork.
 **Owner:** NDoH-led — NICD · NHLS · PIH.
 :::
 
@@ -89,10 +89,10 @@ execute:
 ::: {.recommendation-box}
 ### ~R280k of operating spend can retire ~R1.5B of preventable burden
 
-**Total annual operating cost (Detect + Act):** ~R282,000 — less than one mid-grade epidemiologist's salary.
+**Total annual operating cost (Detect + Act):** ~R282,000 (R137k Surveillance MVP + R145k Coordination Full Package) — less than one mid-grade epidemiologist's salary.
 **Modelled burden avoided at scale:** ~R1.45 billion / year (Coordination Full Package; see [Coordination brief §6c](posts/coordination_policy.qmd#what-changes-under-each-coordination-scenario)).
 **Stakeholder split of avoided burden:** ~R50M back to NDoH+NHLS budget lines; ~R1.4B to households.
-**ROI:** ~1,000× on the narrow surveillance cost; ~220× on whole-system cost.
+**ROI:** ~**5,000×** on combined Detect+Act operating cost (R1.4B ÷ R282k); ~**1,000×** even on the whole-system operating cost (~R1.2M, which includes induced hospital, lab, EHP, and DALRRD enforcement demand).
 **Legal basis:** NHA §90 + existing NMC regulations + Act 36 of 1947. **No new legislation required.**
 :::
 

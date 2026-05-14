@@ -80,60 +80,38 @@ MMD_ARCH_COMPLEX <- 'flowchart LR
     style SDW fill:#e6f0ff,stroke:#3366cc'
 
 # ---- ARCH SIMPLE TD (3-system silo view, TD → wide → landscape) -------------
-MMD_ARCH_SIMPLE_TD <- paste0('flowchart TD
-    BURDEN["~20,960 true pesticide-poisoning cases per year in South Africa"]:::source
-    BURDEN --> NMC_SG
-    BURDEN --> NHLS_SG
-    BURDEN --> PIH_SG
+MMD_ARCH_SIMPLE_TD <- '
+flowchart TD
+    A["NMC Notification<br/>1,013 / yr<br/>Clinician reports at point of care"]
+    B["NHLS BChE Result<br/>1,779 severe / yr<br/>Test is done - no auto-notification"]
+    C["PIH Call<br/>~1,158 clinician calls / yr<br/>Call recorded - no MVD to integrate"]
+    NDOH[("NDoH / NMC<br/>Source of truth<br/>less than 5 pct of true burden captured")]
 
-    subgraph NMC_SG["① NDoH / NMC — surveillance system of record"]
-        direction TB
-        NMC_N["1,013 notifications / yr<br/>= only 4.8% of true burden captured"]:::linked
-    end
+    A   -->|"directly notified"| NDOH
+    B   -.->|"NOT auto-notified"| NDOH
+    C   -.->|"NO minimum viable dataset"| NDOH
 
-    subgraph NHLS_SG["② NHLS BChE Laboratory"]
-        direction TB
-        BCHE["BChE assay<br/>1,779 severe inhibitions / yr<br/>10,626 tests total 2023"]:::partial
-        TBOX["Chemical toxicology<br/>post-mortem only — fully de-identified<br/>not available for surveillance linkage"]:::gap
-    end
-
-    subgraph PIH_SG["③ Poison Information Helpline (PIH)"]
-        direction TB
-        PIH_N["~1,158 clinician calls / yr<br/>no structured surveillance feed defined"]:::gap
-    end
-
-    BCHE  -->|"✓ MOU feed — now operational"| NMC_N
-    TBOX  -.->|"✗ de-identified — not linkable"| NMC_N
-    PIH_N -.->|"✗ no minimum viable dataset"| NMC_N',
-ARCH_STYLES)
+    style A    fill:#9f9,stroke:#060,stroke-width:2px,color:#000
+    style B    fill:#ffd9b3,stroke:#cc8800,color:#000
+    style C    fill:#ffd9b3,stroke:#cc8800,color:#000
+    style NDOH fill:#cfc,stroke:#060,stroke-width:3px,color:#000'
 
 # ---- ARCH SIMPLE LR (3-system silo view, LR → tall → portrait) --------------
-MMD_ARCH_SIMPLE_LR <- paste0('flowchart LR
-    BURDEN["~20,960 true pesticide-poisoning cases per year in South Africa"]:::source
-    BURDEN --> NMC_SG
-    BURDEN --> NHLS_SG
-    BURDEN --> PIH_SG
+MMD_ARCH_SIMPLE_LR <- '
+flowchart LR
+    A["NMC Notification<br/>1,013 / yr<br/>Clinician reports at point of care"]
+    B["NHLS BChE Result<br/>1,779 severe / yr<br/>Test is done - no auto-notification"]
+    C["PIH Call<br/>~1,158 clinician calls / yr<br/>Call recorded - no MVD to integrate"]
+    NDOH[("NDoH / NMC<br/>Source of truth<br/>less than 5 pct of true burden captured")]
 
-    subgraph NMC_SG["① NDoH / NMC — surveillance system of record"]
-        direction LR
-        NMC_N["1,013 notifications / yr = only 4.8% of true burden captured"]:::linked
-    end
+    A   -->|"directly notified"| NDOH
+    B   -.->|"NOT auto-notified"| NDOH
+    C   -.->|"NO minimum viable dataset"| NDOH
 
-    subgraph NHLS_SG["② NHLS BChE Laboratory"]
-        direction LR
-        BCHE["BChE assay: 1,779 severe inhibitions / yr (10,626 tests total 2023)"]:::partial
-        TBOX["Chemical toxicology: post-mortem only — fully de-identified — not available for surveillance linkage"]:::gap
-    end
-
-    subgraph PIH_SG["③ Poison Information Helpline (PIH)"]
-        direction LR
-        PIH_N["~1,158 clinician calls / yr — no structured surveillance feed defined"]:::gap
-    end
-
-    BCHE  -->|"✓ MOU feed — now operational"| NMC_N
-    TBOX  -.->|"✗ de-identified — not linkable"| NMC_N
-    PIH_N -.->|"✗ no minimum viable dataset"| NMC_N',
-ARCH_STYLES)
+    style A    fill:#9f9,stroke:#060,stroke-width:2px,color:#000
+    style B    fill:#ffd9b3,stroke:#cc8800,color:#000
+    style C    fill:#ffd9b3,stroke:#cc8800,color:#000
+    style NDOH fill:#cfc,stroke:#060,stroke-width:3px,color:#000'
 
 # ---- INTRO: core problem + 4 grouped areas only (TD → wide → landscape) -----
 INTRO_TD <- paste0('flowchart TD

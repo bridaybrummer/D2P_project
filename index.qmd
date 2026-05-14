@@ -48,7 +48,7 @@ You cannot prioritise, target, or evaluate a response to a problem you cannot se
 
 **Surveillance brief.** Close the gap between NMC, NHLS, and PIH so cases are seen in days, not weeks. **You cannot act on what you cannot see.**
 
-**MVP — ~R137k/year, detection 4.8% → 18.9%, 12 weeks.**
+**MVP — ~R137k/year, detection <5% → ~19% (4.8% → 18.9%, ≈4×), 12 weeks.**
 NHLS→NMC feed (live) + BChE auto-notify + PIH dashboard / minimum viable dataset.
 
 *Audience: NDoH, NICD, NHLS, MAC.*
@@ -93,7 +93,7 @@ flowchart LR
     style R fill:#ffd9b3,stroke:#cc8800,stroke-width:2px
 ```
 
-Three stages, one system. Each affordable on its own; each strictly more valuable paired with the others. **Total annual operating cost ~R280k against an annual burden of R2.34 billion (~1,000× ROI on the narrow case).**
+Three stages, one system. Each affordable on its own; each strictly more valuable paired with the others. **Total annual operating cost ~R282k against an annual burden of R2.34 billion — and modelled burden avoided of ~R1.45B/yr (~5,000× ROI on the combined Detect+Act operating cost).**
 
 ## Where to start
 
