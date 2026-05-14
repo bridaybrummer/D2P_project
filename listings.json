@@ -2,14 +2,10 @@
   {
     "listing": "/posts.html",
     "items": [
-      "/posts/overall_policy_model.html",
-      "/posts/coordination_policy.html",
-      "/posts/costing_analysis.html",
-      "/posts/decision_model.html",
       "/posts/policy_brief.html",
       "/posts/surveillance_policy.html",
-      "/posts/terbufos_policy.html",
-      "/posts/surveillance_concept_note.html"
+      "/posts/coordination_policy.html",
+      "/posts/terbufos_policy.html"
     ]
   }
 ]
