@@ -31,6 +31,8 @@ website:
             href: posts/overall_policy_model.html
           - text: "Overall Policy Model v2"
             href: posts/overall_policy_model_v2.html
+          - text: "Overall Policy Model v3"
+            href: posts/overall_policy_model_v3.html
           - text: "Decision Tree Model"
             href: posts/decision_model.html
           - text: "Costing Analysis"
