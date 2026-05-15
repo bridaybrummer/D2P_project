@@ -32,7 +32,7 @@ execute:
 ::: {.grid-2col}
 
 ::: {.option-summary}
-### 1 · Detect — Surveillance ★ *(first step)*
+### [1 · Detect — Surveillance ★ *(first step)*](posts/surveillance_policy.qmd)
 **Ask:** Adopt the Surveillance MVP — PIH live dashboard + minimum viable dataset (S1) and NHLS BChE auto-notification (S2). The NHLS→NMC IT feed is already operational.
 **Cost:** ~R137,000/yr (+ R80k one-off setup).
 **Impact:** Per-case detection **<5% → ~19%** (4.8% → 18.9%; ≈4× uplift) within 12 weeks. Without this signal, Act and Restrict are guesswork.
@@ -40,11 +40,11 @@ execute:
 :::
 
 ::: {.option-summary}
-### 2 · Act — Coordination ★
+### [2 · Act — Coordination ★](posts/coordination_policy.qmd)
 **Ask:** Joint NDoH–DALRRD DG circular adopting the Coordination Full Package — NMC closure-of-loop field, structured DALRRD referral, NICD→DALRRD intelligence feed, clinician auto-feedback, joint KPI dashboard.
 **Cost:** ~R145,000/yr.
 **Impact:** P(loop closed) 1.1% → ~70%; **~957 deaths averted/yr** at scale.
-**Owner:** NICD-led, DALRRD partner.
+**Owner:** NDoH-led — NICD · DALRRD.
 :::
 
 :::
@@ -52,7 +52,7 @@ execute:
 ::: {.grid-2col}
 
 ::: {.option-summary}
-### 3 · Restrict — Terbufos ★
+### [3 · Restrict — Terbufos ★](posts/terbufos_policy.qmd)
 **Ask:** DALRRD adopt Option T2 (Restricted-Use designation + formulation restriction + distributor audit) now, with a **hard-coded 24-month evaluation gate** that escalates to Option T3 (full ban) if attributable serious cases do not fall by a pre-agreed margin.
 **Cost:** ~R1–3M/yr enforcement.
 **Impact:** Targets the dominant agent in fatal SA paediatric pesticide poisoning (Davies 2023; Sri Lanka natural-experiment evidence). Leverage on household burden ≈ **500 : 1**.

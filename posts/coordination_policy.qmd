@@ -506,7 +506,7 @@ This is the explicit operational hand-off between the coordination loop (this br
 | C3: NICD→DALRRD intelligence feed | NICD analyst + DALRRD liaison | R40k | Quarterly brief template; case-spike alert SOP |
 | C4: Notifier auto-feedback | NICD NMC team | R20k | Email templating |
 | C5: Joint KPI dashboard | NICD + DALRRD + Provinces | R30k | KPI definitions; public hosting |
-| **Total** | NICD-led | **~R145k** | All within existing legal authority |
+| **Total** | NDoH-led | **~R145k** | All within existing legal authority |
 
 **Institutional mechanism.** A **quarterly Joint Coordination Forum** (NICD chair; DALRRD, NHLS, PIH, and one rotating provincial DoH representative) reviews the KPI dashboard, signs off case-spike alert escalations, and resolves cross-departmental blockers. Mandated by joint NDoH–DALRRD Director-General circular. **No new legislation required.**
 
