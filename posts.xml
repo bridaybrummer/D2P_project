@@ -10938,6 +10938,26 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
 <p><strong>Status:</strong> <strong>DRAFT.</strong> One genuine SA evidence gap remains (the adult <strong>live-patient</strong> attributable fraction, resolved only by Surveillance Option S3). The other quantitative inputs — market volume, yield impact, substitute hazard, substitute pricing, enforcement cost — are <strong>not epistemic gaps</strong>: they are either administrative numbers DALRRD can pull, or values defensibly anchored to the EU/US/Sri Lanka evidence base (see §2b and Interim assumptions).</p>
 </div>
 </div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>✓ Terbufos banned — gazetted 8 May 2026
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Agriculture Minister John Steenhuisen <strong>gazetted a full ban</strong> on the acquisition, disposal, sale and use of all agricultural remedies containing terbufos as an active ingredient on <strong>8 May 2026</strong>, under the Fertilisers, Farm Feeds, Agricultural Remedies and Stock Remedies Act of 1947 (Act 36 of 1947).</p>
+<p>This substantially satisfies the D2P recommendation. <strong>The critical next steps are:</strong></p>
+<ol type="1">
+<li><strong>Enforcement</strong> — stockpile disposal, distributor compliance audits, market monitoring for substitution.</li>
+<li><strong>Measurement</strong> — the ban can only be evaluated through improved surveillance. Without a functioning case-detection system (<a href="../posts/surveillance_policy.html">Surveillance Brief</a>), it is impossible to know whether the ban is reducing poisoning incidence, or whether a more-toxic substitute has entered the informal market.</li>
+<li><strong>24-month evaluation gate</strong> — the modelled leverage ratio (~500 : 1) rests on the assumption that a ban reduces attributable mortality. Only improved P_detect (via S1 + S2) can confirm this in the SA context.</li>
+</ol>
+<p><em>The analytical content of this brief remains valid as the quantitative foundation for those three activities.</em></p>
+</div>
+</div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -11009,7 +11029,7 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
 <section id="status-quo" class="level2">
 <h2 class="anchored" data-anchor-id="status-quo">3. Status quo</h2>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -11018,28 +11038,28 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>All numerical claims in this brief draw from a single CSV — <a href="../amua_import_parameters_v4.csv"><code>amua_import_parameters_v4.csv</code></a> — rendered in full at the <a href="../parameters_hub.html">Parameters Hub</a>. The headline values below are pulled from that file at render time; <strong>do not edit the numbers in this brief — edit the CSV and re-render</strong>.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="aaljokymwv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#aaljokymwv table {
+<div id="cwcntkpgzm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#cwcntkpgzm table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#aaljokymwv thead, #aaljokymwv tbody, #aaljokymwv tfoot, #aaljokymwv tr, #aaljokymwv td, #aaljokymwv th {
+#cwcntkpgzm thead, #cwcntkpgzm tbody, #cwcntkpgzm tfoot, #cwcntkpgzm tr, #cwcntkpgzm td, #cwcntkpgzm th {
   border-style: none;
 }
 
-#aaljokymwv p {
+#cwcntkpgzm p {
   margin: 0;
   padding: 0;
 }
 
-#aaljokymwv .gt_table {
+#cwcntkpgzm .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -11065,12 +11085,12 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   border-left-color: #D3D3D3;
 }
 
-#aaljokymwv .gt_caption {
+#cwcntkpgzm .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#aaljokymwv .gt_title {
+#cwcntkpgzm .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -11082,7 +11102,7 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   border-bottom-width: 0;
 }
 
-#aaljokymwv .gt_subtitle {
+#cwcntkpgzm .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -11094,7 +11114,7 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   border-top-width: 0;
 }
 
-#aaljokymwv .gt_heading {
+#cwcntkpgzm .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -11106,13 +11126,13 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   border-right-color: #D3D3D3;
 }
 
-#aaljokymwv .gt_bottom_border {
+#cwcntkpgzm .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#aaljokymwv .gt_col_headings {
+#cwcntkpgzm .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -11127,7 +11147,7 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   border-right-color: #D3D3D3;
 }
 
-#aaljokymwv .gt_col_heading {
+#cwcntkpgzm .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -11147,7 +11167,7 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   overflow-x: hidden;
 }
 
-#aaljokymwv .gt_column_spanner_outer {
+#cwcntkpgzm .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -11159,15 +11179,15 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   padding-right: 4px;
 }
 
-#aaljokymwv .gt_column_spanner_outer:first-child {
+#cwcntkpgzm .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#aaljokymwv .gt_column_spanner_outer:last-child {
+#cwcntkpgzm .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#aaljokymwv .gt_column_spanner {
+#cwcntkpgzm .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -11179,11 +11199,11 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   width: 100%;
 }
 
-#aaljokymwv .gt_spanner_row {
+#cwcntkpgzm .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#aaljokymwv .gt_group_heading {
+#cwcntkpgzm .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -11209,7 +11229,7 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   text-align: left;
 }
 
-#aaljokymwv .gt_empty_group_heading {
+#cwcntkpgzm .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -11224,15 +11244,15 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   vertical-align: middle;
 }
 
-#aaljokymwv .gt_from_md > :first-child {
+#cwcntkpgzm .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#aaljokymwv .gt_from_md > :last-child {
+#cwcntkpgzm .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#aaljokymwv .gt_row {
+#cwcntkpgzm .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -11251,7 +11271,7 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   overflow-x: hidden;
 }
 
-#aaljokymwv .gt_stub {
+#cwcntkpgzm .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -11264,7 +11284,7 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   padding-right: 5px;
 }
 
-#aaljokymwv .gt_stub_row_group {
+#cwcntkpgzm .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -11278,15 +11298,15 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   vertical-align: top;
 }
 
-#aaljokymwv .gt_row_group_first td {
+#cwcntkpgzm .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#aaljokymwv .gt_row_group_first th {
+#cwcntkpgzm .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#aaljokymwv .gt_summary_row {
+#cwcntkpgzm .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -11296,16 +11316,16 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   padding-right: 5px;
 }
 
-#aaljokymwv .gt_first_summary_row {
+#cwcntkpgzm .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#aaljokymwv .gt_first_summary_row.thick {
+#cwcntkpgzm .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#aaljokymwv .gt_last_summary_row {
+#cwcntkpgzm .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -11315,7 +11335,7 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   border-bottom-color: #D3D3D3;
 }
 
-#aaljokymwv .gt_grand_summary_row {
+#cwcntkpgzm .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -11325,7 +11345,7 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   padding-right: 5px;
 }
 
-#aaljokymwv .gt_first_grand_summary_row {
+#cwcntkpgzm .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -11335,7 +11355,7 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   border-top-color: #D3D3D3;
 }
 
-#aaljokymwv .gt_last_grand_summary_row_top {
+#cwcntkpgzm .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -11345,11 +11365,11 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   border-bottom-color: #D3D3D3;
 }
 
-#aaljokymwv .gt_striped {
+#cwcntkpgzm .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#aaljokymwv .gt_table_body {
+#cwcntkpgzm .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -11358,7 +11378,7 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   border-bottom-color: #D3D3D3;
 }
 
-#aaljokymwv .gt_footnotes {
+#cwcntkpgzm .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -11372,7 +11392,7 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   border-right-color: #D3D3D3;
 }
 
-#aaljokymwv .gt_footnote {
+#cwcntkpgzm .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -11381,7 +11401,7 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   padding-right: 5px;
 }
 
-#aaljokymwv .gt_sourcenotes {
+#cwcntkpgzm .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -11395,7 +11415,7 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   border-right-color: #D3D3D3;
 }
 
-#aaljokymwv .gt_sourcenote {
+#cwcntkpgzm .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -11403,72 +11423,72 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   padding-right: 5px;
 }
 
-#aaljokymwv .gt_left {
+#cwcntkpgzm .gt_left {
   text-align: left;
 }
 
-#aaljokymwv .gt_center {
+#cwcntkpgzm .gt_center {
   text-align: center;
 }
 
-#aaljokymwv .gt_right {
+#cwcntkpgzm .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#aaljokymwv .gt_font_normal {
+#cwcntkpgzm .gt_font_normal {
   font-weight: normal;
 }
 
-#aaljokymwv .gt_font_bold {
+#cwcntkpgzm .gt_font_bold {
   font-weight: bold;
 }
 
-#aaljokymwv .gt_font_italic {
+#cwcntkpgzm .gt_font_italic {
   font-style: italic;
 }
 
-#aaljokymwv .gt_super {
+#cwcntkpgzm .gt_super {
   font-size: 65%;
 }
 
-#aaljokymwv .gt_footnote_marks {
+#cwcntkpgzm .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#aaljokymwv .gt_asterisk {
+#cwcntkpgzm .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#aaljokymwv .gt_indent_1 {
+#cwcntkpgzm .gt_indent_1 {
   text-indent: 5px;
 }
 
-#aaljokymwv .gt_indent_2 {
+#cwcntkpgzm .gt_indent_2 {
   text-indent: 10px;
 }
 
-#aaljokymwv .gt_indent_3 {
+#cwcntkpgzm .gt_indent_3 {
   text-indent: 15px;
 }
 
-#aaljokymwv .gt_indent_4 {
+#cwcntkpgzm .gt_indent_4 {
   text-indent: 20px;
 }
 
-#aaljokymwv .gt_indent_5 {
+#cwcntkpgzm .gt_indent_5 {
   text-indent: 25px;
 }
 
-#aaljokymwv .katex-display {
+#cwcntkpgzm .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#aaljokymwv div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#cwcntkpgzm div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -11549,23 +11569,23 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
 <h3 class="anchored" data-anchor-id="who-bears-the-r2.34b-annual-burden">Who bears the R2.34B annual burden?</h3>
 <div class="cell">
 <div class="cell-output-display">
-<div id="dolazjxitp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#dolazjxitp table {
+<div id="oxnbpxofpg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#oxnbpxofpg table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#dolazjxitp thead, #dolazjxitp tbody, #dolazjxitp tfoot, #dolazjxitp tr, #dolazjxitp td, #dolazjxitp th {
+#oxnbpxofpg thead, #oxnbpxofpg tbody, #oxnbpxofpg tfoot, #oxnbpxofpg tr, #oxnbpxofpg td, #oxnbpxofpg th {
   border-style: none;
 }
 
-#dolazjxitp p {
+#oxnbpxofpg p {
   margin: 0;
   padding: 0;
 }
 
-#dolazjxitp .gt_table {
+#oxnbpxofpg .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -11591,12 +11611,12 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   border-left-color: #D3D3D3;
 }
 
-#dolazjxitp .gt_caption {
+#oxnbpxofpg .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#dolazjxitp .gt_title {
+#oxnbpxofpg .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -11608,7 +11628,7 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   border-bottom-width: 0;
 }
 
-#dolazjxitp .gt_subtitle {
+#oxnbpxofpg .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -11620,7 +11640,7 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   border-top-width: 0;
 }
 
-#dolazjxitp .gt_heading {
+#oxnbpxofpg .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -11632,13 +11652,13 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   border-right-color: #D3D3D3;
 }
 
-#dolazjxitp .gt_bottom_border {
+#oxnbpxofpg .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#dolazjxitp .gt_col_headings {
+#oxnbpxofpg .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -11653,7 +11673,7 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   border-right-color: #D3D3D3;
 }
 
-#dolazjxitp .gt_col_heading {
+#oxnbpxofpg .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -11673,7 +11693,7 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   overflow-x: hidden;
 }
 
-#dolazjxitp .gt_column_spanner_outer {
+#oxnbpxofpg .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -11685,15 +11705,15 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   padding-right: 4px;
 }
 
-#dolazjxitp .gt_column_spanner_outer:first-child {
+#oxnbpxofpg .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#dolazjxitp .gt_column_spanner_outer:last-child {
+#oxnbpxofpg .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#dolazjxitp .gt_column_spanner {
+#oxnbpxofpg .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -11705,11 +11725,11 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   width: 100%;
 }
 
-#dolazjxitp .gt_spanner_row {
+#oxnbpxofpg .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#dolazjxitp .gt_group_heading {
+#oxnbpxofpg .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -11735,7 +11755,7 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   text-align: left;
 }
 
-#dolazjxitp .gt_empty_group_heading {
+#oxnbpxofpg .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -11750,15 +11770,15 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   vertical-align: middle;
 }
 
-#dolazjxitp .gt_from_md > :first-child {
+#oxnbpxofpg .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#dolazjxitp .gt_from_md > :last-child {
+#oxnbpxofpg .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#dolazjxitp .gt_row {
+#oxnbpxofpg .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -11777,7 +11797,7 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   overflow-x: hidden;
 }
 
-#dolazjxitp .gt_stub {
+#oxnbpxofpg .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -11790,7 +11810,7 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   padding-right: 5px;
 }
 
-#dolazjxitp .gt_stub_row_group {
+#oxnbpxofpg .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -11804,15 +11824,15 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   vertical-align: top;
 }
 
-#dolazjxitp .gt_row_group_first td {
+#oxnbpxofpg .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#dolazjxitp .gt_row_group_first th {
+#oxnbpxofpg .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#dolazjxitp .gt_summary_row {
+#oxnbpxofpg .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -11822,16 +11842,16 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   padding-right: 5px;
 }
 
-#dolazjxitp .gt_first_summary_row {
+#oxnbpxofpg .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#dolazjxitp .gt_first_summary_row.thick {
+#oxnbpxofpg .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#dolazjxitp .gt_last_summary_row {
+#oxnbpxofpg .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -11841,7 +11861,7 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   border-bottom-color: #D3D3D3;
 }
 
-#dolazjxitp .gt_grand_summary_row {
+#oxnbpxofpg .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -11851,7 +11871,7 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   padding-right: 5px;
 }
 
-#dolazjxitp .gt_first_grand_summary_row {
+#oxnbpxofpg .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -11861,7 +11881,7 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   border-top-color: #D3D3D3;
 }
 
-#dolazjxitp .gt_last_grand_summary_row_top {
+#oxnbpxofpg .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -11871,11 +11891,11 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   border-bottom-color: #D3D3D3;
 }
 
-#dolazjxitp .gt_striped {
+#oxnbpxofpg .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#dolazjxitp .gt_table_body {
+#oxnbpxofpg .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -11884,7 +11904,7 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   border-bottom-color: #D3D3D3;
 }
 
-#dolazjxitp .gt_footnotes {
+#oxnbpxofpg .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -11898,7 +11918,7 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   border-right-color: #D3D3D3;
 }
 
-#dolazjxitp .gt_footnote {
+#oxnbpxofpg .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -11907,7 +11927,7 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   padding-right: 5px;
 }
 
-#dolazjxitp .gt_sourcenotes {
+#oxnbpxofpg .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -11921,7 +11941,7 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   border-right-color: #D3D3D3;
 }
 
-#dolazjxitp .gt_sourcenote {
+#oxnbpxofpg .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -11929,72 +11949,72 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   padding-right: 5px;
 }
 
-#dolazjxitp .gt_left {
+#oxnbpxofpg .gt_left {
   text-align: left;
 }
 
-#dolazjxitp .gt_center {
+#oxnbpxofpg .gt_center {
   text-align: center;
 }
 
-#dolazjxitp .gt_right {
+#oxnbpxofpg .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#dolazjxitp .gt_font_normal {
+#oxnbpxofpg .gt_font_normal {
   font-weight: normal;
 }
 
-#dolazjxitp .gt_font_bold {
+#oxnbpxofpg .gt_font_bold {
   font-weight: bold;
 }
 
-#dolazjxitp .gt_font_italic {
+#oxnbpxofpg .gt_font_italic {
   font-style: italic;
 }
 
-#dolazjxitp .gt_super {
+#oxnbpxofpg .gt_super {
   font-size: 65%;
 }
 
-#dolazjxitp .gt_footnote_marks {
+#oxnbpxofpg .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#dolazjxitp .gt_asterisk {
+#oxnbpxofpg .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#dolazjxitp .gt_indent_1 {
+#oxnbpxofpg .gt_indent_1 {
   text-indent: 5px;
 }
 
-#dolazjxitp .gt_indent_2 {
+#oxnbpxofpg .gt_indent_2 {
   text-indent: 10px;
 }
 
-#dolazjxitp .gt_indent_3 {
+#oxnbpxofpg .gt_indent_3 {
   text-indent: 15px;
 }
 
-#dolazjxitp .gt_indent_4 {
+#oxnbpxofpg .gt_indent_4 {
   text-indent: 20px;
 }
 
-#dolazjxitp .gt_indent_5 {
+#oxnbpxofpg .gt_indent_5 {
   text-indent: 25px;
 }
 
-#dolazjxitp .katex-display {
+#oxnbpxofpg .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#dolazjxitp div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#oxnbpxofpg div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -12057,23 +12077,23 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
 <h3 class="anchored" data-anchor-id="canonical-option-costs-detect-act-restrict">Canonical option costs (Detect · Act · Restrict)</h3>
 <div class="cell">
 <div class="cell-output-display">
-<div id="ydfplejnil" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ydfplejnil table {
+<div id="njekksehxq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#njekksehxq table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ydfplejnil thead, #ydfplejnil tbody, #ydfplejnil tfoot, #ydfplejnil tr, #ydfplejnil td, #ydfplejnil th {
+#njekksehxq thead, #njekksehxq tbody, #njekksehxq tfoot, #njekksehxq tr, #njekksehxq td, #njekksehxq th {
   border-style: none;
 }
 
-#ydfplejnil p {
+#njekksehxq p {
   margin: 0;
   padding: 0;
 }
 
-#ydfplejnil .gt_table {
+#njekksehxq .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -12099,12 +12119,12 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   border-left-color: #D3D3D3;
 }
 
-#ydfplejnil .gt_caption {
+#njekksehxq .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ydfplejnil .gt_title {
+#njekksehxq .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -12116,7 +12136,7 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   border-bottom-width: 0;
 }
 
-#ydfplejnil .gt_subtitle {
+#njekksehxq .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -12128,7 +12148,7 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   border-top-width: 0;
 }
 
-#ydfplejnil .gt_heading {
+#njekksehxq .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -12140,13 +12160,13 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   border-right-color: #D3D3D3;
 }
 
-#ydfplejnil .gt_bottom_border {
+#njekksehxq .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ydfplejnil .gt_col_headings {
+#njekksehxq .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -12161,7 +12181,7 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   border-right-color: #D3D3D3;
 }
 
-#ydfplejnil .gt_col_heading {
+#njekksehxq .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -12181,7 +12201,7 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   overflow-x: hidden;
 }
 
-#ydfplejnil .gt_column_spanner_outer {
+#njekksehxq .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -12193,15 +12213,15 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   padding-right: 4px;
 }
 
-#ydfplejnil .gt_column_spanner_outer:first-child {
+#njekksehxq .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ydfplejnil .gt_column_spanner_outer:last-child {
+#njekksehxq .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ydfplejnil .gt_column_spanner {
+#njekksehxq .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -12213,11 +12233,11 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   width: 100%;
 }
 
-#ydfplejnil .gt_spanner_row {
+#njekksehxq .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ydfplejnil .gt_group_heading {
+#njekksehxq .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -12243,7 +12263,7 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   text-align: left;
 }
 
-#ydfplejnil .gt_empty_group_heading {
+#njekksehxq .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -12258,15 +12278,15 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   vertical-align: middle;
 }
 
-#ydfplejnil .gt_from_md > :first-child {
+#njekksehxq .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ydfplejnil .gt_from_md > :last-child {
+#njekksehxq .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ydfplejnil .gt_row {
+#njekksehxq .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -12285,7 +12305,7 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   overflow-x: hidden;
 }
 
-#ydfplejnil .gt_stub {
+#njekksehxq .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -12298,7 +12318,7 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   padding-right: 5px;
 }
 
-#ydfplejnil .gt_stub_row_group {
+#njekksehxq .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -12312,15 +12332,15 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   vertical-align: top;
 }
 
-#ydfplejnil .gt_row_group_first td {
+#njekksehxq .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ydfplejnil .gt_row_group_first th {
+#njekksehxq .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ydfplejnil .gt_summary_row {
+#njekksehxq .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -12330,16 +12350,16 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   padding-right: 5px;
 }
 
-#ydfplejnil .gt_first_summary_row {
+#njekksehxq .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ydfplejnil .gt_first_summary_row.thick {
+#njekksehxq .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ydfplejnil .gt_last_summary_row {
+#njekksehxq .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -12349,7 +12369,7 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   border-bottom-color: #D3D3D3;
 }
 
-#ydfplejnil .gt_grand_summary_row {
+#njekksehxq .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -12359,7 +12379,7 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   padding-right: 5px;
 }
 
-#ydfplejnil .gt_first_grand_summary_row {
+#njekksehxq .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -12369,7 +12389,7 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   border-top-color: #D3D3D3;
 }
 
-#ydfplejnil .gt_last_grand_summary_row_top {
+#njekksehxq .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -12379,11 +12399,11 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   border-bottom-color: #D3D3D3;
 }
 
-#ydfplejnil .gt_striped {
+#njekksehxq .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ydfplejnil .gt_table_body {
+#njekksehxq .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -12392,7 +12412,7 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   border-bottom-color: #D3D3D3;
 }
 
-#ydfplejnil .gt_footnotes {
+#njekksehxq .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -12406,7 +12426,7 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   border-right-color: #D3D3D3;
 }
 
-#ydfplejnil .gt_footnote {
+#njekksehxq .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -12415,7 +12435,7 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   padding-right: 5px;
 }
 
-#ydfplejnil .gt_sourcenotes {
+#njekksehxq .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -12429,7 +12449,7 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   border-right-color: #D3D3D3;
 }
 
-#ydfplejnil .gt_sourcenote {
+#njekksehxq .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -12437,72 +12457,72 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
   padding-right: 5px;
 }
 
-#ydfplejnil .gt_left {
+#njekksehxq .gt_left {
   text-align: left;
 }
 
-#ydfplejnil .gt_center {
+#njekksehxq .gt_center {
   text-align: center;
 }
 
-#ydfplejnil .gt_right {
+#njekksehxq .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ydfplejnil .gt_font_normal {
+#njekksehxq .gt_font_normal {
   font-weight: normal;
 }
 
-#ydfplejnil .gt_font_bold {
+#njekksehxq .gt_font_bold {
   font-weight: bold;
 }
 
-#ydfplejnil .gt_font_italic {
+#njekksehxq .gt_font_italic {
   font-style: italic;
 }
 
-#ydfplejnil .gt_super {
+#njekksehxq .gt_super {
   font-size: 65%;
 }
 
-#ydfplejnil .gt_footnote_marks {
+#njekksehxq .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ydfplejnil .gt_asterisk {
+#njekksehxq .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ydfplejnil .gt_indent_1 {
+#njekksehxq .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ydfplejnil .gt_indent_2 {
+#njekksehxq .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ydfplejnil .gt_indent_3 {
+#njekksehxq .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ydfplejnil .gt_indent_4 {
+#njekksehxq .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ydfplejnil .gt_indent_5 {
+#njekksehxq .gt_indent_5 {
   text-indent: 25px;
 }
 
-#ydfplejnil .katex-display {
+#njekksehxq .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#ydfplejnil div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#njekksehxq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -12608,7 +12628,7 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
 </div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -12617,7 +12637,7 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>Software stack.</strong> This site is built with <strong>Quarto v1.x</strong> rendering R chunks through <strong>R ≥ 4.3</strong> and <strong>knitr</strong>. Tables use <strong><a href="https://gt.rstudio.com/">gt</a></strong>; data wrangling <strong><a href="https://www.tidyverse.org/">tidyverse</a></strong> (<code>dplyr</code>, <code>readr</code>, <code>tibble</code>); percentage formatting <strong><a href="https://scales.r-lib.org/">scales</a></strong>; diagrams <strong><a href="https://mermaid.js.org/">mermaid</a></strong> via Quarto’s built-in diagram filter. The interactive <a href="../parameter_playground.html">Parameter Playground</a> layer adds <strong><a href="https://observablehq.com/@observablehq/observable-javascript">Observable JS</a></strong> via Quarto OJS.</p>
 <p><strong>Canonical parameter file.</strong> All numerical values in every brief, the one-pager, and the playground resolve through <code>pick(name)</code> → <code>readr::read_csv("../amua_import_parameters_v3.csv")</code> → string lookup → <code>as.numeric()</code> → <code>zar()</code> formatter. <strong>No rand value in any brief is a literal in prose</strong> (except where prose paraphrases a CSV-sourced value). The audit chain is: CSV row → <code>_shared_parameters.qmd</code> <code>pick()</code> call → rendered <code>gt</code> cell.</p>
@@ -12665,7 +12685,7 @@ Table&nbsp;5: Induced EHP + DALRRD workload cost per <em>true</em> case detected
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">SA registration</td>
-<td style="text-align: left;">Registered as a soil insecticide (Act 36 of 1947)</td>
+<td style="text-align: left;"><strong>Banned</strong> — full prohibition gazetted 8 May 2026 (Act 36 of 1947)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">WHO classification</td>
