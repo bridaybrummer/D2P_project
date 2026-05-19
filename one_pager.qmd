@@ -52,11 +52,12 @@ execute:
 ::: {.grid-2col}
 
 ::: {.option-summary}
-### [3 · Restrict — Terbufos ★](posts/terbufos_policy.qmd)
-**Ask:** DALRRD adopt Option T2 (Restricted-Use designation + formulation restriction + distributor audit) now, with a **hard-coded 24-month evaluation gate** that escalates to Option T3 (full ban) if attributable serious cases do not fall by a pre-agreed margin.
-**Cost:** ~R1–3M/yr enforcement.
-**Impact:** Targets the dominant agent in fatal SA paediatric pesticide poisoning (Davies 2023; Sri Lanka natural-experiment evidence). Leverage on household burden ≈ **500 : 1**.
-**Owner:** DALRRD Pesticide Registrar.
+### [3 · Restrict — Terbufos ★ *(enacted 8 May 2026)*](posts/terbufos_policy.qmd)
+**Status:** ✓ **Terbufos banned.** Agriculture Minister John Steenhuisen gazetted a full prohibition on the sale, acquisition, use and disposal of terbufos on 8 May 2026 under Act 36 of 1947 — ahead of the D2P recommended deadline.
+**Next ask:** Ensure enforcement, stockpile disposal, and a 24-month post-ban evaluation using the upgraded surveillance system. **The ban is only effective if its impact can be measured.**
+**Cost:** ~R1–3M/yr enforcement (DALRRD).
+**Impact modelled (pre-ban):** Dominant agent in fatal SA paediatric pesticide poisoning (Davies 2023). Sri Lanka natural-experiment evidence suggests **~175 deaths averted/yr**.
+**Owner:** DALRRD Pesticide Registrar + NDoH surveillance (measurement).
 :::
 
 ::: {.option-summary}
@@ -93,14 +94,14 @@ execute:
 **Modelled burden avoided at scale:** ~R1.45 billion / year (Coordination Full Package; see [Coordination brief §6c](posts/coordination_policy.qmd#what-changes-under-each-coordination-scenario)).
 **Stakeholder split of avoided burden:** ~R50M back to NDoH+NHLS budget lines; ~R1.4B to households.
 **ROI:** ~**5,000×** on combined Detect+Act operating cost (R1.4B ÷ R282k); ~**1,000×** even on the whole-system operating cost (~R1.2M, which includes induced hospital, lab, EHP, and DALRRD enforcement demand).
-**Legal basis:** NHA §90 + existing NMC regulations + Act 36 of 1947. **No new legislation required.**
+**Legal basis:** NHA §90 + existing NMC regulations + Act 36 of 1947 (ministerial prohibition power). **No new primary legislation required.**
 :::
 
 ---
 
 ## What we are *not* asking for
 
-- No new legislation.
+- No new primary legislation — all three asks use existing legal authority (NHA §90, existing NMC regulations, Act 36 of 1947 ministerial powers).
 - No new test, no new reagent contract (S2 is an LIS configuration of an existing NHLS assay).
 - No new agency.
 - No single point-estimate masquerading as certainty — every figure traces back to [`amua_import_parameters_v4.csv`](amua_import_parameters_v4.csv); open evidence gaps are listed in the [Parameters Hub](parameters_hub.qmd).
@@ -113,7 +114,7 @@ execute:
 |:-----|:-------|:--------|
 | MAC + NDoH | Approve **Surveillance MVP** pilot (3 provinces; R137k op + R80k setup) — *the first step* | Q3 2026 |
 | NDoH + DALRRD DGs | Issue joint circular adopting the **Coordination Full Package** | Q3 2026 |
-| DALRRD Pesticide Registrar | Gazette **Terbufos Option T2** with 24-month evaluation gate | Q4 2026 |
+| DALRRD Pesticide Registrar | ✓ **Terbufos banned** (gazetted 8 May 2026) — now: enforce, dispose of stockpiles, set 24-month evaluation gate | Ongoing |
 | MAC | Stand up the **Joint Coordination Forum** (quarterly, NICD chair) | Q3 2026 |
 
 ---

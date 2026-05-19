@@ -18,7 +18,7 @@ format:
 - South Africa records **2,620 pesticide-poisoning deaths per year** (StatsSA MACOD 2023, X40–X49) and an estimated **20,960 poisonings**, costing **R2.34 billion** annually.
 - **Detection is < 5%**: NMC, NHLS, and PIH each see a slice of the burden; none sees the whole. Decision-makers act on the visible 1,013 NMC notifications while the other ~95% remain invisible.
 - The **response loop is broken**: ~99% of notifications end without a recorded investigation, referral, or regulatory follow-up.
-- **One product** — **terbufos**, WHO Class Ia — dominates fatal paediatric pesticide poisoning (Davies 2023) and remains freely registered.
+- **One product** — **terbufos**, WHO Class Ia — dominated fatal paediatric pesticide poisoning (Davies 2023) and was freely registered until **8 May 2026, when Agriculture Minister Steenhuisen gazetted a full ban** under Act 36 of 1947. Enforcement and 24-month impact measurement are now the critical next steps.
 - **96% of the cost falls on households** (lost lifetime earnings), but the only people who can change the upstream exposure sit in DALRRD and NDoH.
 
 ::: {.callout-important icon=false}
@@ -66,14 +66,13 @@ Closure-of-loop field + structured DALRRD referral + NICD→DALRRD intelligence 
 :::
 
 ::: {.feature-card}
-### 3 · [Restrict](posts/terbufos_policy.qmd)
+### 3 · [Restrict](posts/terbufos_policy.qmd) — ✓ *Enacted 8 May 2026*
 
-**Terbufos brief.** Act on the WHO Class Ia product driving a disproportionate share of fatal pesticide poisonings.
+**Terbufos brief.** Agriculture Minister John Steenhuisen gazetted a full ban on terbufos on 8 May 2026. The regulatory ask has been met — the next challenge is **enforcement and measuring impact**.
 
-**Option T2 now; 24-month evaluation gate to T3 (full ban).**
-DALRRD-led; ~R1–3M/year of enforcement retires household-borne mortality cost at a leverage ratio of **~500 : 1**.
+**The ban is only as good as its measurement.** Surveillance (Brief 1) and coordination (Brief 2) are now the mechanism for proving the ban is working and detecting any product substitution.
 
-*Audience: DALRRD Pesticide Registrar, MAC, NDoH.*
+*Audience: DALRRD Pesticide Registrar, MAC, NDoH surveillance.*
 :::
 
 :::

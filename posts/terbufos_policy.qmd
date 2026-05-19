@@ -22,6 +22,20 @@ format:
 **Status:** **DRAFT.** One genuine SA evidence gap remains (the adult **live-patient** attributable fraction, resolved only by Surveillance Option S3). The other quantitative inputs — market volume, yield impact, substitute hazard, substitute pricing, enforcement cost — are **not epistemic gaps**: they are either administrative numbers DALRRD can pull, or values defensibly anchored to the EU/US/Sri Lanka evidence base (see [§2b](#international-natural-experiment-evidence) and [Interim assumptions](#interim-assumptions-anchored-to-international-evidence)).
 :::
 
+::: {.callout-note icon=false}
+## ✓ Terbufos banned — gazetted 8 May 2026
+
+Agriculture Minister John Steenhuisen **gazetted a full ban** on the acquisition, disposal, sale and use of all agricultural remedies containing terbufos as an active ingredient on **8 May 2026**, under the Fertilisers, Farm Feeds, Agricultural Remedies and Stock Remedies Act of 1947 (Act 36 of 1947).
+
+This substantially satisfies the D2P recommendation. **The critical next steps are:**
+
+1. **Enforcement** — stockpile disposal, distributor compliance audits, market monitoring for substitution.
+2. **Measurement** — the ban can only be evaluated through improved surveillance. Without a functioning case-detection system ([Surveillance Brief](surveillance_policy.qmd)), it is impossible to know whether the ban is reducing poisoning incidence, or whether a more-toxic substitute has entered the informal market.
+3. **24-month evaluation gate** — the modelled leverage ratio (~500 : 1) rests on the assumption that a ban reduces attributable mortality. Only improved P\_detect (via S1 + S2) can confirm this in the SA context.
+
+*The analytical content of this brief remains valid as the quantitative foundation for those three activities.*
+:::
+
 ```{r}
 #| label: headline-numbers
 #| echo: false
@@ -114,7 +128,7 @@ DALRRD itself bears **~R0 of the R2.34B annual burden**. That cost is borne by N
 
 | Item | Status |
 |:-----|:-------|
-| SA registration | Registered as a soil insecticide (Act 36 of 1947) |
+| SA registration | **Banned** — full prohibition gazetted 8 May 2026 (Act 36 of 1947) |
 | WHO classification | Class Ia — Extremely Hazardous[^who] |
 | Acute oral LD50 (rat) | 1.6–4.5 mg/kg[^epa] |
 | EU | Not approved since 2009 |
