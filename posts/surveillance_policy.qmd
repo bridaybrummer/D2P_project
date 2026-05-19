@@ -88,9 +88,9 @@ NMC alone captures $P_\text{detect} = \frac{1,013}{20,960} = 0.048$ ([`d_status_
 
 ::: {.callout-caution appearance="minimal" collapse="true"}
 ## Caveat: this denominator rests on a CFR assumption
-The 20,960 denominator applies a 12.5% CFR to the StatsSA MACOD death count (ICD-10 X40–X49) — but that CFR derives from NMC-*notified* severe cases (the sicker end of the distribution). The undetected majority are likely milder; a blended CFR of 3–5% implies 52,000–87,000 true cases and a status-quo P_detect of 1–2%. Relative option rankings (S1, S2, MVP†) are stable across this range — the percentage-point gain for each option is unchanged; only the absolute number of true cases detected would differ.
+The 20,960 denominator applies a 12.5% CFR to the StatsSA MACOD death count (ICD-10 X40–X49) — but that CFR derives from NMC-*notified* severe cases (the sicker end of the distribution). The undetected majority are likely milder; a blended CFR of 3–5% implies 52,000–87,000 true cases and a status-quo P_detect of 1–2%. Relative option rankings (Option 1, Option 2, MVP†) are stable across this range — the percentage-point gain for each option is unchanged; only the absolute number of true cases detected would differ.
 
-†MVP = Minimum Viable Package (S1 + S2 combined).
+†MVP = Minimum Viable Package (Option 1 + Option 2 combined).
 :::
 
 ### Detection vs. true burden — a critical distinction
@@ -116,9 +116,9 @@ flowchart LR
     A --> F[No live-patient<br/>chemical toxicology]
 
     B --> G["✓ NHLS→NMC IT feed<br/><i>Completed</i>"]
-    C --> H[Option S1: PIH MVD<br/>+ dashboard]
-    D --> I[Option S2: BChE<br/>auto-notify <i>capability exists</i>]
-    F --> J[Option S3: Sentinel<br/>toxicology + auto-notify]
+    C --> H[Option 2: PIH MVD<br/>+ dashboard]
+    D --> I[Option 1: BChE<br/>auto-notify <i>capability exists</i>]
+    F --> J[Option 5: Sentinel<br/>toxicology + auto-notify]
 
     style A fill:#f99,stroke:#333
     style G fill:#e0e0e0,stroke:#999,stroke-dasharray: 5 5
@@ -135,6 +135,20 @@ Three active root causes remain **executional, not legislative**, and are each a
 ## ✓ NHLS–NMC IT feed — now operational
 
 The NHLS–NICD LIS-to-NMC connector is operational; daily BChE data flows to NICD under the existing MOU. The three active options below build on this.
+:::
+
+::: {.callout-note appearance="simple"}
+**Reading guide — option numbering.** Options below are numbered **1–5 in narrative build order**. Backend parameter codes in the CSV (`c_S1_*`, `c_S2_*`, `c_S1b_*`, `c_option6_*`) are stable identifiers that pre-date the renumbering and **do not follow the brief's order**. Cross-walk:
+
+| Option (display) | Description | CSV parameter family |
+|:-----------------|:-----------|:---------------------|
+| **Option 1** | BChE auto-notification *(first build, ★ recommended)* | `c_S2_BChE_autonotify_*` |
+| **Option 2** | PIH dashboard + MVD *(second build, ★ recommended — completes the MVP)* | `c_S1_PIH_MVD_*` |
+| **Option 3** | Community layer *(Phase 2, conditional)* | `c_S1b_*` |
+| **Option 4** | NMC CIF + agricultural extension *(bridge to coordination)* | (no dedicated parameter) |
+| **Option 5** | Sentinel live-patient toxicology *(research-funded, distinct purpose)* | `c_option6_*` |
+
+S0 (NHLS→NMC IT feed) is operational and in the baseline. **Surveillance MVP = Options 1 + 2.**
 :::
 
 ::: {.callout-note collapse="true"}
@@ -155,14 +169,14 @@ The NHLS–NICD LIS-to-NMC connector is operational; daily BChE data flows to NI
 **Setup.** `c_S0_NHLS_NMC_feed_setup` = R80,000 (one-off) covered: legal/MOU negotiation, data-mapping and schema agreement, NICD SDW ingestion script development, UAT. Already incurred; not a cost of adopting the MVP.
 :::
 
-### Option S2 — BChE auto-notification *(★ recommended — first build, capability exists)*
+### Option 1 — BChE auto-notification *(★ recommended — first build, capability exists)*
 
 Configure the NHLS LIS to fire an automatic NICD notification when a BChE result shows severe inhibition (< 30 % of normal)*, within 24 hours of validation. **No new test, no new reagent contract** — only an IT configuration on top of the ~`r scales::comma(as.numeric(pick("n_nhls_total_annual")))` BChE tests/year already performed (`r scales::comma(as.numeric(pick("n_nhls_severe_annual")))` severe in 2023). Detection rises to ~`r sprintf("%.0f", as.numeric(pick("d_S2_BChE_autonotify")) * 100)` % of true cases (up from ~`r sprintf("%.0f", as.numeric(pick("d_status_quo")) * 100)` %) for a one-off setup of **`r zar(as.numeric(pick("c_S2_BChE_autonotify_setup")))`**, then **`r zar(as.numeric(pick("c_S2_BChE_autonotify_op")))`/year** from Year 2 onward (Year 1 total: **`r zar(as.numeric(pick("c_S2_BChE_autonotify_setup")) + as.numeric(pick("c_S2_BChE_autonotify_op")))`**) in 2–4 weeks. **This is the single highest-value, fastest, lowest-risk option on the menu — and is therefore the recommended first build.** It uses existing NHLS infrastructure, has a single clear owner (NHLS LIS), and delivers the largest single-option uplift in P_detect (+`r sprintf("%.1f pp", (as.numeric(pick("d_S2_BChE_autonotify")) - as.numeric(pick("d_status_quo"))) * 100)`).
 
 * Severe inhibition is most closely related to severe sequelae such as hospitalisation and death [Chaudhary S, Jain N, Atam V, Agarwal A, Singh K, Sawlani K, et al. Prognostic significance of estimation of pseudocholinesterase activity and role of pralidoxime therapy in organophosphorous poisoning. Toxicol Int. 2013;20(3):214]. Taking any BChE test will likely increase the FP rate and this will not be accounted for.
 
 ::: {.callout-note collapse="true"}
-## Audit trail — mini-budget backing the R55,000/yr operating cost {#sec-s2-mini-budget}
+## Audit trail — mini-budget backing Option 1 (BChE auto-notify): R55,000/yr {#sec-opt1-mini-budget}
 
 `c_S2_BChE_autonotify_op` = R55,000/yr (gamma(25, 2200)) covers the pure IT infrastructure required to keep the HL7 auto-notification middleware running (for poisoning only) — **no new laboratory tests, no new reagent contract, no new hires.** The one-off LIS reconfiguration and UAT cost (`c_S2_BChE_autonotify_setup` = R200,000) is separately parameterised. All figures are 2024–2025 ZAR, marginal over the status-quo NHLS BChE baseline.
 
@@ -177,16 +191,16 @@ Configure the NHLS LIS to fire an automatic NICD notification when a BChE result
 | 7 | On-call incident-response allowance (middleware outage cover) | Annual allowance | 750 | NHLS IT estimate |
 |   | **Total** |   | **55,000** | matches `c_S2_BChE_autonotify_op` in [`amua_import_parameters_v4.csv`](../amua_import_parameters_v4.csv) |
 
-**How to interpret.** Items 1 and 5 are direct cash outlays (cloud hosting + licence). Items 2, 3, 4 and 6 are time-allocated personnel cost at standard public-sector CTE rates — the same anchors used in §7 Tab 1. The NHLS medical scientist and data-engineer CTE rows already appear in the status-quo build-up; the S2 marginal allocation is additive to the existing pesticide share of those posts.
+**How to interpret.** Items 1 and 5 are direct cash outlays (cloud hosting + licence). Items 2, 3, 4 and 6 are time-allocated personnel cost at standard public-sector CTE rates — the same anchors used in §7 Tab 1. The NHLS medical scientist and data-engineer CTE rows already appear in the status-quo build-up; the Option 1 marginal allocation is additive to the existing pesticide share of those posts.
 
 **Distribution.** gamma(shape = 25, scale = 2,200) → mean R55,000, SD ≈ R11,000 (95% CI ≈ R36k–R78k).
 
-**Sensitivity.** Dominant driver: middleware hosting tier (upgrading t3.small → t3.medium adds ~R12,000/yr). Doubling the NHLS IT maintenance FTE share adds ~R15,000/yr. Neither moves S2 above S1 in operating cost (R82,000/yr).
+**Sensitivity.** Dominant driver: middleware hosting tier (upgrading t3.small → t3.medium adds ~R12,000/yr). Doubling the NHLS IT maintenance FTE share adds ~R15,000/yr. Neither moves Option 1 above Option 2 in operating cost (R82,000/yr).
 
 **Setup.** `c_S2_BChE_autonotify_setup` = R200,000 (one-off) covers NHLS LIS HL7 rule development, configuration of the severity threshold (< 50% inhibition), UAT across NHLS network sites, and go-live sign-off. Spent once; not part of the recurring R55,000/yr.
 :::
 
-### Option S1 — PIH live dashboard + Minimum Viable Dataset *(★ recommended — second build, completes the MVP)*
+### Option 2 — PIH live dashboard + Minimum Viable Dataset *(★ recommended — second build, completes the MVP)*
 
 Two layers:
 
@@ -196,7 +210,7 @@ Two layers:
 Detection rises to ~`r sprintf("%.0f", as.numeric(pick("d_S1_PIH_MVD")) * 100)` % of true cases (up from ~`r sprintf("%.0f", as.numeric(pick("d_status_quo")) * 100)` %) for a one-off setup of **`r zar(as.numeric(pick("c_S1_PIH_MVD_setup")))`**, then **`r zar(as.numeric(pick("c_S1_PIH_MVD_op")))`/year** from Year 2 onward (Year 1 total: **`r zar(as.numeric(pick("c_S1_PIH_MVD_setup")) + as.numeric(pick("c_S1_PIH_MVD_op")))`**; includes AfriTox agent-name harmonization). The dashboard is the lowest-hanging fruit in the whole portfolio: it ships in days.
 
 ::: {.callout-note collapse="true"}
-## Audit trail — mini-budget backing the R82,000/yr operating cost {#sec-s1-mini-budget}
+## Audit trail — mini-budget backing Option 2 (PIH dashboard + MVD): R82,000/yr {#sec-opt2-mini-budget}
 
 The `c_S1_PIH_MVD_op` parameter (mean R82,000/yr; gamma(25, 3280)) is **not a single quoted price** — it is the sum of seven small recurring line items required to keep the PIH dashboard live, the MVD pipeline running, and the AfriTox agent drop-down synchronised between PIH and NMC. All figures are 2024–2025 ZAR, marginal over the status-quo PIH operation (which is already costed in §7 Tab 1–2 from [`data/surveillance_costing.xlsx`](../data/surveillance_costing.xlsx)).
 
@@ -211,24 +225,24 @@ The `c_S1_PIH_MVD_op` parameter (mean R82,000/yr; gamma(25, 3280)) is **not a si
 | 7 | Licences + alert SMS (Power BI workspace seats, ~5,000 outbound SMS/yr @ R0.20) | Microsoft ZA EA + Clickatell rate | 7,650 | Microsoft ZA EA 2024; Clickatell / BulkSMS ZA 2024 (same anchors as §7 Tab 2) |
 |   | **Total** |   | **82,000** | matches `c_S1_PIH_MVD_op` in [`amua_import_parameters_v4.csv`](../amua_import_parameters_v4.csv) |
 
-**How to interpret.** Items 1, 4 and 7 are direct cash outlays (cloud, ETL, licences, SMS). Items 2, 3, 5 and 6 are **time-allocated personnel cost** at standard public-sector cost-to-employer rates — i.e. they do not require new hires; they ring-fence small fractions of existing PIH and NICD posts. The same CTE anchors and unit-cost sources are used in the §7 status-quo build-up, so the marginal S1 line is consistent with — and additive to — the costed baseline.
+**How to interpret.** Items 1, 4 and 7 are direct cash outlays (cloud, ETL, licences, SMS). Items 2, 3, 5 and 6 are **time-allocated personnel cost** at standard public-sector cost-to-employer rates — i.e. they do not require new hires; they ring-fence small fractions of existing PIH and NICD posts. The same CTE anchors and unit-cost sources are used in the §7 status-quo build-up, so the marginal Option 2 line is consistent with — and additive to — the costed baseline.
 
 **Distribution.** The CSV models this as gamma(shape = 25, scale = 3,280) → mean R82,000, SD ≈ R16,400 (95% CI ≈ R53k–R116k). This range absorbs reasonable variation across all seven items (e.g. cloud-VM sizing, AfriTox refresh frequency, FTE %).
 
-**Sensitivity — what would push it materially higher.** (i) Hosting the dashboard on Power BI Premium dedicated capacity rather than a small VM (+R30–50k/yr); (ii) replacing the 0.02 FTE pharmacist time on the daily extract with a dedicated data engineer FTE (+R60k/yr if 0.1 FTE); (iii) extending alert-SMS volume 5× during outbreak periods (+R3–5k/yr). None of these move the option out of the "lowest-hanging fruit" tier vs S2 (R55,000/yr) or S1b (R-millions/yr).
+**Sensitivity — what would push it materially higher.** (i) Hosting the dashboard on Power BI Premium dedicated capacity rather than a small VM (+R30–50k/yr); (ii) replacing the 0.02 FTE pharmacist time on the daily extract with a dedicated data engineer FTE (+R60k/yr if 0.1 FTE); (iii) extending alert-SMS volume 5× during outbreak periods (+R3–5k/yr). None of these move the option out of the "lowest-hanging fruit" tier vs Option 1 (R55,000/yr) or Option 3 (R-millions/yr).
 :::
 
-### Option S1b — Phase 2 community layer *(commission after MVP pilot if rural/informal gap confirms)*
+### Option 3 — Community layer (Phase 2) *(commission after MVP pilot if rural/informal gap confirms)*
 
-S1 and S2 improve detection within the **formal healthcare system** — via PIH, NHLS BChE, and NMC-notified facilities. They structurally cannot reach cases that never arrive at a formal facility: the child taken to a traditional healer after ingesting street-sold granules, the farm worker who doesn't present at all, the informal-settlement cluster whose care pathway bypasses formal services entirely.
+Options 1 and 2 improve detection within the **formal healthcare system** — via PIH, NHLS BChE, and NMC-notified facilities. They structurally cannot reach cases that never arrive at a formal facility: the child taken to a traditional healer after ingesting street-sold granules, the farm worker who doesn't present at all, the informal-settlement cluster whose care pathway bypasses formal services entirely.
 
 ::: {.callout-important}
-**Pre-condition — non-clinician reporting must be enabled.** S1b only delivers a coverage uplift if PIH (and the NMC CIF, via S4) accept structured reports from **non-medical personnel**: community health workers, environmental health practitioners, ward-based outreach teams, agricultural extension officers, teachers, traditional healers, and community members themselves. The MVP's S1 stream is built on the ~1,158 *clinician-initiated* PIH calls/year — that pathway by construction cannot see cases that never reach a clinician. Unless PIH opens a separate intake channel for non-clinician callers (with the Tier-1 CHW checklist as the structured form, and EHP call-back triage as the validation step), the CHW network has nowhere to land its reports and S1b reduces to training cost with no measurable P_detect gain. This is the single design choice that makes or breaks the community layer.
+**Pre-condition — non-clinician reporting must be enabled.** Option 3 only delivers a coverage uplift if PIH (and the NMC CIF, via Option 4) accept structured reports from **non-medical personnel**: community health workers, environmental health practitioners, ward-based outreach teams, agricultural extension officers, teachers, traditional healers, and community members themselves. The Option 2 PIH stream is built on the ~1,158 *clinician-initiated* PIH calls/year — that pathway by construction cannot see cases that never reach a clinician. Unless PIH opens a separate intake channel for non-clinician callers (with the Tier-1 CHW checklist as the structured form, and EHP call-back triage as the validation step), the CHW network has nowhere to land its reports and Option 3 reduces to training cost with no measurable P_detect gain. This is the single design choice that makes or breaks the community layer.
 :::
 
-**The MVP ceiling (~`r sprintf("%.0f", as.numeric(pick("d_surveillance_mvp")) * 100)`% P_detect) is real and bounded** by the reach of formal administrative streams. S1b is the mechanism for going beyond it — but only after the MVP has established the baseline and confirmed that the remaining gap is structural rather than simply a compliance issue within the formal system.
+**The MVP ceiling (~`r sprintf("%.0f", as.numeric(pick("d_surveillance_mvp")) * 100)`% P_detect) is real and bounded** by the reach of formal administrative streams. Option 3 is the mechanism for going beyond it — but only after the MVP has established the baseline and confirmed that the remaining gap is structural rather than simply a compliance issue within the formal system.
 
-**Trigger condition.** Commission S1b if, after 6 months of MVP operation, the geographic distribution of PIH + NHLS + NMC cases shows ≥40% of severe cases originating in districts with low formal-facility access (defined as <1 public hospital per 50km radius). This is a data-driven go/no-go, not a discretionary expansion. CSV parameters: `d_S1b_event_community_*`, `c_S1b_setup_*`, `c_S1b_op_*`, `p_fp_S1b_*`.
+**Trigger condition.** Commission Option 3 if, after 6 months of MVP operation, the geographic distribution of PIH + NHLS + NMC cases shows ≥40% of severe cases originating in districts with low formal-facility access (defined as <1 public hospital per 50km radius). This is a data-driven go/no-go, not a discretionary expansion. CSV parameters: `d_S1b_event_community_*`, `c_S1b_setup_*`, `c_S1b_op_*`, `p_fp_S1b_*`.
 
 **False positives are a design parameter, not a disqualifier.** The gross false-positive rate is ~`r sprintf("%.0f%%", as.numeric(pick("p_fp_S1b_mid")) * 100)` (range `r sprintf("%.0f–%.0f%%", as.numeric(pick("p_fp_S1b_lo")) * 100, as.numeric(pick("p_fp_S1b_hi")) * 100)`). At P_detect = `r pick("d_S1b_event_community_mid")` on the mid-burden of `r scales::comma(as.numeric(pick("n_true_burden_from_statssa_mid")))` true cases, the gross notification volume would be ~`r scales::comma(round(as.numeric(pick("n_true_burden_from_statssa_mid")) * as.numeric(pick("d_S1b_event_community_mid")) / (1 - as.numeric(pick("p_fp_S1b_mid")))))` events/yr — of which ~`r scales::comma(round(as.numeric(pick("n_true_burden_from_statssa_mid")) * as.numeric(pick("d_S1b_event_community_mid"))))` are true cases and ~`r scales::comma(round(as.numeric(pick("n_true_burden_from_statssa_mid")) * as.numeric(pick("d_S1b_event_community_mid")) * as.numeric(pick("p_fp_S1b_mid")) / (1 - as.numeric(pick("p_fp_S1b_mid")))))` are false alerts *before filtering*. This is solvable with a **two-tier triage architecture** — the same design used by WHO-EWARN, APSED, and comparable LMIC systems:
 
@@ -241,13 +255,13 @@ With a two-tier filter, the effective net FP rate drops to approximately 8–12%
 
 | Stage | Provinces | Est. burden share | Setup cost | Operating cost/yr | Go/no-go criterion |
 |:------|:----------|------------------:|-----------:|------------------:|:-------------------|
-| **S1b pilot** | Free State + Gauteng | ~50% | ~`r sprintf("R%.0fM", as.numeric(pick("c_S1b_setup_lo"))/1e6)` | ~`r sprintf("R%.1fM/yr", as.numeric(pick("c_S1b_op_lo"))/1e6)` | Month 12: net P_detect >35% and net FP <15% |
-| **S1b national** | All 9 provinces | 100% | ~`r sprintf("R%.1fM", as.numeric(pick("c_S1b_setup_hi"))/1e6)` | ~`r sprintf("R%.1fM/yr", as.numeric(pick("c_S1b_op_hi"))/1e6)` | Conditional on pilot outcome |
+| **Option 3 pilot** | Free State + Gauteng | ~50% | ~`r sprintf("R%.0fM", as.numeric(pick("c_S1b_setup_lo"))/1e6)` | ~`r sprintf("R%.1fM/yr", as.numeric(pick("c_S1b_op_lo"))/1e6)` | Month 12: net P_detect >35% and net FP <15% |
+| **Option 3 national** | All 9 provinces | 100% | ~`r sprintf("R%.1fM", as.numeric(pick("c_S1b_setup_hi"))/1e6)` | ~`r sprintf("R%.1fM/yr", as.numeric(pick("c_S1b_op_hi"))/1e6)` | Conditional on pilot outcome |
 
 The cost range (`r sprintf("R%.0fM–R%.1fM setup; R%.1fM–R%.1fM/yr operating", as.numeric(pick("c_S1b_setup_lo"))/1e6, as.numeric(pick("c_S1b_setup_hi"))/1e6, as.numeric(pick("c_S1b_op_lo"))/1e6, as.numeric(pick("c_S1b_op_hi"))/1e6)` — approximately `r sprintf("%.0f–%.0f×", as.numeric(pick("c_S1b_op_lo")) / as.numeric(pick("c_surv_MVP_op")), as.numeric(pick("c_S1b_op_hi")) / as.numeric(pick("c_surv_MVP_op")))` the MVP operating cost) directly reflects the two-stage choice.
 
 ::: {.callout-note collapse="true"}
-## Audit trail — mini-budget backing the S1b operating cost range {#sec-s1b-mini-budget}
+## Audit trail — mini-budget backing Option 3 (community layer) operating cost range {#sec-opt3-mini-budget}
 
 The three `c_S1b_op_*` parameters reflect **distinct deployment footprints**, not sensitivity bounds around a single estimate. All figures are 2024–2025 ZAR, marginal over the Surveillance MVP baseline.
 
@@ -291,42 +305,42 @@ From CSV note: *"full 9-province deployment with dedicated EHP nodes and enhance
 **Setup parameters.** `c_S1b_setup_lo/mid/hi` = R1M / R2M / R3.5M (one-off) cover mobile-app development, protocol design, and initial CHW training. They are separately parameterised and not included in the operating cost rows above.
 :::
 
-### Option S4 — NMC case investigation form + agricultural extension *(bridge to coordination)*
+### Option 4 — NMC case investigation form + agricultural extension *(bridge to coordination)*
 
 Surveillance *counts* cases; **investigation** captures the source, the product, and the trigger for source removal. The NDoH [*Guideline for the Investigation of Human Chemical Poisoning* (2023)](https://www.health.gov.za/wp-content/uploads/2023/09/DOH-Guideline-Investigation-Human-Chemical-Poisoning-1.pdf) already defines a structured Case Investigation Form (CIF) that EHPs and clinicians are expected to complete within 48 hours of any chemical-poisoning notification — but uptake is inconsistent, the form is not embedded in the NMC workflow, and it lacks interventions that are carried out by DOA (source removal). In addition, occupational exposure (if appropriate) ought to be captured. 
 
 This option does two complementary things and is the **minimum surveillance-side investment required to make the [Coordination response](coordination_policy.qmd) operational**:
 
-1. **Operationalise the existing NDoH CIF inside NMC.** Embed the 2023 guideline's investigation fields as a structured second-stage form auto-triggered by any pesticide-poisoning notification — whether the notification originates from NMC, the S1 PIH MVD ingest, or the S2 BChE auto-notify rule. EHPs receive a workflow alert; CIF completion within 48 hours becomes a tracked NMC performance indicator (district-level KPI, reported quarterly).
+1. **Operationalise the existing NDoH CIF inside NMC.** Embed the 2023 guideline's investigation fields as a structured second-stage form auto-triggered by any pesticide-poisoning notification — whether the notification originates from NMC, the Option 2 PIH MVD ingest, or the Option 1 BChE auto-notify rule. EHPs receive a workflow alert; CIF completion within 48 hours becomes a tracked NMC performance indicator (district-level KPI, reported quarterly).
 2. **Add an agricultural-investigation extension module.** Additional structured fields layered onto the CIF for:
     - **Product origin:** formal retail / informal repackaged / agricultural concentrate / unknown;
-    - **AfriTox-coded agent name** (reciprocal with the S1 drop-down so PIH-reported and NMC-confirmed agent names are directly comparable);
+    - **AfriTox-coded agent name** (reciprocal with the Option 2 drop-down so PIH-reported and NMC-confirmed agent names are directly comparable);
     - **Exposure context:** occupational (farm worker, applicator) / dietary / accidental / intentional / pediatric ingestion;
     - **Site geolocation** (farm GPS / household / market / school) with district code;
     - **Source-removal trigger flag** — an explicit field that, when set by the EHP, hands the case off to the DALRRD-Act-36 + DoH source-removal workflow described in the [Coordination brief](coordination_policy.qmd).
 
-**Cost.** ~R45,000 setup (form-template build into the NMC platform; one-day inter-departmental design workshop with NDoH EHP directorate, DALRRD Act-36 registrar, NICD, and PIH) and ~R35,000/yr operating (NICD analyst 0.04 FTE × R650k DPSA L10-11 for form-completion QA, drop-down maintenance and quarterly performance reporting to NDoH). **No new headcount** — same DPSA L10-11 analyst anchor used for S0/S1/S2; no new IT platform — the NMC notification system already supports structured secondary forms.
+**Cost.** ~R45,000 setup (form-template build into the NMC platform; one-day inter-departmental design workshop with NDoH EHP directorate, DALRRD Act-36 registrar, NICD, and PIH) and ~R35,000/yr operating (NICD analyst 0.04 FTE × R650k DPSA L10-11 for form-completion QA, drop-down maintenance and quarterly performance reporting to NDoH). **No new headcount** — same DPSA L10-11 analyst anchor used for S0, Option 1 and Option 2; no new IT platform — the NMC notification system already supports structured secondary forms.
 
-**P_detect impact: by design, none directly.** S4 does **not** increase the share of true cases entering surveillance — that is the role of S1, S1b and S2. Its value lies in **converting detected cases into actionable investigations**: it is the data-quality bridge that allows the coordination response to fire on the right cases, with the right product information, at the right site. The structured agent-attribution field added in S1 is the *what*; the CIF + agricultural extension is the *where, how, and who*. Together they make NMC the cross-sectoral hand-off point from health-sector detection into the DALRRD + DoH source-removal pipeline.
+**P_detect impact: by design, none directly.** Option 4 does **not** increase the share of true cases entering surveillance — that is the role of Options 1, 2 and 3. Its value lies in **converting detected cases into actionable investigations**: it is the data-quality bridge that allows the coordination response to fire on the right cases, with the right product information, at the right site. The structured agent-attribution field added in Option 2 is the *what*; the CIF + agricultural extension is the *where, how, and who*. Together they make NMC the cross-sectoral hand-off point from health-sector detection into the DALRRD + DoH source-removal pipeline.
 
-**Why this belongs in the surveillance brief, not the coordination brief.** The form lives inside NMC; its build, governance and KPIs are NDoH-owned surveillance infrastructure. The [Coordination brief](coordination_policy.qmd) *consumes* the structured CIF + extension outputs to trigger source removal and inter-departmental escalation — it does not own the form itself. S4 is therefore the natural seam between the two briefs: it modestly upgrades NMC to **pave the way for coordination**, without requiring any new legislation (the CIF already exists in the 2023 guideline; Section 90 of the National Health Act and the NMC regulations already authorise the data flows).
+**Why this belongs in the surveillance brief, not the coordination brief.** The form lives inside NMC; its build, governance and KPIs are NDoH-owned surveillance infrastructure. The [Coordination brief](coordination_policy.qmd) *consumes* the structured CIF + extension outputs to trigger source removal and inter-departmental escalation — it does not own the form itself. Option 4 is therefore the natural seam between the two briefs: it modestly upgrades NMC to **pave the way for coordination**, without requiring any new legislation (the CIF already exists in the 2023 guideline; Section 90 of the National Health Act and the NMC regulations already authorise the data flows).
 
-### Option S3 — Sentinel live-patient toxicology *(★ recommended, medium term — distinct purpose, research-funded)*
+### Option 5 — Sentinel live-patient toxicology *(★ recommended, medium term — distinct purpose, research-funded)*
 
-NHLS currently performs chemical toxicology (qualitative/quantitative pesticide assays) **post-mortem only**. There is no live-patient toxicology capability. Option S3 funds a sentinel tertiary site (e.g. CHB) to perform live-patient chemical toxicology and/or mass spectometry, scaling to 4–5 sites in phase 2–3. This will only capture ~ 323 severe poisoning cases. 
+NHLS currently performs chemical toxicology (qualitative/quantitative pesticide assays) **post-mortem only**. There is no live-patient toxicology capability. Option 5 funds a sentinel tertiary site (e.g. CHB) to perform live-patient chemical toxicology and/or mass spectometry, scaling to 4–5 sites in phase 2–3. This will only capture ~ 323 severe poisoning cases. 
 
 ::: {.callout-caution appearance="minimal"}
-**Forensic chemistry is fully de-identified and not fit for surveillance linkage.** No patient, facility, or case-linkage identifiers: cannot be matched to NMC or PIH records without structural re-design of specimen accessioning. The **MLDI system** is the longer-term pathway for surveillance-ready post-mortem toxicology — a separate workstream from S3.
+**Forensic chemistry is fully de-identified and not fit for surveillance linkage.** No patient, facility, or case-linkage identifiers: cannot be matched to NMC or PIH records without structural re-design of specimen accessioning. The **MLDI system** is the longer-term pathway for surveillance-ready post-mortem toxicology — a separate workstream from Option 5.
 :::
 
-**S3 has a different purpose from S1 and S2** and is *not* a detection-coverage uplift. S1 and S2 increase the share of true cases that enter the surveillance system. **S3 identifies the proportion of chemical agents being found in severely poisoned living patients at sentinel sites** — the missing evidence base for product-specific regulation (see [Terbufos brief](terbufos_policy.qmd)). Without S3, ~10,000 survivors/year are recorded with agent "unknown / suspected" and targeted product restriction has no quantitative footing. Some infromation is being captured in the Injury and MOrtality Survey by Megan Prinsloo et al (*** NOTE FOR THE AUTHOER ***)
+**Option 5 has a different purpose from Options 1 and 2** and is *not* a detection-coverage uplift. Options 1 and 2 increase the share of true cases that enter the surveillance system. **Option 5 identifies the proportion of chemical agents being found in severely poisoned living patients at sentinel sites** — the missing evidence base for product-specific regulation (see [Terbufos brief](terbufos_policy.qmd)). Without Option 5, ~10,000 survivors/year are recorded with agent "unknown / suspected" and targeted product restriction has no quantitative footing. Some infromation is being captured in the Injury and MOrtality Survey by Megan Prinsloo et al (*** NOTE FOR THE AUTHOER ***)
 
 Cost: ~`r sprintf("R%.1fM", round(as.numeric(pick("c_option6_pilot_year1"))/1e6, 1))` pilot site → ~`r sprintf("R%.1fM", round(as.numeric(pick("c_option6_full_5site_annual"))/1e6, 1))` for 5-site rollout, 6–12 months. Funded from research-surveillance streams (SAMRC, Bloomberg, Gates), not the surveillance operating budget. Full quantitative concept in the [sentinel toxicology appendix](surveillance_concept_note.qmd).
 
 ::: {.callout-note collapse="true"}
-## Audit trail — mini-budget backing the S3 sentinel toxicology costs {#sec-s3-mini-budget}
+## Audit trail — mini-budget backing Option 5 (sentinel toxicology) costs {#sec-opt5-mini-budget}
 
-Four component-level parameters in [`amua_import_parameters_v4.csv`](../amua_import_parameters_v4.csv) underpin both S3 cost rows. The pilot and 5-site budgets run **below the maximum specimen capacity** (`n_specimens_per_site_per_year` = 646): the pilot targets ~150 GC-MS screens and ~200 clinical batteries (ramp-up year); the 5-site rollout targets ~100 screens and ~133 batteries per site per year (steady-state research enrolment).
+Four component-level parameters in [`amua_import_parameters_v4.csv`](../amua_import_parameters_v4.csv) underpin both Option 5 cost rows. The pilot and 5-site budgets run **below the maximum specimen capacity** (`n_specimens_per_site_per_year` = 646): the pilot targets ~150 GC-MS screens and ~200 clinical batteries (ramp-up year); the 5-site rollout targets ~100 screens and ~133 batteries per site per year (steady-state research enrolment).
 
 **Pilot — 1 sentinel site (CHB) | `c_option6_pilot_year1` = R1,200,000/yr**
 
@@ -352,7 +366,7 @@ Four component-level parameters in [`amua_import_parameters_v4.csv`](../amua_imp
 | 6 | Site consumables, transport, cold chain (5 sites × R30k) | Per-site recurring overhead | 150,000 | NHLS logistics tariff 2024 |
 |   | **Total (5-site)** |   | **3,625,000** | matches `c_option6_full_5site_annual` |
 
-**Why S3 is funded from research streams, not the surveillance operating budget.** S3 is a **research investment** — it generates the agent-attribution evidence base for targeted regulatory action. It does not increase P_detect (the share of true cases entering the surveillance system) and therefore does not appear in the S1/S2/MVP operating-cost parameters. Its value is quantified in the [Terbufos brief](terbufos_policy.qmd) where regulatory restriction converts agent-attribution evidence into deaths averted.
+**Why Option 5 is funded from research streams, not the surveillance operating budget.** Option 5 is a **research investment** — it generates the agent-attribution evidence base for targeted regulatory action. It does not increase P_detect (the share of true cases entering the surveillance system) and therefore does not appear in the Option 1, Option 2 or MVP operating-cost parameters. Its value is quantified in the [Terbufos brief](terbufos_policy.qmd) where regulatory restriction converts agent-attribution evidence into deaths averted.
 
 **Why specimens run below the per-site capacity of 646.** `n_specimens_per_site_per_year` (= 646) is the *anatomically derived maximum* (2 specimens per patient × 323 patients — the sample-size calculation for the agent-attribution study at p = 0.3, d = 0.05). Actual enrolment ramps up over the pilot year (~150 screens) and reaches a steady-state of ~100–133 screens per site in a funded 5-site network constrained by the research budget, not by specimen throughput.
 :::
@@ -363,14 +377,14 @@ Four component-level parameters in [`amua_import_parameters_v4.csv`](../amua_imp
 | Option | Setup (one-off) | Annual operating (yr 2+) | Year 1 total | P_detect (per-case) | Δ vs. status quo | R / pp† | Time | Parameter |
 |:-------|----------------:|-------------------------:|-------------:|:-------------------:|:----------------:|----------:|:-----|:----------|
 | Status quo | — | R0 | R0 | $\frac{1,013}{20,960} = 0.048$ | — | — | — | [`d_status_quo`](../parameters_hub.qmd#tbl-detection) |
-| S2: BChE auto-notify *(first build)* | `r zar(as.numeric(pick("c_S2_BChE_autonotify_setup")))` | `r zar(as.numeric(pick("c_S2_BChE_autonotify_op")))` | `r zar(as.numeric(pick("c_S2_BChE_autonotify_setup")) + as.numeric(pick("c_S2_BChE_autonotify_op")))` | $\frac{1,013 + 1,779}{20,960} = 0.133$ | `r sprintf("+%.1f pp", (as.numeric(pick("d_S2_BChE_autonotify")) - as.numeric(pick("d_status_quo"))) * 100)` | `r paste0(zar(round(as.numeric(pick("c_S2_BChE_autonotify_op")) / ((as.numeric(pick("d_S2_BChE_autonotify")) - as.numeric(pick("d_status_quo"))) * 100))), " / pp")` | 2–4 wks | [`d_S2_BChE_autonotify`](../parameters_hub.qmd#tbl-detection) |
-| S1: PIH dashboard + MVD (+AfriTox agent name) *(second build)* | `r zar(as.numeric(pick("c_S1_PIH_MVD_setup")))` | `r zar(as.numeric(pick("c_S1_PIH_MVD_op")))` | `r zar(as.numeric(pick("c_S1_PIH_MVD_setup")) + as.numeric(pick("c_S1_PIH_MVD_op")))` | $\frac{1,013 + 1,158}{20,960} = 0.104$ | `r sprintf("+%.1f pp", (as.numeric(pick("d_S1_PIH_MVD")) - as.numeric(pick("d_status_quo"))) * 100)` | `r paste0(zar(round(as.numeric(pick("c_S1_PIH_MVD_op")) / ((as.numeric(pick("d_S1_PIH_MVD")) - as.numeric(pick("d_status_quo"))) * 100))), " / pp")` | 1–2 wks dash / 3–9 mo MVD | [`d_S1_PIH_MVD`](../parameters_hub.qmd#tbl-detection) |
-| **S2 + S1 (Surveillance MVP)** | **`r zar(as.numeric(pick("c_surv_MVP_setup")))`** | **`r zar(as.numeric(pick("c_surv_MVP_op")))`** | **`r zar(as.numeric(pick("c_surv_MVP_setup")) + as.numeric(pick("c_surv_MVP_op")))`** | $\frac{1,013 + 1,779 + 1,158}{20,960} = 0.189$ | **`r sprintf("+%.1f pp", (as.numeric(pick("d_surveillance_mvp")) - as.numeric(pick("d_status_quo"))) * 100)`** | **`r paste0(zar(round(as.numeric(pick("c_surv_MVP_op")) / ((as.numeric(pick("d_surveillance_mvp")) - as.numeric(pick("d_status_quo"))) * 100))), " / pp")`** | **12 weeks** | [`d_surveillance_mvp`](../parameters_hub.qmd#tbl-detection) |
-| S1b: Phase 2 community layer *(pilot: FS + Gauteng; national conditional on pilot; **requires PIH/NMC intake from non-clinicians**)* | `r sprintf("R%.0fM–R%.1fM", as.numeric(pick("c_S1b_setup_lo"))/1e6, as.numeric(pick("c_S1b_setup_hi"))/1e6)` | Pilot `r sprintf("R%.1fM/yr", as.numeric(pick("c_S1b_op_lo"))/1e6)`; national `r sprintf("R%.1fM/yr", as.numeric(pick("c_S1b_op_hi"))/1e6)` | `r sprintf("R%.1fM–R%.1fM", (as.numeric(pick("c_S1b_setup_lo")) + as.numeric(pick("c_S1b_op_lo")))/1e6, (as.numeric(pick("c_S1b_setup_hi")) + as.numeric(pick("c_S1b_op_hi")))/1e6)` | `r pick("d_S1b_event_community_lo")`–`r pick("d_S1b_event_community_hi")` (working: `r pick("d_S1b_event_community_mid")`) | `r sprintf("+%.0f to +%.0f pp", (as.numeric(pick("d_S1b_event_community_lo")) - as.numeric(pick("d_status_quo"))) * 100, (as.numeric(pick("d_S1b_event_community_hi")) - as.numeric(pick("d_status_quo"))) * 100)` | `r sprintf("%s–%s / pp", zar(round(as.numeric(pick("c_S1b_op_lo")) / ((as.numeric(pick("d_S1b_event_community_lo")) - as.numeric(pick("d_status_quo"))) * 100))), zar(round(as.numeric(pick("c_S1b_op_hi")) / ((as.numeric(pick("d_S1b_event_community_hi")) - as.numeric(pick("d_status_quo"))) * 100))))` | 12 mo pilot → national | [`d_S1b_event_community_mid`](../parameters_hub.qmd) |
-| S4: NMC CIF + agricultural extension (bridge to coordination) | R45,000 | R35,000/yr | R80,000 | n/a (not a coverage uplift) | enables source-removal hand-off | n/a | 4–8 wks | NDoH 2023 CIF guideline |
-| S3: Sentinel toxicology (agent attribution — distinct purpose, research-funded) | — (incl. in yr 1) | `r sprintf("R%.1fM/yr (5-site)", round(as.numeric(pick("c_option6_full_5site_annual"))/1e6,1))` | `r sprintf("R%.1fM (1-site pilot)", round(as.numeric(pick("c_option6_pilot_year1"))/1e6,1))` | n/a (not a coverage uplift) | feeds product-banning evidence base | n/a | 6–12 mo pilot | — |
+| Option 1 — BChE auto-notify *(first build; CSV: `c_S2_*`)* | `r zar(as.numeric(pick("c_S2_BChE_autonotify_setup")))` | `r zar(as.numeric(pick("c_S2_BChE_autonotify_op")))` | `r zar(as.numeric(pick("c_S2_BChE_autonotify_setup")) + as.numeric(pick("c_S2_BChE_autonotify_op")))` | $\frac{1,013 + 1,779}{20,960} = 0.133$ | `r sprintf("+%.1f pp", (as.numeric(pick("d_S2_BChE_autonotify")) - as.numeric(pick("d_status_quo"))) * 100)` | `r paste0(zar(round(as.numeric(pick("c_S2_BChE_autonotify_op")) / ((as.numeric(pick("d_S2_BChE_autonotify")) - as.numeric(pick("d_status_quo"))) * 100))), " / pp")` | 2–4 wks | [`d_S2_BChE_autonotify`](../parameters_hub.qmd#tbl-detection) |
+| Option 2 — PIH dashboard + MVD (+AfriTox agent name) *(second build; CSV: `c_S1_*`)* | `r zar(as.numeric(pick("c_S1_PIH_MVD_setup")))` | `r zar(as.numeric(pick("c_S1_PIH_MVD_op")))` | `r zar(as.numeric(pick("c_S1_PIH_MVD_setup")) + as.numeric(pick("c_S1_PIH_MVD_op")))` | $\frac{1,013 + 1,158}{20,960} = 0.104$ | `r sprintf("+%.1f pp", (as.numeric(pick("d_S1_PIH_MVD")) - as.numeric(pick("d_status_quo"))) * 100)` | `r paste0(zar(round(as.numeric(pick("c_S1_PIH_MVD_op")) / ((as.numeric(pick("d_S1_PIH_MVD")) - as.numeric(pick("d_status_quo"))) * 100))), " / pp")` | 1–2 wks dash / 3–9 mo MVD | [`d_S1_PIH_MVD`](../parameters_hub.qmd#tbl-detection) |
+| **Surveillance MVP — Option 1 + Option 2** | **`r zar(as.numeric(pick("c_surv_MVP_setup")))`** | **`r zar(as.numeric(pick("c_surv_MVP_op")))`** | **`r zar(as.numeric(pick("c_surv_MVP_setup")) + as.numeric(pick("c_surv_MVP_op")))`** | $\frac{1,013 + 1,779 + 1,158}{20,960} = 0.189$ | **`r sprintf("+%.1f pp", (as.numeric(pick("d_surveillance_mvp")) - as.numeric(pick("d_status_quo"))) * 100)`** | **`r paste0(zar(round(as.numeric(pick("c_surv_MVP_op")) / ((as.numeric(pick("d_surveillance_mvp")) - as.numeric(pick("d_status_quo"))) * 100))), " / pp")`** | **12 weeks** | [`d_surveillance_mvp`](../parameters_hub.qmd#tbl-detection) |
+| Option 3 — Community layer (Phase 2) *(pilot: FS + Gauteng; national conditional on pilot; **requires PIH/NMC intake from non-clinicians**; CSV: `c_S1b_*`)* | `r sprintf("R%.0fM–R%.1fM", as.numeric(pick("c_S1b_setup_lo"))/1e6, as.numeric(pick("c_S1b_setup_hi"))/1e6)` | Pilot `r sprintf("R%.1fM/yr", as.numeric(pick("c_S1b_op_lo"))/1e6)`; national `r sprintf("R%.1fM/yr", as.numeric(pick("c_S1b_op_hi"))/1e6)` | `r sprintf("R%.1fM–R%.1fM", (as.numeric(pick("c_S1b_setup_lo")) + as.numeric(pick("c_S1b_op_lo")))/1e6, (as.numeric(pick("c_S1b_setup_hi")) + as.numeric(pick("c_S1b_op_hi")))/1e6)` | `r pick("d_S1b_event_community_lo")`–`r pick("d_S1b_event_community_hi")` (working: `r pick("d_S1b_event_community_mid")`) | `r sprintf("+%.0f to +%.0f pp", (as.numeric(pick("d_S1b_event_community_lo")) - as.numeric(pick("d_status_quo"))) * 100, (as.numeric(pick("d_S1b_event_community_hi")) - as.numeric(pick("d_status_quo"))) * 100)` | `r sprintf("%s–%s / pp", zar(round(as.numeric(pick("c_S1b_op_lo")) / ((as.numeric(pick("d_S1b_event_community_lo")) - as.numeric(pick("d_status_quo"))) * 100))), zar(round(as.numeric(pick("c_S1b_op_hi")) / ((as.numeric(pick("d_S1b_event_community_hi")) - as.numeric(pick("d_status_quo"))) * 100))))` | 12 mo pilot → national | [`d_S1b_event_community_mid`](../parameters_hub.qmd) |
+| Option 4 — NMC CIF + agricultural extension *(bridge to coordination)* | R45,000 | R35,000/yr | R80,000 | n/a (not a coverage uplift) | enables source-removal hand-off | n/a | 4–8 wks | NDoH 2023 CIF guideline |
+| Option 5 — Sentinel toxicology *(agent attribution — distinct purpose, research-funded; CSV: `c_option6_*`)* | — (incl. in yr 1) | `r sprintf("R%.1fM/yr (5-site)", round(as.numeric(pick("c_option6_full_5site_annual"))/1e6,1))` | `r sprintf("R%.1fM (1-site pilot)", round(as.numeric(pick("c_option6_pilot_year1"))/1e6,1))` | n/a (not a coverage uplift) | feeds product-banning evidence base | n/a | 6–12 mo pilot | — |
 
-: **Intermediate-outcome costing analysis — surveillance options, base-case.** Costs are 2024–25 ZAR; P_detect is the per-case detection probability anchored to the StatsSA MACOD 2023 mid-burden of `r scales::comma(as.numeric(pick("n_true_burden_from_statssa_mid")))` true cases/year. †**R / pp** = annual operating cost ÷ percentage-point gain in P_detect over status quo (e.g. R9,716 / pp means each additional 1% of cases detected costs R9,716/yr to sustain). S1 and S2 expand coverage within the formal healthcare system; **S3 is a parallel agent-attribution investment**, not a coverage uplift — see option text above. **S4 is a data-quality / investigation-form upgrade** that converts detected cases into actionable source-removal hand-offs to the [Coordination brief](coordination_policy.qmd); it does not raise P_detect by design. **S1b is a Phase 2 community layer**, commissioned conditional on MVP pilot data confirming a structural rural/informal gap (trigger: ≥40% of severe cases in low-facility-access districts after 6 months of MVP operation) **and** on PIH/NMC opening a non-clinician intake channel — without that pre-condition the CHW network has no destination for its reports and S1b yields no P_detect gain. {.striped .hover}
+: **Intermediate-outcome costing analysis — surveillance options, base-case.** Costs are 2024–25 ZAR; P_detect is the per-case detection probability anchored to the StatsSA MACOD 2023 mid-burden of `r scales::comma(as.numeric(pick("n_true_burden_from_statssa_mid")))` true cases/year. †**R / pp** = annual operating cost ÷ percentage-point gain in P_detect over status quo (e.g. R9,716 / pp means each additional 1% of cases detected costs R9,716/yr to sustain). Options 1 and 2 expand coverage within the formal healthcare system; **Option 5 is a parallel agent-attribution investment**, not a coverage uplift — see option text above. **Option 4 is a data-quality / investigation-form upgrade** that converts detected cases into actionable source-removal hand-offs to the [Coordination brief](coordination_policy.qmd); it does not raise P_detect by design. **Option 3 is a Phase 2 community layer**, commissioned conditional on MVP pilot data confirming a structural rural/informal gap (trigger: ≥40% of severe cases in low-facility-access districts after 6 months of MVP operation) **and** on PIH/NMC opening a non-clinician intake channel — without that pre-condition the CHW network has no destination for its reports and Option 3 yields no P_detect gain. {.striped .hover}
 
 ::: {.callout-note appearance="simple"}
 **Scope of this brief.** Surveillance changes only what is *seen*. The status quo P_detect = `r pick("d_status_quo")` (§6 below) is a **measurement** of the current detection gap, not a counterfactual against which deaths are averted. Cases-averted and deaths-averted figures live in the [Coordination brief](coordination_policy.qmd) and [Terbufos brief](terbufos_policy.qmd) respectively.
@@ -383,18 +397,18 @@ Four component-level parameters in [`amua_import_parameters_v4.csv`](../amua_imp
 
 | Component | CSV parameter | Annual (R) | Mini-budget |
 |:----------|:-------------|----------:|:-----------|
-| S1 PIH dashboard + MVD (+ AfriTox harmonisation) | `c_S1_PIH_MVD_op` | 82,000 | [S1 audit trail](#sec-s1-mini-budget) |
-| S2 BChE auto-notification | `c_S2_BChE_autonotify_op` | 55,000 | [S2 audit trail](#sec-s2-mini-budget) |
+| Option 2 — PIH dashboard + MVD (+ AfriTox harmonisation) | `c_S1_PIH_MVD_op` | 82,000 | [Option 2 audit trail](#sec-opt2-mini-budget) |
+| Option 1 — BChE auto-notification | `c_S2_BChE_autonotify_op` | 55,000 | [Option 1 audit trail](#sec-opt1-mini-budget) |
 | **Surveillance MVP total** | `c_surv_MVP_op` | **137,000** | |
 
-**No double-counting.** The S1 and S2 cost items sit on entirely separate operational pathways:
+**No double-counting.** The Option 1 and Option 2 cost items sit on entirely separate operational pathways:
 
-- **S1 items** (PIH cloud hosting, MVD ETL pipeline, AfriTox harmonisation, QA, licences/SMS) are driven by PIH call-record flows and the NICD/PIH data-dictionary agreement.
-- **S2 items** (NHLS HL7 middleware, LIS IT maintenance, NHLS scientist QA, NICD alert triage) are driven by the NHLS LIS auto-notification rule.
+- **Option 2 items** (PIH cloud hosting, MVD ETL pipeline, AfriTox harmonisation, QA, licences/SMS) are driven by PIH call-record flows and the NICD/PIH data-dictionary agreement.
+- **Option 1 items** (NHLS HL7 middleware, LIS IT maintenance, NHLS scientist QA, NICD alert triage) are driven by the NHLS LIS auto-notification rule.
 
-The two NICD analyst FTE allocations sum to ~0.05 FTE total (S1: ~0.035 FTE; S2: ~0.015 FTE) — within the 0.2 FTE analyst post already costed in the §7 Tab 1 NMC baseline. **The MVP does not require a new NICD headcount.**
+The two NICD analyst FTE allocations sum to ~0.05 FTE total (Option 2: ~0.035 FTE; Option 1: ~0.015 FTE) — within the 0.2 FTE analyst post already costed in the §7 Tab 1 NMC baseline. **The MVP does not require a new NICD headcount.**
 
-**Setup.** `c_surv_MVP_setup` = R240,000 (one-off) = `c_S1_PIH_MVD_setup` (R40,000) + `c_S2_BChE_autonotify_setup` (R200,000). S0 is already operational and its setup cost was separately incurred; it is not double-counted here. The S2 LIS HL7 reconfiguration (R200,000) dominates.
+**Setup.** `c_surv_MVP_setup` = R240,000 (one-off) = `c_S1_PIH_MVD_setup` (R40,000) + `c_S2_BChE_autonotify_setup` (R200,000). S0 is already operational and its setup cost was separately incurred; it is not double-counted here. The Option 1 LIS HL7 reconfiguration (R200,000) dominates.
 :::
 
 ::: {.callout-note}
@@ -404,17 +418,19 @@ Every annual cost and setup cost in this brief is directly linked to a parameter
 
 | Option | Setup cost parameter | Operating cost parameter |
 |:-------|:--------------------|:------------------------|
-| S1 — PIH dashboard + MVD (+ AfriTox harmonisation) | `c_S1_PIH_MVD_setup` | `c_S1_PIH_MVD_op` |
-| S2 — BChE auto-notification | `c_S2_BChE_autonotify_setup` | `c_S2_BChE_autonotify_op` |
-| Surveillance MVP (S1 + S2) | `c_surv_MVP_setup` | `c_surv_MVP_op` |
-| S1b — event-based / community *(sensitivity)* | `c_S1b_setup_mid` (lo/hi also exist) | `c_S1b_op_mid` (lo/hi also exist) |
-| S0 — NHLS-NMC IT feed (now operational) | `c_S0_NHLS_NMC_feed_setup` | `c_S0_NHLS_NMC_feed_op` |
+| Option 2 — PIH dashboard + MVD (+ AfriTox harmonisation) | `c_S1_PIH_MVD_setup` | `c_S1_PIH_MVD_op` |
+| Option 1 — BChE auto-notification | `c_S2_BChE_autonotify_setup` | `c_S2_BChE_autonotify_op` |
+| Surveillance MVP (Option 1 + Option 2) | `c_surv_MVP_setup` | `c_surv_MVP_op` |
+| Option 3 — community layer *(sensitivity: lo / mid / hi)* | `c_S1b_setup_mid` (lo/hi also exist) | `c_S1b_op_mid` (lo/hi also exist) |
+| S0 — NHLS-NMC IT feed (now operational, in baseline) | `c_S0_NHLS_NMC_feed_setup` | `c_S0_NHLS_NMC_feed_op` |
 | Status quo (NICD program) | — | `c_status_quo_program` |
+
+**Parameter codes vs option numbers.** The CSV parameter names (`c_S1_*`, `c_S2_*`, `c_S1b_*`, `c_option6_*`) are stable identifiers used across the model, decision tree (§6) and other policy briefs — they pre-date this brief's narrative reorder and intentionally do not follow the Option 1–5 display sequence. Use the cross-walk in the "Reading guide" callout at the top of §5 to translate between the two.
 
 **How to audit:**
 - Each parameter above is a row in the CSV, with value, distribution, and source citation.
 - The same parameter names are used in the decision tree (see §6) and the marginal cost table (§7, Tab 5).
-- Every option has a **collapsible mini-budget audit trail** directly below its option text showing how each bottom-line figure is built up from unit-cost and personnel-time components: [S0](#sec-s0-mini-budget) · [S2](#sec-s2-mini-budget) · [S1](#sec-s1-mini-budget) · [MVP](#sec-mvp-mini-budget) · [S1b](#sec-s1b-mini-budget) · [S3](#sec-s3-mini-budget).
+- Every option has a **collapsible mini-budget audit trail** directly below its option text showing how each bottom-line figure is built up from unit-cost and personnel-time components: [S0](#sec-s0-mini-budget) · [Option 1: BChE](#sec-opt1-mini-budget) · [Option 2: PIH MVD](#sec-opt2-mini-budget) · [MVP (1+2)](#sec-mvp-mini-budget) · [Option 3: Community](#sec-opt3-mini-budget) · [Option 5: Sentinel](#sec-opt5-mini-budget).
 - All mini-budgets use the same CTE anchors as the §7 status-quo build-up (DPSA salary scales, NHLS Patterson grades, SITA contracting benchmarks, AWS af-south-1 pricing), so the marginal option costs are consistent with and additive to the costed baseline.
 - To update a cost, edit the value in the CSV and re-render — all outputs update automatically.
 :::
@@ -459,9 +475,9 @@ Each option adds one or more streams to the NMC base. The numerator is the sum o
 | Option | Streams summed | Arithmetic | P_detect | CSV row |
 |--|--|--:|--:|--|
 | Status quo | NMC only | $1{,}013 / 20{,}960$ | **0.048** | `d_status_quo` |
-| S1 — PIH MVD + dashboard | NMC + PIH | $(1{,}013 + 1{,}158) / 20{,}960 = 2{,}171 / 20{,}960$ | **0.104** | `d_S1_PIH_MVD` |
-| S2 — BChE auto-notify | NMC + NHLS severe | $(1{,}013 + 1{,}779) / 20{,}960 = 2{,}792 / 20{,}960$ | **0.133** | `d_S2_BChE_autonotify` |
-| **Surveillance MVP (S1 + S2)** | NMC + NHLS severe + PIH | $(1{,}013 + 1{,}779 + 1{,}158) / 20{,}960 = 3{,}950 / 20{,}960$ | **0.189** | `d_surveillance_mvp` |
+| Option 2 — PIH MVD + dashboard | NMC + PIH | $(1{,}013 + 1{,}158) / 20{,}960 = 2{,}171 / 20{,}960$ | **0.104** | `d_S1_PIH_MVD` |
+| Option 1 — BChE auto-notify | NMC + NHLS severe | $(1{,}013 + 1{,}779) / 20{,}960 = 2{,}792 / 20{,}960$ | **0.133** | `d_S2_BChE_autonotify` |
+| **Surveillance MVP (Option 1 + Option 2)** | NMC + NHLS severe + PIH | $(1{,}013 + 1{,}779 + 1{,}158) / 20{,}960 = 3{,}950 / 20{,}960$ | **0.189** | `d_surveillance_mvp` |
 
 ### Step 4 — CFR sensitivity bracket on the status-quo anchor
 
@@ -471,7 +487,7 @@ The denominator scales inversely with the CFR assumed for NMC-notified cases (CS
 - Mid (CFR = `r pick("cfr_headline_mid")`): $P_\text{detect}^{SQ} = `r pick("d_status_quo")`$ (implied burden `r scales::comma(as.numeric(pick("n_true_burden_from_statssa_mid")))`)
 - Upper (CFR = `r pick("cfr_headline_hi")`): $P_\text{detect}^{SQ} = 1{,}013 \times 0.15 / 2{,}620 = 0.058$ (implied burden `r scales::comma(as.numeric(pick("n_true_burden_from_statssa_lo")))`)
 
-The same CFR bracket applies proportionally to S1/S2/MVP — e.g. the MVP varies from `r sprintf("%.3f", as.numeric(pick("d_surveillance_mvp")) * as.numeric(pick("n_true_burden_from_statssa_lo")) / as.numeric(pick("n_true_burden_from_statssa_mid")))` (CFR `r pick("cfr_headline_hi")`) to `r sprintf("%.3f", as.numeric(pick("d_surveillance_mvp")) * as.numeric(pick("n_true_burden_from_statssa_hi")) / as.numeric(pick("n_true_burden_from_statssa_mid")))` (CFR `r pick("cfr_headline_lo")`).
+The same CFR bracket applies proportionally to Option 1, Option 2 and the MVP — e.g. the MVP varies from `r sprintf("%.3f", as.numeric(pick("d_surveillance_mvp")) * as.numeric(pick("n_true_burden_from_statssa_lo")) / as.numeric(pick("n_true_burden_from_statssa_mid")))` (CFR `r pick("cfr_headline_hi")`) to `r sprintf("%.3f", as.numeric(pick("d_surveillance_mvp")) * as.numeric(pick("n_true_burden_from_statssa_hi")) / as.numeric(pick("n_true_burden_from_statssa_mid")))` (CFR `r pick("cfr_headline_lo")`).
 
 ### Step 5 — why this replaces the v1 value of 0.45
 
@@ -509,13 +525,13 @@ c_mvp  <- arm("MVP_S1_plus_S2")$annual_cost_zar
 pp <- function(d) sprintf("%+.1f pp", (d - d_sq) * 100)
 
 cat(sprintf('```{mermaid}
-%%%%| fig-cap: "Surveillance investment decision tree — per-case detection uplift only. Each option raises P_detect, the share of true annual cases (~20,960 StatsSA-anchored mid-burden) that enter the surveillance system. The absolute burden impact of these uplifts depends on response-side parameters covered in the coordination and terbufos briefs. S3 (sentinel toxicology) is shown separately because it is an agent-attribution investment, not a coverage uplift. All numerical values pulled from amua_import_parameters_v4.csv at render time."
+%%%%| fig-cap: "Surveillance investment decision tree — per-case detection uplift only. Each option raises P_detect, the share of true annual cases (~20,960 StatsSA-anchored mid-burden) that enter the surveillance system. The absolute burden impact of these uplifts depends on response-side parameters covered in the coordination and terbufos briefs. Option 5 (sentinel toxicology) is shown separately because it is an agent-attribution investment, not a coverage uplift. All numerical values pulled from amua_import_parameters_v4.csv at render time."
 flowchart TD
     INV{Surveillance<br/>investment?} -->|None| SQ[Status quo<br/>P_detect = %.3f<br/>~5%% of true cases]:::bad
-    INV -->|S1 only<br/>R%s/yr| O1[+ PIH MVD<br/>P_detect = %.3f<br/>%s vs SQ]:::warn
-    INV -->|S2 only<br/>R%s/yr| O2[+ BChE auto-notify<br/>P_detect = %.3f<br/>%s vs SQ]:::warn
-    INV -->|S1 + S2<br/>R%s/yr| MVP[Surveillance MVP<br/>P_detect = %.3f<br/>%s vs SQ]:::good
-    S3[S3 Sentinel toxicology<br/>agent attribution<br/><i>parallel investment —<br/>see Terbufos brief</i>]:::aux
+    INV -->|Option 2 only<br/>R%s/yr| O1[+ PIH MVD<br/>P_detect = %.3f<br/>%s vs SQ]:::warn
+    INV -->|Option 1 only<br/>R%s/yr| O2[+ BChE auto-notify<br/>P_detect = %.3f<br/>%s vs SQ]:::warn
+    INV -->|Option 1 + Option 2<br/>R%s/yr| MVP[Surveillance MVP<br/>P_detect = %.3f<br/>%s vs SQ]:::good
+    OPT5[Option 5 Sentinel toxicology<br/>agent attribution<br/><i>parallel investment —<br/>see Terbufos brief</i>]:::aux
 
     classDef bad fill:#fdd,stroke:#cc0000,stroke-width:1.5px
     classDef warn fill:#ffe9b3,stroke:#cc8800,stroke-width:1.5px
@@ -530,10 +546,10 @@ format(c_mvp, big.mark = ","), d_mvp, pp(d_mvp)
 ))
 ````
 
-The tree reports **per-case detection uplift in percentage points**. The status-quo node is a **measurement** of the current detection gap (1,013 NMC notifications ÷ ~20,960 implied true cases), not a baseline from which deaths are counted as averted — surveillance has no response attached. Four detection inputs (`d_status_quo`, `d_S2_BChE_autonotify`, `d_S1_PIH_MVD`, `d_surveillance_mvp`) and three operating-cost rows (`c_S1_PIH_MVD_op`, `c_S2_BChE_autonotify_op`, `c_surv_MVP_op`) live in [`amua_import_parameters_v4.csv`](../amua_import_parameters_v4.csv) — edit the CSV and re-render. Option S3 sits outside this tree: it is an agent-attribution investment whose value is parameterised in the [Terbufos brief](terbufos_policy.qmd) and the [sentinel toxicology appendix](surveillance_concept_note.qmd).
+The tree reports **per-case detection uplift in percentage points**. The status-quo node is a **measurement** of the current detection gap (1,013 NMC notifications ÷ ~20,960 implied true cases), not a baseline from which deaths are counted as averted — surveillance has no response attached. Four detection inputs (`d_status_quo`, `d_S2_BChE_autonotify`, `d_S1_PIH_MVD`, `d_surveillance_mvp`) and three operating-cost rows (`c_S1_PIH_MVD_op`, `c_S2_BChE_autonotify_op`, `c_surv_MVP_op`) live in [`amua_import_parameters_v4.csv`](../amua_import_parameters_v4.csv) — edit the CSV and re-render. Option 5 sits outside this tree: it is an agent-attribution investment whose value is parameterised in the [Terbufos brief](terbufos_policy.qmd) and the [sentinel toxicology appendix](surveillance_concept_note.qmd).
 
 ::: {.callout-note appearance="minimal"}
-**S1b (Phase 2 community layer) is not modelled in this decision tree.** The MVP arm represents the ceiling achievable by linking existing administrative streams. S1b would require a new arm with P_detect drawn from `d_S1b_event_community_mid` = `r pick("d_S1b_event_community_mid")` (range `r pick("d_S1b_event_community_lo")`–`r pick("d_S1b_event_community_hi")`) and annual operating cost drawn from `c_S1b_op_mid` = `r scales::comma(as.numeric(pick("c_S1b_op_mid")))`. It is excluded from the current tree because it is a Phase 2 option commissioned conditional on MVP pilot results, not a parallel near-term decision; and because its coordination cost depends on the net false-positive rate after two-tier triage (`p_fp_S1b_mid` = `r pick("p_fp_S1b_mid")` gross; ~8–12% net) modelled in the [Coordination brief](coordination_policy.qmd).
+**Option 3 (Phase 2 community layer) is not modelled in this decision tree.** The MVP arm represents the ceiling achievable by linking existing administrative streams. Option 3 would require a new arm with P_detect drawn from `d_S1b_event_community_mid` = `r pick("d_S1b_event_community_mid")` (range `r pick("d_S1b_event_community_lo")`–`r pick("d_S1b_event_community_hi")`) and annual operating cost drawn from `c_S1b_op_mid` = `r scales::comma(as.numeric(pick("c_S1b_op_mid")))`. It is excluded from the current tree because it is a Phase 2 option commissioned conditional on MVP pilot results, not a parallel near-term decision; and because its coordination cost depends on the net false-positive rate after two-tier triage (`p_fp_S1b_mid` = `r pick("p_fp_S1b_mid")` gross; ~8–12% net) modelled in the [Coordination brief](coordination_policy.qmd).
 :::
 
 **For burden impact, see the next brief.** The same P_detect figures feed into the [Coordination brief](coordination_policy.qmd) decision tree, where response efficacy η converts detection into cases averted, and into the [Terbufos brief](terbufos_policy.qmd), where regulatory restriction converts cases into deaths averted.
@@ -549,7 +565,7 @@ The tables below are the **average-cost economic build-up of running surveillanc
 - **`system`** — infrastructure, hosting, SMS, reagents by stream
 - **`allocation`** — what share of each stream's total volume is pesticide-related (e.g. ~100 pesticide notifications/month out of ~10,000 total NMC notifications ≈ **0.84 %** of NMC platform OPEX is attributable to pesticide work)
 
-To revise a unit cost or FTE, **edit a cell in the .xlsx and re-render** — every number below updates. The CSV (`amua_import_parameters_v4.csv`) remains the source of truth for *model* parameters and *marginal* policy-option costs (S1 / S2 / MVP). Salary anchors come from the DPSA scales (L10–11), NHLS Patterson grades (D/E), DoH OSD scales (MO, pharmacy), NICD recruitment notices and SITA contracting benchmarks; system anchors come from NHLS State Tender RT-262, AWS af-south-1 pricing, Clickatell/BulkSMS SA, and the NICD ICT budget — full citations are in each row's `source` column.
+To revise a unit cost or FTE, **edit a cell in the .xlsx and re-render** — every number below updates. The CSV (`amua_import_parameters_v4.csv`) remains the source of truth for *model* parameters and *marginal* policy-option costs (Option 1 / Option 2 / MVP). Salary anchors come from the DPSA scales (L10–11), NHLS Patterson grades (D/E), DoH OSD scales (MO, pharmacy), NICD recruitment notices and SITA contracting benchmarks; system anchors come from NHLS State Tender RT-262, AWS af-south-1 pricing, Clickatell/BulkSMS SA, and the NICD ICT budget — full citations are in each row's `source` column.
 :::
 
 ```{r}
@@ -721,13 +737,13 @@ For comparison: the **additional** annual operating cost of each surveillance in
 
 marginal <- tibble::tribble(
   ~option, ~setup_param, ~op_param,
-  "S1 — PIH dashboard + MVD (+ AfriTox harmonisation)", "c_S1_PIH_MVD_setup",           "c_S1_PIH_MVD_op",
-  "S2 — BChE auto-notification",                         "c_S2_BChE_autonotify_setup",   "c_S2_BChE_autonotify_op",
-  "Surveillance MVP (S1 + S2)",                          "c_surv_MVP_setup",             "c_surv_MVP_op",
+  "Option 2 — PIH dashboard + MVD (+ AfriTox harmonisation)", "c_S1_PIH_MVD_setup",           "c_S1_PIH_MVD_op",
+  "Option 1 — BChE auto-notification",                         "c_S2_BChE_autonotify_setup",   "c_S2_BChE_autonotify_op",
+  "Surveillance MVP (Option 1 + Option 2)",                          "c_surv_MVP_setup",             "c_surv_MVP_op",
   "S0 — NHLS-NMC IT feed (now operational)",             "c_S0_NHLS_NMC_feed_setup",     "c_S0_NHLS_NMC_feed_op",
-  "S1b — event-based community (sensitivity, lo)",       "c_S1b_setup_lo",               "c_S1b_op_lo",
-  "S1b — event-based community (sensitivity, mid)",      "c_S1b_setup_mid",              "c_S1b_op_mid",
-  "S1b — event-based community (sensitivity, hi)",       "c_S1b_setup_hi",               "c_S1b_op_hi"
+  "Option 3 — community layer (sensitivity, lo)",       "c_S1b_setup_lo",               "c_S1b_op_lo",
+  "Option 3 — community layer (sensitivity, mid)",      "c_S1b_setup_mid",              "c_S1b_op_mid",
+  "Option 3 — community layer (sensitivity, hi)",       "c_S1b_setup_hi",               "c_S1b_op_hi"
 ) %>%
   mutate(
     setup_zar = vapply(setup_param, function(n) as.numeric(pick(n)), numeric(1)),
@@ -749,39 +765,39 @@ marginal %>%
 
 :::
 
-**Headline read.** The status-quo surveillance system already costs roughly **`r zar(sum(totals$total_zar))`/yr** in personnel + pesticide-allocated system spend across NMC, PIH, and NHLS BChE — borne almost entirely by NDoH, NHLS, and Stellenbosch FoMHS rather than appearing as a line item. Against that base, the **Surveillance MVP (S1 + S2) adds only `r zar(as.numeric(pick("c_surv_MVP_op")))`/yr** — a **`r sprintf("%.1f%%", 100 * as.numeric(pick("c_surv_MVP_op")) / sum(totals$total_zar))` uplift on current spend** for a **`r sprintf("+%.1f pp", (as.numeric(pick("d_surveillance_mvp")) - as.numeric(pick("d_status_quo"))) * 100)`** jump in P_detect.
+**Headline read.** The status-quo surveillance system already costs roughly **`r zar(sum(totals$total_zar))`/yr** in personnel + pesticide-allocated system spend across NMC, PIH, and NHLS BChE — borne almost entirely by NDoH, NHLS, and Stellenbosch FoMHS rather than appearing as a line item. Against that base, the **Surveillance MVP (Option 1 + Option 2) adds only `r zar(as.numeric(pick("c_surv_MVP_op")))`/yr** — a **`r sprintf("%.1f%%", 100 * as.numeric(pick("c_surv_MVP_op")) / sum(totals$total_zar))` uplift on current spend** for a **`r sprintf("+%.1f pp", (as.numeric(pick("d_surveillance_mvp")) - as.numeric(pick("d_status_quo"))) * 100)`** jump in P_detect.
 
 ## 8. Implementation considerations
 
 | Component | Lead agency | Year-1 cost | Critical path |
 |:----------|:------------|------------:|:--------------|
-| S1 PIH dashboard | PIH (Tygerberg) + NICD | `r scales::comma(as.numeric(pick("c_S1_PIH_MVD_op")))` | Daily extract + hosting; MVD workshop |
-| S2 BChE auto-notify | NHLS LIS team | `r scales::comma(as.numeric(pick("c_S2_BChE_autonotify_op")))` | LIS rule configuration; QA review |
-| S3 Sentinel toxicology | NHLS clinical chemistry + sentinel hospital | `r zar(as.numeric(pick("c_option6_pilot_year1")))` pilot | Lab method validation; sample logistics |
-| S1b Phase 2 community layer *(pilot: FS + Gauteng; commission after Month 6 MVP review)* | NICD + provincial DoH EHPs | Pilot: `r sprintf("R%.0fM setup + R%.1fM/yr", as.numeric(pick("c_S1b_setup_lo"))/1e6, as.numeric(pick("c_S1b_op_lo"))/1e6)`; national: `r sprintf("R%.1fM setup + R%.1fM/yr", as.numeric(pick("c_S1b_setup_hi"))/1e6, as.numeric(pick("c_S1b_op_hi"))/1e6)` | CHW two-tier triage training, mobile checklist app, EHP call-back protocol, QA pipeline |
+| Option 2 — PIH dashboard | PIH (Tygerberg) + NICD | `r scales::comma(as.numeric(pick("c_S1_PIH_MVD_op")))` | Daily extract + hosting; MVD workshop |
+| Option 1 — BChE auto-notify | NHLS LIS team | `r scales::comma(as.numeric(pick("c_S2_BChE_autonotify_op")))` | LIS rule configuration; QA review |
+| Option 5 — Sentinel toxicology | NHLS clinical chemistry + sentinel hospital | `r zar(as.numeric(pick("c_option6_pilot_year1")))` pilot | Lab method validation; sample logistics |
+| Option 3 — Community layer (Phase 2) *(pilot: FS + Gauteng; commission after Month 6 MVP review)* | NICD + provincial DoH EHPs | Pilot: `r sprintf("R%.0fM setup + R%.1fM/yr", as.numeric(pick("c_S1b_setup_lo"))/1e6, as.numeric(pick("c_S1b_op_lo"))/1e6)`; national: `r sprintf("R%.1fM setup + R%.1fM/yr", as.numeric(pick("c_S1b_setup_hi"))/1e6, as.numeric(pick("c_S1b_op_hi"))/1e6)` | CHW two-tier triage training, mobile checklist app, EHP call-back protocol, QA pipeline |
 
 **Privacy & legal.** The PIH-to-NMC MVD feed transmits personal health information (age-band, sex, geography, clinical data) and must use a **secure, authenticated HTTPS/TLS API** — no plaintext or email transmission. De-identification before transmission is mandatory (age-band not exact age; province/district not street address; no name or phone number; see Appendix A2). The NHLS BChE auto-notify feed transmits result-level data with patient identifiers to NMC, consistent with the existing NMC notification pathway, and must use the same secure HL7-over-TLS channel. Both flows are POPIA-compliant under existing Section 90 NHA authority. **No new legislation required.**
 
-**Risks.** (i) Low BChE testing uptake by clinicians — S2 fires only on tests ordered. (ii) Data-quality drift if facility metadata is incomplete. (iii) Capacity bottleneck at provincial response level — the [Coordination brief](coordination_policy.qmd) addresses this.
+**Risks.** (i) Low BChE testing uptake by clinicians — Option 1 fires only on tests ordered. (ii) Data-quality drift if facility metadata is incomplete. (iii) Capacity bottleneck at provincial response level — the [Coordination brief](coordination_policy.qmd) addresses this.
 
 ## 9. Recommended next step
 
-**Adopt the Surveillance MVP (S1 + S2) and pilot in 3 provinces (Gauteng, Western Cape, KZN) for 6 months.** Approximate pilot budget: **~`r zar(as.numeric(pick("c_surv_MVP_op")))` operating** (NHLS–NMC IT feed is now operational). Lead agency: NICD as national coordinator.
+**Adopt the Surveillance MVP (Option 1 + Option 2) and pilot in 3 provinces (Gauteng, Western Cape, KZN) for 6 months.** Approximate pilot budget: **~`r zar(as.numeric(pick("c_surv_MVP_op")))` operating** (NHLS–NMC IT feed is now operational). Lead agency: NICD as national coordinator.
 
-- **Weeks 1–2:** S1 PIH dashboard live; S2 BChE LIS configuration begins.
-- **Months 1–3:** S1 MVD workshop with PIH finalised; S2 BChE auto-notify QA review completed.
+- **Weeks 1–2:** Option 2 PIH dashboard live; Option 1 BChE LIS configuration begins.
+- **Months 1–3:** Option 2 MVD workshop with PIH finalised; Option 1 BChE auto-notify QA review completed.
 - **Month 6:** Evaluate against (a) completeness of NHLS severe results in NMC and (b) signal-to-investigation latency.
-- **Month 9:** Add S3 sentinel toxicology site, funded from a separate research-surveillance stream.
-- **Month 12:** Review MVP geographic distribution. If ≥40% of severe cases originate in low-facility-access districts, commission the S1b Phase 2 pilot (Free State + Gauteng; ~`r sprintf("R%.0fM", as.numeric(pick("c_S1b_setup_lo"))/1e6)` setup + `r sprintf("R%.1fM/yr", as.numeric(pick("c_S1b_op_lo"))/1e6)` operating).
+- **Month 9:** Add Option 5 sentinel toxicology site, funded from a separate research-surveillance stream.
+- **Month 12:** Review MVP geographic distribution. If ≥40% of severe cases originate in low-facility-access districts, commission the Option 3 Phase 2 pilot (Free State + Gauteng; ~`r sprintf("R%.0fM", as.numeric(pick("c_S1b_setup_lo"))/1e6)` setup + `r sprintf("R%.1fM/yr", as.numeric(pick("c_S1b_op_lo"))/1e6)` operating).
 
-The coordination side of the same system — how NICD, EHPs, DALRRD, and provincial response teams act on the improved signal — is covered in the [Coordination brief](coordination_policy.qmd). The product-specific regulatory action that S3 makes possible is the subject of the [Terbufos brief](terbufos_policy.qmd).
+The coordination side of the same system — how NICD, EHPs, DALRRD, and provincial response teams act on the improved signal — is covered in the [Coordination brief](coordination_policy.qmd). The product-specific regulatory action that Option 5 makes possible is the subject of the [Terbufos brief](terbufos_policy.qmd).
 
 ---
 
 ::: {.footer-cta}
 **Companion briefs:** [Coordination](coordination_policy.qmd) · [Terbufos restriction](terbufos_policy.qmd) · [Decision Model](decision_model.qmd) · [Costing Analysis](costing_analysis.qmd)
 
-**Technical appendices:** [A — Surveillance decision analysis](../analysis_report_v2.qmd) · [D — Sentinel toxicology (S3 deep dive)](surveillance_concept_note.qmd)
+**Technical appendices:** [A — Surveillance decision analysis](../analysis_report_v2.qmd) · [D — Sentinel toxicology (Option 5 deep dive)](surveillance_concept_note.qmd)
 
 **Appendices (this brief):** [Appendix A — MVD specifications (NMC + PIH)](#sec-mvd)
 :::
@@ -881,9 +897,9 @@ PIH captures call data in its existing Toxicology Management System (TMS). The f
 ::: {.callout-note appearance="minimal"}
 **POPIA compliance and secure transmission.** All PIH-to-NMC transmissions must be de-identified before transmission: no name, phone number, or exact address. Age-band (not exact age), province/district (not street address), and anonymised TMS call ID are sufficient for surveillance linkage and comply with Section 90 of the National Health Act (2003) and POPIA. Exact age may be retained internally within PIH TMS for clinical purposes and transmitted as age-band only.
 
-De-identified health data still constitutes personal information under POPIA. The PIH-to-NMC feed **must be implemented as a secure HTTPS/TLS API with mutual authentication** (client certificate or token-based) between the PIH TMS and the NMC ingest endpoint. Transmission over email, FTP, or unencrypted HTTP is not acceptable. The MVD ingest pipeline (line item 4 in the S1 operating cost) includes the cost of maintaining this secure channel; the one-off setup cost (`c_S1_PIH_MVD_setup` = R40,000) must include API security configuration and penetration testing as a go-live requirement.
+De-identified health data still constitutes personal information under POPIA. The PIH-to-NMC feed **must be implemented as a secure HTTPS/TLS API with mutual authentication** (client certificate or token-based) between the PIH TMS and the NMC ingest endpoint. Transmission over email, FTP, or unencrypted HTTP is not acceptable. The MVD ingest pipeline (line item 4 in the Option 2 operating cost) includes the cost of maintaining this secure channel; the one-off setup cost (`c_S1_PIH_MVD_setup` = R40,000) must include API security configuration and penetration testing as a go-live requirement.
 :::
 
 ::: {.callout-tip appearance="minimal"}
-**AfriTox agent-name harmonisation.** Both PIH (TMS) and NMC (notification form) must use the same AfriTox product-name controlled vocabulary so that product-level attribution is consistent across streams. The harmonisation workshop (S1 MVD workshop, Months 1–3) should produce a shared AfriTox lookup table embedded in both systems. This is the lowest-cost, highest-value interoperability intervention in the MVD: it costs a single workshop and yields cross-stream agent attribution at scale.
+**AfriTox agent-name harmonisation.** Both PIH (TMS) and NMC (notification form) must use the same AfriTox product-name controlled vocabulary so that product-level attribution is consistent across streams. The harmonisation workshop (Option 2 MVD workshop, Months 1–3) should produce a shared AfriTox lookup table embedded in both systems. This is the lowest-cost, highest-value interoperability intervention in the MVD: it costs a single workshop and yields cross-stream agent attribution at scale.
 :::
