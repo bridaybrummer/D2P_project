@@ -30,7 +30,7 @@ South Africa under-detects pesticide poisoning. Three data streams each see a fr
 
 - Most cases never appear in NMC.
 - Severe laboratory results do not trigger a public-health alert.
-- The country's largest single source of clinical signal — the Poisons Information Helpline — is not used for surveillance at all.
+- The country's largest single source of clinical signal — the Poisons Information Helpline — is not used for surveillance.
 
 ## 3. Status quo
 
@@ -39,14 +39,14 @@ South Africa under-detects pesticide poisoning. Three data streams each see a fr
 ::: {.callout-note}
 ## Health-sector share of the burden — what surveillance unlocks
 
-The public health system bears **~`r sprintf("R%.0fM", as.numeric(pick("share_health_system_total"))/1e6)` of the `r sprintf("R%.2fB", as.numeric(pick("C_burden_total_headline"))/1e9)` annual burden directly on its own budget lines** — ~`r sprintf("R%.0fM", as.numeric(pick("share_doh_morbidity"))/1e6)` to NDoH (UPFS ward + ICU days, ventilation, atropine + PAM) and ~`r sprintf("R%.0fM", as.numeric(pick("share_nhls_morbidity"))/1e6)` to NHLS (BChE, GC-MS confirmatory volume). Better surveillance is a **necessary but not sufficient** input to reducing that burden: surveillance changes only what is *seen*; the burden reduction itself comes from the response side — source removal, regulatory action, clinical management — covered in the [Coordination brief](coordination_policy.qmd) and the [Terbufos brief](terbufos_policy.qmd). **This brief therefore quantifies P_detect uplift only and does not claim cases or deaths averted.**
+The public health system bears **~`r sprintf("R%.0fM", as.numeric(pick("share_health_system_total"))/1e6)` of the `r sprintf("R%.2fB", as.numeric(pick("C_burden_total_headline"))/1e9)` annual burden directly on its own budget lines** — ~`r sprintf("R%.0fM", as.numeric(pick("share_doh_morbidity"))/1e6)` to NDoH (UPFS ward + ICU days, ventilation, atropine + PAM) and ~`r sprintf("R%.0fM", as.numeric(pick("share_nhls_morbidity"))/1e6)` to NHLS (BChE, GC-MS confirmatory volume). Better surveillance is a **necessary but not sufficient** input to reducing that burden: surveillance changes only what is *seen*; the burden reduction itself comes from the coordinated response — source removal, regulatory action, clinical management — covered in the [Coordination brief](coordination_policy.qmd) and the [Terbufos brief](terbufos_policy.qmd). **This brief therefore focuses on increasing the proportion of the true burden detected (P_detect) and does not measure cases or deaths averted.**
 :::
 
 **Architecturally, the three streams are unlinked:**
 
 ```{mermaid}
 %%| label: fig-surv-current-system
-%%| fig-cap: "Current surveillance architecture. NMC is NDoH-owned and is the source of truth. NHLS BChE results now route to NMC via NHLS CDW → NICD SDW (MOU feed, now operational). Two active gaps remain: PIH consultations have no structured NMC feed, and forensic chemical toxicology is post-mortem only and fully de-identified (not fit for surveillance linkage in its current form; MLDI system work is a potential pathway)."
+%%| fig-cap: "Current surveillance architecture. NMC is NDoH-owned and has demonstrated flexibility and resilience as a national surveillance platform. NHLS BChE results can be routed to NMC via NHLS CDW → NICD SDW (this feed already exists for infectious disease). Two active gaps remain: PIH consultations are not linked to NMC, with neither stream holding a complete minimum dataset for surveillance; forensic chemical toxicology is post-mortem only and fully de-identified (not fit for surveillance linkage in its current form; MLDI system development is a potential future pathway)."
 flowchart LR
     A[Healthcare Facility<br/>Clinician / PHO] -->|NMC notification| E[("NDoH / NMC<br/><b>NDoH-owned</b><br/>Source of truth")]
     A --> NHLS
@@ -88,7 +88,9 @@ NMC alone captures $P_\text{detect} = \frac{1,013}{20,960} = 0.048$ ([`d_status_
 
 ::: {.callout-caution appearance="minimal" collapse="true"}
 ## Caveat: this denominator rests on a CFR assumption
-The 20,960 denominator applies a 12.5% CFR to the StatsSA MACOD death count — but that CFR is from NMC-*notified* severe cases (the sicker end). The undetected majority are likely milder; a blended CFR of 3–5% implies 52,000–87,000 true cases and a status-quo P_detect of 1–2%. Relative option rankings (S1, S2, MVP) are stable across this range; absolute gap size is not. Mid-burden is used as the working denominator throughout.
+The 20,960 denominator applies a 12.5% CFR to the StatsSA MACOD death count (ICD-10 X40–X49) — but that CFR derives from NMC-*notified* severe cases (the sicker end of the distribution). The undetected majority are likely milder; a blended CFR of 3–5% implies 52,000–87,000 true cases and a status-quo P_detect of 1–2%. Relative option rankings (S1, S2, MVP†) are stable across this range — the percentage-point gain for each option is unchanged; only the absolute number of true cases detected would differ.
+
+†MVP = Minimum Viable Package (S1 + S2 combined).
 :::
 
 ### Detection vs. true burden — a critical distinction
@@ -98,9 +100,9 @@ Better surveillance has **two opposite numerical effects** that decision-makers 
 | Effect | Direction | Driver | Interpretation |
 |:-------|:---------:|:-------|:---------------|
 | **Observed** burden | ↑ | Better case-finding (auto-notify, MVD ingest) | The headline "case count" will rise as detection improves — this is success, not failure. |
-| **True** burden | ↓ | Faster source removal, targeted regulation, prevention | Number of actual poisonings falls as cases are detected and acted on earlier. |
+| **True** burden | ↓ | Faster source removal, targeted regulation, prevention | Future poisoning cases and clusters are averted. |
 
-Post-pilot case counts will rise — this is a detection effect, not a true burden increase. Interpret against completeness-adjusted true incidence (laboratory + PIH denominators as proxy); agree this framing with NDoH and MAC before pilot launch.
+Once the integrated streams are live, historical burden estimates should be re-calibrated against the expanded data. Reported case counts will rise as a larger proportion of the true burden is detected — this is a surveillance artefact, not a true increase in poisonings, and must be communicated clearly in any public reporting. 
 
 ## 4. Root cause analysis
 
@@ -125,89 +127,14 @@ flowchart LR
     style J fill:#9f9,stroke:#333
 ```
 
-Three active root causes remain **executional, not legislative**, and are each already legally permissible under Section 90 of the National Health Act (2003) and the existing NMC regulations. The fourth root cause (NHLS–NMC IT connectivity) has been resolved — the LIS-to-NMC feed is now operational.
-
-### 4b. System-wide root cause analysis — what is in scope, and what is not
-
-The fishbone above is deliberately narrow to surveillance under-detection. The figure below widens the lens to the **full set of root causes of pesticide-poisoning harm in South Africa** — surveillance, coordination, regulatory, and contextual — and maps each to a policy option in the D2P portfolio (this brief, the [Coordination brief](coordination_policy.qmd), and the [Terbufos brief](terbufos_policy.qmd)). **Drivers that are not connected to a policy option are explicitly out of scope** for the current D2P workstream: they are real problems, but addressing them sits outside this project's mandate, funding window, or institutional authority.
-
-This chunk is intentionally self-contained (Mermaid only, no R dependencies) so it can be copied verbatim into the coordination or terbufos briefs, the analysis report, or a standalone slide deck.
-
-
-```{mermaid}
-%%| label: fig-system-rca
-%%| fig-cap: "System-wide root cause analysis of pesticide-poisoning harm in South Africa, with each driver mapped to a D2P policy option. Green = addressed by a D2P option; grey-dashed = explicitly out of scope for D2P (real problem, but not the mandate of this workstream)."
-flowchart LR
-    HARM[Pesticide-poisoning<br/>harm in SA<br/>~2,620 deaths/yr<br/>~R2.34B/yr burden]:::harm
-
-    %% ===== Four root-cause domains =====
-    HARM --> SURV[Surveillance gaps]:::dom
-    HARM --> COORD[Coordination &<br/>response gaps]:::dom
-    HARM --> BAN[Regulatory /<br/>banning gaps]:::dom
-    HARM --> CTX[Contextual<br/>upstream drivers]:::dom
-
-    %% ===== Surveillance drivers =====
-    SURV --> SV1[No integrated 3-stream<br/>system NMC + NHLS + PIH]
-    SURV --> SV2[No live-patient<br/>chemical toxicology]
-    SURV --> SV3[Hospital-only<br/>surveillance reach]
-    SURV --> SV4[Limited EBS / community<br/>signal capture]
-    SURV --> SV5[Poor data standardisation<br/>NMC does not follow<br/>AfriTox agent naming]
-    SURV --> SV6[Forensic chemistry<br/>fully de-identified —<br/>no demographics]:::oos
-    SURV --> SV7[MLDI system limited<br/>for surveillance utility]:::oos
-    SURV --> SV8[CRVS / StatsSA MACOD<br/>3–4 year publication lag]:::oos
-    SURV --> SV9[CRVS does not capture<br/>manner of death]:::oos
-
-    SV1 --> OS_MVP[Surveillance MVP<br/>S1 + S2]:::opt
-    SV2 --> OS3[Surveillance S3<br/>sentinel toxicology]:::opt
-    SV3 --> OS1b[Surveillance S1b<br/>community / EBS layer<br/><i>Phase 2, conditional</i>]:::opt
-    SV4 --> OS1b
-    SV5 --> OS1[Surveillance S1<br/>AfriTox harmonisation<br/>+ NMC agent drop-down]:::opt
-
-    %% ===== Coordination drivers =====
-    COORD --> CO1[EHP investigation<br/>outcome not recorded<br/>back on NMC]
-    COORD --> CO2[EHP → DALRRD referral<br/>has no SOP, no audit trail]
-    COORD --> CO3[Clinicians get no<br/>case-status feedback]
-    COORD --> CO4[No M&E of investigation,<br/>source removal, or<br/>regulatory action]
-    COORD --> CO5[Unknown chemical agent<br/>registries — storage / use<br/>locations not shared<br/>with health sector]:::oos
-
-    CO1 --> OC1[Coordination C1<br/>NMC closure-of-loop<br/>EHP field]:::opt
-    CO2 --> OC2[Coordination C2<br/>structured EHP → DALRRD<br/>referral form]:::opt
-    CO3 --> OC4[Coordination C4<br/>notifier auto-feedback]:::opt
-    CO4 --> OC5[Coordination C5<br/>joint KPI dashboard]:::opt
-    CO4 --> OC3[Coordination C3<br/>NICD → DALRRD<br/>intelligence feed]:::opt
-
-    %% ===== Banning / regulatory drivers =====
-    BAN --> BN1[Most toxic agent in recent<br/>mass-poisonings still legally<br/>registered Terbufos<br/>contrary to international std]
-    BAN --> BN2[Informally traded<br/>street-pesticide market]
-    BAN --> BN3[Repackaged into<br/>unlabelled containers]
-
-    BN1 --> OT2[Terbufos T2<br/>cancel registration<br/>12–24 mo phase-out]:::opt
-    BN2 --> OT2
-    BN3 --> OT2
-
-    %% ===== Contextual / upstream drivers — explicitly out of scope =====
-    CTX --> CX1[HHPs used as<br/>vermin control<br/>in informal settlements]:::oos
-    CTX --> CX2[Industry / trade pushback<br/>to protect crop yield<br/>despite safer substitutes]:::oos
-    CTX --> CX3[Mental health burden<br/>and suicide pathway]:::oos
-    CTX --> CX4[Low public awareness<br/>of informal-pesticide toxicity]:::oos
-    CTX --> CX5[Low / unknown occupational<br/>health & safety on farms]:::oos
-
-    %% ===== Styling =====
-    classDef harm  fill:#f99,stroke:#900,stroke-width:2px,color:#000
-    classDef dom   fill:#fde,stroke:#333,stroke-width:1.5px,color:#000
-    classDef opt   fill:#cfc,stroke:#060,stroke-width:1.5px,color:#000
-    classDef oos   fill:#eee,stroke:#999,stroke-dasharray: 5 5,color:#555
-```
-
-
-**How to read.** Each domain (surveillance / coordination / banning / contextual) lists every root cause raised in the D2P scoping work. **Green nodes** flow to a concrete policy option in this portfolio. **Grey-dashed nodes** are explicitly *not* addressed: forensic-chemistry de-identification and MLDI redesign are separate NHLS / NICD workstreams; CRVS lag and manner-of-death capture sit with StatsSA and Home Affairs; the chemical-agent storage registry sits with DALRRD and DTIC; and the contextual drivers (HHPs-as-rodenticide, industry pushback, mental health, public awareness, farm OHS) are real upstream determinants but are owned by departments and disciplines outside the D2P remit. Calling them out as out-of-scope here is the honest alternative to either pretending the portfolio addresses them or pretending they do not matter.
+Three active root causes remain **executional, not legislative**, and are each already legally permissible under Section 90 of the National Health Act (2003) and the existing NMC regulations. The fourth root cause (NHLS–NMC IT connectivity) has been resolved — the LIS-to-NMC feed is operational, though a severity-threshold rules engine still needs to be configured to enable automated alerting. 
 
 ## 5. Policy options
 
 ::: {.callout-tip icon=false}
 ## ✓ NHLS–NMC IT feed — now operational
 
-The NHLS–NICD LIS-to-NMC connector is operational; monthly BChE data flows to NICD under the existing MOU. The three active options below build on this.
+The NHLS–NICD LIS-to-NMC connector is operational; daily BChE data flows to NICD under the existing MOU. The three active options below build on this.
 :::
 
 ::: {.callout-note collapse="true"}
@@ -331,12 +258,14 @@ From CSV note: *"full 9-province deployment with dedicated EHP nodes and enhance
 
 ### Option S2 — BChE auto-notification *(★ recommended — capability exists)*
 
-Configure the NHLS LIS to fire an automatic NICD notification when a BChE result shows severe inhibition (< 50 % of normal), within 24 hours of validation. **No new test, no new reagent contract** — only an IT configuration on top of the ~`r scales::comma(as.numeric(pick("n_nhls_total_annual")))` BChE tests/year already performed (`r scales::comma(as.numeric(pick("n_nhls_severe_annual")))` severe in 2023). Detection rises to ~`r sprintf("%.0f", as.numeric(pick("d_S2_BChE_autonotify")) * 100)` % of true cases (up from ~`r sprintf("%.0f", as.numeric(pick("d_status_quo")) * 100)` %) for a one-off setup of **`r zar(as.numeric(pick("c_S2_BChE_autonotify_setup")))`**, then **`r zar(as.numeric(pick("c_S2_BChE_autonotify_op")))`/year** from Year 2 onward (Year 1 total: **`r zar(as.numeric(pick("c_S2_BChE_autonotify_setup")) + as.numeric(pick("c_S2_BChE_autonotify_op")))`**) in 2–4 weeks. This is the highest-value, fastest option on the menu.
+Configure the NHLS LIS to fire an automatic NICD notification when a BChE result shows severe inhibition (< 30 % of normal)*, within 24 hours of validation. **No new test, no new reagent contract** — only an IT configuration on top of the ~`r scales::comma(as.numeric(pick("n_nhls_total_annual")))` BChE tests/year already performed (`r scales::comma(as.numeric(pick("n_nhls_severe_annual")))` severe in 2023). Detection rises to ~`r sprintf("%.0f", as.numeric(pick("d_S2_BChE_autonotify")) * 100)` % of true cases (up from ~`r sprintf("%.0f", as.numeric(pick("d_status_quo")) * 100)` %) for a one-off setup of **`r zar(as.numeric(pick("c_S2_BChE_autonotify_setup")))`**, then **`r zar(as.numeric(pick("c_S2_BChE_autonotify_op")))`/year** from Year 2 onward (Year 1 total: **`r zar(as.numeric(pick("c_S2_BChE_autonotify_setup")) + as.numeric(pick("c_S2_BChE_autonotify_op")))`**) in 2–4 weeks. This is the highest-value, fastest option on the menu.
+
+* Sever inhibition is most closely related to severe sequale such as hospitalisation as death reporeted by [Chaudhary S, Jain N, Atam V, Agarwal A, Singh K, Sawlani K, et al. Prognostic significance of estimation of pseudocholinesterase activity and role of pralidoxime therapy in organophosphorous poisoning. Toxicol Int. 2013;20(3):214]. Taking any BChE test will likely increase the FP rate and this will not be accounted for. 
 
 ::: {.callout-note collapse="true"}
 ## Audit trail — mini-budget backing the R55,000/yr operating cost {#sec-s2-mini-budget}
 
-`c_S2_BChE_autonotify_op` = R55,000/yr (gamma(25, 2200)) covers the pure IT infrastructure required to keep the HL7 auto-notification middleware running — **no new laboratory tests, no new reagent contract, no new hires.** The one-off LIS reconfiguration and UAT cost (`c_S2_BChE_autonotify_setup` = R200,000) is separately parameterised. All figures are 2024–2025 ZAR, marginal over the status-quo NHLS BChE baseline.
+`c_S2_BChE_autonotify_op` = R55,000/yr (gamma(25, 2200)) covers the pure IT infrastructure required to keep the HL7 auto-notification middleware running (for poisoning only) — **no new laboratory tests, no new reagent contract, no new hires.** The one-off LIS reconfiguration and UAT cost (`c_S2_BChE_autonotify_setup` = R200,000) is separately parameterised. All figures are 2024–2025 ZAR, marginal over the status-quo NHLS BChE baseline.
 
 | # | Line item | Driver | Annual (R) | Source / anchor |
 |:-:|:----------|:-------|-----------:|:----------------|
@@ -360,13 +289,13 @@ Configure the NHLS LIS to fire an automatic NICD notification when a BChE result
 
 ### Option S3 — Sentinel live-patient toxicology *(★ recommended, medium term — distinct purpose)*
 
-NHLS currently performs chemical toxicology (qualitative/quantitative pesticide assays) **post-mortem only**. There is no live-patient toxicology capability. Option S3 funds a sentinel tertiary site (e.g. CHB) to perform live-patient chemical toxicology, scaling to 4–5 sites in phase 2–3.
+NHLS currently performs chemical toxicology (qualitative/quantitative pesticide assays) **post-mortem only**. There is no live-patient toxicology capability. Option S3 funds a sentinel tertiary site (e.g. CHB) to perform live-patient chemical toxicology and/or mass spectometry, scaling to 4–5 sites in phase 2–3. This will only capture ~ 323 severe poisoning cases. 
 
 ::: {.callout-caution appearance="minimal"}
 **Forensic chemistry is fully de-identified and not fit for surveillance linkage.** No patient, facility, or case-linkage identifiers: cannot be matched to NMC or PIH records without structural re-design of specimen accessioning. The **MLDI system** is the longer-term pathway for surveillance-ready post-mortem toxicology — a separate workstream from S3.
 :::
 
-**S3 has a different purpose from S1 and S2** and is *not* a detection-coverage uplift. S1 and S2 increase the share of true cases that enter the surveillance system. **S3 identifies the proportion of chemical agents being found in severely poisoned living patients at sentinel sites** — the missing evidence base for product-specific regulation (see [Terbufos brief](terbufos_policy.qmd)). Without S3, ~10,000 survivors/year are recorded with agent "unknown / suspected" and targeted product restriction has no quantitative footing.
+**S3 has a different purpose from S1 and S2** and is *not* a detection-coverage uplift. S1 and S2 increase the share of true cases that enter the surveillance system. **S3 identifies the proportion of chemical agents being found in severely poisoned living patients at sentinel sites** — the missing evidence base for product-specific regulation (see [Terbufos brief](terbufos_policy.qmd)). Without S3, ~10,000 survivors/year are recorded with agent "unknown / suspected" and targeted product restriction has no quantitative footing. Some infromation is being captured in the Injury and MOrtality Survey by Megan Prinsloo et al (*** NOTE FOR THE AUTHOER ***)
 
 Cost: ~`r sprintf("R%.1fM", round(as.numeric(pick("c_option6_pilot_year1"))/1e6, 1))` pilot site → ~`r sprintf("R%.1fM", round(as.numeric(pick("c_option6_full_5site_annual"))/1e6, 1))` for 5-site rollout, 6–12 months. Funded from research-surveillance streams (SAMRC, Bloomberg, Gates), not the surveillance operating budget. Full quantitative concept in the [sentinel toxicology appendix](surveillance_concept_note.qmd).
 
@@ -406,7 +335,7 @@ Four component-level parameters in [`amua_import_parameters_v4.csv`](../amua_imp
 
 ### Option S4 — NMC case investigation form + agricultural extension *(bridge to coordination)*
 
-Surveillance *counts* cases; **investigation** captures the source, the product, and the trigger for source removal. The NDoH [*Guideline for the Investigation of Human Chemical Poisoning* (2023)](https://www.health.gov.za/wp-content/uploads/2023/09/DOH-Guideline-Investigation-Human-Chemical-Poisoning-1.pdf) already defines a structured Case Investigation Form (CIF) that EHPs and clinicians are expected to complete within 48 hours of any chemical-poisoning notification — but uptake is inconsistent, the form is not embedded in the NMC workflow, and it lacks structured fields for the **agricultural exposure pathways** that dominate the South African burden (illegal street pesticides repackaged from agricultural concentrates, on-farm formulation accidents, re-entry exposures, dietary contamination from treated produce).
+Surveillance *counts* cases; **investigation** captures the source, the product, and the trigger for source removal. The NDoH [*Guideline for the Investigation of Human Chemical Poisoning* (2023)](https://www.health.gov.za/wp-content/uploads/2023/09/DOH-Guideline-Investigation-Human-Chemical-Poisoning-1.pdf) already defines a structured Case Investigation Form (CIF) that EHPs and clinicians are expected to complete within 48 hours of any chemical-poisoning notification — but uptake is inconsistent, the form is not embedded in the NMC workflow, and it lacks interventions that are carried out by DOA (source removal). In addition, occupational exposure (if appropriate) ought to be captured. 
 
 This option does two complementary things and is the **minimum surveillance-side investment required to make the [Coordination response](coordination_policy.qmd) operational**:
 
