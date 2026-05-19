@@ -157,23 +157,23 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
 <p>All numerical claims in this brief draw from a single CSV — <a href="../amua_import_parameters_v4.csv"><code>amua_import_parameters_v4.csv</code></a> — rendered in full at the <a href="../parameters_hub.html">Parameters Hub</a>. The headline values below are pulled from that file at render time; <strong>do not edit the numbers in this brief — edit the CSV and re-render</strong>.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="omrlghscml" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#omrlghscml table {
+<div id="znzmwcyvoi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#znzmwcyvoi table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#omrlghscml thead, #omrlghscml tbody, #omrlghscml tfoot, #omrlghscml tr, #omrlghscml td, #omrlghscml th {
+#znzmwcyvoi thead, #znzmwcyvoi tbody, #znzmwcyvoi tfoot, #znzmwcyvoi tr, #znzmwcyvoi td, #znzmwcyvoi th {
   border-style: none;
 }
 
-#omrlghscml p {
+#znzmwcyvoi p {
   margin: 0;
   padding: 0;
 }
 
-#omrlghscml .gt_table {
+#znzmwcyvoi .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -199,12 +199,12 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-left-color: #D3D3D3;
 }
 
-#omrlghscml .gt_caption {
+#znzmwcyvoi .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#omrlghscml .gt_title {
+#znzmwcyvoi .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -216,7 +216,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-bottom-width: 0;
 }
 
-#omrlghscml .gt_subtitle {
+#znzmwcyvoi .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -228,7 +228,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-top-width: 0;
 }
 
-#omrlghscml .gt_heading {
+#znzmwcyvoi .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -240,13 +240,13 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-right-color: #D3D3D3;
 }
 
-#omrlghscml .gt_bottom_border {
+#znzmwcyvoi .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#omrlghscml .gt_col_headings {
+#znzmwcyvoi .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -261,7 +261,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-right-color: #D3D3D3;
 }
 
-#omrlghscml .gt_col_heading {
+#znzmwcyvoi .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -281,7 +281,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   overflow-x: hidden;
 }
 
-#omrlghscml .gt_column_spanner_outer {
+#znzmwcyvoi .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -293,15 +293,15 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 4px;
 }
 
-#omrlghscml .gt_column_spanner_outer:first-child {
+#znzmwcyvoi .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#omrlghscml .gt_column_spanner_outer:last-child {
+#znzmwcyvoi .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#omrlghscml .gt_column_spanner {
+#znzmwcyvoi .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -313,11 +313,11 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   width: 100%;
 }
 
-#omrlghscml .gt_spanner_row {
+#znzmwcyvoi .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#omrlghscml .gt_group_heading {
+#znzmwcyvoi .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -343,7 +343,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   text-align: left;
 }
 
-#omrlghscml .gt_empty_group_heading {
+#znzmwcyvoi .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -358,15 +358,15 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   vertical-align: middle;
 }
 
-#omrlghscml .gt_from_md > :first-child {
+#znzmwcyvoi .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#omrlghscml .gt_from_md > :last-child {
+#znzmwcyvoi .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#omrlghscml .gt_row {
+#znzmwcyvoi .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -385,7 +385,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   overflow-x: hidden;
 }
 
-#omrlghscml .gt_stub {
+#znzmwcyvoi .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -398,7 +398,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#omrlghscml .gt_stub_row_group {
+#znzmwcyvoi .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -412,15 +412,15 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   vertical-align: top;
 }
 
-#omrlghscml .gt_row_group_first td {
+#znzmwcyvoi .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#omrlghscml .gt_row_group_first th {
+#znzmwcyvoi .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#omrlghscml .gt_summary_row {
+#znzmwcyvoi .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -430,16 +430,16 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#omrlghscml .gt_first_summary_row {
+#znzmwcyvoi .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#omrlghscml .gt_first_summary_row.thick {
+#znzmwcyvoi .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#omrlghscml .gt_last_summary_row {
+#znzmwcyvoi .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -449,7 +449,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-bottom-color: #D3D3D3;
 }
 
-#omrlghscml .gt_grand_summary_row {
+#znzmwcyvoi .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -459,7 +459,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#omrlghscml .gt_first_grand_summary_row {
+#znzmwcyvoi .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -469,7 +469,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-top-color: #D3D3D3;
 }
 
-#omrlghscml .gt_last_grand_summary_row_top {
+#znzmwcyvoi .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -479,11 +479,11 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-bottom-color: #D3D3D3;
 }
 
-#omrlghscml .gt_striped {
+#znzmwcyvoi .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#omrlghscml .gt_table_body {
+#znzmwcyvoi .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -492,7 +492,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-bottom-color: #D3D3D3;
 }
 
-#omrlghscml .gt_footnotes {
+#znzmwcyvoi .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -506,7 +506,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-right-color: #D3D3D3;
 }
 
-#omrlghscml .gt_footnote {
+#znzmwcyvoi .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -515,7 +515,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#omrlghscml .gt_sourcenotes {
+#znzmwcyvoi .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -529,7 +529,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-right-color: #D3D3D3;
 }
 
-#omrlghscml .gt_sourcenote {
+#znzmwcyvoi .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -537,72 +537,72 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#omrlghscml .gt_left {
+#znzmwcyvoi .gt_left {
   text-align: left;
 }
 
-#omrlghscml .gt_center {
+#znzmwcyvoi .gt_center {
   text-align: center;
 }
 
-#omrlghscml .gt_right {
+#znzmwcyvoi .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#omrlghscml .gt_font_normal {
+#znzmwcyvoi .gt_font_normal {
   font-weight: normal;
 }
 
-#omrlghscml .gt_font_bold {
+#znzmwcyvoi .gt_font_bold {
   font-weight: bold;
 }
 
-#omrlghscml .gt_font_italic {
+#znzmwcyvoi .gt_font_italic {
   font-style: italic;
 }
 
-#omrlghscml .gt_super {
+#znzmwcyvoi .gt_super {
   font-size: 65%;
 }
 
-#omrlghscml .gt_footnote_marks {
+#znzmwcyvoi .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#omrlghscml .gt_asterisk {
+#znzmwcyvoi .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#omrlghscml .gt_indent_1 {
+#znzmwcyvoi .gt_indent_1 {
   text-indent: 5px;
 }
 
-#omrlghscml .gt_indent_2 {
+#znzmwcyvoi .gt_indent_2 {
   text-indent: 10px;
 }
 
-#omrlghscml .gt_indent_3 {
+#znzmwcyvoi .gt_indent_3 {
   text-indent: 15px;
 }
 
-#omrlghscml .gt_indent_4 {
+#znzmwcyvoi .gt_indent_4 {
   text-indent: 20px;
 }
 
-#omrlghscml .gt_indent_5 {
+#znzmwcyvoi .gt_indent_5 {
   text-indent: 25px;
 }
 
-#omrlghscml .katex-display {
+#znzmwcyvoi .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#omrlghscml div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#znzmwcyvoi div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -683,23 +683,23 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
 <h3 class="anchored" data-anchor-id="who-bears-the-r2.34b-annual-burden">Who bears the R2.34B annual burden?</h3>
 <div class="cell">
 <div class="cell-output-display">
-<div id="dwfaaidlbc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#dwfaaidlbc table {
+<div id="ijiltypkvu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ijiltypkvu table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#dwfaaidlbc thead, #dwfaaidlbc tbody, #dwfaaidlbc tfoot, #dwfaaidlbc tr, #dwfaaidlbc td, #dwfaaidlbc th {
+#ijiltypkvu thead, #ijiltypkvu tbody, #ijiltypkvu tfoot, #ijiltypkvu tr, #ijiltypkvu td, #ijiltypkvu th {
   border-style: none;
 }
 
-#dwfaaidlbc p {
+#ijiltypkvu p {
   margin: 0;
   padding: 0;
 }
 
-#dwfaaidlbc .gt_table {
+#ijiltypkvu .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -725,12 +725,12 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-left-color: #D3D3D3;
 }
 
-#dwfaaidlbc .gt_caption {
+#ijiltypkvu .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#dwfaaidlbc .gt_title {
+#ijiltypkvu .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -742,7 +742,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-bottom-width: 0;
 }
 
-#dwfaaidlbc .gt_subtitle {
+#ijiltypkvu .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -754,7 +754,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-top-width: 0;
 }
 
-#dwfaaidlbc .gt_heading {
+#ijiltypkvu .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -766,13 +766,13 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-right-color: #D3D3D3;
 }
 
-#dwfaaidlbc .gt_bottom_border {
+#ijiltypkvu .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#dwfaaidlbc .gt_col_headings {
+#ijiltypkvu .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -787,7 +787,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-right-color: #D3D3D3;
 }
 
-#dwfaaidlbc .gt_col_heading {
+#ijiltypkvu .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -807,7 +807,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   overflow-x: hidden;
 }
 
-#dwfaaidlbc .gt_column_spanner_outer {
+#ijiltypkvu .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -819,15 +819,15 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 4px;
 }
 
-#dwfaaidlbc .gt_column_spanner_outer:first-child {
+#ijiltypkvu .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#dwfaaidlbc .gt_column_spanner_outer:last-child {
+#ijiltypkvu .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#dwfaaidlbc .gt_column_spanner {
+#ijiltypkvu .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -839,11 +839,11 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   width: 100%;
 }
 
-#dwfaaidlbc .gt_spanner_row {
+#ijiltypkvu .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#dwfaaidlbc .gt_group_heading {
+#ijiltypkvu .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -869,7 +869,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   text-align: left;
 }
 
-#dwfaaidlbc .gt_empty_group_heading {
+#ijiltypkvu .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -884,15 +884,15 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   vertical-align: middle;
 }
 
-#dwfaaidlbc .gt_from_md > :first-child {
+#ijiltypkvu .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#dwfaaidlbc .gt_from_md > :last-child {
+#ijiltypkvu .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#dwfaaidlbc .gt_row {
+#ijiltypkvu .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -911,7 +911,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   overflow-x: hidden;
 }
 
-#dwfaaidlbc .gt_stub {
+#ijiltypkvu .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -924,7 +924,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#dwfaaidlbc .gt_stub_row_group {
+#ijiltypkvu .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -938,15 +938,15 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   vertical-align: top;
 }
 
-#dwfaaidlbc .gt_row_group_first td {
+#ijiltypkvu .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#dwfaaidlbc .gt_row_group_first th {
+#ijiltypkvu .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#dwfaaidlbc .gt_summary_row {
+#ijiltypkvu .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -956,16 +956,16 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#dwfaaidlbc .gt_first_summary_row {
+#ijiltypkvu .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#dwfaaidlbc .gt_first_summary_row.thick {
+#ijiltypkvu .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#dwfaaidlbc .gt_last_summary_row {
+#ijiltypkvu .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -975,7 +975,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-bottom-color: #D3D3D3;
 }
 
-#dwfaaidlbc .gt_grand_summary_row {
+#ijiltypkvu .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -985,7 +985,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#dwfaaidlbc .gt_first_grand_summary_row {
+#ijiltypkvu .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -995,7 +995,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-top-color: #D3D3D3;
 }
 
-#dwfaaidlbc .gt_last_grand_summary_row_top {
+#ijiltypkvu .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1005,11 +1005,11 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-bottom-color: #D3D3D3;
 }
 
-#dwfaaidlbc .gt_striped {
+#ijiltypkvu .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#dwfaaidlbc .gt_table_body {
+#ijiltypkvu .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1018,7 +1018,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-bottom-color: #D3D3D3;
 }
 
-#dwfaaidlbc .gt_footnotes {
+#ijiltypkvu .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1032,7 +1032,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-right-color: #D3D3D3;
 }
 
-#dwfaaidlbc .gt_footnote {
+#ijiltypkvu .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1041,7 +1041,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#dwfaaidlbc .gt_sourcenotes {
+#ijiltypkvu .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1055,7 +1055,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-right-color: #D3D3D3;
 }
 
-#dwfaaidlbc .gt_sourcenote {
+#ijiltypkvu .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1063,72 +1063,72 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#dwfaaidlbc .gt_left {
+#ijiltypkvu .gt_left {
   text-align: left;
 }
 
-#dwfaaidlbc .gt_center {
+#ijiltypkvu .gt_center {
   text-align: center;
 }
 
-#dwfaaidlbc .gt_right {
+#ijiltypkvu .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#dwfaaidlbc .gt_font_normal {
+#ijiltypkvu .gt_font_normal {
   font-weight: normal;
 }
 
-#dwfaaidlbc .gt_font_bold {
+#ijiltypkvu .gt_font_bold {
   font-weight: bold;
 }
 
-#dwfaaidlbc .gt_font_italic {
+#ijiltypkvu .gt_font_italic {
   font-style: italic;
 }
 
-#dwfaaidlbc .gt_super {
+#ijiltypkvu .gt_super {
   font-size: 65%;
 }
 
-#dwfaaidlbc .gt_footnote_marks {
+#ijiltypkvu .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#dwfaaidlbc .gt_asterisk {
+#ijiltypkvu .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#dwfaaidlbc .gt_indent_1 {
+#ijiltypkvu .gt_indent_1 {
   text-indent: 5px;
 }
 
-#dwfaaidlbc .gt_indent_2 {
+#ijiltypkvu .gt_indent_2 {
   text-indent: 10px;
 }
 
-#dwfaaidlbc .gt_indent_3 {
+#ijiltypkvu .gt_indent_3 {
   text-indent: 15px;
 }
 
-#dwfaaidlbc .gt_indent_4 {
+#ijiltypkvu .gt_indent_4 {
   text-indent: 20px;
 }
 
-#dwfaaidlbc .gt_indent_5 {
+#ijiltypkvu .gt_indent_5 {
   text-indent: 25px;
 }
 
-#dwfaaidlbc .katex-display {
+#ijiltypkvu .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#dwfaaidlbc div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ijiltypkvu div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1191,23 +1191,23 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
 <h3 class="anchored" data-anchor-id="canonical-option-costs-detect-act-restrict">Canonical option costs (Detect · Act · Restrict)</h3>
 <div class="cell">
 <div class="cell-output-display">
-<div id="qjxhwlczsp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#qjxhwlczsp table {
+<div id="tupecugpwi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#tupecugpwi table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#qjxhwlczsp thead, #qjxhwlczsp tbody, #qjxhwlczsp tfoot, #qjxhwlczsp tr, #qjxhwlczsp td, #qjxhwlczsp th {
+#tupecugpwi thead, #tupecugpwi tbody, #tupecugpwi tfoot, #tupecugpwi tr, #tupecugpwi td, #tupecugpwi th {
   border-style: none;
 }
 
-#qjxhwlczsp p {
+#tupecugpwi p {
   margin: 0;
   padding: 0;
 }
 
-#qjxhwlczsp .gt_table {
+#tupecugpwi .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1233,12 +1233,12 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-left-color: #D3D3D3;
 }
 
-#qjxhwlczsp .gt_caption {
+#tupecugpwi .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#qjxhwlczsp .gt_title {
+#tupecugpwi .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1250,7 +1250,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-bottom-width: 0;
 }
 
-#qjxhwlczsp .gt_subtitle {
+#tupecugpwi .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1262,7 +1262,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-top-width: 0;
 }
 
-#qjxhwlczsp .gt_heading {
+#tupecugpwi .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1274,13 +1274,13 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-right-color: #D3D3D3;
 }
 
-#qjxhwlczsp .gt_bottom_border {
+#tupecugpwi .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#qjxhwlczsp .gt_col_headings {
+#tupecugpwi .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1295,7 +1295,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-right-color: #D3D3D3;
 }
 
-#qjxhwlczsp .gt_col_heading {
+#tupecugpwi .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1315,7 +1315,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   overflow-x: hidden;
 }
 
-#qjxhwlczsp .gt_column_spanner_outer {
+#tupecugpwi .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1327,15 +1327,15 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 4px;
 }
 
-#qjxhwlczsp .gt_column_spanner_outer:first-child {
+#tupecugpwi .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#qjxhwlczsp .gt_column_spanner_outer:last-child {
+#tupecugpwi .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#qjxhwlczsp .gt_column_spanner {
+#tupecugpwi .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1347,11 +1347,11 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   width: 100%;
 }
 
-#qjxhwlczsp .gt_spanner_row {
+#tupecugpwi .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#qjxhwlczsp .gt_group_heading {
+#tupecugpwi .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1377,7 +1377,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   text-align: left;
 }
 
-#qjxhwlczsp .gt_empty_group_heading {
+#tupecugpwi .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1392,15 +1392,15 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   vertical-align: middle;
 }
 
-#qjxhwlczsp .gt_from_md > :first-child {
+#tupecugpwi .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#qjxhwlczsp .gt_from_md > :last-child {
+#tupecugpwi .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#qjxhwlczsp .gt_row {
+#tupecugpwi .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1419,7 +1419,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   overflow-x: hidden;
 }
 
-#qjxhwlczsp .gt_stub {
+#tupecugpwi .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1432,7 +1432,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#qjxhwlczsp .gt_stub_row_group {
+#tupecugpwi .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1446,15 +1446,15 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   vertical-align: top;
 }
 
-#qjxhwlczsp .gt_row_group_first td {
+#tupecugpwi .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#qjxhwlczsp .gt_row_group_first th {
+#tupecugpwi .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#qjxhwlczsp .gt_summary_row {
+#tupecugpwi .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1464,16 +1464,16 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#qjxhwlczsp .gt_first_summary_row {
+#tupecugpwi .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#qjxhwlczsp .gt_first_summary_row.thick {
+#tupecugpwi .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#qjxhwlczsp .gt_last_summary_row {
+#tupecugpwi .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1483,7 +1483,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-bottom-color: #D3D3D3;
 }
 
-#qjxhwlczsp .gt_grand_summary_row {
+#tupecugpwi .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1493,7 +1493,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#qjxhwlczsp .gt_first_grand_summary_row {
+#tupecugpwi .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1503,7 +1503,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-top-color: #D3D3D3;
 }
 
-#qjxhwlczsp .gt_last_grand_summary_row_top {
+#tupecugpwi .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1513,11 +1513,11 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-bottom-color: #D3D3D3;
 }
 
-#qjxhwlczsp .gt_striped {
+#tupecugpwi .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#qjxhwlczsp .gt_table_body {
+#tupecugpwi .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1526,7 +1526,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-bottom-color: #D3D3D3;
 }
 
-#qjxhwlczsp .gt_footnotes {
+#tupecugpwi .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1540,7 +1540,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-right-color: #D3D3D3;
 }
 
-#qjxhwlczsp .gt_footnote {
+#tupecugpwi .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1549,7 +1549,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#qjxhwlczsp .gt_sourcenotes {
+#tupecugpwi .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1563,7 +1563,7 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   border-right-color: #D3D3D3;
 }
 
-#qjxhwlczsp .gt_sourcenote {
+#tupecugpwi .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1571,72 +1571,72 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   padding-right: 5px;
 }
 
-#qjxhwlczsp .gt_left {
+#tupecugpwi .gt_left {
   text-align: left;
 }
 
-#qjxhwlczsp .gt_center {
+#tupecugpwi .gt_center {
   text-align: center;
 }
 
-#qjxhwlczsp .gt_right {
+#tupecugpwi .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#qjxhwlczsp .gt_font_normal {
+#tupecugpwi .gt_font_normal {
   font-weight: normal;
 }
 
-#qjxhwlczsp .gt_font_bold {
+#tupecugpwi .gt_font_bold {
   font-weight: bold;
 }
 
-#qjxhwlczsp .gt_font_italic {
+#tupecugpwi .gt_font_italic {
   font-style: italic;
 }
 
-#qjxhwlczsp .gt_super {
+#tupecugpwi .gt_super {
   font-size: 65%;
 }
 
-#qjxhwlczsp .gt_footnote_marks {
+#tupecugpwi .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#qjxhwlczsp .gt_asterisk {
+#tupecugpwi .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#qjxhwlczsp .gt_indent_1 {
+#tupecugpwi .gt_indent_1 {
   text-indent: 5px;
 }
 
-#qjxhwlczsp .gt_indent_2 {
+#tupecugpwi .gt_indent_2 {
   text-indent: 10px;
 }
 
-#qjxhwlczsp .gt_indent_3 {
+#tupecugpwi .gt_indent_3 {
   text-indent: 15px;
 }
 
-#qjxhwlczsp .gt_indent_4 {
+#tupecugpwi .gt_indent_4 {
   text-indent: 20px;
 }
 
-#qjxhwlczsp .gt_indent_5 {
+#tupecugpwi .gt_indent_5 {
   text-indent: 25px;
 }
 
-#qjxhwlczsp .katex-display {
+#tupecugpwi .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#qjxhwlczsp div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#tupecugpwi div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1854,8 +1854,8 @@ Figure&nbsp;1: Current surveillance architecture. NMC is NDoH-owned and has demo
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>The 20,960 denominator applies a 12.5% CFR to the StatsSA MACOD death count (ICD-10 X40–X49) — but that CFR derives from NMC-<em>notified</em> severe cases (the sicker end of the distribution). The undetected majority are likely milder; a blended CFR of 3–5% implies 52,000–87,000 true cases and a status-quo P_detect of 1–2%. Relative option rankings (S1, S2, MVP†) are stable across this range — the percentage-point gain for each option is unchanged; only the absolute number of true cases detected would differ.</p>
-<p>†MVP = Minimum Viable Package (S1 + S2 combined).</p>
+<p>The 20,960 denominator applies a 12.5% CFR to the StatsSA MACOD death count (ICD-10 X40–X49) — but that CFR derives from NMC-<em>notified</em> severe cases (the sicker end of the distribution). The undetected majority are likely milder; a blended CFR of 3–5% implies 52,000–87,000 true cases and a status-quo P_detect of 1–2%. Relative option rankings (Option 1, Option 2, MVP†) are stable across this range — the percentage-point gain for each option is unchanged; only the absolute number of true cases detected would differ.</p>
+<p>†MVP = Minimum Viable Package (Option 1 + Option 2 combined).</p>
 </div>
 </div>
 </div>
@@ -1910,9 +1910,9 @@ Figure&nbsp;1: Current surveillance architecture. NMC is NDoH-owned and has demo
     A --&gt; F[No live-patient&lt;br/&gt;chemical toxicology]
 
     B --&gt; G["✓ NHLS→NMC IT feed&lt;br/&gt;&lt;i&gt;Completed&lt;/i&gt;"]
-    C --&gt; H[Option S1: PIH MVD&lt;br/&gt;+ dashboard]
-    D --&gt; I[Option S2: BChE&lt;br/&gt;auto-notify &lt;i&gt;capability exists&lt;/i&gt;]
-    F --&gt; J[Option S3: Sentinel&lt;br/&gt;toxicology + auto-notify]
+    C --&gt; H[Option 2: PIH MVD&lt;br/&gt;+ dashboard]
+    D --&gt; I[Option 1: BChE&lt;br/&gt;auto-notify &lt;i&gt;capability exists&lt;/i&gt;]
+    F --&gt; J[Option 5: Sentinel&lt;br/&gt;toxicology + auto-notify]
 
     style A fill:#f99,stroke:#333
     style G fill:#e0e0e0,stroke:#999,stroke-dasharray: 5 5
@@ -1944,6 +1944,58 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
 </div>
 <div class="callout-body-container callout-body">
 <p>The NHLS–NICD LIS-to-NMC connector is operational; daily BChE data flows to NICD under the existing MOU. The three active options below build on this.</p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Reading guide — option numbering.</strong> Options below are numbered <strong>1–5 in narrative build order</strong>. Backend parameter codes in the CSV (<code>c_S1_*</code>, <code>c_S2_*</code>, <code>c_S1b_*</code>, <code>c_option6_*</code>) are stable identifiers that pre-date the renumbering and <strong>do not follow the brief’s order</strong>. Cross-walk:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 23%">
+<col style="width: 42%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Option (display)</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">CSV parameter family</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Option 1</strong></td>
+<td style="text-align: left;">BChE auto-notification <em>(first build, ★ recommended)</em></td>
+<td style="text-align: left;"><code>c_S2_BChE_autonotify_*</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Option 2</strong></td>
+<td style="text-align: left;">PIH dashboard + MVD <em>(second build, ★ recommended — completes the MVP)</em></td>
+<td style="text-align: left;"><code>c_S1_PIH_MVD_*</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Option 3</strong></td>
+<td style="text-align: left;">Community layer <em>(Phase 2, conditional)</em></td>
+<td style="text-align: left;"><code>c_S1b_*</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Option 4</strong></td>
+<td style="text-align: left;">NMC CIF + agricultural extension <em>(bridge to coordination)</em></td>
+<td style="text-align: left;">(no dedicated parameter)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Option 5</strong></td>
+<td style="text-align: left;">Sentinel live-patient toxicology <em>(research-funded, distinct purpose)</em></td>
+<td style="text-align: left;"><code>c_option6_*</code></td>
+</tr>
+</tbody>
+</table>
+<p>S0 (NHLS→NMC IT feed) is operational and in the baseline. <strong>Surveillance MVP = Options 1 + 2.</strong></p>
+</div>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -2012,8 +2064,8 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
 </div>
 </div>
 </div>
-<section id="option-s2-bche-auto-notification-recommended-first-build-capability-exists" class="level3">
-<h3 class="anchored" data-anchor-id="option-s2-bche-auto-notification-recommended-first-build-capability-exists">Option S2 — BChE auto-notification <em>(★ recommended — first build, capability exists)</em></h3>
+<section id="option-1-bche-auto-notification-recommended-first-build-capability-exists" class="level3">
+<h3 class="anchored" data-anchor-id="option-1-bche-auto-notification-recommended-first-build-capability-exists">Option 1 — BChE auto-notification <em>(★ recommended — first build, capability exists)</em></h3>
 <p>Configure the NHLS LIS to fire an automatic NICD notification when a BChE result shows severe inhibition (&lt; 30 % of normal)*, within 24 hours of validation. <strong>No new test, no new reagent contract</strong> — only an IT configuration on top of the ~10,626 BChE tests/year already performed (1,779 severe in 2023). Detection rises to ~13 % of true cases (up from ~5 %) for a one-off setup of <strong>R200,000</strong>, then <strong>R55,000/year</strong> from Year 2 onward (Year 1 total: <strong>R255,000</strong>) in 2–4 weeks. <strong>This is the single highest-value, fastest, lowest-risk option on the menu — and is therefore the recommended first build.</strong> It uses existing NHLS infrastructure, has a single clear owner (NHLS LIS), and delivers the largest single-option uplift in P_detect (+8.5 pp).</p>
 <ul>
 <li>Severe inhibition is most closely related to severe sequelae such as hospitalisation and death [Chaudhary S, Jain N, Atam V, Agarwal A, Singh K, Sawlani K, et al.&nbsp;Prognostic significance of estimation of pseudocholinesterase activity and role of pralidoxime therapy in organophosphorous poisoning. Toxicol Int. 2013;20(3):214]. Taking any BChE test will likely increase the FP rate and this will not be accounted for.</li>
@@ -2024,7 +2076,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Audit trail — mini-budget backing the R55,000/yr operating cost
+<span class="screen-reader-only">Note</span>Audit trail — mini-budget backing Option 1 (BChE auto-notify): R55,000/yr
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -2100,16 +2152,16 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
 </tr>
 </tbody>
 </table>
-<p><strong>How to interpret.</strong> Items 1 and 5 are direct cash outlays (cloud hosting + licence). Items 2, 3, 4 and 6 are time-allocated personnel cost at standard public-sector CTE rates — the same anchors used in §7 Tab 1. The NHLS medical scientist and data-engineer CTE rows already appear in the status-quo build-up; the S2 marginal allocation is additive to the existing pesticide share of those posts.</p>
+<p><strong>How to interpret.</strong> Items 1 and 5 are direct cash outlays (cloud hosting + licence). Items 2, 3, 4 and 6 are time-allocated personnel cost at standard public-sector CTE rates — the same anchors used in §7 Tab 1. The NHLS medical scientist and data-engineer CTE rows already appear in the status-quo build-up; the Option 1 marginal allocation is additive to the existing pesticide share of those posts.</p>
 <p><strong>Distribution.</strong> gamma(shape = 25, scale = 2,200) → mean R55,000, SD ≈ R11,000 (95% CI ≈ R36k–R78k).</p>
-<p><strong>Sensitivity.</strong> Dominant driver: middleware hosting tier (upgrading t3.small → t3.medium adds ~R12,000/yr). Doubling the NHLS IT maintenance FTE share adds ~R15,000/yr. Neither moves S2 above S1 in operating cost (R82,000/yr).</p>
+<p><strong>Sensitivity.</strong> Dominant driver: middleware hosting tier (upgrading t3.small → t3.medium adds ~R12,000/yr). Doubling the NHLS IT maintenance FTE share adds ~R15,000/yr. Neither moves Option 1 above Option 2 in operating cost (R82,000/yr).</p>
 <p><strong>Setup.</strong> <code>c_S2_BChE_autonotify_setup</code> = R200,000 (one-off) covers NHLS LIS HL7 rule development, configuration of the severity threshold (&lt; 50% inhibition), UAT across NHLS network sites, and go-live sign-off. Spent once; not part of the recurring R55,000/yr.</p>
 </div>
 </div>
 </div>
 </section>
-<section id="option-s1-pih-live-dashboard-minimum-viable-dataset-recommended-second-build-completes-the-mvp" class="level3">
-<h3 class="anchored" data-anchor-id="option-s1-pih-live-dashboard-minimum-viable-dataset-recommended-second-build-completes-the-mvp">Option S1 — PIH live dashboard + Minimum Viable Dataset <em>(★ recommended — second build, completes the MVP)</em></h3>
+<section id="option-2-pih-live-dashboard-minimum-viable-dataset-recommended-second-build-completes-the-mvp" class="level3">
+<h3 class="anchored" data-anchor-id="option-2-pih-live-dashboard-minimum-viable-dataset-recommended-second-build-completes-the-mvp">Option 2 — PIH live dashboard + Minimum Viable Dataset <em>(★ recommended — second build, completes the MVP)</em></h3>
 <p>Two layers:</p>
 <ul>
 <li><strong>Short term (1–2 weeks):</strong> PIH publishes a live dashboard of pesticide-related calls (counts, geography, agent, severity, demographics, <strong>AfriTox agent name</strong>). No new data; just a daily extract from existing call records.</li>
@@ -2122,7 +2174,7 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Audit trail — mini-budget backing the R82,000/yr operating cost
+<span class="screen-reader-only">Note</span>Audit trail — mini-budget backing Option 2 (PIH dashboard + MVD): R82,000/yr
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -2198,16 +2250,16 @@ Figure&nbsp;2: Root causes of surveillance under-detection and the surveillance-
 </tr>
 </tbody>
 </table>
-<p><strong>How to interpret.</strong> Items 1, 4 and 7 are direct cash outlays (cloud, ETL, licences, SMS). Items 2, 3, 5 and 6 are <strong>time-allocated personnel cost</strong> at standard public-sector cost-to-employer rates — i.e.&nbsp;they do not require new hires; they ring-fence small fractions of existing PIH and NICD posts. The same CTE anchors and unit-cost sources are used in the §7 status-quo build-up, so the marginal S1 line is consistent with — and additive to — the costed baseline.</p>
+<p><strong>How to interpret.</strong> Items 1, 4 and 7 are direct cash outlays (cloud, ETL, licences, SMS). Items 2, 3, 5 and 6 are <strong>time-allocated personnel cost</strong> at standard public-sector cost-to-employer rates — i.e.&nbsp;they do not require new hires; they ring-fence small fractions of existing PIH and NICD posts. The same CTE anchors and unit-cost sources are used in the §7 status-quo build-up, so the marginal Option 2 line is consistent with — and additive to — the costed baseline.</p>
 <p><strong>Distribution.</strong> The CSV models this as gamma(shape = 25, scale = 3,280) → mean R82,000, SD ≈ R16,400 (95% CI ≈ R53k–R116k). This range absorbs reasonable variation across all seven items (e.g.&nbsp;cloud-VM sizing, AfriTox refresh frequency, FTE %).</p>
-<p><strong>Sensitivity — what would push it materially higher.</strong> (i) Hosting the dashboard on Power BI Premium dedicated capacity rather than a small VM (+R30–50k/yr); (ii) replacing the 0.02 FTE pharmacist time on the daily extract with a dedicated data engineer FTE (+R60k/yr if 0.1 FTE); (iii) extending alert-SMS volume 5× during outbreak periods (+R3–5k/yr). None of these move the option out of the “lowest-hanging fruit” tier vs S2 (R55,000/yr) or S1b (R-millions/yr).</p>
+<p><strong>Sensitivity — what would push it materially higher.</strong> (i) Hosting the dashboard on Power BI Premium dedicated capacity rather than a small VM (+R30–50k/yr); (ii) replacing the 0.02 FTE pharmacist time on the daily extract with a dedicated data engineer FTE (+R60k/yr if 0.1 FTE); (iii) extending alert-SMS volume 5× during outbreak periods (+R3–5k/yr). None of these move the option out of the “lowest-hanging fruit” tier vs Option 1 (R55,000/yr) or Option 3 (R-millions/yr).</p>
 </div>
 </div>
 </div>
 </section>
-<section id="option-s1b-phase-2-community-layer-commission-after-mvp-pilot-if-ruralinformal-gap-confirms" class="level3">
-<h3 class="anchored" data-anchor-id="option-s1b-phase-2-community-layer-commission-after-mvp-pilot-if-ruralinformal-gap-confirms">Option S1b — Phase 2 community layer <em>(commission after MVP pilot if rural/informal gap confirms)</em></h3>
-<p>S1 and S2 improve detection within the <strong>formal healthcare system</strong> — via PIH, NHLS BChE, and NMC-notified facilities. They structurally cannot reach cases that never arrive at a formal facility: the child taken to a traditional healer after ingesting street-sold granules, the farm worker who doesn’t present at all, the informal-settlement cluster whose care pathway bypasses formal services entirely.</p>
+<section id="option-3-community-layer-phase-2-commission-after-mvp-pilot-if-ruralinformal-gap-confirms" class="level3">
+<h3 class="anchored" data-anchor-id="option-3-community-layer-phase-2-commission-after-mvp-pilot-if-ruralinformal-gap-confirms">Option 3 — Community layer (Phase 2) <em>(commission after MVP pilot if rural/informal gap confirms)</em></h3>
+<p>Options 1 and 2 improve detection within the <strong>formal healthcare system</strong> — via PIH, NHLS BChE, and NMC-notified facilities. They structurally cannot reach cases that never arrive at a formal facility: the child taken to a traditional healer after ingesting street-sold granules, the farm worker who doesn’t present at all, the informal-settlement cluster whose care pathway bypasses formal services entirely.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -2218,11 +2270,11 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Pre-condition — non-clinician reporting must be enabled.</strong> S1b only delivers a coverage uplift if PIH (and the NMC CIF, via S4) accept structured reports from <strong>non-medical personnel</strong>: community health workers, environmental health practitioners, ward-based outreach teams, agricultural extension officers, teachers, traditional healers, and community members themselves. The MVP’s S1 stream is built on the ~1,158 <em>clinician-initiated</em> PIH calls/year — that pathway by construction cannot see cases that never reach a clinician. Unless PIH opens a separate intake channel for non-clinician callers (with the Tier-1 CHW checklist as the structured form, and EHP call-back triage as the validation step), the CHW network has nowhere to land its reports and S1b reduces to training cost with no measurable P_detect gain. This is the single design choice that makes or breaks the community layer.</p>
+<p><strong>Pre-condition — non-clinician reporting must be enabled.</strong> Option 3 only delivers a coverage uplift if PIH (and the NMC CIF, via Option 4) accept structured reports from <strong>non-medical personnel</strong>: community health workers, environmental health practitioners, ward-based outreach teams, agricultural extension officers, teachers, traditional healers, and community members themselves. The Option 2 PIH stream is built on the ~1,158 <em>clinician-initiated</em> PIH calls/year — that pathway by construction cannot see cases that never reach a clinician. Unless PIH opens a separate intake channel for non-clinician callers (with the Tier-1 CHW checklist as the structured form, and EHP call-back triage as the validation step), the CHW network has nowhere to land its reports and Option 3 reduces to training cost with no measurable P_detect gain. This is the single design choice that makes or breaks the community layer.</p>
 </div>
 </div>
-<p><strong>The MVP ceiling (~19% P_detect) is real and bounded</strong> by the reach of formal administrative streams. S1b is the mechanism for going beyond it — but only after the MVP has established the baseline and confirmed that the remaining gap is structural rather than simply a compliance issue within the formal system.</p>
-<p><strong>Trigger condition.</strong> Commission S1b if, after 6 months of MVP operation, the geographic distribution of PIH + NHLS + NMC cases shows ≥40% of severe cases originating in districts with low formal-facility access (defined as &lt;1 public hospital per 50km radius). This is a data-driven go/no-go, not a discretionary expansion. CSV parameters: <code>d_S1b_event_community_*</code>, <code>c_S1b_setup_*</code>, <code>c_S1b_op_*</code>, <code>p_fp_S1b_*</code>.</p>
+<p><strong>The MVP ceiling (~19% P_detect) is real and bounded</strong> by the reach of formal administrative streams. Option 3 is the mechanism for going beyond it — but only after the MVP has established the baseline and confirmed that the remaining gap is structural rather than simply a compliance issue within the formal system.</p>
+<p><strong>Trigger condition.</strong> Commission Option 3 if, after 6 months of MVP operation, the geographic distribution of PIH + NHLS + NMC cases shows ≥40% of severe cases originating in districts with low formal-facility access (defined as &lt;1 public hospital per 50km radius). This is a data-driven go/no-go, not a discretionary expansion. CSV parameters: <code>d_S1b_event_community_*</code>, <code>c_S1b_setup_*</code>, <code>c_S1b_op_*</code>, <code>p_fp_S1b_*</code>.</p>
 <p><strong>False positives are a design parameter, not a disqualifier.</strong> The gross false-positive rate is ~35% (range 20–50%). At P_detect = 0.40 on the mid-burden of 20,960 true cases, the gross notification volume would be ~12,898 events/yr — of which ~8,384 are true cases and ~4,514 are false alerts <em>before filtering</em>. This is solvable with a <strong>two-tier triage architecture</strong> — the same design used by WHO-EWARN, APSED, and comparable LMIC systems:</p>
 <ol type="1">
 <li><strong>Tier 1 — CHW structured checklist</strong>: Community health workers report via a mobile checklist requiring ≥2 of: acute onset, ≥2 affected persons, known or suspected product contact. Events not meeting criteria are logged but no dispatch is triggered.</li>
@@ -2251,7 +2303,7 @@ Important
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"><strong>S1b pilot</strong></td>
+<td style="text-align: left;"><strong>Option 3 pilot</strong></td>
 <td style="text-align: left;">Free State + Gauteng</td>
 <td style="text-align: right;">~50%</td>
 <td style="text-align: right;">~R1M</td>
@@ -2259,7 +2311,7 @@ Important
 <td style="text-align: left;">Month 12: net P_detect &gt;35% and net FP &lt;15%</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><strong>S1b national</strong></td>
+<td style="text-align: left;"><strong>Option 3 national</strong></td>
 <td style="text-align: left;">All 9 provinces</td>
 <td style="text-align: right;">100%</td>
 <td style="text-align: right;">~R3.5M</td>
@@ -2275,7 +2327,7 @@ Important
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Audit trail — mini-budget backing the S1b operating cost range
+<span class="screen-reader-only">Note</span>Audit trail — mini-budget backing Option 3 (community layer) operating cost range
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -2465,39 +2517,39 @@ Important
 </div>
 </div>
 </section>
-<section id="option-s4-nmc-case-investigation-form-agricultural-extension-bridge-to-coordination" class="level3">
-<h3 class="anchored" data-anchor-id="option-s4-nmc-case-investigation-form-agricultural-extension-bridge-to-coordination">Option S4 — NMC case investigation form + agricultural extension <em>(bridge to coordination)</em></h3>
+<section id="option-4-nmc-case-investigation-form-agricultural-extension-bridge-to-coordination" class="level3">
+<h3 class="anchored" data-anchor-id="option-4-nmc-case-investigation-form-agricultural-extension-bridge-to-coordination">Option 4 — NMC case investigation form + agricultural extension <em>(bridge to coordination)</em></h3>
 <p>Surveillance <em>counts</em> cases; <strong>investigation</strong> captures the source, the product, and the trigger for source removal. The NDoH <a href="https://www.health.gov.za/wp-content/uploads/2023/09/DOH-Guideline-Investigation-Human-Chemical-Poisoning-1.pdf"><em>Guideline for the Investigation of Human Chemical Poisoning</em> (2023)</a> already defines a structured Case Investigation Form (CIF) that EHPs and clinicians are expected to complete within 48 hours of any chemical-poisoning notification — but uptake is inconsistent, the form is not embedded in the NMC workflow, and it lacks interventions that are carried out by DOA (source removal). In addition, occupational exposure (if appropriate) ought to be captured.</p>
 <p>This option does two complementary things and is the <strong>minimum surveillance-side investment required to make the <a href="../posts/coordination_policy.html">Coordination response</a> operational</strong>:</p>
 <ol type="1">
-<li><strong>Operationalise the existing NDoH CIF inside NMC.</strong> Embed the 2023 guideline’s investigation fields as a structured second-stage form auto-triggered by any pesticide-poisoning notification — whether the notification originates from NMC, the S1 PIH MVD ingest, or the S2 BChE auto-notify rule. EHPs receive a workflow alert; CIF completion within 48 hours becomes a tracked NMC performance indicator (district-level KPI, reported quarterly).</li>
+<li><strong>Operationalise the existing NDoH CIF inside NMC.</strong> Embed the 2023 guideline’s investigation fields as a structured second-stage form auto-triggered by any pesticide-poisoning notification — whether the notification originates from NMC, the Option 2 PIH MVD ingest, or the Option 1 BChE auto-notify rule. EHPs receive a workflow alert; CIF completion within 48 hours becomes a tracked NMC performance indicator (district-level KPI, reported quarterly).</li>
 <li><strong>Add an agricultural-investigation extension module.</strong> Additional structured fields layered onto the CIF for:
 <ul>
 <li><strong>Product origin:</strong> formal retail / informal repackaged / agricultural concentrate / unknown;</li>
-<li><strong>AfriTox-coded agent name</strong> (reciprocal with the S1 drop-down so PIH-reported and NMC-confirmed agent names are directly comparable);</li>
+<li><strong>AfriTox-coded agent name</strong> (reciprocal with the Option 2 drop-down so PIH-reported and NMC-confirmed agent names are directly comparable);</li>
 <li><strong>Exposure context:</strong> occupational (farm worker, applicator) / dietary / accidental / intentional / pediatric ingestion;</li>
 <li><strong>Site geolocation</strong> (farm GPS / household / market / school) with district code;</li>
 <li><strong>Source-removal trigger flag</strong> — an explicit field that, when set by the EHP, hands the case off to the DALRRD-Act-36 + DoH source-removal workflow described in the <a href="../posts/coordination_policy.html">Coordination brief</a>.</li>
 </ul></li>
 </ol>
-<p><strong>Cost.</strong> ~R45,000 setup (form-template build into the NMC platform; one-day inter-departmental design workshop with NDoH EHP directorate, DALRRD Act-36 registrar, NICD, and PIH) and ~R35,000/yr operating (NICD analyst 0.04 FTE × R650k DPSA L10-11 for form-completion QA, drop-down maintenance and quarterly performance reporting to NDoH). <strong>No new headcount</strong> — same DPSA L10-11 analyst anchor used for S0/S1/S2; no new IT platform — the NMC notification system already supports structured secondary forms.</p>
-<p><strong>P_detect impact: by design, none directly.</strong> S4 does <strong>not</strong> increase the share of true cases entering surveillance — that is the role of S1, S1b and S2. Its value lies in <strong>converting detected cases into actionable investigations</strong>: it is the data-quality bridge that allows the coordination response to fire on the right cases, with the right product information, at the right site. The structured agent-attribution field added in S1 is the <em>what</em>; the CIF + agricultural extension is the <em>where, how, and who</em>. Together they make NMC the cross-sectoral hand-off point from health-sector detection into the DALRRD + DoH source-removal pipeline.</p>
-<p><strong>Why this belongs in the surveillance brief, not the coordination brief.</strong> The form lives inside NMC; its build, governance and KPIs are NDoH-owned surveillance infrastructure. The <a href="../posts/coordination_policy.html">Coordination brief</a> <em>consumes</em> the structured CIF + extension outputs to trigger source removal and inter-departmental escalation — it does not own the form itself. S4 is therefore the natural seam between the two briefs: it modestly upgrades NMC to <strong>pave the way for coordination</strong>, without requiring any new legislation (the CIF already exists in the 2023 guideline; Section 90 of the National Health Act and the NMC regulations already authorise the data flows).</p>
+<p><strong>Cost.</strong> ~R45,000 setup (form-template build into the NMC platform; one-day inter-departmental design workshop with NDoH EHP directorate, DALRRD Act-36 registrar, NICD, and PIH) and ~R35,000/yr operating (NICD analyst 0.04 FTE × R650k DPSA L10-11 for form-completion QA, drop-down maintenance and quarterly performance reporting to NDoH). <strong>No new headcount</strong> — same DPSA L10-11 analyst anchor used for S0, Option 1 and Option 2; no new IT platform — the NMC notification system already supports structured secondary forms.</p>
+<p><strong>P_detect impact: by design, none directly.</strong> Option 4 does <strong>not</strong> increase the share of true cases entering surveillance — that is the role of Options 1, 2 and 3. Its value lies in <strong>converting detected cases into actionable investigations</strong>: it is the data-quality bridge that allows the coordination response to fire on the right cases, with the right product information, at the right site. The structured agent-attribution field added in Option 2 is the <em>what</em>; the CIF + agricultural extension is the <em>where, how, and who</em>. Together they make NMC the cross-sectoral hand-off point from health-sector detection into the DALRRD + DoH source-removal pipeline.</p>
+<p><strong>Why this belongs in the surveillance brief, not the coordination brief.</strong> The form lives inside NMC; its build, governance and KPIs are NDoH-owned surveillance infrastructure. The <a href="../posts/coordination_policy.html">Coordination brief</a> <em>consumes</em> the structured CIF + extension outputs to trigger source removal and inter-departmental escalation — it does not own the form itself. Option 4 is therefore the natural seam between the two briefs: it modestly upgrades NMC to <strong>pave the way for coordination</strong>, without requiring any new legislation (the CIF already exists in the 2023 guideline; Section 90 of the National Health Act and the NMC regulations already authorise the data flows).</p>
 </section>
-<section id="option-s3-sentinel-live-patient-toxicology-recommended-medium-term-distinct-purpose-research-funded" class="level3">
-<h3 class="anchored" data-anchor-id="option-s3-sentinel-live-patient-toxicology-recommended-medium-term-distinct-purpose-research-funded">Option S3 — Sentinel live-patient toxicology <em>(★ recommended, medium term — distinct purpose, research-funded)</em></h3>
-<p>NHLS currently performs chemical toxicology (qualitative/quantitative pesticide assays) <strong>post-mortem only</strong>. There is no live-patient toxicology capability. Option S3 funds a sentinel tertiary site (e.g.&nbsp;CHB) to perform live-patient chemical toxicology and/or mass spectometry, scaling to 4–5 sites in phase 2–3. This will only capture ~ 323 severe poisoning cases.</p>
+<section id="option-5-sentinel-live-patient-toxicology-recommended-medium-term-distinct-purpose-research-funded" class="level3">
+<h3 class="anchored" data-anchor-id="option-5-sentinel-live-patient-toxicology-recommended-medium-term-distinct-purpose-research-funded">Option 5 — Sentinel live-patient toxicology <em>(★ recommended, medium term — distinct purpose, research-funded)</em></h3>
+<p>NHLS currently performs chemical toxicology (qualitative/quantitative pesticide assays) <strong>post-mortem only</strong>. There is no live-patient toxicology capability. Option 5 funds a sentinel tertiary site (e.g.&nbsp;CHB) to perform live-patient chemical toxicology and/or mass spectometry, scaling to 4–5 sites in phase 2–3. This will only capture ~ 323 severe poisoning cases.</p>
 <div class="callout callout-style-simple callout-caution no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<p><strong>Forensic chemistry is fully de-identified and not fit for surveillance linkage.</strong> No patient, facility, or case-linkage identifiers: cannot be matched to NMC or PIH records without structural re-design of specimen accessioning. The <strong>MLDI system</strong> is the longer-term pathway for surveillance-ready post-mortem toxicology — a separate workstream from S3.</p>
+<p><strong>Forensic chemistry is fully de-identified and not fit for surveillance linkage.</strong> No patient, facility, or case-linkage identifiers: cannot be matched to NMC or PIH records without structural re-design of specimen accessioning. The <strong>MLDI system</strong> is the longer-term pathway for surveillance-ready post-mortem toxicology — a separate workstream from Option 5.</p>
 </div>
 </div>
 </div>
-<p><strong>S3 has a different purpose from S1 and S2</strong> and is <em>not</em> a detection-coverage uplift. S1 and S2 increase the share of true cases that enter the surveillance system. <strong>S3 identifies the proportion of chemical agents being found in severely poisoned living patients at sentinel sites</strong> — the missing evidence base for product-specific regulation (see <a href="../posts/terbufos_policy.html">Terbufos brief</a>). Without S3, ~10,000 survivors/year are recorded with agent “unknown / suspected” and targeted product restriction has no quantitative footing. Some infromation is being captured in the Injury and MOrtality Survey by Megan Prinsloo et al (*** NOTE FOR THE AUTHOER ***)</p>
+<p><strong>Option 5 has a different purpose from Options 1 and 2</strong> and is <em>not</em> a detection-coverage uplift. Options 1 and 2 increase the share of true cases that enter the surveillance system. <strong>Option 5 identifies the proportion of chemical agents being found in severely poisoned living patients at sentinel sites</strong> — the missing evidence base for product-specific regulation (see <a href="../posts/terbufos_policy.html">Terbufos brief</a>). Without Option 5, ~10,000 survivors/year are recorded with agent “unknown / suspected” and targeted product restriction has no quantitative footing. Some infromation is being captured in the Injury and MOrtality Survey by Megan Prinsloo et al (*** NOTE FOR THE AUTHOER ***)</p>
 <p>Cost: ~R1.2M pilot site → ~R3.6M for 5-site rollout, 6–12 months. Funded from research-surveillance streams (SAMRC, Bloomberg, Gates), not the surveillance operating budget. Full quantitative concept in the <a href="../posts/surveillance_concept_note.html">sentinel toxicology appendix</a>.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
@@ -2505,13 +2557,13 @@ Important
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Audit trail — mini-budget backing the S3 sentinel toxicology costs
+<span class="screen-reader-only">Note</span>Audit trail — mini-budget backing Option 5 (sentinel toxicology) costs
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Four component-level parameters in <a href="../amua_import_parameters_v4.csv"><code>amua_import_parameters_v4.csv</code></a> underpin both S3 cost rows. The pilot and 5-site budgets run <strong>below the maximum specimen capacity</strong> (<code>n_specimens_per_site_per_year</code> = 646): the pilot targets ~150 GC-MS screens and ~200 clinical batteries (ramp-up year); the 5-site rollout targets ~100 screens and ~133 batteries per site per year (steady-state research enrolment).</p>
+<p>Four component-level parameters in <a href="../amua_import_parameters_v4.csv"><code>amua_import_parameters_v4.csv</code></a> underpin both Option 5 cost rows. The pilot and 5-site budgets run <strong>below the maximum specimen capacity</strong> (<code>n_specimens_per_site_per_year</code> = 646): the pilot targets ~150 GC-MS screens and ~200 clinical batteries (ramp-up year); the 5-site rollout targets ~100 screens and ~133 batteries per site per year (steady-state research enrolment).</p>
 <p><strong>Pilot — 1 sentinel site (CHB) | <code>c_option6_pilot_year1</code> = R1,200,000/yr</strong></p>
 <table class="caption-top table">
 <colgroup>
@@ -2652,7 +2704,7 @@ Important
 </tr>
 </tbody>
 </table>
-<p><strong>Why S3 is funded from research streams, not the surveillance operating budget.</strong> S3 is a <strong>research investment</strong> — it generates the agent-attribution evidence base for targeted regulatory action. It does not increase P_detect (the share of true cases entering the surveillance system) and therefore does not appear in the S1/S2/MVP operating-cost parameters. Its value is quantified in the <a href="../posts/terbufos_policy.html">Terbufos brief</a> where regulatory restriction converts agent-attribution evidence into deaths averted.</p>
+<p><strong>Why Option 5 is funded from research streams, not the surveillance operating budget.</strong> Option 5 is a <strong>research investment</strong> — it generates the agent-attribution evidence base for targeted regulatory action. It does not increase P_detect (the share of true cases entering the surveillance system) and therefore does not appear in the Option 1, Option 2 or MVP operating-cost parameters. Its value is quantified in the <a href="../posts/terbufos_policy.html">Terbufos brief</a> where regulatory restriction converts agent-attribution evidence into deaths averted.</p>
 <p><strong>Why specimens run below the per-site capacity of 646.</strong> <code>n_specimens_per_site_per_year</code> (= 646) is the <em>anatomically derived maximum</em> (2 specimens per patient × 323 patients — the sample-size calculation for the agent-attribution study at p = 0.3, d = 0.05). Actual enrolment ramps up over the pilot year (~150 screens) and reaches a steady-state of ~100–133 screens per site in a funded 5-site network constrained by the research budget, not by specimen throughput.</p>
 </div>
 </div>
@@ -2661,7 +2713,7 @@ Important
 <section id="summary-comparison" class="level3">
 <h3 class="anchored" data-anchor-id="summary-comparison">Summary comparison</h3>
 <table class="table-striped table-hover caption-top table">
-<caption><strong>Intermediate-outcome costing analysis — surveillance options, base-case.</strong> Costs are 2024–25 ZAR; P_detect is the per-case detection probability anchored to the StatsSA MACOD 2023 mid-burden of 20,960 true cases/year. †<strong>R / pp</strong> = annual operating cost ÷ percentage-point gain in P_detect over status quo (e.g.&nbsp;R9,716 / pp means each additional 1% of cases detected costs R9,716/yr to sustain). S1 and S2 expand coverage within the formal healthcare system; <strong>S3 is a parallel agent-attribution investment</strong>, not a coverage uplift — see option text above. <strong>S4 is a data-quality / investigation-form upgrade</strong> that converts detected cases into actionable source-removal hand-offs to the <a href="../posts/coordination_policy.html">Coordination brief</a>; it does not raise P_detect by design. <strong>S1b is a Phase 2 community layer</strong>, commissioned conditional on MVP pilot data confirming a structural rural/informal gap (trigger: ≥40% of severe cases in low-facility-access districts after 6 months of MVP operation) <strong>and</strong> on PIH/NMC opening a non-clinician intake channel — without that pre-condition the CHW network has no destination for its reports and S1b yields no P_detect gain.</caption>
+<caption><strong>Intermediate-outcome costing analysis — surveillance options, base-case.</strong> Costs are 2024–25 ZAR; P_detect is the per-case detection probability anchored to the StatsSA MACOD 2023 mid-burden of 20,960 true cases/year. †<strong>R / pp</strong> = annual operating cost ÷ percentage-point gain in P_detect over status quo (e.g.&nbsp;R9,716 / pp means each additional 1% of cases detected costs R9,716/yr to sustain). Options 1 and 2 expand coverage within the formal healthcare system; <strong>Option 5 is a parallel agent-attribution investment</strong>, not a coverage uplift — see option text above. <strong>Option 4 is a data-quality / investigation-form upgrade</strong> that converts detected cases into actionable source-removal hand-offs to the <a href="../posts/coordination_policy.html">Coordination brief</a>; it does not raise P_detect by design. <strong>Option 3 is a Phase 2 community layer</strong>, commissioned conditional on MVP pilot data confirming a structural rural/informal gap (trigger: ≥40% of severe cases in low-facility-access districts after 6 months of MVP operation) <strong>and</strong> on PIH/NMC opening a non-clinician intake channel — without that pre-condition the CHW network has no destination for its reports and Option 3 yields no P_detect gain.</caption>
 <thead>
 <tr class="header">
 <th style="text-align: left;">Option</th>
@@ -2688,7 +2740,7 @@ Important
 <td style="text-align: left;"><a href="../parameters_hub.html#tbl-detection"><code>d_status_quo</code></a></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">S2: BChE auto-notify <em>(first build)</em></td>
+<td style="text-align: left;">Option 1 — BChE auto-notify <em>(first build; CSV: <code>c_S2_*</code>)</em></td>
 <td style="text-align: right;">R200,000</td>
 <td style="text-align: right;">R55,000</td>
 <td style="text-align: right;">R255,000</td>
@@ -2699,7 +2751,7 @@ Important
 <td style="text-align: left;"><a href="../parameters_hub.html#tbl-detection"><code>d_S2_BChE_autonotify</code></a></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">S1: PIH dashboard + MVD (+AfriTox agent name) <em>(second build)</em></td>
+<td style="text-align: left;">Option 2 — PIH dashboard + MVD (+AfriTox agent name) <em>(second build; CSV: <code>c_S1_*</code>)</em></td>
 <td style="text-align: right;">R40,000</td>
 <td style="text-align: right;">R82,000</td>
 <td style="text-align: right;">R122,000</td>
@@ -2710,7 +2762,7 @@ Important
 <td style="text-align: left;"><a href="../parameters_hub.html#tbl-detection"><code>d_S1_PIH_MVD</code></a></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><strong>S2 + S1 (Surveillance MVP)</strong></td>
+<td style="text-align: left;"><strong>Surveillance MVP — Option 1 + Option 2</strong></td>
 <td style="text-align: right;"><strong>R240,000</strong></td>
 <td style="text-align: right;"><strong>R137,000</strong></td>
 <td style="text-align: right;"><strong>R377,000</strong></td>
@@ -2721,7 +2773,7 @@ Important
 <td style="text-align: left;"><a href="../parameters_hub.html#tbl-detection"><code>d_surveillance_mvp</code></a></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">S1b: Phase 2 community layer <em>(pilot: FS + Gauteng; national conditional on pilot; <strong>requires PIH/NMC intake from non-clinicians</strong>)</em></td>
+<td style="text-align: left;">Option 3 — Community layer (Phase 2) <em>(pilot: FS + Gauteng; national conditional on pilot; <strong>requires PIH/NMC intake from non-clinicians</strong>; CSV: <code>c_S1b_*</code>)</em></td>
 <td style="text-align: right;">R1M–R3.5M</td>
 <td style="text-align: right;">Pilot R0.8M/yr; national R2.5M/yr</td>
 <td style="text-align: right;">R1.8M–R6.0M</td>
@@ -2732,7 +2784,7 @@ Important
 <td style="text-align: left;"><a href="../parameters_hub.html"><code>d_S1b_event_community_mid</code></a></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">S4: NMC CIF + agricultural extension (bridge to coordination)</td>
+<td style="text-align: left;">Option 4 — NMC CIF + agricultural extension <em>(bridge to coordination)</em></td>
 <td style="text-align: right;">R45,000</td>
 <td style="text-align: right;">R35,000/yr</td>
 <td style="text-align: right;">R80,000</td>
@@ -2743,7 +2795,7 @@ Important
 <td style="text-align: left;">NDoH 2023 CIF guideline</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">S3: Sentinel toxicology (agent attribution — distinct purpose, research-funded)</td>
+<td style="text-align: left;">Option 5 — Sentinel toxicology <em>(agent attribution — distinct purpose, research-funded; CSV: <code>c_option6_*</code>)</em></td>
 <td style="text-align: right;">— (incl.&nbsp;in yr 1)</td>
 <td style="text-align: right;">R3.6M/yr (5-site)</td>
 <td style="text-align: right;">R1.2M (1-site pilot)</td>
@@ -2789,16 +2841,16 @@ Important
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">S1 PIH dashboard + MVD (+ AfriTox harmonisation)</td>
+<td style="text-align: left;">Option 2 — PIH dashboard + MVD (+ AfriTox harmonisation)</td>
 <td style="text-align: left;"><code>c_S1_PIH_MVD_op</code></td>
 <td style="text-align: right;">82,000</td>
-<td style="text-align: left;">S1 audit trail</td>
+<td style="text-align: left;">Option 2 audit trail</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">S2 BChE auto-notification</td>
+<td style="text-align: left;">Option 1 — BChE auto-notification</td>
 <td style="text-align: left;"><code>c_S2_BChE_autonotify_op</code></td>
 <td style="text-align: right;">55,000</td>
-<td style="text-align: left;">S2 audit trail</td>
+<td style="text-align: left;">Option 1 audit trail</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><strong>Surveillance MVP total</strong></td>
@@ -2808,13 +2860,13 @@ Important
 </tr>
 </tbody>
 </table>
-<p><strong>No double-counting.</strong> The S1 and S2 cost items sit on entirely separate operational pathways:</p>
+<p><strong>No double-counting.</strong> The Option 1 and Option 2 cost items sit on entirely separate operational pathways:</p>
 <ul>
-<li><strong>S1 items</strong> (PIH cloud hosting, MVD ETL pipeline, AfriTox harmonisation, QA, licences/SMS) are driven by PIH call-record flows and the NICD/PIH data-dictionary agreement.</li>
-<li><strong>S2 items</strong> (NHLS HL7 middleware, LIS IT maintenance, NHLS scientist QA, NICD alert triage) are driven by the NHLS LIS auto-notification rule.</li>
+<li><strong>Option 2 items</strong> (PIH cloud hosting, MVD ETL pipeline, AfriTox harmonisation, QA, licences/SMS) are driven by PIH call-record flows and the NICD/PIH data-dictionary agreement.</li>
+<li><strong>Option 1 items</strong> (NHLS HL7 middleware, LIS IT maintenance, NHLS scientist QA, NICD alert triage) are driven by the NHLS LIS auto-notification rule.</li>
 </ul>
-<p>The two NICD analyst FTE allocations sum to ~0.05 FTE total (S1: ~0.035 FTE; S2: ~0.015 FTE) — within the 0.2 FTE analyst post already costed in the §7 Tab 1 NMC baseline. <strong>The MVP does not require a new NICD headcount.</strong></p>
-<p><strong>Setup.</strong> <code>c_surv_MVP_setup</code> = R240,000 (one-off) = <code>c_S1_PIH_MVD_setup</code> (R40,000) + <code>c_S2_BChE_autonotify_setup</code> (R200,000). S0 is already operational and its setup cost was separately incurred; it is not double-counted here. The S2 LIS HL7 reconfiguration (R200,000) dominates.</p>
+<p>The two NICD analyst FTE allocations sum to ~0.05 FTE total (Option 2: ~0.035 FTE; Option 1: ~0.015 FTE) — within the 0.2 FTE analyst post already costed in the §7 Tab 1 NMC baseline. <strong>The MVP does not require a new NICD headcount.</strong></p>
+<p><strong>Setup.</strong> <code>c_surv_MVP_setup</code> = R240,000 (one-off) = <code>c_S1_PIH_MVD_setup</code> (R40,000) + <code>c_S2_BChE_autonotify_setup</code> (R200,000). S0 is already operational and its setup cost was separately incurred; it is not double-counted here. The Option 1 LIS HL7 reconfiguration (R200,000) dominates.</p>
 </div>
 </div>
 </div>
@@ -2844,27 +2896,27 @@ Important
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">S1 — PIH dashboard + MVD (+ AfriTox harmonisation)</td>
+<td style="text-align: left;">Option 2 — PIH dashboard + MVD (+ AfriTox harmonisation)</td>
 <td style="text-align: left;"><code>c_S1_PIH_MVD_setup</code></td>
 <td style="text-align: left;"><code>c_S1_PIH_MVD_op</code></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">S2 — BChE auto-notification</td>
+<td style="text-align: left;">Option 1 — BChE auto-notification</td>
 <td style="text-align: left;"><code>c_S2_BChE_autonotify_setup</code></td>
 <td style="text-align: left;"><code>c_S2_BChE_autonotify_op</code></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Surveillance MVP (S1 + S2)</td>
+<td style="text-align: left;">Surveillance MVP (Option 1 + Option 2)</td>
 <td style="text-align: left;"><code>c_surv_MVP_setup</code></td>
 <td style="text-align: left;"><code>c_surv_MVP_op</code></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">S1b — event-based / community <em>(sensitivity)</em></td>
+<td style="text-align: left;">Option 3 — community layer <em>(sensitivity: lo / mid / hi)</em></td>
 <td style="text-align: left;"><code>c_S1b_setup_mid</code> (lo/hi also exist)</td>
 <td style="text-align: left;"><code>c_S1b_op_mid</code> (lo/hi also exist)</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">S0 — NHLS-NMC IT feed (now operational)</td>
+<td style="text-align: left;">S0 — NHLS-NMC IT feed (now operational, in baseline)</td>
 <td style="text-align: left;"><code>c_S0_NHLS_NMC_feed_setup</code></td>
 <td style="text-align: left;"><code>c_S0_NHLS_NMC_feed_op</code></td>
 </tr>
@@ -2875,7 +2927,8 @@ Important
 </tr>
 </tbody>
 </table>
-<p><strong>How to audit:</strong> - Each parameter above is a row in the CSV, with value, distribution, and source citation. - The same parameter names are used in the decision tree (see §6) and the marginal cost table (§7, Tab 5). - Every option has a <strong>collapsible mini-budget audit trail</strong> directly below its option text showing how each bottom-line figure is built up from unit-cost and personnel-time components: S0 · S2 · S1 · MVP · S1b · S3. - All mini-budgets use the same CTE anchors as the §7 status-quo build-up (DPSA salary scales, NHLS Patterson grades, SITA contracting benchmarks, AWS af-south-1 pricing), so the marginal option costs are consistent with and additive to the costed baseline. - To update a cost, edit the value in the CSV and re-render — all outputs update automatically.</p>
+<p><strong>Parameter codes vs option numbers.</strong> The CSV parameter names (<code>c_S1_*</code>, <code>c_S2_*</code>, <code>c_S1b_*</code>, <code>c_option6_*</code>) are stable identifiers used across the model, decision tree (§6) and other policy briefs — they pre-date this brief’s narrative reorder and intentionally do not follow the Option 1–5 display sequence. Use the cross-walk in the “Reading guide” callout at the top of §5 to translate between the two.</p>
+<p><strong>How to audit:</strong> - Each parameter above is a row in the CSV, with value, distribution, and source citation. - The same parameter names are used in the decision tree (see §6) and the marginal cost table (§7, Tab 5). - Every option has a <strong>collapsible mini-budget audit trail</strong> directly below its option text showing how each bottom-line figure is built up from unit-cost and personnel-time components: S0 · Option 1: BChE · Option 2: PIH MVD · MVP (1+2) · Option 3: Community · Option 5: Sentinel. - All mini-budgets use the same CTE anchors as the §7 status-quo build-up (DPSA salary scales, NHLS Patterson grades, SITA contracting benchmarks, AWS af-south-1 pricing), so the marginal option costs are consistent with and additive to the costed baseline. - To update a cost, edit the value in the CSV and re-render — all outputs update automatically.</p>
 </div>
 </div>
 </section>
@@ -3001,21 +3054,21 @@ Important
 <td><code>d_status_quo</code></td>
 </tr>
 <tr class="even">
-<td>S1 — PIH MVD + dashboard</td>
+<td>Option 2 — PIH MVD + dashboard</td>
 <td>NMC + PIH</td>
 <td style="text-align: right;"><img src="https://latex.codecogs.com/png.latex?(1%7B,%7D013%20+%201%7B,%7D158)%20/%2020%7B,%7D960%20=%202%7B,%7D171%20/%2020%7B,%7D960"></td>
 <td style="text-align: right;"><strong>0.104</strong></td>
 <td><code>d_S1_PIH_MVD</code></td>
 </tr>
 <tr class="odd">
-<td>S2 — BChE auto-notify</td>
+<td>Option 1 — BChE auto-notify</td>
 <td>NMC + NHLS severe</td>
 <td style="text-align: right;"><img src="https://latex.codecogs.com/png.latex?(1%7B,%7D013%20+%201%7B,%7D779)%20/%2020%7B,%7D960%20=%202%7B,%7D792%20/%2020%7B,%7D960"></td>
 <td style="text-align: right;"><strong>0.133</strong></td>
 <td><code>d_S2_BChE_autonotify</code></td>
 </tr>
 <tr class="even">
-<td><strong>Surveillance MVP (S1 + S2)</strong></td>
+<td><strong>Surveillance MVP (Option 1 + Option 2)</strong></td>
 <td>NMC + NHLS severe + PIH</td>
 <td style="text-align: right;"><img src="https://latex.codecogs.com/png.latex?(1%7B,%7D013%20+%201%7B,%7D779%20+%201%7B,%7D158)%20/%2020%7B,%7D960%20=%203%7B,%7D950%20/%2020%7B,%7D960"></td>
 <td style="text-align: right;"><strong>0.189</strong></td>
@@ -3032,7 +3085,7 @@ Important
 <li>Mid (CFR = 0.125): <img src="https://latex.codecogs.com/png.latex?P_%5Ctext%7Bdetect%7D%5E%7BSQ%7D%20=%200.048"> (implied burden 20,960)</li>
 <li>Upper (CFR = 0.15): <img src="https://latex.codecogs.com/png.latex?P_%5Ctext%7Bdetect%7D%5E%7BSQ%7D%20=%201%7B,%7D013%20%5Ctimes%200.15%20/%202%7B,%7D620%20=%200.058"> (implied burden 17,467)</li>
 </ul>
-<p>The same CFR bracket applies proportionally to S1/S2/MVP — e.g.&nbsp;the MVP varies from 0.158 (CFR 0.15) to 0.236 (CFR 0.10).</p>
+<p>The same CFR bracket applies proportionally to Option 1, Option 2 and the MVP — e.g.&nbsp;the MVP varies from 0.158 (CFR 0.15) to 0.236 (CFR 0.10).</p>
 </section>
 <section id="step-5-why-this-replaces-the-v1-value-of-0.45" class="level3">
 <h3 class="anchored" data-anchor-id="step-5-why-this-replaces-the-v1-value-of-0.45">Step 5 — why this replaces the v1 value of 0.45</h3>
@@ -3048,10 +3101,10 @@ Important
 <div>
 <pre class="mermaid mermaid-js">flowchart TD
     INV{Surveillance&lt;br/&gt;investment?} --&gt;|None| SQ[Status quo&lt;br/&gt;P_detect = 0.048&lt;br/&gt;~5% of true cases]:::bad
-    INV --&gt;|S1 only&lt;br/&gt;R82,000/yr| O1[+ PIH MVD&lt;br/&gt;P_detect = 0.104&lt;br/&gt;+5.6 pp vs SQ]:::warn
-    INV --&gt;|S2 only&lt;br/&gt;R55,000/yr| O2[+ BChE auto-notify&lt;br/&gt;P_detect = 0.133&lt;br/&gt;+8.5 pp vs SQ]:::warn
-    INV --&gt;|S1 + S2&lt;br/&gt;R137,000/yr| MVP[Surveillance MVP&lt;br/&gt;P_detect = 0.189&lt;br/&gt;+14.1 pp vs SQ]:::good
-    S3[S3 Sentinel toxicology&lt;br/&gt;agent attribution&lt;br/&gt;&lt;i&gt;parallel investment —&lt;br/&gt;see Terbufos brief&lt;/i&gt;]:::aux
+    INV --&gt;|Option 2 only&lt;br/&gt;R82,000/yr| O1[+ PIH MVD&lt;br/&gt;P_detect = 0.104&lt;br/&gt;+5.6 pp vs SQ]:::warn
+    INV --&gt;|Option 1 only&lt;br/&gt;R55,000/yr| O2[+ BChE auto-notify&lt;br/&gt;P_detect = 0.133&lt;br/&gt;+8.5 pp vs SQ]:::warn
+    INV --&gt;|Option 1 + Option 2&lt;br/&gt;R137,000/yr| MVP[Surveillance MVP&lt;br/&gt;P_detect = 0.189&lt;br/&gt;+14.1 pp vs SQ]:::good
+    OPT5[Option 5 Sentinel toxicology&lt;br/&gt;agent attribution&lt;br/&gt;&lt;i&gt;parallel investment —&lt;br/&gt;see Terbufos brief&lt;/i&gt;]:::aux
 
     classDef bad fill:#fdd,stroke:#cc0000,stroke-width:1.5px
     classDef warn fill:#ffe9b3,stroke:#cc8800,stroke-width:1.5px
@@ -3059,18 +3112,18 @@ Important
     classDef aux fill:#e6f0ff,stroke:#3366cc,stroke-width:1.5px,stroke-dasharray: 5 5
 </pre>
 </div>
-<p></p><figcaption> Surveillance investment decision tree — per-case detection uplift only. Each option raises P_detect, the share of true annual cases (~20,960 StatsSA-anchored mid-burden) that enter the surveillance system. The absolute burden impact of these uplifts depends on response-side parameters covered in the coordination and terbufos briefs. S3 (sentinel toxicology) is shown separately because it is an agent-attribution investment, not a coverage uplift. All numerical values pulled from amua_import_parameters_v4.csv at render time.</figcaption> </figure><p></p>
+<p></p><figcaption> Surveillance investment decision tree — per-case detection uplift only. Each option raises P_detect, the share of true annual cases (~20,960 StatsSA-anchored mid-burden) that enter the surveillance system. The absolute burden impact of these uplifts depends on response-side parameters covered in the coordination and terbufos briefs. Option 5 (sentinel toxicology) is shown separately because it is an agent-attribution investment, not a coverage uplift. All numerical values pulled from amua_import_parameters_v4.csv at render time.</figcaption> </figure><p></p>
 </div>
 </div>
 </div>
-<p>The tree reports <strong>per-case detection uplift in percentage points</strong>. The status-quo node is a <strong>measurement</strong> of the current detection gap (1,013 NMC notifications ÷ ~20,960 implied true cases), not a baseline from which deaths are counted as averted — surveillance has no response attached. Four detection inputs (<code>d_status_quo</code>, <code>d_S2_BChE_autonotify</code>, <code>d_S1_PIH_MVD</code>, <code>d_surveillance_mvp</code>) and three operating-cost rows (<code>c_S1_PIH_MVD_op</code>, <code>c_S2_BChE_autonotify_op</code>, <code>c_surv_MVP_op</code>) live in <a href="../amua_import_parameters_v4.csv"><code>amua_import_parameters_v4.csv</code></a> — edit the CSV and re-render. Option S3 sits outside this tree: it is an agent-attribution investment whose value is parameterised in the <a href="../posts/terbufos_policy.html">Terbufos brief</a> and the <a href="../posts/surveillance_concept_note.html">sentinel toxicology appendix</a>.</p>
+<p>The tree reports <strong>per-case detection uplift in percentage points</strong>. The status-quo node is a <strong>measurement</strong> of the current detection gap (1,013 NMC notifications ÷ ~20,960 implied true cases), not a baseline from which deaths are counted as averted — surveillance has no response attached. Four detection inputs (<code>d_status_quo</code>, <code>d_S2_BChE_autonotify</code>, <code>d_S1_PIH_MVD</code>, <code>d_surveillance_mvp</code>) and three operating-cost rows (<code>c_S1_PIH_MVD_op</code>, <code>c_S2_BChE_autonotify_op</code>, <code>c_surv_MVP_op</code>) live in <a href="../amua_import_parameters_v4.csv"><code>amua_import_parameters_v4.csv</code></a> — edit the CSV and re-render. Option 5 sits outside this tree: it is an agent-attribution investment whose value is parameterised in the <a href="../posts/terbufos_policy.html">Terbufos brief</a> and the <a href="../posts/surveillance_concept_note.html">sentinel toxicology appendix</a>.</p>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<p><strong>S1b (Phase 2 community layer) is not modelled in this decision tree.</strong> The MVP arm represents the ceiling achievable by linking existing administrative streams. S1b would require a new arm with P_detect drawn from <code>d_S1b_event_community_mid</code> = 0.40 (range 0.25–0.55) and annual operating cost drawn from <code>c_S1b_op_mid</code> = 1,500,000. It is excluded from the current tree because it is a Phase 2 option commissioned conditional on MVP pilot results, not a parallel near-term decision; and because its coordination cost depends on the net false-positive rate after two-tier triage (<code>p_fp_S1b_mid</code> = 0.35 gross; ~8–12% net) modelled in the <a href="../posts/coordination_policy.html">Coordination brief</a>.</p>
+<p><strong>Option 3 (Phase 2 community layer) is not modelled in this decision tree.</strong> The MVP arm represents the ceiling achievable by linking existing administrative streams. Option 3 would require a new arm with P_detect drawn from <code>d_S1b_event_community_mid</code> = 0.40 (range 0.25–0.55) and annual operating cost drawn from <code>c_S1b_op_mid</code> = 1,500,000. It is excluded from the current tree because it is a Phase 2 option commissioned conditional on MVP pilot results, not a parallel near-term decision; and because its coordination cost depends on the net false-positive rate after two-tier triage (<code>p_fp_S1b_mid</code> = 0.35 gross; ~8–12% net) modelled in the <a href="../posts/coordination_policy.html">Coordination brief</a>.</p>
 </div>
 </div>
 </div>
@@ -3094,7 +3147,7 @@ Important
 <li><strong><code>system</code></strong> — infrastructure, hosting, SMS, reagents by stream</li>
 <li><strong><code>allocation</code></strong> — what share of each stream’s total volume is pesticide-related (e.g.&nbsp;~100 pesticide notifications/month out of ~10,000 total NMC notifications ≈ <strong>0.84 %</strong> of NMC platform OPEX is attributable to pesticide work)</li>
 </ul>
-<p>To revise a unit cost or FTE, <strong>edit a cell in the .xlsx and re-render</strong> — every number below updates. The CSV (<code>amua_import_parameters_v4.csv</code>) remains the source of truth for <em>model</em> parameters and <em>marginal</em> policy-option costs (S1 / S2 / MVP). Salary anchors come from the DPSA scales (L10–11), NHLS Patterson grades (D/E), DoH OSD scales (MO, pharmacy), NICD recruitment notices and SITA contracting benchmarks; system anchors come from NHLS State Tender RT-262, AWS af-south-1 pricing, Clickatell/BulkSMS SA, and the NICD ICT budget — full citations are in each row’s <code>source</code> column.</p>
+<p>To revise a unit cost or FTE, <strong>edit a cell in the .xlsx and re-render</strong> — every number below updates. The CSV (<code>amua_import_parameters_v4.csv</code>) remains the source of truth for <em>model</em> parameters and <em>marginal</em> policy-option costs (Option 1 / Option 2 / MVP). Salary anchors come from the DPSA scales (L10–11), NHLS Patterson grades (D/E), DoH OSD scales (MO, pharmacy), NICD recruitment notices and SITA contracting benchmarks; system anchors come from NHLS State Tender RT-262, AWS af-south-1 pricing, Clickatell/BulkSMS SA, and the NICD ICT budget — full citations are in each row’s <code>source</code> column.</p>
 </div>
 </div>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
@@ -3110,23 +3163,23 @@ Table&nbsp;1
 </figcaption>
 <div aria-describedby="tbl-cost-personnel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="qfmqzmgizz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#qfmqzmgizz table {
+<div id="csdcglywjt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#csdcglywjt table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#qfmqzmgizz thead, #qfmqzmgizz tbody, #qfmqzmgizz tfoot, #qfmqzmgizz tr, #qfmqzmgizz td, #qfmqzmgizz th {
+#csdcglywjt thead, #csdcglywjt tbody, #csdcglywjt tfoot, #csdcglywjt tr, #csdcglywjt td, #csdcglywjt th {
   border-style: none;
 }
 
-#qfmqzmgizz p {
+#csdcglywjt p {
   margin: 0;
   padding: 0;
 }
 
-#qfmqzmgizz .gt_table {
+#csdcglywjt .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3152,12 +3205,12 @@ Table&nbsp;1
   border-left-color: #D3D3D3;
 }
 
-#qfmqzmgizz .gt_caption {
+#csdcglywjt .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#qfmqzmgizz .gt_title {
+#csdcglywjt .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -3169,7 +3222,7 @@ Table&nbsp;1
   border-bottom-width: 0;
 }
 
-#qfmqzmgizz .gt_subtitle {
+#csdcglywjt .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3181,7 +3234,7 @@ Table&nbsp;1
   border-top-width: 0;
 }
 
-#qfmqzmgizz .gt_heading {
+#csdcglywjt .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3193,13 +3246,13 @@ Table&nbsp;1
   border-right-color: #D3D3D3;
 }
 
-#qfmqzmgizz .gt_bottom_border {
+#csdcglywjt .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#qfmqzmgizz .gt_col_headings {
+#csdcglywjt .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3214,7 +3267,7 @@ Table&nbsp;1
   border-right-color: #D3D3D3;
 }
 
-#qfmqzmgizz .gt_col_heading {
+#csdcglywjt .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3234,7 +3287,7 @@ Table&nbsp;1
   overflow-x: hidden;
 }
 
-#qfmqzmgizz .gt_column_spanner_outer {
+#csdcglywjt .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3246,15 +3299,15 @@ Table&nbsp;1
   padding-right: 4px;
 }
 
-#qfmqzmgizz .gt_column_spanner_outer:first-child {
+#csdcglywjt .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#qfmqzmgizz .gt_column_spanner_outer:last-child {
+#csdcglywjt .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#qfmqzmgizz .gt_column_spanner {
+#csdcglywjt .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3266,11 +3319,11 @@ Table&nbsp;1
   width: 100%;
 }
 
-#qfmqzmgizz .gt_spanner_row {
+#csdcglywjt .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#qfmqzmgizz .gt_group_heading {
+#csdcglywjt .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3296,7 +3349,7 @@ Table&nbsp;1
   text-align: left;
 }
 
-#qfmqzmgizz .gt_empty_group_heading {
+#csdcglywjt .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3311,15 +3364,15 @@ Table&nbsp;1
   vertical-align: middle;
 }
 
-#qfmqzmgizz .gt_from_md > :first-child {
+#csdcglywjt .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#qfmqzmgizz .gt_from_md > :last-child {
+#csdcglywjt .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#qfmqzmgizz .gt_row {
+#csdcglywjt .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3338,7 +3391,7 @@ Table&nbsp;1
   overflow-x: hidden;
 }
 
-#qfmqzmgizz .gt_stub {
+#csdcglywjt .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3351,7 +3404,7 @@ Table&nbsp;1
   padding-right: 5px;
 }
 
-#qfmqzmgizz .gt_stub_row_group {
+#csdcglywjt .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3365,15 +3418,15 @@ Table&nbsp;1
   vertical-align: top;
 }
 
-#qfmqzmgizz .gt_row_group_first td {
+#csdcglywjt .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#qfmqzmgizz .gt_row_group_first th {
+#csdcglywjt .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#qfmqzmgizz .gt_summary_row {
+#csdcglywjt .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3383,16 +3436,16 @@ Table&nbsp;1
   padding-right: 5px;
 }
 
-#qfmqzmgizz .gt_first_summary_row {
+#csdcglywjt .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#qfmqzmgizz .gt_first_summary_row.thick {
+#csdcglywjt .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#qfmqzmgizz .gt_last_summary_row {
+#csdcglywjt .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3402,7 +3455,7 @@ Table&nbsp;1
   border-bottom-color: #D3D3D3;
 }
 
-#qfmqzmgizz .gt_grand_summary_row {
+#csdcglywjt .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3412,7 +3465,7 @@ Table&nbsp;1
   padding-right: 5px;
 }
 
-#qfmqzmgizz .gt_first_grand_summary_row {
+#csdcglywjt .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3422,7 +3475,7 @@ Table&nbsp;1
   border-top-color: #D3D3D3;
 }
 
-#qfmqzmgizz .gt_last_grand_summary_row_top {
+#csdcglywjt .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3432,11 +3485,11 @@ Table&nbsp;1
   border-bottom-color: #D3D3D3;
 }
 
-#qfmqzmgizz .gt_striped {
+#csdcglywjt .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#qfmqzmgizz .gt_table_body {
+#csdcglywjt .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3445,7 +3498,7 @@ Table&nbsp;1
   border-bottom-color: #D3D3D3;
 }
 
-#qfmqzmgizz .gt_footnotes {
+#csdcglywjt .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3459,7 +3512,7 @@ Table&nbsp;1
   border-right-color: #D3D3D3;
 }
 
-#qfmqzmgizz .gt_footnote {
+#csdcglywjt .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3468,7 +3521,7 @@ Table&nbsp;1
   padding-right: 5px;
 }
 
-#qfmqzmgizz .gt_sourcenotes {
+#csdcglywjt .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3482,7 +3535,7 @@ Table&nbsp;1
   border-right-color: #D3D3D3;
 }
 
-#qfmqzmgizz .gt_sourcenote {
+#csdcglywjt .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3490,72 +3543,72 @@ Table&nbsp;1
   padding-right: 5px;
 }
 
-#qfmqzmgizz .gt_left {
+#csdcglywjt .gt_left {
   text-align: left;
 }
 
-#qfmqzmgizz .gt_center {
+#csdcglywjt .gt_center {
   text-align: center;
 }
 
-#qfmqzmgizz .gt_right {
+#csdcglywjt .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#qfmqzmgizz .gt_font_normal {
+#csdcglywjt .gt_font_normal {
   font-weight: normal;
 }
 
-#qfmqzmgizz .gt_font_bold {
+#csdcglywjt .gt_font_bold {
   font-weight: bold;
 }
 
-#qfmqzmgizz .gt_font_italic {
+#csdcglywjt .gt_font_italic {
   font-style: italic;
 }
 
-#qfmqzmgizz .gt_super {
+#csdcglywjt .gt_super {
   font-size: 65%;
 }
 
-#qfmqzmgizz .gt_footnote_marks {
+#csdcglywjt .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#qfmqzmgizz .gt_asterisk {
+#csdcglywjt .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#qfmqzmgizz .gt_indent_1 {
+#csdcglywjt .gt_indent_1 {
   text-indent: 5px;
 }
 
-#qfmqzmgizz .gt_indent_2 {
+#csdcglywjt .gt_indent_2 {
   text-indent: 10px;
 }
 
-#qfmqzmgizz .gt_indent_3 {
+#csdcglywjt .gt_indent_3 {
   text-indent: 15px;
 }
 
-#qfmqzmgizz .gt_indent_4 {
+#csdcglywjt .gt_indent_4 {
   text-indent: 20px;
 }
 
-#qfmqzmgizz .gt_indent_5 {
+#csdcglywjt .gt_indent_5 {
   text-indent: 25px;
 }
 
-#qfmqzmgizz .katex-display {
+#csdcglywjt .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#qfmqzmgizz div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#csdcglywjt div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -3665,23 +3718,23 @@ Table&nbsp;2
 </figcaption>
 <div aria-describedby="tbl-cost-system-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="negkqbsrtf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#negkqbsrtf table {
+<div id="mthatrzvxo" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#mthatrzvxo table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#negkqbsrtf thead, #negkqbsrtf tbody, #negkqbsrtf tfoot, #negkqbsrtf tr, #negkqbsrtf td, #negkqbsrtf th {
+#mthatrzvxo thead, #mthatrzvxo tbody, #mthatrzvxo tfoot, #mthatrzvxo tr, #mthatrzvxo td, #mthatrzvxo th {
   border-style: none;
 }
 
-#negkqbsrtf p {
+#mthatrzvxo p {
   margin: 0;
   padding: 0;
 }
 
-#negkqbsrtf .gt_table {
+#mthatrzvxo .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3707,12 +3760,12 @@ Table&nbsp;2
   border-left-color: #D3D3D3;
 }
 
-#negkqbsrtf .gt_caption {
+#mthatrzvxo .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#negkqbsrtf .gt_title {
+#mthatrzvxo .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -3724,7 +3777,7 @@ Table&nbsp;2
   border-bottom-width: 0;
 }
 
-#negkqbsrtf .gt_subtitle {
+#mthatrzvxo .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3736,7 +3789,7 @@ Table&nbsp;2
   border-top-width: 0;
 }
 
-#negkqbsrtf .gt_heading {
+#mthatrzvxo .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3748,13 +3801,13 @@ Table&nbsp;2
   border-right-color: #D3D3D3;
 }
 
-#negkqbsrtf .gt_bottom_border {
+#mthatrzvxo .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#negkqbsrtf .gt_col_headings {
+#mthatrzvxo .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3769,7 +3822,7 @@ Table&nbsp;2
   border-right-color: #D3D3D3;
 }
 
-#negkqbsrtf .gt_col_heading {
+#mthatrzvxo .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3789,7 +3842,7 @@ Table&nbsp;2
   overflow-x: hidden;
 }
 
-#negkqbsrtf .gt_column_spanner_outer {
+#mthatrzvxo .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3801,15 +3854,15 @@ Table&nbsp;2
   padding-right: 4px;
 }
 
-#negkqbsrtf .gt_column_spanner_outer:first-child {
+#mthatrzvxo .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#negkqbsrtf .gt_column_spanner_outer:last-child {
+#mthatrzvxo .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#negkqbsrtf .gt_column_spanner {
+#mthatrzvxo .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3821,11 +3874,11 @@ Table&nbsp;2
   width: 100%;
 }
 
-#negkqbsrtf .gt_spanner_row {
+#mthatrzvxo .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#negkqbsrtf .gt_group_heading {
+#mthatrzvxo .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3851,7 +3904,7 @@ Table&nbsp;2
   text-align: left;
 }
 
-#negkqbsrtf .gt_empty_group_heading {
+#mthatrzvxo .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3866,15 +3919,15 @@ Table&nbsp;2
   vertical-align: middle;
 }
 
-#negkqbsrtf .gt_from_md > :first-child {
+#mthatrzvxo .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#negkqbsrtf .gt_from_md > :last-child {
+#mthatrzvxo .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#negkqbsrtf .gt_row {
+#mthatrzvxo .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3893,7 +3946,7 @@ Table&nbsp;2
   overflow-x: hidden;
 }
 
-#negkqbsrtf .gt_stub {
+#mthatrzvxo .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3906,7 +3959,7 @@ Table&nbsp;2
   padding-right: 5px;
 }
 
-#negkqbsrtf .gt_stub_row_group {
+#mthatrzvxo .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3920,15 +3973,15 @@ Table&nbsp;2
   vertical-align: top;
 }
 
-#negkqbsrtf .gt_row_group_first td {
+#mthatrzvxo .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#negkqbsrtf .gt_row_group_first th {
+#mthatrzvxo .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#negkqbsrtf .gt_summary_row {
+#mthatrzvxo .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3938,16 +3991,16 @@ Table&nbsp;2
   padding-right: 5px;
 }
 
-#negkqbsrtf .gt_first_summary_row {
+#mthatrzvxo .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#negkqbsrtf .gt_first_summary_row.thick {
+#mthatrzvxo .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#negkqbsrtf .gt_last_summary_row {
+#mthatrzvxo .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3957,7 +4010,7 @@ Table&nbsp;2
   border-bottom-color: #D3D3D3;
 }
 
-#negkqbsrtf .gt_grand_summary_row {
+#mthatrzvxo .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3967,7 +4020,7 @@ Table&nbsp;2
   padding-right: 5px;
 }
 
-#negkqbsrtf .gt_first_grand_summary_row {
+#mthatrzvxo .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3977,7 +4030,7 @@ Table&nbsp;2
   border-top-color: #D3D3D3;
 }
 
-#negkqbsrtf .gt_last_grand_summary_row_top {
+#mthatrzvxo .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3987,11 +4040,11 @@ Table&nbsp;2
   border-bottom-color: #D3D3D3;
 }
 
-#negkqbsrtf .gt_striped {
+#mthatrzvxo .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#negkqbsrtf .gt_table_body {
+#mthatrzvxo .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4000,7 +4053,7 @@ Table&nbsp;2
   border-bottom-color: #D3D3D3;
 }
 
-#negkqbsrtf .gt_footnotes {
+#mthatrzvxo .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4014,7 +4067,7 @@ Table&nbsp;2
   border-right-color: #D3D3D3;
 }
 
-#negkqbsrtf .gt_footnote {
+#mthatrzvxo .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -4023,7 +4076,7 @@ Table&nbsp;2
   padding-right: 5px;
 }
 
-#negkqbsrtf .gt_sourcenotes {
+#mthatrzvxo .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4037,7 +4090,7 @@ Table&nbsp;2
   border-right-color: #D3D3D3;
 }
 
-#negkqbsrtf .gt_sourcenote {
+#mthatrzvxo .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -4045,72 +4098,72 @@ Table&nbsp;2
   padding-right: 5px;
 }
 
-#negkqbsrtf .gt_left {
+#mthatrzvxo .gt_left {
   text-align: left;
 }
 
-#negkqbsrtf .gt_center {
+#mthatrzvxo .gt_center {
   text-align: center;
 }
 
-#negkqbsrtf .gt_right {
+#mthatrzvxo .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#negkqbsrtf .gt_font_normal {
+#mthatrzvxo .gt_font_normal {
   font-weight: normal;
 }
 
-#negkqbsrtf .gt_font_bold {
+#mthatrzvxo .gt_font_bold {
   font-weight: bold;
 }
 
-#negkqbsrtf .gt_font_italic {
+#mthatrzvxo .gt_font_italic {
   font-style: italic;
 }
 
-#negkqbsrtf .gt_super {
+#mthatrzvxo .gt_super {
   font-size: 65%;
 }
 
-#negkqbsrtf .gt_footnote_marks {
+#mthatrzvxo .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#negkqbsrtf .gt_asterisk {
+#mthatrzvxo .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#negkqbsrtf .gt_indent_1 {
+#mthatrzvxo .gt_indent_1 {
   text-indent: 5px;
 }
 
-#negkqbsrtf .gt_indent_2 {
+#mthatrzvxo .gt_indent_2 {
   text-indent: 10px;
 }
 
-#negkqbsrtf .gt_indent_3 {
+#mthatrzvxo .gt_indent_3 {
   text-indent: 15px;
 }
 
-#negkqbsrtf .gt_indent_4 {
+#mthatrzvxo .gt_indent_4 {
   text-indent: 20px;
 }
 
-#negkqbsrtf .gt_indent_5 {
+#mthatrzvxo .gt_indent_5 {
   text-indent: 25px;
 }
 
-#negkqbsrtf .katex-display {
+#mthatrzvxo .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#negkqbsrtf div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#mthatrzvxo div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -4271,23 +4324,23 @@ Table&nbsp;3
 </figcaption>
 <div aria-describedby="tbl-cost-allocation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="nllmnaihlm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#nllmnaihlm table {
+<div id="ncyytsyjhs" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ncyytsyjhs table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#nllmnaihlm thead, #nllmnaihlm tbody, #nllmnaihlm tfoot, #nllmnaihlm tr, #nllmnaihlm td, #nllmnaihlm th {
+#ncyytsyjhs thead, #ncyytsyjhs tbody, #ncyytsyjhs tfoot, #ncyytsyjhs tr, #ncyytsyjhs td, #ncyytsyjhs th {
   border-style: none;
 }
 
-#nllmnaihlm p {
+#ncyytsyjhs p {
   margin: 0;
   padding: 0;
 }
 
-#nllmnaihlm .gt_table {
+#ncyytsyjhs .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -4313,12 +4366,12 @@ Table&nbsp;3
   border-left-color: #D3D3D3;
 }
 
-#nllmnaihlm .gt_caption {
+#ncyytsyjhs .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#nllmnaihlm .gt_title {
+#ncyytsyjhs .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -4330,7 +4383,7 @@ Table&nbsp;3
   border-bottom-width: 0;
 }
 
-#nllmnaihlm .gt_subtitle {
+#ncyytsyjhs .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -4342,7 +4395,7 @@ Table&nbsp;3
   border-top-width: 0;
 }
 
-#nllmnaihlm .gt_heading {
+#ncyytsyjhs .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -4354,13 +4407,13 @@ Table&nbsp;3
   border-right-color: #D3D3D3;
 }
 
-#nllmnaihlm .gt_bottom_border {
+#ncyytsyjhs .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#nllmnaihlm .gt_col_headings {
+#ncyytsyjhs .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4375,7 +4428,7 @@ Table&nbsp;3
   border-right-color: #D3D3D3;
 }
 
-#nllmnaihlm .gt_col_heading {
+#ncyytsyjhs .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4395,7 +4448,7 @@ Table&nbsp;3
   overflow-x: hidden;
 }
 
-#nllmnaihlm .gt_column_spanner_outer {
+#ncyytsyjhs .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4407,15 +4460,15 @@ Table&nbsp;3
   padding-right: 4px;
 }
 
-#nllmnaihlm .gt_column_spanner_outer:first-child {
+#ncyytsyjhs .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#nllmnaihlm .gt_column_spanner_outer:last-child {
+#ncyytsyjhs .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#nllmnaihlm .gt_column_spanner {
+#ncyytsyjhs .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -4427,11 +4480,11 @@ Table&nbsp;3
   width: 100%;
 }
 
-#nllmnaihlm .gt_spanner_row {
+#ncyytsyjhs .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#nllmnaihlm .gt_group_heading {
+#ncyytsyjhs .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4457,7 +4510,7 @@ Table&nbsp;3
   text-align: left;
 }
 
-#nllmnaihlm .gt_empty_group_heading {
+#ncyytsyjhs .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4472,15 +4525,15 @@ Table&nbsp;3
   vertical-align: middle;
 }
 
-#nllmnaihlm .gt_from_md > :first-child {
+#ncyytsyjhs .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#nllmnaihlm .gt_from_md > :last-child {
+#ncyytsyjhs .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#nllmnaihlm .gt_row {
+#ncyytsyjhs .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4499,7 +4552,7 @@ Table&nbsp;3
   overflow-x: hidden;
 }
 
-#nllmnaihlm .gt_stub {
+#ncyytsyjhs .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4512,7 +4565,7 @@ Table&nbsp;3
   padding-right: 5px;
 }
 
-#nllmnaihlm .gt_stub_row_group {
+#ncyytsyjhs .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4526,15 +4579,15 @@ Table&nbsp;3
   vertical-align: top;
 }
 
-#nllmnaihlm .gt_row_group_first td {
+#ncyytsyjhs .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#nllmnaihlm .gt_row_group_first th {
+#ncyytsyjhs .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#nllmnaihlm .gt_summary_row {
+#ncyytsyjhs .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4544,16 +4597,16 @@ Table&nbsp;3
   padding-right: 5px;
 }
 
-#nllmnaihlm .gt_first_summary_row {
+#ncyytsyjhs .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#nllmnaihlm .gt_first_summary_row.thick {
+#ncyytsyjhs .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#nllmnaihlm .gt_last_summary_row {
+#ncyytsyjhs .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4563,7 +4616,7 @@ Table&nbsp;3
   border-bottom-color: #D3D3D3;
 }
 
-#nllmnaihlm .gt_grand_summary_row {
+#ncyytsyjhs .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4573,7 +4626,7 @@ Table&nbsp;3
   padding-right: 5px;
 }
 
-#nllmnaihlm .gt_first_grand_summary_row {
+#ncyytsyjhs .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4583,7 +4636,7 @@ Table&nbsp;3
   border-top-color: #D3D3D3;
 }
 
-#nllmnaihlm .gt_last_grand_summary_row_top {
+#ncyytsyjhs .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4593,11 +4646,11 @@ Table&nbsp;3
   border-bottom-color: #D3D3D3;
 }
 
-#nllmnaihlm .gt_striped {
+#ncyytsyjhs .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#nllmnaihlm .gt_table_body {
+#ncyytsyjhs .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4606,7 +4659,7 @@ Table&nbsp;3
   border-bottom-color: #D3D3D3;
 }
 
-#nllmnaihlm .gt_footnotes {
+#ncyytsyjhs .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4620,7 +4673,7 @@ Table&nbsp;3
   border-right-color: #D3D3D3;
 }
 
-#nllmnaihlm .gt_footnote {
+#ncyytsyjhs .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -4629,7 +4682,7 @@ Table&nbsp;3
   padding-right: 5px;
 }
 
-#nllmnaihlm .gt_sourcenotes {
+#ncyytsyjhs .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4643,7 +4696,7 @@ Table&nbsp;3
   border-right-color: #D3D3D3;
 }
 
-#nllmnaihlm .gt_sourcenote {
+#ncyytsyjhs .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -4651,72 +4704,72 @@ Table&nbsp;3
   padding-right: 5px;
 }
 
-#nllmnaihlm .gt_left {
+#ncyytsyjhs .gt_left {
   text-align: left;
 }
 
-#nllmnaihlm .gt_center {
+#ncyytsyjhs .gt_center {
   text-align: center;
 }
 
-#nllmnaihlm .gt_right {
+#ncyytsyjhs .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#nllmnaihlm .gt_font_normal {
+#ncyytsyjhs .gt_font_normal {
   font-weight: normal;
 }
 
-#nllmnaihlm .gt_font_bold {
+#ncyytsyjhs .gt_font_bold {
   font-weight: bold;
 }
 
-#nllmnaihlm .gt_font_italic {
+#ncyytsyjhs .gt_font_italic {
   font-style: italic;
 }
 
-#nllmnaihlm .gt_super {
+#ncyytsyjhs .gt_super {
   font-size: 65%;
 }
 
-#nllmnaihlm .gt_footnote_marks {
+#ncyytsyjhs .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#nllmnaihlm .gt_asterisk {
+#ncyytsyjhs .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#nllmnaihlm .gt_indent_1 {
+#ncyytsyjhs .gt_indent_1 {
   text-indent: 5px;
 }
 
-#nllmnaihlm .gt_indent_2 {
+#ncyytsyjhs .gt_indent_2 {
   text-indent: 10px;
 }
 
-#nllmnaihlm .gt_indent_3 {
+#ncyytsyjhs .gt_indent_3 {
   text-indent: 15px;
 }
 
-#nllmnaihlm .gt_indent_4 {
+#ncyytsyjhs .gt_indent_4 {
   text-indent: 20px;
 }
 
-#nllmnaihlm .gt_indent_5 {
+#ncyytsyjhs .gt_indent_5 {
   text-indent: 25px;
 }
 
-#nllmnaihlm .katex-display {
+#ncyytsyjhs .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#nllmnaihlm div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ncyytsyjhs div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -4786,23 +4839,23 @@ Table&nbsp;4
 </figcaption>
 <div aria-describedby="tbl-cost-total-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="fzqladvnuc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#fzqladvnuc table {
+<div id="ftggskwtll" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ftggskwtll table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#fzqladvnuc thead, #fzqladvnuc tbody, #fzqladvnuc tfoot, #fzqladvnuc tr, #fzqladvnuc td, #fzqladvnuc th {
+#ftggskwtll thead, #ftggskwtll tbody, #ftggskwtll tfoot, #ftggskwtll tr, #ftggskwtll td, #ftggskwtll th {
   border-style: none;
 }
 
-#fzqladvnuc p {
+#ftggskwtll p {
   margin: 0;
   padding: 0;
 }
 
-#fzqladvnuc .gt_table {
+#ftggskwtll .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -4828,12 +4881,12 @@ Table&nbsp;4
   border-left-color: #D3D3D3;
 }
 
-#fzqladvnuc .gt_caption {
+#ftggskwtll .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#fzqladvnuc .gt_title {
+#ftggskwtll .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -4845,7 +4898,7 @@ Table&nbsp;4
   border-bottom-width: 0;
 }
 
-#fzqladvnuc .gt_subtitle {
+#ftggskwtll .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -4857,7 +4910,7 @@ Table&nbsp;4
   border-top-width: 0;
 }
 
-#fzqladvnuc .gt_heading {
+#ftggskwtll .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -4869,13 +4922,13 @@ Table&nbsp;4
   border-right-color: #D3D3D3;
 }
 
-#fzqladvnuc .gt_bottom_border {
+#ftggskwtll .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#fzqladvnuc .gt_col_headings {
+#ftggskwtll .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4890,7 +4943,7 @@ Table&nbsp;4
   border-right-color: #D3D3D3;
 }
 
-#fzqladvnuc .gt_col_heading {
+#ftggskwtll .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4910,7 +4963,7 @@ Table&nbsp;4
   overflow-x: hidden;
 }
 
-#fzqladvnuc .gt_column_spanner_outer {
+#ftggskwtll .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4922,15 +4975,15 @@ Table&nbsp;4
   padding-right: 4px;
 }
 
-#fzqladvnuc .gt_column_spanner_outer:first-child {
+#ftggskwtll .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#fzqladvnuc .gt_column_spanner_outer:last-child {
+#ftggskwtll .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#fzqladvnuc .gt_column_spanner {
+#ftggskwtll .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -4942,11 +4995,11 @@ Table&nbsp;4
   width: 100%;
 }
 
-#fzqladvnuc .gt_spanner_row {
+#ftggskwtll .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#fzqladvnuc .gt_group_heading {
+#ftggskwtll .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4972,7 +5025,7 @@ Table&nbsp;4
   text-align: left;
 }
 
-#fzqladvnuc .gt_empty_group_heading {
+#ftggskwtll .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4987,15 +5040,15 @@ Table&nbsp;4
   vertical-align: middle;
 }
 
-#fzqladvnuc .gt_from_md > :first-child {
+#ftggskwtll .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#fzqladvnuc .gt_from_md > :last-child {
+#ftggskwtll .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#fzqladvnuc .gt_row {
+#ftggskwtll .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5014,7 +5067,7 @@ Table&nbsp;4
   overflow-x: hidden;
 }
 
-#fzqladvnuc .gt_stub {
+#ftggskwtll .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5027,7 +5080,7 @@ Table&nbsp;4
   padding-right: 5px;
 }
 
-#fzqladvnuc .gt_stub_row_group {
+#ftggskwtll .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5041,15 +5094,15 @@ Table&nbsp;4
   vertical-align: top;
 }
 
-#fzqladvnuc .gt_row_group_first td {
+#ftggskwtll .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#fzqladvnuc .gt_row_group_first th {
+#ftggskwtll .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#fzqladvnuc .gt_summary_row {
+#ftggskwtll .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5059,16 +5112,16 @@ Table&nbsp;4
   padding-right: 5px;
 }
 
-#fzqladvnuc .gt_first_summary_row {
+#ftggskwtll .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#fzqladvnuc .gt_first_summary_row.thick {
+#ftggskwtll .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#fzqladvnuc .gt_last_summary_row {
+#ftggskwtll .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5078,7 +5131,7 @@ Table&nbsp;4
   border-bottom-color: #D3D3D3;
 }
 
-#fzqladvnuc .gt_grand_summary_row {
+#ftggskwtll .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5088,7 +5141,7 @@ Table&nbsp;4
   padding-right: 5px;
 }
 
-#fzqladvnuc .gt_first_grand_summary_row {
+#ftggskwtll .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5098,7 +5151,7 @@ Table&nbsp;4
   border-top-color: #D3D3D3;
 }
 
-#fzqladvnuc .gt_last_grand_summary_row_top {
+#ftggskwtll .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5108,11 +5161,11 @@ Table&nbsp;4
   border-bottom-color: #D3D3D3;
 }
 
-#fzqladvnuc .gt_striped {
+#ftggskwtll .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#fzqladvnuc .gt_table_body {
+#ftggskwtll .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5121,7 +5174,7 @@ Table&nbsp;4
   border-bottom-color: #D3D3D3;
 }
 
-#fzqladvnuc .gt_footnotes {
+#ftggskwtll .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5135,7 +5188,7 @@ Table&nbsp;4
   border-right-color: #D3D3D3;
 }
 
-#fzqladvnuc .gt_footnote {
+#ftggskwtll .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -5144,7 +5197,7 @@ Table&nbsp;4
   padding-right: 5px;
 }
 
-#fzqladvnuc .gt_sourcenotes {
+#ftggskwtll .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5158,7 +5211,7 @@ Table&nbsp;4
   border-right-color: #D3D3D3;
 }
 
-#fzqladvnuc .gt_sourcenote {
+#ftggskwtll .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -5166,72 +5219,72 @@ Table&nbsp;4
   padding-right: 5px;
 }
 
-#fzqladvnuc .gt_left {
+#ftggskwtll .gt_left {
   text-align: left;
 }
 
-#fzqladvnuc .gt_center {
+#ftggskwtll .gt_center {
   text-align: center;
 }
 
-#fzqladvnuc .gt_right {
+#ftggskwtll .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#fzqladvnuc .gt_font_normal {
+#ftggskwtll .gt_font_normal {
   font-weight: normal;
 }
 
-#fzqladvnuc .gt_font_bold {
+#ftggskwtll .gt_font_bold {
   font-weight: bold;
 }
 
-#fzqladvnuc .gt_font_italic {
+#ftggskwtll .gt_font_italic {
   font-style: italic;
 }
 
-#fzqladvnuc .gt_super {
+#ftggskwtll .gt_super {
   font-size: 65%;
 }
 
-#fzqladvnuc .gt_footnote_marks {
+#ftggskwtll .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#fzqladvnuc .gt_asterisk {
+#ftggskwtll .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#fzqladvnuc .gt_indent_1 {
+#ftggskwtll .gt_indent_1 {
   text-indent: 5px;
 }
 
-#fzqladvnuc .gt_indent_2 {
+#ftggskwtll .gt_indent_2 {
   text-indent: 10px;
 }
 
-#fzqladvnuc .gt_indent_3 {
+#ftggskwtll .gt_indent_3 {
   text-indent: 15px;
 }
 
-#fzqladvnuc .gt_indent_4 {
+#ftggskwtll .gt_indent_4 {
   text-indent: 20px;
 }
 
-#fzqladvnuc .gt_indent_5 {
+#ftggskwtll .gt_indent_5 {
   text-indent: 25px;
 }
 
-#fzqladvnuc .katex-display {
+#ftggskwtll .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#fzqladvnuc div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ftggskwtll div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -5296,23 +5349,23 @@ Table&nbsp;5
 </figcaption>
 <div aria-describedby="tbl-cost-marginal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="ypkljpyold" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ypkljpyold table {
+<div id="gjrckmryou" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#gjrckmryou table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ypkljpyold thead, #ypkljpyold tbody, #ypkljpyold tfoot, #ypkljpyold tr, #ypkljpyold td, #ypkljpyold th {
+#gjrckmryou thead, #gjrckmryou tbody, #gjrckmryou tfoot, #gjrckmryou tr, #gjrckmryou td, #gjrckmryou th {
   border-style: none;
 }
 
-#ypkljpyold p {
+#gjrckmryou p {
   margin: 0;
   padding: 0;
 }
 
-#ypkljpyold .gt_table {
+#gjrckmryou .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -5338,12 +5391,12 @@ Table&nbsp;5
   border-left-color: #D3D3D3;
 }
 
-#ypkljpyold .gt_caption {
+#gjrckmryou .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ypkljpyold .gt_title {
+#gjrckmryou .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -5355,7 +5408,7 @@ Table&nbsp;5
   border-bottom-width: 0;
 }
 
-#ypkljpyold .gt_subtitle {
+#gjrckmryou .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -5367,7 +5420,7 @@ Table&nbsp;5
   border-top-width: 0;
 }
 
-#ypkljpyold .gt_heading {
+#gjrckmryou .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -5379,13 +5432,13 @@ Table&nbsp;5
   border-right-color: #D3D3D3;
 }
 
-#ypkljpyold .gt_bottom_border {
+#gjrckmryou .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ypkljpyold .gt_col_headings {
+#gjrckmryou .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5400,7 +5453,7 @@ Table&nbsp;5
   border-right-color: #D3D3D3;
 }
 
-#ypkljpyold .gt_col_heading {
+#gjrckmryou .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5420,7 +5473,7 @@ Table&nbsp;5
   overflow-x: hidden;
 }
 
-#ypkljpyold .gt_column_spanner_outer {
+#gjrckmryou .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5432,15 +5485,15 @@ Table&nbsp;5
   padding-right: 4px;
 }
 
-#ypkljpyold .gt_column_spanner_outer:first-child {
+#gjrckmryou .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ypkljpyold .gt_column_spanner_outer:last-child {
+#gjrckmryou .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ypkljpyold .gt_column_spanner {
+#gjrckmryou .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -5452,11 +5505,11 @@ Table&nbsp;5
   width: 100%;
 }
 
-#ypkljpyold .gt_spanner_row {
+#gjrckmryou .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ypkljpyold .gt_group_heading {
+#gjrckmryou .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5482,7 +5535,7 @@ Table&nbsp;5
   text-align: left;
 }
 
-#ypkljpyold .gt_empty_group_heading {
+#gjrckmryou .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -5497,15 +5550,15 @@ Table&nbsp;5
   vertical-align: middle;
 }
 
-#ypkljpyold .gt_from_md > :first-child {
+#gjrckmryou .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ypkljpyold .gt_from_md > :last-child {
+#gjrckmryou .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ypkljpyold .gt_row {
+#gjrckmryou .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5524,7 +5577,7 @@ Table&nbsp;5
   overflow-x: hidden;
 }
 
-#ypkljpyold .gt_stub {
+#gjrckmryou .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5537,7 +5590,7 @@ Table&nbsp;5
   padding-right: 5px;
 }
 
-#ypkljpyold .gt_stub_row_group {
+#gjrckmryou .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5551,15 +5604,15 @@ Table&nbsp;5
   vertical-align: top;
 }
 
-#ypkljpyold .gt_row_group_first td {
+#gjrckmryou .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ypkljpyold .gt_row_group_first th {
+#gjrckmryou .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ypkljpyold .gt_summary_row {
+#gjrckmryou .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5569,16 +5622,16 @@ Table&nbsp;5
   padding-right: 5px;
 }
 
-#ypkljpyold .gt_first_summary_row {
+#gjrckmryou .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ypkljpyold .gt_first_summary_row.thick {
+#gjrckmryou .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ypkljpyold .gt_last_summary_row {
+#gjrckmryou .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5588,7 +5641,7 @@ Table&nbsp;5
   border-bottom-color: #D3D3D3;
 }
 
-#ypkljpyold .gt_grand_summary_row {
+#gjrckmryou .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5598,7 +5651,7 @@ Table&nbsp;5
   padding-right: 5px;
 }
 
-#ypkljpyold .gt_first_grand_summary_row {
+#gjrckmryou .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5608,7 +5661,7 @@ Table&nbsp;5
   border-top-color: #D3D3D3;
 }
 
-#ypkljpyold .gt_last_grand_summary_row_top {
+#gjrckmryou .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5618,11 +5671,11 @@ Table&nbsp;5
   border-bottom-color: #D3D3D3;
 }
 
-#ypkljpyold .gt_striped {
+#gjrckmryou .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ypkljpyold .gt_table_body {
+#gjrckmryou .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5631,7 +5684,7 @@ Table&nbsp;5
   border-bottom-color: #D3D3D3;
 }
 
-#ypkljpyold .gt_footnotes {
+#gjrckmryou .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5645,7 +5698,7 @@ Table&nbsp;5
   border-right-color: #D3D3D3;
 }
 
-#ypkljpyold .gt_footnote {
+#gjrckmryou .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -5654,7 +5707,7 @@ Table&nbsp;5
   padding-right: 5px;
 }
 
-#ypkljpyold .gt_sourcenotes {
+#gjrckmryou .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5668,7 +5721,7 @@ Table&nbsp;5
   border-right-color: #D3D3D3;
 }
 
-#ypkljpyold .gt_sourcenote {
+#gjrckmryou .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -5676,72 +5729,72 @@ Table&nbsp;5
   padding-right: 5px;
 }
 
-#ypkljpyold .gt_left {
+#gjrckmryou .gt_left {
   text-align: left;
 }
 
-#ypkljpyold .gt_center {
+#gjrckmryou .gt_center {
   text-align: center;
 }
 
-#ypkljpyold .gt_right {
+#gjrckmryou .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ypkljpyold .gt_font_normal {
+#gjrckmryou .gt_font_normal {
   font-weight: normal;
 }
 
-#ypkljpyold .gt_font_bold {
+#gjrckmryou .gt_font_bold {
   font-weight: bold;
 }
 
-#ypkljpyold .gt_font_italic {
+#gjrckmryou .gt_font_italic {
   font-style: italic;
 }
 
-#ypkljpyold .gt_super {
+#gjrckmryou .gt_super {
   font-size: 65%;
 }
 
-#ypkljpyold .gt_footnote_marks {
+#gjrckmryou .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ypkljpyold .gt_asterisk {
+#gjrckmryou .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ypkljpyold .gt_indent_1 {
+#gjrckmryou .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ypkljpyold .gt_indent_2 {
+#gjrckmryou .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ypkljpyold .gt_indent_3 {
+#gjrckmryou .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ypkljpyold .gt_indent_4 {
+#gjrckmryou .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ypkljpyold .gt_indent_5 {
+#gjrckmryou .gt_indent_5 {
   text-indent: 25px;
 }
 
-#ypkljpyold .katex-display {
+#gjrckmryou .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#ypkljpyold div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#gjrckmryou div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -5758,21 +5811,21 @@ Table&nbsp;5
 </thead>
 <tbody class="gt_table_body">
 <tr class="odd">
-<th id="stub_1_1" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">S1 — PIH dashboard + MVD (+ AfriTox harmonisation)</th>
+<th id="stub_1_1" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Option 2 — PIH dashboard + MVD (+ AfriTox harmonisation)</th>
 <td class="gt_row gt_right" headers="stub_1_1 setup_zar">40,000</td>
 <td class="gt_row gt_right" headers="stub_1_1 op_zar">82,000</td>
 <td class="gt_row gt_left" headers="stub_1_1 setup_param">c_S1_PIH_MVD_setup</td>
 <td class="gt_row gt_left" headers="stub_1_1 op_param">c_S1_PIH_MVD_op</td>
 </tr>
 <tr class="even">
-<th id="stub_1_2" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">S2 — BChE auto-notification</th>
+<th id="stub_1_2" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Option 1 — BChE auto-notification</th>
 <td class="gt_row gt_right" headers="stub_1_2 setup_zar">200,000</td>
 <td class="gt_row gt_right" headers="stub_1_2 op_zar">55,000</td>
 <td class="gt_row gt_left" headers="stub_1_2 setup_param">c_S2_BChE_autonotify_setup</td>
 <td class="gt_row gt_left" headers="stub_1_2 op_param">c_S2_BChE_autonotify_op</td>
 </tr>
 <tr class="odd">
-<th id="stub_1_3" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Surveillance MVP (S1 + S2)</th>
+<th id="stub_1_3" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Surveillance MVP (Option 1 + Option 2)</th>
 <td class="gt_row gt_right" headers="stub_1_3 setup_zar">240,000</td>
 <td class="gt_row gt_right" headers="stub_1_3 op_zar">137,000</td>
 <td class="gt_row gt_left" headers="stub_1_3 setup_param">c_surv_MVP_setup</td>
@@ -5786,21 +5839,21 @@ Table&nbsp;5
 <td class="gt_row gt_left" headers="stub_1_4 op_param">c_S0_NHLS_NMC_feed_op</td>
 </tr>
 <tr class="odd">
-<th id="stub_1_5" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">S1b — event-based community (sensitivity, lo)</th>
+<th id="stub_1_5" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Option 3 — community layer (sensitivity, lo)</th>
 <td class="gt_row gt_right" headers="stub_1_5 setup_zar">1,000,000</td>
 <td class="gt_row gt_right" headers="stub_1_5 op_zar">800,000</td>
 <td class="gt_row gt_left" headers="stub_1_5 setup_param">c_S1b_setup_lo</td>
 <td class="gt_row gt_left" headers="stub_1_5 op_param">c_S1b_op_lo</td>
 </tr>
 <tr class="even">
-<th id="stub_1_6" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">S1b — event-based community (sensitivity, mid)</th>
+<th id="stub_1_6" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Option 3 — community layer (sensitivity, mid)</th>
 <td class="gt_row gt_right" headers="stub_1_6 setup_zar">2,000,000</td>
 <td class="gt_row gt_right" headers="stub_1_6 op_zar">1,500,000</td>
 <td class="gt_row gt_left" headers="stub_1_6 setup_param">c_S1b_setup_mid</td>
 <td class="gt_row gt_left" headers="stub_1_6 op_param">c_S1b_op_mid</td>
 </tr>
 <tr class="odd">
-<th id="stub_1_7" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">S1b — event-based community (sensitivity, hi)</th>
+<th id="stub_1_7" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Option 3 — community layer (sensitivity, hi)</th>
 <td class="gt_row gt_right" headers="stub_1_7 setup_zar">3,500,000</td>
 <td class="gt_row gt_right" headers="stub_1_7 op_zar">2,500,000</td>
 <td class="gt_row gt_left" headers="stub_1_7 setup_param">c_S1b_setup_hi</td>
@@ -5818,7 +5871,7 @@ Table&nbsp;5
 </div>
 </div>
 </div>
-<p><strong>Headline read.</strong> The status-quo surveillance system already costs roughly <strong>R2,833,206/yr</strong> in personnel + pesticide-allocated system spend across NMC, PIH, and NHLS BChE — borne almost entirely by NDoH, NHLS, and Stellenbosch FoMHS rather than appearing as a line item. Against that base, the <strong>Surveillance MVP (S1 + S2) adds only R137,000/yr</strong> — a <strong>4.8% uplift on current spend</strong> for a <strong>+14.1 pp</strong> jump in P_detect.</p>
+<p><strong>Headline read.</strong> The status-quo surveillance system already costs roughly <strong>R2,833,206/yr</strong> in personnel + pesticide-allocated system spend across NMC, PIH, and NHLS BChE — borne almost entirely by NDoH, NHLS, and Stellenbosch FoMHS rather than appearing as a line item. Against that base, the <strong>Surveillance MVP (Option 1 + Option 2) adds only R137,000/yr</strong> — a <strong>4.8% uplift on current spend</strong> for a <strong>+14.1 pp</strong> jump in P_detect.</p>
 </section>
 <section id="implementation-considerations" class="level2">
 <h2 class="anchored" data-anchor-id="implementation-considerations">8. Implementation considerations</h2>
@@ -5839,25 +5892,25 @@ Table&nbsp;5
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">S1 PIH dashboard</td>
+<td style="text-align: left;">Option 2 — PIH dashboard</td>
 <td style="text-align: left;">PIH (Tygerberg) + NICD</td>
 <td style="text-align: right;">82,000</td>
 <td style="text-align: left;">Daily extract + hosting; MVD workshop</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">S2 BChE auto-notify</td>
+<td style="text-align: left;">Option 1 — BChE auto-notify</td>
 <td style="text-align: left;">NHLS LIS team</td>
 <td style="text-align: right;">55,000</td>
 <td style="text-align: left;">LIS rule configuration; QA review</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">S3 Sentinel toxicology</td>
+<td style="text-align: left;">Option 5 — Sentinel toxicology</td>
 <td style="text-align: left;">NHLS clinical chemistry + sentinel hospital</td>
 <td style="text-align: right;">R1,200,000 pilot</td>
 <td style="text-align: left;">Lab method validation; sample logistics</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">S1b Phase 2 community layer <em>(pilot: FS + Gauteng; commission after Month 6 MVP review)</em></td>
+<td style="text-align: left;">Option 3 — Community layer (Phase 2) <em>(pilot: FS + Gauteng; commission after Month 6 MVP review)</em></td>
 <td style="text-align: left;">NICD + provincial DoH EHPs</td>
 <td style="text-align: right;">Pilot: R1M setup + R0.8M/yr; national: R3.5M setup + R2.5M/yr</td>
 <td style="text-align: left;">CHW two-tier triage training, mobile checklist app, EHP call-back protocol, QA pipeline</td>
@@ -5865,23 +5918,23 @@ Table&nbsp;5
 </tbody>
 </table>
 <p><strong>Privacy &amp; legal.</strong> The PIH-to-NMC MVD feed transmits personal health information (age-band, sex, geography, clinical data) and must use a <strong>secure, authenticated HTTPS/TLS API</strong> — no plaintext or email transmission. De-identification before transmission is mandatory (age-band not exact age; province/district not street address; no name or phone number; see Appendix A2). The NHLS BChE auto-notify feed transmits result-level data with patient identifiers to NMC, consistent with the existing NMC notification pathway, and must use the same secure HL7-over-TLS channel. Both flows are POPIA-compliant under existing Section 90 NHA authority. <strong>No new legislation required.</strong></p>
-<p><strong>Risks.</strong> (i) Low BChE testing uptake by clinicians — S2 fires only on tests ordered. (ii) Data-quality drift if facility metadata is incomplete. (iii) Capacity bottleneck at provincial response level — the <a href="../posts/coordination_policy.html">Coordination brief</a> addresses this.</p>
+<p><strong>Risks.</strong> (i) Low BChE testing uptake by clinicians — Option 1 fires only on tests ordered. (ii) Data-quality drift if facility metadata is incomplete. (iii) Capacity bottleneck at provincial response level — the <a href="../posts/coordination_policy.html">Coordination brief</a> addresses this.</p>
 </section>
 <section id="recommended-next-step" class="level2">
 <h2 class="anchored" data-anchor-id="recommended-next-step">9. Recommended next step</h2>
-<p><strong>Adopt the Surveillance MVP (S1 + S2) and pilot in 3 provinces (Gauteng, Western Cape, KZN) for 6 months.</strong> Approximate pilot budget: <strong>~R137,000 operating</strong> (NHLS–NMC IT feed is now operational). Lead agency: NICD as national coordinator.</p>
+<p><strong>Adopt the Surveillance MVP (Option 1 + Option 2) and pilot in 3 provinces (Gauteng, Western Cape, KZN) for 6 months.</strong> Approximate pilot budget: <strong>~R137,000 operating</strong> (NHLS–NMC IT feed is now operational). Lead agency: NICD as national coordinator.</p>
 <ul>
-<li><strong>Weeks 1–2:</strong> S1 PIH dashboard live; S2 BChE LIS configuration begins.</li>
-<li><strong>Months 1–3:</strong> S1 MVD workshop with PIH finalised; S2 BChE auto-notify QA review completed.</li>
+<li><strong>Weeks 1–2:</strong> Option 2 PIH dashboard live; Option 1 BChE LIS configuration begins.</li>
+<li><strong>Months 1–3:</strong> Option 2 MVD workshop with PIH finalised; Option 1 BChE auto-notify QA review completed.</li>
 <li><strong>Month 6:</strong> Evaluate against (a) completeness of NHLS severe results in NMC and (b) signal-to-investigation latency.</li>
-<li><strong>Month 9:</strong> Add S3 sentinel toxicology site, funded from a separate research-surveillance stream.</li>
-<li><strong>Month 12:</strong> Review MVP geographic distribution. If ≥40% of severe cases originate in low-facility-access districts, commission the S1b Phase 2 pilot (Free State + Gauteng; ~R1M setup + R0.8M/yr operating).</li>
+<li><strong>Month 9:</strong> Add Option 5 sentinel toxicology site, funded from a separate research-surveillance stream.</li>
+<li><strong>Month 12:</strong> Review MVP geographic distribution. If ≥40% of severe cases originate in low-facility-access districts, commission the Option 3 Phase 2 pilot (Free State + Gauteng; ~R1M setup + R0.8M/yr operating).</li>
 </ul>
-<p>The coordination side of the same system — how NICD, EHPs, DALRRD, and provincial response teams act on the improved signal — is covered in the <a href="../posts/coordination_policy.html">Coordination brief</a>. The product-specific regulatory action that S3 makes possible is the subject of the <a href="../posts/terbufos_policy.html">Terbufos brief</a>.</p>
+<p>The coordination side of the same system — how NICD, EHPs, DALRRD, and provincial response teams act on the improved signal — is covered in the <a href="../posts/coordination_policy.html">Coordination brief</a>. The product-specific regulatory action that Option 5 makes possible is the subject of the <a href="../posts/terbufos_policy.html">Terbufos brief</a>.</p>
 <hr>
 <div class="footer-cta">
 <p><strong>Companion briefs:</strong> <a href="../posts/coordination_policy.html">Coordination</a> · <a href="../posts/terbufos_policy.html">Terbufos restriction</a> · <a href="../posts/decision_model.html">Decision Model</a> · <a href="../posts/costing_analysis.html">Costing Analysis</a></p>
-<p><strong>Technical appendices:</strong> <a href="../analysis_report_v2.html">A — Surveillance decision analysis</a> · <a href="../posts/surveillance_concept_note.html">D — Sentinel toxicology (S3 deep dive)</a></p>
+<p><strong>Technical appendices:</strong> <a href="../analysis_report_v2.html">A — Surveillance decision analysis</a> · <a href="../posts/surveillance_concept_note.html">D — Sentinel toxicology (Option 5 deep dive)</a></p>
 <p><strong>Appendices (this brief):</strong> Appendix A — MVD specifications (NMC + PIH)</p>
 </div>
 <hr>
@@ -6273,7 +6326,7 @@ Table&nbsp;9: PIH MVD — full field specification including demographic variabl
 </div>
 <div class="callout-body-container">
 <p><strong>POPIA compliance and secure transmission.</strong> All PIH-to-NMC transmissions must be de-identified before transmission: no name, phone number, or exact address. Age-band (not exact age), province/district (not street address), and anonymised TMS call ID are sufficient for surveillance linkage and comply with Section 90 of the National Health Act (2003) and POPIA. Exact age may be retained internally within PIH TMS for clinical purposes and transmitted as age-band only.</p>
-<p>De-identified health data still constitutes personal information under POPIA. The PIH-to-NMC feed <strong>must be implemented as a secure HTTPS/TLS API with mutual authentication</strong> (client certificate or token-based) between the PIH TMS and the NMC ingest endpoint. Transmission over email, FTP, or unencrypted HTTP is not acceptable. The MVD ingest pipeline (line item 4 in the S1 operating cost) includes the cost of maintaining this secure channel; the one-off setup cost (<code>c_S1_PIH_MVD_setup</code> = R40,000) must include API security configuration and penetration testing as a go-live requirement.</p>
+<p>De-identified health data still constitutes personal information under POPIA. The PIH-to-NMC feed <strong>must be implemented as a secure HTTPS/TLS API with mutual authentication</strong> (client certificate or token-based) between the PIH TMS and the NMC ingest endpoint. Transmission over email, FTP, or unencrypted HTTP is not acceptable. The MVD ingest pipeline (line item 4 in the Option 2 operating cost) includes the cost of maintaining this secure channel; the one-off setup cost (<code>c_S1_PIH_MVD_setup</code> = R40,000) must include API security configuration and penetration testing as a go-live requirement.</p>
 </div>
 </div>
 </div>
@@ -6283,7 +6336,7 @@ Table&nbsp;9: PIH MVD — full field specification including demographic variabl
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<p><strong>AfriTox agent-name harmonisation.</strong> Both PIH (TMS) and NMC (notification form) must use the same AfriTox product-name controlled vocabulary so that product-level attribution is consistent across streams. The harmonisation workshop (S1 MVD workshop, Months 1–3) should produce a shared AfriTox lookup table embedded in both systems. This is the lowest-cost, highest-value interoperability intervention in the MVD: it costs a single workshop and yields cross-stream agent attribution at scale.</p>
+<p><strong>AfriTox agent-name harmonisation.</strong> Both PIH (TMS) and NMC (notification form) must use the same AfriTox product-name controlled vocabulary so that product-level attribution is consistent across streams. The harmonisation workshop (Option 2 MVD workshop, Months 1–3) should produce a shared AfriTox lookup table embedded in both systems. This is the lowest-cost, highest-value interoperability intervention in the MVD: it costs a single workshop and yields cross-stream agent attribution at scale.</p>
 </div>
 </div>
 </div>
