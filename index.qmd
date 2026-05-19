@@ -10,7 +10,11 @@ format:
 ::: {.hero-banner}
 ## A hidden public-health emergency — fix detection first {.hero-title}
 
-**≈20,960 poisonings · 2,620 deaths · R2.34 billion lost — every year.** Yet South Africa formally detects fewer than 1 in 20 cases. **Strengthen surveillance, close the response loop, act on the worst product.**
+**≈20,960 poisonings · 2,620 deaths · R2.34 billion lost — every year.** Yet South Africa formally detects fewer than 1 in 20 cases. **Strengthen surveillance, close the response loop, measure the just-gazetted terbufos ban.**
+:::
+
+::: {.acronyms}
+**Acronyms used across this site.** NDoH = National Department of Health · NICD = National Institute for Communicable Diseases · NHLS = National Health Laboratory Service · NMC = Notifiable Medical Conditions surveillance system · PIH = Poisons Information Helpline (Red Cross) · BChE = butyrylcholinesterase (NHLS organophosphate-exposure assay) · EHP = Environmental Health Practitioner · MAC = Ministerial Advisory Committee · DALRRD = Department of Agriculture, Land Reform & Rural Development · MVP = minimum viable product · CFR = case-fatality ratio. [Full glossary →](glossary.qmd).
 :::
 
 ## The public-health problem in five lines
@@ -92,7 +96,7 @@ flowchart LR
     style R fill:#ffd9b3,stroke:#cc8800,stroke-width:2px
 ```
 
-Three stages, one system. Each affordable on its own; each strictly more valuable paired with the others. **Total annual operating cost ~R282k against an annual burden of R2.34 billion — and modelled burden avoided of ~R1.45B/yr (~5,000× ROI on the combined Detect+Act operating cost).**
+Three stages, one system. Each affordable on its own; each strictly more valuable paired with the others. **Total annual operating cost ~R282 k against an annual burden of R2.34 billion — modelled burden avoided ~R1.45 B/yr, a whole-system ratio of roughly 1,000 : 1 even after counting induced demand. The case still holds at half the modelled effect.**
 
 ## Where to start
 
@@ -105,7 +109,7 @@ Three stages, one system. Each affordable on its own; each strictly more valuabl
 
 ::: {.feature-card}
 ### Policy decision
-**[Policy briefs hub](posts/policy_brief.qmd)** — Surveillance · Coordination · Terbufos.
+Three briefs: **[Surveillance](posts/surveillance_policy.qmd)** · **[Coordination](posts/coordination_policy.qmd)** · **[Terbufos](posts/terbufos_policy.qmd)**.
 :::
 
 ::: {.feature-card}
@@ -130,5 +134,6 @@ Three stages, one system. Each affordable on its own; each strictly more valuabl
 
 ::: {.footer-cta}
 Project team: NICD · NHLS · UCT School of Public Health · Red Cross PIH.  
+**Key sources:** StatsSA MACOD 2023 (X40–X49); NICD NMC Annual Report 2023; Davies et al. 2023 (paediatric pesticide deaths, SA); Gunnell et al. 2017 / Knipe et al. 2017 (Sri Lanka pesticide-ban natural experiment). Full reference list and per-parameter sourcing in the [Parameters Hub](parameters_hub.qmd).  
 Full technical detail: [Full Analysis Report](analysis_report_v2.html) · [Decision Model](posts/decision_model.qmd) · [Costing Analysis](posts/costing_analysis.qmd).
 :::

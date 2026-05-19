@@ -14,17 +14,21 @@ execute:
 ::: {.one-pager}
 
 ::: {.header-box}
-# Pesticide poisoning is a hidden public-health emergency in South Africa
+# The decision: approve ~R282 k/yr to make pesticide poisoning visible, actionable, and measurable
 
-**≈20,960 poisonings · 2,620 deaths · R2.34 billion lost — every year.**
+**Three asks, one system, one budget line.** Lift case detection from <5% to ~19% (Surveillance MVP), close the response loop (Coordination Full Package), and measure the just-gazetted terbufos ban (8 May 2026) using the same upgraded system.
 
-*StatsSA MACOD 2023 (X40–X49 accidental poisoning). Fewer than 1 in 20 cases is formally detected. You cannot manage what you cannot see — so **surveillance is step one**.*
+*Anchored to **≈20,960 poisonings · 2,620 deaths · R2.34 billion** lost every year (StatsSA MACOD 2023, X40–X49). Fewer than 1 in 20 cases is formally detected.*
+:::
+
+::: {.acronyms}
+**Acronyms used on this page.** NDoH = National Department of Health · NICD = National Institute for Communicable Diseases · NHLS = National Health Laboratory Service · NMC = Notifiable Medical Conditions surveillance system · PIH = Poisons Information Helpline (Red Cross) · BChE = butyrylcholinesterase (NHLS organophosphate-exposure assay) · EHP = Environmental Health Practitioner · MAC = Ministerial Advisory Committee · DALRRD = Department of Agriculture, Land Reform & Rural Development · MVP = minimum viable product. [Full glossary →](glossary.qmd).
 :::
 
 ## The problem in one line
 
 ::: {.key-stat}
-**South Africa is flying blind.** The country detects <5% of poisonings, the response loop is not closed, and the single most lethal product — terbufos — remains freely registered. **Fix detection first, and the rest of the system becomes actionable.**
+**South Africa is flying blind.** The country detects <5% of poisonings, the response loop is not closed, and the just-banned product — terbufos — cannot yet be confirmed to be retreating from the informal market. **Detection is the precondition for managing all three problems.**
 :::
 
 ## Three briefs, three asks — sequenced
@@ -52,11 +56,11 @@ execute:
 ::: {.grid-2col}
 
 ::: {.option-summary}
-### [3 · Restrict — Terbufos ★ *(enacted 8 May 2026)*](posts/terbufos_policy.qmd)
+### [3 · Restrict — Terbufos *(enacted 8 May 2026)*](posts/terbufos_policy.qmd)
 **Status:** ✓ **Terbufos banned.** Agriculture Minister John Steenhuisen gazetted a full prohibition on the sale, acquisition, use and disposal of terbufos on 8 May 2026 under Act 36 of 1947 — ahead of the D2P recommended deadline.
-**Next ask:** Ensure enforcement, stockpile disposal, and a 24-month post-ban evaluation using the upgraded surveillance system. **The ban is only effective if its impact can be measured.**
+**Next ask:** Enforcement (stockpile disposal, distributor audit) plus a **24-month post-ban evaluation** using the upgraded surveillance system. **The ban is only effective if its impact can be measured.**
+**Pre-ban modelling (now the measurement hypothesis):** Davies (2023) + Sri Lanka natural-experiment evidence projected ~175 deaths averted/yr if attributable burden is retired. Whether SA realises this is now an empirical question for Surveillance + Coordination to answer.
 **Cost:** ~R1–3M/yr enforcement (DALRRD).
-**Impact modelled (pre-ban):** Dominant agent in fatal SA paediatric pesticide poisoning (Davies 2023). Sri Lanka natural-experiment evidence suggests **~175 deaths averted/yr**.
 **Owner:** DALRRD Pesticide Registrar + NDoH surveillance (measurement).
 :::
 
@@ -88,23 +92,23 @@ execute:
 ## The economics
 
 ::: {.recommendation-box}
-### ~R280k of operating spend can retire ~R1.5B of preventable burden
+### Every R1 of operating spend retires roughly R1,000 of preventable household burden
 
-**Total annual operating cost (Detect + Act):** ~R282,000 (R137k Surveillance MVP + R145k Coordination Full Package) — less than one mid-grade epidemiologist's salary.
-**Modelled burden avoided at scale:** ~R1.45 billion / year (Coordination Full Package; see [Coordination brief §6c](posts/coordination_policy.qmd#what-changes-under-each-coordination-scenario)).
-**Stakeholder split of avoided burden:** ~R50M back to NDoH+NHLS budget lines; ~R1.4B to households.
-**ROI:** ~**5,000×** on combined Detect+Act operating cost (R1.4B ÷ R282k); ~**1,000×** even on the whole-system operating cost (~R1.2M, which includes induced hospital, lab, EHP, and DALRRD enforcement demand).
-**Legal basis:** NHA §90 + existing NMC regulations + Act 36 of 1947 (ministerial prohibition power). **No new primary legislation required.**
+**Total annual operating cost (Detect + Act):** ~R282,000 (R137 k Surveillance MVP + R145 k Coordination Full Package) — less than one mid-grade epidemiologist's salary.
+**Modelled burden avoided at scale (central estimate):** ~R1.45 billion/year (Coordination Full Package; see [Coordination brief §6c](posts/coordination_policy.qmd#what-changes-under-each-coordination-scenario)).
+**Stakeholder split of avoided burden:** ~R50 M back to NDoH+NHLS budget lines; ~R1.4 B to households.
+**Headline ratio (whole-system, conservative):** ~**1,000 : 1** — R1.45 B burden retired against ~R1.2 M of total operating cost including induced hospital, lab, EHP, and DALRRD enforcement demand. *On Detect+Act operating cost alone, the nominal multiplier exceeds 5,000× — we report the whole-system figure because it is the one that holds under audit.*
+**Downside scenario (50% of modelled effect):** ~R725 M burden retired; ratio still ~600 : 1; cost per death averted < R3,000. **The case does not depend on hitting the central estimate.**
 :::
 
 ---
 
 ## What we are *not* asking for
 
-- No new primary legislation — all three asks use existing legal authority (NHA §90, existing NMC regulations, Act 36 of 1947 ministerial powers).
-- No new test, no new reagent contract (S2 is an LIS configuration of an existing NHLS assay).
-- No new agency.
-- No single point-estimate masquerading as certainty — every figure traces back to [`amua_import_parameters_v4.csv`](amua_import_parameters_v4.csv); open evidence gaps are listed in the [Parameters Hub](parameters_hub.qmd).
+- **No new primary legislation.** All three asks use existing legal authority — NHA §90 (notifiable conditions), existing NMC regulations, and Act 36 of 1947 (ministerial prohibition power, the same instrument used for the terbufos ban).
+- **No new test, no new reagent contract.** S2 is a Laboratory Information System (LIS) configuration of an existing NHLS BChE assay.
+- **No new agency.** All work sits within NDoH, NICD, NHLS, DALRRD and the Red Cross PIH — institutions that already exist and already hold mandate.
+- **No single point-estimate masquerading as certainty.** Every figure traces back to [`amua_import_parameters_v4.csv`](amua_import_parameters_v4.csv); open evidence gaps are listed in the [Parameters Hub](parameters_hub.qmd) and the downside scenario above shows the case still holds at half the modelled effect.
 
 ---
 
@@ -112,10 +116,20 @@ execute:
 
 | From | Action | By when |
 |:-----|:-------|:--------|
-| MAC + NDoH | Approve **Surveillance MVP** pilot (3 provinces; R137k op + R80k setup) — *the first step* | Q3 2026 |
+| MAC + NDoH | Approve **Surveillance MVP** pilot (3 provinces; R137 k op + R80 k setup) — *the first step* | Q3 2026 |
 | NDoH + DALRRD DGs | Issue joint circular adopting the **Coordination Full Package** | Q3 2026 |
 | DALRRD Pesticide Registrar | ✓ **Terbufos banned** (gazetted 8 May 2026) — now: enforce, dispose of stockpiles, set 24-month evaluation gate | Ongoing |
 | MAC | Stand up the **Joint Coordination Forum** (quarterly, NICD chair) | Q3 2026 |
+
+## 12-month success criteria
+
+If the package is working a year after approval, the following should be visible — in the same surveillance system the package builds:
+
+- **P(case detected) ≥ 15%** (currently 4.8%; central target 18.9%).
+- **P(loop closed) ≥ 40%** on referred NMC notifications (currently ~1.1%; central target ~70%).
+- **≥3 NICD→DALRRD intelligence packages** issued and acknowledged.
+- **One published interim measurement** of the terbufos ban's effect on attributable serious cases.
+- **Burden is concentrated in low-income, peri-urban and rural households**, with children disproportionately affected (Davies 2023) — disaggregated reporting against this baseline becomes possible only once detection is fixed.
 
 ---
 
