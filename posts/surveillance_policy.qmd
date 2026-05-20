@@ -171,7 +171,7 @@ S0 (NHLS→NMC IT feed) is operational and in the baseline. **Surveillance MVP =
 
 ### Option 1 — BChE auto-notification *(★ recommended — first build, capability exists)*
 
-Configure the NHLS LIS to fire an automatic NICD notification when a BChE result shows severe inhibition (< 30 % of normal)*, within 24 hours of validation. **No new test, no new reagent contract** — only an IT configuration on top of the ~`r scales::comma(as.numeric(pick("n_nhls_total_annual")))` BChE tests/year already performed (`r scales::comma(as.numeric(pick("n_nhls_severe_annual")))` severe in 2023). Detection rises to ~`r sprintf("%.0f", as.numeric(pick("d_S2_BChE_autonotify")) * 100)` % of true cases (up from ~`r sprintf("%.0f", as.numeric(pick("d_status_quo")) * 100)` %) for a one-off setup of **`r zar(as.numeric(pick("c_S2_BChE_autonotify_setup")))`**, then **`r zar(as.numeric(pick("c_S2_BChE_autonotify_op")))`/year** from Year 2 (Year 1 total: **`r zar(as.numeric(pick("c_S2_BChE_autonotify_setup")) + as.numeric(pick("c_S2_BChE_autonotify_op")))`**), deliverable in 2–4 weeks. Uses existing NHLS infrastructure with a single owner (NHLS LIS) and delivers the largest single-option P_detect uplift (+`r sprintf("%.1f pp", (as.numeric(pick("d_S2_BChE_autonotify")) - as.numeric(pick("d_status_quo"))) * 100)`) — recommended as the first build.
+Configure the NHLS LIS to fire an automatic NICD notification when a BChE result shows severe inhibition (< 10 % of normal)*, within 24 hours of validation. **No new test, no new reagent contract** — only an IT configuration on top of the ~`r scales::comma(as.numeric(pick("n_nhls_total_annual")))` BChE tests/year already performed (`r scales::comma(as.numeric(pick("n_nhls_severe_annual")))` severe in 2023). Detection rises to ~`r sprintf("%.0f", as.numeric(pick("d_S2_BChE_autonotify")) * 100)` % of true cases (up from ~`r sprintf("%.0f", as.numeric(pick("d_status_quo")) * 100)` %) for a one-off setup of **`r zar(as.numeric(pick("c_S2_BChE_autonotify_setup")))`**, then **`r zar(as.numeric(pick("c_S2_BChE_autonotify_op")))`/year** from Year 2 (Year 1 total: **`r zar(as.numeric(pick("c_S2_BChE_autonotify_setup")) + as.numeric(pick("c_S2_BChE_autonotify_op")))`**), deliverable in 2–4 weeks. Uses existing NHLS infrastructure with a single owner (NHLS LIS) and delivers the largest single-option P_detect uplift (+`r sprintf("%.1f pp", (as.numeric(pick("d_S2_BChE_autonotify")) - as.numeric(pick("d_status_quo"))) * 100)`) — recommended as the first build.
 
 * Severe inhibition is most closely related to severe sequelae such as hospitalisation and death [Chaudhary S, Jain N, Atam V, Agarwal A, Singh K, Sawlani K, et al. Prognostic significance of estimation of pseudocholinesterase activity and role of pralidoxime therapy in organophosphorous poisoning. Toxicol Int. 2013;20(3):214]. Taking any BChE test will likely increase the FP rate and this will not be accounted for.
 
@@ -195,7 +195,7 @@ Configure the NHLS LIS to fire an automatic NICD notification when a BChE result
 
 **Sensitivity.** Middleware hosting tier is the dominant driver (t3.small → t3.medium adds ~R12,000/yr); doubling the NHLS IT FTE share adds ~R15,000/yr. Neither moves Option 1 above Option 2 in operating cost (R82,000/yr).
 
-**Setup.** `c_S2_BChE_autonotify_setup` = R200,000 (one-off) covers NHLS LIS HL7 rule development, configuration of the severity threshold (< 50% inhibition), UAT across NHLS network sites, and go-live sign-off. Spent once; not part of the recurring R55,000/yr.
+**Setup.** `c_S2_BChE_autonotify_setup` = R200,000 (one-off) covers NHLS LIS HL7 rule development, configuration of the severity threshold (< 10% of normal enzyme activity), UAT across NHLS network sites, and go-live sign-off. Spent once; not part of the recurring R55,000/yr.
 :::
 
 ### Option 2 — PIH live dashboard + Minimum Viable Dataset *(★ recommended — second build, completes the MVP)*
@@ -443,7 +443,7 @@ This is the **single denominator** used for every per-case P_detect below.
 | Stream | Annual count | CSV row | Source |
 |--|--:|--|--|
 | NMC notifications | `r scales::comma(as.numeric(pick("n_nmc_annual")))` | `n_nmc_annual` | NICD NMC Annual Report 2023 |
-| NHLS severe BChE inhibitions (<50 % normal) | `r scales::comma(as.numeric(pick("n_nhls_severe_annual")))` | `n_nhls_severe_annual` | NHLS LIS 2023 (of `r scales::comma(as.numeric(pick("n_nhls_total_annual")))` total tests) |
+| NHLS severe BChE inhibitions (<10 % of normal enzyme activity) | `r scales::comma(as.numeric(pick("n_nhls_severe_annual")))` | `n_nhls_severe_annual` | NHLS LIS 2023 (of `r scales::comma(as.numeric(pick("n_nhls_total_annual")))` total tests) |
 | PIH clinician-initiated calls | `r scales::comma(as.numeric(pick("n_pih_annual")))` | `n_pih_annual` | PIH (Tygerberg) 2023 |
 
 The three streams are treated as **mutually exclusive** in the base case (severe BChE ≠ NMC-notified ≠ PIH-called); the overlap-correction sensitivity is parameterised separately in the hub.
