@@ -98,42 +98,35 @@ flowchart LR
 
 Three stages, one system. Each affordable on its own; each strictly more valuable paired with the others. **Total annual operating cost ~R282 k against an annual burden of R2.34 billion — modelled burden avoided ~R1.45 B/yr, a whole-system ratio of roughly 1,000 : 1 even after counting induced demand. The case still holds at half the modelled effect.**
 
-## Where to start
+## Decision required
 
-::: {.card-grid}
+| From | Action | By when |
+|:-----|:-------|:--------|
+| MAC + NDoH | Approve **Surveillance MVP** pilot (3 provinces; R137 k op + R80 k setup) — *the first step* | Q3 2026 |
+| NDoH + DALRRD DGs | Issue joint circular adopting the **Coordination Full Package** | Q3 2026 |
+| DALRRD Pesticide Registrar | ✓ **Terbufos banned** (gazetted 8 May 2026) — now: enforce, dispose of stockpiles, set 24-month evaluation gate | Ongoing |
+| MAC | Stand up the **Joint Coordination Forum** (quarterly, NICD chair) | Q3 2026 |
 
-::: {.feature-card}
-### 60-second view
-**[One-pager](one_pager.qmd)** — single page, three asks, bottom line.
-:::
+## 12-month success criteria
 
-::: {.feature-card}
-### Policy decision
-Three briefs: **[Surveillance](posts/surveillance_policy.qmd)** · **[Coordination](posts/coordination_policy.qmd)** · **[Terbufos](posts/terbufos_policy.qmd)**.
-:::
+If the package is working a year after approval, the following should be visible in the same surveillance system the package builds:
 
-::: {.feature-card}
-### Evidence base
-**[Parameters Hub](parameters_hub.qmd)** — canonical CSV, sources, open items.
-:::
-
-::: {.feature-card}
-### What-if scenarios
-**[Parameter Playground](parameter_playground.qmd)** — adjust assumptions in your browser; export as CSV.
-:::
-
-:::
+- **P(case detected) ≥ 15%** (currently 4.8%; central target 18.9%).
+- **P(loop closed) ≥ 40%** on referred NMC notifications (currently ~1.1%; central target ~70%).
+- **≥3 NICD→DALRRD intelligence packages** issued and acknowledged.
+- **One published interim measurement** of the terbufos ban's effect on attributable serious cases.
+- Disaggregated reporting by income, geography, and age (Davies 2023 baseline) — only possible once detection is fixed.
 
 ## What this site does *not* claim
 
-- **A new legislative ask.** Every recommendation is implementable under existing authority (NHA §90; Act 36 of 1947).
-- **Unsourced numbers.** Every figure traces back to [`amua_import_parameters_v4.csv`](amua_import_parameters_v4.csv) and the references in the [Parameters Hub](parameters_hub.qmd).
-- **A single point estimate masquerading as certainty.** Headline numbers are anchored to ranges; open evidence gaps are listed explicitly.
+- **No new legislative ask.** Every recommendation is implementable under existing authority (NHA §90; Act 36 of 1947).
+- **No unsourced numbers.** Every figure traces back to [`amua_import_parameters_v4.csv`](amua_import_parameters_v4.csv) and the references in the [Parameters Hub](parameters_hub.qmd).
+- **No single point estimate masquerading as certainty.** Headline numbers are anchored to ranges; open evidence gaps are listed explicitly.
 
 ---
 
 ::: {.footer-cta}
 Project team: NICD · NHLS · UCT School of Public Health · Red Cross PIH.  
 **Key sources:** StatsSA MACOD 2023 (X40–X49); NICD NMC Annual Report 2023; Davies et al. 2023 (paediatric pesticide deaths, SA); Gunnell et al. 2017 / Knipe et al. 2017 (Sri Lanka pesticide-ban natural experiment). Full reference list and per-parameter sourcing in the [Parameters Hub](parameters_hub.qmd).  
-Full technical detail: [Full Analysis Report](analysis_report_v2.html) · [Decision Model](posts/decision_model.qmd) · [Costing Analysis](posts/costing_analysis.qmd).
+Technical detail and supporting analyses are collected under **Technical & Misc** in the navigation bar.
 :::

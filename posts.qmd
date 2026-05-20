@@ -18,4 +18,4 @@ page-layout: full
 title-block-banner: true
 ---
 
-The D2P Project has produced three companion policy briefs for decision-makers, preceded by an overall framing document. Technical outputs (decision tree model, costing analysis, overall policy model, and technical appendices) are available under the **Technical** menu.
+The D2P Project has produced three companion policy briefs for decision-makers, preceded by an overall framing document. Technical outputs (decision tree model, costing analysis, overall policy model, parameters hub, playground, and technical appendices) are available under the **Technical & Misc** menu.
