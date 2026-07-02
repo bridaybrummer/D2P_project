@@ -24,7 +24,7 @@ Three decision-maker-facing briefs, each addressing a distinct policy question, 
 
 **Policy question.** Should NDoH invest in automated, multi-source surveillance to close the detection gap between NMC, the NHLS laboratory, and the Poisons Information Helpline?
 
-**Headline recommendation.** Adopt the **Surveillance MVP** (NHLS→NMC IT feed + BChE auto-notification + PIH dashboard / MVD) — **~R157,000/year, ~150 deaths averted/year**.
+**Headline recommendation.** Adopt the **Surveillance MVP** (NHLS→NMC IT feed + BChE auto-notification + PIH dashboard / MVD) — **~R137,000/year, lifting per-case detection from <5% to ~19% of true cases**. (Surveillance changes only what is *seen*; deaths averted are delivered by the coordination and terbufos responses that act on the improved signal.)
 
 ### [2 · Closing the Coordination Loop](coordination_policy.qmd)
 
