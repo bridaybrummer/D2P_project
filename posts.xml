@@ -105,6 +105,283 @@ Figure&nbsp;1: The three briefs operate as one system. Surveillance produces the
   <pubDate>Thu, 04 Sep 2025 22:00:00 GMT</pubDate>
 </item>
 <item>
+  <title>Fixing What We Can’t See</title>
+  <dc:creator>D2P Project Team</dc:creator>
+  <link>https://your-site-url.com/posts/surveillance_brief.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Key Messages
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>South Africa detects <strong>fewer than 1 in 20</strong> pesticide poisoning cases. An estimated <strong>20,960 cases</strong> and <strong>2,620 deaths</strong> occur annually — costing <strong>R2.34 billion</strong> — yet only 1,013 reach the NMC surveillance system.</li>
+<li><strong>Recommendation: adopt the Surveillance MVP</strong> (BChE auto-notification + PIH Minimum Viable Dataset) — <strong>R137,000/year operating cost</strong>, lifting detection from 5% to 19% of true cases within 12 weeks.</li>
+<li>Without improved surveillance, neither the coordination response nor the recently gazetted terbufos ban can be measured or enforced with evidence.</li>
+</ul>
+</div>
+</div>
+<section id="the-problem" class="level2">
+<h2 class="anchored" data-anchor-id="the-problem">The Problem</h2>
+<p>South Africa’s pesticide poisoning surveillance system is fragmented. Three data streams — the Notifiable Medical Conditions system (NMC), the NHLS butyrylcholinesterase (BChE) laboratory, and the Poisons Information Helpline (PIH) — each see a fraction of the burden. None sees the whole. They do not talk to each other.</p>
+<p><strong>The numbers:</strong></p>
+<table class="table-striped caption-top table">
+<caption>All values from <a href="../amua_import_parameters_v4.csv"><code>amua_import_parameters_v4.csv</code></a>.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Indicator</th>
+<th style="text-align: right;">Value</th>
+<th style="text-align: left;">Source</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Annual deaths</td>
+<td style="text-align: right;"><strong>2,620</strong></td>
+<td style="text-align: left;">StatsSA MACOD 2023 (X40–X49)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Estimated true cases/year</td>
+<td style="text-align: right;"><strong>20,960</strong></td>
+<td style="text-align: left;">Deaths ÷ 12.5% CFR</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NMC notifications (detected)</td>
+<td style="text-align: right;"><strong>1,013 (4.8%)</strong></td>
+<td style="text-align: left;">NICD NMC 2023</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NHLS severe BChE results (unlinked)</td>
+<td style="text-align: right;"><strong>1,779</strong></td>
+<td style="text-align: left;">NHLS LIS 2023</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PIH clinician calls (unlinked)</td>
+<td style="text-align: right;"><strong>1,158</strong></td>
+<td style="text-align: left;">PIH Tygerberg 2023</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The consequence:</strong> decision-makers act on the visible 1,013 notifications while ~95% of the burden remains invisible. The response chain cannot prioritise what it cannot see. The recently gazetted terbufos ban (8 May 2026) cannot be evaluated without knowing whether poisoning incidence actually falls.</p>
+</section>
+<section id="root-cause" class="level2">
+<h2 class="anchored" data-anchor-id="root-cause">Root Cause</h2>
+<p>The under-detection is <strong>executional, not legislative</strong>. Section 90 of the National Health Act (2003) and existing NMC regulations already authorise the necessary data flows. Three fixable gaps remain:</p>
+<ol type="1">
+<li><strong>NHLS severe BChE results do not trigger a notification.</strong> The NHLS–NMC IT feed is operational, but no severity-threshold rule fires an alert.</li>
+<li><strong>PIH consultations are not used for surveillance.</strong> ~1,158 clinician calls/year hold exposure, geography, and agent data — none enters the surveillance system.</li>
+<li><strong>No structured agent-name capture.</strong> Without a consistent AfriTox product-name field across PIH and NMC, product-specific patterns (e.g.&nbsp;terbufos clusters) are invisible.</li>
+</ol>
+</section>
+<section id="recommended-solution-the-surveillance-mvp" class="level2">
+<h2 class="anchored" data-anchor-id="recommended-solution-the-surveillance-mvp">Recommended Solution: The Surveillance MVP</h2>
+<p>Combine two low-cost, IT-configuration investments that build on existing infrastructure:</p>
+<section id="option-1-bche-auto-notification" class="level3">
+<h3 class="anchored" data-anchor-id="option-1-bche-auto-notification">Option 1 — BChE auto-notification</h3>
+<p>Configure the NHLS LIS to auto-notify NICD when a BChE result shows severe inhibition (&lt; 10% of normal). <strong>No new test, no new reagent contract</strong> — only an IT rule on 10,626 tests already performed each year.</p>
+<ul>
+<li><strong>Setup:</strong> R200,000 (one-off)</li>
+<li><strong>Operating:</strong> R55,000/year</li>
+<li><strong>Detection uplift:</strong> +8.5 percentage points</li>
+<li><strong>Delivery:</strong> 2–4 weeks</li>
+</ul>
+</section>
+<section id="option-2-pih-dashboard-minimum-viable-dataset" class="level3">
+<h3 class="anchored" data-anchor-id="option-2-pih-dashboard-minimum-viable-dataset">Option 2 — PIH dashboard + Minimum Viable Dataset</h3>
+<p>PIH publishes a live dashboard (days); PIH and NICD agree a structured MVD so clinician calls enter NMC (3–9 months). Mandatory AfriTox agent-name field enables product-specific attribution across both streams.</p>
+<ul>
+<li><strong>Setup:</strong> R40,000 (one-off)</li>
+<li><strong>Operating:</strong> R82,000/year</li>
+<li><strong>Detection uplift:</strong> +5.6 percentage points</li>
+<li><strong>Delivery:</strong> dashboard in 1–2 weeks; MVD integration in 3–9 months</li>
+</ul>
+</section>
+<section id="combined-the-mvp" class="level3">
+<h3 class="anchored" data-anchor-id="combined-the-mvp">Combined (the MVP)</h3>
+<table class="table-striped caption-top table">
+<caption>12-week delivery. No new headcount. No new legislation.</caption>
+<colgroup>
+<col style="width: 5%">
+<col style="width: 12%">
+<col style="width: 24%">
+<col style="width: 18%">
+<col style="width: 39%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">Setup</th>
+<th style="text-align: right;">Operating/yr</th>
+<th style="text-align: center;">P<sub>detect</sub></th>
+<th style="text-align: center;">Uplift vs.&nbsp;status quo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Surveillance MVP</strong></td>
+<td style="text-align: right;"><strong>R240,000</strong></td>
+<td style="text-align: right;"><strong>R137,000</strong></td>
+<td style="text-align: center;"><strong>18.9%</strong></td>
+<td style="text-align: center;"><strong>+14.1 pp (~4× improvement)</strong></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="feasibility" class="level2">
+<h2 class="anchored" data-anchor-id="feasibility">Feasibility</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 47%">
+<col style="width: 52%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Dimension</th>
+<th style="text-align: left;">Assessment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Political</strong></td>
+<td style="text-align: left;">High. Aligns with NDoH NMC modernisation agenda; Minister has publicly committed to surveillance improvement.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Operational</strong></td>
+<td style="text-align: left;">High. Both options use existing IT infrastructure (NHLS LIS, PIH TMS, NMC platform). NHLS–NMC feed already operational.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Financial</strong></td>
+<td style="text-align: left;">High. R137,000/year is a 45.7% uplift on current surveillance spend — absorbable within existing budgets.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Legal</strong></td>
+<td style="text-align: left;">High. Section 90 NHA + NMC regulations already authorise all required data flows. No new legislation.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Public health impact</strong></td>
+<td style="text-align: left;">Moderate (necessary but not sufficient). Detection enables action but does not itself avert deaths — that requires the coordination response.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="how-this-connects-to-coordination-and-regulatory-reform" class="level2">
+<h2 class="anchored" data-anchor-id="how-this-connects-to-coordination-and-regulatory-reform">How This Connects to Coordination and Regulatory Reform</h2>
+<p>Surveillance is <strong>step one</strong> of a three-part system:</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+    S["1. Surveillance MVP&lt;br/&gt;&lt;b&gt;Detect&lt;/b&gt;&lt;br/&gt;~R137k/yr"] --&gt; C["2. Coordination&lt;br/&gt;&lt;b&gt;Act&lt;/b&gt;&lt;br/&gt;~R145k/yr"]
+    C --&gt; R["3. Regulatory action&lt;br/&gt;&lt;b&gt;Restrict&lt;/b&gt;&lt;br/&gt;(terbufos ban gazetted)"]
+    R -.Measure impact.-&gt; S
+
+    style S fill:#cce5ff,stroke:#333,stroke-width:2px
+    style C fill:#d4edda,stroke:#333
+    style R fill:#ffd9b3,stroke:#cc8800
+</pre>
+</div>
+<p></p><figcaption> The surveillance signal feeds the coordination response, which feeds product-specific regulation. Each layer depends on the one before it.</figcaption> </figure><p></p>
+</div>
+</div>
+</div>
+<p><strong>Coordination</strong> (companion brief): The NMC–EHP–DALRRD response loop is currently broken — ~99% of notifications end without a recorded investigation or regulatory follow-up. A Coordination Full Package (~R145,000/year, no new legislation) mandates a closed-loop workflow: every notification triggers an EHP investigation recorded on NMC, a structured DALRRD referral, and clinician feedback. At base-case response efficacy, this averts ~957 deaths/year.</p>
+<p><strong>Terbufos ban</strong> (gazetted 8 May 2026): Agriculture Minister Steenhuisen banned all terbufos-containing products under Act 36 of 1947. Without surveillance, it is impossible to confirm whether the ban reduces poisoning incidence or whether a more-toxic substitute enters the informal market. The MVP provides the measurement infrastructure for the ban’s 24-month evaluation gate.</p>
+</section>
+<section id="scope-and-completeness" class="level2">
+<h2 class="anchored" data-anchor-id="scope-and-completeness">Scope and Completeness</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 39%">
+<col style="width: 60%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Element</th>
+<th style="text-align: left;">Specification</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Scope</strong></td>
+<td style="text-align: left;">All acute pesticide poisoning cases presenting to facilities served by NHLS BChE testing and/or PIH consultation. National roll-out; 3-province pilot recommended (GP, WC, KZN).</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Roles &amp; responsibilities</strong></td>
+<td style="text-align: left;">NHLS owns the BChE auto-notify LIS rule. PIH (Tygerberg) owns the dashboard and MVD extract. NICD coordinates the NMC ingest and reconciliation. NDoH is the accountable owner.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Compliance &amp; enforcement</strong></td>
+<td style="text-align: left;">Voluntary adoption (no new mandate required). KPI: % of NHLS severe results appearing in NMC within 24 hours; % of PIH calls with MVD completeness ≥ 80%.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Reporting &amp; documentation</strong></td>
+<td style="text-align: left;">Monthly reconciliation report (NHLS→NMC match rate; PIH MVD completeness). Quarterly report to MAC on P<sub>detect</sub> trend.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Resources</strong></td>
+<td style="text-align: left;">Setup R240,000 (one-off); operating R137,000/year. No new headcount; fractional FTE allocations from existing NICD, NHLS, and PIH posts.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Timelines</strong></td>
+<td style="text-align: left;">Weeks 1–2: PIH dashboard live. Weeks 2–4: BChE LIS rule configured. Months 1–3: MVD finalised. Month 6: pilot evaluation. Month 12: Phase 2 decision (community layer).</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="recommendation" class="level2">
+<h2 class="anchored" data-anchor-id="recommendation">Recommendation</h2>
+<p><strong>Adopt the Surveillance MVP (Option 1 + Option 2) and pilot in Gauteng, Western Cape, and KwaZulu-Natal for 6 months.</strong></p>
+<p>Next steps:</p>
+<ol type="1">
+<li><strong>Immediate (Weeks 1–4):</strong> NHLS configures the BChE severity-threshold rule; PIH deploys the dashboard.</li>
+<li><strong>Short term (Months 1–3):</strong> PIH–NICD MVD workshop; AfriTox agent-name harmonisation.</li>
+<li><strong>Month 6:</strong> Evaluate pilot against completeness of NHLS results in NMC and signal-to-investigation latency.</li>
+<li><strong>Month 9:</strong> Commission sentinel toxicology site (Option 5, research-funded — provides the agent-attribution evidence base for product-specific regulation).</li>
+<li><strong>Month 12:</strong> If ≥40% of severe cases originate in low-facility-access districts, commission the community-layer pilot (Option 3, Phase 2).</li>
+</ol>
+<p><strong>Hand off to <code>d2p-pressure-tester</code></strong> for full adversarial review before submission to MAC.</p>
+<hr>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Maintainability
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This brief pulls all numerical claims from <a href="../amua_import_parameters_v4.csv"><code>amua_import_parameters_v4.csv</code></a> at render time. To update a figure: edit the CSV cell, re-render with <code>quarto render posts/surveillance_brief.qmd</code>. No inline numbers to chase.</p>
+<p><strong>Related documents:</strong> <a href="../posts/surveillance_policy.html">Detailed surveillance analysis</a> · <a href="../posts/coordination_policy.html">Coordination brief</a> · <a href="../posts/terbufos_policy.html">Terbufos brief</a> · <a href="../parameters_hub.html">Parameters Hub</a></p>
+</div>
+</div>
+
+
+<!-- -->
+
+</section>
+
+ ]]></description>
+  <category>policy</category>
+  <category>surveillance</category>
+  <category>brief</category>
+  <category>decision-makers</category>
+  <guid>https://your-site-url.com/posts/surveillance_brief.html</guid>
+  <pubDate>Thu, 04 Sep 2025 22:00:00 GMT</pubDate>
+</item>
+<item>
   <title>Policy Brief 1: Strengthening Pesticide Poisoning Surveillance</title>
   <dc:creator>D2P Project Team</dc:creator>
   <link>https://your-site-url.com/posts/surveillance_policy.html</link>
