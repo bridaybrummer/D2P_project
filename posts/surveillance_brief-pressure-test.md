@@ -1,0 +1,147 @@
+---
+title: "Pressure Test Report — Surveillance Brief"
+subtitle: "4 D's adversarial review + completeness and ambiguity checks"
+author: "D2P Pressure Tester"
+date: today
+---
+
+## Blockers — triage first
+
+1. **"Within 12 weeks" delivery claim is contradicted by Option 2's own timeline.** The Key Message says the MVP lifts detection "within 12 weeks," but the Option 2 description says MVD integration takes 3–9 months. A decision-maker who approves based on "12 weeks" and sees the MVD isn't operational at Month 3 will lose confidence in the brief's credibility. The brief must distinguish between initiation (12 weeks) and full operational capability (up to 9 months).
+
+2. **Surveillance chilling effect on PIH usage is unaddressed.** Option 2 converts the Poisons Information Helpline from a clinical-advice service into a surveillance data source. Clinicians who currently call PIH for toxicology advice may reduce their call frequency if they learn that each call now triggers a surveillance notification about their patient. This is a documented risk in poisons-centre surveillance integration internationally (UK NPIS, US AAPCC). The brief is entirely silent on this, yet PIH is one of the two pillars of the MVP. If clinician call volume drops, Option 2's detection uplift shrinks — and PIH's clinical mission is also harmed.
+
+---
+
+## Improvement 1: BChE auto-notification
+
+### Completeness
+
+| Element | Finding | Severity |
+|:--------|:--------|:---------|
+| **Scope** | "Facilities served by NHLS BChE testing" — but the brief doesn't quantify what share of the country's facilities or poisoning cases this covers. A reader cannot tell whether 80% of hospitals do BChE testing or 20%. | Should-fix |
+| **Roles** | NHLS, NICD, NDoH named. Clear. | — |
+| **Compliance** | KPI defined (% severe results in NMC within 24 hours). Adequate. | — |
+| **Reporting** | Monthly reconciliation, quarterly MAC report. Adequate. | — |
+| **Resources** | Cost specified. "No new headcount" stated. But NICD triage at 0.015 FTE — no fallback if alert volume exceeds the assumption. | Should-fix |
+| **Timelines** | "2–4 weeks" — clear. | — |
+
+### Ambiguity
+
+- **"Severe inhibition (< 10% of normal)"** — the threshold is defined, but who reviews and adjusts it if false-positive rates are unacceptable? The brief names no threshold-governance owner. **Should-fix.**
+- **"Auto-notify NICD"** — does NICD acknowledge receipt? Is there a service-level expectation? What happens if the middleware goes down for a week? **Nice-to-have.**
+
+### 4 D's
+
+| Persona | Question | Already answered? | Severity |
+|:--------|:---------|:-----------------:|:---------|
+| **Disabled** | A patient with a cognitive impairment or language barrier may not report symptoms that prompt a clinician to order a BChE test. Auto-notify only fires on tests ordered — does the brief acknowledge this upstream dependency? | Partially (risk section: "Low BChE testing uptake by clinicians") but buried and not specific to access-constrained patients. | Nice-to-have |
+| **Diverse** | BChE testing is concentrated in secondary/tertiary facilities. What share of poisoning cases present to primary-care clinics that lack BChE capability? Farm workers, rural communities, and informal-settlement residents may never trigger this option. | Not quantified. The ~19% ceiling is noted but the geographic/facility-level gap isn't. | Should-fix |
+| **Diverse** | Intentional self-harm cases (disproportionately young women) may present first to primary-care facilities without BChE. Are they systematically excluded from this option? | Not addressed. | Should-fix |
+| **Doer** | Who validates the < 10% threshold clinically if there's disagreement between NHLS and NICD about whether a result is truly "severe"? | Not addressed. A named clinical governance owner is missing. | Should-fix |
+| **Doer** | The NICD epidemiologist triages alerts at 0.015 FTE. If 1,779 severe results/year generate even 5 minutes of triage each, that's ~150 hours — closer to 0.08 FTE. Is 0.015 realistic? | Not addressed in this brief (detailed brief has the audit trail). | Should-fix |
+| **Dissenter** | NHLS takes on an IT maintenance obligation (HL7 middleware, Mirth Connect). What is their institutional incentive? Will they maintain this if the NICD champion moves on? | Not addressed. No MOU or institutional commitment mechanism mentioned. | Should-fix |
+| **Dissenter** | Clinicians may perceive auto-notification as bypassing their clinical judgment — a lab result about their patient triggers a public-health notification without the clinician's confirmation. Is there a clinician-notification step? | Not addressed. | Should-fix |
+
+---
+
+## Improvement 2: PIH dashboard + MVD
+
+### Completeness
+
+| Element | Finding | Severity |
+|:--------|:--------|:---------|
+| **Scope** | "Clinician-initiated calls" only. Lay calls and non-clinician calls are excluded by design. Not stated explicitly in the option description — a reader might assume all PIH calls are captured. | Should-fix |
+| **Roles** | PIH (Tygerberg) owns dashboard/extract. NICD coordinates. But PIH is a Stellenbosch-affiliated academic service, not a government department. The brief doesn't address how NDoH secures PIH's cooperation (MOU? Funding? Mandate?). | Should-fix |
+| **Compliance** | KPI defined (≥ 80% MVD completeness). But what happens if PIH falls below 80%? No escalation or consequence mechanism. | Nice-to-have |
+| **Reporting** | Adequate. | — |
+| **Resources** | Adequate. | — |
+| **Timelines** | "Dashboard in 1–2 weeks; MVD integration in 3–9 months." Contradicts the Key Message "within 12 weeks." | **Blocker** (see above) |
+
+### Ambiguity
+
+- **"PIH and NICD agree a Minimum Viable Dataset"** — who convenes the agreement? Who has sign-off authority? NDoH? NICD? What if they can't agree on the field set? **Should-fix.**
+- **"Mandatory AfriTox agent-name field"** — mandatory for PIH, NMC, or both? The phrase "across both streams" implies both, but it's not stated who enforces this on each side. **Should-fix.**
+
+### 4 D's
+
+| Persona | Question | Already answered? | Severity |
+|:--------|:---------|:-----------------:|:---------|
+| **Disabled** | PIH is telephone-based. A clinician treating a deaf or non-verbal patient may have limited clinical history to report to PIH. Does the MVD handle cases with sparse or uncertain exposure details? | Not addressed, but "unknown" codes are specified in the detailed brief. | Nice-to-have |
+| **Diverse** | PIH (Tygerberg) primarily serves English/Afrikaans callers. Clinicians from Limpopo, Mpumalanga, or KZN calling in isiZulu or Sepedi — is there a language barrier? Does PIH have multilingual capacity? | Not addressed. | Should-fix |
+| **Diverse** | The 3-province pilot (GP, WC, KZN) omits Free State and Eastern Cape, which the project's own data identify as high-burden agricultural provinces. Does the pilot capture the populations most affected? | Not addressed. The detailed brief actually recommends FS + Gauteng for Phase 2 — but why not for the MVP pilot? | Should-fix |
+| **Doer** | PIH staff must restructure their TMS to export the MVD. Can the current TMS output structured coded fields, or does it require system modification? The brief says "daily extract from existing call records" but doesn't confirm the TMS can do this. | Not addressed. | Should-fix |
+| **Doer** | Who convenes the MVD workshop? Who has authority to mandate field requirements on PIH (an academic entity)? | Not addressed. | Should-fix |
+| **Dissenter** | **Surveillance chilling effect.** Clinicians who currently call PIH for clinical advice may reduce usage if calls now trigger surveillance notifications. PIH's value proposition to clinicians is "call us for treatment advice" — adding "and we'll report your case to NICD" changes the relationship. This could reduce the ~1,158 calls/year that the Option 2 detection uplift depends on. | **Not addressed at all.** | **Blocker** |
+| **Dissenter** | PIH is an academic service. If Stellenbosch or the PIH director decides the surveillance mandate conflicts with their clinical mission, what happens? The MVP loses one of its two pillars with no fallback. | Not addressed. No MOU or institutional commitment mechanism. | Should-fix |
+
+---
+
+## Improvement 3: Combined MVP (Option 1 + Option 2)
+
+### Completeness
+
+- The completeness table is present and covers all six elements. Well done.
+- **Gap:** "Voluntary adoption" with no escalation mechanism. If NHLS or PIH don't cooperate, who compels them? NDoH is named as "accountable owner" but has no described lever over NHLS (a separate SOE) or PIH (an academic entity). **Should-fix.**
+
+### 4 D's
+
+| Persona | Question | Already answered? | Severity |
+|:--------|:---------|:-----------------:|:---------|
+| **Disabled** | The MVP by design only captures cases entering the formal health system. The ~81% undetected likely include the most access-constrained populations. The brief notes the 19% ceiling but doesn't flag this as a structural equity limitation in the Key Messages. | Partially — the Phase 2 community layer is mentioned but positioned as conditional, not as an equity imperative. | Should-fix |
+| **Diverse** | The 3-province pilot is urban-dominant (GP, WC, KZN). The highest per-capita agricultural-pesticide-exposure provinces (FS, EC, LP) are excluded. The pilot may demonstrate surveillance feasibility without testing detection in the hardest-to-reach populations. | Not addressed. | Should-fix |
+| **Doer** | Combined NICD analyst allocation across Options 1 + 2 is ~0.05 FTE. For a national surveillance system, is this realistic? What happens when the person holding that 0.05 FTE changes roles or goes on leave? | Not addressed. No succession or backup plan. | Should-fix |
+| **Dissenter** | "You're spending money to count bodies, not save lives." Surveillance alone doesn't avert a single death — the brief says this honestly (public health impact = "Moderate") but the Key Message leads with a cost figure that implies the MVP is a complete investment. A dissenter will ask: "So I spend R137k/year and no one is saved?" | Partially — the brief says "necessary but not sufficient" and points to coordination. But the counter-argument isn't pre-empted in the Key Messages. | Should-fix |
+
+---
+
+## Summary of findings
+
+### Blockers (2)
+
+| # | Finding | Improvement | Fix required |
+|:--|:--------|:------------|:-------------|
+| B1 | "Within 12 weeks" delivery claim contradicts Option 2's "3–9 months" MVD timeline | MVP (Key Message) | Restate as "initiated within 12 weeks; fully operational within 9 months" or similar |
+| B2 | Surveillance chilling effect on PIH usage unaddressed — clinicians may call less if calls trigger surveillance | Option 2 | Add a sentence on how clinical confidentiality is preserved (e.g. PIH advice function unchanged; only aggregated/de-identified data transmitted; clinician consent not required under s90 NHA but clinician trust must be maintained via communication) |
+
+### Should-fix (14)
+
+| # | Finding | Improvement |
+|:--|:--------|:------------|
+| S1 | Facility-level BChE coverage gap not quantified | Opt 1 |
+| S2 | No threshold-governance owner for < 10% BChE rule | Opt 1 |
+| S3 | NICD FTE allocation (0.015) may be underestimated | Opt 1 |
+| S4 | No MOU/institutional mechanism securing NHLS cooperation | Opt 1 |
+| S5 | Clinician-bypass concern (auto-notify without clinician confirmation) | Opt 1 |
+| S6 | "Clinician-initiated calls" scope not stated explicitly in option description | Opt 2 |
+| S7 | PIH institutional status (academic, not government) not addressed — no MOU | Opt 2 |
+| S8 | PIH language accessibility for non-English/Afrikaans callers | Opt 2 |
+| S9 | Pilot provinces (GP, WC, KZN) omit high-burden agricultural provinces | MVP |
+| S10 | AfriTox harmonisation governance unclear — who builds/maintains the lookup? | Opt 2 |
+| S11 | "Voluntary adoption" has no escalation if a partner doesn't cooperate | MVP |
+| S12 | MVD workshop convener and sign-off authority not named | Opt 2 |
+| S13 | Structural equity limitation (81% undetected) not flagged in Key Messages | MVP |
+| S14 | Dissenter argument ("counting not saving") not pre-empted in Key Messages | MVP |
+
+### Nice-to-have (4)
+
+| # | Finding | Improvement |
+|:--|:--------|:------------|
+| N1 | Access-constrained patients may not get BChE ordered — upstream dependency | Opt 1 |
+| N2 | Middleware SLA and downtime handling | Opt 1 |
+| N3 | MVD handling of sparse exposure details | Opt 2 |
+| N4 | "Low-facility-access districts" not defined | MVP (step 5) |
+
+---
+
+## Stop-test
+
+*If this were described to a stakeholder, would they understand exactly how it changes what they do?*
+
+**Mostly yes, but with two critical gaps.** A MAC member reading this brief would understand the problem, the solution, the cost, and the recommended next step. They would know that surveillance alone doesn't save lives and that coordination is the companion action. However:
+
+- They would not know when the MVP is **actually operational** (the 12-week claim is misleading).
+- They would not know whether **PIH will cooperate** or what institutional mechanism secures their participation — and they would rightly ask, since PIH is not a government entity.
+- They would not anticipate the **chilling effect** on PIH call volume, which could undermine the very data stream the MVP depends on.
+
+A staff member preparing a briefing note for the MAC would flag these three gaps before forwarding.

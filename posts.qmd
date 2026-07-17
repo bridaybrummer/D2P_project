@@ -4,6 +4,7 @@ subtitle: "Decision-maker policy briefs produced by the D2P Project"
 listing:
   contents:
     - posts/policy_brief.qmd
+    - posts/surveillance_brief.qmd
     - posts/surveillance_policy.qmd
     - posts/coordination_policy.qmd
     - posts/terbufos_policy.qmd

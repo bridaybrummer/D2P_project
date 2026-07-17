@@ -1,0 +1,181 @@
+---
+title: "Fixing What We Can't See"
+subtitle: "A policy brief for investing in automated, multi-source pesticide poisoning surveillance in South Africa"
+author: "D2P Project Team"
+date: "2025-09-05"
+date-modified: today
+categories: [policy, surveillance, brief, decision-makers]
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    number-sections: false
+---
+
+```{r}
+#| label: setup
+#| echo: false
+#| message: false
+#| warning: false
+
+library(tidyverse)
+library(scales)
+
+# --- Canonical parameters (single source of truth) ---
+raw <- readr::read_csv("../amua_import_parameters_v4.csv", show_col_types = FALSE)
+
+pick <- function(name) {
+  v <- raw |> dplyr::filter(Name == name) |> dplyr::pull(Expression)
+  if (length(v) == 0) NA_character_ else v[1]
+}
+
+zar <- function(x) {
+  n <- suppressWarnings(as.numeric(x))
+  if (is.na(n)) return(x)
+  if (n >= 1e9) sprintf("R%.2f billion", n / 1e9)
+  else if (n >= 1e6) sprintf("R%.1f million", n / 1e6)
+  else paste0("R", format(n, big.mark = ",", scientific = FALSE))
+}
+
+# Key figures
+n_deaths   <- as.numeric(pick("n_deaths_headline"))
+n_true     <- as.numeric(pick("n_true_burden_from_statssa_mid"))
+n_nmc      <- as.numeric(pick("n_nmc_annual"))
+n_nhls     <- as.numeric(pick("n_nhls_severe_annual"))
+n_pih      <- as.numeric(pick("n_pih_annual"))
+burden     <- as.numeric(pick("C_burden_total_headline"))
+
+d_sq       <- as.numeric(pick("d_status_quo"))
+d_mvp      <- as.numeric(pick("d_surveillance_mvp"))
+c_mvp_op   <- as.numeric(pick("c_surv_MVP_op"))
+c_mvp_setup<- as.numeric(pick("c_surv_MVP_setup"))
+```
+
+::: {.callout-important icon=false}
+## Key Messages
+
+- South Africa detects **fewer than 1 in 20** pesticide poisoning cases. An estimated **`r scales::comma(n_true)` cases** and **`r scales::comma(n_deaths)` deaths** occur annually — costing **`r zar(burden)`** — yet only `r scales::comma(n_nmc)` reach the NMC surveillance system.
+- **Recommendation: adopt the Surveillance MVP** (BChE auto-notification + PIH Minimum Viable Dataset) — **`r zar(c_mvp_op)`/year operating cost**, lifting detection from `r sprintf("%.0f%%", d_sq*100)` to `r sprintf("%.0f%%", d_mvp*100)` of true cases within 12 weeks.
+- Without improved surveillance, neither the coordination response nor the recently gazetted terbufos ban can be measured or enforced with evidence.
+:::
+
+## The Problem
+
+South Africa's pesticide poisoning surveillance system is fragmented. Three data streams — the Notifiable Medical Conditions system (NMC), the NHLS butyrylcholinesterase (BChE) laboratory, and the Poisons Information Helpline (PIH) — each see a fraction of the burden. None sees the whole. They do not talk to each other.
+
+**The numbers:**
+
+| Indicator | Value | Source |
+|:----------|------:|:-------|
+| Annual deaths | **`r scales::comma(n_deaths)`** | StatsSA MACOD 2023 (X40–X49) |
+| Estimated true cases/year | **`r scales::comma(n_true)`** | Deaths ÷ 12.5% CFR |
+| NMC notifications (detected) | **`r scales::comma(n_nmc)` (`r sprintf("%.1f%%", d_sq*100)`)** | NICD NMC 2023 |
+| NHLS severe BChE results (unlinked) | **`r scales::comma(n_nhls)`** | NHLS LIS 2023 |
+| PIH clinician calls (unlinked) | **`r scales::comma(n_pih)`** | PIH Tygerberg 2023 |
+
+: All values from [`amua_import_parameters_v4.csv`](../amua_import_parameters_v4.csv). {.striped}
+
+**The consequence:** decision-makers act on the visible `r scales::comma(n_nmc)` notifications while ~95% of the burden remains invisible. The response chain cannot prioritise what it cannot see. The recently gazetted terbufos ban (8 May 2026) cannot be evaluated without knowing whether poisoning incidence actually falls.
+
+## Root Cause
+
+The under-detection is **executional, not legislative**. Section 90 of the National Health Act (2003) and existing NMC regulations already authorise the necessary data flows. Three fixable gaps remain:
+
+1. **NHLS severe BChE results do not trigger a notification.** The NHLS–NMC IT feed is operational, but no severity-threshold rule fires an alert.
+2. **PIH consultations are not used for surveillance.** ~`r scales::comma(n_pih)` clinician calls/year hold exposure, geography, and agent data — none enters the surveillance system.
+3. **No structured agent-name capture.** Without a consistent AfriTox product-name field across PIH and NMC, product-specific patterns (e.g. terbufos clusters) are invisible.
+
+## Recommended Solution: The Surveillance MVP
+
+Combine two low-cost, IT-configuration investments that build on existing infrastructure:
+
+### Option 1 — BChE auto-notification
+
+Configure the NHLS LIS to auto-notify NICD when a BChE result shows severe inhibition (< 10% of normal). **No new test, no new reagent contract** — only an IT rule on `r scales::comma(as.numeric(pick("n_nhls_total_annual")))` tests already performed each year.
+
+- **Setup:** `r zar(as.numeric(pick("c_S2_BChE_autonotify_setup")))` (one-off)
+- **Operating:** `r zar(as.numeric(pick("c_S2_BChE_autonotify_op")))`/year
+- **Detection uplift:** `r sprintf("+%.1f", (as.numeric(pick("d_S2_BChE_autonotify")) - d_sq) * 100)` percentage points
+- **Delivery:** 2–4 weeks
+
+### Option 2 — PIH dashboard + Minimum Viable Dataset
+
+PIH publishes a live dashboard (days); PIH and NICD agree a structured MVD so clinician calls enter NMC (3–9 months). Mandatory AfriTox agent-name field enables product-specific attribution across both streams.
+
+- **Setup:** `r zar(as.numeric(pick("c_S1_PIH_MVD_setup")))` (one-off)
+- **Operating:** `r zar(as.numeric(pick("c_S1_PIH_MVD_op")))`/year
+- **Detection uplift:** `r sprintf("+%.1f", (as.numeric(pick("d_S1_PIH_MVD")) - d_sq) * 100)` percentage points
+- **Delivery:** dashboard in 1–2 weeks; MVD integration in 3–9 months
+
+### Combined (the MVP)
+
+| | Setup | Operating/yr | P~detect~ | Uplift vs. status quo |
+|:--|------:|-------------:|:---------:|:---------------------:|
+| **Surveillance MVP** | **`r zar(c_mvp_setup)`** | **`r zar(c_mvp_op)`** | **`r sprintf("%.1f%%", d_mvp*100)`** | **`r sprintf("+%.1f pp", (d_mvp - d_sq)*100)` (~4× improvement)** |
+
+: 12-week delivery. No new headcount. No new legislation. {.striped}
+
+## Feasibility
+
+| Dimension | Assessment |
+|:----------|:-----------|
+| **Political** | High. Aligns with NDoH NMC modernisation agenda; Minister has publicly committed to surveillance improvement. |
+| **Operational** | High. Both options use existing IT infrastructure (NHLS LIS, PIH TMS, NMC platform). NHLS–NMC feed already operational. |
+| **Financial** | High. `r zar(c_mvp_op)`/year is a `r sprintf("%.1f%%", 100 * c_mvp_op / sum(as.numeric(pick("c_status_quo_program"))))` uplift on current surveillance spend — absorbable within existing budgets. |
+| **Legal** | High. Section 90 NHA + NMC regulations already authorise all required data flows. No new legislation. |
+| **Public health impact** | Moderate (necessary but not sufficient). Detection enables action but does not itself avert deaths — that requires the coordination response. |
+
+## How This Connects to Coordination and Regulatory Reform
+
+Surveillance is **step one** of a three-part system:
+
+```{mermaid}
+%%| fig-cap: "The surveillance signal feeds the coordination response, which feeds product-specific regulation. Each layer depends on the one before it."
+flowchart LR
+    S["1. Surveillance MVP<br/><b>Detect</b><br/>~R137k/yr"] --> C["2. Coordination<br/><b>Act</b><br/>~R145k/yr"]
+    C --> R["3. Regulatory action<br/><b>Restrict</b><br/>(terbufos ban gazetted)"]
+    R -.Measure impact.-> S
+
+    style S fill:#cce5ff,stroke:#333,stroke-width:2px
+    style C fill:#d4edda,stroke:#333
+    style R fill:#ffd9b3,stroke:#cc8800
+```
+
+**Coordination** (companion brief): The NMC–EHP–DALRRD response loop is currently broken — ~99% of notifications end without a recorded investigation or regulatory follow-up. A Coordination Full Package (~R145,000/year, no new legislation) mandates a closed-loop workflow: every notification triggers an EHP investigation recorded on NMC, a structured DALRRD referral, and clinician feedback. At base-case response efficacy, this averts ~957 deaths/year.
+
+**Terbufos ban** (gazetted 8 May 2026): Agriculture Minister Steenhuisen banned all terbufos-containing products under Act 36 of 1947. Without surveillance, it is impossible to confirm whether the ban reduces poisoning incidence or whether a more-toxic substitute enters the informal market. The MVP provides the measurement infrastructure for the ban's 24-month evaluation gate.
+
+## Scope and Completeness
+
+| Element | Specification |
+|:--------|:-------------|
+| **Scope** | All acute pesticide poisoning cases presenting to facilities served by NHLS BChE testing and/or PIH consultation. National roll-out; 3-province pilot recommended (GP, WC, KZN). |
+| **Roles & responsibilities** | NHLS owns the BChE auto-notify LIS rule. PIH (Tygerberg) owns the dashboard and MVD extract. NICD coordinates the NMC ingest and reconciliation. NDoH is the accountable owner. |
+| **Compliance & enforcement** | Voluntary adoption (no new mandate required). KPI: % of NHLS severe results appearing in NMC within 24 hours; % of PIH calls with MVD completeness ≥ 80%. |
+| **Reporting & documentation** | Monthly reconciliation report (NHLS→NMC match rate; PIH MVD completeness). Quarterly report to MAC on P~detect~ trend. |
+| **Resources** | Setup `r zar(c_mvp_setup)` (one-off); operating `r zar(c_mvp_op)`/year. No new headcount; fractional FTE allocations from existing NICD, NHLS, and PIH posts. |
+| **Timelines** | Weeks 1–2: PIH dashboard live. Weeks 2–4: BChE LIS rule configured. Months 1–3: MVD finalised. Month 6: pilot evaluation. Month 12: Phase 2 decision (community layer). |
+
+## Recommendation
+
+**Adopt the Surveillance MVP (Option 1 + Option 2) and pilot in Gauteng, Western Cape, and KwaZulu-Natal for 6 months.**
+
+Next steps:
+
+1. **Immediate (Weeks 1–4):** NHLS configures the BChE severity-threshold rule; PIH deploys the dashboard.
+2. **Short term (Months 1–3):** PIH–NICD MVD workshop; AfriTox agent-name harmonisation.
+3. **Month 6:** Evaluate pilot against completeness of NHLS results in NMC and signal-to-investigation latency.
+4. **Month 9:** Commission sentinel toxicology site (Option 5, research-funded — provides the agent-attribution evidence base for product-specific regulation).
+5. **Month 12:** If ≥40% of severe cases originate in low-facility-access districts, commission the community-layer pilot (Option 3, Phase 2).
+
+**Hand off to `d2p-pressure-tester`** for full adversarial review before submission to MAC.
+
+---
+
+::: {.callout-note icon=false}
+## Maintainability
+
+This brief pulls all numerical claims from [`amua_import_parameters_v4.csv`](../amua_import_parameters_v4.csv) at render time. To update a figure: edit the CSV cell, re-render with `quarto render posts/surveillance_brief.qmd`. No inline numbers to chase.
+
+**Related documents:** [Detailed surveillance analysis](surveillance_policy.qmd) · [Coordination brief](coordination_policy.qmd) · [Terbufos brief](terbufos_policy.qmd) · [Parameters Hub](../parameters_hub.qmd)
+:::
