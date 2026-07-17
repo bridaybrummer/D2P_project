@@ -8,6 +8,9 @@ listing:
     - posts/surveillance_policy.qmd
     - posts/coordination_policy.qmd
     - posts/terbufos_policy.qmd
+    - "----"
+    - posts/surveillance_policy_2.qmd
+    - posts/surveillance_brief-pressure-test.qmd
   sort: "date desc"
   type: default
   categories: true
