@@ -268,7 +268,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">July 17, 2026</p>
+      <p class="date-modified">July 27, 2026</p>
     </div>
   </div>
     
@@ -349,13 +349,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># ── Burden anchors (from StatsSA MACOD 2023) ──────────────────────────────────</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>N_true    <span class="ot">&lt;-</span> <span class="fu">pick</span>(<span class="st">"n_true_burden_from_statssa_mid"</span>)   <span class="co"># 20,960 true cases/yr</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>N_deaths  <span class="ot">&lt;-</span> <span class="fu">pick</span>(<span class="st">"n_deaths_headline"</span>)                <span class="co"># 2,620 deaths/yr</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>N_true    <span class="ot">&lt;-</span> <span class="fu">pick</span>(<span class="st">"n_true_burden_from_statssa_mid"</span>)   <span class="co"># 8,112 true cases/yr</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>N_deaths  <span class="ot">&lt;-</span> <span class="fu">pick</span>(<span class="st">"n_deaths_headline"</span>)                <span class="co"># 1,014 deaths/yr</span></span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>c_morb    <span class="ot">&lt;-</span> <span class="fu">pick</span>(<span class="st">"c_morbidity_headline"</span>)             <span class="co"># R12,000/morbidity case</span></span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>c_mort    <span class="ot">&lt;-</span> <span class="fu">pick</span>(<span class="st">"c_mortality_human_capital"</span>)        <span class="co"># R1,500,000/death (human-capital YLL)</span></span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co"># ── Detection probabilities ────────────────────────────────────────────────────</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>d_SQ       <span class="ot">&lt;-</span> <span class="fu">pick</span>(<span class="st">"d_status_quo"</span>)                    <span class="co"># 0.048  NMC-only</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>d_SQ       <span class="ot">&lt;-</span> <span class="fu">pick</span>(<span class="st">"d_status_quo"</span>)                    <span class="co"># 0.125  NMC-only</span></span>
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co"># S1 and S2 contribute independently; MVP = S1 + S2</span></span>
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>delta_S1   <span class="ot">&lt;-</span> <span class="fu">pick</span>(<span class="st">"n_pih_annual"</span>)   <span class="sc">/</span> N_true         <span class="co"># PIH MVD incremental</span></span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>delta_S2   <span class="ot">&lt;-</span> <span class="fu">pick</span>(<span class="st">"n_nhls_severe_annual"</span>) <span class="sc">/</span> N_true   <span class="co"># BChE auto-notify incremental</span></span>
@@ -587,23 +587,23 @@ Table&nbsp;1: Scenario 1.1: step-wise addition of S1 and S2 administrative feeds
 </figcaption>
 <div aria-describedby="tbl-s11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="hafqbnmbuv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#hafqbnmbuv table {
+<div id="nmapxflccw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#nmapxflccw table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#hafqbnmbuv thead, #hafqbnmbuv tbody, #hafqbnmbuv tfoot, #hafqbnmbuv tr, #hafqbnmbuv td, #hafqbnmbuv th {
+#nmapxflccw thead, #nmapxflccw tbody, #nmapxflccw tfoot, #nmapxflccw tr, #nmapxflccw td, #nmapxflccw th {
   border-style: none;
 }
 
-#hafqbnmbuv p {
+#nmapxflccw p {
   margin: 0;
   padding: 0;
 }
 
-#hafqbnmbuv .gt_table {
+#nmapxflccw .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -629,12 +629,12 @@ Table&nbsp;1: Scenario 1.1: step-wise addition of S1 and S2 administrative feeds
   border-left-color: #D3D3D3;
 }
 
-#hafqbnmbuv .gt_caption {
+#nmapxflccw .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#hafqbnmbuv .gt_title {
+#nmapxflccw .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -646,7 +646,7 @@ Table&nbsp;1: Scenario 1.1: step-wise addition of S1 and S2 administrative feeds
   border-bottom-width: 0;
 }
 
-#hafqbnmbuv .gt_subtitle {
+#nmapxflccw .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -658,7 +658,7 @@ Table&nbsp;1: Scenario 1.1: step-wise addition of S1 and S2 administrative feeds
   border-top-width: 0;
 }
 
-#hafqbnmbuv .gt_heading {
+#nmapxflccw .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -670,13 +670,13 @@ Table&nbsp;1: Scenario 1.1: step-wise addition of S1 and S2 administrative feeds
   border-right-color: #D3D3D3;
 }
 
-#hafqbnmbuv .gt_bottom_border {
+#nmapxflccw .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#hafqbnmbuv .gt_col_headings {
+#nmapxflccw .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -691,7 +691,7 @@ Table&nbsp;1: Scenario 1.1: step-wise addition of S1 and S2 administrative feeds
   border-right-color: #D3D3D3;
 }
 
-#hafqbnmbuv .gt_col_heading {
+#nmapxflccw .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -711,7 +711,7 @@ Table&nbsp;1: Scenario 1.1: step-wise addition of S1 and S2 administrative feeds
   overflow-x: hidden;
 }
 
-#hafqbnmbuv .gt_column_spanner_outer {
+#nmapxflccw .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -723,15 +723,15 @@ Table&nbsp;1: Scenario 1.1: step-wise addition of S1 and S2 administrative feeds
   padding-right: 4px;
 }
 
-#hafqbnmbuv .gt_column_spanner_outer:first-child {
+#nmapxflccw .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#hafqbnmbuv .gt_column_spanner_outer:last-child {
+#nmapxflccw .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#hafqbnmbuv .gt_column_spanner {
+#nmapxflccw .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -743,11 +743,11 @@ Table&nbsp;1: Scenario 1.1: step-wise addition of S1 and S2 administrative feeds
   width: 100%;
 }
 
-#hafqbnmbuv .gt_spanner_row {
+#nmapxflccw .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#hafqbnmbuv .gt_group_heading {
+#nmapxflccw .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -773,7 +773,7 @@ Table&nbsp;1: Scenario 1.1: step-wise addition of S1 and S2 administrative feeds
   text-align: left;
 }
 
-#hafqbnmbuv .gt_empty_group_heading {
+#nmapxflccw .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -788,15 +788,15 @@ Table&nbsp;1: Scenario 1.1: step-wise addition of S1 and S2 administrative feeds
   vertical-align: middle;
 }
 
-#hafqbnmbuv .gt_from_md > :first-child {
+#nmapxflccw .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#hafqbnmbuv .gt_from_md > :last-child {
+#nmapxflccw .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#hafqbnmbuv .gt_row {
+#nmapxflccw .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -815,7 +815,7 @@ Table&nbsp;1: Scenario 1.1: step-wise addition of S1 and S2 administrative feeds
   overflow-x: hidden;
 }
 
-#hafqbnmbuv .gt_stub {
+#nmapxflccw .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -828,7 +828,7 @@ Table&nbsp;1: Scenario 1.1: step-wise addition of S1 and S2 administrative feeds
   padding-right: 5px;
 }
 
-#hafqbnmbuv .gt_stub_row_group {
+#nmapxflccw .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -842,15 +842,15 @@ Table&nbsp;1: Scenario 1.1: step-wise addition of S1 and S2 administrative feeds
   vertical-align: top;
 }
 
-#hafqbnmbuv .gt_row_group_first td {
+#nmapxflccw .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#hafqbnmbuv .gt_row_group_first th {
+#nmapxflccw .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#hafqbnmbuv .gt_summary_row {
+#nmapxflccw .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -860,16 +860,16 @@ Table&nbsp;1: Scenario 1.1: step-wise addition of S1 and S2 administrative feeds
   padding-right: 5px;
 }
 
-#hafqbnmbuv .gt_first_summary_row {
+#nmapxflccw .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#hafqbnmbuv .gt_first_summary_row.thick {
+#nmapxflccw .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#hafqbnmbuv .gt_last_summary_row {
+#nmapxflccw .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -879,7 +879,7 @@ Table&nbsp;1: Scenario 1.1: step-wise addition of S1 and S2 administrative feeds
   border-bottom-color: #D3D3D3;
 }
 
-#hafqbnmbuv .gt_grand_summary_row {
+#nmapxflccw .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -889,7 +889,7 @@ Table&nbsp;1: Scenario 1.1: step-wise addition of S1 and S2 administrative feeds
   padding-right: 5px;
 }
 
-#hafqbnmbuv .gt_first_grand_summary_row {
+#nmapxflccw .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -899,7 +899,7 @@ Table&nbsp;1: Scenario 1.1: step-wise addition of S1 and S2 administrative feeds
   border-top-color: #D3D3D3;
 }
 
-#hafqbnmbuv .gt_last_grand_summary_row_top {
+#nmapxflccw .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -909,11 +909,11 @@ Table&nbsp;1: Scenario 1.1: step-wise addition of S1 and S2 administrative feeds
   border-bottom-color: #D3D3D3;
 }
 
-#hafqbnmbuv .gt_striped {
+#nmapxflccw .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#hafqbnmbuv .gt_table_body {
+#nmapxflccw .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -922,7 +922,7 @@ Table&nbsp;1: Scenario 1.1: step-wise addition of S1 and S2 administrative feeds
   border-bottom-color: #D3D3D3;
 }
 
-#hafqbnmbuv .gt_footnotes {
+#nmapxflccw .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -936,7 +936,7 @@ Table&nbsp;1: Scenario 1.1: step-wise addition of S1 and S2 administrative feeds
   border-right-color: #D3D3D3;
 }
 
-#hafqbnmbuv .gt_footnote {
+#nmapxflccw .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -945,7 +945,7 @@ Table&nbsp;1: Scenario 1.1: step-wise addition of S1 and S2 administrative feeds
   padding-right: 5px;
 }
 
-#hafqbnmbuv .gt_sourcenotes {
+#nmapxflccw .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -959,7 +959,7 @@ Table&nbsp;1: Scenario 1.1: step-wise addition of S1 and S2 administrative feeds
   border-right-color: #D3D3D3;
 }
 
-#hafqbnmbuv .gt_sourcenote {
+#nmapxflccw .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -967,72 +967,72 @@ Table&nbsp;1: Scenario 1.1: step-wise addition of S1 and S2 administrative feeds
   padding-right: 5px;
 }
 
-#hafqbnmbuv .gt_left {
+#nmapxflccw .gt_left {
   text-align: left;
 }
 
-#hafqbnmbuv .gt_center {
+#nmapxflccw .gt_center {
   text-align: center;
 }
 
-#hafqbnmbuv .gt_right {
+#nmapxflccw .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#hafqbnmbuv .gt_font_normal {
+#nmapxflccw .gt_font_normal {
   font-weight: normal;
 }
 
-#hafqbnmbuv .gt_font_bold {
+#nmapxflccw .gt_font_bold {
   font-weight: bold;
 }
 
-#hafqbnmbuv .gt_font_italic {
+#nmapxflccw .gt_font_italic {
   font-style: italic;
 }
 
-#hafqbnmbuv .gt_super {
+#nmapxflccw .gt_super {
   font-size: 65%;
 }
 
-#hafqbnmbuv .gt_footnote_marks {
+#nmapxflccw .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#hafqbnmbuv .gt_asterisk {
+#nmapxflccw .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#hafqbnmbuv .gt_indent_1 {
+#nmapxflccw .gt_indent_1 {
   text-indent: 5px;
 }
 
-#hafqbnmbuv .gt_indent_2 {
+#nmapxflccw .gt_indent_2 {
   text-indent: 10px;
 }
 
-#hafqbnmbuv .gt_indent_3 {
+#nmapxflccw .gt_indent_3 {
   text-indent: 15px;
 }
 
-#hafqbnmbuv .gt_indent_4 {
+#nmapxflccw .gt_indent_4 {
   text-indent: 20px;
 }
 
-#hafqbnmbuv .gt_indent_5 {
+#nmapxflccw .gt_indent_5 {
   text-indent: 25px;
 }
 
-#hafqbnmbuv .katex-display {
+#nmapxflccw .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#hafqbnmbuv div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#nmapxflccw div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1054,35 +1054,35 @@ Table&nbsp;1: Scenario 1.1: step-wise addition of S1 and S2 administrative feeds
 <tbody class="gt_table_body">
 <tr class="odd">
 <td class="gt_row gt_left" headers="Scenario">SQ · NMC only</td>
-<td class="gt_row gt_right" headers="Detection (%)">4.8%</td>
-<td class="gt_row gt_right" headers="Regulator (R/yr)">7,646,208</td>
-<td class="gt_row gt_right" headers="NMB (R/yr)">-7,646,208</td>
+<td class="gt_row gt_right" headers="Detection (%)">12.5%</td>
+<td class="gt_row gt_right" headers="Regulator (R/yr)">7,706,400</td>
+<td class="gt_row gt_right" headers="NMB (R/yr)">-7,706,400</td>
 <td class="gt_row gt_right" headers="Deaths averted">0</td>
 <td class="gt_row gt_left" headers="R / death averted">—</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left gt_striped" headers="Scenario">S1 · + PIH MVD</td>
-<td class="gt_row gt_right gt_striped" headers="Detection (%)">10.3%</td>
-<td class="gt_row gt_right gt_striped" headers="Regulator (R/yr)">16,529,008</td>
-<td class="gt_row gt_right gt_striped" headers="NMB (R/yr)">-16,529,008</td>
+<td class="gt_row gt_right gt_striped" headers="Detection (%)">26.8%</td>
+<td class="gt_row gt_right gt_striped" headers="Regulator (R/yr)">16,589,200</td>
+<td class="gt_row gt_right gt_striped" headers="NMB (R/yr)">-16,589,200</td>
 <td class="gt_row gt_right gt_striped" headers="Deaths averted">43</td>
-<td class="gt_row gt_left gt_striped" headers="R / death averted">380,633</td>
+<td class="gt_row gt_left gt_striped" headers="R / death averted">382,020</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Scenario">S2 · + BChE auto-notify</td>
-<td class="gt_row gt_right" headers="Detection (%)">13.3%</td>
-<td class="gt_row gt_right" headers="Regulator (R/yr)">21,221,608</td>
-<td class="gt_row gt_right" headers="NMB (R/yr)">-21,221,608</td>
+<td class="gt_row gt_right" headers="Detection (%)">34.4%</td>
+<td class="gt_row gt_right" headers="Regulator (R/yr)">21,281,800</td>
+<td class="gt_row gt_right" headers="NMB (R/yr)">-21,281,800</td>
 <td class="gt_row gt_right" headers="Deaths averted">67</td>
-<td class="gt_row gt_left" headers="R / death averted">318,105</td>
+<td class="gt_row gt_left" headers="R / death averted">319,008</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left gt_striped" headers="Scenario">MVP · S1 + S2</td>
-<td class="gt_row gt_right gt_striped" headers="Detection (%)">18.9%</td>
-<td class="gt_row gt_right gt_striped" headers="Regulator (R/yr)">30,243,944</td>
-<td class="gt_row gt_right gt_striped" headers="NMB (R/yr)">-30,243,944</td>
-<td class="gt_row gt_right gt_striped" headers="Deaths averted">111</td>
-<td class="gt_row gt_left gt_striped" headers="R / death averted">272,896</td>
+<td class="gt_row gt_right gt_striped" headers="Detection (%)">48.7%</td>
+<td class="gt_row gt_right gt_striped" headers="Regulator (R/yr)">30,161,134</td>
+<td class="gt_row gt_right gt_striped" headers="NMB (R/yr)">-30,161,134</td>
+<td class="gt_row gt_right gt_striped" headers="Deaths averted">110</td>
+<td class="gt_row gt_left gt_striped" headers="R / death averted">273,892</td>
 </tr>
 </tbody>
 </table>
@@ -1121,23 +1121,23 @@ Table&nbsp;2: Scenario 1.2: incremental addition of coordination components abov
 </figcaption>
 <div aria-describedby="tbl-s12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="hqkmkakumg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#hqkmkakumg table {
+<div id="ncsdftnjbo" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ncsdftnjbo table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#hqkmkakumg thead, #hqkmkakumg tbody, #hqkmkakumg tfoot, #hqkmkakumg tr, #hqkmkakumg td, #hqkmkakumg th {
+#ncsdftnjbo thead, #ncsdftnjbo tbody, #ncsdftnjbo tfoot, #ncsdftnjbo tr, #ncsdftnjbo td, #ncsdftnjbo th {
   border-style: none;
 }
 
-#hqkmkakumg p {
+#ncsdftnjbo p {
   margin: 0;
   padding: 0;
 }
 
-#hqkmkakumg .gt_table {
+#ncsdftnjbo .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1163,12 +1163,12 @@ Table&nbsp;2: Scenario 1.2: incremental addition of coordination components abov
   border-left-color: #D3D3D3;
 }
 
-#hqkmkakumg .gt_caption {
+#ncsdftnjbo .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#hqkmkakumg .gt_title {
+#ncsdftnjbo .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1180,7 +1180,7 @@ Table&nbsp;2: Scenario 1.2: incremental addition of coordination components abov
   border-bottom-width: 0;
 }
 
-#hqkmkakumg .gt_subtitle {
+#ncsdftnjbo .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1192,7 +1192,7 @@ Table&nbsp;2: Scenario 1.2: incremental addition of coordination components abov
   border-top-width: 0;
 }
 
-#hqkmkakumg .gt_heading {
+#ncsdftnjbo .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1204,13 +1204,13 @@ Table&nbsp;2: Scenario 1.2: incremental addition of coordination components abov
   border-right-color: #D3D3D3;
 }
 
-#hqkmkakumg .gt_bottom_border {
+#ncsdftnjbo .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#hqkmkakumg .gt_col_headings {
+#ncsdftnjbo .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1225,7 +1225,7 @@ Table&nbsp;2: Scenario 1.2: incremental addition of coordination components abov
   border-right-color: #D3D3D3;
 }
 
-#hqkmkakumg .gt_col_heading {
+#ncsdftnjbo .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1245,7 +1245,7 @@ Table&nbsp;2: Scenario 1.2: incremental addition of coordination components abov
   overflow-x: hidden;
 }
 
-#hqkmkakumg .gt_column_spanner_outer {
+#ncsdftnjbo .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1257,15 +1257,15 @@ Table&nbsp;2: Scenario 1.2: incremental addition of coordination components abov
   padding-right: 4px;
 }
 
-#hqkmkakumg .gt_column_spanner_outer:first-child {
+#ncsdftnjbo .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#hqkmkakumg .gt_column_spanner_outer:last-child {
+#ncsdftnjbo .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#hqkmkakumg .gt_column_spanner {
+#ncsdftnjbo .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1277,11 +1277,11 @@ Table&nbsp;2: Scenario 1.2: incremental addition of coordination components abov
   width: 100%;
 }
 
-#hqkmkakumg .gt_spanner_row {
+#ncsdftnjbo .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#hqkmkakumg .gt_group_heading {
+#ncsdftnjbo .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1307,7 +1307,7 @@ Table&nbsp;2: Scenario 1.2: incremental addition of coordination components abov
   text-align: left;
 }
 
-#hqkmkakumg .gt_empty_group_heading {
+#ncsdftnjbo .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1322,15 +1322,15 @@ Table&nbsp;2: Scenario 1.2: incremental addition of coordination components abov
   vertical-align: middle;
 }
 
-#hqkmkakumg .gt_from_md > :first-child {
+#ncsdftnjbo .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#hqkmkakumg .gt_from_md > :last-child {
+#ncsdftnjbo .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#hqkmkakumg .gt_row {
+#ncsdftnjbo .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1349,7 +1349,7 @@ Table&nbsp;2: Scenario 1.2: incremental addition of coordination components abov
   overflow-x: hidden;
 }
 
-#hqkmkakumg .gt_stub {
+#ncsdftnjbo .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1362,7 +1362,7 @@ Table&nbsp;2: Scenario 1.2: incremental addition of coordination components abov
   padding-right: 5px;
 }
 
-#hqkmkakumg .gt_stub_row_group {
+#ncsdftnjbo .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1376,15 +1376,15 @@ Table&nbsp;2: Scenario 1.2: incremental addition of coordination components abov
   vertical-align: top;
 }
 
-#hqkmkakumg .gt_row_group_first td {
+#ncsdftnjbo .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#hqkmkakumg .gt_row_group_first th {
+#ncsdftnjbo .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#hqkmkakumg .gt_summary_row {
+#ncsdftnjbo .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1394,16 +1394,16 @@ Table&nbsp;2: Scenario 1.2: incremental addition of coordination components abov
   padding-right: 5px;
 }
 
-#hqkmkakumg .gt_first_summary_row {
+#ncsdftnjbo .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#hqkmkakumg .gt_first_summary_row.thick {
+#ncsdftnjbo .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#hqkmkakumg .gt_last_summary_row {
+#ncsdftnjbo .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1413,7 +1413,7 @@ Table&nbsp;2: Scenario 1.2: incremental addition of coordination components abov
   border-bottom-color: #D3D3D3;
 }
 
-#hqkmkakumg .gt_grand_summary_row {
+#ncsdftnjbo .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1423,7 +1423,7 @@ Table&nbsp;2: Scenario 1.2: incremental addition of coordination components abov
   padding-right: 5px;
 }
 
-#hqkmkakumg .gt_first_grand_summary_row {
+#ncsdftnjbo .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1433,7 +1433,7 @@ Table&nbsp;2: Scenario 1.2: incremental addition of coordination components abov
   border-top-color: #D3D3D3;
 }
 
-#hqkmkakumg .gt_last_grand_summary_row_top {
+#ncsdftnjbo .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1443,11 +1443,11 @@ Table&nbsp;2: Scenario 1.2: incremental addition of coordination components abov
   border-bottom-color: #D3D3D3;
 }
 
-#hqkmkakumg .gt_striped {
+#ncsdftnjbo .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#hqkmkakumg .gt_table_body {
+#ncsdftnjbo .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1456,7 +1456,7 @@ Table&nbsp;2: Scenario 1.2: incremental addition of coordination components abov
   border-bottom-color: #D3D3D3;
 }
 
-#hqkmkakumg .gt_footnotes {
+#ncsdftnjbo .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1470,7 +1470,7 @@ Table&nbsp;2: Scenario 1.2: incremental addition of coordination components abov
   border-right-color: #D3D3D3;
 }
 
-#hqkmkakumg .gt_footnote {
+#ncsdftnjbo .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1479,7 +1479,7 @@ Table&nbsp;2: Scenario 1.2: incremental addition of coordination components abov
   padding-right: 5px;
 }
 
-#hqkmkakumg .gt_sourcenotes {
+#ncsdftnjbo .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1493,7 +1493,7 @@ Table&nbsp;2: Scenario 1.2: incremental addition of coordination components abov
   border-right-color: #D3D3D3;
 }
 
-#hqkmkakumg .gt_sourcenote {
+#ncsdftnjbo .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1501,72 +1501,72 @@ Table&nbsp;2: Scenario 1.2: incremental addition of coordination components abov
   padding-right: 5px;
 }
 
-#hqkmkakumg .gt_left {
+#ncsdftnjbo .gt_left {
   text-align: left;
 }
 
-#hqkmkakumg .gt_center {
+#ncsdftnjbo .gt_center {
   text-align: center;
 }
 
-#hqkmkakumg .gt_right {
+#ncsdftnjbo .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#hqkmkakumg .gt_font_normal {
+#ncsdftnjbo .gt_font_normal {
   font-weight: normal;
 }
 
-#hqkmkakumg .gt_font_bold {
+#ncsdftnjbo .gt_font_bold {
   font-weight: bold;
 }
 
-#hqkmkakumg .gt_font_italic {
+#ncsdftnjbo .gt_font_italic {
   font-style: italic;
 }
 
-#hqkmkakumg .gt_super {
+#ncsdftnjbo .gt_super {
   font-size: 65%;
 }
 
-#hqkmkakumg .gt_footnote_marks {
+#ncsdftnjbo .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#hqkmkakumg .gt_asterisk {
+#ncsdftnjbo .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#hqkmkakumg .gt_indent_1 {
+#ncsdftnjbo .gt_indent_1 {
   text-indent: 5px;
 }
 
-#hqkmkakumg .gt_indent_2 {
+#ncsdftnjbo .gt_indent_2 {
   text-indent: 10px;
 }
 
-#hqkmkakumg .gt_indent_3 {
+#ncsdftnjbo .gt_indent_3 {
   text-indent: 15px;
 }
 
-#hqkmkakumg .gt_indent_4 {
+#ncsdftnjbo .gt_indent_4 {
   text-indent: 20px;
 }
 
-#hqkmkakumg .gt_indent_5 {
+#ncsdftnjbo .gt_indent_5 {
   text-indent: 25px;
 }
 
-#hqkmkakumg .katex-display {
+#ncsdftnjbo .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#hqkmkakumg div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ncsdftnjbo div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1587,45 +1587,45 @@ Table&nbsp;2: Scenario 1.2: incremental addition of coordination components abov
 <tbody class="gt_table_body">
 <tr class="odd">
 <td class="gt_row gt_left" headers="Scenario">MVP only</td>
-<td class="gt_row gt_right" headers="Regulator (R/yr)">30,243,944</td>
-<td class="gt_row gt_right" headers="NMB (R/yr)">-30,243,944</td>
-<td class="gt_row gt_right" headers="Deaths averted">111</td>
-<td class="gt_row gt_right" headers="R / death averted">272,896</td>
+<td class="gt_row gt_right" headers="Regulator (R/yr)">30,161,134</td>
+<td class="gt_row gt_right" headers="NMB (R/yr)">-30,161,134</td>
+<td class="gt_row gt_right" headers="Deaths averted">110</td>
+<td class="gt_row gt_right" headers="R / death averted">273,892</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left gt_striped" headers="Scenario">MVP + C1</td>
-<td class="gt_row gt_right gt_striped" headers="Regulator (R/yr)">30,273,944</td>
-<td class="gt_row gt_right gt_striped" headers="NMB (R/yr)">-30,273,944</td>
-<td class="gt_row gt_right gt_striped" headers="Deaths averted">1068</td>
-<td class="gt_row gt_right gt_striped" headers="R / death averted">28,351</td>
+<td class="gt_row gt_right gt_striped" headers="Regulator (R/yr)">30,191,134</td>
+<td class="gt_row gt_right gt_striped" headers="NMB (R/yr)">-30,191,134</td>
+<td class="gt_row gt_right gt_striped" headers="Deaths averted">1067</td>
+<td class="gt_row gt_right gt_striped" headers="R / death averted">28,292</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Scenario">MVP + C1+C2</td>
-<td class="gt_row gt_right" headers="Regulator (R/yr)">30,298,944</td>
-<td class="gt_row gt_right" headers="NMB (R/yr)">-30,298,944</td>
-<td class="gt_row gt_right" headers="Deaths averted">1068</td>
-<td class="gt_row gt_right" headers="R / death averted">28,374</td>
+<td class="gt_row gt_right" headers="Regulator (R/yr)">30,216,134</td>
+<td class="gt_row gt_right" headers="NMB (R/yr)">-30,216,134</td>
+<td class="gt_row gt_right" headers="Deaths averted">1067</td>
+<td class="gt_row gt_right" headers="R / death averted">28,316</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left gt_striped" headers="Scenario">MVP + C1+C2+C3</td>
-<td class="gt_row gt_right gt_striped" headers="Regulator (R/yr)">30,338,944</td>
-<td class="gt_row gt_right gt_striped" headers="NMB (R/yr)">-30,338,944</td>
-<td class="gt_row gt_right gt_striped" headers="Deaths averted">1068</td>
-<td class="gt_row gt_right gt_striped" headers="R / death averted">28,412</td>
+<td class="gt_row gt_right gt_striped" headers="Regulator (R/yr)">30,256,134</td>
+<td class="gt_row gt_right gt_striped" headers="NMB (R/yr)">-30,256,134</td>
+<td class="gt_row gt_right gt_striped" headers="Deaths averted">1067</td>
+<td class="gt_row gt_right gt_striped" headers="R / death averted">28,353</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Scenario">MVP + C1+C2+C3+C4</td>
-<td class="gt_row gt_right" headers="Regulator (R/yr)">30,358,944</td>
-<td class="gt_row gt_right" headers="NMB (R/yr)">-30,358,944</td>
-<td class="gt_row gt_right" headers="Deaths averted">1068</td>
-<td class="gt_row gt_right" headers="R / death averted">28,431</td>
+<td class="gt_row gt_right" headers="Regulator (R/yr)">30,276,134</td>
+<td class="gt_row gt_right" headers="NMB (R/yr)">-30,276,134</td>
+<td class="gt_row gt_right" headers="Deaths averted">1067</td>
+<td class="gt_row gt_right" headers="R / death averted">28,372</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left gt_striped" headers="Scenario">MVP + C1–C5 (FP)</td>
-<td class="gt_row gt_right gt_striped" headers="Regulator (R/yr)">30,388,944</td>
-<td class="gt_row gt_right gt_striped" headers="NMB (R/yr)">-30,388,944</td>
-<td class="gt_row gt_right gt_striped" headers="Deaths averted">1068</td>
-<td class="gt_row gt_right gt_striped" headers="R / death averted">28,459</td>
+<td class="gt_row gt_right gt_striped" headers="Regulator (R/yr)">30,306,134</td>
+<td class="gt_row gt_right gt_striped" headers="NMB (R/yr)">-30,306,134</td>
+<td class="gt_row gt_right gt_striped" headers="Deaths averted">1067</td>
+<td class="gt_row gt_right gt_striped" headers="R / death averted">28,400</td>
 </tr>
 </tbody>
 </table>
@@ -1665,23 +1665,23 @@ Table&nbsp;3: Scenario 1.3: cluster multiplier k sensitivity at MVP and S1b mid 
 </figcaption>
 <div aria-describedby="tbl-s13-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="haielinmng" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#haielinmng table {
+<div id="zgnlbrlawx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#zgnlbrlawx table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#haielinmng thead, #haielinmng tbody, #haielinmng tfoot, #haielinmng tr, #haielinmng td, #haielinmng th {
+#zgnlbrlawx thead, #zgnlbrlawx tbody, #zgnlbrlawx tfoot, #zgnlbrlawx tr, #zgnlbrlawx td, #zgnlbrlawx th {
   border-style: none;
 }
 
-#haielinmng p {
+#zgnlbrlawx p {
   margin: 0;
   padding: 0;
 }
 
-#haielinmng .gt_table {
+#zgnlbrlawx .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1707,12 +1707,12 @@ Table&nbsp;3: Scenario 1.3: cluster multiplier k sensitivity at MVP and S1b mid 
   border-left-color: #D3D3D3;
 }
 
-#haielinmng .gt_caption {
+#zgnlbrlawx .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#haielinmng .gt_title {
+#zgnlbrlawx .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1724,7 +1724,7 @@ Table&nbsp;3: Scenario 1.3: cluster multiplier k sensitivity at MVP and S1b mid 
   border-bottom-width: 0;
 }
 
-#haielinmng .gt_subtitle {
+#zgnlbrlawx .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1736,7 +1736,7 @@ Table&nbsp;3: Scenario 1.3: cluster multiplier k sensitivity at MVP and S1b mid 
   border-top-width: 0;
 }
 
-#haielinmng .gt_heading {
+#zgnlbrlawx .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1748,13 +1748,13 @@ Table&nbsp;3: Scenario 1.3: cluster multiplier k sensitivity at MVP and S1b mid 
   border-right-color: #D3D3D3;
 }
 
-#haielinmng .gt_bottom_border {
+#zgnlbrlawx .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#haielinmng .gt_col_headings {
+#zgnlbrlawx .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1769,7 +1769,7 @@ Table&nbsp;3: Scenario 1.3: cluster multiplier k sensitivity at MVP and S1b mid 
   border-right-color: #D3D3D3;
 }
 
-#haielinmng .gt_col_heading {
+#zgnlbrlawx .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1789,7 +1789,7 @@ Table&nbsp;3: Scenario 1.3: cluster multiplier k sensitivity at MVP and S1b mid 
   overflow-x: hidden;
 }
 
-#haielinmng .gt_column_spanner_outer {
+#zgnlbrlawx .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1801,15 +1801,15 @@ Table&nbsp;3: Scenario 1.3: cluster multiplier k sensitivity at MVP and S1b mid 
   padding-right: 4px;
 }
 
-#haielinmng .gt_column_spanner_outer:first-child {
+#zgnlbrlawx .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#haielinmng .gt_column_spanner_outer:last-child {
+#zgnlbrlawx .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#haielinmng .gt_column_spanner {
+#zgnlbrlawx .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1821,11 +1821,11 @@ Table&nbsp;3: Scenario 1.3: cluster multiplier k sensitivity at MVP and S1b mid 
   width: 100%;
 }
 
-#haielinmng .gt_spanner_row {
+#zgnlbrlawx .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#haielinmng .gt_group_heading {
+#zgnlbrlawx .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1851,7 +1851,7 @@ Table&nbsp;3: Scenario 1.3: cluster multiplier k sensitivity at MVP and S1b mid 
   text-align: left;
 }
 
-#haielinmng .gt_empty_group_heading {
+#zgnlbrlawx .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1866,15 +1866,15 @@ Table&nbsp;3: Scenario 1.3: cluster multiplier k sensitivity at MVP and S1b mid 
   vertical-align: middle;
 }
 
-#haielinmng .gt_from_md > :first-child {
+#zgnlbrlawx .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#haielinmng .gt_from_md > :last-child {
+#zgnlbrlawx .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#haielinmng .gt_row {
+#zgnlbrlawx .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1893,7 +1893,7 @@ Table&nbsp;3: Scenario 1.3: cluster multiplier k sensitivity at MVP and S1b mid 
   overflow-x: hidden;
 }
 
-#haielinmng .gt_stub {
+#zgnlbrlawx .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1906,7 +1906,7 @@ Table&nbsp;3: Scenario 1.3: cluster multiplier k sensitivity at MVP and S1b mid 
   padding-right: 5px;
 }
 
-#haielinmng .gt_stub_row_group {
+#zgnlbrlawx .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1920,15 +1920,15 @@ Table&nbsp;3: Scenario 1.3: cluster multiplier k sensitivity at MVP and S1b mid 
   vertical-align: top;
 }
 
-#haielinmng .gt_row_group_first td {
+#zgnlbrlawx .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#haielinmng .gt_row_group_first th {
+#zgnlbrlawx .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#haielinmng .gt_summary_row {
+#zgnlbrlawx .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1938,16 +1938,16 @@ Table&nbsp;3: Scenario 1.3: cluster multiplier k sensitivity at MVP and S1b mid 
   padding-right: 5px;
 }
 
-#haielinmng .gt_first_summary_row {
+#zgnlbrlawx .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#haielinmng .gt_first_summary_row.thick {
+#zgnlbrlawx .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#haielinmng .gt_last_summary_row {
+#zgnlbrlawx .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1957,7 +1957,7 @@ Table&nbsp;3: Scenario 1.3: cluster multiplier k sensitivity at MVP and S1b mid 
   border-bottom-color: #D3D3D3;
 }
 
-#haielinmng .gt_grand_summary_row {
+#zgnlbrlawx .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1967,7 +1967,7 @@ Table&nbsp;3: Scenario 1.3: cluster multiplier k sensitivity at MVP and S1b mid 
   padding-right: 5px;
 }
 
-#haielinmng .gt_first_grand_summary_row {
+#zgnlbrlawx .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1977,7 +1977,7 @@ Table&nbsp;3: Scenario 1.3: cluster multiplier k sensitivity at MVP and S1b mid 
   border-top-color: #D3D3D3;
 }
 
-#haielinmng .gt_last_grand_summary_row_top {
+#zgnlbrlawx .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1987,11 +1987,11 @@ Table&nbsp;3: Scenario 1.3: cluster multiplier k sensitivity at MVP and S1b mid 
   border-bottom-color: #D3D3D3;
 }
 
-#haielinmng .gt_striped {
+#zgnlbrlawx .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#haielinmng .gt_table_body {
+#zgnlbrlawx .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2000,7 +2000,7 @@ Table&nbsp;3: Scenario 1.3: cluster multiplier k sensitivity at MVP and S1b mid 
   border-bottom-color: #D3D3D3;
 }
 
-#haielinmng .gt_footnotes {
+#zgnlbrlawx .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2014,7 +2014,7 @@ Table&nbsp;3: Scenario 1.3: cluster multiplier k sensitivity at MVP and S1b mid 
   border-right-color: #D3D3D3;
 }
 
-#haielinmng .gt_footnote {
+#zgnlbrlawx .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2023,7 +2023,7 @@ Table&nbsp;3: Scenario 1.3: cluster multiplier k sensitivity at MVP and S1b mid 
   padding-right: 5px;
 }
 
-#haielinmng .gt_sourcenotes {
+#zgnlbrlawx .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2037,7 +2037,7 @@ Table&nbsp;3: Scenario 1.3: cluster multiplier k sensitivity at MVP and S1b mid 
   border-right-color: #D3D3D3;
 }
 
-#haielinmng .gt_sourcenote {
+#zgnlbrlawx .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2045,72 +2045,72 @@ Table&nbsp;3: Scenario 1.3: cluster multiplier k sensitivity at MVP and S1b mid 
   padding-right: 5px;
 }
 
-#haielinmng .gt_left {
+#zgnlbrlawx .gt_left {
   text-align: left;
 }
 
-#haielinmng .gt_center {
+#zgnlbrlawx .gt_center {
   text-align: center;
 }
 
-#haielinmng .gt_right {
+#zgnlbrlawx .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#haielinmng .gt_font_normal {
+#zgnlbrlawx .gt_font_normal {
   font-weight: normal;
 }
 
-#haielinmng .gt_font_bold {
+#zgnlbrlawx .gt_font_bold {
   font-weight: bold;
 }
 
-#haielinmng .gt_font_italic {
+#zgnlbrlawx .gt_font_italic {
   font-style: italic;
 }
 
-#haielinmng .gt_super {
+#zgnlbrlawx .gt_super {
   font-size: 65%;
 }
 
-#haielinmng .gt_footnote_marks {
+#zgnlbrlawx .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#haielinmng .gt_asterisk {
+#zgnlbrlawx .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#haielinmng .gt_indent_1 {
+#zgnlbrlawx .gt_indent_1 {
   text-indent: 5px;
 }
 
-#haielinmng .gt_indent_2 {
+#zgnlbrlawx .gt_indent_2 {
   text-indent: 10px;
 }
 
-#haielinmng .gt_indent_3 {
+#zgnlbrlawx .gt_indent_3 {
   text-indent: 15px;
 }
 
-#haielinmng .gt_indent_4 {
+#zgnlbrlawx .gt_indent_4 {
   text-indent: 20px;
 }
 
-#haielinmng .gt_indent_5 {
+#zgnlbrlawx .gt_indent_5 {
   text-indent: 25px;
 }
 
-#haielinmng .katex-display {
+#zgnlbrlawx .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#haielinmng div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#zgnlbrlawx div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2130,46 +2130,46 @@ Table&nbsp;3: Scenario 1.3: cluster multiplier k sensitivity at MVP and S1b mid 
 </thead>
 <tbody class="gt_table_body">
 <tr class="odd">
-<td class="gt_row gt_left" headers="Tier">MVP (d = 18.9%)</td>
+<td class="gt_row gt_left" headers="Tier">MVP (d = 48.7%)</td>
 <td class="gt_row gt_right" headers="k (cluster multiplier)">1.2</td>
-<td class="gt_row gt_right" headers="Deaths averted">1098</td>
-<td class="gt_row gt_right" headers="NMB (R/yr)">-30,388,944</td>
-<td class="gt_row gt_right" headers="R / death averted">27,688</td>
+<td class="gt_row gt_right" headers="Deaths averted">1097</td>
+<td class="gt_row gt_right" headers="NMB (R/yr)">-30,306,134</td>
+<td class="gt_row gt_right" headers="R / death averted">27,633</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left gt_striped" headers="Tier">S1b mid (d = 40%)</td>
 <td class="gt_row gt_right gt_striped" headers="k (cluster multiplier)">1.2</td>
-<td class="gt_row gt_right gt_striped" headers="Deaths averted">2729</td>
-<td class="gt_row gt_right gt_striped" headers="NMB (R/yr)">-99,810,308</td>
-<td class="gt_row gt_right gt_striped" headers="R / death averted">36,579</td>
+<td class="gt_row gt_right gt_striped" headers="Deaths averted">835</td>
+<td class="gt_row gt_right gt_striped" headers="NMB (R/yr)">-39,721,200</td>
+<td class="gt_row gt_right gt_striped" headers="R / death averted">47,571</td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_left" headers="Tier">MVP (d = 18.9%)</td>
+<td class="gt_row gt_left" headers="Tier">MVP (d = 48.7%)</td>
 <td class="gt_row gt_right" headers="k (cluster multiplier)">2.0</td>
-<td class="gt_row gt_right" headers="Deaths averted">1216</td>
-<td class="gt_row gt_right" headers="NMB (R/yr)">-30,388,944</td>
-<td class="gt_row gt_right" headers="R / death averted">24,983</td>
+<td class="gt_row gt_right" headers="Deaths averted">1215</td>
+<td class="gt_row gt_right" headers="NMB (R/yr)">-30,306,134</td>
+<td class="gt_row gt_right" headers="R / death averted">24,938</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left gt_striped" headers="Tier">S1b mid (d = 40%)</td>
 <td class="gt_row gt_right gt_striped" headers="k (cluster multiplier)">2.0</td>
-<td class="gt_row gt_right gt_striped" headers="Deaths averted">2980</td>
-<td class="gt_row gt_right gt_striped" headers="NMB (R/yr)">-99,810,308</td>
-<td class="gt_row gt_right gt_striped" headers="R / death averted">33,491</td>
+<td class="gt_row gt_right gt_striped" headers="Deaths averted">932</td>
+<td class="gt_row gt_right gt_striped" headers="NMB (R/yr)">-39,721,200</td>
+<td class="gt_row gt_right gt_striped" headers="R / death averted">42,604</td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_left" headers="Tier">MVP (d = 18.9%)</td>
+<td class="gt_row gt_left" headers="Tier">MVP (d = 48.7%)</td>
 <td class="gt_row gt_right" headers="k (cluster multiplier)">3.5</td>
-<td class="gt_row gt_right" headers="Deaths averted">1439</td>
-<td class="gt_row gt_right" headers="NMB (R/yr)">-30,388,944</td>
-<td class="gt_row gt_right" headers="R / death averted">21,115</td>
+<td class="gt_row gt_right" headers="Deaths averted">1437</td>
+<td class="gt_row gt_right" headers="NMB (R/yr)">-30,306,134</td>
+<td class="gt_row gt_right" headers="R / death averted">21,083</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left gt_striped" headers="Tier">S1b mid (d = 40%)</td>
 <td class="gt_row gt_right gt_striped" headers="k (cluster multiplier)">3.5</td>
-<td class="gt_row gt_right gt_striped" headers="Deaths averted">3452</td>
-<td class="gt_row gt_right gt_striped" headers="NMB (R/yr)">-99,810,308</td>
-<td class="gt_row gt_right gt_striped" headers="R / death averted">28,916</td>
+<td class="gt_row gt_right gt_striped" headers="Deaths averted">1115</td>
+<td class="gt_row gt_right gt_striped" headers="NMB (R/yr)">-39,721,200</td>
+<td class="gt_row gt_right gt_striped" headers="R / death averted">35,629</td>
 </tr>
 </tbody>
 </table>
@@ -2194,7 +2194,7 @@ Figure&nbsp;3: Scenario 1.3: NMB (left) and cost per death averted (right) as k 
 </div>
 </div>
 </div>
-<p><strong>Interpretation.</strong> Even modest clustering (k = 1.2) improves both the NMB and cost-per-death metrics. At the working value (k = 2) and MVP detection, clustering adds ~149 deaths averted relative to the no-clustering assumption. <strong>k should be measured directly in EHP field-investigation logs</strong>; the dotted vertical lines mark the lo/mid/hi values used in sensitivity tables.</p>
+<p><strong>Interpretation.</strong> Even modest clustering (k = 1.2) improves both the NMB and cost-per-death metrics. At the working value (k = 2) and MVP detection, clustering adds ~148 deaths averted relative to the no-clustering assumption. <strong>k should be measured directly in EHP field-investigation logs</strong>; the dotted vertical lines mark the lo/mid/hi values used in sensitivity tables.</p>
 <hr>
 </section>
 <section id="scenario-1.4-community-surveillance-s1b-with-false-positive-sensitivity" class="level2" data-number="6">
@@ -2208,23 +2208,23 @@ Table&nbsp;4: Scenario 1.4: community surveillance (S1b) at three FP rate and th
 </figcaption>
 <div aria-describedby="tbl-s14-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="cvldqvpvej" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#cvldqvpvej table {
+<div id="ijjdgrrhfz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ijjdgrrhfz table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#cvldqvpvej thead, #cvldqvpvej tbody, #cvldqvpvej tfoot, #cvldqvpvej tr, #cvldqvpvej td, #cvldqvpvej th {
+#ijjdgrrhfz thead, #ijjdgrrhfz tbody, #ijjdgrrhfz tfoot, #ijjdgrrhfz tr, #ijjdgrrhfz td, #ijjdgrrhfz th {
   border-style: none;
 }
 
-#cvldqvpvej p {
+#ijjdgrrhfz p {
   margin: 0;
   padding: 0;
 }
 
-#cvldqvpvej .gt_table {
+#ijjdgrrhfz .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2250,12 +2250,12 @@ Table&nbsp;4: Scenario 1.4: community surveillance (S1b) at three FP rate and th
   border-left-color: #D3D3D3;
 }
 
-#cvldqvpvej .gt_caption {
+#ijjdgrrhfz .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#cvldqvpvej .gt_title {
+#ijjdgrrhfz .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2267,7 +2267,7 @@ Table&nbsp;4: Scenario 1.4: community surveillance (S1b) at three FP rate and th
   border-bottom-width: 0;
 }
 
-#cvldqvpvej .gt_subtitle {
+#ijjdgrrhfz .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2279,7 +2279,7 @@ Table&nbsp;4: Scenario 1.4: community surveillance (S1b) at three FP rate and th
   border-top-width: 0;
 }
 
-#cvldqvpvej .gt_heading {
+#ijjdgrrhfz .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2291,13 +2291,13 @@ Table&nbsp;4: Scenario 1.4: community surveillance (S1b) at three FP rate and th
   border-right-color: #D3D3D3;
 }
 
-#cvldqvpvej .gt_bottom_border {
+#ijjdgrrhfz .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#cvldqvpvej .gt_col_headings {
+#ijjdgrrhfz .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2312,7 +2312,7 @@ Table&nbsp;4: Scenario 1.4: community surveillance (S1b) at three FP rate and th
   border-right-color: #D3D3D3;
 }
 
-#cvldqvpvej .gt_col_heading {
+#ijjdgrrhfz .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2332,7 +2332,7 @@ Table&nbsp;4: Scenario 1.4: community surveillance (S1b) at three FP rate and th
   overflow-x: hidden;
 }
 
-#cvldqvpvej .gt_column_spanner_outer {
+#ijjdgrrhfz .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2344,15 +2344,15 @@ Table&nbsp;4: Scenario 1.4: community surveillance (S1b) at three FP rate and th
   padding-right: 4px;
 }
 
-#cvldqvpvej .gt_column_spanner_outer:first-child {
+#ijjdgrrhfz .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#cvldqvpvej .gt_column_spanner_outer:last-child {
+#ijjdgrrhfz .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#cvldqvpvej .gt_column_spanner {
+#ijjdgrrhfz .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2364,11 +2364,11 @@ Table&nbsp;4: Scenario 1.4: community surveillance (S1b) at three FP rate and th
   width: 100%;
 }
 
-#cvldqvpvej .gt_spanner_row {
+#ijjdgrrhfz .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#cvldqvpvej .gt_group_heading {
+#ijjdgrrhfz .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2394,7 +2394,7 @@ Table&nbsp;4: Scenario 1.4: community surveillance (S1b) at three FP rate and th
   text-align: left;
 }
 
-#cvldqvpvej .gt_empty_group_heading {
+#ijjdgrrhfz .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2409,15 +2409,15 @@ Table&nbsp;4: Scenario 1.4: community surveillance (S1b) at three FP rate and th
   vertical-align: middle;
 }
 
-#cvldqvpvej .gt_from_md > :first-child {
+#ijjdgrrhfz .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#cvldqvpvej .gt_from_md > :last-child {
+#ijjdgrrhfz .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#cvldqvpvej .gt_row {
+#ijjdgrrhfz .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2436,7 +2436,7 @@ Table&nbsp;4: Scenario 1.4: community surveillance (S1b) at three FP rate and th
   overflow-x: hidden;
 }
 
-#cvldqvpvej .gt_stub {
+#ijjdgrrhfz .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2449,7 +2449,7 @@ Table&nbsp;4: Scenario 1.4: community surveillance (S1b) at three FP rate and th
   padding-right: 5px;
 }
 
-#cvldqvpvej .gt_stub_row_group {
+#ijjdgrrhfz .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2463,15 +2463,15 @@ Table&nbsp;4: Scenario 1.4: community surveillance (S1b) at three FP rate and th
   vertical-align: top;
 }
 
-#cvldqvpvej .gt_row_group_first td {
+#ijjdgrrhfz .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#cvldqvpvej .gt_row_group_first th {
+#ijjdgrrhfz .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#cvldqvpvej .gt_summary_row {
+#ijjdgrrhfz .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2481,16 +2481,16 @@ Table&nbsp;4: Scenario 1.4: community surveillance (S1b) at three FP rate and th
   padding-right: 5px;
 }
 
-#cvldqvpvej .gt_first_summary_row {
+#ijjdgrrhfz .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#cvldqvpvej .gt_first_summary_row.thick {
+#ijjdgrrhfz .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#cvldqvpvej .gt_last_summary_row {
+#ijjdgrrhfz .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2500,7 +2500,7 @@ Table&nbsp;4: Scenario 1.4: community surveillance (S1b) at three FP rate and th
   border-bottom-color: #D3D3D3;
 }
 
-#cvldqvpvej .gt_grand_summary_row {
+#ijjdgrrhfz .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2510,7 +2510,7 @@ Table&nbsp;4: Scenario 1.4: community surveillance (S1b) at three FP rate and th
   padding-right: 5px;
 }
 
-#cvldqvpvej .gt_first_grand_summary_row {
+#ijjdgrrhfz .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2520,7 +2520,7 @@ Table&nbsp;4: Scenario 1.4: community surveillance (S1b) at three FP rate and th
   border-top-color: #D3D3D3;
 }
 
-#cvldqvpvej .gt_last_grand_summary_row_top {
+#ijjdgrrhfz .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2530,11 +2530,11 @@ Table&nbsp;4: Scenario 1.4: community surveillance (S1b) at three FP rate and th
   border-bottom-color: #D3D3D3;
 }
 
-#cvldqvpvej .gt_striped {
+#ijjdgrrhfz .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#cvldqvpvej .gt_table_body {
+#ijjdgrrhfz .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2543,7 +2543,7 @@ Table&nbsp;4: Scenario 1.4: community surveillance (S1b) at three FP rate and th
   border-bottom-color: #D3D3D3;
 }
 
-#cvldqvpvej .gt_footnotes {
+#ijjdgrrhfz .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2557,7 +2557,7 @@ Table&nbsp;4: Scenario 1.4: community surveillance (S1b) at three FP rate and th
   border-right-color: #D3D3D3;
 }
 
-#cvldqvpvej .gt_footnote {
+#ijjdgrrhfz .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2566,7 +2566,7 @@ Table&nbsp;4: Scenario 1.4: community surveillance (S1b) at three FP rate and th
   padding-right: 5px;
 }
 
-#cvldqvpvej .gt_sourcenotes {
+#ijjdgrrhfz .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2580,7 +2580,7 @@ Table&nbsp;4: Scenario 1.4: community surveillance (S1b) at three FP rate and th
   border-right-color: #D3D3D3;
 }
 
-#cvldqvpvej .gt_sourcenote {
+#ijjdgrrhfz .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2588,72 +2588,72 @@ Table&nbsp;4: Scenario 1.4: community surveillance (S1b) at three FP rate and th
   padding-right: 5px;
 }
 
-#cvldqvpvej .gt_left {
+#ijjdgrrhfz .gt_left {
   text-align: left;
 }
 
-#cvldqvpvej .gt_center {
+#ijjdgrrhfz .gt_center {
   text-align: center;
 }
 
-#cvldqvpvej .gt_right {
+#ijjdgrrhfz .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#cvldqvpvej .gt_font_normal {
+#ijjdgrrhfz .gt_font_normal {
   font-weight: normal;
 }
 
-#cvldqvpvej .gt_font_bold {
+#ijjdgrrhfz .gt_font_bold {
   font-weight: bold;
 }
 
-#cvldqvpvej .gt_font_italic {
+#ijjdgrrhfz .gt_font_italic {
   font-style: italic;
 }
 
-#cvldqvpvej .gt_super {
+#ijjdgrrhfz .gt_super {
   font-size: 65%;
 }
 
-#cvldqvpvej .gt_footnote_marks {
+#ijjdgrrhfz .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#cvldqvpvej .gt_asterisk {
+#ijjdgrrhfz .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#cvldqvpvej .gt_indent_1 {
+#ijjdgrrhfz .gt_indent_1 {
   text-indent: 5px;
 }
 
-#cvldqvpvej .gt_indent_2 {
+#ijjdgrrhfz .gt_indent_2 {
   text-indent: 10px;
 }
 
-#cvldqvpvej .gt_indent_3 {
+#ijjdgrrhfz .gt_indent_3 {
   text-indent: 15px;
 }
 
-#cvldqvpvej .gt_indent_4 {
+#ijjdgrrhfz .gt_indent_4 {
   text-indent: 20px;
 }
 
-#cvldqvpvej .gt_indent_5 {
+#ijjdgrrhfz .gt_indent_5 {
   text-indent: 25px;
 }
 
-#cvldqvpvej .katex-display {
+#ijjdgrrhfz .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#cvldqvpvej div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ijjdgrrhfz div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2675,65 +2675,65 @@ Table&nbsp;4: Scenario 1.4: community surveillance (S1b) at three FP rate and th
 <tr class="odd">
 <td class="gt_row gt_right" headers="FP rate">20%</td>
 <td class="gt_row gt_right" headers="S1b operating (R/yr)">800,000</td>
-<td class="gt_row gt_right" headers="Deaths averted">2980</td>
-<td class="gt_row gt_right" headers="NMB (R/yr)">-80,730,000</td>
-<td class="gt_row gt_right" headers="R / death averted">27,089</td>
+<td class="gt_row gt_right" headers="Deaths averted">932</td>
+<td class="gt_row gt_right" headers="NMB (R/yr)">-31,907,600</td>
+<td class="gt_row gt_right" headers="R / death averted">34,223</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right gt_striped" headers="FP rate">20%</td>
 <td class="gt_row gt_right gt_striped" headers="S1b operating (R/yr)">1,500,000</td>
-<td class="gt_row gt_right gt_striped" headers="Deaths averted">2980</td>
-<td class="gt_row gt_right gt_striped" headers="NMB (R/yr)">-81,430,000</td>
-<td class="gt_row gt_right gt_striped" headers="R / death averted">27,324</td>
+<td class="gt_row gt_right gt_striped" headers="Deaths averted">932</td>
+<td class="gt_row gt_right gt_striped" headers="NMB (R/yr)">-32,607,600</td>
+<td class="gt_row gt_right gt_striped" headers="R / death averted">34,974</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="FP rate">20%</td>
 <td class="gt_row gt_right" headers="S1b operating (R/yr)">2,500,000</td>
-<td class="gt_row gt_right" headers="Deaths averted">2980</td>
-<td class="gt_row gt_right" headers="NMB (R/yr)">-82,430,000</td>
-<td class="gt_row gt_right" headers="R / death averted">27,659</td>
+<td class="gt_row gt_right" headers="Deaths averted">932</td>
+<td class="gt_row gt_right" headers="NMB (R/yr)">-33,607,600</td>
+<td class="gt_row gt_right" headers="R / death averted">36,047</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right gt_striped" headers="FP rate">35%</td>
 <td class="gt_row gt_right gt_striped" headers="S1b operating (R/yr)">800,000</td>
-<td class="gt_row gt_right gt_striped" headers="Deaths averted">2980</td>
-<td class="gt_row gt_right gt_striped" headers="NMB (R/yr)">-99,110,308</td>
-<td class="gt_row gt_right gt_striped" headers="R / death averted">33,257</td>
+<td class="gt_row gt_right gt_striped" headers="Deaths averted">932</td>
+<td class="gt_row gt_right gt_striped" headers="NMB (R/yr)">-39,021,200</td>
+<td class="gt_row gt_right gt_striped" headers="R / death averted">41,853</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="FP rate">35%</td>
 <td class="gt_row gt_right" headers="S1b operating (R/yr)">1,500,000</td>
-<td class="gt_row gt_right" headers="Deaths averted">2980</td>
-<td class="gt_row gt_right" headers="NMB (R/yr)">-99,810,308</td>
-<td class="gt_row gt_right" headers="R / death averted">33,491</td>
+<td class="gt_row gt_right" headers="Deaths averted">932</td>
+<td class="gt_row gt_right" headers="NMB (R/yr)">-39,721,200</td>
+<td class="gt_row gt_right" headers="R / death averted">42,604</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right gt_striped" headers="FP rate">35%</td>
 <td class="gt_row gt_right gt_striped" headers="S1b operating (R/yr)">2,500,000</td>
-<td class="gt_row gt_right gt_striped" headers="Deaths averted">2980</td>
-<td class="gt_row gt_right gt_striped" headers="NMB (R/yr)">-100,810,308</td>
-<td class="gt_row gt_right gt_striped" headers="R / death averted">33,827</td>
+<td class="gt_row gt_right gt_striped" headers="Deaths averted">932</td>
+<td class="gt_row gt_right gt_striped" headers="NMB (R/yr)">-40,721,200</td>
+<td class="gt_row gt_right gt_striped" headers="R / death averted">43,676</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="FP rate">50%</td>
 <td class="gt_row gt_right" headers="S1b operating (R/yr)">800,000</td>
-<td class="gt_row gt_right" headers="Deaths averted">2980</td>
-<td class="gt_row gt_right" headers="NMB (R/yr)">-128,518,800</td>
-<td class="gt_row gt_right" headers="R / death averted">43,125</td>
+<td class="gt_row gt_right" headers="Deaths averted">932</td>
+<td class="gt_row gt_right" headers="NMB (R/yr)">-50,402,960</td>
+<td class="gt_row gt_right" headers="R / death averted">54,061</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right gt_striped" headers="FP rate">50%</td>
 <td class="gt_row gt_right gt_striped" headers="S1b operating (R/yr)">1,500,000</td>
-<td class="gt_row gt_right gt_striped" headers="Deaths averted">2980</td>
-<td class="gt_row gt_right gt_striped" headers="NMB (R/yr)">-129,218,800</td>
-<td class="gt_row gt_right gt_striped" headers="R / death averted">43,359</td>
+<td class="gt_row gt_right gt_striped" headers="Deaths averted">932</td>
+<td class="gt_row gt_right gt_striped" headers="NMB (R/yr)">-51,102,960</td>
+<td class="gt_row gt_right gt_striped" headers="R / death averted">54,812</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="FP rate">50%</td>
 <td class="gt_row gt_right" headers="S1b operating (R/yr)">2,500,000</td>
-<td class="gt_row gt_right" headers="Deaths averted">2980</td>
-<td class="gt_row gt_right" headers="NMB (R/yr)">-130,218,800</td>
-<td class="gt_row gt_right" headers="R / death averted">43,695</td>
+<td class="gt_row gt_right" headers="Deaths averted">932</td>
+<td class="gt_row gt_right" headers="NMB (R/yr)">-52,102,960</td>
+<td class="gt_row gt_right" headers="R / death averted">55,884</td>
 </tr>
 </tbody>
 </table>
@@ -2772,23 +2772,23 @@ Table&nbsp;5: Scenario 1.5: year-1 deaths averted and NMB from terbufos and aldi
 </figcaption>
 <div aria-describedby="tbl-s15-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="adyjxbixzf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#adyjxbixzf table {
+<div id="xvwjbvkhqp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#xvwjbvkhqp table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#adyjxbixzf thead, #adyjxbixzf tbody, #adyjxbixzf tfoot, #adyjxbixzf tr, #adyjxbixzf td, #adyjxbixzf th {
+#xvwjbvkhqp thead, #xvwjbvkhqp tbody, #xvwjbvkhqp tfoot, #xvwjbvkhqp tr, #xvwjbvkhqp td, #xvwjbvkhqp th {
   border-style: none;
 }
 
-#adyjxbixzf p {
+#xvwjbvkhqp p {
   margin: 0;
   padding: 0;
 }
 
-#adyjxbixzf .gt_table {
+#xvwjbvkhqp .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2814,12 +2814,12 @@ Table&nbsp;5: Scenario 1.5: year-1 deaths averted and NMB from terbufos and aldi
   border-left-color: #D3D3D3;
 }
 
-#adyjxbixzf .gt_caption {
+#xvwjbvkhqp .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#adyjxbixzf .gt_title {
+#xvwjbvkhqp .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2831,7 +2831,7 @@ Table&nbsp;5: Scenario 1.5: year-1 deaths averted and NMB from terbufos and aldi
   border-bottom-width: 0;
 }
 
-#adyjxbixzf .gt_subtitle {
+#xvwjbvkhqp .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2843,7 +2843,7 @@ Table&nbsp;5: Scenario 1.5: year-1 deaths averted and NMB from terbufos and aldi
   border-top-width: 0;
 }
 
-#adyjxbixzf .gt_heading {
+#xvwjbvkhqp .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2855,13 +2855,13 @@ Table&nbsp;5: Scenario 1.5: year-1 deaths averted and NMB from terbufos and aldi
   border-right-color: #D3D3D3;
 }
 
-#adyjxbixzf .gt_bottom_border {
+#xvwjbvkhqp .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#adyjxbixzf .gt_col_headings {
+#xvwjbvkhqp .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2876,7 +2876,7 @@ Table&nbsp;5: Scenario 1.5: year-1 deaths averted and NMB from terbufos and aldi
   border-right-color: #D3D3D3;
 }
 
-#adyjxbixzf .gt_col_heading {
+#xvwjbvkhqp .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2896,7 +2896,7 @@ Table&nbsp;5: Scenario 1.5: year-1 deaths averted and NMB from terbufos and aldi
   overflow-x: hidden;
 }
 
-#adyjxbixzf .gt_column_spanner_outer {
+#xvwjbvkhqp .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2908,15 +2908,15 @@ Table&nbsp;5: Scenario 1.5: year-1 deaths averted and NMB from terbufos and aldi
   padding-right: 4px;
 }
 
-#adyjxbixzf .gt_column_spanner_outer:first-child {
+#xvwjbvkhqp .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#adyjxbixzf .gt_column_spanner_outer:last-child {
+#xvwjbvkhqp .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#adyjxbixzf .gt_column_spanner {
+#xvwjbvkhqp .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2928,11 +2928,11 @@ Table&nbsp;5: Scenario 1.5: year-1 deaths averted and NMB from terbufos and aldi
   width: 100%;
 }
 
-#adyjxbixzf .gt_spanner_row {
+#xvwjbvkhqp .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#adyjxbixzf .gt_group_heading {
+#xvwjbvkhqp .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2958,7 +2958,7 @@ Table&nbsp;5: Scenario 1.5: year-1 deaths averted and NMB from terbufos and aldi
   text-align: left;
 }
 
-#adyjxbixzf .gt_empty_group_heading {
+#xvwjbvkhqp .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2973,15 +2973,15 @@ Table&nbsp;5: Scenario 1.5: year-1 deaths averted and NMB from terbufos and aldi
   vertical-align: middle;
 }
 
-#adyjxbixzf .gt_from_md > :first-child {
+#xvwjbvkhqp .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#adyjxbixzf .gt_from_md > :last-child {
+#xvwjbvkhqp .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#adyjxbixzf .gt_row {
+#xvwjbvkhqp .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3000,7 +3000,7 @@ Table&nbsp;5: Scenario 1.5: year-1 deaths averted and NMB from terbufos and aldi
   overflow-x: hidden;
 }
 
-#adyjxbixzf .gt_stub {
+#xvwjbvkhqp .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3013,7 +3013,7 @@ Table&nbsp;5: Scenario 1.5: year-1 deaths averted and NMB from terbufos and aldi
   padding-right: 5px;
 }
 
-#adyjxbixzf .gt_stub_row_group {
+#xvwjbvkhqp .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3027,15 +3027,15 @@ Table&nbsp;5: Scenario 1.5: year-1 deaths averted and NMB from terbufos and aldi
   vertical-align: top;
 }
 
-#adyjxbixzf .gt_row_group_first td {
+#xvwjbvkhqp .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#adyjxbixzf .gt_row_group_first th {
+#xvwjbvkhqp .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#adyjxbixzf .gt_summary_row {
+#xvwjbvkhqp .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3045,16 +3045,16 @@ Table&nbsp;5: Scenario 1.5: year-1 deaths averted and NMB from terbufos and aldi
   padding-right: 5px;
 }
 
-#adyjxbixzf .gt_first_summary_row {
+#xvwjbvkhqp .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#adyjxbixzf .gt_first_summary_row.thick {
+#xvwjbvkhqp .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#adyjxbixzf .gt_last_summary_row {
+#xvwjbvkhqp .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3064,7 +3064,7 @@ Table&nbsp;5: Scenario 1.5: year-1 deaths averted and NMB from terbufos and aldi
   border-bottom-color: #D3D3D3;
 }
 
-#adyjxbixzf .gt_grand_summary_row {
+#xvwjbvkhqp .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3074,7 +3074,7 @@ Table&nbsp;5: Scenario 1.5: year-1 deaths averted and NMB from terbufos and aldi
   padding-right: 5px;
 }
 
-#adyjxbixzf .gt_first_grand_summary_row {
+#xvwjbvkhqp .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3084,7 +3084,7 @@ Table&nbsp;5: Scenario 1.5: year-1 deaths averted and NMB from terbufos and aldi
   border-top-color: #D3D3D3;
 }
 
-#adyjxbixzf .gt_last_grand_summary_row_top {
+#xvwjbvkhqp .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3094,11 +3094,11 @@ Table&nbsp;5: Scenario 1.5: year-1 deaths averted and NMB from terbufos and aldi
   border-bottom-color: #D3D3D3;
 }
 
-#adyjxbixzf .gt_striped {
+#xvwjbvkhqp .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#adyjxbixzf .gt_table_body {
+#xvwjbvkhqp .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3107,7 +3107,7 @@ Table&nbsp;5: Scenario 1.5: year-1 deaths averted and NMB from terbufos and aldi
   border-bottom-color: #D3D3D3;
 }
 
-#adyjxbixzf .gt_footnotes {
+#xvwjbvkhqp .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3121,7 +3121,7 @@ Table&nbsp;5: Scenario 1.5: year-1 deaths averted and NMB from terbufos and aldi
   border-right-color: #D3D3D3;
 }
 
-#adyjxbixzf .gt_footnote {
+#xvwjbvkhqp .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3130,7 +3130,7 @@ Table&nbsp;5: Scenario 1.5: year-1 deaths averted and NMB from terbufos and aldi
   padding-right: 5px;
 }
 
-#adyjxbixzf .gt_sourcenotes {
+#xvwjbvkhqp .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3144,7 +3144,7 @@ Table&nbsp;5: Scenario 1.5: year-1 deaths averted and NMB from terbufos and aldi
   border-right-color: #D3D3D3;
 }
 
-#adyjxbixzf .gt_sourcenote {
+#xvwjbvkhqp .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3152,72 +3152,72 @@ Table&nbsp;5: Scenario 1.5: year-1 deaths averted and NMB from terbufos and aldi
   padding-right: 5px;
 }
 
-#adyjxbixzf .gt_left {
+#xvwjbvkhqp .gt_left {
   text-align: left;
 }
 
-#adyjxbixzf .gt_center {
+#xvwjbvkhqp .gt_center {
   text-align: center;
 }
 
-#adyjxbixzf .gt_right {
+#xvwjbvkhqp .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#adyjxbixzf .gt_font_normal {
+#xvwjbvkhqp .gt_font_normal {
   font-weight: normal;
 }
 
-#adyjxbixzf .gt_font_bold {
+#xvwjbvkhqp .gt_font_bold {
   font-weight: bold;
 }
 
-#adyjxbixzf .gt_font_italic {
+#xvwjbvkhqp .gt_font_italic {
   font-style: italic;
 }
 
-#adyjxbixzf .gt_super {
+#xvwjbvkhqp .gt_super {
   font-size: 65%;
 }
 
-#adyjxbixzf .gt_footnote_marks {
+#xvwjbvkhqp .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#adyjxbixzf .gt_asterisk {
+#xvwjbvkhqp .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#adyjxbixzf .gt_indent_1 {
+#xvwjbvkhqp .gt_indent_1 {
   text-indent: 5px;
 }
 
-#adyjxbixzf .gt_indent_2 {
+#xvwjbvkhqp .gt_indent_2 {
   text-indent: 10px;
 }
 
-#adyjxbixzf .gt_indent_3 {
+#xvwjbvkhqp .gt_indent_3 {
   text-indent: 15px;
 }
 
-#adyjxbixzf .gt_indent_4 {
+#xvwjbvkhqp .gt_indent_4 {
   text-indent: 20px;
 }
 
-#adyjxbixzf .gt_indent_5 {
+#xvwjbvkhqp .gt_indent_5 {
   text-indent: 25px;
 }
 
-#adyjxbixzf .katex-display {
+#xvwjbvkhqp .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#adyjxbixzf div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#xvwjbvkhqp div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -3239,65 +3239,65 @@ Table&nbsp;5: Scenario 1.5: year-1 deaths averted and NMB from terbufos and aldi
 <tr class="odd">
 <td class="gt_row gt_right" headers="Terbufos f">20%</td>
 <td class="gt_row gt_right" headers="Aldicarb f">5%</td>
-<td class="gt_row gt_right" headers="Deaths averted (yr 1)">356</td>
-<td class="gt_row gt_right" headers="NMB (R/yr)">564,207,800</td>
-<td class="gt_row gt_right" headers="R / death av">10,627</td>
+<td class="gt_row gt_right" headers="Deaths averted (yr 1)">138</td>
+<td class="gt_row gt_right" headers="NMB (R/yr)">216,043,060</td>
+<td class="gt_row gt_right" headers="R / death av">27,459</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right gt_striped" headers="Terbufos f">20%</td>
 <td class="gt_row gt_right gt_striped" headers="Aldicarb f">12%</td>
-<td class="gt_row gt_right gt_striped" headers="Deaths averted (yr 1)">512</td>
-<td class="gt_row gt_right gt_striped" headers="NMB (R/yr)">813,008,240</td>
-<td class="gt_row gt_right gt_striped" headers="R / death av">7,390</td>
+<td class="gt_row gt_right gt_striped" headers="Deaths averted (yr 1)">198</td>
+<td class="gt_row gt_right gt_striped" headers="NMB (R/yr)">312,334,528</td>
+<td class="gt_row gt_right gt_striped" headers="R / death av">19,094</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="Terbufos f">20%</td>
 <td class="gt_row gt_right" headers="Aldicarb f">20%</td>
-<td class="gt_row gt_right" headers="Deaths averted (yr 1)">690</td>
-<td class="gt_row gt_right" headers="NMB (R/yr)">1,097,351,600</td>
-<td class="gt_row gt_right" headers="R / death av">5,482</td>
+<td class="gt_row gt_right" headers="Deaths averted (yr 1)">267</td>
+<td class="gt_row gt_right" headers="NMB (R/yr)">422,381,920</td>
+<td class="gt_row gt_right" headers="R / death av">14,164</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right gt_striped" headers="Terbufos f">25%</td>
 <td class="gt_row gt_right gt_striped" headers="Aldicarb f">5%</td>
-<td class="gt_row gt_right gt_striped" headers="Deaths averted (yr 1)">417</td>
-<td class="gt_row gt_right gt_striped" headers="NMB (R/yr)">661,776,600</td>
-<td class="gt_row gt_right gt_striped" headers="R / death av">9,069</td>
+<td class="gt_row gt_right gt_striped" headers="Deaths averted (yr 1)">161</td>
+<td class="gt_row gt_right gt_striped" headers="NMB (R/yr)">253,804,420</td>
+<td class="gt_row gt_right gt_striped" headers="R / death av">23,433</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="Terbufos f">25%</td>
 <td class="gt_row gt_right" headers="Aldicarb f">12%</td>
-<td class="gt_row gt_right" headers="Deaths averted (yr 1)">573</td>
-<td class="gt_row gt_right" headers="NMB (R/yr)">910,577,040</td>
-<td class="gt_row gt_right" headers="R / death av">6,601</td>
+<td class="gt_row gt_right" headers="Deaths averted (yr 1)">222</td>
+<td class="gt_row gt_right" headers="NMB (R/yr)">350,095,888</td>
+<td class="gt_row gt_right" headers="R / death av">17,057</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right gt_striped" headers="Terbufos f">25%</td>
 <td class="gt_row gt_right gt_striped" headers="Aldicarb f">20%</td>
-<td class="gt_row gt_right gt_striped" headers="Deaths averted (yr 1)">751</td>
-<td class="gt_row gt_right gt_striped" headers="NMB (R/yr)">1,194,920,400</td>
-<td class="gt_row gt_right gt_striped" headers="R / death av">5,036</td>
+<td class="gt_row gt_right gt_striped" headers="Deaths averted (yr 1)">291</td>
+<td class="gt_row gt_right gt_striped" headers="NMB (R/yr)">460,143,280</td>
+<td class="gt_row gt_right gt_striped" headers="R / death av">13,011</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="Terbufos f">35%</td>
 <td class="gt_row gt_right" headers="Aldicarb f">5%</td>
-<td class="gt_row gt_right" headers="Deaths averted (yr 1)">539</td>
-<td class="gt_row gt_right" headers="NMB (R/yr)">856,914,200</td>
-<td class="gt_row gt_right" headers="R / death av">7,013</td>
+<td class="gt_row gt_right" headers="Deaths averted (yr 1)">209</td>
+<td class="gt_row gt_right" headers="NMB (R/yr)">329,327,140</td>
+<td class="gt_row gt_right" headers="R / death av">18,120</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right gt_striped" headers="Terbufos f">35%</td>
 <td class="gt_row gt_right gt_striped" headers="Aldicarb f">12%</td>
-<td class="gt_row gt_right gt_striped" headers="Deaths averted (yr 1)">695</td>
-<td class="gt_row gt_right gt_striped" headers="NMB (R/yr)">1,105,714,640</td>
-<td class="gt_row gt_right gt_striped" headers="R / death av">5,440</td>
+<td class="gt_row gt_right gt_striped" headers="Deaths averted (yr 1)">269</td>
+<td class="gt_row gt_right gt_striped" headers="NMB (R/yr)">425,618,608</td>
+<td class="gt_row gt_right gt_striped" headers="R / death av">14,057</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="Terbufos f">35%</td>
 <td class="gt_row gt_right" headers="Aldicarb f">20%</td>
-<td class="gt_row gt_right" headers="Deaths averted (yr 1)">873</td>
-<td class="gt_row gt_right" headers="NMB (R/yr)">1,390,058,000</td>
-<td class="gt_row gt_right" headers="R / death av">4,331</td>
+<td class="gt_row gt_right" headers="Deaths averted (yr 1)">338</td>
+<td class="gt_row gt_right" headers="NMB (R/yr)">535,666,000</td>
+<td class="gt_row gt_right" headers="R / death av">11,189</td>
 </tr>
 </tbody>
 </table>
@@ -3322,7 +3322,7 @@ Figure&nbsp;5: Scenario 1.5: terbufos phase-out ramp (months 0–24) showing NMB
 </div>
 </div>
 </div>
-<p><strong>Interpretation.</strong> At the working attributable fraction (terbufos 25% + aldicarb 12%), the combined phase-out averts ~573 deaths in year 1 and generates an NMB that grows as the ramp completes. S3 sentinel toxicology (R1.2M pilot, R3.6M at 5 sites) is the prerequisite for moving aldicarb attribution from <code>f_aldi_mid = 12%</code> (literature estimate) to a SA-measured value.</p>
+<p><strong>Interpretation.</strong> At the working attributable fraction (terbufos 25% + aldicarb 12%), the combined phase-out averts ~222 deaths in year 1 and generates an NMB that grows as the ramp completes. S3 sentinel toxicology (R1.2M pilot, R3.6M at 5 sites) is the prerequisite for moving aldicarb attribution from <code>f_aldi_mid = 12%</code> (literature estimate) to a SA-measured value.</p>
 <hr>
 </section>
 <section id="summary-spend-vs-benefit-frontier-across-all-scenarios" class="level2" data-number="8">
@@ -3350,23 +3350,23 @@ Table&nbsp;6: Full spend-vs-benefit frontier: all policy options ranked by regul
 </figcaption>
 <div aria-describedby="tbl-frontier-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="ribbgvarbt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ribbgvarbt table {
+<div id="ysksabuqun" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ysksabuqun table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ribbgvarbt thead, #ribbgvarbt tbody, #ribbgvarbt tfoot, #ribbgvarbt tr, #ribbgvarbt td, #ribbgvarbt th {
+#ysksabuqun thead, #ysksabuqun tbody, #ysksabuqun tfoot, #ysksabuqun tr, #ysksabuqun td, #ysksabuqun th {
   border-style: none;
 }
 
-#ribbgvarbt p {
+#ysksabuqun p {
   margin: 0;
   padding: 0;
 }
 
-#ribbgvarbt .gt_table {
+#ysksabuqun .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3392,12 +3392,12 @@ Table&nbsp;6: Full spend-vs-benefit frontier: all policy options ranked by regul
   border-left-color: #D3D3D3;
 }
 
-#ribbgvarbt .gt_caption {
+#ysksabuqun .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ribbgvarbt .gt_title {
+#ysksabuqun .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -3409,7 +3409,7 @@ Table&nbsp;6: Full spend-vs-benefit frontier: all policy options ranked by regul
   border-bottom-width: 0;
 }
 
-#ribbgvarbt .gt_subtitle {
+#ysksabuqun .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3421,7 +3421,7 @@ Table&nbsp;6: Full spend-vs-benefit frontier: all policy options ranked by regul
   border-top-width: 0;
 }
 
-#ribbgvarbt .gt_heading {
+#ysksabuqun .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3433,13 +3433,13 @@ Table&nbsp;6: Full spend-vs-benefit frontier: all policy options ranked by regul
   border-right-color: #D3D3D3;
 }
 
-#ribbgvarbt .gt_bottom_border {
+#ysksabuqun .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ribbgvarbt .gt_col_headings {
+#ysksabuqun .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3454,7 +3454,7 @@ Table&nbsp;6: Full spend-vs-benefit frontier: all policy options ranked by regul
   border-right-color: #D3D3D3;
 }
 
-#ribbgvarbt .gt_col_heading {
+#ysksabuqun .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3474,7 +3474,7 @@ Table&nbsp;6: Full spend-vs-benefit frontier: all policy options ranked by regul
   overflow-x: hidden;
 }
 
-#ribbgvarbt .gt_column_spanner_outer {
+#ysksabuqun .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3486,15 +3486,15 @@ Table&nbsp;6: Full spend-vs-benefit frontier: all policy options ranked by regul
   padding-right: 4px;
 }
 
-#ribbgvarbt .gt_column_spanner_outer:first-child {
+#ysksabuqun .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ribbgvarbt .gt_column_spanner_outer:last-child {
+#ysksabuqun .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ribbgvarbt .gt_column_spanner {
+#ysksabuqun .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3506,11 +3506,11 @@ Table&nbsp;6: Full spend-vs-benefit frontier: all policy options ranked by regul
   width: 100%;
 }
 
-#ribbgvarbt .gt_spanner_row {
+#ysksabuqun .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ribbgvarbt .gt_group_heading {
+#ysksabuqun .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3536,7 +3536,7 @@ Table&nbsp;6: Full spend-vs-benefit frontier: all policy options ranked by regul
   text-align: left;
 }
 
-#ribbgvarbt .gt_empty_group_heading {
+#ysksabuqun .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3551,15 +3551,15 @@ Table&nbsp;6: Full spend-vs-benefit frontier: all policy options ranked by regul
   vertical-align: middle;
 }
 
-#ribbgvarbt .gt_from_md > :first-child {
+#ysksabuqun .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ribbgvarbt .gt_from_md > :last-child {
+#ysksabuqun .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ribbgvarbt .gt_row {
+#ysksabuqun .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3578,7 +3578,7 @@ Table&nbsp;6: Full spend-vs-benefit frontier: all policy options ranked by regul
   overflow-x: hidden;
 }
 
-#ribbgvarbt .gt_stub {
+#ysksabuqun .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3591,7 +3591,7 @@ Table&nbsp;6: Full spend-vs-benefit frontier: all policy options ranked by regul
   padding-right: 5px;
 }
 
-#ribbgvarbt .gt_stub_row_group {
+#ysksabuqun .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3605,15 +3605,15 @@ Table&nbsp;6: Full spend-vs-benefit frontier: all policy options ranked by regul
   vertical-align: top;
 }
 
-#ribbgvarbt .gt_row_group_first td {
+#ysksabuqun .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ribbgvarbt .gt_row_group_first th {
+#ysksabuqun .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ribbgvarbt .gt_summary_row {
+#ysksabuqun .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3623,16 +3623,16 @@ Table&nbsp;6: Full spend-vs-benefit frontier: all policy options ranked by regul
   padding-right: 5px;
 }
 
-#ribbgvarbt .gt_first_summary_row {
+#ysksabuqun .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ribbgvarbt .gt_first_summary_row.thick {
+#ysksabuqun .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ribbgvarbt .gt_last_summary_row {
+#ysksabuqun .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3642,7 +3642,7 @@ Table&nbsp;6: Full spend-vs-benefit frontier: all policy options ranked by regul
   border-bottom-color: #D3D3D3;
 }
 
-#ribbgvarbt .gt_grand_summary_row {
+#ysksabuqun .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3652,7 +3652,7 @@ Table&nbsp;6: Full spend-vs-benefit frontier: all policy options ranked by regul
   padding-right: 5px;
 }
 
-#ribbgvarbt .gt_first_grand_summary_row {
+#ysksabuqun .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3662,7 +3662,7 @@ Table&nbsp;6: Full spend-vs-benefit frontier: all policy options ranked by regul
   border-top-color: #D3D3D3;
 }
 
-#ribbgvarbt .gt_last_grand_summary_row_top {
+#ysksabuqun .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3672,11 +3672,11 @@ Table&nbsp;6: Full spend-vs-benefit frontier: all policy options ranked by regul
   border-bottom-color: #D3D3D3;
 }
 
-#ribbgvarbt .gt_striped {
+#ysksabuqun .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ribbgvarbt .gt_table_body {
+#ysksabuqun .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3685,7 +3685,7 @@ Table&nbsp;6: Full spend-vs-benefit frontier: all policy options ranked by regul
   border-bottom-color: #D3D3D3;
 }
 
-#ribbgvarbt .gt_footnotes {
+#ysksabuqun .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3699,7 +3699,7 @@ Table&nbsp;6: Full spend-vs-benefit frontier: all policy options ranked by regul
   border-right-color: #D3D3D3;
 }
 
-#ribbgvarbt .gt_footnote {
+#ysksabuqun .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3708,7 +3708,7 @@ Table&nbsp;6: Full spend-vs-benefit frontier: all policy options ranked by regul
   padding-right: 5px;
 }
 
-#ribbgvarbt .gt_sourcenotes {
+#ysksabuqun .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3722,7 +3722,7 @@ Table&nbsp;6: Full spend-vs-benefit frontier: all policy options ranked by regul
   border-right-color: #D3D3D3;
 }
 
-#ribbgvarbt .gt_sourcenote {
+#ysksabuqun .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3730,72 +3730,72 @@ Table&nbsp;6: Full spend-vs-benefit frontier: all policy options ranked by regul
   padding-right: 5px;
 }
 
-#ribbgvarbt .gt_left {
+#ysksabuqun .gt_left {
   text-align: left;
 }
 
-#ribbgvarbt .gt_center {
+#ysksabuqun .gt_center {
   text-align: center;
 }
 
-#ribbgvarbt .gt_right {
+#ysksabuqun .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ribbgvarbt .gt_font_normal {
+#ysksabuqun .gt_font_normal {
   font-weight: normal;
 }
 
-#ribbgvarbt .gt_font_bold {
+#ysksabuqun .gt_font_bold {
   font-weight: bold;
 }
 
-#ribbgvarbt .gt_font_italic {
+#ysksabuqun .gt_font_italic {
   font-style: italic;
 }
 
-#ribbgvarbt .gt_super {
+#ysksabuqun .gt_super {
   font-size: 65%;
 }
 
-#ribbgvarbt .gt_footnote_marks {
+#ysksabuqun .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ribbgvarbt .gt_asterisk {
+#ysksabuqun .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ribbgvarbt .gt_indent_1 {
+#ysksabuqun .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ribbgvarbt .gt_indent_2 {
+#ysksabuqun .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ribbgvarbt .gt_indent_3 {
+#ysksabuqun .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ribbgvarbt .gt_indent_4 {
+#ysksabuqun .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ribbgvarbt .gt_indent_5 {
+#ysksabuqun .gt_indent_5 {
   text-indent: 25px;
 }
 
-#ribbgvarbt .katex-display {
+#ysksabuqun .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#ribbgvarbt div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ysksabuqun div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -3815,81 +3815,81 @@ Table&nbsp;6: Full spend-vs-benefit frontier: all policy options ranked by regul
 <tbody class="gt_table_body">
 <tr class="odd">
 <td class="gt_row gt_left" headers="Option">0 · Status quo</td>
-<td class="gt_row gt_right" headers="c_regulator">7,646,208</td>
-<td class="gt_row gt_right" headers="NMB" style="background-color: #E66B40; color: #FFFFFF">−7,646,208</td>
+<td class="gt_row gt_right" headers="c_regulator">7,706,400</td>
+<td class="gt_row gt_right" headers="NMB" style="background-color: #E6683F; color: #FFFFFF">−7,706,400</td>
 <td class="gt_row gt_right" headers="cost_per_death">—</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left gt_striped" headers="Option">1.1a · S1 (PIH MVD)</td>
-<td class="gt_row gt_right gt_striped" headers="c_regulator">16,529,008</td>
-<td class="gt_row gt_right gt_striped" headers="NMB" style="background-color: #E5683F; color: #FFFFFF">−16,529,008</td>
-<td class="gt_row gt_right gt_striped" headers="cost_per_death">380,633</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Option">1.1b · S2 (BChE auto)</td>
-<td class="gt_row gt_right" headers="c_regulator">21,221,608</td>
-<td class="gt_row gt_right" headers="NMB" style="background-color: #E5673E; color: #FFFFFF">−21,221,608</td>
-<td class="gt_row gt_right" headers="cost_per_death">318,105</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left gt_striped" headers="Option">1.1c · MVP (S1+S2)</td>
-<td class="gt_row gt_right gt_striped" headers="c_regulator">30,243,944</td>
-<td class="gt_row gt_right gt_striped" headers="NMB" style="background-color: #E4643D; color: #FFFFFF">−30,243,944</td>
-<td class="gt_row gt_right gt_striped" headers="cost_per_death">272,896</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Option">1.2 · MVP + Coord C1</td>
-<td class="gt_row gt_right" headers="c_regulator">30,273,944</td>
-<td class="gt_row gt_right" headers="NMB" style="background-color: #E4643D; color: #FFFFFF">−30,273,944</td>
-<td class="gt_row gt_right" headers="cost_per_death">28,351</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left gt_striped" headers="Option">1.2 · MVP + Coord C1-C3</td>
-<td class="gt_row gt_right gt_striped" headers="c_regulator">30,338,944</td>
-<td class="gt_row gt_right gt_striped" headers="NMB" style="background-color: #E4643D; color: #FFFFFF">−30,338,944</td>
-<td class="gt_row gt_right gt_striped" headers="cost_per_death">28,412</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Option">1.2 · MVP + Coord C1-C5</td>
-<td class="gt_row gt_right" headers="c_regulator">30,388,944</td>
-<td class="gt_row gt_right" headers="NMB" style="background-color: #E4643D; color: #FFFFFF">−30,388,944</td>
-<td class="gt_row gt_right" headers="cost_per_death">28,459</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left gt_striped" headers="Option">1.3 · + Clustering (k=2)</td>
-<td class="gt_row gt_right gt_striped" headers="c_regulator">30,388,944</td>
-<td class="gt_row gt_right gt_striped" headers="NMB" style="background-color: #E4643D; color: #FFFFFF">−30,388,944</td>
-<td class="gt_row gt_right gt_striped" headers="cost_per_death">24,983</td>
+<td class="gt_row gt_right gt_striped" headers="c_regulator">16,589,200</td>
+<td class="gt_row gt_right gt_striped" headers="NMB" style="background-color: #E4623C; color: #FFFFFF">−16,589,200</td>
+<td class="gt_row gt_right gt_striped" headers="cost_per_death">382,020</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Option">1.4 · + S1b lo</td>
-<td class="gt_row gt_right" headers="c_regulator">50,862,000</td>
-<td class="gt_row gt_right" headers="NMB" style="background-color: #E35E3A; color: #FFFFFF">−50,862,000</td>
-<td class="gt_row gt_right" headers="cost_per_death">29,463</td>
+<td class="gt_row gt_right" headers="c_regulator">20,348,000</td>
+<td class="gt_row gt_right" headers="NMB" style="background-color: #E35F3A; color: #FFFFFF">−20,348,000</td>
+<td class="gt_row gt_right" headers="cost_per_death">45,774</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="Option">1.1b · S2 (BChE auto)</td>
+<td class="gt_row gt_right gt_striped" headers="c_regulator">21,281,800</td>
+<td class="gt_row gt_right gt_striped" headers="NMB" style="background-color: #E35E3A; color: #FFFFFF">−21,281,800</td>
+<td class="gt_row gt_right gt_striped" headers="cost_per_death">319,008</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Option">1.1c · MVP (S1+S2)</td>
+<td class="gt_row gt_right" headers="c_regulator">30,161,134</td>
+<td class="gt_row gt_right" headers="NMB" style="background-color: #E15736; color: #FFFFFF">−30,161,134</td>
+<td class="gt_row gt_right" headers="cost_per_death">273,892</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="Option">1.2 · MVP + Coord C1</td>
+<td class="gt_row gt_right gt_striped" headers="c_regulator">30,191,134</td>
+<td class="gt_row gt_right gt_striped" headers="NMB" style="background-color: #E15736; color: #FFFFFF">−30,191,134</td>
+<td class="gt_row gt_right gt_striped" headers="cost_per_death">28,292</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Option">1.2 · MVP + Coord C1-C3</td>
+<td class="gt_row gt_right" headers="c_regulator">30,256,134</td>
+<td class="gt_row gt_right" headers="NMB" style="background-color: #E15736; color: #FFFFFF">−30,256,134</td>
+<td class="gt_row gt_right" headers="cost_per_death">28,353</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="Option">1.2 · MVP + Coord C1-C5</td>
+<td class="gt_row gt_right gt_striped" headers="c_regulator">30,306,134</td>
+<td class="gt_row gt_right gt_striped" headers="NMB" style="background-color: #E15736; color: #FFFFFF">−30,306,134</td>
+<td class="gt_row gt_right gt_striped" headers="cost_per_death">28,400</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Option">1.3 · + Clustering (k=2)</td>
+<td class="gt_row gt_right" headers="c_regulator">30,306,134</td>
+<td class="gt_row gt_right" headers="NMB" style="background-color: #E15736; color: #FFFFFF">−30,306,134</td>
+<td class="gt_row gt_right" headers="cost_per_death">24,938</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left gt_striped" headers="Option">1.5 · + Terbufos + Aldicarb</td>
-<td class="gt_row gt_right gt_striped" headers="c_regulator">75,473,369</td>
-<td class="gt_row gt_right gt_striped" headers="NMB" style="background-color: #1A9850; color: #FFFFFF">1,047,961,671</td>
-<td class="gt_row gt_right gt_striped" headers="cost_per_death">22,235</td>
+<td class="gt_row gt_right gt_striped" headers="c_regulator">31,528,202</td>
+<td class="gt_row gt_right gt_striped" headers="NMB" style="background-color: #1A9850; color: #FFFFFF">403,266,886</td>
+<td class="gt_row gt_right gt_striped" headers="cost_per_death">28,691</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Option">1.5 · + Terbufos T2</td>
-<td class="gt_row gt_right" headers="c_regulator">85,472,256</td>
-<td class="gt_row gt_right" headers="NMB" style="background-color: #C6CC79; color: #000000">611,447,744</td>
-<td class="gt_row gt_right" headers="cost_per_death">26,816</td>
+<td class="gt_row gt_right" headers="c_regulator">35,398,000</td>
+<td class="gt_row gt_right" headers="NMB" style="background-color: #C6CC79; color: #000000">234,326,000</td>
+<td class="gt_row gt_right" headers="cost_per_death">34,826</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left gt_striped" headers="Option">1.4 · + S1b mid</td>
-<td class="gt_row gt_right gt_striped" headers="c_regulator">99,810,308</td>
-<td class="gt_row gt_right gt_striped" headers="NMB" style="background-color: #DE4E32; color: #FFFFFF">−99,810,308</td>
-<td class="gt_row gt_right gt_striped" headers="cost_per_death">33,491</td>
+<td class="gt_row gt_right gt_striped" headers="c_regulator">39,721,200</td>
+<td class="gt_row gt_right gt_striped" headers="NMB" style="background-color: #DF4F33; color: #FFFFFF">−39,721,200</td>
+<td class="gt_row gt_right gt_striped" headers="cost_per_death">42,604</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Option">1.4 · + S1b hi</td>
-<td class="gt_row gt_right" headers="c_regulator">178,007,600</td>
-<td class="gt_row gt_right" headers="NMB" style="background-color: #D73027; color: #FFFFFF">−178,007,600</td>
-<td class="gt_row gt_right" headers="cost_per_death">42,042</td>
+<td class="gt_row gt_right" headers="c_regulator">70,598,320</td>
+<td class="gt_row gt_right" headers="NMB" style="background-color: #D73027; color: #FFFFFF">−70,598,320</td>
+<td class="gt_row gt_right" headers="cost_per_death">49,712</td>
 </tr>
 </tbody>
 </table>
@@ -3990,23 +3990,23 @@ Table&nbsp;7: DALY-based NMB and cost per DALY averted across all five policy sc
 </figcaption>
 <div aria-describedby="tbl-daly-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="wwxjsfgjjf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#wwxjsfgjjf table {
+<div id="nsafsjekeu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#nsafsjekeu table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#wwxjsfgjjf thead, #wwxjsfgjjf tbody, #wwxjsfgjjf tfoot, #wwxjsfgjjf tr, #wwxjsfgjjf td, #wwxjsfgjjf th {
+#nsafsjekeu thead, #nsafsjekeu tbody, #nsafsjekeu tfoot, #nsafsjekeu tr, #nsafsjekeu td, #nsafsjekeu th {
   border-style: none;
 }
 
-#wwxjsfgjjf p {
+#nsafsjekeu p {
   margin: 0;
   padding: 0;
 }
 
-#wwxjsfgjjf .gt_table {
+#nsafsjekeu .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -4032,12 +4032,12 @@ Table&nbsp;7: DALY-based NMB and cost per DALY averted across all five policy sc
   border-left-color: #D3D3D3;
 }
 
-#wwxjsfgjjf .gt_caption {
+#nsafsjekeu .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#wwxjsfgjjf .gt_title {
+#nsafsjekeu .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -4049,7 +4049,7 @@ Table&nbsp;7: DALY-based NMB and cost per DALY averted across all five policy sc
   border-bottom-width: 0;
 }
 
-#wwxjsfgjjf .gt_subtitle {
+#nsafsjekeu .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -4061,7 +4061,7 @@ Table&nbsp;7: DALY-based NMB and cost per DALY averted across all five policy sc
   border-top-width: 0;
 }
 
-#wwxjsfgjjf .gt_heading {
+#nsafsjekeu .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -4073,13 +4073,13 @@ Table&nbsp;7: DALY-based NMB and cost per DALY averted across all five policy sc
   border-right-color: #D3D3D3;
 }
 
-#wwxjsfgjjf .gt_bottom_border {
+#nsafsjekeu .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#wwxjsfgjjf .gt_col_headings {
+#nsafsjekeu .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4094,7 +4094,7 @@ Table&nbsp;7: DALY-based NMB and cost per DALY averted across all five policy sc
   border-right-color: #D3D3D3;
 }
 
-#wwxjsfgjjf .gt_col_heading {
+#nsafsjekeu .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4114,7 +4114,7 @@ Table&nbsp;7: DALY-based NMB and cost per DALY averted across all five policy sc
   overflow-x: hidden;
 }
 
-#wwxjsfgjjf .gt_column_spanner_outer {
+#nsafsjekeu .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4126,15 +4126,15 @@ Table&nbsp;7: DALY-based NMB and cost per DALY averted across all five policy sc
   padding-right: 4px;
 }
 
-#wwxjsfgjjf .gt_column_spanner_outer:first-child {
+#nsafsjekeu .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#wwxjsfgjjf .gt_column_spanner_outer:last-child {
+#nsafsjekeu .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#wwxjsfgjjf .gt_column_spanner {
+#nsafsjekeu .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -4146,11 +4146,11 @@ Table&nbsp;7: DALY-based NMB and cost per DALY averted across all five policy sc
   width: 100%;
 }
 
-#wwxjsfgjjf .gt_spanner_row {
+#nsafsjekeu .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#wwxjsfgjjf .gt_group_heading {
+#nsafsjekeu .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4176,7 +4176,7 @@ Table&nbsp;7: DALY-based NMB and cost per DALY averted across all five policy sc
   text-align: left;
 }
 
-#wwxjsfgjjf .gt_empty_group_heading {
+#nsafsjekeu .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4191,15 +4191,15 @@ Table&nbsp;7: DALY-based NMB and cost per DALY averted across all five policy sc
   vertical-align: middle;
 }
 
-#wwxjsfgjjf .gt_from_md > :first-child {
+#nsafsjekeu .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#wwxjsfgjjf .gt_from_md > :last-child {
+#nsafsjekeu .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#wwxjsfgjjf .gt_row {
+#nsafsjekeu .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4218,7 +4218,7 @@ Table&nbsp;7: DALY-based NMB and cost per DALY averted across all five policy sc
   overflow-x: hidden;
 }
 
-#wwxjsfgjjf .gt_stub {
+#nsafsjekeu .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4231,7 +4231,7 @@ Table&nbsp;7: DALY-based NMB and cost per DALY averted across all five policy sc
   padding-right: 5px;
 }
 
-#wwxjsfgjjf .gt_stub_row_group {
+#nsafsjekeu .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4245,15 +4245,15 @@ Table&nbsp;7: DALY-based NMB and cost per DALY averted across all five policy sc
   vertical-align: top;
 }
 
-#wwxjsfgjjf .gt_row_group_first td {
+#nsafsjekeu .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#wwxjsfgjjf .gt_row_group_first th {
+#nsafsjekeu .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#wwxjsfgjjf .gt_summary_row {
+#nsafsjekeu .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4263,16 +4263,16 @@ Table&nbsp;7: DALY-based NMB and cost per DALY averted across all five policy sc
   padding-right: 5px;
 }
 
-#wwxjsfgjjf .gt_first_summary_row {
+#nsafsjekeu .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#wwxjsfgjjf .gt_first_summary_row.thick {
+#nsafsjekeu .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#wwxjsfgjjf .gt_last_summary_row {
+#nsafsjekeu .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4282,7 +4282,7 @@ Table&nbsp;7: DALY-based NMB and cost per DALY averted across all five policy sc
   border-bottom-color: #D3D3D3;
 }
 
-#wwxjsfgjjf .gt_grand_summary_row {
+#nsafsjekeu .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4292,7 +4292,7 @@ Table&nbsp;7: DALY-based NMB and cost per DALY averted across all five policy sc
   padding-right: 5px;
 }
 
-#wwxjsfgjjf .gt_first_grand_summary_row {
+#nsafsjekeu .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4302,7 +4302,7 @@ Table&nbsp;7: DALY-based NMB and cost per DALY averted across all five policy sc
   border-top-color: #D3D3D3;
 }
 
-#wwxjsfgjjf .gt_last_grand_summary_row_top {
+#nsafsjekeu .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4312,11 +4312,11 @@ Table&nbsp;7: DALY-based NMB and cost per DALY averted across all five policy sc
   border-bottom-color: #D3D3D3;
 }
 
-#wwxjsfgjjf .gt_striped {
+#nsafsjekeu .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#wwxjsfgjjf .gt_table_body {
+#nsafsjekeu .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4325,7 +4325,7 @@ Table&nbsp;7: DALY-based NMB and cost per DALY averted across all five policy sc
   border-bottom-color: #D3D3D3;
 }
 
-#wwxjsfgjjf .gt_footnotes {
+#nsafsjekeu .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4339,7 +4339,7 @@ Table&nbsp;7: DALY-based NMB and cost per DALY averted across all five policy sc
   border-right-color: #D3D3D3;
 }
 
-#wwxjsfgjjf .gt_footnote {
+#nsafsjekeu .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -4348,7 +4348,7 @@ Table&nbsp;7: DALY-based NMB and cost per DALY averted across all five policy sc
   padding-right: 5px;
 }
 
-#wwxjsfgjjf .gt_sourcenotes {
+#nsafsjekeu .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4362,7 +4362,7 @@ Table&nbsp;7: DALY-based NMB and cost per DALY averted across all five policy sc
   border-right-color: #D3D3D3;
 }
 
-#wwxjsfgjjf .gt_sourcenote {
+#nsafsjekeu .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -4370,72 +4370,72 @@ Table&nbsp;7: DALY-based NMB and cost per DALY averted across all five policy sc
   padding-right: 5px;
 }
 
-#wwxjsfgjjf .gt_left {
+#nsafsjekeu .gt_left {
   text-align: left;
 }
 
-#wwxjsfgjjf .gt_center {
+#nsafsjekeu .gt_center {
   text-align: center;
 }
 
-#wwxjsfgjjf .gt_right {
+#nsafsjekeu .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#wwxjsfgjjf .gt_font_normal {
+#nsafsjekeu .gt_font_normal {
   font-weight: normal;
 }
 
-#wwxjsfgjjf .gt_font_bold {
+#nsafsjekeu .gt_font_bold {
   font-weight: bold;
 }
 
-#wwxjsfgjjf .gt_font_italic {
+#nsafsjekeu .gt_font_italic {
   font-style: italic;
 }
 
-#wwxjsfgjjf .gt_super {
+#nsafsjekeu .gt_super {
   font-size: 65%;
 }
 
-#wwxjsfgjjf .gt_footnote_marks {
+#nsafsjekeu .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#wwxjsfgjjf .gt_asterisk {
+#nsafsjekeu .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#wwxjsfgjjf .gt_indent_1 {
+#nsafsjekeu .gt_indent_1 {
   text-indent: 5px;
 }
 
-#wwxjsfgjjf .gt_indent_2 {
+#nsafsjekeu .gt_indent_2 {
   text-indent: 10px;
 }
 
-#wwxjsfgjjf .gt_indent_3 {
+#nsafsjekeu .gt_indent_3 {
   text-indent: 15px;
 }
 
-#wwxjsfgjjf .gt_indent_4 {
+#nsafsjekeu .gt_indent_4 {
   text-indent: 20px;
 }
 
-#wwxjsfgjjf .gt_indent_5 {
+#nsafsjekeu .gt_indent_5 {
   text-indent: 25px;
 }
 
-#wwxjsfgjjf .katex-display {
+#nsafsjekeu .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#wwxjsfgjjf div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#nsafsjekeu div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -4476,50 +4476,50 @@ Cost-effectiveness
 <tbody class="gt_table_body">
 <tr class="odd">
 <td class="gt_row gt_left" headers="Scenario">0 · Status quo</td>
-<td class="gt_row gt_right" headers="HC NMB (R/yr)">-7,646,208</td>
-<td class="gt_row gt_right" headers="DALY NMB (R/yr)">-7,646,208</td>
+<td class="gt_row gt_right" headers="HC NMB (R/yr)">-7,706,400</td>
+<td class="gt_row gt_right" headers="DALY NMB (R/yr)">-7,706,400</td>
 <td class="gt_row gt_right" headers="DALYs averted">8</td>
 <td class="gt_row gt_right" headers="R / DALY averted">921,212</td>
 <td class="gt_row gt_left" headers="Threshold?">—</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left gt_striped" headers="Scenario">1.1 · MVP (S1+S2)</td>
-<td class="gt_row gt_right gt_striped" headers="HC NMB (R/yr)">-30,243,944</td>
-<td class="gt_row gt_right gt_striped" headers="DALY NMB (R/yr)">-30,243,944</td>
-<td class="gt_row gt_right gt_striped" headers="DALYs averted">4,909</td>
-<td class="gt_row gt_right gt_striped" headers="R / DALY averted">6,161</td>
+<td class="gt_row gt_right gt_striped" headers="HC NMB (R/yr)">-30,161,134</td>
+<td class="gt_row gt_right gt_striped" headers="DALY NMB (R/yr)">-30,161,134</td>
+<td class="gt_row gt_right gt_striped" headers="DALYs averted">4,878</td>
+<td class="gt_row gt_right gt_striped" headers="R / DALY averted">6,183</td>
 <td class="gt_row gt_left gt_striped" headers="Threshold?">Below threshold</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Scenario">1.2 · + Coordination (C1–C5)</td>
-<td class="gt_row gt_right" headers="HC NMB (R/yr)">-30,388,944</td>
-<td class="gt_row gt_right" headers="DALY NMB (R/yr)">-30,388,944</td>
-<td class="gt_row gt_right" headers="DALYs averted">47,017</td>
-<td class="gt_row gt_right" headers="R / DALY averted">646</td>
+<td class="gt_row gt_right" headers="HC NMB (R/yr)">-30,306,134</td>
+<td class="gt_row gt_right" headers="DALY NMB (R/yr)">-30,306,134</td>
+<td class="gt_row gt_right" headers="DALYs averted">46,986</td>
+<td class="gt_row gt_right" headers="R / DALY averted">645</td>
 <td class="gt_row gt_left" headers="Threshold?">Below threshold</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left gt_striped" headers="Scenario">1.3 · + Clustering (k = 2)</td>
-<td class="gt_row gt_right gt_striped" headers="HC NMB (R/yr)">-30,388,944</td>
-<td class="gt_row gt_right gt_striped" headers="DALY NMB (R/yr)">-30,388,944</td>
-<td class="gt_row gt_right gt_striped" headers="DALYs averted">53,553</td>
-<td class="gt_row gt_right gt_striped" headers="R / DALY averted">567</td>
+<td class="gt_row gt_right gt_striped" headers="HC NMB (R/yr)">-30,306,134</td>
+<td class="gt_row gt_right gt_striped" headers="DALY NMB (R/yr)">-30,306,134</td>
+<td class="gt_row gt_right gt_striped" headers="DALYs averted">53,504</td>
+<td class="gt_row gt_right gt_striped" headers="R / DALY averted">566</td>
 <td class="gt_row gt_left gt_striped" headers="Threshold?">Below threshold</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Scenario">1.4 · + S1b mid (FP 35%)</td>
-<td class="gt_row gt_right" headers="HC NMB (R/yr)">-99,810,308</td>
-<td class="gt_row gt_right" headers="DALY NMB (R/yr)">-99,810,308</td>
-<td class="gt_row gt_right" headers="DALYs averted">131,197</td>
-<td class="gt_row gt_right" headers="R / DALY averted">761</td>
+<td class="gt_row gt_right" headers="HC NMB (R/yr)">-39,721,200</td>
+<td class="gt_row gt_right" headers="DALY NMB (R/yr)">-39,721,200</td>
+<td class="gt_row gt_right" headers="DALYs averted">41,050</td>
+<td class="gt_row gt_right" headers="R / DALY averted">968</td>
 <td class="gt_row gt_left" headers="Threshold?">Below threshold</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left gt_striped" headers="Scenario">1.5 · + Terbufos + Aldicarb</td>
-<td class="gt_row gt_right gt_striped" headers="HC NMB (R/yr)">1,047,961,671</td>
-<td class="gt_row gt_right gt_striped" headers="DALY NMB (R/yr)">3,341,655,622</td>
-<td class="gt_row gt_right gt_striped" headers="DALYs averted">149,399</td>
-<td class="gt_row gt_right gt_striped" headers="R / DALY averted">505</td>
+<td class="gt_row gt_right gt_striped" headers="HC NMB (R/yr)">403,266,886</td>
+<td class="gt_row gt_right gt_striped" headers="DALY NMB (R/yr)">1,290,978,973</td>
+<td class="gt_row gt_right gt_striped" headers="DALYs averted">48,371</td>
+<td class="gt_row gt_right gt_striped" headers="R / DALY averted">652</td>
 <td class="gt_row gt_left gt_striped" headers="Threshold?">Below threshold</td>
 </tr>
 </tbody>
@@ -5125,13 +5125,13 @@ Figure&nbsp;7: Spend vs cost-per-DALY frontier. The horizontal dashed line marks
 <span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a><span class="co"># ── Burden anchors (from StatsSA MACOD 2023) ──────────────────────────────────</span></span>
-<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a>N_true    <span class="ot">&lt;-</span> <span class="fu">pick</span>(<span class="st">"n_true_burden_from_statssa_mid"</span>)   <span class="co"># 20,960 true cases/yr</span></span>
-<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a>N_deaths  <span class="ot">&lt;-</span> <span class="fu">pick</span>(<span class="st">"n_deaths_headline"</span>)                <span class="co"># 2,620 deaths/yr</span></span>
+<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a>N_true    <span class="ot">&lt;-</span> <span class="fu">pick</span>(<span class="st">"n_true_burden_from_statssa_mid"</span>)   <span class="co"># 8,112 true cases/yr</span></span>
+<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a>N_deaths  <span class="ot">&lt;-</span> <span class="fu">pick</span>(<span class="st">"n_deaths_headline"</span>)                <span class="co"># 1,014 deaths/yr</span></span>
 <span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a>c_morb    <span class="ot">&lt;-</span> <span class="fu">pick</span>(<span class="st">"c_morbidity_headline"</span>)             <span class="co"># R12,000/morbidity case</span></span>
 <span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a>c_mort    <span class="ot">&lt;-</span> <span class="fu">pick</span>(<span class="st">"c_mortality_human_capital"</span>)        <span class="co"># R1,500,000/death (human-capital YLL)</span></span>
 <span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a><span class="co"># ── Detection probabilities ────────────────────────────────────────────────────</span></span>
-<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a>d_SQ       <span class="ot">&lt;-</span> <span class="fu">pick</span>(<span class="st">"d_status_quo"</span>)                    <span class="co"># 0.048  NMC-only</span></span>
+<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a>d_SQ       <span class="ot">&lt;-</span> <span class="fu">pick</span>(<span class="st">"d_status_quo"</span>)                    <span class="co"># 0.125  NMC-only</span></span>
 <span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a><span class="co"># S1 and S2 contribute independently; MVP = S1 + S2</span></span>
 <span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a>delta_S1   <span class="ot">&lt;-</span> <span class="fu">pick</span>(<span class="st">"n_pih_annual"</span>)   <span class="sc">/</span> N_true         <span class="co"># PIH MVD incremental</span></span>
 <span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a>delta_S2   <span class="ot">&lt;-</span> <span class="fu">pick</span>(<span class="st">"n_nhls_severe_annual"</span>) <span class="sc">/</span> N_true   <span class="co"># BChE auto-notify incremental</span></span>
@@ -5477,7 +5477,7 @@ Figure&nbsp;7: Spend vs cost-per-DALY frontier. The horizontal dashed line marks
 <span id="cb3-419"><a href="#cb3-419" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-420"><a href="#cb3-420" aria-hidden="true" tabindex="-1"></a><span class="fu">expand_grid</span>(</span>
 <span id="cb3-421"><a href="#cb3-421" aria-hidden="true" tabindex="-1"></a>  <span class="at">k =</span> <span class="fu">c</span>(k_lo, k_mid, k_hi),</span>
-<span id="cb3-422"><a href="#cb3-422" aria-hidden="true" tabindex="-1"></a>  <span class="at">tier =</span> <span class="fu">c</span>(<span class="st">"MVP (d = 18.9%)"</span>, <span class="st">"S1b mid (d = 40%)"</span>)</span>
+<span id="cb3-422"><a href="#cb3-422" aria-hidden="true" tabindex="-1"></a>  <span class="at">tier =</span> <span class="fu">c</span>(<span class="st">"MVP (d = 48.7%)"</span>, <span class="st">"S1b mid (d = 40%)"</span>)</span>
 <span id="cb3-423"><a href="#cb3-423" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span></span>
 <span id="cb3-424"><a href="#cb3-424" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb3-425"><a href="#cb3-425" aria-hidden="true" tabindex="-1"></a>    <span class="at">d_val     =</span> <span class="fu">if_else</span>(<span class="fu">str_detect</span>(tier, <span class="st">"MVP"</span>), d_MVP, d_S1b_mid),</span>
@@ -5515,7 +5515,7 @@ Figure&nbsp;7: Spend vs cost-per-DALY frontier. The horizontal dashed line marks
 <span id="cb3-459"><a href="#cb3-459" aria-hidden="true" tabindex="-1"></a>k_grid <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fl">1.0</span>, <span class="fl">4.0</span>, <span class="at">by =</span> <span class="fl">0.1</span>)</span>
 <span id="cb3-460"><a href="#cb3-460" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-461"><a href="#cb3-461" aria-hidden="true" tabindex="-1"></a>s13_curve <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(</span>
-<span id="cb3-462"><a href="#cb3-462" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tibble</span>(<span class="at">k =</span> k_grid, <span class="at">tier =</span> <span class="st">"MVP (d = 18.9%)"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb3-462"><a href="#cb3-462" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tibble</span>(<span class="at">k =</span> k_grid, <span class="at">tier =</span> <span class="st">"MVP (d = 48.7%)"</span>) <span class="sc">|&gt;</span></span>
 <span id="cb3-463"><a href="#cb3-463" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">res =</span> <span class="fu">map</span>(k, <span class="sc">~</span> <span class="fu">run_scenario_v2</span>(d_MVP, <span class="at">c_surv =</span> c_MVP_op,</span>
 <span id="cb3-464"><a href="#cb3-464" aria-hidden="true" tabindex="-1"></a>                                          <span class="at">c_coord =</span> c_coord_FP, <span class="at">p_fp =</span> <span class="dv">0</span>,</span>
 <span id="cb3-465"><a href="#cb3-465" aria-hidden="true" tabindex="-1"></a>                                          <span class="at">k_cluster =</span> .x, <span class="at">coord_dynamic =</span> <span class="cn">TRUE</span>))),</span>

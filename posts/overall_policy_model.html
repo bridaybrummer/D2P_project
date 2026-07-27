@@ -267,7 +267,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">July 17, 2026</p>
+      <p class="date-modified">July 27, 2026</p>
     </div>
   </div>
     
@@ -289,7 +289,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="burden" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="burden"><span class="header-section-number">2</span> Burden</h2>
-<p>StatsSA MACOD 2023 records 2,620 deaths/yr from acute pesticide poisoning (ICD-10 X40–X49). Applied to a mid case-fatality of 12.5 %, this implies ~20,960 true cases/yr. NMC currently notifies ~5 % of true cases. Terbufos (WHO Class Ia organophosphate) is the dominant agent in fatal paediatric events (Davies 2023) with an attributable fraction of 20–35 %.</p>
+<p>StatsSA MACOD 2022 records 1,014 pesticide-specific poisoning deaths/yr (X48+X68+X87+Y18; interim anchor pending 2023 release). Applied to a mid case-fatality of 12.5 %, this implies ~8,112 true cases/yr. NMC currently notifies ~12.5 % of true cases. Terbufos (WHO Class Ia organophosphate) is the dominant agent in fatal paediatric events (Davies 2023) with an attributable fraction of 20–35 %.</p>
 </section>
 <section id="model" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="model"><span class="header-section-number">3</span> Model</h2>
@@ -310,8 +310,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Burden anchors</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>N_true    <span class="ot">&lt;-</span> <span class="fu">pick</span>(<span class="st">"n_true_burden_from_statssa_mid"</span>)  <span class="co"># 20,960 true cases/yr</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>N_deaths  <span class="ot">&lt;-</span> <span class="fu">pick</span>(<span class="st">"n_deaths_headline"</span>)               <span class="co"># 2,620 deaths/yr</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>N_true    <span class="ot">&lt;-</span> <span class="fu">pick</span>(<span class="st">"n_true_burden_from_statssa_mid"</span>)  <span class="co"># 8,112 true cases/yr</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>N_deaths  <span class="ot">&lt;-</span> <span class="fu">pick</span>(<span class="st">"n_deaths_headline"</span>)               <span class="co"># 1,014 deaths/yr</span></span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>c_morb    <span class="ot">&lt;-</span> <span class="fu">pick</span>(<span class="st">"c_morbidity_headline"</span>)            <span class="co"># R/morbidity case</span></span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>c_mort    <span class="ot">&lt;-</span> <span class="fu">pick</span>(<span class="st">"c_mortality_human_capital"</span>)       <span class="co"># R/death (YLL human-capital)</span></span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
@@ -445,23 +445,23 @@ Table&nbsp;1: Annual steady-state outputs under each layered policy option.
 </figcaption>
 <div aria-describedby="tbl-overall-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="fvwsyzocwa" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#fvwsyzocwa table {
+<div id="uphgplhhet" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#uphgplhhet table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#fvwsyzocwa thead, #fvwsyzocwa tbody, #fvwsyzocwa tfoot, #fvwsyzocwa tr, #fvwsyzocwa td, #fvwsyzocwa th {
+#uphgplhhet thead, #uphgplhhet tbody, #uphgplhhet tfoot, #uphgplhhet tr, #uphgplhhet td, #uphgplhhet th {
   border-style: none;
 }
 
-#fvwsyzocwa p {
+#uphgplhhet p {
   margin: 0;
   padding: 0;
 }
 
-#fvwsyzocwa .gt_table {
+#uphgplhhet .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -487,12 +487,12 @@ Table&nbsp;1: Annual steady-state outputs under each layered policy option.
   border-left-color: #D3D3D3;
 }
 
-#fvwsyzocwa .gt_caption {
+#uphgplhhet .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#fvwsyzocwa .gt_title {
+#uphgplhhet .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -504,7 +504,7 @@ Table&nbsp;1: Annual steady-state outputs under each layered policy option.
   border-bottom-width: 0;
 }
 
-#fvwsyzocwa .gt_subtitle {
+#uphgplhhet .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -516,7 +516,7 @@ Table&nbsp;1: Annual steady-state outputs under each layered policy option.
   border-top-width: 0;
 }
 
-#fvwsyzocwa .gt_heading {
+#uphgplhhet .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -528,13 +528,13 @@ Table&nbsp;1: Annual steady-state outputs under each layered policy option.
   border-right-color: #D3D3D3;
 }
 
-#fvwsyzocwa .gt_bottom_border {
+#uphgplhhet .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#fvwsyzocwa .gt_col_headings {
+#uphgplhhet .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -549,7 +549,7 @@ Table&nbsp;1: Annual steady-state outputs under each layered policy option.
   border-right-color: #D3D3D3;
 }
 
-#fvwsyzocwa .gt_col_heading {
+#uphgplhhet .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -569,7 +569,7 @@ Table&nbsp;1: Annual steady-state outputs under each layered policy option.
   overflow-x: hidden;
 }
 
-#fvwsyzocwa .gt_column_spanner_outer {
+#uphgplhhet .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -581,15 +581,15 @@ Table&nbsp;1: Annual steady-state outputs under each layered policy option.
   padding-right: 4px;
 }
 
-#fvwsyzocwa .gt_column_spanner_outer:first-child {
+#uphgplhhet .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#fvwsyzocwa .gt_column_spanner_outer:last-child {
+#uphgplhhet .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#fvwsyzocwa .gt_column_spanner {
+#uphgplhhet .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -601,11 +601,11 @@ Table&nbsp;1: Annual steady-state outputs under each layered policy option.
   width: 100%;
 }
 
-#fvwsyzocwa .gt_spanner_row {
+#uphgplhhet .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#fvwsyzocwa .gt_group_heading {
+#uphgplhhet .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -631,7 +631,7 @@ Table&nbsp;1: Annual steady-state outputs under each layered policy option.
   text-align: left;
 }
 
-#fvwsyzocwa .gt_empty_group_heading {
+#uphgplhhet .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -646,15 +646,15 @@ Table&nbsp;1: Annual steady-state outputs under each layered policy option.
   vertical-align: middle;
 }
 
-#fvwsyzocwa .gt_from_md > :first-child {
+#uphgplhhet .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#fvwsyzocwa .gt_from_md > :last-child {
+#uphgplhhet .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#fvwsyzocwa .gt_row {
+#uphgplhhet .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -673,7 +673,7 @@ Table&nbsp;1: Annual steady-state outputs under each layered policy option.
   overflow-x: hidden;
 }
 
-#fvwsyzocwa .gt_stub {
+#uphgplhhet .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -686,7 +686,7 @@ Table&nbsp;1: Annual steady-state outputs under each layered policy option.
   padding-right: 5px;
 }
 
-#fvwsyzocwa .gt_stub_row_group {
+#uphgplhhet .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -700,15 +700,15 @@ Table&nbsp;1: Annual steady-state outputs under each layered policy option.
   vertical-align: top;
 }
 
-#fvwsyzocwa .gt_row_group_first td {
+#uphgplhhet .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#fvwsyzocwa .gt_row_group_first th {
+#uphgplhhet .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#fvwsyzocwa .gt_summary_row {
+#uphgplhhet .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -718,16 +718,16 @@ Table&nbsp;1: Annual steady-state outputs under each layered policy option.
   padding-right: 5px;
 }
 
-#fvwsyzocwa .gt_first_summary_row {
+#uphgplhhet .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#fvwsyzocwa .gt_first_summary_row.thick {
+#uphgplhhet .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#fvwsyzocwa .gt_last_summary_row {
+#uphgplhhet .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -737,7 +737,7 @@ Table&nbsp;1: Annual steady-state outputs under each layered policy option.
   border-bottom-color: #D3D3D3;
 }
 
-#fvwsyzocwa .gt_grand_summary_row {
+#uphgplhhet .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -747,7 +747,7 @@ Table&nbsp;1: Annual steady-state outputs under each layered policy option.
   padding-right: 5px;
 }
 
-#fvwsyzocwa .gt_first_grand_summary_row {
+#uphgplhhet .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -757,7 +757,7 @@ Table&nbsp;1: Annual steady-state outputs under each layered policy option.
   border-top-color: #D3D3D3;
 }
 
-#fvwsyzocwa .gt_last_grand_summary_row_top {
+#uphgplhhet .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -767,11 +767,11 @@ Table&nbsp;1: Annual steady-state outputs under each layered policy option.
   border-bottom-color: #D3D3D3;
 }
 
-#fvwsyzocwa .gt_striped {
+#uphgplhhet .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#fvwsyzocwa .gt_table_body {
+#uphgplhhet .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -780,7 +780,7 @@ Table&nbsp;1: Annual steady-state outputs under each layered policy option.
   border-bottom-color: #D3D3D3;
 }
 
-#fvwsyzocwa .gt_footnotes {
+#uphgplhhet .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -794,7 +794,7 @@ Table&nbsp;1: Annual steady-state outputs under each layered policy option.
   border-right-color: #D3D3D3;
 }
 
-#fvwsyzocwa .gt_footnote {
+#uphgplhhet .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -803,7 +803,7 @@ Table&nbsp;1: Annual steady-state outputs under each layered policy option.
   padding-right: 5px;
 }
 
-#fvwsyzocwa .gt_sourcenotes {
+#uphgplhhet .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -817,7 +817,7 @@ Table&nbsp;1: Annual steady-state outputs under each layered policy option.
   border-right-color: #D3D3D3;
 }
 
-#fvwsyzocwa .gt_sourcenote {
+#uphgplhhet .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -825,72 +825,72 @@ Table&nbsp;1: Annual steady-state outputs under each layered policy option.
   padding-right: 5px;
 }
 
-#fvwsyzocwa .gt_left {
+#uphgplhhet .gt_left {
   text-align: left;
 }
 
-#fvwsyzocwa .gt_center {
+#uphgplhhet .gt_center {
   text-align: center;
 }
 
-#fvwsyzocwa .gt_right {
+#uphgplhhet .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#fvwsyzocwa .gt_font_normal {
+#uphgplhhet .gt_font_normal {
   font-weight: normal;
 }
 
-#fvwsyzocwa .gt_font_bold {
+#uphgplhhet .gt_font_bold {
   font-weight: bold;
 }
 
-#fvwsyzocwa .gt_font_italic {
+#uphgplhhet .gt_font_italic {
   font-style: italic;
 }
 
-#fvwsyzocwa .gt_super {
+#uphgplhhet .gt_super {
   font-size: 65%;
 }
 
-#fvwsyzocwa .gt_footnote_marks {
+#uphgplhhet .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#fvwsyzocwa .gt_asterisk {
+#uphgplhhet .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#fvwsyzocwa .gt_indent_1 {
+#uphgplhhet .gt_indent_1 {
   text-indent: 5px;
 }
 
-#fvwsyzocwa .gt_indent_2 {
+#uphgplhhet .gt_indent_2 {
   text-indent: 10px;
 }
 
-#fvwsyzocwa .gt_indent_3 {
+#uphgplhhet .gt_indent_3 {
   text-indent: 15px;
 }
 
-#fvwsyzocwa .gt_indent_4 {
+#uphgplhhet .gt_indent_4 {
   text-indent: 20px;
 }
 
-#fvwsyzocwa .gt_indent_5 {
+#uphgplhhet .gt_indent_5 {
   text-indent: 25px;
 }
 
-#fvwsyzocwa .katex-display {
+#uphgplhhet .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#fvwsyzocwa div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#uphgplhhet div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -915,47 +915,47 @@ Table&nbsp;1: Annual steady-state outputs under each layered policy option.
 <tbody class="gt_table_body">
 <tr class="odd">
 <td class="gt_row gt_left" headers="Scenario">0 · Status quo (NMC only)</td>
-<td class="gt_row gt_right" headers="Detected (true)">1006</td>
-<td class="gt_row gt_right" headers="Gross alerts">1006</td>
+<td class="gt_row gt_right" headers="Detected (true)">1014</td>
+<td class="gt_row gt_right" headers="Gross alerts">1014</td>
 <td class="gt_row gt_right" headers="False alerts">0</td>
-<td class="gt_row gt_right" headers="Regulator (R/yr)">7,646,208</td>
-<td class="gt_row gt_right" headers="Health + YLL (R/yr)">4,181,520,000</td>
-<td class="gt_row gt_right" headers="Society (R/yr)">4,189,166,208</td>
+<td class="gt_row gt_right" headers="Regulator (R/yr)">7,706,400</td>
+<td class="gt_row gt_right" headers="Health + YLL (R/yr)">1,618,344,000</td>
+<td class="gt_row gt_right" headers="Society (R/yr)">1,626,050,400</td>
 <td class="gt_row gt_right" headers="Deaths averted">0</td>
 <td class="gt_row gt_left" headers="R / death averted">—</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left gt_striped" headers="Scenario">1 · Surveillance MVP + Coordination FP</td>
-<td class="gt_row gt_right gt_striped" headers="Detected (true)">3961</td>
-<td class="gt_row gt_right gt_striped" headers="Gross alerts">3961</td>
+<td class="gt_row gt_right gt_striped" headers="Detected (true)">3951</td>
+<td class="gt_row gt_right gt_striped" headers="Gross alerts">3951</td>
 <td class="gt_row gt_right gt_striped" headers="False alerts">0</td>
-<td class="gt_row gt_right gt_striped" headers="Regulator (R/yr)">30,343,944</td>
-<td class="gt_row gt_right gt_striped" headers="Health + YLL (R/yr)">4,181,520,000</td>
-<td class="gt_row gt_right gt_striped" headers="Society (R/yr)">4,211,863,944</td>
-<td class="gt_row gt_right gt_striped" headers="Deaths averted">111</td>
-<td class="gt_row gt_left gt_striped" headers="R / death averted">273,798</td>
+<td class="gt_row gt_right gt_striped" headers="Regulator (R/yr)">30,261,134</td>
+<td class="gt_row gt_right gt_striped" headers="Health + YLL (R/yr)">1,618,344,000</td>
+<td class="gt_row gt_right gt_striped" headers="Society (R/yr)">1,648,605,134</td>
+<td class="gt_row gt_right gt_striped" headers="Deaths averted">110</td>
+<td class="gt_row gt_left gt_striped" headers="R / death averted">274,800</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Scenario">2 · + Community surveillance (S1b)</td>
-<td class="gt_row gt_right" headers="Detected (true)">8384</td>
-<td class="gt_row gt_right" headers="Gross alerts">12898</td>
-<td class="gt_row gt_right" headers="False alerts">4514</td>
-<td class="gt_row gt_right" headers="Regulator (R/yr)">99,765,308</td>
-<td class="gt_row gt_right" headers="Health + YLL (R/yr)">4,181,520,000</td>
-<td class="gt_row gt_right" headers="Society (R/yr)">4,281,285,308</td>
-<td class="gt_row gt_right" headers="Deaths averted">277</td>
-<td class="gt_row gt_left" headers="R / death averted">360,591</td>
+<td class="gt_row gt_right" headers="Detected (true)">3245</td>
+<td class="gt_row gt_right" headers="Gross alerts">4992</td>
+<td class="gt_row gt_right" headers="False alerts">1747</td>
+<td class="gt_row gt_right" headers="Regulator (R/yr)">39,676,200</td>
+<td class="gt_row gt_right" headers="Health + YLL (R/yr)">1,618,344,000</td>
+<td class="gt_row gt_right" headers="Society (R/yr)">1,658,020,200</td>
+<td class="gt_row gt_right" headers="Deaths averted">84</td>
+<td class="gt_row gt_left" headers="R / death averted">474,284</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left gt_striped" headers="Scenario">3 · + Terbufos phase-out (yr 1, ramp 18m)</td>
-<td class="gt_row gt_right gt_striped" headers="Detected (true)">6987</td>
-<td class="gt_row gt_right gt_striped" headers="Gross alerts">10749</td>
-<td class="gt_row gt_right gt_striped" headers="False alerts">3762</td>
-<td class="gt_row gt_right gt_striped" headers="Regulator (R/yr)">85,427,256</td>
-<td class="gt_row gt_right gt_striped" headers="Health + YLL (R/yr)">3,484,600,000</td>
-<td class="gt_row gt_right gt_striped" headers="Society (R/yr)">3,570,027,256</td>
-<td class="gt_row gt_right gt_striped" headers="Deaths averted">667</td>
-<td class="gt_row gt_left gt_striped" headers="R / death averted">128,033</td>
+<td class="gt_row gt_right gt_striped" headers="Detected (true)">2704</td>
+<td class="gt_row gt_right gt_striped" headers="Gross alerts">4160</td>
+<td class="gt_row gt_right gt_striped" headers="False alerts">1456</td>
+<td class="gt_row gt_right gt_striped" headers="Regulator (R/yr)">35,353,000</td>
+<td class="gt_row gt_right gt_striped" headers="Health + YLL (R/yr)">1,348,620,000</td>
+<td class="gt_row gt_right gt_striped" headers="Society (R/yr)">1,383,973,000</td>
+<td class="gt_row gt_right gt_striped" headers="Deaths averted">239</td>
+<td class="gt_row gt_left gt_striped" headers="R / death averted">148,099</td>
 </tr>
 </tbody>
 </table>
@@ -1016,23 +1016,23 @@ Table&nbsp;2: Regulator cost per death averted (R/yr) as community false-positiv
 </figcaption>
 <div aria-describedby="tbl-sens-fp-detection-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="fsildfnrkf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#fsildfnrkf table {
+<div id="nguchootnr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#nguchootnr table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#fsildfnrkf thead, #fsildfnrkf tbody, #fsildfnrkf tfoot, #fsildfnrkf tr, #fsildfnrkf td, #fsildfnrkf th {
+#nguchootnr thead, #nguchootnr tbody, #nguchootnr tfoot, #nguchootnr tr, #nguchootnr td, #nguchootnr th {
   border-style: none;
 }
 
-#fsildfnrkf p {
+#nguchootnr p {
   margin: 0;
   padding: 0;
 }
 
-#fsildfnrkf .gt_table {
+#nguchootnr .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1058,12 +1058,12 @@ Table&nbsp;2: Regulator cost per death averted (R/yr) as community false-positiv
   border-left-color: #D3D3D3;
 }
 
-#fsildfnrkf .gt_caption {
+#nguchootnr .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#fsildfnrkf .gt_title {
+#nguchootnr .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1075,7 +1075,7 @@ Table&nbsp;2: Regulator cost per death averted (R/yr) as community false-positiv
   border-bottom-width: 0;
 }
 
-#fsildfnrkf .gt_subtitle {
+#nguchootnr .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1087,7 +1087,7 @@ Table&nbsp;2: Regulator cost per death averted (R/yr) as community false-positiv
   border-top-width: 0;
 }
 
-#fsildfnrkf .gt_heading {
+#nguchootnr .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1099,13 +1099,13 @@ Table&nbsp;2: Regulator cost per death averted (R/yr) as community false-positiv
   border-right-color: #D3D3D3;
 }
 
-#fsildfnrkf .gt_bottom_border {
+#nguchootnr .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#fsildfnrkf .gt_col_headings {
+#nguchootnr .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1120,7 +1120,7 @@ Table&nbsp;2: Regulator cost per death averted (R/yr) as community false-positiv
   border-right-color: #D3D3D3;
 }
 
-#fsildfnrkf .gt_col_heading {
+#nguchootnr .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1140,7 +1140,7 @@ Table&nbsp;2: Regulator cost per death averted (R/yr) as community false-positiv
   overflow-x: hidden;
 }
 
-#fsildfnrkf .gt_column_spanner_outer {
+#nguchootnr .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1152,15 +1152,15 @@ Table&nbsp;2: Regulator cost per death averted (R/yr) as community false-positiv
   padding-right: 4px;
 }
 
-#fsildfnrkf .gt_column_spanner_outer:first-child {
+#nguchootnr .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#fsildfnrkf .gt_column_spanner_outer:last-child {
+#nguchootnr .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#fsildfnrkf .gt_column_spanner {
+#nguchootnr .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1172,11 +1172,11 @@ Table&nbsp;2: Regulator cost per death averted (R/yr) as community false-positiv
   width: 100%;
 }
 
-#fsildfnrkf .gt_spanner_row {
+#nguchootnr .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#fsildfnrkf .gt_group_heading {
+#nguchootnr .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1202,7 +1202,7 @@ Table&nbsp;2: Regulator cost per death averted (R/yr) as community false-positiv
   text-align: left;
 }
 
-#fsildfnrkf .gt_empty_group_heading {
+#nguchootnr .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1217,15 +1217,15 @@ Table&nbsp;2: Regulator cost per death averted (R/yr) as community false-positiv
   vertical-align: middle;
 }
 
-#fsildfnrkf .gt_from_md > :first-child {
+#nguchootnr .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#fsildfnrkf .gt_from_md > :last-child {
+#nguchootnr .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#fsildfnrkf .gt_row {
+#nguchootnr .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1244,7 +1244,7 @@ Table&nbsp;2: Regulator cost per death averted (R/yr) as community false-positiv
   overflow-x: hidden;
 }
 
-#fsildfnrkf .gt_stub {
+#nguchootnr .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1257,7 +1257,7 @@ Table&nbsp;2: Regulator cost per death averted (R/yr) as community false-positiv
   padding-right: 5px;
 }
 
-#fsildfnrkf .gt_stub_row_group {
+#nguchootnr .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1271,15 +1271,15 @@ Table&nbsp;2: Regulator cost per death averted (R/yr) as community false-positiv
   vertical-align: top;
 }
 
-#fsildfnrkf .gt_row_group_first td {
+#nguchootnr .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#fsildfnrkf .gt_row_group_first th {
+#nguchootnr .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#fsildfnrkf .gt_summary_row {
+#nguchootnr .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1289,16 +1289,16 @@ Table&nbsp;2: Regulator cost per death averted (R/yr) as community false-positiv
   padding-right: 5px;
 }
 
-#fsildfnrkf .gt_first_summary_row {
+#nguchootnr .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#fsildfnrkf .gt_first_summary_row.thick {
+#nguchootnr .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#fsildfnrkf .gt_last_summary_row {
+#nguchootnr .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1308,7 +1308,7 @@ Table&nbsp;2: Regulator cost per death averted (R/yr) as community false-positiv
   border-bottom-color: #D3D3D3;
 }
 
-#fsildfnrkf .gt_grand_summary_row {
+#nguchootnr .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1318,7 +1318,7 @@ Table&nbsp;2: Regulator cost per death averted (R/yr) as community false-positiv
   padding-right: 5px;
 }
 
-#fsildfnrkf .gt_first_grand_summary_row {
+#nguchootnr .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1328,7 +1328,7 @@ Table&nbsp;2: Regulator cost per death averted (R/yr) as community false-positiv
   border-top-color: #D3D3D3;
 }
 
-#fsildfnrkf .gt_last_grand_summary_row_top {
+#nguchootnr .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1338,11 +1338,11 @@ Table&nbsp;2: Regulator cost per death averted (R/yr) as community false-positiv
   border-bottom-color: #D3D3D3;
 }
 
-#fsildfnrkf .gt_striped {
+#nguchootnr .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#fsildfnrkf .gt_table_body {
+#nguchootnr .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1351,7 +1351,7 @@ Table&nbsp;2: Regulator cost per death averted (R/yr) as community false-positiv
   border-bottom-color: #D3D3D3;
 }
 
-#fsildfnrkf .gt_footnotes {
+#nguchootnr .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1365,7 +1365,7 @@ Table&nbsp;2: Regulator cost per death averted (R/yr) as community false-positiv
   border-right-color: #D3D3D3;
 }
 
-#fsildfnrkf .gt_footnote {
+#nguchootnr .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1374,7 +1374,7 @@ Table&nbsp;2: Regulator cost per death averted (R/yr) as community false-positiv
   padding-right: 5px;
 }
 
-#fsildfnrkf .gt_sourcenotes {
+#nguchootnr .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1388,7 +1388,7 @@ Table&nbsp;2: Regulator cost per death averted (R/yr) as community false-positiv
   border-right-color: #D3D3D3;
 }
 
-#fsildfnrkf .gt_sourcenote {
+#nguchootnr .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1396,72 +1396,72 @@ Table&nbsp;2: Regulator cost per death averted (R/yr) as community false-positiv
   padding-right: 5px;
 }
 
-#fsildfnrkf .gt_left {
+#nguchootnr .gt_left {
   text-align: left;
 }
 
-#fsildfnrkf .gt_center {
+#nguchootnr .gt_center {
   text-align: center;
 }
 
-#fsildfnrkf .gt_right {
+#nguchootnr .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#fsildfnrkf .gt_font_normal {
+#nguchootnr .gt_font_normal {
   font-weight: normal;
 }
 
-#fsildfnrkf .gt_font_bold {
+#nguchootnr .gt_font_bold {
   font-weight: bold;
 }
 
-#fsildfnrkf .gt_font_italic {
+#nguchootnr .gt_font_italic {
   font-style: italic;
 }
 
-#fsildfnrkf .gt_super {
+#nguchootnr .gt_super {
   font-size: 65%;
 }
 
-#fsildfnrkf .gt_footnote_marks {
+#nguchootnr .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#fsildfnrkf .gt_asterisk {
+#nguchootnr .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#fsildfnrkf .gt_indent_1 {
+#nguchootnr .gt_indent_1 {
   text-indent: 5px;
 }
 
-#fsildfnrkf .gt_indent_2 {
+#nguchootnr .gt_indent_2 {
   text-indent: 10px;
 }
 
-#fsildfnrkf .gt_indent_3 {
+#nguchootnr .gt_indent_3 {
   text-indent: 15px;
 }
 
-#fsildfnrkf .gt_indent_4 {
+#nguchootnr .gt_indent_4 {
   text-indent: 20px;
 }
 
-#fsildfnrkf .gt_indent_5 {
+#nguchootnr .gt_indent_5 {
   text-indent: 25px;
 }
 
-#fsildfnrkf .katex-display {
+#nguchootnr .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#fsildfnrkf div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#nguchootnr div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1470,7 +1470,7 @@ Table&nbsp;2: Regulator cost per death averted (R/yr) as community false-positiv
 <thead>
 <tr class="gt_col_headings header">
 <th id="a::stub" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">FP rate \ Detection</th>
-<th id="MVP-(19%)" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">MVP (19%)</th>
+<th id="MVP-(49%)" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">MVP (49%)</th>
 <th id="a30%" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">30%</th>
 <th id="S1b-mid-(40%)" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">S1b mid (40%)</th>
 <th id="a50%" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">50%</th>
@@ -1479,24 +1479,24 @@ Table&nbsp;2: Regulator cost per death averted (R/yr) as community false-positiv
 <tbody class="gt_table_body">
 <tr class="odd">
 <th id="stub_1_1" class="gt_row gt_right gt_stub" data-quarto-table-cell-role="th" scope="row">20%</th>
-<td class="gt_row gt_right" headers="stub_1_1 MVP (19%)" style="background-color: #1A9850; color: #FFFFFF">R355,248</td>
-<td class="gt_row gt_right" headers="stub_1_1 30%" style="background-color: #1A9850; color: #FFFFFF">R310,357</td>
-<td class="gt_row gt_right" headers="stub_1_1 S1b mid (40%)" style="background-color: #1A9850; color: #FFFFFF">R294,157</td>
-<td class="gt_row gt_right" headers="stub_1_1 50%" style="background-color: #1A9850; color: #FFFFFF">R285,125</td>
+<td class="gt_row gt_right" headers="stub_1_1 MVP (49%)" style="background-color: #1A9850; color: #FFFFFF">R356,584</td>
+<td class="gt_row gt_right" headers="stub_1_1 30%" style="background-color: #1A9850; color: #FFFFFF">R466,915</td>
+<td class="gt_row gt_right" headers="stub_1_1 S1b mid (40%)" style="background-color: #1A9850; color: #FFFFFF">R389,249</td>
+<td class="gt_row gt_right" headers="stub_1_1 50%" style="background-color: #1A9850; color: #FFFFFF">R353,005</td>
 </tr>
 <tr class="even">
 <th id="stub_1_2" class="gt_row gt_right gt_stub" data-quarto-table-cell-role="th" scope="row">35%</th>
-<td class="gt_row gt_right" headers="stub_1_2 MVP (19%)" style="background-color: #D1D07D; color: #000000">R433,611</td>
-<td class="gt_row gt_right" headers="stub_1_2 30%" style="background-color: #D1D07D; color: #000000">R379,954</td>
-<td class="gt_row gt_right" headers="stub_1_2 S1b mid (40%)" style="background-color: #D1D07D; color: #000000">R360,591</td>
-<td class="gt_row gt_right" headers="stub_1_2 50%" style="background-color: #D1D07D; color: #000000">R349,795</td>
+<td class="gt_row gt_right" headers="stub_1_2 MVP (49%)" style="background-color: #D1D07D; color: #000000">R435,232</td>
+<td class="gt_row gt_right" headers="stub_1_2 30%" style="background-color: #D1D07D; color: #000000">R567,134</td>
+<td class="gt_row gt_right" headers="stub_1_2 S1b mid (40%)" style="background-color: #D1D07D; color: #000000">R474,284</td>
+<td class="gt_row gt_right" headers="stub_1_2 50%" style="background-color: #D1D07D; color: #000000">R430,953</td>
 </tr>
 <tr class="odd">
 <th id="stub_1_3" class="gt_row gt_right gt_stub" data-quarto-table-cell-role="th" scope="row">50%</th>
-<td class="gt_row gt_right" headers="stub_1_3 MVP (19%)" style="background-color: #D73027; color: #FFFFFF">R558,992</td>
-<td class="gt_row gt_right" headers="stub_1_3 30%" style="background-color: #D73027; color: #FFFFFF">R491,309</td>
-<td class="gt_row gt_right" headers="stub_1_3 S1b mid (40%)" style="background-color: #D73027; color: #FFFFFF">R466,884</td>
-<td class="gt_row gt_right" headers="stub_1_3 50%" style="background-color: #D73027; color: #FFFFFF">R453,267</td>
+<td class="gt_row gt_right" headers="stub_1_3 MVP (49%)" style="background-color: #D73027; color: #FFFFFF">R561,070</td>
+<td class="gt_row gt_right" headers="stub_1_3 30%" style="background-color: #D73027; color: #FFFFFF">R727,486</td>
+<td class="gt_row gt_right" headers="stub_1_3 S1b mid (40%)" style="background-color: #D73027; color: #FFFFFF">R610,340</td>
+<td class="gt_row gt_right" headers="stub_1_3 50%" style="background-color: #D73027; color: #FFFFFF">R555,671</td>
 </tr>
 </tbody>
 </table>
@@ -1520,23 +1520,23 @@ Table&nbsp;3: Year-1 deaths averted from terbufos phase-out, varying attributabl
 </figcaption>
 <div aria-describedby="tbl-sens-terbufos-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="cxuemrkxzh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#cxuemrkxzh table {
+<div id="xrtnxoootr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#xrtnxoootr table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#cxuemrkxzh thead, #cxuemrkxzh tbody, #cxuemrkxzh tfoot, #cxuemrkxzh tr, #cxuemrkxzh td, #cxuemrkxzh th {
+#xrtnxoootr thead, #xrtnxoootr tbody, #xrtnxoootr tfoot, #xrtnxoootr tr, #xrtnxoootr td, #xrtnxoootr th {
   border-style: none;
 }
 
-#cxuemrkxzh p {
+#xrtnxoootr p {
   margin: 0;
   padding: 0;
 }
 
-#cxuemrkxzh .gt_table {
+#xrtnxoootr .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1562,12 +1562,12 @@ Table&nbsp;3: Year-1 deaths averted from terbufos phase-out, varying attributabl
   border-left-color: #D3D3D3;
 }
 
-#cxuemrkxzh .gt_caption {
+#xrtnxoootr .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#cxuemrkxzh .gt_title {
+#xrtnxoootr .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1579,7 +1579,7 @@ Table&nbsp;3: Year-1 deaths averted from terbufos phase-out, varying attributabl
   border-bottom-width: 0;
 }
 
-#cxuemrkxzh .gt_subtitle {
+#xrtnxoootr .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1591,7 +1591,7 @@ Table&nbsp;3: Year-1 deaths averted from terbufos phase-out, varying attributabl
   border-top-width: 0;
 }
 
-#cxuemrkxzh .gt_heading {
+#xrtnxoootr .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1603,13 +1603,13 @@ Table&nbsp;3: Year-1 deaths averted from terbufos phase-out, varying attributabl
   border-right-color: #D3D3D3;
 }
 
-#cxuemrkxzh .gt_bottom_border {
+#xrtnxoootr .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#cxuemrkxzh .gt_col_headings {
+#xrtnxoootr .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1624,7 +1624,7 @@ Table&nbsp;3: Year-1 deaths averted from terbufos phase-out, varying attributabl
   border-right-color: #D3D3D3;
 }
 
-#cxuemrkxzh .gt_col_heading {
+#xrtnxoootr .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1644,7 +1644,7 @@ Table&nbsp;3: Year-1 deaths averted from terbufos phase-out, varying attributabl
   overflow-x: hidden;
 }
 
-#cxuemrkxzh .gt_column_spanner_outer {
+#xrtnxoootr .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1656,15 +1656,15 @@ Table&nbsp;3: Year-1 deaths averted from terbufos phase-out, varying attributabl
   padding-right: 4px;
 }
 
-#cxuemrkxzh .gt_column_spanner_outer:first-child {
+#xrtnxoootr .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#cxuemrkxzh .gt_column_spanner_outer:last-child {
+#xrtnxoootr .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#cxuemrkxzh .gt_column_spanner {
+#xrtnxoootr .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1676,11 +1676,11 @@ Table&nbsp;3: Year-1 deaths averted from terbufos phase-out, varying attributabl
   width: 100%;
 }
 
-#cxuemrkxzh .gt_spanner_row {
+#xrtnxoootr .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#cxuemrkxzh .gt_group_heading {
+#xrtnxoootr .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1706,7 +1706,7 @@ Table&nbsp;3: Year-1 deaths averted from terbufos phase-out, varying attributabl
   text-align: left;
 }
 
-#cxuemrkxzh .gt_empty_group_heading {
+#xrtnxoootr .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1721,15 +1721,15 @@ Table&nbsp;3: Year-1 deaths averted from terbufos phase-out, varying attributabl
   vertical-align: middle;
 }
 
-#cxuemrkxzh .gt_from_md > :first-child {
+#xrtnxoootr .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#cxuemrkxzh .gt_from_md > :last-child {
+#xrtnxoootr .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#cxuemrkxzh .gt_row {
+#xrtnxoootr .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1748,7 +1748,7 @@ Table&nbsp;3: Year-1 deaths averted from terbufos phase-out, varying attributabl
   overflow-x: hidden;
 }
 
-#cxuemrkxzh .gt_stub {
+#xrtnxoootr .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1761,7 +1761,7 @@ Table&nbsp;3: Year-1 deaths averted from terbufos phase-out, varying attributabl
   padding-right: 5px;
 }
 
-#cxuemrkxzh .gt_stub_row_group {
+#xrtnxoootr .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1775,15 +1775,15 @@ Table&nbsp;3: Year-1 deaths averted from terbufos phase-out, varying attributabl
   vertical-align: top;
 }
 
-#cxuemrkxzh .gt_row_group_first td {
+#xrtnxoootr .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#cxuemrkxzh .gt_row_group_first th {
+#xrtnxoootr .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#cxuemrkxzh .gt_summary_row {
+#xrtnxoootr .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1793,16 +1793,16 @@ Table&nbsp;3: Year-1 deaths averted from terbufos phase-out, varying attributabl
   padding-right: 5px;
 }
 
-#cxuemrkxzh .gt_first_summary_row {
+#xrtnxoootr .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#cxuemrkxzh .gt_first_summary_row.thick {
+#xrtnxoootr .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#cxuemrkxzh .gt_last_summary_row {
+#xrtnxoootr .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1812,7 +1812,7 @@ Table&nbsp;3: Year-1 deaths averted from terbufos phase-out, varying attributabl
   border-bottom-color: #D3D3D3;
 }
 
-#cxuemrkxzh .gt_grand_summary_row {
+#xrtnxoootr .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1822,7 +1822,7 @@ Table&nbsp;3: Year-1 deaths averted from terbufos phase-out, varying attributabl
   padding-right: 5px;
 }
 
-#cxuemrkxzh .gt_first_grand_summary_row {
+#xrtnxoootr .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1832,7 +1832,7 @@ Table&nbsp;3: Year-1 deaths averted from terbufos phase-out, varying attributabl
   border-top-color: #D3D3D3;
 }
 
-#cxuemrkxzh .gt_last_grand_summary_row_top {
+#xrtnxoootr .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1842,11 +1842,11 @@ Table&nbsp;3: Year-1 deaths averted from terbufos phase-out, varying attributabl
   border-bottom-color: #D3D3D3;
 }
 
-#cxuemrkxzh .gt_striped {
+#xrtnxoootr .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#cxuemrkxzh .gt_table_body {
+#xrtnxoootr .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1855,7 +1855,7 @@ Table&nbsp;3: Year-1 deaths averted from terbufos phase-out, varying attributabl
   border-bottom-color: #D3D3D3;
 }
 
-#cxuemrkxzh .gt_footnotes {
+#xrtnxoootr .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1869,7 +1869,7 @@ Table&nbsp;3: Year-1 deaths averted from terbufos phase-out, varying attributabl
   border-right-color: #D3D3D3;
 }
 
-#cxuemrkxzh .gt_footnote {
+#xrtnxoootr .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1878,7 +1878,7 @@ Table&nbsp;3: Year-1 deaths averted from terbufos phase-out, varying attributabl
   padding-right: 5px;
 }
 
-#cxuemrkxzh .gt_sourcenotes {
+#xrtnxoootr .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1892,7 +1892,7 @@ Table&nbsp;3: Year-1 deaths averted from terbufos phase-out, varying attributabl
   border-right-color: #D3D3D3;
 }
 
-#cxuemrkxzh .gt_sourcenote {
+#xrtnxoootr .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1900,72 +1900,72 @@ Table&nbsp;3: Year-1 deaths averted from terbufos phase-out, varying attributabl
   padding-right: 5px;
 }
 
-#cxuemrkxzh .gt_left {
+#xrtnxoootr .gt_left {
   text-align: left;
 }
 
-#cxuemrkxzh .gt_center {
+#xrtnxoootr .gt_center {
   text-align: center;
 }
 
-#cxuemrkxzh .gt_right {
+#xrtnxoootr .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#cxuemrkxzh .gt_font_normal {
+#xrtnxoootr .gt_font_normal {
   font-weight: normal;
 }
 
-#cxuemrkxzh .gt_font_bold {
+#xrtnxoootr .gt_font_bold {
   font-weight: bold;
 }
 
-#cxuemrkxzh .gt_font_italic {
+#xrtnxoootr .gt_font_italic {
   font-style: italic;
 }
 
-#cxuemrkxzh .gt_super {
+#xrtnxoootr .gt_super {
   font-size: 65%;
 }
 
-#cxuemrkxzh .gt_footnote_marks {
+#xrtnxoootr .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#cxuemrkxzh .gt_asterisk {
+#xrtnxoootr .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#cxuemrkxzh .gt_indent_1 {
+#xrtnxoootr .gt_indent_1 {
   text-indent: 5px;
 }
 
-#cxuemrkxzh .gt_indent_2 {
+#xrtnxoootr .gt_indent_2 {
   text-indent: 10px;
 }
 
-#cxuemrkxzh .gt_indent_3 {
+#xrtnxoootr .gt_indent_3 {
   text-indent: 15px;
 }
 
-#cxuemrkxzh .gt_indent_4 {
+#xrtnxoootr .gt_indent_4 {
   text-indent: 20px;
 }
 
-#cxuemrkxzh .gt_indent_5 {
+#xrtnxoootr .gt_indent_5 {
   text-indent: 25px;
 }
 
-#cxuemrkxzh .katex-display {
+#xrtnxoootr .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#cxuemrkxzh div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#xrtnxoootr div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1982,21 +1982,21 @@ Table&nbsp;3: Year-1 deaths averted from terbufos phase-out, varying attributabl
 <tbody class="gt_table_body">
 <tr class="odd">
 <th id="stub_1_1" class="gt_row gt_right gt_stub" data-quarto-table-cell-role="th" scope="row">20%</th>
-<td class="gt_row gt_right" headers="stub_1_1 12-month ramp" style="background-color: #D73027; color: #FFFFFF">367</td>
-<td class="gt_row gt_right" headers="stub_1_1 18-month ramp" style="background-color: #D73027; color: #FFFFFF">245</td>
-<td class="gt_row gt_right" headers="stub_1_1 24-month ramp" style="background-color: #D73027; color: #FFFFFF">183</td>
+<td class="gt_row gt_right" headers="stub_1_1 12-month ramp" style="background-color: #D73027; color: #FFFFFF">142</td>
+<td class="gt_row gt_right" headers="stub_1_1 18-month ramp" style="background-color: #D73027; color: #FFFFFF">95</td>
+<td class="gt_row gt_right" headers="stub_1_1 24-month ramp" style="background-color: #D73027; color: #FFFFFF">71</td>
 </tr>
 <tr class="even">
 <th id="stub_1_2" class="gt_row gt_right gt_stub" data-quarto-table-cell-role="th" scope="row">25%</th>
-<td class="gt_row gt_right" headers="stub_1_2 12-month ramp" style="background-color: #F6AB67; color: #000000">458</td>
-<td class="gt_row gt_right" headers="stub_1_2 18-month ramp" style="background-color: #F6AB67; color: #000000">306</td>
-<td class="gt_row gt_right" headers="stub_1_2 24-month ramp" style="background-color: #F6AB67; color: #000000">229</td>
+<td class="gt_row gt_right" headers="stub_1_2 12-month ramp" style="background-color: #F6AB67; color: #000000">177</td>
+<td class="gt_row gt_right" headers="stub_1_2 18-month ramp" style="background-color: #F6AB67; color: #000000">118</td>
+<td class="gt_row gt_right" headers="stub_1_2 24-month ramp" style="background-color: #F6AB67; color: #000000">89</td>
 </tr>
 <tr class="odd">
 <th id="stub_1_3" class="gt_row gt_right gt_stub" data-quarto-table-cell-role="th" scope="row">35%</th>
-<td class="gt_row gt_right" headers="stub_1_3 12-month ramp" style="background-color: #1A9850; color: #FFFFFF">642</td>
-<td class="gt_row gt_right" headers="stub_1_3 18-month ramp" style="background-color: #1A9850; color: #FFFFFF">428</td>
-<td class="gt_row gt_right" headers="stub_1_3 24-month ramp" style="background-color: #1A9850; color: #FFFFFF">321</td>
+<td class="gt_row gt_right" headers="stub_1_3 12-month ramp" style="background-color: #1A9850; color: #FFFFFF">248</td>
+<td class="gt_row gt_right" headers="stub_1_3 18-month ramp" style="background-color: #1A9850; color: #FFFFFF">166</td>
+<td class="gt_row gt_right" headers="stub_1_3 24-month ramp" style="background-color: #1A9850; color: #FFFFFF">124</td>
 </tr>
 </tbody>
 </table>
@@ -2007,7 +2007,7 @@ Table&nbsp;3: Year-1 deaths averted from terbufos phase-out, varying attributabl
 </figure>
 </div>
 </div>
-<p>The 12-month ramp captures the full attributable retirement in year 1; the 24-month ramp halves it. At the working attributable fraction (25 %), this is a difference of ~229 deaths in year 1.</p>
+<p>The 12-month ramp captures the full attributable retirement in year 1; the 24-month ramp halves it. At the working attributable fraction (25 %), this is a difference of ~89 deaths in year 1.</p>
 </section>
 <section id="s3.-response-efficacy-terbufos-phase-out-completion" class="level3" data-number="7.3">
 <h3 data-number="7.3" class="anchored" data-anchor-id="s3.-response-efficacy-terbufos-phase-out-completion"><span class="header-section-number">7.3</span> S3. Response efficacy × terbufos phase-out completion</h3>
@@ -2020,23 +2020,23 @@ Table&nbsp;4: Total annual deaths averted (surveillance + terbufos retirement) a
 </figcaption>
 <div aria-describedby="tbl-sens-eta-terbufos-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="xnxlplrjyc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#xnxlplrjyc table {
+<div id="rofcexytzw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#rofcexytzw table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#xnxlplrjyc thead, #xnxlplrjyc tbody, #xnxlplrjyc tfoot, #xnxlplrjyc tr, #xnxlplrjyc td, #xnxlplrjyc th {
+#rofcexytzw thead, #rofcexytzw tbody, #rofcexytzw tfoot, #rofcexytzw tr, #rofcexytzw td, #rofcexytzw th {
   border-style: none;
 }
 
-#xnxlplrjyc p {
+#rofcexytzw p {
   margin: 0;
   padding: 0;
 }
 
-#xnxlplrjyc .gt_table {
+#rofcexytzw .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2062,12 +2062,12 @@ Table&nbsp;4: Total annual deaths averted (surveillance + terbufos retirement) a
   border-left-color: #D3D3D3;
 }
 
-#xnxlplrjyc .gt_caption {
+#rofcexytzw .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#xnxlplrjyc .gt_title {
+#rofcexytzw .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2079,7 +2079,7 @@ Table&nbsp;4: Total annual deaths averted (surveillance + terbufos retirement) a
   border-bottom-width: 0;
 }
 
-#xnxlplrjyc .gt_subtitle {
+#rofcexytzw .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2091,7 +2091,7 @@ Table&nbsp;4: Total annual deaths averted (surveillance + terbufos retirement) a
   border-top-width: 0;
 }
 
-#xnxlplrjyc .gt_heading {
+#rofcexytzw .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2103,13 +2103,13 @@ Table&nbsp;4: Total annual deaths averted (surveillance + terbufos retirement) a
   border-right-color: #D3D3D3;
 }
 
-#xnxlplrjyc .gt_bottom_border {
+#rofcexytzw .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#xnxlplrjyc .gt_col_headings {
+#rofcexytzw .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2124,7 +2124,7 @@ Table&nbsp;4: Total annual deaths averted (surveillance + terbufos retirement) a
   border-right-color: #D3D3D3;
 }
 
-#xnxlplrjyc .gt_col_heading {
+#rofcexytzw .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2144,7 +2144,7 @@ Table&nbsp;4: Total annual deaths averted (surveillance + terbufos retirement) a
   overflow-x: hidden;
 }
 
-#xnxlplrjyc .gt_column_spanner_outer {
+#rofcexytzw .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2156,15 +2156,15 @@ Table&nbsp;4: Total annual deaths averted (surveillance + terbufos retirement) a
   padding-right: 4px;
 }
 
-#xnxlplrjyc .gt_column_spanner_outer:first-child {
+#rofcexytzw .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#xnxlplrjyc .gt_column_spanner_outer:last-child {
+#rofcexytzw .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#xnxlplrjyc .gt_column_spanner {
+#rofcexytzw .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2176,11 +2176,11 @@ Table&nbsp;4: Total annual deaths averted (surveillance + terbufos retirement) a
   width: 100%;
 }
 
-#xnxlplrjyc .gt_spanner_row {
+#rofcexytzw .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#xnxlplrjyc .gt_group_heading {
+#rofcexytzw .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2206,7 +2206,7 @@ Table&nbsp;4: Total annual deaths averted (surveillance + terbufos retirement) a
   text-align: left;
 }
 
-#xnxlplrjyc .gt_empty_group_heading {
+#rofcexytzw .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2221,15 +2221,15 @@ Table&nbsp;4: Total annual deaths averted (surveillance + terbufos retirement) a
   vertical-align: middle;
 }
 
-#xnxlplrjyc .gt_from_md > :first-child {
+#rofcexytzw .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#xnxlplrjyc .gt_from_md > :last-child {
+#rofcexytzw .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#xnxlplrjyc .gt_row {
+#rofcexytzw .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2248,7 +2248,7 @@ Table&nbsp;4: Total annual deaths averted (surveillance + terbufos retirement) a
   overflow-x: hidden;
 }
 
-#xnxlplrjyc .gt_stub {
+#rofcexytzw .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2261,7 +2261,7 @@ Table&nbsp;4: Total annual deaths averted (surveillance + terbufos retirement) a
   padding-right: 5px;
 }
 
-#xnxlplrjyc .gt_stub_row_group {
+#rofcexytzw .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2275,15 +2275,15 @@ Table&nbsp;4: Total annual deaths averted (surveillance + terbufos retirement) a
   vertical-align: top;
 }
 
-#xnxlplrjyc .gt_row_group_first td {
+#rofcexytzw .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#xnxlplrjyc .gt_row_group_first th {
+#rofcexytzw .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#xnxlplrjyc .gt_summary_row {
+#rofcexytzw .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2293,16 +2293,16 @@ Table&nbsp;4: Total annual deaths averted (surveillance + terbufos retirement) a
   padding-right: 5px;
 }
 
-#xnxlplrjyc .gt_first_summary_row {
+#rofcexytzw .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#xnxlplrjyc .gt_first_summary_row.thick {
+#rofcexytzw .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#xnxlplrjyc .gt_last_summary_row {
+#rofcexytzw .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2312,7 +2312,7 @@ Table&nbsp;4: Total annual deaths averted (surveillance + terbufos retirement) a
   border-bottom-color: #D3D3D3;
 }
 
-#xnxlplrjyc .gt_grand_summary_row {
+#rofcexytzw .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2322,7 +2322,7 @@ Table&nbsp;4: Total annual deaths averted (surveillance + terbufos retirement) a
   padding-right: 5px;
 }
 
-#xnxlplrjyc .gt_first_grand_summary_row {
+#rofcexytzw .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2332,7 +2332,7 @@ Table&nbsp;4: Total annual deaths averted (surveillance + terbufos retirement) a
   border-top-color: #D3D3D3;
 }
 
-#xnxlplrjyc .gt_last_grand_summary_row_top {
+#rofcexytzw .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2342,11 +2342,11 @@ Table&nbsp;4: Total annual deaths averted (surveillance + terbufos retirement) a
   border-bottom-color: #D3D3D3;
 }
 
-#xnxlplrjyc .gt_striped {
+#rofcexytzw .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#xnxlplrjyc .gt_table_body {
+#rofcexytzw .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2355,7 +2355,7 @@ Table&nbsp;4: Total annual deaths averted (surveillance + terbufos retirement) a
   border-bottom-color: #D3D3D3;
 }
 
-#xnxlplrjyc .gt_footnotes {
+#rofcexytzw .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2369,7 +2369,7 @@ Table&nbsp;4: Total annual deaths averted (surveillance + terbufos retirement) a
   border-right-color: #D3D3D3;
 }
 
-#xnxlplrjyc .gt_footnote {
+#rofcexytzw .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2378,7 +2378,7 @@ Table&nbsp;4: Total annual deaths averted (surveillance + terbufos retirement) a
   padding-right: 5px;
 }
 
-#xnxlplrjyc .gt_sourcenotes {
+#rofcexytzw .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2392,7 +2392,7 @@ Table&nbsp;4: Total annual deaths averted (surveillance + terbufos retirement) a
   border-right-color: #D3D3D3;
 }
 
-#xnxlplrjyc .gt_sourcenote {
+#rofcexytzw .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2400,72 +2400,72 @@ Table&nbsp;4: Total annual deaths averted (surveillance + terbufos retirement) a
   padding-right: 5px;
 }
 
-#xnxlplrjyc .gt_left {
+#rofcexytzw .gt_left {
   text-align: left;
 }
 
-#xnxlplrjyc .gt_center {
+#rofcexytzw .gt_center {
   text-align: center;
 }
 
-#xnxlplrjyc .gt_right {
+#rofcexytzw .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#xnxlplrjyc .gt_font_normal {
+#rofcexytzw .gt_font_normal {
   font-weight: normal;
 }
 
-#xnxlplrjyc .gt_font_bold {
+#rofcexytzw .gt_font_bold {
   font-weight: bold;
 }
 
-#xnxlplrjyc .gt_font_italic {
+#rofcexytzw .gt_font_italic {
   font-style: italic;
 }
 
-#xnxlplrjyc .gt_super {
+#rofcexytzw .gt_super {
   font-size: 65%;
 }
 
-#xnxlplrjyc .gt_footnote_marks {
+#rofcexytzw .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#xnxlplrjyc .gt_asterisk {
+#rofcexytzw .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#xnxlplrjyc .gt_indent_1 {
+#rofcexytzw .gt_indent_1 {
   text-indent: 5px;
 }
 
-#xnxlplrjyc .gt_indent_2 {
+#rofcexytzw .gt_indent_2 {
   text-indent: 10px;
 }
 
-#xnxlplrjyc .gt_indent_3 {
+#rofcexytzw .gt_indent_3 {
   text-indent: 15px;
 }
 
-#xnxlplrjyc .gt_indent_4 {
+#rofcexytzw .gt_indent_4 {
   text-indent: 20px;
 }
 
-#xnxlplrjyc .gt_indent_5 {
+#rofcexytzw .gt_indent_5 {
   text-indent: 25px;
 }
 
-#xnxlplrjyc .katex-display {
+#rofcexytzw .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#xnxlplrjyc div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#rofcexytzw div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2482,21 +2482,21 @@ Table&nbsp;4: Total annual deaths averted (surveillance + terbufos retirement) a
 <tbody class="gt_table_body">
 <tr class="odd">
 <th id="stub_1_1" class="gt_row gt_right gt_stub" data-quarto-table-cell-role="th" scope="row">15%</th>
-<td class="gt_row gt_right" headers="stub_1_1 0% retired" style="background-color: #D73027; color: #FFFFFF">138</td>
-<td class="gt_row gt_right" headers="stub_1_1 50% retired" style="background-color: #D73027; color: #FFFFFF">350</td>
-<td class="gt_row gt_right" headers="stub_1_1 100% retired" style="background-color: #D73027; color: #FFFFFF">562</td>
+<td class="gt_row gt_right" headers="stub_1_1 0% retired" style="background-color: #D73027; color: #FFFFFF">42</td>
+<td class="gt_row gt_right" headers="stub_1_1 50% retired" style="background-color: #D73027; color: #FFFFFF">125</td>
+<td class="gt_row gt_right" headers="stub_1_1 100% retired" style="background-color: #D73027; color: #FFFFFF">209</td>
 </tr>
 <tr class="even">
 <th id="stub_1_2" class="gt_row gt_right gt_stub" data-quarto-table-cell-role="th" scope="row">30%</th>
-<td class="gt_row gt_right" headers="stub_1_2 0% retired" style="background-color: #FBC97C; color: #000000">277</td>
-<td class="gt_row gt_right" headers="stub_1_2 50% retired" style="background-color: #FBC97C; color: #000000">471</td>
-<td class="gt_row gt_right" headers="stub_1_2 100% retired" style="background-color: #FBC97C; color: #000000">666</td>
+<td class="gt_row gt_right" headers="stub_1_2 0% retired" style="background-color: #FBC97C; color: #000000">84</td>
+<td class="gt_row gt_right" headers="stub_1_2 50% retired" style="background-color: #FBC97C; color: #000000">162</td>
+<td class="gt_row gt_right" headers="stub_1_2 100% retired" style="background-color: #FBC97C; color: #000000">240</td>
 </tr>
 <tr class="odd">
 <th id="stub_1_3" class="gt_row gt_right gt_stub" data-quarto-table-cell-role="th" scope="row">50%</th>
-<td class="gt_row gt_right" headers="stub_1_3 0% retired" style="background-color: #1A9850; color: #FFFFFF">461</td>
-<td class="gt_row gt_right" headers="stub_1_3 50% retired" style="background-color: #1A9850; color: #FFFFFF">633</td>
-<td class="gt_row gt_right" headers="stub_1_3 100% retired" style="background-color: #1A9850; color: #FFFFFF">804</td>
+<td class="gt_row gt_right" headers="stub_1_3 0% retired" style="background-color: #1A9850; color: #FFFFFF">139</td>
+<td class="gt_row gt_right" headers="stub_1_3 50% retired" style="background-color: #1A9850; color: #FFFFFF">211</td>
+<td class="gt_row gt_right" headers="stub_1_3 100% retired" style="background-color: #1A9850; color: #FFFFFF">282</td>
 </tr>
 </tbody>
 </table>
@@ -2513,7 +2513,7 @@ Table&nbsp;4: Total annual deaths averted (surveillance + terbufos retirement) a
 <section id="results" class="level2" data-number="8">
 <h2 data-number="8" class="anchored" data-anchor-id="results"><span class="header-section-number">8</span> Results</h2>
 <p><strong>Detection–workload coupling.</strong> Administrative-tier surveillance (NHLS feed, BChE auto-notify, PIH MVD) and coordination (C1–C5) raise per-case detection from 5 % to 19 % without false-positive inflation, because alerts originate from confirmed laboratory or clinical events. Community-tier surveillance (S1b) raises detection further but at a benchmarked false-positive rate of 20–50 %; gross alert volume is 1.25–2 × the true-case count and marginal regulator cost per death averted rises monotonically with <code>p_fp_S1b</code>. The model implies S1b should be piloted with direct measurement of <code>p_fp_S1b</code> before national rollout.</p>
-<p><strong>Source-control coupling.</strong> A 18-month linear terbufos phase-out retires 458 deaths/yr and 3668 cases/yr at full ramp (<code>frac_terbufos_attributable_mid = 0.25</code>, <code>frac_T3_burden_retired = 0.70</code>). Because induced workload and health/YLL costs both scale with true cases, all four output streams (cases, deaths, health/YLL, induced workload) fall by the same fraction. Source control is complementary to surveillance: it is the only lever that reduces the denominator the system has to process.</p>
+<p><strong>Source-control coupling.</strong> A 18-month linear terbufos phase-out retires 177 deaths/yr and 1420 cases/yr at full ramp (<code>frac_terbufos_attributable_mid = 0.25</code>, <code>frac_T3_burden_retired = 0.70</code>). Because induced workload and health/YLL costs both scale with true cases, all four output streams (cases, deaths, health/YLL, induced workload) fall by the same fraction. Source control is complementary to surveillance: it is the only lever that reduces the denominator the system has to process.</p>
 </section>
 <section id="editing-the-model" class="level2" data-number="9">
 <h2 data-number="9" class="anchored" data-anchor-id="editing-the-model"><span class="header-section-number">9</span> Editing the model</h2>
@@ -3041,7 +3041,7 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
 <span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="fu">## Burden</span></span>
 <span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>StatsSA MACOD 2023 records 2,620 deaths/yr from acute pesticide poisoning (ICD-10 X40–X49). Applied to a mid case-fatality of 12.5 %, this implies ~20,960 true cases/yr. NMC currently notifies ~5 % of true cases. Terbufos (WHO Class Ia organophosphate) is the dominant agent in fatal paediatric events (Davies 2023) with an attributable fraction of 20–35 %.</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>StatsSA MACOD 2022 records 1,014 pesticide-specific poisoning deaths/yr (X48+X68+X87+Y18; interim anchor pending 2023 release). Applied to a mid case-fatality of 12.5 %, this implies ~8,112 true cases/yr. NMC currently notifies ~12.5 % of true cases. Terbufos (WHO Class Ia organophosphate) is the dominant agent in fatal paediatric events (Davies 2023) with an attributable fraction of 20–35 %.</span>
 <span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="fu">## Model</span></span>
 <span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a></span>
@@ -3065,8 +3065,8 @@ Figure&nbsp;3: Each companion brief specifies one component; this model evaluate
 <span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a><span class="co"># Burden anchors</span></span>
-<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>N_true    <span class="ot">&lt;-</span> <span class="fu">pick</span>(<span class="st">"n_true_burden_from_statssa_mid"</span>)  <span class="co"># 20,960 true cases/yr</span></span>
-<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>N_deaths  <span class="ot">&lt;-</span> <span class="fu">pick</span>(<span class="st">"n_deaths_headline"</span>)               <span class="co"># 2,620 deaths/yr</span></span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>N_true    <span class="ot">&lt;-</span> <span class="fu">pick</span>(<span class="st">"n_true_burden_from_statssa_mid"</span>)  <span class="co"># 8,112 true cases/yr</span></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>N_deaths  <span class="ot">&lt;-</span> <span class="fu">pick</span>(<span class="st">"n_deaths_headline"</span>)               <span class="co"># 1,014 deaths/yr</span></span>
 <span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>c_morb    <span class="ot">&lt;-</span> <span class="fu">pick</span>(<span class="st">"c_morbidity_headline"</span>)            <span class="co"># R/morbidity case</span></span>
 <span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>c_mort    <span class="ot">&lt;-</span> <span class="fu">pick</span>(<span class="st">"c_mortality_human_capital"</span>)       <span class="co"># R/death (YLL human-capital)</span></span>
 <span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a></span>

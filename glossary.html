@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-07-17">
+<meta name="dcterms.date" content="2026-07-27">
 
 <title>Glossary – D2P Project</title>
 <style>
@@ -272,7 +272,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 17, 2026</p>
+      <p class="date">July 27, 2026</p>
     </div>
   </div>
   
@@ -337,7 +337,7 @@ window.Quarto = {
 </section>
 <section id="estimating-burden-the-methods" class="level2">
 <h2 class="anchored" data-anchor-id="estimating-burden-the-methods">4. Estimating burden — the methods</h2>
-<p><strong>Burden of disease.</strong> The total impact in cases, deaths, healthy years lost, or money. Headline for this project: <strong>~11,690 cases, ~1,500–1,800 deaths, ~R2.3B/year</strong>.</p>
+<p><strong>Burden of disease.</strong> The total impact in cases, deaths, healthy years lost, or money. Headline for this project: <strong>~8,112 cases, 1,014 deaths, ~R1.61B/year</strong> (StatsSA MACOD 2022, pesticide-specific UCOD codes X48+X68+X87+Y18; supersedes earlier ~11,690 cases / 1,500–1,800 deaths / R2.3B v1 figures and the later 20,960 / 2,620 / R2.34B figures, which used the broader X40-X49 category).</p>
 <p><strong>Mutually-exclusive sum.</strong> When two data systems both record cases but cannot be linked patient-by-patient, the <strong>safest assumption</strong> is that they capture <em>different</em> people. Adding them up gives an upper bound. If linkage later finds duplicates, the number can be revised down. We use this for NMC + NHLS + PIH because none of the three currently share record IDs.</p>
 <p><strong>Case Fatality Rate (CFR).</strong> Of the people who become cases, what proportion die. We use a <strong>stratified CFR</strong> because the three data streams capture different severities:</p>
 <table class="caption-top table">
@@ -384,14 +384,14 @@ window.Quarto = {
 <p><strong>Human-capital approach.</strong> Values a death at the future earnings the person would have produced. We use 25 productive years × R60,000/year median income → <strong>~R1.5M per death</strong>.</p>
 <p><strong>Value of a Statistical Life (VSL).</strong> An alternative valuation (~3.3 × annual income for LMICs) that gives a higher figure (~R5M/death). We mention it as an upper bound, not the headline.</p>
 <p><strong>Cost-effectiveness threshold (λ).</strong> The most a health system is willing to pay to avert one DALY. SA’s evidence-based figure is <strong>~R38,500/DALY</strong> (Edoka &amp; Stacey, 2020). Below this = good value.</p>
-<p><strong>Narrow vs.&nbsp;whole-system cost.</strong> <em>Narrow</em> = the cost of running the surveillance and coordination work itself (R237k/year for the Full Package). <em>Whole-system</em> = narrow + the <strong>extra demand that better surveillance generates</strong> elsewhere (more admissions detected, more lab tests, more EHP investigations, more DALRRD enforcement) — this comes to R1.19M/year. Both are tiny compared with the R2.3B burden.</p>
+<p><strong>Narrow vs.&nbsp;whole-system cost.</strong> <em>Narrow</em> = the cost of running the surveillance and coordination work itself (R237k/year for the Full Package). <em>Whole-system</em> = narrow + the <strong>extra demand that better surveillance generates</strong> elsewhere (more admissions detected, more lab tests, more EHP investigations, more DALRRD enforcement) — this comes to R1.19M/year. Both are tiny compared with the R1.61B burden.</p>
 <p><strong>Induced demand.</strong> The activity surveillance <em>creates</em> by finding cases that would otherwise have been missed. Real, but small relative to the avoided burden.</p>
 <hr>
 </section>
 <section id="decision-analytic-methods" class="level2">
 <h2 class="anchored" data-anchor-id="decision-analytic-methods">6. Decision-analytic methods</h2>
 <p><strong>Decision tree.</strong> A model that maps out the consequences of choosing each option, weighted by probabilities. Used here to compare Status Quo, individual Options 1–6, and the Full Package. Built in <strong>Amua</strong>.</p>
-<p><strong>Detection probability (<span class="math inline">\(d_i\)</span>).</strong> The proportion of true pesticide-poisoning cases that this option catches and enters into the surveillance system. Status-quo per-case d ≈ 0.048 (1,013 NMC notifications ÷ ~20,960 implied true cases/yr); Surveillance MVP ≈ 0.19.</p>
+<p><strong>Detection probability (<span class="math inline">\(d_i\)</span>).</strong> The proportion of true pesticide-poisoning cases that this option catches and enters into the surveillance system. Status-quo per-case d ≈ 0.125 (1,013 NMC notifications ÷ ~8,112 implied true cases/yr); Surveillance MVP ≈ 0.49.</p>
 <p><strong>Response efficacy (<span class="math inline">\(\eta\)</span>).</strong> Of the cases that are detected and investigated, the proportion where the response actually prevents further cases. Base case <strong>0.30</strong>; sensitivity range <strong>0.15–0.50</strong>.</p>
 <p><strong>Avoided burden.</strong> <span class="math display">\[C_{\text{avoided},i} \;=\; C_{\text{burden}} \cdot d_i \cdot \eta\]</span> Total burden cost × the option’s detection rate × the response efficacy. This is the money saved by surveillance.</p>
 <p><strong>Net Monetary Benefit (NMB).</strong> Avoided burden minus the option’s own cost. <span class="math display">\[\text{NMB}_i \;=\; (C_0 - C_i) \;-\; K_i\]</span> Positive NMB = the option pays for itself.</p>
@@ -1002,7 +1002,7 @@ window.Quarto = {
 <span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a><span class="fu">## 4. Estimating burden — the methods</span></span>
 <span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>**Burden of disease.** The total impact in cases, deaths, healthy years lost, or money. Headline for this project: **~11,690 cases, ~1,500–1,800 deaths, ~R2.3B/year**.</span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>**Burden of disease.** The total impact in cases, deaths, healthy years lost, or money. Headline for this project: **~8,112 cases, 1,014 deaths, ~R1.61B/year** (StatsSA MACOD 2022, pesticide-specific UCOD codes X48+X68+X87+Y18; supersedes earlier ~11,690 cases / 1,500–1,800 deaths / R2.3B v1 figures and the later 20,960 / 2,620 / R2.34B figures, which used the broader X40-X49 category).</span>
 <span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>**Mutually-exclusive sum.** When two data systems both record cases but cannot be linked patient-by-patient, the **safest assumption** is that they capture *different* people. Adding them up gives an upper bound. If linkage later finds duplicates, the number can be revised down. We use this for NMC + NHLS + PIH because none of the three currently share record IDs.</span>
 <span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a></span>
@@ -1038,7 +1038,7 @@ window.Quarto = {
 <span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>**Cost-effectiveness threshold (λ).** The most a health system is willing to pay to avert one DALY. SA's evidence-based figure is **~R38,500/DALY** (Edoka &amp; Stacey, 2020). Below this = good value.</span>
 <span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>**Narrow vs. whole-system cost.** *Narrow* = the cost of running the surveillance and coordination work itself (R237k/year for the Full Package). *Whole-system* = narrow + the **extra demand that better surveillance generates** elsewhere (more admissions detected, more lab tests, more EHP investigations, more DALRRD enforcement) — this comes to R1.19M/year. Both are tiny compared with the R2.3B burden.</span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>**Narrow vs. whole-system cost.** *Narrow* = the cost of running the surveillance and coordination work itself (R237k/year for the Full Package). *Whole-system* = narrow + the **extra demand that better surveillance generates** elsewhere (more admissions detected, more lab tests, more EHP investigations, more DALRRD enforcement) — this comes to R1.19M/year. Both are tiny compared with the R1.61B burden.</span>
 <span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>**Induced demand.** The activity surveillance *creates* by finding cases that would otherwise have been missed. Real, but small relative to the avoided burden.</span>
 <span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a></span>
@@ -1048,7 +1048,7 @@ window.Quarto = {
 <span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>**Decision tree.** A model that maps out the consequences of choosing each option, weighted by probabilities. Used here to compare Status Quo, individual Options 1–6, and the Full Package. Built in **Amua**.</span>
 <span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>**Detection probability ($d_i$).** The proportion of true pesticide-poisoning cases that this option catches and enters into the surveillance system. Status-quo per-case d ≈ 0.048 (1,013 NMC notifications ÷ ~20,960 implied true cases/yr); Surveillance MVP ≈ 0.19.</span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>**Detection probability ($d_i$).** The proportion of true pesticide-poisoning cases that this option catches and enters into the surveillance system. Status-quo per-case d ≈ 0.125 (1,013 NMC notifications ÷ ~8,112 implied true cases/yr); Surveillance MVP ≈ 0.49.</span>
 <span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>**Response efficacy ($\eta$).** Of the cases that are detected and investigated, the proportion where the response actually prevents further cases. Base case **0.30**; sensitivity range **0.15–0.50**.</span>
 <span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a></span>

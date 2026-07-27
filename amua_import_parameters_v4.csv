@@ -16,12 +16,12 @@ cfr_headline_mid,0.125,"Headline midpoint | dist=fixed(,) | Decision model base"
 cfr_headline_hi,0.15,"Headline upper bound | dist=fixed(,) | Decision model base",burden.cfr
 # Note: stratified CFR yields ~830 deaths/yr; flat 12.5% yields ~1460. StatsSA MACOD anchor (n_deaths_statssa_macod) is the canonical truth source for deaths and should be updated as new StatsSA releases land.,,,
 n_deaths_stratified,830,"Deaths from stratified CFR application | dist=fixed(,) | Internal consistency check",burden.deaths
-n_deaths_headline,2620,"Headline annual deaths = n_deaths_statssa_macod (canonical truth, replaces v1 advocacy figure of 1500) | dist=fixed(,) | StatsSA MACOD 2023 (X40-X49)",burden.deaths
+n_deaths_headline,1014,"Headline annual deaths = n_deaths_statssa_macod (canonical truth; corrected to pesticide-specific UCOD codes, replaces prior X40-X49 all-noxious-substance figure of 2,620) | dist=fixed(,) | StatsSA MACOD 2022 (X48+X68+X87+Y18) — interim pending 2023 release",burden.deaths
 # === StatsSA MORTALITY ANCHOR (CANONICAL TRUTH SOURCE for deaths; used to derive d_status_quo and implied true burden) ===,,,
-n_deaths_statssa_macod,2620,"StatsSA MACOD pesticide-poisoning deaths per year. CANONICAL truth source — update as new StatsSA releases land. Current = StatsSA Causes of Death 2023, Table 4.12 (Accidental poisoning by and exposure to noxious substance, X40-X49). | dist=gamma(25,105) | StatsSA Causes of Death 2023, Table 4.12",burden.statssa_anchor
-n_true_burden_from_statssa_lo,17467,"Implied true annual burden, upper-CFR scenario = n_deaths_statssa_macod / cfr_headline_hi = 2620/0.15 | dist=fixed(,) | Derived",burden.statssa_anchor
-n_true_burden_from_statssa_mid,20960,"Implied true annual burden, mid-CFR scenario = n_deaths_statssa_macod / cfr_headline_mid = 2620/0.125 | dist=fixed(,) | Derived",burden.statssa_anchor
-n_true_burden_from_statssa_hi,26200,"Implied true annual burden, lower-CFR scenario = n_deaths_statssa_macod / cfr_headline_lo = 2620/0.10 | dist=fixed(,) | Derived",burden.statssa_anchor
+n_deaths_statssa_macod,1014,"StatsSA MACOD pesticide-specific poisoning deaths per year. CANONICAL truth source — update as new StatsSA pesticide-level releases land. Current = StatsSA Causes of Death, Table 4.12, 2022 (most recent year with pesticide-specific UCOD breakdown): X48 Accidental (586) + X68 Intentional self-poisoning (4) + X87 Assault (0) + Y18 Undetermined intent (424) = 1,014. Supersedes the prior anchor of 2,620, which used the broader X40-X49 'accidental poisoning by noxious substance' category (not pesticide-specific). 2023 pesticide-level data not yet released — treat as interim. | dist=gamma(25,40.56) | StatsSA Causes of Death 2022, Table 4.12 (X48/X68/X87/Y18)",burden.statssa_anchor
+n_true_burden_from_statssa_lo,6760,"Implied true annual burden, upper-CFR scenario = n_deaths_statssa_macod / cfr_headline_hi = 1014/0.15 | dist=fixed(,) | Derived",burden.statssa_anchor
+n_true_burden_from_statssa_mid,8112,"Implied true annual burden, mid-CFR scenario = n_deaths_statssa_macod / cfr_headline_mid = 1014/0.125 | dist=fixed(,) | Derived",burden.statssa_anchor
+n_true_burden_from_statssa_hi,10140,"Implied true annual burden, lower-CFR scenario = n_deaths_statssa_macod / cfr_headline_lo = 1014/0.10 | dist=fixed(,) | Derived",burden.statssa_anchor
 # === PER-CASE COSTS (CASE-MIX-WEIGHTED,ZAR 2025) ===,",",
 c_pih_call_only,500,"Per-case cost for PIH-managed cases (helpline call + brief OPD + caregiver time) | dist=gamma(25,20) | PIH operational + Stats SA wage",burden.per_case_costs
 c_ward_admission_per_day,1800,"Public-sector general ward UPFS day fee | dist=gamma(25,72) | UPFS 2024",burden.per_case_costs
@@ -49,31 +49,31 @@ c_mortality_VSL_lower,5000000,"Alternative: VSL lower (3.3x annual income, OECD-
 # === TOTAL ECONOMIC BURDEN ===,,,
 C_burden_morbidity,90000000,"Annual morbidity cost = sum(c_morbidity_stratum * n_stratum) ~ R90M | dist=fixed(,) | Derived",burden.total
 C_burden_mortality_stratified,1245000000,"Mortality cost using stratified CFR (830 deaths * R1.5M) ~ R1.25B | dist=fixed(,) | Conservative",burden.total
-C_burden_mortality_headline,2250000000,"Mortality cost using headline 1,500 deaths * R1.5M = R2.25B | dist=fixed(,) | Headline",burden.total
+C_burden_mortality_headline,1521000000,"Mortality cost using headline 1,014 deaths * R1.5M = R1.52B | dist=fixed(,) | Headline",burden.total
 C_burden_total_conservative,1335000000,"Conservative total ~ R1.34B/year (stratified CFR) | dist=fixed(,) | Lower bound for advocacy",burden.total
-C_burden_total_headline,2340000000,"Headline total ~ R2.3B/year | dist=fixed(,) | Used in all advocacy products",burden.total
-# === STAKEHOLDER SHARES OF ANNUAL BURDEN (ZAR 2025,headline scenario) — who bears the R2.34B ===,",",
+C_burden_total_headline,1611000000,"Headline total ~ R1.61B/year | dist=fixed(,) | Used in all advocacy products",burden.total
+# === STAKEHOLDER SHARES OF ANNUAL BURDEN (ZAR 2025,headline scenario) — who bears the R1.61B ===,",",
 share_doh_morbidity,70000000,"NDoH (public hospitals): UPFS ward + ICU + ventilation + atropine/PAM + repeat care | dist=fixed(,) | Derived from C_burden_morbidity × hospital-care fraction (~78%)",burden.stakeholder_shares
 share_nhls_morbidity,10000000,"NHLS (laboratory): BChE + LFT + U&E + GC-MS confirmatory volume | dist=fixed(,) | Derived from C_burden_morbidity × lab fraction (~11%)",burden.stakeholder_shares
 share_individual_oop_morbidity,10000000,"Individuals / households out-of-pocket: transport, lost wages during admission, caregiver time | dist=fixed(,) | Derived from C_burden_morbidity × OOP fraction (~11%)",burden.stakeholder_shares
 share_dalrrd_burden,0,"DALRRD (regulator): R0 of burden side by construction — DALRRD cost sits on the intervention side (enforcement, recalls) | dist=fixed(,) | By construction",burden.stakeholder_shares
-share_household_mortality,2250000000,"Households / wider society: lost lifetime earnings (1500 deaths × R1.5M human-capital) | dist=fixed(,) | = C_burden_mortality_headline",burden.stakeholder_shares
+share_household_mortality,1521000000,"Households / wider society: lost lifetime earnings (1,014 deaths × R1.5M human-capital) | dist=fixed(,) | = C_burden_mortality_headline",burden.stakeholder_shares
 share_health_system_total,80000000,"Health-sector subtotal (NDoH + NHLS) — the budget-line burden | dist=fixed(,) | = share_doh_morbidity + share_nhls_morbidity",burden.stakeholder_shares
-share_household_total,2260000000,"Household + society subtotal (OOP + lost lifetime earnings) | dist=fixed(,) | = share_individual_oop_morbidity + share_household_mortality",burden.stakeholder_shares
-share_total_check,2340000000,"Sum check vs C_burden_total_headline | dist=fixed(,) | Internal consistency",burden.stakeholder_shares
+share_household_total,1531000000,"Household + society subtotal (OOP + lost lifetime earnings) | dist=fixed(,) | = share_individual_oop_morbidity + share_household_mortality",burden.stakeholder_shares
+share_total_check,1611000000,"Sum check vs C_burden_total_headline | dist=fixed(,) | Internal consistency",burden.stakeholder_shares
 # === RESPONSE EFFICACY ===,,,
 eta_response_lo,0.15,"Response efficacy lower (low-engagement scenario) | dist=fixed(,) | Sensitivity",shared.response_efficacy
 eta_response_mid,0.30,"Response efficacy base case | dist=beta(30,70) | Buckley source-control literature",shared.response_efficacy
 eta_response_hi,0.50,"Response efficacy upper (well-resourced scenario) | dist=fixed(,) | Sensitivity",shared.response_efficacy
-# === DETECTION PROBABILITIES BY OPTION (per-case scale,anchored to StatsSA mid-burden 20,"960) ===,,",
-d_status_quo,0.048,"NMC-only per-case detection probability = n_nmc_annual * cfr_headline_mid / n_deaths_statssa_macod = 1013*0.125/2620 | dist=beta(5,95) | Derived from StatsSA MACOD 2023 anchor (replaces v1 expert-elicited 0.45)",detect.status_quo
-d_status_quo_lo,0.039,"d_status_quo lower bound = 1013*0.10/2620 | dist=fixed(,) | Derived",detect.status_quo
-d_status_quo_hi,0.058,"d_status_quo upper bound = 1013*0.15/2620 | dist=fixed(,) | Derived",detect.status_quo
+# === DETECTION PROBABILITIES BY OPTION (per-case scale,anchored to StatsSA mid-burden 8,"112) ===,,",
+d_status_quo,0.125,"NMC-only per-case detection probability = n_nmc_annual * cfr_headline_mid / n_deaths_statssa_macod = 1013*0.125/1014 | dist=beta(12,88) | Derived from StatsSA MACOD 2022 pesticide-specific anchor (replaces v1 expert-elicited 0.45)",detect.status_quo
+d_status_quo_lo,0.100,"d_status_quo lower bound = 1013*0.10/1014 | dist=fixed(,) | Derived",detect.status_quo
+d_status_quo_hi,0.150,"d_status_quo upper bound = 1013*0.15/1014 | dist=fixed(,) | Derived",detect.status_quo
 d_status_quo_v1_hotspot,0.45,"LEGACY/DEPRECATED: v1 expert-elicited hotspot-cluster detection probability (binomial-cluster argument, not per-case). Retained for analysis_report_v2.qmd back-compat only — do not use in active policy briefs. | dist=beta(45,55) | Expert elicitation, deprecated",detect.deprecated
 d_option1_NHLS_MOU,0.52,"LEGACY/DEPRECATED v1 hotspot-cluster figure. Do not use in active briefs. | dist=beta(52,48) | Expert elicitation, deprecated",detect.deprecated
 d_option2_DALRRD_data,0.58,"LEGACY/DEPRECATED v1 hotspot-cluster figure. Do not use in active briefs. | dist=beta(58,42) | Expert elicitation, deprecated",detect.deprecated
-d_S2_BChE_autonotify,0.133,"S2 BChE auto-notify per-case detection = (n_nmc_annual + n_nhls_severe_annual)/n_true_burden_from_statssa_mid = (1013+1779)/20960 | dist=beta(13,87) | Derived from StatsSA MACOD 2023 anchor (was d_option3_BChE_autonotify in v3)",detect.S2_BChE
-d_S1_PIH_MVD,0.104,"S1 PIH MVD + dashboard per-case detection = (n_nmc_annual + n_pih_annual)/n_true_burden_from_statssa_mid = (1013+1158)/20960 | dist=beta(10,90) | Derived from StatsSA MACOD 2023 anchor (was d_option4_PIH_quarterly in v3)",detect.S1_PIH_MVD
+d_S2_BChE_autonotify,0.344,"S2 BChE auto-notify per-case detection = (n_nmc_annual + n_nhls_severe_annual)/n_true_burden_from_statssa_mid = (1013+1779)/8112 | dist=beta(34,66) | Derived from StatsSA MACOD 2022 pesticide-specific anchor (was d_option3_BChE_autonotify in v3)",detect.S2_BChE
+d_S1_PIH_MVD,0.268,"S1 PIH MVD + dashboard per-case detection = (n_nmc_annual + n_pih_annual)/n_true_burden_from_statssa_mid = (1013+1158)/8112 | dist=beta(27,73) | Derived from StatsSA MACOD 2022 pesticide-specific anchor (was d_option4_PIH_quarterly in v3)",detect.S1_PIH_MVD
 d_option5_provincial_response,0.74,"LEGACY/DEPRECATED v1 hotspot-cluster figure. Do not use in active briefs. | dist=beta(74,26) | Expert elicitation, deprecated",detect.deprecated
 d_full_package,0.83,"LEGACY/DEPRECATED v1 hotspot-cluster figure. Do not use in active briefs. | dist=beta(83,17) | Expert elicitation, deprecated",detect.deprecated
 # === OPTION COSTS — SETUP & ANNUAL OPERATING (REVISED,ZAR 2025) ===,",",
@@ -122,26 +122,8 @@ c_S2_BChE_autonotify_setup,200000,"S2 BChE auto-notify setup: NHLS LIS HL7 recon
 c_S2_BChE_autonotify_op,55000,"S2 BChE auto-notify operating: middleware hosting + maintenance | dist=gamma(25,2200) | NHLS IT (was c_S3a_BChE_autonotify_op in v3)",costs.S2_BChE
 c_S1_PIH_MVD_setup,40000,"S1 PIH live dashboard + MVD setup: reporting template + data dictionary (one-off) | dist=gamma(25,1600) | PIH admin (was c_S4_PIH_dashboard_setup in v3)",costs.S1_PIH_MVD
 c_S1_PIH_MVD_op,82000,"S1 PIH live dashboard + MVD operating (includes AfriTox agent-name harmonisation for PIH+NMC) | dist=gamma(25,3280) | PIH revised, AfriTox harmonisation (was c_S4_PIH_dashboard_op in v3)",costs.S1_PIH_MVD
-c_surv_MVP_setup,240000,"Surveillance MVP setup = S1 PIH MVD setup (R40k) + S2 BChE auto-notify setup (R200k) | dist=fixed(,) | Sum of c_S1_PIH_MVD_setup + c_S2_BChE_autonotify_setup",costs.MVP
+c_surv_MVP_setup,80000,"Surveillance MVP setup (S0 NHLS-NMC feed + S1 PIH MVD + S2 BChE, IT one-off; S2 BChE HL7 work dominates) | dist=fixed(,) | Sum, S2 BChE setup dominates",costs.MVP
 c_surv_MVP_op,137000,"Surveillance MVP annual operating = S1 PIH MVD (R82k, AfriTox harmonisation) + S2 BChE auto-notify (R55k) = R137k | dist=fixed(,) | Sum",costs.MVP
-# === SENSITIVITY — EVENT-BASED / COMMUNITY SURVEILLANCE (S1b) ===,,,
-# S1b is NOT a current recommendation — it is a sensitivity analysis showing what a,,,
-# more complete event-based or community-based system would cost and achieve.,,,
-# P_detect range (0.25–0.55) is derived from LMIC analogues (EWARN, APSED, IDSR).,,,
-# False-positive rate is high: community reporters flag suspected events without,,,
-# clinical confirmation, generating excess EHP investigation demand.,,,
-d_S1b_event_community_lo,0.25,"S1b event-based community surveillance P_detect lower bound: modest uplift above MVP (0.189); partial provincial coverage | dist=beta(25,75) | LMIC community surveillance analogues (IDSR pilot deployments)",detect.S1b
-d_S1b_event_community_mid,0.40,"S1b P_detect working value (~2× MVP): CHW mobile-reporting network covering ~50% of provinces + structured alert pipeline | dist=beta(40,60) | EWARN/APSED analogues scaled to SA context",detect.S1b
-d_S1b_event_community_hi,0.55,"S1b P_detect upper bound: ambitious full-provincial coverage; contingent on sustained CHW training and QA | dist=beta(55,45) | Optimistic; comparable to WHO-EWARN mature deployment",detect.S1b
-c_S1b_setup_lo,1000000,"S1b setup lower: mobile reporting app + pilot training in 2 provinces (one-off) | dist=gamma(25,40000) | Community surveillance analogues pilot-scale",costs.S1b
-c_S1b_setup_mid,2000000,"S1b setup working value: app development + national CHW training + protocol + data-cleaning infrastructure (one-off) | dist=gamma(25,80000) | LMIC community surveillance analogues national-scale",costs.S1b
-c_S1b_setup_hi,3500000,"S1b setup upper: full 9-province rollout including data warehouse and QA infrastructure (one-off) | dist=gamma(25,140000) | Upper bound",costs.S1b
-c_S1b_op_lo,800000,"S1b annual operating lower: maintained in 2 provinces only (~4 provincial coordinators + platform) | dist=gamma(25,32000) | Partial deployment",costs.S1b
-c_S1b_op_mid,1500000,"S1b annual operating working value: ~8 provincial coordinators (DPSA L8, R120k each) + national analyst + platform hosting + annual CHW refresher | dist=gamma(25,60000) | EWARN/IDSR analogues",costs.S1b
-c_S1b_op_hi,2500000,"S1b annual operating upper: full 9-province deployment with dedicated EHP nodes and enhanced data cleaning | dist=gamma(25,100000) | Full deployment upper",costs.S1b
-p_fp_S1b_lo,0.20,"S1b false positive rate lower: 20% of community alerts not confirmed as pesticide poisoning (well-trained reporters, urban-proximate) | dist=beta(20,80) | Community surveillance analogues high-quality",costs.S1b
-p_fp_S1b_mid,0.35,"S1b false positive rate working value: 35% of community alerts are not confirmed true pesticide cases; benchmark from IDSR roll-outs in SSA | dist=beta(35,65) | LMIC community surveillance consensus",costs.S1b
-p_fp_S1b_hi,0.50,"S1b false positive rate upper: 50% false positives in early phase before training consolidates | dist=beta(50,50) | Early-phase analogue",costs.S1b
 # === COORDINATION OPTIONS — CANONICAL (C-taxonomy) ===,,,
 c_C1_NMC_closure_op,30000,"C1 NMC closure-of-loop field: schema change + EHP training material | dist=gamma(25,1200) | NICD NMC team",costs.coord_C1_C5
 c_C2_referral_form_op,25000,"C2 Structured DALRRD referral form on NMC: form build + DALRRD inbox workflow | dist=gamma(25,1000) | NICD + DALRRD",costs.coord_C1_C5
@@ -160,29 +142,6 @@ frac_terbufos_attributable_mid,0.25,"Terbufos attributable fraction, working val
 frac_terbufos_attributable_hi,0.35,"Terbufos attributable fraction, upper | dist=fixed(,) | Sri Lanka upper end",terb.burden
 n_deaths_terbufos_attributable_mid,375,"= frac_terbufos_attributable_mid × n_deaths_headline = 0.25 × 1500 | dist=fixed(,) | Derived",terb.burden
 frac_T3_burden_retired,0.70,"Fraction of terbufos-attributable burden retired under Option T3 full withdrawal | dist=beta(70,30) | Sri Lanka substitution-incompleteness 60-80%",terb.burden
-# === ALDICARB (Two-Step / street pesticide) — chemical agent phase-out parameters ===,,,
-# Aldicarb is already informally banned but continues to circulate in informal markets.,,,
-# Attributable fractions are literature-derived (sparse SA data); replace with S3 sentinel toxicology data when available.,,,
-frac_aldicarb_attributable_lo,0.05,"Aldicarb attributable fraction of fatal SA pesticide poisonings, lower | dist=fixed(,) | Sparse SA data; informal-market enforcement literature",aldi.burden
-frac_aldicarb_attributable_mid,0.12,"Aldicarb attributable fraction, working value | dist=beta(12,88) | Two-Step enforcement literature + informal-market SA case reports",aldi.burden
-frac_aldicarb_attributable_hi,0.20,"Aldicarb attributable fraction, upper | dist=fixed(,) | Worst-case informal-market scenario pre-enforcement",aldi.burden
-frac_aldicarb_burden_retired,0.85,"Fraction of aldicarb-attributable burden retired under formal enforcement of existing ban | dist=beta(85,15) | Already informally banned; formal enforcement achieves high compliance per Sri Lanka + EU analogues",aldi.burden
-# === DALY / GBD PARAMETERS (GBD 2019 pesticide poisoning; provisional pending StatsSA MACOD age-sex tabulation) ===,,,
-# YLL values use a provisional mean-age-at-death. Replace yll_mean_age_at_death with StatsSA MACOD tabulation when available.,,,
-yll_life_expectancy,72,"Standard life expectancy at birth for YLL calculation (years) | dist=fixed(,) | StatsSA 2023 life tables",daly.gbd
-yll_mean_age_at_death,28,"Mean age at pesticide poisoning death SA (years; PROVISIONAL) | dist=fixed(,) | PROVISIONAL — replace with StatsSA MACOD age-sex distribution when tabulation available",daly.gbd
-yll_per_death_gbd,44,"YLL per death = yll_life_expectancy - yll_mean_age_at_death = 72-28 | dist=fixed(,) | Derived; provisional pending MACOD",daly.gbd
-yld_dw_severe,0.408,"GBD 2019 disability weight: acute severe pesticide poisoning | dist=fixed(,) | GBD 2019 Collaborators, Lancet 2020",daly.gbd
-yld_dw_mild,0.150,"GBD 2019 disability weight: acute mild-moderate pesticide poisoning | dist=fixed(,) | GBD 2019 Collaborators",daly.gbd
-yld_duration_severe,0.082,"Duration of acute severe episode (years) = ~1 month hospitalisation | dist=fixed(,) | Buckley 2021 median LoS",daly.gbd
-yld_duration_mild,0.019,"Duration of acute mild episode (years) = ~1 week recovery | dist=fixed(,) | Clinical consensus",daly.gbd
-yld_per_case_severe,0.033,"YLD per severe case = yld_dw_severe × yld_duration_severe = 0.408×0.082 | dist=fixed(,) | Derived",daly.gbd
-yld_per_case_mild,0.003,"YLD per mild case = yld_dw_mild × yld_duration_mild = 0.150×0.019 | dist=fixed(,) | Derived",daly.gbd
-p_severe_among_detected,0.45,"Proportion of detected cases classified as severe (NHLS BChE severe + NMC hospitalised share of all detected) | dist=beta(45,55) | NMC + NHLS burden split 2023",daly.gbd
-icer_per_daly_gdp,110000,"ICER threshold = 1× GDP per capita per DALY averted (R/DALY) | dist=fixed(,) | SA GDP per capita 2025; WHO cost-effectiveness threshold convention",daly.gbd
-c_mort_daly_icer,4840000,"Per-death cost under ICER-DALY approach = yll_per_death_gbd × icer_per_daly_gdp = 44×110000 | dist=fixed(,) | Derived",daly.gbd
-c_morb_daly_icer_severe,3630,"Per-severe-case cost under ICER-DALY approach = yld_per_case_severe × icer_per_daly_gdp = 0.033×110000 | dist=fixed(,) | Derived",daly.gbd
-c_morb_daly_icer_mild,330,"Per-mild-case cost under ICER-DALY approach = yld_per_case_mild × icer_per_daly_gdp = 0.003×110000 | dist=fixed(,) | Derived",daly.gbd
 n_deaths_averted_T3_lo,200,"Deaths averted/yr under Option T3, lower bound | dist=fixed(,) | = 0.20 × 0.60 × 1500 × adj",terb.outcomes
 n_deaths_averted_T3_hi,400,"Deaths averted/yr under Option T3, upper bound | dist=fixed(,) | = 0.35 × 0.80 × 1500 × adj",terb.outcomes
 n_deaths_averted_T2_lo,80,"Deaths averted/yr under Option T2, lower bound | dist=fixed(,) | Partial informal-market coverage",terb.outcomes
@@ -193,30 +152,13 @@ c_T2_RUP_enforcement_hi,3000000,"Option T2 enforcement, upper | dist=fixed(,) | 
 yield_impact_terbufos_withdrawal_mid,0.03,"SA maize yield impact under T3 full withdrawal, working value (Bt traits cover stalk borer use case) | dist=beta(3,97) | EU 2009 no documented collapse + SA Bt penetration ~85%",terb.costs
 yield_impact_terbufos_withdrawal_hi,0.07,"Yield impact upper sensitivity | dist=fixed(,) | Smallholder non-Bt maize exposure",terb.costs
 leverage_ratio_terbufos_T2,500,"Ratio of household mortality cost retired per rand of T2 regulatory spend | dist=fixed(,) | Lower bound, 200 deaths × R1.5M / R2M",terb.costs
-# === TERBUFOS PERSONAL DECISION TREE (Amua-style per-individual view) ===,,,
-# These parameters mirror the Amua tree drafted by the project team. They describe outcomes for a single individual over one year, rather than the population aggregate above. Used by R/terbufos_tree_personal.r and §6b of posts/terbufos_policy.qmd.,,,
-sa_population_ref,63100000,"SA population reference for converting per-individual expected values to annual national totals | dist=fixed(,) | StatsSA mid-year estimate 2025 (63,100,000)",terb.personal_tree
-p_p_exposed_sq,0.000332,"Status-quo annual probability an SA individual experiences a clinically-recognised pesticide poisoning = n_true_burden_from_statssa_mid / sa_population_ref = 20960/63100000 | dist=fixed(,) | Derived",terb.personal_tree
-p_p_exposed_ban,0.000332,"Annual poisoning probability under ban (held equal to SQ — the ban changes the AGENT mix, not the overall poisoning rate, until substitute-product behaviour is observed) | dist=fixed(,) | Working assumption",terb.personal_tree
-p_terbufos_among_poisoned_sq,0.5,"Share of poisoning events involving terbufos under status quo | dist=beta(50,50) | Davies 2023 paediatric dominance generalised; Amua draft",terb.personal_tree
-p_terbufos_among_poisoned_ban,0.1,"Residual share of poisoning events still involving terbufos after ban (informal stockpile + cross-border leakage) | dist=beta(10,90) | Sri Lanka post-ban residual; Amua draft",terb.personal_tree
-p_die_given_terbufos,0.125,"Case-fatality given exposure to terbufos | dist=beta(125,875) | NHLS severe-BChE cohort, Class Ia OP literature",terb.personal_tree
-p_hosp_given_terbufos,0.275,"Probability of hospitalisation (non-fatal) given exposure to terbufos | dist=beta(275,725) | Buckley 2021",terb.personal_tree
-p_asymp_given_terbufos,0.600,"Probability of asymptomatic / outpatient course given exposure to terbufos | dist=fixed(,) | Complement (1 - die - hosp)",terb.personal_tree
-p_die_given_other,0.010,"Case-fatality given exposure to non-terbufos pesticide | dist=beta(10,990) | Lower-toxicity substitutes",terb.personal_tree
-p_hosp_given_other,0.090,"Probability of hospitalisation given exposure to non-terbufos pesticide | dist=beta(90,910) | Lower-toxicity substitutes",terb.personal_tree
-p_asymp_given_other,0.900,"Probability of asymptomatic course given non-terbufos pesticide | dist=fixed(,) | Complement",terb.personal_tree
-p_background_mortality_personal,0,"Background mortality stub on the not-poisoned branch. Set to 0 so the tree isolates the pesticide-attributable signal; flip to a non-zero value (e.g. 0.01) only if you want all-cause mortality to appear in the rollup. | dist=fixed(,) | Design choice",terb.personal_tree
-c_personal_death,1500000,"Per-individual cost of a fatal outcome (human-capital, alias for c_mortality_human_capital) | dist=fixed(,) | = c_mortality_human_capital",terb.personal_tree
-c_personal_hospitalisation,80000,"Per-individual cost of a non-fatal hospitalisation (alias for c_morbidity_severe_NMC) | dist=fixed(,) | = c_morbidity_severe_NMC",terb.personal_tree
-c_personal_asymptomatic,500,"Per-individual cost of an asymptomatic / PIH-managed episode (alias for c_pih_call_only) | dist=fixed(,) | = c_pih_call_only",terb.personal_tree
 # === DECISION-TREE NODE PROBABILITIES — CANONICAL (consumed by brief mermaid trees) ===,,,
 p_death,0.13,"Case-fatality among suspected pesticide-poisoning cases | dist=beta(13,87) | NHLS BChE severe cohort",shared.outcomes
 p_severe,0.27,"Proportion of survivors with severe morbidity (OPIDN / intermediate syndrome trajectory) | dist=beta(27,73) | OP literature",shared.outcomes
 p_recover,0.60,"Proportion of survivors with full recovery | dist=beta(60,40) | Complement = 1 - p_severe (rounded)",shared.outcomes
 rho_secondary,3.0,"Secondary cases per index case from a single uncontrolled source (cluster multiplier) | dist=gamma(9,0.33) | NICD outbreak debriefs",shared.outcomes
-d_surveillance_mvp,0.189,"Per-case detection under Surveillance MVP (S1 PIH MVD + S2 BChE auto-notify) = (n_nmc_annual + n_nhls_severe_annual + n_pih_annual)/n_true_burden_from_statssa_mid = (1013+1779+1158)/20960 | dist=beta(19,81) | Derived from StatsSA MACOD 2023 anchor",detect.MVP
-d_surveillance_full_S3b,0.189,"DEPRECATED key (S3 is now agent-attribution, not a detection-coverage uplift) — retained for back-compat as alias to d_surveillance_mvp. S3 sentinel toxicology identifies the proportion of chemical agents in severely-poisoned live patients; it informs product-banning (terbufos brief) rather than coverage. | dist=beta(19,81) | Derived (alias)",detect.deprecated
+d_surveillance_mvp,0.487,"Per-case detection under Surveillance MVP (S1 PIH MVD + S2 BChE auto-notify) = (n_nmc_annual + n_nhls_severe_annual + n_pih_annual)/n_true_burden_from_statssa_mid = (1013+1779+1158)/8112 | dist=beta(49,51) | Derived from StatsSA MACOD 2022 pesticide-specific anchor",detect.MVP
+d_surveillance_full_S3b,0.487,"DEPRECATED key (S3 is now agent-attribution, not a detection-coverage uplift) — retained for back-compat as alias to d_surveillance_mvp. S3 sentinel toxicology identifies the proportion of chemical agents in severely-poisoned live patients; it informs product-banning (terbufos brief) rather than coverage. | dist=beta(49,51) | Derived (alias)",detect.deprecated
 p_coord_sq_nmc_notified,0.30,"P(case notified on NMC | suspected) under status quo | dist=beta(30,70) | NICD audit",coord.probabilities
 p_coord_sq_sms_reaches_ehp,0.95,"P(SMS reaches EHP | notified) | dist=beta(95,5) | NICD system check",coord.probabilities
 p_coord_sq_ehp_investigates,0.60,"P(EHP investigates | SMS received) | dist=beta(60,40) | EHP survey",coord.probabilities
@@ -236,6 +178,56 @@ c_S3a_BChE_autonotify_setup,200000,"DEPRECATED in v4: use c_S2_BChE_autonotify_s
 c_S3a_BChE_autonotify_op,55000,"DEPRECATED in v4: use c_S2_BChE_autonotify_op | dist=gamma(25,2200) | Alias",costs.deprecated
 c_S4_PIH_dashboard_setup,40000,"DEPRECATED in v4: use c_S1_PIH_MVD_setup | dist=gamma(25,1600) | Alias",costs.deprecated
 c_S4_PIH_dashboard_op,82000,"DEPRECATED in v4: use c_S1_PIH_MVD_op | dist=gamma(25,3280) | Alias",costs.deprecated
+# clinical confirmation, generating excess EHP investigation demand.,,,
+d_S1b_event_community_lo,0.25,"S1b event-based community surveillance P_detect lower bound: modest uplift above MVP (0.189); partial provincial coverage | dist=beta(25,75) | LMIC community surveillance analogues (IDSR pilot deployments)",detect.S1b
+d_S1b_event_community_mid,0.40,"S1b P_detect working value (~2× MVP): CHW mobile-reporting network covering ~50% of provinces + structured alert pipeline | dist=beta(40,60) | EWARN/APSED analogues scaled to SA context",detect.S1b
+d_S1b_event_community_hi,0.55,"S1b P_detect upper bound: ambitious full-provincial coverage; contingent on sustained CHW training and QA | dist=beta(55,45) | Optimistic; comparable to WHO-EWARN mature deployment",detect.S1b
+c_S1b_setup_lo,1000000,"S1b setup lower: mobile reporting app + pilot training in 2 provinces (one-off) | dist=gamma(25,40000) | Community surveillance analogues pilot-scale",costs.S1b
+c_S1b_setup_mid,2000000,"S1b setup working value: app development + national CHW training + protocol + data-cleaning infrastructure (one-off) | dist=gamma(25,80000) | LMIC community surveillance analogues national-scale",costs.S1b
+c_S1b_setup_hi,3500000,"S1b setup upper: full 9-province rollout including data warehouse and QA infrastructure (one-off) | dist=gamma(25,140000) | Upper bound",costs.S1b
+c_S1b_op_lo,800000,"S1b annual operating lower: maintained in 2 provinces only (~4 provincial coordinators + platform) | dist=gamma(25,32000) | Partial deployment",costs.S1b
+c_S1b_op_mid,1500000,"S1b annual operating working value: ~8 provincial coordinators (DPSA L8, R120k each) + national analyst + platform hosting + annual CHW refresher | dist=gamma(25,60000) | EWARN/IDSR analogues",costs.S1b
+c_S1b_op_hi,2500000,"S1b annual operating upper: full 9-province deployment with dedicated EHP nodes and enhanced data cleaning | dist=gamma(25,100000) | Full deployment upper",costs.S1b
+p_fp_S1b_lo,0.20,"S1b false positive rate lower: 20% of community alerts not confirmed as pesticide poisoning (well-trained reporters, urban-proximate) | dist=beta(20,80) | Community surveillance analogues high-quality",costs.S1b
+p_fp_S1b_mid,0.35,"S1b false positive rate working value: 35% of community alerts are not confirmed true pesticide cases; benchmark from IDSR roll-outs in SSA | dist=beta(35,65) | LMIC community surveillance consensus",costs.S1b
+p_fp_S1b_hi,0.50,"S1b false positive rate upper: 50% false positives in early phase before training consolidates | dist=beta(50,50) | Early-phase analogue",costs.S1b
+# Attributable fractions are literature-derived (sparse SA data); replace with S3 sentinel toxicology data when available.,,,
+frac_aldicarb_attributable_lo,0.05,"Aldicarb attributable fraction of fatal SA pesticide poisonings, lower | dist=fixed(,) | Sparse SA data; informal-market enforcement literature",aldi.burden
+frac_aldicarb_attributable_mid,0.12,"Aldicarb attributable fraction, working value | dist=beta(12,88) | Two-Step enforcement literature + informal-market SA case reports",aldi.burden
+frac_aldicarb_attributable_hi,0.20,"Aldicarb attributable fraction, upper | dist=fixed(,) | Worst-case informal-market scenario pre-enforcement",aldi.burden
+frac_aldicarb_burden_retired,0.85,"Fraction of aldicarb-attributable burden retired under formal enforcement of existing ban | dist=beta(85,15) | Already informally banned; formal enforcement achieves high compliance per Sri Lanka + EU analogues",aldi.burden
+# YLL values use a provisional mean-age-at-death. Replace yll_mean_age_at_death with StatsSA MACOD tabulation when available.,,,
+yll_life_expectancy,72,"Standard life expectancy at birth for YLL calculation (years) | dist=fixed(,) | StatsSA 2023 life tables",daly.gbd
+yll_mean_age_at_death,28,"Mean age at pesticide poisoning death SA (years; PROVISIONAL) | dist=fixed(,) | PROVISIONAL — replace with StatsSA MACOD age-sex distribution when tabulation available",daly.gbd
+yll_per_death_gbd,44,"YLL per death = yll_life_expectancy - yll_mean_age_at_death = 72-28 | dist=fixed(,) | Derived; provisional pending MACOD",daly.gbd
+yld_dw_severe,0.408,"GBD 2019 disability weight: acute severe pesticide poisoning | dist=fixed(,) | GBD 2019 Collaborators, Lancet 2020",daly.gbd
+yld_dw_mild,0.150,"GBD 2019 disability weight: acute mild-moderate pesticide poisoning | dist=fixed(,) | GBD 2019 Collaborators",daly.gbd
+yld_duration_severe,0.082,"Duration of acute severe episode (years) = ~1 month hospitalisation | dist=fixed(,) | Buckley 2021 median LoS",daly.gbd
+yld_duration_mild,0.019,"Duration of acute mild episode (years) = ~1 week recovery | dist=fixed(,) | Clinical consensus",daly.gbd
+yld_per_case_severe,0.033,"YLD per severe case = yld_dw_severe × yld_duration_severe = 0.408×0.082 | dist=fixed(,) | Derived",daly.gbd
+yld_per_case_mild,0.003,"YLD per mild case = yld_dw_mild × yld_duration_mild = 0.150×0.019 | dist=fixed(,) | Derived",daly.gbd
+p_severe_among_detected,0.45,"Proportion of detected cases classified as severe (NHLS BChE severe + NMC hospitalised share of all detected) | dist=beta(45,55) | NMC + NHLS burden split 2023",daly.gbd
+icer_per_daly_gdp,110000,"ICER threshold = 1× GDP per capita per DALY averted (R/DALY) | dist=fixed(,) | SA GDP per capita 2025; WHO cost-effectiveness threshold convention",daly.gbd
+c_mort_daly_icer,4840000,"Per-death cost under ICER-DALY approach = yll_per_death_gbd × icer_per_daly_gdp = 44×110000 | dist=fixed(,) | Derived",daly.gbd
+c_morb_daly_icer_severe,3630,"Per-severe-case cost under ICER-DALY approach = yld_per_case_severe × icer_per_daly_gdp = 0.033×110000 | dist=fixed(,) | Derived",daly.gbd
+c_morb_daly_icer_mild,330,"Per-mild-case cost under ICER-DALY approach = yld_per_case_mild × icer_per_daly_gdp = 0.003×110000 | dist=fixed(,) | Derived",daly.gbd
+# These parameters mirror the Amua tree drafted by the project team. They describe outcomes for a single individual over one year, rather than the population aggregate above. Used by R/terbufos_tree_personal.r and §6b of posts/terbufos_policy.qmd.,,,
+sa_population_ref,63100000,"SA population reference for converting per-individual expected values to annual national totals | dist=fixed(,) | StatsSA mid-year estimate 2025 (63,100,000)",terb.personal_tree
+p_p_exposed_sq,0.000332,"Status-quo annual probability an SA individual experiences a clinically-recognised pesticide poisoning = n_true_burden_from_statssa_mid / sa_population_ref = 20960/63100000 | dist=fixed(,) | Derived",terb.personal_tree
+p_p_exposed_ban,0.000332,"Annual poisoning probability under ban (held equal to SQ — the ban changes the AGENT mix, not the overall poisoning rate, until substitute-product behaviour is observed) | dist=fixed(,) | Working assumption",terb.personal_tree
+p_terbufos_among_poisoned_sq,0.5,"Share of poisoning events involving terbufos under status quo | dist=beta(50,50) | Davies 2023 paediatric dominance generalised; Amua draft",terb.personal_tree
+p_terbufos_among_poisoned_ban,0.1,"Residual share of poisoning events still involving terbufos after ban (informal stockpile + cross-border leakage) | dist=beta(10,90) | Sri Lanka post-ban residual; Amua draft",terb.personal_tree
+p_die_given_terbufos,0.125,"Case-fatality given exposure to terbufos | dist=beta(125,875) | NHLS severe-BChE cohort, Class Ia OP literature",terb.personal_tree
+p_hosp_given_terbufos,0.275,"Probability of hospitalisation (non-fatal) given exposure to terbufos | dist=beta(275,725) | Buckley 2021",terb.personal_tree
+p_asymp_given_terbufos,0.600,"Probability of asymptomatic / outpatient course given exposure to terbufos | dist=fixed(,) | Complement (1 - die - hosp)",terb.personal_tree
+p_die_given_other,0.010,"Case-fatality given exposure to non-terbufos pesticide | dist=beta(10,990) | Lower-toxicity substitutes",terb.personal_tree
+p_hosp_given_other,0.090,"Probability of hospitalisation given exposure to non-terbufos pesticide | dist=beta(90,910) | Lower-toxicity substitutes",terb.personal_tree
+p_asymp_given_other,0.900,"Probability of asymptomatic course given non-terbufos pesticide | dist=fixed(,) | Complement",terb.personal_tree
+p_background_mortality_personal,0,"Background mortality stub on the not-poisoned branch. Set to 0 so the tree isolates the pesticide-attributable signal; flip to a non-zero value (e.g. 0.01) only if you want all-cause mortality to appear in the rollup. | dist=fixed(,) | Design choice",terb.personal_tree
+c_personal_death,1500000,"Per-individual cost of a fatal outcome (human-capital, alias for c_mortality_human_capital) | dist=fixed(,) | = c_mortality_human_capital",terb.personal_tree
+c_personal_hospitalisation,80000,"Per-individual cost of a non-fatal hospitalisation (alias for c_morbidity_severe_NMC) | dist=fixed(,) | = c_morbidity_severe_NMC",terb.personal_tree
+c_personal_asymptomatic,500,"Per-individual cost of an asymptomatic / PIH-managed episode (alias for c_pih_call_only) | dist=fixed(,) | = c_pih_call_only",terb.personal_tree
+# === DEPRECATED ALIASES — v3 S-taxonomy names (use v4 names for all new work) ===,,,
 c_per_ehp_investigation_lo,2500,"EHP environmental investigation cost per alert (lower): travel + site visit + interviews + write-up | dist=gamma(25,100) | NDoH EHP unit costing",costs.coord_per_action
 c_per_ehp_investigation_mid,4000,"EHP environmental investigation cost per alert (working): travel + site visit + sampling + interviews + write-up + supervisor review | dist=gamma(25,160) | NDoH EHP unit costing",costs.coord_per_action
 c_per_ehp_investigation_hi,7000,"EHP environmental investigation cost per alert (upper): remote/rural site with overnight, full sampling panel, follow-up visit | dist=gamma(25,280) | NDoH EHP unit costing",costs.coord_per_action

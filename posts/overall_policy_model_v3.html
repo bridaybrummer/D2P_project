@@ -334,7 +334,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">July 17, 2026</p>
+      <p class="date-modified">July 27, 2026</p>
     </div>
   </div>
     
@@ -359,7 +359,7 @@ window.Quarto = {
 <div aria-describedby="fig-system-rca-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
 <pre class="mermaid mermaid-js" data-label="fig-system-rca">flowchart LR
-    HARM[Pesticide-poisoning&lt;br/&gt;harm in SA&lt;br/&gt;~2,620 deaths/yr&lt;br/&gt;~R2.34B/yr burden]:::harm
+    HARM[Pesticide-poisoning&lt;br/&gt;harm in SA&lt;br/&gt;~1,014 deaths/yr&lt;br/&gt;~R1.61B/yr burden]:::harm
 
     %% ===== Four root-cause domains =====
     HARM --&gt; SURV[Surveillance gaps]:::dom
@@ -522,7 +522,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># ── Burden anchors ────────────────────────────────────────────────────────────</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>N_deaths  <span class="ot">&lt;-</span> <span class="fu">pick</span>(<span class="st">"n_deaths_headline"</span>)               <span class="co"># 2,620 deaths/yr (StatsSA MACOD)</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>N_deaths  <span class="ot">&lt;-</span> <span class="fu">pick</span>(<span class="st">"n_deaths_headline"</span>)               <span class="co"># 1,014 deaths/yr (StatsSA MACOD, pesticide-specific)</span></span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>c_morb    <span class="ot">&lt;-</span> <span class="fu">pick</span>(<span class="st">"c_morbidity_headline"</span>)            <span class="co"># R12,000 per morbidity case (HC)</span></span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>c_mort_HC <span class="ot">&lt;-</span> <span class="fu">pick</span>(<span class="st">"c_mortality_human_capital"</span>)       <span class="co"># R1,500,000 per death (human-capital)</span></span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
@@ -535,10 +535,10 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="co"># true cases helper — single source of truth for the denominator</span></span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>N_true_of <span class="ot">&lt;-</span> <span class="cf">function</span>(cfr) N_deaths <span class="sc">/</span> cfr</span>
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>N_true_mid <span class="ot">&lt;-</span> <span class="fu">N_true_of</span>(cfr_mid)                     <span class="co"># 20,960 cases/yr at mid CFR</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>N_true_mid <span class="ot">&lt;-</span> <span class="fu">N_true_of</span>(cfr_mid)                     <span class="co"># 8,112 cases/yr at mid CFR</span></span>
 <span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="co"># ── Detection probabilities ───────────────────────────────────────────────────</span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>d_SQ      <span class="ot">&lt;-</span> <span class="fu">pick</span>(<span class="st">"d_status_quo"</span>)                    <span class="co"># 0.048 (NMC-only baseline)</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>d_SQ      <span class="ot">&lt;-</span> <span class="fu">pick</span>(<span class="st">"d_status_quo"</span>)                    <span class="co"># 0.125 (NMC-only baseline)</span></span>
 <span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>d_MVP     <span class="ot">&lt;-</span> <span class="fu">pick</span>(<span class="st">"d_surveillance_mvp"</span>)              <span class="co"># 0.189 (admin ceiling = S1 + S2)</span></span>
 <span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>d_S1b_lo  <span class="ot">&lt;-</span> <span class="fu">pick</span>(<span class="st">"d_S1b_event_community_lo"</span>)        <span class="co"># 0.25</span></span>
 <span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>d_S1b_mid <span class="ot">&lt;-</span> <span class="fu">pick</span>(<span class="st">"d_S1b_event_community_mid"</span>)       <span class="co"># 0.40</span></span>
@@ -598,23 +598,23 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
 <h3 data-number="1.1.1" class="anchored" data-anchor-id="quick-reference-monetary-equivalents"><span class="header-section-number">1.1.1</span> Quick reference: monetary equivalents</h3>
 <div class="cell">
 <div class="cell-output-display">
-<div id="pxzcgfxefj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#pxzcgfxefj table {
+<div id="rdhgceobop" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#rdhgceobop table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#pxzcgfxefj thead, #pxzcgfxefj tbody, #pxzcgfxefj tfoot, #pxzcgfxefj tr, #pxzcgfxefj td, #pxzcgfxefj th {
+#rdhgceobop thead, #rdhgceobop tbody, #rdhgceobop tfoot, #rdhgceobop tr, #rdhgceobop td, #rdhgceobop th {
   border-style: none;
 }
 
-#pxzcgfxefj p {
+#rdhgceobop p {
   margin: 0;
   padding: 0;
 }
 
-#pxzcgfxefj .gt_table {
+#rdhgceobop .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -640,12 +640,12 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-left-color: #D3D3D3;
 }
 
-#pxzcgfxefj .gt_caption {
+#rdhgceobop .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#pxzcgfxefj .gt_title {
+#rdhgceobop .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -657,7 +657,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-bottom-width: 0;
 }
 
-#pxzcgfxefj .gt_subtitle {
+#rdhgceobop .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -669,7 +669,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-top-width: 0;
 }
 
-#pxzcgfxefj .gt_heading {
+#rdhgceobop .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -681,13 +681,13 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-right-color: #D3D3D3;
 }
 
-#pxzcgfxefj .gt_bottom_border {
+#rdhgceobop .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#pxzcgfxefj .gt_col_headings {
+#rdhgceobop .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -702,7 +702,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-right-color: #D3D3D3;
 }
 
-#pxzcgfxefj .gt_col_heading {
+#rdhgceobop .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -722,7 +722,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   overflow-x: hidden;
 }
 
-#pxzcgfxefj .gt_column_spanner_outer {
+#rdhgceobop .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -734,15 +734,15 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 4px;
 }
 
-#pxzcgfxefj .gt_column_spanner_outer:first-child {
+#rdhgceobop .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#pxzcgfxefj .gt_column_spanner_outer:last-child {
+#rdhgceobop .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#pxzcgfxefj .gt_column_spanner {
+#rdhgceobop .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -754,11 +754,11 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   width: 100%;
 }
 
-#pxzcgfxefj .gt_spanner_row {
+#rdhgceobop .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#pxzcgfxefj .gt_group_heading {
+#rdhgceobop .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -784,7 +784,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   text-align: left;
 }
 
-#pxzcgfxefj .gt_empty_group_heading {
+#rdhgceobop .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -799,15 +799,15 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   vertical-align: middle;
 }
 
-#pxzcgfxefj .gt_from_md > :first-child {
+#rdhgceobop .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#pxzcgfxefj .gt_from_md > :last-child {
+#rdhgceobop .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#pxzcgfxefj .gt_row {
+#rdhgceobop .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -826,7 +826,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   overflow-x: hidden;
 }
 
-#pxzcgfxefj .gt_stub {
+#rdhgceobop .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -839,7 +839,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#pxzcgfxefj .gt_stub_row_group {
+#rdhgceobop .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -853,15 +853,15 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   vertical-align: top;
 }
 
-#pxzcgfxefj .gt_row_group_first td {
+#rdhgceobop .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#pxzcgfxefj .gt_row_group_first th {
+#rdhgceobop .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#pxzcgfxefj .gt_summary_row {
+#rdhgceobop .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -871,16 +871,16 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#pxzcgfxefj .gt_first_summary_row {
+#rdhgceobop .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#pxzcgfxefj .gt_first_summary_row.thick {
+#rdhgceobop .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#pxzcgfxefj .gt_last_summary_row {
+#rdhgceobop .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -890,7 +890,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-bottom-color: #D3D3D3;
 }
 
-#pxzcgfxefj .gt_grand_summary_row {
+#rdhgceobop .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -900,7 +900,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#pxzcgfxefj .gt_first_grand_summary_row {
+#rdhgceobop .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -910,7 +910,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-top-color: #D3D3D3;
 }
 
-#pxzcgfxefj .gt_last_grand_summary_row_top {
+#rdhgceobop .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -920,11 +920,11 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-bottom-color: #D3D3D3;
 }
 
-#pxzcgfxefj .gt_striped {
+#rdhgceobop .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#pxzcgfxefj .gt_table_body {
+#rdhgceobop .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -933,7 +933,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-bottom-color: #D3D3D3;
 }
 
-#pxzcgfxefj .gt_footnotes {
+#rdhgceobop .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -947,7 +947,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-right-color: #D3D3D3;
 }
 
-#pxzcgfxefj .gt_footnote {
+#rdhgceobop .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -956,7 +956,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#pxzcgfxefj .gt_sourcenotes {
+#rdhgceobop .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -970,7 +970,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-right-color: #D3D3D3;
 }
 
-#pxzcgfxefj .gt_sourcenote {
+#rdhgceobop .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -978,72 +978,72 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#pxzcgfxefj .gt_left {
+#rdhgceobop .gt_left {
   text-align: left;
 }
 
-#pxzcgfxefj .gt_center {
+#rdhgceobop .gt_center {
   text-align: center;
 }
 
-#pxzcgfxefj .gt_right {
+#rdhgceobop .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#pxzcgfxefj .gt_font_normal {
+#rdhgceobop .gt_font_normal {
   font-weight: normal;
 }
 
-#pxzcgfxefj .gt_font_bold {
+#rdhgceobop .gt_font_bold {
   font-weight: bold;
 }
 
-#pxzcgfxefj .gt_font_italic {
+#rdhgceobop .gt_font_italic {
   font-style: italic;
 }
 
-#pxzcgfxefj .gt_super {
+#rdhgceobop .gt_super {
   font-size: 65%;
 }
 
-#pxzcgfxefj .gt_footnote_marks {
+#rdhgceobop .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#pxzcgfxefj .gt_asterisk {
+#rdhgceobop .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#pxzcgfxefj .gt_indent_1 {
+#rdhgceobop .gt_indent_1 {
   text-indent: 5px;
 }
 
-#pxzcgfxefj .gt_indent_2 {
+#rdhgceobop .gt_indent_2 {
   text-indent: 10px;
 }
 
-#pxzcgfxefj .gt_indent_3 {
+#rdhgceobop .gt_indent_3 {
   text-indent: 15px;
 }
 
-#pxzcgfxefj .gt_indent_4 {
+#rdhgceobop .gt_indent_4 {
   text-indent: 20px;
 }
 
-#pxzcgfxefj .gt_indent_5 {
+#rdhgceobop .gt_indent_5 {
   text-indent: 25px;
 }
 
-#pxzcgfxefj .katex-display {
+#rdhgceobop .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#pxzcgfxefj div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#rdhgceobop div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1195,28 +1195,28 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
 </section>
 <section id="scenario-a-ceiling-administrative-surveillance-perfect-coordination-no-ban" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="scenario-a-ceiling-administrative-surveillance-perfect-coordination-no-ban"><span class="header-section-number">1.3</span> Scenario A — Ceiling administrative surveillance + perfect coordination, no ban</h2>
-<p><strong>Policy logic.</strong> Get to the <em>administrative ceiling</em> (MVP detection = 18.9%) using only the existing NHLS/PIH feeds, then close the coordination loop <strong>perfectly</strong> so every detected case becomes a hotspot investigation that surfaces additional cluster members. <strong>No chemical ban</strong>. This is the cheapest credible policy bundle and answers: <em>“how much can we save without touching DALRRD’s product register?”</em></p>
+<p><strong>Policy logic.</strong> Get to the <em>administrative ceiling</em> (MVP detection = 48.7%) using only the existing NHLS/PIH feeds, then close the coordination loop <strong>perfectly</strong> so every detected case becomes a hotspot investigation that surfaces additional cluster members. <strong>No chemical ban</strong>. This is the cheapest credible policy bundle and answers: <em>“how much can we save without touching DALRRD’s product register?”</em></p>
 <section id="scenario-a-cba-human-capital" class="level3" data-number="1.3.1">
 <h3 data-number="1.3.1" class="anchored" data-anchor-id="scenario-a-cba-human-capital"><span class="header-section-number">1.3.1</span> Scenario A — CBA (human-capital)</h3>
 <div class="cell">
 <div class="cell-output-display">
-<div id="lmpkgiuvzo" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#lmpkgiuvzo table {
+<div id="fqmpdyiipq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#fqmpdyiipq table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#lmpkgiuvzo thead, #lmpkgiuvzo tbody, #lmpkgiuvzo tfoot, #lmpkgiuvzo tr, #lmpkgiuvzo td, #lmpkgiuvzo th {
+#fqmpdyiipq thead, #fqmpdyiipq tbody, #fqmpdyiipq tfoot, #fqmpdyiipq tr, #fqmpdyiipq td, #fqmpdyiipq th {
   border-style: none;
 }
 
-#lmpkgiuvzo p {
+#fqmpdyiipq p {
   margin: 0;
   padding: 0;
 }
 
-#lmpkgiuvzo .gt_table {
+#fqmpdyiipq .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1242,12 +1242,12 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-left-color: #D3D3D3;
 }
 
-#lmpkgiuvzo .gt_caption {
+#fqmpdyiipq .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#lmpkgiuvzo .gt_title {
+#fqmpdyiipq .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1259,7 +1259,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-bottom-width: 0;
 }
 
-#lmpkgiuvzo .gt_subtitle {
+#fqmpdyiipq .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1271,7 +1271,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-top-width: 0;
 }
 
-#lmpkgiuvzo .gt_heading {
+#fqmpdyiipq .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1283,13 +1283,13 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-right-color: #D3D3D3;
 }
 
-#lmpkgiuvzo .gt_bottom_border {
+#fqmpdyiipq .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#lmpkgiuvzo .gt_col_headings {
+#fqmpdyiipq .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1304,7 +1304,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-right-color: #D3D3D3;
 }
 
-#lmpkgiuvzo .gt_col_heading {
+#fqmpdyiipq .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1324,7 +1324,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   overflow-x: hidden;
 }
 
-#lmpkgiuvzo .gt_column_spanner_outer {
+#fqmpdyiipq .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1336,15 +1336,15 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 4px;
 }
 
-#lmpkgiuvzo .gt_column_spanner_outer:first-child {
+#fqmpdyiipq .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#lmpkgiuvzo .gt_column_spanner_outer:last-child {
+#fqmpdyiipq .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#lmpkgiuvzo .gt_column_spanner {
+#fqmpdyiipq .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1356,11 +1356,11 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   width: 100%;
 }
 
-#lmpkgiuvzo .gt_spanner_row {
+#fqmpdyiipq .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#lmpkgiuvzo .gt_group_heading {
+#fqmpdyiipq .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1386,7 +1386,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   text-align: left;
 }
 
-#lmpkgiuvzo .gt_empty_group_heading {
+#fqmpdyiipq .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1401,15 +1401,15 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   vertical-align: middle;
 }
 
-#lmpkgiuvzo .gt_from_md > :first-child {
+#fqmpdyiipq .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#lmpkgiuvzo .gt_from_md > :last-child {
+#fqmpdyiipq .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#lmpkgiuvzo .gt_row {
+#fqmpdyiipq .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1428,7 +1428,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   overflow-x: hidden;
 }
 
-#lmpkgiuvzo .gt_stub {
+#fqmpdyiipq .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1441,7 +1441,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#lmpkgiuvzo .gt_stub_row_group {
+#fqmpdyiipq .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1455,15 +1455,15 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   vertical-align: top;
 }
 
-#lmpkgiuvzo .gt_row_group_first td {
+#fqmpdyiipq .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#lmpkgiuvzo .gt_row_group_first th {
+#fqmpdyiipq .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#lmpkgiuvzo .gt_summary_row {
+#fqmpdyiipq .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1473,16 +1473,16 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#lmpkgiuvzo .gt_first_summary_row {
+#fqmpdyiipq .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#lmpkgiuvzo .gt_first_summary_row.thick {
+#fqmpdyiipq .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#lmpkgiuvzo .gt_last_summary_row {
+#fqmpdyiipq .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1492,7 +1492,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-bottom-color: #D3D3D3;
 }
 
-#lmpkgiuvzo .gt_grand_summary_row {
+#fqmpdyiipq .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1502,7 +1502,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#lmpkgiuvzo .gt_first_grand_summary_row {
+#fqmpdyiipq .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1512,7 +1512,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-top-color: #D3D3D3;
 }
 
-#lmpkgiuvzo .gt_last_grand_summary_row_top {
+#fqmpdyiipq .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1522,11 +1522,11 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-bottom-color: #D3D3D3;
 }
 
-#lmpkgiuvzo .gt_striped {
+#fqmpdyiipq .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#lmpkgiuvzo .gt_table_body {
+#fqmpdyiipq .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1535,7 +1535,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-bottom-color: #D3D3D3;
 }
 
-#lmpkgiuvzo .gt_footnotes {
+#fqmpdyiipq .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1549,7 +1549,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-right-color: #D3D3D3;
 }
 
-#lmpkgiuvzo .gt_footnote {
+#fqmpdyiipq .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1558,7 +1558,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#lmpkgiuvzo .gt_sourcenotes {
+#fqmpdyiipq .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1572,7 +1572,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-right-color: #D3D3D3;
 }
 
-#lmpkgiuvzo .gt_sourcenote {
+#fqmpdyiipq .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1580,72 +1580,72 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#lmpkgiuvzo .gt_left {
+#fqmpdyiipq .gt_left {
   text-align: left;
 }
 
-#lmpkgiuvzo .gt_center {
+#fqmpdyiipq .gt_center {
   text-align: center;
 }
 
-#lmpkgiuvzo .gt_right {
+#fqmpdyiipq .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#lmpkgiuvzo .gt_font_normal {
+#fqmpdyiipq .gt_font_normal {
   font-weight: normal;
 }
 
-#lmpkgiuvzo .gt_font_bold {
+#fqmpdyiipq .gt_font_bold {
   font-weight: bold;
 }
 
-#lmpkgiuvzo .gt_font_italic {
+#fqmpdyiipq .gt_font_italic {
   font-style: italic;
 }
 
-#lmpkgiuvzo .gt_super {
+#fqmpdyiipq .gt_super {
   font-size: 65%;
 }
 
-#lmpkgiuvzo .gt_footnote_marks {
+#fqmpdyiipq .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#lmpkgiuvzo .gt_asterisk {
+#fqmpdyiipq .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#lmpkgiuvzo .gt_indent_1 {
+#fqmpdyiipq .gt_indent_1 {
   text-indent: 5px;
 }
 
-#lmpkgiuvzo .gt_indent_2 {
+#fqmpdyiipq .gt_indent_2 {
   text-indent: 10px;
 }
 
-#lmpkgiuvzo .gt_indent_3 {
+#fqmpdyiipq .gt_indent_3 {
   text-indent: 15px;
 }
 
-#lmpkgiuvzo .gt_indent_4 {
+#fqmpdyiipq .gt_indent_4 {
   text-indent: 20px;
 }
 
-#lmpkgiuvzo .gt_indent_5 {
+#fqmpdyiipq .gt_indent_5 {
   text-indent: 25px;
 }
 
-#lmpkgiuvzo .katex-display {
+#fqmpdyiipq .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#lmpkgiuvzo div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#fqmpdyiipq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1663,35 +1663,35 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
 <tbody class="gt_table_body">
 <tr class="odd">
 <td class="gt_row gt_left" headers="Item">Total spend (R/yr)</td>
-<td class="gt_row gt_right" headers="Value">22,742,736</td>
+<td class="gt_row gt_right" headers="Value">22,599,734</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Item">Deaths averted (n/yr)</td>
-<td class="gt_row gt_right" headers="Value">1,603</td>
+<td class="gt_row gt_right" headers="Value">1,014</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Item">Morbidity cases averted (n/yr)</td>
-<td class="gt_row gt_right" headers="Value">10,344</td>
+<td class="gt_row gt_right" headers="Value">8,112</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Item">Morbidity costs averted (R/yr)</td>
-<td class="gt_row gt_right" headers="Value">124,125,120</td>
+<td class="gt_row gt_right" headers="Value">97,344,000</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Item">YLL costs averted (R/yr)</td>
-<td class="gt_row gt_right" headers="Value">2,405,227,500</td>
+<td class="gt_row gt_right" headers="Value">1,521,000,000</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Item">Total benefit (R/yr)</td>
-<td class="gt_row gt_right" headers="Value">2,529,352,620</td>
+<td class="gt_row gt_right" headers="Value">1,618,344,000</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Item">NMB (R/yr)</td>
-<td class="gt_row gt_right" headers="Value">2,506,609,884</td>
+<td class="gt_row gt_right" headers="Value">1,595,744,266</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Item">R per death averted</td>
-<td class="gt_row gt_right" headers="Value">14,183</td>
+<td class="gt_row gt_right" headers="Value">22,288</td>
 </tr>
 </tbody>
 </table>
@@ -1704,23 +1704,23 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
 <h3 data-number="1.3.2" class="anchored" data-anchor-id="scenario-a-cua-daly-icer"><span class="header-section-number">1.3.2</span> Scenario A — CUA (DALY × ICER)</h3>
 <div class="cell">
 <div class="cell-output-display">
-<div id="lglfbonalr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#lglfbonalr table {
+<div id="hplhznwnoh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#hplhznwnoh table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#lglfbonalr thead, #lglfbonalr tbody, #lglfbonalr tfoot, #lglfbonalr tr, #lglfbonalr td, #lglfbonalr th {
+#hplhznwnoh thead, #hplhznwnoh tbody, #hplhznwnoh tfoot, #hplhznwnoh tr, #hplhznwnoh td, #hplhznwnoh th {
   border-style: none;
 }
 
-#lglfbonalr p {
+#hplhznwnoh p {
   margin: 0;
   padding: 0;
 }
 
-#lglfbonalr .gt_table {
+#hplhznwnoh .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1746,12 +1746,12 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-left-color: #D3D3D3;
 }
 
-#lglfbonalr .gt_caption {
+#hplhznwnoh .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#lglfbonalr .gt_title {
+#hplhznwnoh .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1763,7 +1763,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-bottom-width: 0;
 }
 
-#lglfbonalr .gt_subtitle {
+#hplhznwnoh .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1775,7 +1775,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-top-width: 0;
 }
 
-#lglfbonalr .gt_heading {
+#hplhznwnoh .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1787,13 +1787,13 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-right-color: #D3D3D3;
 }
 
-#lglfbonalr .gt_bottom_border {
+#hplhznwnoh .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#lglfbonalr .gt_col_headings {
+#hplhznwnoh .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1808,7 +1808,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-right-color: #D3D3D3;
 }
 
-#lglfbonalr .gt_col_heading {
+#hplhznwnoh .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1828,7 +1828,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   overflow-x: hidden;
 }
 
-#lglfbonalr .gt_column_spanner_outer {
+#hplhznwnoh .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1840,15 +1840,15 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 4px;
 }
 
-#lglfbonalr .gt_column_spanner_outer:first-child {
+#hplhznwnoh .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#lglfbonalr .gt_column_spanner_outer:last-child {
+#hplhznwnoh .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#lglfbonalr .gt_column_spanner {
+#hplhznwnoh .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1860,11 +1860,11 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   width: 100%;
 }
 
-#lglfbonalr .gt_spanner_row {
+#hplhznwnoh .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#lglfbonalr .gt_group_heading {
+#hplhznwnoh .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1890,7 +1890,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   text-align: left;
 }
 
-#lglfbonalr .gt_empty_group_heading {
+#hplhznwnoh .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1905,15 +1905,15 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   vertical-align: middle;
 }
 
-#lglfbonalr .gt_from_md > :first-child {
+#hplhznwnoh .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#lglfbonalr .gt_from_md > :last-child {
+#hplhznwnoh .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#lglfbonalr .gt_row {
+#hplhznwnoh .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1932,7 +1932,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   overflow-x: hidden;
 }
 
-#lglfbonalr .gt_stub {
+#hplhznwnoh .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1945,7 +1945,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#lglfbonalr .gt_stub_row_group {
+#hplhznwnoh .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1959,15 +1959,15 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   vertical-align: top;
 }
 
-#lglfbonalr .gt_row_group_first td {
+#hplhznwnoh .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#lglfbonalr .gt_row_group_first th {
+#hplhznwnoh .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#lglfbonalr .gt_summary_row {
+#hplhznwnoh .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1977,16 +1977,16 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#lglfbonalr .gt_first_summary_row {
+#hplhznwnoh .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#lglfbonalr .gt_first_summary_row.thick {
+#hplhznwnoh .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#lglfbonalr .gt_last_summary_row {
+#hplhznwnoh .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1996,7 +1996,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-bottom-color: #D3D3D3;
 }
 
-#lglfbonalr .gt_grand_summary_row {
+#hplhznwnoh .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2006,7 +2006,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#lglfbonalr .gt_first_grand_summary_row {
+#hplhznwnoh .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2016,7 +2016,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-top-color: #D3D3D3;
 }
 
-#lglfbonalr .gt_last_grand_summary_row_top {
+#hplhznwnoh .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2026,11 +2026,11 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-bottom-color: #D3D3D3;
 }
 
-#lglfbonalr .gt_striped {
+#hplhznwnoh .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#lglfbonalr .gt_table_body {
+#hplhznwnoh .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2039,7 +2039,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-bottom-color: #D3D3D3;
 }
 
-#lglfbonalr .gt_footnotes {
+#hplhznwnoh .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2053,7 +2053,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-right-color: #D3D3D3;
 }
 
-#lglfbonalr .gt_footnote {
+#hplhznwnoh .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2062,7 +2062,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#lglfbonalr .gt_sourcenotes {
+#hplhznwnoh .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2076,7 +2076,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-right-color: #D3D3D3;
 }
 
-#lglfbonalr .gt_sourcenote {
+#hplhznwnoh .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2084,72 +2084,72 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#lglfbonalr .gt_left {
+#hplhznwnoh .gt_left {
   text-align: left;
 }
 
-#lglfbonalr .gt_center {
+#hplhznwnoh .gt_center {
   text-align: center;
 }
 
-#lglfbonalr .gt_right {
+#hplhznwnoh .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#lglfbonalr .gt_font_normal {
+#hplhznwnoh .gt_font_normal {
   font-weight: normal;
 }
 
-#lglfbonalr .gt_font_bold {
+#hplhznwnoh .gt_font_bold {
   font-weight: bold;
 }
 
-#lglfbonalr .gt_font_italic {
+#hplhznwnoh .gt_font_italic {
   font-style: italic;
 }
 
-#lglfbonalr .gt_super {
+#hplhznwnoh .gt_super {
   font-size: 65%;
 }
 
-#lglfbonalr .gt_footnote_marks {
+#hplhznwnoh .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#lglfbonalr .gt_asterisk {
+#hplhznwnoh .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#lglfbonalr .gt_indent_1 {
+#hplhznwnoh .gt_indent_1 {
   text-indent: 5px;
 }
 
-#lglfbonalr .gt_indent_2 {
+#hplhznwnoh .gt_indent_2 {
   text-indent: 10px;
 }
 
-#lglfbonalr .gt_indent_3 {
+#hplhznwnoh .gt_indent_3 {
   text-indent: 15px;
 }
 
-#lglfbonalr .gt_indent_4 {
+#hplhznwnoh .gt_indent_4 {
   text-indent: 20px;
 }
 
-#lglfbonalr .gt_indent_5 {
+#hplhznwnoh .gt_indent_5 {
   text-indent: 25px;
 }
 
-#lglfbonalr .katex-display {
+#hplhznwnoh .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#lglfbonalr div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#hplhznwnoh div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2167,31 +2167,31 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
 <tbody class="gt_table_body">
 <tr class="odd">
 <td class="gt_row gt_left" headers="Item">Total spend (R/yr)</td>
-<td class="gt_row gt_right" headers="Value">22,742,736</td>
+<td class="gt_row gt_right" headers="Value">22,599,734</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Item">DALYs averted (n/yr)</td>
-<td class="gt_row gt_right" headers="Value">70,724</td>
+<td class="gt_row gt_right" headers="Value">44,750</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Item">Morbidity DALY-value averted (R)</td>
-<td class="gt_row gt_right" headers="Value">18,773,924</td>
+<td class="gt_row gt_right" headers="Value">14,723,280</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Item">Mortality DALY-value averted (R)</td>
-<td class="gt_row gt_right" headers="Value">7,760,867,400</td>
+<td class="gt_row gt_right" headers="Value">4,907,760,000</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Item">Total DALY-valued benefit (R/yr)</td>
-<td class="gt_row gt_right" headers="Value">7,779,641,324</td>
+<td class="gt_row gt_right" headers="Value">4,922,483,280</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Item">NMB DALY (R/yr)</td>
-<td class="gt_row gt_right" headers="Value">7,756,898,588</td>
+<td class="gt_row gt_right" headers="Value">4,899,883,546</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Item">ICER (R per DALY averted)</td>
-<td class="gt_row gt_right" headers="Value">322</td>
+<td class="gt_row gt_right" headers="Value">505</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Item">ICER threshold (R110k/DALY)</td>
@@ -2225,23 +2225,23 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
 <h3 data-number="1.4.1" class="anchored" data-anchor-id="scenario-b-cba"><span class="header-section-number">1.4.1</span> Scenario B — CBA</h3>
 <div class="cell">
 <div class="cell-output-display">
-<div id="pmygmsmaqo" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#pmygmsmaqo table {
+<div id="sgppfcszfq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#sgppfcszfq table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#pmygmsmaqo thead, #pmygmsmaqo tbody, #pmygmsmaqo tfoot, #pmygmsmaqo tr, #pmygmsmaqo td, #pmygmsmaqo th {
+#sgppfcszfq thead, #sgppfcszfq tbody, #sgppfcszfq tfoot, #sgppfcszfq tr, #sgppfcszfq td, #sgppfcszfq th {
   border-style: none;
 }
 
-#pmygmsmaqo p {
+#sgppfcszfq p {
   margin: 0;
   padding: 0;
 }
 
-#pmygmsmaqo .gt_table {
+#sgppfcszfq .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2267,12 +2267,12 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-left-color: #D3D3D3;
 }
 
-#pmygmsmaqo .gt_caption {
+#sgppfcszfq .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#pmygmsmaqo .gt_title {
+#sgppfcszfq .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2284,7 +2284,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-bottom-width: 0;
 }
 
-#pmygmsmaqo .gt_subtitle {
+#sgppfcszfq .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2296,7 +2296,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-top-width: 0;
 }
 
-#pmygmsmaqo .gt_heading {
+#sgppfcszfq .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2308,13 +2308,13 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-right-color: #D3D3D3;
 }
 
-#pmygmsmaqo .gt_bottom_border {
+#sgppfcszfq .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#pmygmsmaqo .gt_col_headings {
+#sgppfcszfq .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2329,7 +2329,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-right-color: #D3D3D3;
 }
 
-#pmygmsmaqo .gt_col_heading {
+#sgppfcszfq .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2349,7 +2349,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   overflow-x: hidden;
 }
 
-#pmygmsmaqo .gt_column_spanner_outer {
+#sgppfcszfq .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2361,15 +2361,15 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 4px;
 }
 
-#pmygmsmaqo .gt_column_spanner_outer:first-child {
+#sgppfcszfq .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#pmygmsmaqo .gt_column_spanner_outer:last-child {
+#sgppfcszfq .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#pmygmsmaqo .gt_column_spanner {
+#sgppfcszfq .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2381,11 +2381,11 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   width: 100%;
 }
 
-#pmygmsmaqo .gt_spanner_row {
+#sgppfcszfq .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#pmygmsmaqo .gt_group_heading {
+#sgppfcszfq .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2411,7 +2411,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   text-align: left;
 }
 
-#pmygmsmaqo .gt_empty_group_heading {
+#sgppfcszfq .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2426,15 +2426,15 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   vertical-align: middle;
 }
 
-#pmygmsmaqo .gt_from_md > :first-child {
+#sgppfcszfq .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#pmygmsmaqo .gt_from_md > :last-child {
+#sgppfcszfq .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#pmygmsmaqo .gt_row {
+#sgppfcszfq .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2453,7 +2453,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   overflow-x: hidden;
 }
 
-#pmygmsmaqo .gt_stub {
+#sgppfcszfq .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2466,7 +2466,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#pmygmsmaqo .gt_stub_row_group {
+#sgppfcszfq .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2480,15 +2480,15 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   vertical-align: top;
 }
 
-#pmygmsmaqo .gt_row_group_first td {
+#sgppfcszfq .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#pmygmsmaqo .gt_row_group_first th {
+#sgppfcszfq .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#pmygmsmaqo .gt_summary_row {
+#sgppfcszfq .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2498,16 +2498,16 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#pmygmsmaqo .gt_first_summary_row {
+#sgppfcszfq .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#pmygmsmaqo .gt_first_summary_row.thick {
+#sgppfcszfq .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#pmygmsmaqo .gt_last_summary_row {
+#sgppfcszfq .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2517,7 +2517,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-bottom-color: #D3D3D3;
 }
 
-#pmygmsmaqo .gt_grand_summary_row {
+#sgppfcszfq .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2527,7 +2527,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#pmygmsmaqo .gt_first_grand_summary_row {
+#sgppfcszfq .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2537,7 +2537,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-top-color: #D3D3D3;
 }
 
-#pmygmsmaqo .gt_last_grand_summary_row_top {
+#sgppfcszfq .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2547,11 +2547,11 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-bottom-color: #D3D3D3;
 }
 
-#pmygmsmaqo .gt_striped {
+#sgppfcszfq .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#pmygmsmaqo .gt_table_body {
+#sgppfcszfq .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2560,7 +2560,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-bottom-color: #D3D3D3;
 }
 
-#pmygmsmaqo .gt_footnotes {
+#sgppfcszfq .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2574,7 +2574,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-right-color: #D3D3D3;
 }
 
-#pmygmsmaqo .gt_footnote {
+#sgppfcszfq .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2583,7 +2583,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#pmygmsmaqo .gt_sourcenotes {
+#sgppfcszfq .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2597,7 +2597,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-right-color: #D3D3D3;
 }
 
-#pmygmsmaqo .gt_sourcenote {
+#sgppfcszfq .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2605,72 +2605,72 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#pmygmsmaqo .gt_left {
+#sgppfcszfq .gt_left {
   text-align: left;
 }
 
-#pmygmsmaqo .gt_center {
+#sgppfcszfq .gt_center {
   text-align: center;
 }
 
-#pmygmsmaqo .gt_right {
+#sgppfcszfq .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#pmygmsmaqo .gt_font_normal {
+#sgppfcszfq .gt_font_normal {
   font-weight: normal;
 }
 
-#pmygmsmaqo .gt_font_bold {
+#sgppfcszfq .gt_font_bold {
   font-weight: bold;
 }
 
-#pmygmsmaqo .gt_font_italic {
+#sgppfcszfq .gt_font_italic {
   font-style: italic;
 }
 
-#pmygmsmaqo .gt_super {
+#sgppfcszfq .gt_super {
   font-size: 65%;
 }
 
-#pmygmsmaqo .gt_footnote_marks {
+#sgppfcszfq .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#pmygmsmaqo .gt_asterisk {
+#sgppfcszfq .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#pmygmsmaqo .gt_indent_1 {
+#sgppfcszfq .gt_indent_1 {
   text-indent: 5px;
 }
 
-#pmygmsmaqo .gt_indent_2 {
+#sgppfcszfq .gt_indent_2 {
   text-indent: 10px;
 }
 
-#pmygmsmaqo .gt_indent_3 {
+#sgppfcszfq .gt_indent_3 {
   text-indent: 15px;
 }
 
-#pmygmsmaqo .gt_indent_4 {
+#sgppfcszfq .gt_indent_4 {
   text-indent: 20px;
 }
 
-#pmygmsmaqo .gt_indent_5 {
+#sgppfcszfq .gt_indent_5 {
   text-indent: 25px;
 }
 
-#pmygmsmaqo .katex-display {
+#sgppfcszfq .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#pmygmsmaqo div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#sgppfcszfq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2698,33 +2698,33 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
 <td class="gt_row gt_right" headers="Detection (%)">25.0</td>
 <td class="gt_row gt_right" headers="FP rate (%)">20.0</td>
 <td class="gt_row gt_right" headers="S1b spend (R/yr)">800,000</td>
-<td class="gt_row gt_right" headers="Deaths averted">1,883</td>
-<td class="gt_row gt_right" headers="Total spend (R/yr)">41,304,240</td>
-<td class="gt_row gt_right" headers="Total benefit HC (R/yr)">3,002,579,640</td>
-<td class="gt_row gt_right" headers="NMB HC (R/yr)">2,961,275,400</td>
-<td class="gt_row gt_right" headers="R per death averted">21,933</td>
+<td class="gt_row gt_right" headers="Deaths averted">552</td>
+<td class="gt_row gt_right" headers="Total spend (R/yr)">10,715,000</td>
+<td class="gt_row gt_right" headers="Total benefit HC (R/yr)">870,990,452</td>
+<td class="gt_row gt_right" headers="NMB HC (R/yr)">860,275,452</td>
+<td class="gt_row gt_right" headers="R per death averted">19,402</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Level">mid</td>
 <td class="gt_row gt_right" headers="Detection (%)">40.0</td>
 <td class="gt_row gt_right" headers="FP rate (%)">35.0</td>
 <td class="gt_row gt_right" headers="S1b spend (R/yr)">1,500,000</td>
-<td class="gt_row gt_right" headers="Deaths averted">2,267</td>
-<td class="gt_row gt_right" headers="Total spend (R/yr)">88,046,911</td>
-<td class="gt_row gt_right" headers="Total benefit HC (R/yr)">3,652,020,000</td>
-<td class="gt_row gt_right" headers="NMB HC (R/yr)">3,563,973,089</td>
-<td class="gt_row gt_right" headers="R per death averted">38,839</td>
+<td class="gt_row gt_right" headers="Deaths averted">1,014</td>
+<td class="gt_row gt_right" headers="Total spend (R/yr)">27,865,200</td>
+<td class="gt_row gt_right" headers="Total benefit HC (R/yr)">1,614,693,600</td>
+<td class="gt_row gt_right" headers="NMB HC (R/yr)">1,586,828,400</td>
+<td class="gt_row gt_right" headers="R per death averted">27,480</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Level">hi</td>
 <td class="gt_row gt_right" headers="Detection (%)">55.0</td>
 <td class="gt_row gt_right" headers="FP rate (%)">50.0</td>
 <td class="gt_row gt_right" headers="S1b spend (R/yr)">2,500,000</td>
-<td class="gt_row gt_right" headers="Deaths averted">2,267</td>
-<td class="gt_row gt_right" headers="Total spend (R/yr)">162,715,184</td>
-<td class="gt_row gt_right" headers="Total benefit HC (R/yr)">3,652,020,000</td>
-<td class="gt_row gt_right" headers="NMB HC (R/yr)">3,489,304,816</td>
-<td class="gt_row gt_right" headers="R per death averted">71,776</td>
+<td class="gt_row gt_right" headers="Deaths averted">1,014</td>
+<td class="gt_row gt_right" headers="Total spend (R/yr)">55,185,520</td>
+<td class="gt_row gt_right" headers="Total benefit HC (R/yr)">1,618,344,000</td>
+<td class="gt_row gt_right" headers="NMB HC (R/yr)">1,563,158,480</td>
+<td class="gt_row gt_right" headers="R per death averted">54,424</td>
 </tr>
 </tbody>
 </table>
@@ -2737,23 +2737,23 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
 <h3 data-number="1.4.2" class="anchored" data-anchor-id="scenario-b-cua"><span class="header-section-number">1.4.2</span> Scenario B — CUA</h3>
 <div class="cell">
 <div class="cell-output-display">
-<div id="upuvcpxixu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#upuvcpxixu table {
+<div id="djzpxdfirz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#djzpxdfirz table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#upuvcpxixu thead, #upuvcpxixu tbody, #upuvcpxixu tfoot, #upuvcpxixu tr, #upuvcpxixu td, #upuvcpxixu th {
+#djzpxdfirz thead, #djzpxdfirz tbody, #djzpxdfirz tfoot, #djzpxdfirz tr, #djzpxdfirz td, #djzpxdfirz th {
   border-style: none;
 }
 
-#upuvcpxixu p {
+#djzpxdfirz p {
   margin: 0;
   padding: 0;
 }
 
-#upuvcpxixu .gt_table {
+#djzpxdfirz .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2779,12 +2779,12 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-left-color: #D3D3D3;
 }
 
-#upuvcpxixu .gt_caption {
+#djzpxdfirz .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#upuvcpxixu .gt_title {
+#djzpxdfirz .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2796,7 +2796,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-bottom-width: 0;
 }
 
-#upuvcpxixu .gt_subtitle {
+#djzpxdfirz .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2808,7 +2808,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-top-width: 0;
 }
 
-#upuvcpxixu .gt_heading {
+#djzpxdfirz .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2820,13 +2820,13 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-right-color: #D3D3D3;
 }
 
-#upuvcpxixu .gt_bottom_border {
+#djzpxdfirz .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#upuvcpxixu .gt_col_headings {
+#djzpxdfirz .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2841,7 +2841,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-right-color: #D3D3D3;
 }
 
-#upuvcpxixu .gt_col_heading {
+#djzpxdfirz .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2861,7 +2861,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   overflow-x: hidden;
 }
 
-#upuvcpxixu .gt_column_spanner_outer {
+#djzpxdfirz .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2873,15 +2873,15 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 4px;
 }
 
-#upuvcpxixu .gt_column_spanner_outer:first-child {
+#djzpxdfirz .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#upuvcpxixu .gt_column_spanner_outer:last-child {
+#djzpxdfirz .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#upuvcpxixu .gt_column_spanner {
+#djzpxdfirz .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2893,11 +2893,11 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   width: 100%;
 }
 
-#upuvcpxixu .gt_spanner_row {
+#djzpxdfirz .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#upuvcpxixu .gt_group_heading {
+#djzpxdfirz .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2923,7 +2923,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   text-align: left;
 }
 
-#upuvcpxixu .gt_empty_group_heading {
+#djzpxdfirz .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2938,15 +2938,15 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   vertical-align: middle;
 }
 
-#upuvcpxixu .gt_from_md > :first-child {
+#djzpxdfirz .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#upuvcpxixu .gt_from_md > :last-child {
+#djzpxdfirz .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#upuvcpxixu .gt_row {
+#djzpxdfirz .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2965,7 +2965,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   overflow-x: hidden;
 }
 
-#upuvcpxixu .gt_stub {
+#djzpxdfirz .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2978,7 +2978,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#upuvcpxixu .gt_stub_row_group {
+#djzpxdfirz .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2992,15 +2992,15 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   vertical-align: top;
 }
 
-#upuvcpxixu .gt_row_group_first td {
+#djzpxdfirz .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#upuvcpxixu .gt_row_group_first th {
+#djzpxdfirz .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#upuvcpxixu .gt_summary_row {
+#djzpxdfirz .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3010,16 +3010,16 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#upuvcpxixu .gt_first_summary_row {
+#djzpxdfirz .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#upuvcpxixu .gt_first_summary_row.thick {
+#djzpxdfirz .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#upuvcpxixu .gt_last_summary_row {
+#djzpxdfirz .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3029,7 +3029,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-bottom-color: #D3D3D3;
 }
 
-#upuvcpxixu .gt_grand_summary_row {
+#djzpxdfirz .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3039,7 +3039,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#upuvcpxixu .gt_first_grand_summary_row {
+#djzpxdfirz .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3049,7 +3049,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-top-color: #D3D3D3;
 }
 
-#upuvcpxixu .gt_last_grand_summary_row_top {
+#djzpxdfirz .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3059,11 +3059,11 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-bottom-color: #D3D3D3;
 }
 
-#upuvcpxixu .gt_striped {
+#djzpxdfirz .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#upuvcpxixu .gt_table_body {
+#djzpxdfirz .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3072,7 +3072,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-bottom-color: #D3D3D3;
 }
 
-#upuvcpxixu .gt_footnotes {
+#djzpxdfirz .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3086,7 +3086,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-right-color: #D3D3D3;
 }
 
-#upuvcpxixu .gt_footnote {
+#djzpxdfirz .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3095,7 +3095,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#upuvcpxixu .gt_sourcenotes {
+#djzpxdfirz .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3109,7 +3109,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-right-color: #D3D3D3;
 }
 
-#upuvcpxixu .gt_sourcenote {
+#djzpxdfirz .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3117,72 +3117,72 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#upuvcpxixu .gt_left {
+#djzpxdfirz .gt_left {
   text-align: left;
 }
 
-#upuvcpxixu .gt_center {
+#djzpxdfirz .gt_center {
   text-align: center;
 }
 
-#upuvcpxixu .gt_right {
+#djzpxdfirz .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#upuvcpxixu .gt_font_normal {
+#djzpxdfirz .gt_font_normal {
   font-weight: normal;
 }
 
-#upuvcpxixu .gt_font_bold {
+#djzpxdfirz .gt_font_bold {
   font-weight: bold;
 }
 
-#upuvcpxixu .gt_font_italic {
+#djzpxdfirz .gt_font_italic {
   font-style: italic;
 }
 
-#upuvcpxixu .gt_super {
+#djzpxdfirz .gt_super {
   font-size: 65%;
 }
 
-#upuvcpxixu .gt_footnote_marks {
+#djzpxdfirz .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#upuvcpxixu .gt_asterisk {
+#djzpxdfirz .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#upuvcpxixu .gt_indent_1 {
+#djzpxdfirz .gt_indent_1 {
   text-indent: 5px;
 }
 
-#upuvcpxixu .gt_indent_2 {
+#djzpxdfirz .gt_indent_2 {
   text-indent: 10px;
 }
 
-#upuvcpxixu .gt_indent_3 {
+#djzpxdfirz .gt_indent_3 {
   text-indent: 15px;
 }
 
-#upuvcpxixu .gt_indent_4 {
+#djzpxdfirz .gt_indent_4 {
   text-indent: 20px;
 }
 
-#upuvcpxixu .gt_indent_5 {
+#djzpxdfirz .gt_indent_5 {
   text-indent: 25px;
 }
 
-#upuvcpxixu .katex-display {
+#djzpxdfirz .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#upuvcpxixu div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#djzpxdfirz div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -3204,27 +3204,27 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
 <tbody class="gt_table_body">
 <tr class="odd">
 <td class="gt_row gt_left" headers="Level">lo</td>
-<td class="gt_row gt_right" headers="DALYs averted">83,104</td>
-<td class="gt_row gt_right" headers="Total spend (R/yr)">41,304,240</td>
-<td class="gt_row gt_right" headers="DALY-valued benefit (R/yr)">9,141,438,777</td>
-<td class="gt_row gt_right" headers="NMB DALY (R/yr)">9,100,134,537</td>
-<td class="gt_row gt_right" headers="ICER (R/DALY averted)">497</td>
+<td class="gt_row gt_right" headers="DALYs averted">24,358</td>
+<td class="gt_row gt_right" headers="Total spend (R/yr)">10,715,000</td>
+<td class="gt_row gt_right" headers="DALY-valued benefit (R/yr)">2,679,420,012</td>
+<td class="gt_row gt_right" headers="NMB DALY (R/yr)">2,668,705,012</td>
+<td class="gt_row gt_right" headers="ICER (R/DALY averted)">440</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Level">mid</td>
-<td class="gt_row gt_right" headers="DALYs averted">100,094</td>
-<td class="gt_row gt_right" headers="Total spend (R/yr)">88,046,911</td>
-<td class="gt_row gt_right" headers="DALY-valued benefit (R/yr)">11,010,322,400</td>
-<td class="gt_row gt_right" headers="NMB DALY (R/yr)">10,922,275,489</td>
-<td class="gt_row gt_right" headers="ICER (R/DALY averted)">880</td>
+<td class="gt_row gt_right" headers="DALYs averted">44,745</td>
+<td class="gt_row gt_right" headers="Total spend (R/yr)">27,865,200</td>
+<td class="gt_row gt_right" headers="DALY-valued benefit (R/yr)">4,921,931,157</td>
+<td class="gt_row gt_right" headers="NMB DALY (R/yr)">4,894,065,957</td>
+<td class="gt_row gt_right" headers="ICER (R/DALY averted)">623</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Level">hi</td>
-<td class="gt_row gt_right" headers="DALYs averted">100,094</td>
-<td class="gt_row gt_right" headers="Total spend (R/yr)">162,715,184</td>
-<td class="gt_row gt_right" headers="DALY-valued benefit (R/yr)">11,010,322,400</td>
-<td class="gt_row gt_right" headers="NMB DALY (R/yr)">10,847,607,216</td>
-<td class="gt_row gt_right" headers="ICER (R/DALY averted)">1,626</td>
+<td class="gt_row gt_right" headers="DALYs averted">44,750</td>
+<td class="gt_row gt_right" headers="Total spend (R/yr)">55,185,520</td>
+<td class="gt_row gt_right" headers="DALY-valued benefit (R/yr)">4,922,483,280</td>
+<td class="gt_row gt_right" headers="NMB DALY (R/yr)">4,867,297,760</td>
+<td class="gt_row gt_right" headers="ICER (R/DALY averted)">1,233</td>
 </tr>
 </tbody>
 </table>
@@ -3254,23 +3254,23 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
 <h3 data-number="1.5.1" class="anchored" data-anchor-id="scenario-c-cba-cua-side-by-side"><span class="header-section-number">1.5.1</span> Scenario C — CBA &amp; CUA side-by-side</h3>
 <div class="cell">
 <div class="cell-output-display">
-<div id="lrqttybnqi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#lrqttybnqi table {
+<div id="yaoqxmlkra" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#yaoqxmlkra table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#lrqttybnqi thead, #lrqttybnqi tbody, #lrqttybnqi tfoot, #lrqttybnqi tr, #lrqttybnqi td, #lrqttybnqi th {
+#yaoqxmlkra thead, #yaoqxmlkra tbody, #yaoqxmlkra tfoot, #yaoqxmlkra tr, #yaoqxmlkra td, #yaoqxmlkra th {
   border-style: none;
 }
 
-#lrqttybnqi p {
+#yaoqxmlkra p {
   margin: 0;
   padding: 0;
 }
 
-#lrqttybnqi .gt_table {
+#yaoqxmlkra .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3296,12 +3296,12 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-left-color: #D3D3D3;
 }
 
-#lrqttybnqi .gt_caption {
+#yaoqxmlkra .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#lrqttybnqi .gt_title {
+#yaoqxmlkra .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -3313,7 +3313,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-bottom-width: 0;
 }
 
-#lrqttybnqi .gt_subtitle {
+#yaoqxmlkra .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3325,7 +3325,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-top-width: 0;
 }
 
-#lrqttybnqi .gt_heading {
+#yaoqxmlkra .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3337,13 +3337,13 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-right-color: #D3D3D3;
 }
 
-#lrqttybnqi .gt_bottom_border {
+#yaoqxmlkra .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#lrqttybnqi .gt_col_headings {
+#yaoqxmlkra .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3358,7 +3358,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-right-color: #D3D3D3;
 }
 
-#lrqttybnqi .gt_col_heading {
+#yaoqxmlkra .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3378,7 +3378,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   overflow-x: hidden;
 }
 
-#lrqttybnqi .gt_column_spanner_outer {
+#yaoqxmlkra .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3390,15 +3390,15 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 4px;
 }
 
-#lrqttybnqi .gt_column_spanner_outer:first-child {
+#yaoqxmlkra .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#lrqttybnqi .gt_column_spanner_outer:last-child {
+#yaoqxmlkra .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#lrqttybnqi .gt_column_spanner {
+#yaoqxmlkra .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3410,11 +3410,11 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   width: 100%;
 }
 
-#lrqttybnqi .gt_spanner_row {
+#yaoqxmlkra .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#lrqttybnqi .gt_group_heading {
+#yaoqxmlkra .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3440,7 +3440,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   text-align: left;
 }
 
-#lrqttybnqi .gt_empty_group_heading {
+#yaoqxmlkra .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3455,15 +3455,15 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   vertical-align: middle;
 }
 
-#lrqttybnqi .gt_from_md > :first-child {
+#yaoqxmlkra .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#lrqttybnqi .gt_from_md > :last-child {
+#yaoqxmlkra .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#lrqttybnqi .gt_row {
+#yaoqxmlkra .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3482,7 +3482,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   overflow-x: hidden;
 }
 
-#lrqttybnqi .gt_stub {
+#yaoqxmlkra .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3495,7 +3495,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#lrqttybnqi .gt_stub_row_group {
+#yaoqxmlkra .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3509,15 +3509,15 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   vertical-align: top;
 }
 
-#lrqttybnqi .gt_row_group_first td {
+#yaoqxmlkra .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#lrqttybnqi .gt_row_group_first th {
+#yaoqxmlkra .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#lrqttybnqi .gt_summary_row {
+#yaoqxmlkra .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3527,16 +3527,16 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#lrqttybnqi .gt_first_summary_row {
+#yaoqxmlkra .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#lrqttybnqi .gt_first_summary_row.thick {
+#yaoqxmlkra .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#lrqttybnqi .gt_last_summary_row {
+#yaoqxmlkra .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3546,7 +3546,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-bottom-color: #D3D3D3;
 }
 
-#lrqttybnqi .gt_grand_summary_row {
+#yaoqxmlkra .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3556,7 +3556,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#lrqttybnqi .gt_first_grand_summary_row {
+#yaoqxmlkra .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3566,7 +3566,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-top-color: #D3D3D3;
 }
 
-#lrqttybnqi .gt_last_grand_summary_row_top {
+#yaoqxmlkra .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3576,11 +3576,11 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-bottom-color: #D3D3D3;
 }
 
-#lrqttybnqi .gt_striped {
+#yaoqxmlkra .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#lrqttybnqi .gt_table_body {
+#yaoqxmlkra .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3589,7 +3589,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-bottom-color: #D3D3D3;
 }
 
-#lrqttybnqi .gt_footnotes {
+#yaoqxmlkra .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3603,7 +3603,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-right-color: #D3D3D3;
 }
 
-#lrqttybnqi .gt_footnote {
+#yaoqxmlkra .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3612,7 +3612,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#lrqttybnqi .gt_sourcenotes {
+#yaoqxmlkra .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3626,7 +3626,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-right-color: #D3D3D3;
 }
 
-#lrqttybnqi .gt_sourcenote {
+#yaoqxmlkra .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3634,72 +3634,72 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#lrqttybnqi .gt_left {
+#yaoqxmlkra .gt_left {
   text-align: left;
 }
 
-#lrqttybnqi .gt_center {
+#yaoqxmlkra .gt_center {
   text-align: center;
 }
 
-#lrqttybnqi .gt_right {
+#yaoqxmlkra .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#lrqttybnqi .gt_font_normal {
+#yaoqxmlkra .gt_font_normal {
   font-weight: normal;
 }
 
-#lrqttybnqi .gt_font_bold {
+#yaoqxmlkra .gt_font_bold {
   font-weight: bold;
 }
 
-#lrqttybnqi .gt_font_italic {
+#yaoqxmlkra .gt_font_italic {
   font-style: italic;
 }
 
-#lrqttybnqi .gt_super {
+#yaoqxmlkra .gt_super {
   font-size: 65%;
 }
 
-#lrqttybnqi .gt_footnote_marks {
+#yaoqxmlkra .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#lrqttybnqi .gt_asterisk {
+#yaoqxmlkra .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#lrqttybnqi .gt_indent_1 {
+#yaoqxmlkra .gt_indent_1 {
   text-indent: 5px;
 }
 
-#lrqttybnqi .gt_indent_2 {
+#yaoqxmlkra .gt_indent_2 {
   text-indent: 10px;
 }
 
-#lrqttybnqi .gt_indent_3 {
+#yaoqxmlkra .gt_indent_3 {
   text-indent: 15px;
 }
 
-#lrqttybnqi .gt_indent_4 {
+#yaoqxmlkra .gt_indent_4 {
   text-indent: 20px;
 }
 
-#lrqttybnqi .gt_indent_5 {
+#yaoqxmlkra .gt_indent_5 {
   text-indent: 25px;
 }
 
-#lrqttybnqi .katex-display {
+#yaoqxmlkra .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#lrqttybnqi div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#yaoqxmlkra div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -3722,20 +3722,20 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
 <tbody class="gt_table_body">
 <tr class="odd">
 <td class="gt_row gt_left" headers="framework">CBA (HC)</td>
-<td class="gt_row gt_right" headers="Deaths averted">645</td>
-<td class="gt_row gt_right" headers="Total spend (R/yr)">88,046,911</td>
-<td class="gt_row gt_right" headers="Benefit (R/yr)">1,072,996,848</td>
-<td class="gt_row gt_right" headers="NMB (R/yr)">984,949,937</td>
-<td class="gt_row gt_right" headers="Headline rate">136,612</td>
+<td class="gt_row gt_right" headers="Deaths averted">414</td>
+<td class="gt_row gt_right" headers="Total spend (R/yr)">27,865,200</td>
+<td class="gt_row gt_right" headers="Benefit (R/yr)">652,665,092</td>
+<td class="gt_row gt_right" headers="NMB (R/yr)">624,799,892</td>
+<td class="gt_row gt_right" headers="Headline rate">67,357</td>
 <td class="gt_row gt_left" headers="headline_label">R per death averted</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="framework">CUA (DALY)</td>
-<td class="gt_row gt_right" headers="Deaths averted">645</td>
-<td class="gt_row gt_right" headers="Total spend (R/yr)">88,046,911</td>
-<td class="gt_row gt_right" headers="Benefit (R/yr)">3,135,464,598</td>
-<td class="gt_row gt_right" headers="NMB (R/yr)">3,047,417,687</td>
-<td class="gt_row gt_right" headers="Headline rate">3,089</td>
+<td class="gt_row gt_right" headers="Deaths averted">414</td>
+<td class="gt_row gt_right" headers="Total spend (R/yr)">27,865,200</td>
+<td class="gt_row gt_right" headers="Benefit (R/yr)">2,007,139,487</td>
+<td class="gt_row gt_right" headers="NMB (R/yr)">1,979,274,287</td>
+<td class="gt_row gt_right" headers="Headline rate">1,527</td>
 <td class="gt_row gt_left" headers="headline_label">R per DALY averted</td>
 </tr>
 </tbody>
@@ -3766,23 +3766,23 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
 <h3 data-number="1.6.1" class="anchored" data-anchor-id="scenario-d-cba"><span class="header-section-number">1.6.1</span> Scenario D — CBA</h3>
 <div class="cell">
 <div class="cell-output-display">
-<div id="flaszgtuiy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#flaszgtuiy table {
+<div id="juuyryctwf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#juuyryctwf table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#flaszgtuiy thead, #flaszgtuiy tbody, #flaszgtuiy tfoot, #flaszgtuiy tr, #flaszgtuiy td, #flaszgtuiy th {
+#juuyryctwf thead, #juuyryctwf tbody, #juuyryctwf tfoot, #juuyryctwf tr, #juuyryctwf td, #juuyryctwf th {
   border-style: none;
 }
 
-#flaszgtuiy p {
+#juuyryctwf p {
   margin: 0;
   padding: 0;
 }
 
-#flaszgtuiy .gt_table {
+#juuyryctwf .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3808,12 +3808,12 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-left-color: #D3D3D3;
 }
 
-#flaszgtuiy .gt_caption {
+#juuyryctwf .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#flaszgtuiy .gt_title {
+#juuyryctwf .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -3825,7 +3825,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-bottom-width: 0;
 }
 
-#flaszgtuiy .gt_subtitle {
+#juuyryctwf .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3837,7 +3837,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-top-width: 0;
 }
 
-#flaszgtuiy .gt_heading {
+#juuyryctwf .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3849,13 +3849,13 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-right-color: #D3D3D3;
 }
 
-#flaszgtuiy .gt_bottom_border {
+#juuyryctwf .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#flaszgtuiy .gt_col_headings {
+#juuyryctwf .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3870,7 +3870,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-right-color: #D3D3D3;
 }
 
-#flaszgtuiy .gt_col_heading {
+#juuyryctwf .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3890,7 +3890,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   overflow-x: hidden;
 }
 
-#flaszgtuiy .gt_column_spanner_outer {
+#juuyryctwf .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3902,15 +3902,15 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 4px;
 }
 
-#flaszgtuiy .gt_column_spanner_outer:first-child {
+#juuyryctwf .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#flaszgtuiy .gt_column_spanner_outer:last-child {
+#juuyryctwf .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#flaszgtuiy .gt_column_spanner {
+#juuyryctwf .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3922,11 +3922,11 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   width: 100%;
 }
 
-#flaszgtuiy .gt_spanner_row {
+#juuyryctwf .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#flaszgtuiy .gt_group_heading {
+#juuyryctwf .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3952,7 +3952,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   text-align: left;
 }
 
-#flaszgtuiy .gt_empty_group_heading {
+#juuyryctwf .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3967,15 +3967,15 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   vertical-align: middle;
 }
 
-#flaszgtuiy .gt_from_md > :first-child {
+#juuyryctwf .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#flaszgtuiy .gt_from_md > :last-child {
+#juuyryctwf .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#flaszgtuiy .gt_row {
+#juuyryctwf .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3994,7 +3994,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   overflow-x: hidden;
 }
 
-#flaszgtuiy .gt_stub {
+#juuyryctwf .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4007,7 +4007,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#flaszgtuiy .gt_stub_row_group {
+#juuyryctwf .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4021,15 +4021,15 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   vertical-align: top;
 }
 
-#flaszgtuiy .gt_row_group_first td {
+#juuyryctwf .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#flaszgtuiy .gt_row_group_first th {
+#juuyryctwf .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#flaszgtuiy .gt_summary_row {
+#juuyryctwf .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4039,16 +4039,16 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#flaszgtuiy .gt_first_summary_row {
+#juuyryctwf .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#flaszgtuiy .gt_first_summary_row.thick {
+#juuyryctwf .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#flaszgtuiy .gt_last_summary_row {
+#juuyryctwf .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4058,7 +4058,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-bottom-color: #D3D3D3;
 }
 
-#flaszgtuiy .gt_grand_summary_row {
+#juuyryctwf .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4068,7 +4068,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#flaszgtuiy .gt_first_grand_summary_row {
+#juuyryctwf .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4078,7 +4078,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-top-color: #D3D3D3;
 }
 
-#flaszgtuiy .gt_last_grand_summary_row_top {
+#juuyryctwf .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4088,11 +4088,11 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-bottom-color: #D3D3D3;
 }
 
-#flaszgtuiy .gt_striped {
+#juuyryctwf .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#flaszgtuiy .gt_table_body {
+#juuyryctwf .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4101,7 +4101,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-bottom-color: #D3D3D3;
 }
 
-#flaszgtuiy .gt_footnotes {
+#juuyryctwf .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4115,7 +4115,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-right-color: #D3D3D3;
 }
 
-#flaszgtuiy .gt_footnote {
+#juuyryctwf .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -4124,7 +4124,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#flaszgtuiy .gt_sourcenotes {
+#juuyryctwf .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4138,7 +4138,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-right-color: #D3D3D3;
 }
 
-#flaszgtuiy .gt_sourcenote {
+#juuyryctwf .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -4146,72 +4146,72 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#flaszgtuiy .gt_left {
+#juuyryctwf .gt_left {
   text-align: left;
 }
 
-#flaszgtuiy .gt_center {
+#juuyryctwf .gt_center {
   text-align: center;
 }
 
-#flaszgtuiy .gt_right {
+#juuyryctwf .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#flaszgtuiy .gt_font_normal {
+#juuyryctwf .gt_font_normal {
   font-weight: normal;
 }
 
-#flaszgtuiy .gt_font_bold {
+#juuyryctwf .gt_font_bold {
   font-weight: bold;
 }
 
-#flaszgtuiy .gt_font_italic {
+#juuyryctwf .gt_font_italic {
   font-style: italic;
 }
 
-#flaszgtuiy .gt_super {
+#juuyryctwf .gt_super {
   font-size: 65%;
 }
 
-#flaszgtuiy .gt_footnote_marks {
+#juuyryctwf .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#flaszgtuiy .gt_asterisk {
+#juuyryctwf .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#flaszgtuiy .gt_indent_1 {
+#juuyryctwf .gt_indent_1 {
   text-indent: 5px;
 }
 
-#flaszgtuiy .gt_indent_2 {
+#juuyryctwf .gt_indent_2 {
   text-indent: 10px;
 }
 
-#flaszgtuiy .gt_indent_3 {
+#juuyryctwf .gt_indent_3 {
   text-indent: 15px;
 }
 
-#flaszgtuiy .gt_indent_4 {
+#juuyryctwf .gt_indent_4 {
   text-indent: 20px;
 }
 
-#flaszgtuiy .gt_indent_5 {
+#juuyryctwf .gt_indent_5 {
   text-indent: 25px;
 }
 
-#flaszgtuiy .katex-display {
+#juuyryctwf .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#flaszgtuiy div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#juuyryctwf div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -4236,32 +4236,32 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
 <tr class="odd">
 <td class="gt_row gt_left" headers="Level">lo</td>
 <td class="gt_row gt_right" headers="f_terb (%)">20.0</td>
-<td class="gt_row gt_right" headers="Deaths averted">2,529</td>
-<td class="gt_row gt_right" headers="Cases averted">20,960</td>
-<td class="gt_row gt_right" headers="Spend (R/yr)">72,793,929</td>
-<td class="gt_row gt_right" headers="Benefit HC (R/yr)">4,045,020,000</td>
-<td class="gt_row gt_right" headers="NMB HC (R/yr)">3,972,226,071</td>
-<td class="gt_row gt_right" headers="R per death averted">28,784</td>
+<td class="gt_row gt_right" headers="Deaths averted">1,014</td>
+<td class="gt_row gt_right" headers="Cases averted">7,869</td>
+<td class="gt_row gt_right" headers="Spend (R/yr)">24,648,560</td>
+<td class="gt_row gt_right" headers="Benefit HC (R/yr)">1,615,423,680</td>
+<td class="gt_row gt_right" headers="NMB HC (R/yr)">1,590,775,120</td>
+<td class="gt_row gt_right" headers="R per death averted">24,308</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Level">mid</td>
 <td class="gt_row gt_right" headers="f_terb (%)">25.0</td>
-<td class="gt_row gt_right" headers="Deaths averted">2,594</td>
-<td class="gt_row gt_right" headers="Cases averted">20,960</td>
-<td class="gt_row gt_right" headers="Spend (R/yr)">68,480,683</td>
-<td class="gt_row gt_right" headers="Benefit HC (R/yr)">4,143,270,000</td>
-<td class="gt_row gt_right" headers="NMB HC (R/yr)">4,074,789,317</td>
-<td class="gt_row gt_right" headers="R per death averted">26,395</td>
+<td class="gt_row gt_right" headers="Deaths averted">1,014</td>
+<td class="gt_row gt_right" headers="Cases averted">7,884</td>
+<td class="gt_row gt_right" headers="Spend (R/yr)">23,344,400</td>
+<td class="gt_row gt_right" headers="Benefit HC (R/yr)">1,615,606,200</td>
+<td class="gt_row gt_right" headers="NMB HC (R/yr)">1,592,261,800</td>
+<td class="gt_row gt_right" headers="R per death averted">23,022</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Level">hi</td>
 <td class="gt_row gt_right" headers="f_terb (%)">35.0</td>
-<td class="gt_row gt_right" headers="Deaths averted">2,620</td>
-<td class="gt_row gt_right" headers="Cases averted">20,960</td>
-<td class="gt_row gt_right" headers="Spend (R/yr)">59,854,192</td>
-<td class="gt_row gt_right" headers="Benefit HC (R/yr)">4,181,520,000</td>
-<td class="gt_row gt_right" headers="NMB HC (R/yr)">4,121,665,808</td>
-<td class="gt_row gt_right" headers="R per death averted">22,845</td>
+<td class="gt_row gt_right" headers="Deaths averted">1,014</td>
+<td class="gt_row gt_right" headers="Cases averted">7,914</td>
+<td class="gt_row gt_right" headers="Spend (R/yr)">20,736,080</td>
+<td class="gt_row gt_right" headers="Benefit HC (R/yr)">1,615,971,240</td>
+<td class="gt_row gt_right" headers="NMB HC (R/yr)">1,595,235,160</td>
+<td class="gt_row gt_right" headers="R per death averted">20,450</td>
 </tr>
 </tbody>
 </table>
@@ -4274,23 +4274,23 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
 <h3 data-number="1.6.2" class="anchored" data-anchor-id="scenario-d-cua"><span class="header-section-number">1.6.2</span> Scenario D — CUA</h3>
 <div class="cell">
 <div class="cell-output-display">
-<div id="oadlmpuzhp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#oadlmpuzhp table {
+<div id="kdidtwgxkc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#kdidtwgxkc table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#oadlmpuzhp thead, #oadlmpuzhp tbody, #oadlmpuzhp tfoot, #oadlmpuzhp tr, #oadlmpuzhp td, #oadlmpuzhp th {
+#kdidtwgxkc thead, #kdidtwgxkc tbody, #kdidtwgxkc tfoot, #kdidtwgxkc tr, #kdidtwgxkc td, #kdidtwgxkc th {
   border-style: none;
 }
 
-#oadlmpuzhp p {
+#kdidtwgxkc p {
   margin: 0;
   padding: 0;
 }
 
-#oadlmpuzhp .gt_table {
+#kdidtwgxkc .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -4316,12 +4316,12 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-left-color: #D3D3D3;
 }
 
-#oadlmpuzhp .gt_caption {
+#kdidtwgxkc .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#oadlmpuzhp .gt_title {
+#kdidtwgxkc .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -4333,7 +4333,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-bottom-width: 0;
 }
 
-#oadlmpuzhp .gt_subtitle {
+#kdidtwgxkc .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -4345,7 +4345,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-top-width: 0;
 }
 
-#oadlmpuzhp .gt_heading {
+#kdidtwgxkc .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -4357,13 +4357,13 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-right-color: #D3D3D3;
 }
 
-#oadlmpuzhp .gt_bottom_border {
+#kdidtwgxkc .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#oadlmpuzhp .gt_col_headings {
+#kdidtwgxkc .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4378,7 +4378,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-right-color: #D3D3D3;
 }
 
-#oadlmpuzhp .gt_col_heading {
+#kdidtwgxkc .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4398,7 +4398,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   overflow-x: hidden;
 }
 
-#oadlmpuzhp .gt_column_spanner_outer {
+#kdidtwgxkc .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4410,15 +4410,15 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 4px;
 }
 
-#oadlmpuzhp .gt_column_spanner_outer:first-child {
+#kdidtwgxkc .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#oadlmpuzhp .gt_column_spanner_outer:last-child {
+#kdidtwgxkc .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#oadlmpuzhp .gt_column_spanner {
+#kdidtwgxkc .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -4430,11 +4430,11 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   width: 100%;
 }
 
-#oadlmpuzhp .gt_spanner_row {
+#kdidtwgxkc .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#oadlmpuzhp .gt_group_heading {
+#kdidtwgxkc .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4460,7 +4460,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   text-align: left;
 }
 
-#oadlmpuzhp .gt_empty_group_heading {
+#kdidtwgxkc .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4475,15 +4475,15 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   vertical-align: middle;
 }
 
-#oadlmpuzhp .gt_from_md > :first-child {
+#kdidtwgxkc .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#oadlmpuzhp .gt_from_md > :last-child {
+#kdidtwgxkc .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#oadlmpuzhp .gt_row {
+#kdidtwgxkc .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4502,7 +4502,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   overflow-x: hidden;
 }
 
-#oadlmpuzhp .gt_stub {
+#kdidtwgxkc .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4515,7 +4515,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#oadlmpuzhp .gt_stub_row_group {
+#kdidtwgxkc .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4529,15 +4529,15 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   vertical-align: top;
 }
 
-#oadlmpuzhp .gt_row_group_first td {
+#kdidtwgxkc .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#oadlmpuzhp .gt_row_group_first th {
+#kdidtwgxkc .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#oadlmpuzhp .gt_summary_row {
+#kdidtwgxkc .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4547,16 +4547,16 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#oadlmpuzhp .gt_first_summary_row {
+#kdidtwgxkc .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#oadlmpuzhp .gt_first_summary_row.thick {
+#kdidtwgxkc .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#oadlmpuzhp .gt_last_summary_row {
+#kdidtwgxkc .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4566,7 +4566,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-bottom-color: #D3D3D3;
 }
 
-#oadlmpuzhp .gt_grand_summary_row {
+#kdidtwgxkc .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4576,7 +4576,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#oadlmpuzhp .gt_first_grand_summary_row {
+#kdidtwgxkc .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4586,7 +4586,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-top-color: #D3D3D3;
 }
 
-#oadlmpuzhp .gt_last_grand_summary_row_top {
+#kdidtwgxkc .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4596,11 +4596,11 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-bottom-color: #D3D3D3;
 }
 
-#oadlmpuzhp .gt_striped {
+#kdidtwgxkc .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#oadlmpuzhp .gt_table_body {
+#kdidtwgxkc .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4609,7 +4609,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-bottom-color: #D3D3D3;
 }
 
-#oadlmpuzhp .gt_footnotes {
+#kdidtwgxkc .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4623,7 +4623,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-right-color: #D3D3D3;
 }
 
-#oadlmpuzhp .gt_footnote {
+#kdidtwgxkc .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -4632,7 +4632,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#oadlmpuzhp .gt_sourcenotes {
+#kdidtwgxkc .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4646,7 +4646,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-right-color: #D3D3D3;
 }
 
-#oadlmpuzhp .gt_sourcenote {
+#kdidtwgxkc .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -4654,72 +4654,72 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#oadlmpuzhp .gt_left {
+#kdidtwgxkc .gt_left {
   text-align: left;
 }
 
-#oadlmpuzhp .gt_center {
+#kdidtwgxkc .gt_center {
   text-align: center;
 }
 
-#oadlmpuzhp .gt_right {
+#kdidtwgxkc .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#oadlmpuzhp .gt_font_normal {
+#kdidtwgxkc .gt_font_normal {
   font-weight: normal;
 }
 
-#oadlmpuzhp .gt_font_bold {
+#kdidtwgxkc .gt_font_bold {
   font-weight: bold;
 }
 
-#oadlmpuzhp .gt_font_italic {
+#kdidtwgxkc .gt_font_italic {
   font-style: italic;
 }
 
-#oadlmpuzhp .gt_super {
+#kdidtwgxkc .gt_super {
   font-size: 65%;
 }
 
-#oadlmpuzhp .gt_footnote_marks {
+#kdidtwgxkc .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#oadlmpuzhp .gt_asterisk {
+#kdidtwgxkc .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#oadlmpuzhp .gt_indent_1 {
+#kdidtwgxkc .gt_indent_1 {
   text-indent: 5px;
 }
 
-#oadlmpuzhp .gt_indent_2 {
+#kdidtwgxkc .gt_indent_2 {
   text-indent: 10px;
 }
 
-#oadlmpuzhp .gt_indent_3 {
+#kdidtwgxkc .gt_indent_3 {
   text-indent: 15px;
 }
 
-#oadlmpuzhp .gt_indent_4 {
+#kdidtwgxkc .gt_indent_4 {
   text-indent: 20px;
 }
 
-#oadlmpuzhp .gt_indent_5 {
+#kdidtwgxkc .gt_indent_5 {
   text-indent: 25px;
 }
 
-#oadlmpuzhp .katex-display {
+#kdidtwgxkc .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#oadlmpuzhp div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#kdidtwgxkc div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -4741,27 +4741,27 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
 <tbody class="gt_table_body">
 <tr class="odd">
 <td class="gt_row gt_left" headers="Level">lo</td>
-<td class="gt_row gt_right" headers="DALYs averted">111,622</td>
-<td class="gt_row gt_right" headers="Spend (R/yr)">72,793,929</td>
-<td class="gt_row gt_right" headers="DALY benefit (R/yr)">12,278,402,400</td>
-<td class="gt_row gt_right" headers="NMB DALY (R/yr)">12,205,608,471</td>
-<td class="gt_row gt_right" headers="ICER (R/DALY averted)">652</td>
+<td class="gt_row gt_right" headers="DALYs averted">44,746</td>
+<td class="gt_row gt_right" headers="Spend (R/yr)">24,648,560</td>
+<td class="gt_row gt_right" headers="DALY benefit (R/yr)">4,922,041,582</td>
+<td class="gt_row gt_right" headers="NMB DALY (R/yr)">4,897,393,022</td>
+<td class="gt_row gt_right" headers="ICER (R/DALY averted)">551</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Level">mid</td>
-<td class="gt_row gt_right" headers="DALYs averted">114,504</td>
-<td class="gt_row gt_right" headers="Spend (R/yr)">68,480,683</td>
-<td class="gt_row gt_right" headers="DALY benefit (R/yr)">12,595,422,400</td>
-<td class="gt_row gt_right" headers="NMB DALY (R/yr)">12,526,941,717</td>
-<td class="gt_row gt_right" headers="ICER (R/DALY averted)">598</td>
+<td class="gt_row gt_right" headers="DALYs averted">44,746</td>
+<td class="gt_row gt_right" headers="Spend (R/yr)">23,344,400</td>
+<td class="gt_row gt_right" headers="DALY benefit (R/yr)">4,922,069,188</td>
+<td class="gt_row gt_right" headers="NMB DALY (R/yr)">4,898,724,788</td>
+<td class="gt_row gt_right" headers="ICER (R/DALY averted)">522</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Level">hi</td>
-<td class="gt_row gt_right" headers="DALYs averted">115,626</td>
-<td class="gt_row gt_right" headers="Spend (R/yr)">59,854,192</td>
-<td class="gt_row gt_right" headers="DALY benefit (R/yr)">12,718,842,400</td>
-<td class="gt_row gt_right" headers="NMB DALY (R/yr)">12,658,988,208</td>
-<td class="gt_row gt_right" headers="ICER (R/DALY averted)">518</td>
+<td class="gt_row gt_right" headers="DALYs averted">44,747</td>
+<td class="gt_row gt_right" headers="Spend (R/yr)">20,736,080</td>
+<td class="gt_row gt_right" headers="DALY benefit (R/yr)">4,922,124,400</td>
+<td class="gt_row gt_right" headers="NMB DALY (R/yr)">4,901,388,320</td>
+<td class="gt_row gt_right" headers="ICER (R/DALY averted)">463</td>
 </tr>
 </tbody>
 </table>
@@ -4791,23 +4791,23 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
 <h3 data-number="1.7.1" class="anchored" data-anchor-id="scenario-e-cba-cua"><span class="header-section-number">1.7.1</span> Scenario E — CBA &amp; CUA</h3>
 <div class="cell">
 <div class="cell-output-display">
-<div id="himqiebuhr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#himqiebuhr table {
+<div id="drqeyjkwnq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#drqeyjkwnq table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#himqiebuhr thead, #himqiebuhr tbody, #himqiebuhr tfoot, #himqiebuhr tr, #himqiebuhr td, #himqiebuhr th {
+#drqeyjkwnq thead, #drqeyjkwnq tbody, #drqeyjkwnq tfoot, #drqeyjkwnq tr, #drqeyjkwnq td, #drqeyjkwnq th {
   border-style: none;
 }
 
-#himqiebuhr p {
+#drqeyjkwnq p {
   margin: 0;
   padding: 0;
 }
 
-#himqiebuhr .gt_table {
+#drqeyjkwnq .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -4833,12 +4833,12 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-left-color: #D3D3D3;
 }
 
-#himqiebuhr .gt_caption {
+#drqeyjkwnq .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#himqiebuhr .gt_title {
+#drqeyjkwnq .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -4850,7 +4850,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-bottom-width: 0;
 }
 
-#himqiebuhr .gt_subtitle {
+#drqeyjkwnq .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -4862,7 +4862,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-top-width: 0;
 }
 
-#himqiebuhr .gt_heading {
+#drqeyjkwnq .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -4874,13 +4874,13 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-right-color: #D3D3D3;
 }
 
-#himqiebuhr .gt_bottom_border {
+#drqeyjkwnq .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#himqiebuhr .gt_col_headings {
+#drqeyjkwnq .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4895,7 +4895,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-right-color: #D3D3D3;
 }
 
-#himqiebuhr .gt_col_heading {
+#drqeyjkwnq .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4915,7 +4915,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   overflow-x: hidden;
 }
 
-#himqiebuhr .gt_column_spanner_outer {
+#drqeyjkwnq .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4927,15 +4927,15 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 4px;
 }
 
-#himqiebuhr .gt_column_spanner_outer:first-child {
+#drqeyjkwnq .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#himqiebuhr .gt_column_spanner_outer:last-child {
+#drqeyjkwnq .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#himqiebuhr .gt_column_spanner {
+#drqeyjkwnq .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -4947,11 +4947,11 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   width: 100%;
 }
 
-#himqiebuhr .gt_spanner_row {
+#drqeyjkwnq .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#himqiebuhr .gt_group_heading {
+#drqeyjkwnq .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4977,7 +4977,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   text-align: left;
 }
 
-#himqiebuhr .gt_empty_group_heading {
+#drqeyjkwnq .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4992,15 +4992,15 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   vertical-align: middle;
 }
 
-#himqiebuhr .gt_from_md > :first-child {
+#drqeyjkwnq .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#himqiebuhr .gt_from_md > :last-child {
+#drqeyjkwnq .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#himqiebuhr .gt_row {
+#drqeyjkwnq .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5019,7 +5019,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   overflow-x: hidden;
 }
 
-#himqiebuhr .gt_stub {
+#drqeyjkwnq .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5032,7 +5032,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#himqiebuhr .gt_stub_row_group {
+#drqeyjkwnq .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5046,15 +5046,15 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   vertical-align: top;
 }
 
-#himqiebuhr .gt_row_group_first td {
+#drqeyjkwnq .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#himqiebuhr .gt_row_group_first th {
+#drqeyjkwnq .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#himqiebuhr .gt_summary_row {
+#drqeyjkwnq .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5064,16 +5064,16 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#himqiebuhr .gt_first_summary_row {
+#drqeyjkwnq .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#himqiebuhr .gt_first_summary_row.thick {
+#drqeyjkwnq .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#himqiebuhr .gt_last_summary_row {
+#drqeyjkwnq .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5083,7 +5083,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-bottom-color: #D3D3D3;
 }
 
-#himqiebuhr .gt_grand_summary_row {
+#drqeyjkwnq .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5093,7 +5093,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#himqiebuhr .gt_first_grand_summary_row {
+#drqeyjkwnq .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5103,7 +5103,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-top-color: #D3D3D3;
 }
 
-#himqiebuhr .gt_last_grand_summary_row_top {
+#drqeyjkwnq .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5113,11 +5113,11 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-bottom-color: #D3D3D3;
 }
 
-#himqiebuhr .gt_striped {
+#drqeyjkwnq .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#himqiebuhr .gt_table_body {
+#drqeyjkwnq .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5126,7 +5126,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-bottom-color: #D3D3D3;
 }
 
-#himqiebuhr .gt_footnotes {
+#drqeyjkwnq .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5140,7 +5140,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-right-color: #D3D3D3;
 }
 
-#himqiebuhr .gt_footnote {
+#drqeyjkwnq .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -5149,7 +5149,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#himqiebuhr .gt_sourcenotes {
+#drqeyjkwnq .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5163,7 +5163,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-right-color: #D3D3D3;
 }
 
-#himqiebuhr .gt_sourcenote {
+#drqeyjkwnq .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -5171,72 +5171,72 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#himqiebuhr .gt_left {
+#drqeyjkwnq .gt_left {
   text-align: left;
 }
 
-#himqiebuhr .gt_center {
+#drqeyjkwnq .gt_center {
   text-align: center;
 }
 
-#himqiebuhr .gt_right {
+#drqeyjkwnq .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#himqiebuhr .gt_font_normal {
+#drqeyjkwnq .gt_font_normal {
   font-weight: normal;
 }
 
-#himqiebuhr .gt_font_bold {
+#drqeyjkwnq .gt_font_bold {
   font-weight: bold;
 }
 
-#himqiebuhr .gt_font_italic {
+#drqeyjkwnq .gt_font_italic {
   font-style: italic;
 }
 
-#himqiebuhr .gt_super {
+#drqeyjkwnq .gt_super {
   font-size: 65%;
 }
 
-#himqiebuhr .gt_footnote_marks {
+#drqeyjkwnq .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#himqiebuhr .gt_asterisk {
+#drqeyjkwnq .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#himqiebuhr .gt_indent_1 {
+#drqeyjkwnq .gt_indent_1 {
   text-indent: 5px;
 }
 
-#himqiebuhr .gt_indent_2 {
+#drqeyjkwnq .gt_indent_2 {
   text-indent: 10px;
 }
 
-#himqiebuhr .gt_indent_3 {
+#drqeyjkwnq .gt_indent_3 {
   text-indent: 15px;
 }
 
-#himqiebuhr .gt_indent_4 {
+#drqeyjkwnq .gt_indent_4 {
   text-indent: 20px;
 }
 
-#himqiebuhr .gt_indent_5 {
+#drqeyjkwnq .gt_indent_5 {
   text-indent: 25px;
 }
 
-#himqiebuhr .katex-display {
+#drqeyjkwnq .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#himqiebuhr div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#drqeyjkwnq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -5263,38 +5263,38 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
 <tr class="odd">
 <td class="gt_row gt_left" headers="Level">lo</td>
 <td class="gt_row gt_right" headers="f_terb (%)">20.0</td>
-<td class="gt_row gt_right" headers="Deaths averted">2,503</td>
-<td class="gt_row gt_right" headers="DALYs averted">110,469</td>
-<td class="gt_row gt_right" headers="Spend (R/yr)">74,519,227</td>
-<td class="gt_row gt_right" headers="Benefit HC (R/yr)">4,005,720,000</td>
-<td class="gt_row gt_right" headers="Benefit DALY (R/yr)">12,151,594,400</td>
-<td class="gt_row gt_right" headers="NMB HC (R/yr)">3,931,200,773</td>
-<td class="gt_row gt_right" headers="NMB DALY (R/yr)">12,077,075,173</td>
-<td class="gt_row gt_right" headers="ICER (R/DALY averted)">675</td>
+<td class="gt_row gt_right" headers="Deaths averted">1,014</td>
+<td class="gt_row gt_right" headers="DALYs averted">44,746</td>
+<td class="gt_row gt_right" headers="Spend (R/yr)">25,170,224</td>
+<td class="gt_row gt_right" headers="Benefit HC (R/yr)">1,615,350,672</td>
+<td class="gt_row gt_right" headers="Benefit DALY (R/yr)">4,922,030,539</td>
+<td class="gt_row gt_right" headers="NMB HC (R/yr)">1,590,180,448</td>
+<td class="gt_row gt_right" headers="NMB DALY (R/yr)">4,896,860,315</td>
+<td class="gt_row gt_right" headers="ICER (R/DALY averted)">563</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Level">mid</td>
 <td class="gt_row gt_right" headers="f_terb (%)">25.0</td>
-<td class="gt_row gt_right" headers="Deaths averted">2,562</td>
-<td class="gt_row gt_right" headers="DALYs averted">113,063</td>
-<td class="gt_row gt_right" headers="Spend (R/yr)">70,637,306</td>
-<td class="gt_row gt_right" headers="Benefit HC (R/yr)">4,094,145,000</td>
-<td class="gt_row gt_right" headers="Benefit DALY (R/yr)">12,436,912,400</td>
-<td class="gt_row gt_right" headers="NMB HC (R/yr)">4,023,507,694</td>
-<td class="gt_row gt_right" headers="NMB DALY (R/yr)">12,366,275,094</td>
-<td class="gt_row gt_right" headers="ICER (R/DALY averted)">625</td>
+<td class="gt_row gt_right" headers="Deaths averted">1,014</td>
+<td class="gt_row gt_right" headers="DALYs averted">44,746</td>
+<td class="gt_row gt_right" headers="Spend (R/yr)">23,996,480</td>
+<td class="gt_row gt_right" headers="Benefit HC (R/yr)">1,615,514,940</td>
+<td class="gt_row gt_right" headers="Benefit DALY (R/yr)">4,922,055,385</td>
+<td class="gt_row gt_right" headers="NMB HC (R/yr)">1,591,518,460</td>
+<td class="gt_row gt_right" headers="NMB DALY (R/yr)">4,898,058,905</td>
+<td class="gt_row gt_right" headers="ICER (R/DALY averted)">536</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Level">hi</td>
 <td class="gt_row gt_right" headers="f_terb (%)">35.0</td>
-<td class="gt_row gt_right" headers="Deaths averted">2,620</td>
-<td class="gt_row gt_right" headers="DALYs averted">115,626</td>
-<td class="gt_row gt_right" headers="Spend (R/yr)">62,873,464</td>
-<td class="gt_row gt_right" headers="Benefit HC (R/yr)">4,181,520,000</td>
-<td class="gt_row gt_right" headers="Benefit DALY (R/yr)">12,718,842,400</td>
-<td class="gt_row gt_right" headers="NMB HC (R/yr)">4,118,646,536</td>
-<td class="gt_row gt_right" headers="NMB DALY (R/yr)">12,655,968,936</td>
-<td class="gt_row gt_right" headers="ICER (R/DALY averted)">544</td>
+<td class="gt_row gt_right" headers="Deaths averted">1,014</td>
+<td class="gt_row gt_right" headers="DALYs averted">44,746</td>
+<td class="gt_row gt_right" headers="Spend (R/yr)">21,648,992</td>
+<td class="gt_row gt_right" headers="Benefit HC (R/yr)">1,615,843,476</td>
+<td class="gt_row gt_right" headers="Benefit DALY (R/yr)">4,922,105,076</td>
+<td class="gt_row gt_right" headers="NMB HC (R/yr)">1,594,194,484</td>
+<td class="gt_row gt_right" headers="NMB DALY (R/yr)">4,900,456,084</td>
+<td class="gt_row gt_right" headers="ICER (R/DALY averted)">484</td>
 </tr>
 </tbody>
 </table>
@@ -5307,23 +5307,23 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
 <h3 data-number="1.7.2" class="anchored" data-anchor-id="scenario-d-vs-e-contrast-lost-benefit-from-10-residual"><span class="header-section-number">1.7.2</span> Scenario D vs E contrast — lost benefit from 10% residual</h3>
 <div class="cell">
 <div class="cell-output-display">
-<div id="ctuhgpldgi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ctuhgpldgi table {
+<div id="oagnttumsw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#oagnttumsw table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ctuhgpldgi thead, #ctuhgpldgi tbody, #ctuhgpldgi tfoot, #ctuhgpldgi tr, #ctuhgpldgi td, #ctuhgpldgi th {
+#oagnttumsw thead, #oagnttumsw tbody, #oagnttumsw tfoot, #oagnttumsw tr, #oagnttumsw td, #oagnttumsw th {
   border-style: none;
 }
 
-#ctuhgpldgi p {
+#oagnttumsw p {
   margin: 0;
   padding: 0;
 }
 
-#ctuhgpldgi .gt_table {
+#oagnttumsw .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -5349,12 +5349,12 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-left-color: #D3D3D3;
 }
 
-#ctuhgpldgi .gt_caption {
+#oagnttumsw .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ctuhgpldgi .gt_title {
+#oagnttumsw .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -5366,7 +5366,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-bottom-width: 0;
 }
 
-#ctuhgpldgi .gt_subtitle {
+#oagnttumsw .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -5378,7 +5378,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-top-width: 0;
 }
 
-#ctuhgpldgi .gt_heading {
+#oagnttumsw .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -5390,13 +5390,13 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-right-color: #D3D3D3;
 }
 
-#ctuhgpldgi .gt_bottom_border {
+#oagnttumsw .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ctuhgpldgi .gt_col_headings {
+#oagnttumsw .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5411,7 +5411,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-right-color: #D3D3D3;
 }
 
-#ctuhgpldgi .gt_col_heading {
+#oagnttumsw .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5431,7 +5431,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   overflow-x: hidden;
 }
 
-#ctuhgpldgi .gt_column_spanner_outer {
+#oagnttumsw .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5443,15 +5443,15 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 4px;
 }
 
-#ctuhgpldgi .gt_column_spanner_outer:first-child {
+#oagnttumsw .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ctuhgpldgi .gt_column_spanner_outer:last-child {
+#oagnttumsw .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ctuhgpldgi .gt_column_spanner {
+#oagnttumsw .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -5463,11 +5463,11 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   width: 100%;
 }
 
-#ctuhgpldgi .gt_spanner_row {
+#oagnttumsw .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ctuhgpldgi .gt_group_heading {
+#oagnttumsw .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5493,7 +5493,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   text-align: left;
 }
 
-#ctuhgpldgi .gt_empty_group_heading {
+#oagnttumsw .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -5508,15 +5508,15 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   vertical-align: middle;
 }
 
-#ctuhgpldgi .gt_from_md > :first-child {
+#oagnttumsw .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ctuhgpldgi .gt_from_md > :last-child {
+#oagnttumsw .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ctuhgpldgi .gt_row {
+#oagnttumsw .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5535,7 +5535,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   overflow-x: hidden;
 }
 
-#ctuhgpldgi .gt_stub {
+#oagnttumsw .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5548,7 +5548,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#ctuhgpldgi .gt_stub_row_group {
+#oagnttumsw .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5562,15 +5562,15 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   vertical-align: top;
 }
 
-#ctuhgpldgi .gt_row_group_first td {
+#oagnttumsw .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ctuhgpldgi .gt_row_group_first th {
+#oagnttumsw .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ctuhgpldgi .gt_summary_row {
+#oagnttumsw .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5580,16 +5580,16 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#ctuhgpldgi .gt_first_summary_row {
+#oagnttumsw .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ctuhgpldgi .gt_first_summary_row.thick {
+#oagnttumsw .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ctuhgpldgi .gt_last_summary_row {
+#oagnttumsw .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5599,7 +5599,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-bottom-color: #D3D3D3;
 }
 
-#ctuhgpldgi .gt_grand_summary_row {
+#oagnttumsw .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5609,7 +5609,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#ctuhgpldgi .gt_first_grand_summary_row {
+#oagnttumsw .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5619,7 +5619,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-top-color: #D3D3D3;
 }
 
-#ctuhgpldgi .gt_last_grand_summary_row_top {
+#oagnttumsw .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5629,11 +5629,11 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-bottom-color: #D3D3D3;
 }
 
-#ctuhgpldgi .gt_striped {
+#oagnttumsw .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ctuhgpldgi .gt_table_body {
+#oagnttumsw .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5642,7 +5642,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-bottom-color: #D3D3D3;
 }
 
-#ctuhgpldgi .gt_footnotes {
+#oagnttumsw .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5656,7 +5656,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-right-color: #D3D3D3;
 }
 
-#ctuhgpldgi .gt_footnote {
+#oagnttumsw .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -5665,7 +5665,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#ctuhgpldgi .gt_sourcenotes {
+#oagnttumsw .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5679,7 +5679,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-right-color: #D3D3D3;
 }
 
-#ctuhgpldgi .gt_sourcenote {
+#oagnttumsw .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -5687,72 +5687,72 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#ctuhgpldgi .gt_left {
+#oagnttumsw .gt_left {
   text-align: left;
 }
 
-#ctuhgpldgi .gt_center {
+#oagnttumsw .gt_center {
   text-align: center;
 }
 
-#ctuhgpldgi .gt_right {
+#oagnttumsw .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ctuhgpldgi .gt_font_normal {
+#oagnttumsw .gt_font_normal {
   font-weight: normal;
 }
 
-#ctuhgpldgi .gt_font_bold {
+#oagnttumsw .gt_font_bold {
   font-weight: bold;
 }
 
-#ctuhgpldgi .gt_font_italic {
+#oagnttumsw .gt_font_italic {
   font-style: italic;
 }
 
-#ctuhgpldgi .gt_super {
+#oagnttumsw .gt_super {
   font-size: 65%;
 }
 
-#ctuhgpldgi .gt_footnote_marks {
+#oagnttumsw .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ctuhgpldgi .gt_asterisk {
+#oagnttumsw .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ctuhgpldgi .gt_indent_1 {
+#oagnttumsw .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ctuhgpldgi .gt_indent_2 {
+#oagnttumsw .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ctuhgpldgi .gt_indent_3 {
+#oagnttumsw .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ctuhgpldgi .gt_indent_4 {
+#oagnttumsw .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ctuhgpldgi .gt_indent_5 {
+#oagnttumsw .gt_indent_5 {
   text-indent: 25px;
 }
 
-#ctuhgpldgi .katex-display {
+#oagnttumsw .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#ctuhgpldgi div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#oagnttumsw div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -5777,36 +5777,36 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
 <tbody class="gt_table_body">
 <tr class="odd">
 <td class="gt_row gt_left" headers="level">lo</td>
-<td class="gt_row gt_right" headers="deaths_av_D (perfect ban, φ=1.0)">2,529</td>
-<td class="gt_row gt_right" headers="deaths_av_E (imperfect ban, φ=0.90)">2,503</td>
-<td class="gt_row gt_right" headers="NMB_HC_D (perfect ban, φ=1.0)">3,972,226,071</td>
-<td class="gt_row gt_right" headers="NMB_HC_E (imperfect ban, φ=0.90)">3,931,200,773</td>
-<td class="gt_row gt_right" headers="NMB_DALY_D (perfect ban, φ=1.0)">12,205,608,471</td>
-<td class="gt_row gt_right" headers="NMB_DALY_E (imperfect ban, φ=0.90)">12,077,075,173</td>
-<td class="gt_row gt_right" headers="ICER_D (perfect ban, φ=1.0)">652</td>
-<td class="gt_row gt_right" headers="ICER_E (imperfect ban, φ=0.90)">675</td>
+<td class="gt_row gt_right" headers="deaths_av_D (perfect ban, φ=1.0)">1,014</td>
+<td class="gt_row gt_right" headers="deaths_av_E (imperfect ban, φ=0.90)">1,014</td>
+<td class="gt_row gt_right" headers="NMB_HC_D (perfect ban, φ=1.0)">1,590,775,120</td>
+<td class="gt_row gt_right" headers="NMB_HC_E (imperfect ban, φ=0.90)">1,590,180,448</td>
+<td class="gt_row gt_right" headers="NMB_DALY_D (perfect ban, φ=1.0)">4,897,393,022</td>
+<td class="gt_row gt_right" headers="NMB_DALY_E (imperfect ban, φ=0.90)">4,896,860,315</td>
+<td class="gt_row gt_right" headers="ICER_D (perfect ban, φ=1.0)">551</td>
+<td class="gt_row gt_right" headers="ICER_E (imperfect ban, φ=0.90)">563</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="level">mid</td>
-<td class="gt_row gt_right" headers="deaths_av_D (perfect ban, φ=1.0)">2,594</td>
-<td class="gt_row gt_right" headers="deaths_av_E (imperfect ban, φ=0.90)">2,562</td>
-<td class="gt_row gt_right" headers="NMB_HC_D (perfect ban, φ=1.0)">4,074,789,317</td>
-<td class="gt_row gt_right" headers="NMB_HC_E (imperfect ban, φ=0.90)">4,023,507,694</td>
-<td class="gt_row gt_right" headers="NMB_DALY_D (perfect ban, φ=1.0)">12,526,941,717</td>
-<td class="gt_row gt_right" headers="NMB_DALY_E (imperfect ban, φ=0.90)">12,366,275,094</td>
-<td class="gt_row gt_right" headers="ICER_D (perfect ban, φ=1.0)">598</td>
-<td class="gt_row gt_right" headers="ICER_E (imperfect ban, φ=0.90)">625</td>
+<td class="gt_row gt_right" headers="deaths_av_D (perfect ban, φ=1.0)">1,014</td>
+<td class="gt_row gt_right" headers="deaths_av_E (imperfect ban, φ=0.90)">1,014</td>
+<td class="gt_row gt_right" headers="NMB_HC_D (perfect ban, φ=1.0)">1,592,261,800</td>
+<td class="gt_row gt_right" headers="NMB_HC_E (imperfect ban, φ=0.90)">1,591,518,460</td>
+<td class="gt_row gt_right" headers="NMB_DALY_D (perfect ban, φ=1.0)">4,898,724,788</td>
+<td class="gt_row gt_right" headers="NMB_DALY_E (imperfect ban, φ=0.90)">4,898,058,905</td>
+<td class="gt_row gt_right" headers="ICER_D (perfect ban, φ=1.0)">522</td>
+<td class="gt_row gt_right" headers="ICER_E (imperfect ban, φ=0.90)">536</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="level">hi</td>
-<td class="gt_row gt_right" headers="deaths_av_D (perfect ban, φ=1.0)">2,620</td>
-<td class="gt_row gt_right" headers="deaths_av_E (imperfect ban, φ=0.90)">2,620</td>
-<td class="gt_row gt_right" headers="NMB_HC_D (perfect ban, φ=1.0)">4,121,665,808</td>
-<td class="gt_row gt_right" headers="NMB_HC_E (imperfect ban, φ=0.90)">4,118,646,536</td>
-<td class="gt_row gt_right" headers="NMB_DALY_D (perfect ban, φ=1.0)">12,658,988,208</td>
-<td class="gt_row gt_right" headers="NMB_DALY_E (imperfect ban, φ=0.90)">12,655,968,936</td>
-<td class="gt_row gt_right" headers="ICER_D (perfect ban, φ=1.0)">518</td>
-<td class="gt_row gt_right" headers="ICER_E (imperfect ban, φ=0.90)">544</td>
+<td class="gt_row gt_right" headers="deaths_av_D (perfect ban, φ=1.0)">1,014</td>
+<td class="gt_row gt_right" headers="deaths_av_E (imperfect ban, φ=0.90)">1,014</td>
+<td class="gt_row gt_right" headers="NMB_HC_D (perfect ban, φ=1.0)">1,595,235,160</td>
+<td class="gt_row gt_right" headers="NMB_HC_E (imperfect ban, φ=0.90)">1,594,194,484</td>
+<td class="gt_row gt_right" headers="NMB_DALY_D (perfect ban, φ=1.0)">4,901,388,320</td>
+<td class="gt_row gt_right" headers="NMB_DALY_E (imperfect ban, φ=0.90)">4,900,456,084</td>
+<td class="gt_row gt_right" headers="ICER_D (perfect ban, φ=1.0)">463</td>
+<td class="gt_row gt_right" headers="ICER_E (imperfect ban, φ=0.90)">484</td>
 </tr>
 </tbody>
 </table>
@@ -5821,23 +5821,23 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
 <h2 data-number="1.8" class="anchored" data-anchor-id="cross-scenario-cba-summary"><span class="header-section-number">1.8</span> Cross-scenario CBA summary</h2>
 <div class="cell">
 <div class="cell-output-display">
-<div id="gqnczvaann" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#gqnczvaann table {
+<div id="zcdbflreqb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#zcdbflreqb table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#gqnczvaann thead, #gqnczvaann tbody, #gqnczvaann tfoot, #gqnczvaann tr, #gqnczvaann td, #gqnczvaann th {
+#zcdbflreqb thead, #zcdbflreqb tbody, #zcdbflreqb tfoot, #zcdbflreqb tr, #zcdbflreqb td, #zcdbflreqb th {
   border-style: none;
 }
 
-#gqnczvaann p {
+#zcdbflreqb p {
   margin: 0;
   padding: 0;
 }
 
-#gqnczvaann .gt_table {
+#zcdbflreqb .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -5863,12 +5863,12 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-left-color: #D3D3D3;
 }
 
-#gqnczvaann .gt_caption {
+#zcdbflreqb .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#gqnczvaann .gt_title {
+#zcdbflreqb .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -5880,7 +5880,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-bottom-width: 0;
 }
 
-#gqnczvaann .gt_subtitle {
+#zcdbflreqb .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -5892,7 +5892,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-top-width: 0;
 }
 
-#gqnczvaann .gt_heading {
+#zcdbflreqb .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -5904,13 +5904,13 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-right-color: #D3D3D3;
 }
 
-#gqnczvaann .gt_bottom_border {
+#zcdbflreqb .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#gqnczvaann .gt_col_headings {
+#zcdbflreqb .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5925,7 +5925,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-right-color: #D3D3D3;
 }
 
-#gqnczvaann .gt_col_heading {
+#zcdbflreqb .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5945,7 +5945,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   overflow-x: hidden;
 }
 
-#gqnczvaann .gt_column_spanner_outer {
+#zcdbflreqb .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5957,15 +5957,15 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 4px;
 }
 
-#gqnczvaann .gt_column_spanner_outer:first-child {
+#zcdbflreqb .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#gqnczvaann .gt_column_spanner_outer:last-child {
+#zcdbflreqb .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#gqnczvaann .gt_column_spanner {
+#zcdbflreqb .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -5977,11 +5977,11 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   width: 100%;
 }
 
-#gqnczvaann .gt_spanner_row {
+#zcdbflreqb .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#gqnczvaann .gt_group_heading {
+#zcdbflreqb .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6007,7 +6007,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   text-align: left;
 }
 
-#gqnczvaann .gt_empty_group_heading {
+#zcdbflreqb .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -6022,15 +6022,15 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   vertical-align: middle;
 }
 
-#gqnczvaann .gt_from_md > :first-child {
+#zcdbflreqb .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#gqnczvaann .gt_from_md > :last-child {
+#zcdbflreqb .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#gqnczvaann .gt_row {
+#zcdbflreqb .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6049,7 +6049,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   overflow-x: hidden;
 }
 
-#gqnczvaann .gt_stub {
+#zcdbflreqb .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6062,7 +6062,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#gqnczvaann .gt_stub_row_group {
+#zcdbflreqb .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6076,15 +6076,15 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   vertical-align: top;
 }
 
-#gqnczvaann .gt_row_group_first td {
+#zcdbflreqb .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#gqnczvaann .gt_row_group_first th {
+#zcdbflreqb .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#gqnczvaann .gt_summary_row {
+#zcdbflreqb .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -6094,16 +6094,16 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#gqnczvaann .gt_first_summary_row {
+#zcdbflreqb .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#gqnczvaann .gt_first_summary_row.thick {
+#zcdbflreqb .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#gqnczvaann .gt_last_summary_row {
+#zcdbflreqb .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6113,7 +6113,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-bottom-color: #D3D3D3;
 }
 
-#gqnczvaann .gt_grand_summary_row {
+#zcdbflreqb .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -6123,7 +6123,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#gqnczvaann .gt_first_grand_summary_row {
+#zcdbflreqb .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6133,7 +6133,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-top-color: #D3D3D3;
 }
 
-#gqnczvaann .gt_last_grand_summary_row_top {
+#zcdbflreqb .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6143,11 +6143,11 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-bottom-color: #D3D3D3;
 }
 
-#gqnczvaann .gt_striped {
+#zcdbflreqb .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#gqnczvaann .gt_table_body {
+#zcdbflreqb .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -6156,7 +6156,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-bottom-color: #D3D3D3;
 }
 
-#gqnczvaann .gt_footnotes {
+#zcdbflreqb .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -6170,7 +6170,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-right-color: #D3D3D3;
 }
 
-#gqnczvaann .gt_footnote {
+#zcdbflreqb .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -6179,7 +6179,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#gqnczvaann .gt_sourcenotes {
+#zcdbflreqb .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -6193,7 +6193,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-right-color: #D3D3D3;
 }
 
-#gqnczvaann .gt_sourcenote {
+#zcdbflreqb .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -6201,72 +6201,72 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#gqnczvaann .gt_left {
+#zcdbflreqb .gt_left {
   text-align: left;
 }
 
-#gqnczvaann .gt_center {
+#zcdbflreqb .gt_center {
   text-align: center;
 }
 
-#gqnczvaann .gt_right {
+#zcdbflreqb .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#gqnczvaann .gt_font_normal {
+#zcdbflreqb .gt_font_normal {
   font-weight: normal;
 }
 
-#gqnczvaann .gt_font_bold {
+#zcdbflreqb .gt_font_bold {
   font-weight: bold;
 }
 
-#gqnczvaann .gt_font_italic {
+#zcdbflreqb .gt_font_italic {
   font-style: italic;
 }
 
-#gqnczvaann .gt_super {
+#zcdbflreqb .gt_super {
   font-size: 65%;
 }
 
-#gqnczvaann .gt_footnote_marks {
+#zcdbflreqb .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#gqnczvaann .gt_asterisk {
+#zcdbflreqb .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#gqnczvaann .gt_indent_1 {
+#zcdbflreqb .gt_indent_1 {
   text-indent: 5px;
 }
 
-#gqnczvaann .gt_indent_2 {
+#zcdbflreqb .gt_indent_2 {
   text-indent: 10px;
 }
 
-#gqnczvaann .gt_indent_3 {
+#zcdbflreqb .gt_indent_3 {
   text-indent: 15px;
 }
 
-#gqnczvaann .gt_indent_4 {
+#zcdbflreqb .gt_indent_4 {
   text-indent: 20px;
 }
 
-#gqnczvaann .gt_indent_5 {
+#zcdbflreqb .gt_indent_5 {
   text-indent: 25px;
 }
 
-#gqnczvaann .katex-display {
+#zcdbflreqb .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#gqnczvaann div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#zcdbflreqb div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -6288,43 +6288,43 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
 <tbody class="gt_table_body">
 <tr class="odd">
 <td class="gt_row gt_left" headers="Scenario">A — MVP + perfect coord</td>
-<td class="gt_row gt_right" headers="Spend (R/yr)">22,742,736</td>
-<td class="gt_row gt_right" headers="Deaths averted">1,603</td>
-<td class="gt_row gt_right" headers="Benefit HC (R/yr)">2,529,352,620</td>
-<td class="gt_row gt_right" headers="NMB HC (R/yr)" style="background-color: #77C578; color: #000000">2,506,609,884</td>
-<td class="gt_row gt_right" headers="R per death averted">14,183</td>
+<td class="gt_row gt_right" headers="Spend (R/yr)">22,599,734</td>
+<td class="gt_row gt_right" headers="Deaths averted">1,014</td>
+<td class="gt_row gt_right" headers="Benefit HC (R/yr)">1,618,344,000</td>
+<td class="gt_row gt_right" headers="NMB HC (R/yr)" style="background-color: #00441B; color: #FFFFFF">1,595,744,266</td>
+<td class="gt_row gt_right" headers="R per death averted">22,288</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Scenario">B — + S1b mid + perfect coord</td>
-<td class="gt_row gt_right" headers="Spend (R/yr)">88,046,911</td>
-<td class="gt_row gt_right" headers="Deaths averted">2,267</td>
-<td class="gt_row gt_right" headers="Benefit HC (R/yr)">3,652,020,000</td>
-<td class="gt_row gt_right" headers="NMB HC (R/yr)" style="background-color: #0E7734; color: #FFFFFF">3,563,973,089</td>
-<td class="gt_row gt_right" headers="R per death averted">38,839</td>
+<td class="gt_row gt_right" headers="Spend (R/yr)">27,865,200</td>
+<td class="gt_row gt_right" headers="Deaths averted">1,014</td>
+<td class="gt_row gt_right" headers="Benefit HC (R/yr)">1,614,693,600</td>
+<td class="gt_row gt_right" headers="NMB HC (R/yr)" style="background-color: #00471C; color: #FFFFFF">1,586,828,400</td>
+<td class="gt_row gt_right" headers="R per death averted">27,480</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Scenario">C — + S1b mid + imperfect coord</td>
-<td class="gt_row gt_right" headers="Spend (R/yr)">88,046,911</td>
-<td class="gt_row gt_right" headers="Deaths averted">645</td>
-<td class="gt_row gt_right" headers="Benefit HC (R/yr)">1,072,996,848</td>
-<td class="gt_row gt_right" headers="NMB HC (R/yr)" style="background-color: #F7FCF5; color: #000000">984,949,937</td>
-<td class="gt_row gt_right" headers="R per death averted">136,612</td>
+<td class="gt_row gt_right" headers="Spend (R/yr)">27,865,200</td>
+<td class="gt_row gt_right" headers="Deaths averted">414</td>
+<td class="gt_row gt_right" headers="Benefit HC (R/yr)">652,665,092</td>
+<td class="gt_row gt_right" headers="NMB HC (R/yr)" style="background-color: #F7FCF5; color: #000000">624,799,892</td>
+<td class="gt_row gt_right" headers="R per death averted">67,357</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Scenario">D — + perfect ban (f_terb mid)</td>
-<td class="gt_row gt_right" headers="Spend (R/yr)">68,480,683</td>
-<td class="gt_row gt_right" headers="Deaths averted">2,594</td>
-<td class="gt_row gt_right" headers="Benefit HC (R/yr)">4,143,270,000</td>
-<td class="gt_row gt_right" headers="NMB HC (R/yr)" style="background-color: #00441B; color: #FFFFFF">4,074,789,317</td>
-<td class="gt_row gt_right" headers="R per death averted">26,395</td>
+<td class="gt_row gt_right" headers="Spend (R/yr)">23,344,400</td>
+<td class="gt_row gt_right" headers="Deaths averted">1,014</td>
+<td class="gt_row gt_right" headers="Benefit HC (R/yr)">1,615,606,200</td>
+<td class="gt_row gt_right" headers="NMB HC (R/yr)" style="background-color: #00451B; color: #FFFFFF">1,592,261,800</td>
+<td class="gt_row gt_right" headers="R per death averted">23,022</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Scenario">E — + imperfect ban (φ=0.90, f_terb mid)</td>
-<td class="gt_row gt_right" headers="Spend (R/yr)">70,637,306</td>
-<td class="gt_row gt_right" headers="Deaths averted">2,562</td>
-<td class="gt_row gt_right" headers="Benefit HC (R/yr)">4,094,145,000</td>
-<td class="gt_row gt_right" headers="NMB HC (R/yr)" style="background-color: #00491D; color: #FFFFFF">4,023,507,694</td>
-<td class="gt_row gt_right" headers="R per death averted">27,574</td>
+<td class="gt_row gt_right" headers="Spend (R/yr)">23,996,480</td>
+<td class="gt_row gt_right" headers="Deaths averted">1,014</td>
+<td class="gt_row gt_right" headers="Benefit HC (R/yr)">1,615,514,940</td>
+<td class="gt_row gt_right" headers="NMB HC (R/yr)" style="background-color: #00451C; color: #FFFFFF">1,591,518,460</td>
+<td class="gt_row gt_right" headers="R per death averted">23,665</td>
 </tr>
 </tbody>
 </table>
@@ -6338,23 +6338,23 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
 <h2 data-number="1.9" class="anchored" data-anchor-id="cross-scenario-cua-summary"><span class="header-section-number">1.9</span> Cross-scenario CUA summary</h2>
 <div class="cell">
 <div class="cell-output-display">
-<div id="owmmgifxgn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#owmmgifxgn table {
+<div id="xpaftgzlpl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#xpaftgzlpl table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#owmmgifxgn thead, #owmmgifxgn tbody, #owmmgifxgn tfoot, #owmmgifxgn tr, #owmmgifxgn td, #owmmgifxgn th {
+#xpaftgzlpl thead, #xpaftgzlpl tbody, #xpaftgzlpl tfoot, #xpaftgzlpl tr, #xpaftgzlpl td, #xpaftgzlpl th {
   border-style: none;
 }
 
-#owmmgifxgn p {
+#xpaftgzlpl p {
   margin: 0;
   padding: 0;
 }
 
-#owmmgifxgn .gt_table {
+#xpaftgzlpl .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -6380,12 +6380,12 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-left-color: #D3D3D3;
 }
 
-#owmmgifxgn .gt_caption {
+#xpaftgzlpl .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#owmmgifxgn .gt_title {
+#xpaftgzlpl .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -6397,7 +6397,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-bottom-width: 0;
 }
 
-#owmmgifxgn .gt_subtitle {
+#xpaftgzlpl .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -6409,7 +6409,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-top-width: 0;
 }
 
-#owmmgifxgn .gt_heading {
+#xpaftgzlpl .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -6421,13 +6421,13 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-right-color: #D3D3D3;
 }
 
-#owmmgifxgn .gt_bottom_border {
+#xpaftgzlpl .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#owmmgifxgn .gt_col_headings {
+#xpaftgzlpl .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -6442,7 +6442,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-right-color: #D3D3D3;
 }
 
-#owmmgifxgn .gt_col_heading {
+#xpaftgzlpl .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6462,7 +6462,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   overflow-x: hidden;
 }
 
-#owmmgifxgn .gt_column_spanner_outer {
+#xpaftgzlpl .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6474,15 +6474,15 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 4px;
 }
 
-#owmmgifxgn .gt_column_spanner_outer:first-child {
+#xpaftgzlpl .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#owmmgifxgn .gt_column_spanner_outer:last-child {
+#xpaftgzlpl .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#owmmgifxgn .gt_column_spanner {
+#xpaftgzlpl .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -6494,11 +6494,11 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   width: 100%;
 }
 
-#owmmgifxgn .gt_spanner_row {
+#xpaftgzlpl .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#owmmgifxgn .gt_group_heading {
+#xpaftgzlpl .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6524,7 +6524,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   text-align: left;
 }
 
-#owmmgifxgn .gt_empty_group_heading {
+#xpaftgzlpl .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -6539,15 +6539,15 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   vertical-align: middle;
 }
 
-#owmmgifxgn .gt_from_md > :first-child {
+#xpaftgzlpl .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#owmmgifxgn .gt_from_md > :last-child {
+#xpaftgzlpl .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#owmmgifxgn .gt_row {
+#xpaftgzlpl .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6566,7 +6566,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   overflow-x: hidden;
 }
 
-#owmmgifxgn .gt_stub {
+#xpaftgzlpl .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6579,7 +6579,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#owmmgifxgn .gt_stub_row_group {
+#xpaftgzlpl .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6593,15 +6593,15 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   vertical-align: top;
 }
 
-#owmmgifxgn .gt_row_group_first td {
+#xpaftgzlpl .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#owmmgifxgn .gt_row_group_first th {
+#xpaftgzlpl .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#owmmgifxgn .gt_summary_row {
+#xpaftgzlpl .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -6611,16 +6611,16 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#owmmgifxgn .gt_first_summary_row {
+#xpaftgzlpl .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#owmmgifxgn .gt_first_summary_row.thick {
+#xpaftgzlpl .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#owmmgifxgn .gt_last_summary_row {
+#xpaftgzlpl .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6630,7 +6630,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-bottom-color: #D3D3D3;
 }
 
-#owmmgifxgn .gt_grand_summary_row {
+#xpaftgzlpl .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -6640,7 +6640,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#owmmgifxgn .gt_first_grand_summary_row {
+#xpaftgzlpl .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6650,7 +6650,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-top-color: #D3D3D3;
 }
 
-#owmmgifxgn .gt_last_grand_summary_row_top {
+#xpaftgzlpl .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6660,11 +6660,11 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-bottom-color: #D3D3D3;
 }
 
-#owmmgifxgn .gt_striped {
+#xpaftgzlpl .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#owmmgifxgn .gt_table_body {
+#xpaftgzlpl .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -6673,7 +6673,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-bottom-color: #D3D3D3;
 }
 
-#owmmgifxgn .gt_footnotes {
+#xpaftgzlpl .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -6687,7 +6687,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-right-color: #D3D3D3;
 }
 
-#owmmgifxgn .gt_footnote {
+#xpaftgzlpl .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -6696,7 +6696,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#owmmgifxgn .gt_sourcenotes {
+#xpaftgzlpl .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -6710,7 +6710,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   border-right-color: #D3D3D3;
 }
 
-#owmmgifxgn .gt_sourcenote {
+#xpaftgzlpl .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -6718,72 +6718,72 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
   padding-right: 5px;
 }
 
-#owmmgifxgn .gt_left {
+#xpaftgzlpl .gt_left {
   text-align: left;
 }
 
-#owmmgifxgn .gt_center {
+#xpaftgzlpl .gt_center {
   text-align: center;
 }
 
-#owmmgifxgn .gt_right {
+#xpaftgzlpl .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#owmmgifxgn .gt_font_normal {
+#xpaftgzlpl .gt_font_normal {
   font-weight: normal;
 }
 
-#owmmgifxgn .gt_font_bold {
+#xpaftgzlpl .gt_font_bold {
   font-weight: bold;
 }
 
-#owmmgifxgn .gt_font_italic {
+#xpaftgzlpl .gt_font_italic {
   font-style: italic;
 }
 
-#owmmgifxgn .gt_super {
+#xpaftgzlpl .gt_super {
   font-size: 65%;
 }
 
-#owmmgifxgn .gt_footnote_marks {
+#xpaftgzlpl .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#owmmgifxgn .gt_asterisk {
+#xpaftgzlpl .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#owmmgifxgn .gt_indent_1 {
+#xpaftgzlpl .gt_indent_1 {
   text-indent: 5px;
 }
 
-#owmmgifxgn .gt_indent_2 {
+#xpaftgzlpl .gt_indent_2 {
   text-indent: 10px;
 }
 
-#owmmgifxgn .gt_indent_3 {
+#xpaftgzlpl .gt_indent_3 {
   text-indent: 15px;
 }
 
-#owmmgifxgn .gt_indent_4 {
+#xpaftgzlpl .gt_indent_4 {
   text-indent: 20px;
 }
 
-#owmmgifxgn .gt_indent_5 {
+#xpaftgzlpl .gt_indent_5 {
   text-indent: 25px;
 }
 
-#owmmgifxgn .katex-display {
+#xpaftgzlpl .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#owmmgifxgn div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#xpaftgzlpl div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -6808,43 +6808,43 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
 <tbody class="gt_table_body">
 <tr class="odd">
 <td class="gt_row gt_left" headers="Scenario">A — MVP + perfect coord</td>
-<td class="gt_row gt_right" headers="Spend (R/yr)">22,742,736</td>
-<td class="gt_row gt_right" headers="DALYs averted">70,724</td>
-<td class="gt_row gt_right" headers="DALY benefit (R/yr)">7,779,641,324</td>
-<td class="gt_row gt_right" headers="NMB DALY (R/yr)">7,756,898,588</td>
-<td class="gt_row gt_right" headers="ICER (R/DALY averted)" style="background-color: #006400; color: #FFFFFF">322</td>
+<td class="gt_row gt_right" headers="Spend (R/yr)">22,599,734</td>
+<td class="gt_row gt_right" headers="DALYs averted">44,750</td>
+<td class="gt_row gt_right" headers="DALY benefit (R/yr)">4,922,483,280</td>
+<td class="gt_row gt_right" headers="NMB DALY (R/yr)">4,899,883,546</td>
+<td class="gt_row gt_right" headers="ICER (R/DALY averted)" style="background-color: #006400; color: #FFFFFF">505</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Scenario">B — + S1b mid + perfect coord</td>
-<td class="gt_row gt_right" headers="Spend (R/yr)">88,046,911</td>
-<td class="gt_row gt_right" headers="DALYs averted">100,094</td>
-<td class="gt_row gt_right" headers="DALY benefit (R/yr)">11,010,322,400</td>
-<td class="gt_row gt_right" headers="NMB DALY (R/yr)">10,922,275,489</td>
-<td class="gt_row gt_right" headers="ICER (R/DALY averted)" style="background-color: #74A100; color: #FFFFFF">880</td>
+<td class="gt_row gt_right" headers="Spend (R/yr)">27,865,200</td>
+<td class="gt_row gt_right" headers="DALYs averted">44,745</td>
+<td class="gt_row gt_right" headers="DALY benefit (R/yr)">4,921,931,157</td>
+<td class="gt_row gt_right" headers="NMB DALY (R/yr)">4,894,065,957</td>
+<td class="gt_row gt_right" headers="ICER (R/DALY averted)" style="background-color: #4B8600; color: #FFFFFF">623</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Scenario">C — + S1b mid + imperfect coord</td>
-<td class="gt_row gt_right" headers="Spend (R/yr)">88,046,911</td>
-<td class="gt_row gt_right" headers="DALYs averted">28,504</td>
-<td class="gt_row gt_right" headers="DALY benefit (R/yr)">3,135,464,598</td>
-<td class="gt_row gt_right" headers="NMB DALY (R/yr)">3,047,417,687</td>
-<td class="gt_row gt_right" headers="ICER (R/DALY averted)" style="background-color: #FF0000; color: #FFFFFF">3,089</td>
+<td class="gt_row gt_right" headers="Spend (R/yr)">27,865,200</td>
+<td class="gt_row gt_right" headers="DALYs averted">18,247</td>
+<td class="gt_row gt_right" headers="DALY benefit (R/yr)">2,007,139,487</td>
+<td class="gt_row gt_right" headers="NMB DALY (R/yr)">1,979,274,287</td>
+<td class="gt_row gt_right" headers="ICER (R/DALY averted)" style="background-color: #FF0000; color: #FFFFFF">1,527</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Scenario">D — + perfect ban (f_terb mid)</td>
-<td class="gt_row gt_right" headers="Spend (R/yr)">68,480,683</td>
-<td class="gt_row gt_right" headers="DALYs averted">114,504</td>
-<td class="gt_row gt_right" headers="DALY benefit (R/yr)">12,595,422,400</td>
-<td class="gt_row gt_right" headers="NMB DALY (R/yr)">12,526,941,717</td>
-<td class="gt_row gt_right" headers="ICER (R/DALY averted)" style="background-color: #448200; color: #FFFFFF">598</td>
+<td class="gt_row gt_right" headers="Spend (R/yr)">23,344,400</td>
+<td class="gt_row gt_right" headers="DALYs averted">44,746</td>
+<td class="gt_row gt_right" headers="DALY benefit (R/yr)">4,922,069,188</td>
+<td class="gt_row gt_right" headers="NMB DALY (R/yr)">4,898,724,788</td>
+<td class="gt_row gt_right" headers="ICER (R/DALY averted)" style="background-color: #136900; color: #FFFFFF">522</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Scenario">E — + imperfect ban (φ=0.90, f_terb mid)</td>
-<td class="gt_row gt_right" headers="Spend (R/yr)">70,637,306</td>
-<td class="gt_row gt_right" headers="DALYs averted">113,063</td>
-<td class="gt_row gt_right" headers="DALY benefit (R/yr)">12,436,912,400</td>
-<td class="gt_row gt_right" headers="NMB DALY (R/yr)">12,366,275,094</td>
-<td class="gt_row gt_right" headers="ICER (R/DALY averted)" style="background-color: #498500; color: #FFFFFF">625</td>
+<td class="gt_row gt_right" headers="Spend (R/yr)">23,996,480</td>
+<td class="gt_row gt_right" headers="DALYs averted">44,746</td>
+<td class="gt_row gt_right" headers="DALY benefit (R/yr)">4,922,055,385</td>
+<td class="gt_row gt_right" headers="NMB DALY (R/yr)">4,898,058,905</td>
+<td class="gt_row gt_right" headers="ICER (R/DALY averted)" style="background-color: #1E6D00; color: #FFFFFF">536</td>
 </tr>
 </tbody>
 </table>
@@ -6899,8 +6899,8 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
 </thead>
 <tbody>
 <tr class="odd">
-<td>Deaths anchor <code>N_deaths</code> = 2,620</td>
-<td>StatsSA MACOD 2023 X40–X49</td>
+<td>Deaths anchor <code>N_deaths</code> = 1,014</td>
+<td>StatsSA MACOD 2022 pesticide-specific (X48+X68+X87+Y18); interim pending 2023</td>
 <td><code>amua_import_parameters_v4.csv</code> → <code>n_deaths_headline</code></td>
 </tr>
 <tr class="even">
@@ -7454,7 +7454,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
 <span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>%%| label: fig-<span class="fu">system</span>-rca</span>
 <span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>%%| fig-cap: <span class="ot">"</span><span class="st">System-wide root cause analysis of pesticide-poisoning harm in South Africa, with each driver mapped to a D2P policy option. Green = addressed by a D2P option; grey-dashed = explicitly out of scope for D2P (real problem, but not the mandate of this workstream).</span><span class="ot">"</span></span>
 <span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>flowchart LR</span>
-<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>    HARM[Pesticide-poisoning&lt;br/&gt;harm in SA&lt;br/&gt;~<span class="dv">2</span>,<span class="dv">620</span> deaths/yr&lt;br/&gt;~R2.<span class="dv">34</span>B/yr burden]:::harm</span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>    HARM[Pesticide-poisoning&lt;br/&gt;harm in SA&lt;br/&gt;~<span class="dv">1</span>,<span class="bn">014</span> deaths/yr&lt;br/&gt;~R1.<span class="dv">61</span>B/yr burden]:::harm</span>
 <span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>    %% ===== Four root-cause domains =====</span>
 <span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>    HARM --&gt; SURV[Surveillance gaps]:::dom</span>
@@ -7567,7 +7567,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
 <span id="cb3-147"><a href="#cb3-147" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb3-148"><a href="#cb3-148" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-149"><a href="#cb3-149" aria-hidden="true" tabindex="-1"></a><span class="co"># ── Burden anchors ────────────────────────────────────────────────────────────</span></span>
-<span id="cb3-150"><a href="#cb3-150" aria-hidden="true" tabindex="-1"></a>N_deaths  <span class="ot">&lt;-</span> <span class="fu">pick</span>(<span class="st">"n_deaths_headline"</span>)               <span class="co"># 2,620 deaths/yr (StatsSA MACOD)</span></span>
+<span id="cb3-150"><a href="#cb3-150" aria-hidden="true" tabindex="-1"></a>N_deaths  <span class="ot">&lt;-</span> <span class="fu">pick</span>(<span class="st">"n_deaths_headline"</span>)               <span class="co"># 1,014 deaths/yr (StatsSA MACOD, pesticide-specific)</span></span>
 <span id="cb3-151"><a href="#cb3-151" aria-hidden="true" tabindex="-1"></a>c_morb    <span class="ot">&lt;-</span> <span class="fu">pick</span>(<span class="st">"c_morbidity_headline"</span>)            <span class="co"># R12,000 per morbidity case (HC)</span></span>
 <span id="cb3-152"><a href="#cb3-152" aria-hidden="true" tabindex="-1"></a>c_mort_HC <span class="ot">&lt;-</span> <span class="fu">pick</span>(<span class="st">"c_mortality_human_capital"</span>)       <span class="co"># R1,500,000 per death (human-capital)</span></span>
 <span id="cb3-153"><a href="#cb3-153" aria-hidden="true" tabindex="-1"></a></span>
@@ -7580,10 +7580,10 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
 <span id="cb3-160"><a href="#cb3-160" aria-hidden="true" tabindex="-1"></a><span class="co"># true cases helper — single source of truth for the denominator</span></span>
 <span id="cb3-161"><a href="#cb3-161" aria-hidden="true" tabindex="-1"></a>N_true_of <span class="ot">&lt;-</span> <span class="cf">function</span>(cfr) N_deaths <span class="sc">/</span> cfr</span>
 <span id="cb3-162"><a href="#cb3-162" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-163"><a href="#cb3-163" aria-hidden="true" tabindex="-1"></a>N_true_mid <span class="ot">&lt;-</span> <span class="fu">N_true_of</span>(cfr_mid)                     <span class="co"># 20,960 cases/yr at mid CFR</span></span>
+<span id="cb3-163"><a href="#cb3-163" aria-hidden="true" tabindex="-1"></a>N_true_mid <span class="ot">&lt;-</span> <span class="fu">N_true_of</span>(cfr_mid)                     <span class="co"># 8,112 cases/yr at mid CFR</span></span>
 <span id="cb3-164"><a href="#cb3-164" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-165"><a href="#cb3-165" aria-hidden="true" tabindex="-1"></a><span class="co"># ── Detection probabilities ───────────────────────────────────────────────────</span></span>
-<span id="cb3-166"><a href="#cb3-166" aria-hidden="true" tabindex="-1"></a>d_SQ      <span class="ot">&lt;-</span> <span class="fu">pick</span>(<span class="st">"d_status_quo"</span>)                    <span class="co"># 0.048 (NMC-only baseline)</span></span>
+<span id="cb3-166"><a href="#cb3-166" aria-hidden="true" tabindex="-1"></a>d_SQ      <span class="ot">&lt;-</span> <span class="fu">pick</span>(<span class="st">"d_status_quo"</span>)                    <span class="co"># 0.125 (NMC-only baseline)</span></span>
 <span id="cb3-167"><a href="#cb3-167" aria-hidden="true" tabindex="-1"></a>d_MVP     <span class="ot">&lt;-</span> <span class="fu">pick</span>(<span class="st">"d_surveillance_mvp"</span>)              <span class="co"># 0.189 (admin ceiling = S1 + S2)</span></span>
 <span id="cb3-168"><a href="#cb3-168" aria-hidden="true" tabindex="-1"></a>d_S1b_lo  <span class="ot">&lt;-</span> <span class="fu">pick</span>(<span class="st">"d_S1b_event_community_lo"</span>)        <span class="co"># 0.25</span></span>
 <span id="cb3-169"><a href="#cb3-169" aria-hidden="true" tabindex="-1"></a>d_S1b_mid <span class="ot">&lt;-</span> <span class="fu">pick</span>(<span class="st">"d_S1b_event_community_mid"</span>)       <span class="co"># 0.40</span></span>
@@ -7765,7 +7765,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
 <span id="cb3-349"><a href="#cb3-349" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-350"><a href="#cb3-350" aria-hidden="true" tabindex="-1"></a><span class="fu">## Scenario A — Ceiling administrative surveillance + perfect coordination, no ban</span></span>
 <span id="cb3-351"><a href="#cb3-351" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-352"><a href="#cb3-352" aria-hidden="true" tabindex="-1"></a>**Policy logic.** Get to the *administrative ceiling* (MVP detection = 18.9%) using only the existing NHLS/PIH feeds, then close the coordination loop **perfectly** so every detected case becomes a hotspot investigation that surfaces additional cluster members. **No chemical ban**. This is the cheapest credible policy bundle and answers: *"how much can we save without touching DALRRD's product register?"*</span>
+<span id="cb3-352"><a href="#cb3-352" aria-hidden="true" tabindex="-1"></a>**Policy logic.** Get to the *administrative ceiling* (MVP detection = 48.7%) using only the existing NHLS/PIH feeds, then close the coordination loop **perfectly** so every detected case becomes a hotspot investigation that surfaces additional cluster members. **No chemical ban**. This is the cheapest credible policy bundle and answers: *"how much can we save without touching DALRRD's product register?"*</span>
 <span id="cb3-353"><a href="#cb3-353" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-356"><a href="#cb3-356" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb3-357"><a href="#cb3-357" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: A-run</span></span>
@@ -8382,7 +8382,7 @@ Figure&nbsp;1: System-wide root cause analysis of pesticide-poisoning harm in So
 <span id="cb3-1010"><a href="#cb3-1010" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-1011"><a href="#cb3-1011" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Assumption <span class="pp">|</span> Source <span class="pp">|</span> Where to edit <span class="pp">|</span></span>
 <span id="cb3-1012"><a href="#cb3-1012" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|---|</span></span>
-<span id="cb3-1013"><a href="#cb3-1013" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Deaths anchor <span class="in">`N_deaths`</span> = 2,620 <span class="pp">|</span> StatsSA MACOD 2023 X40–X49 <span class="pp">|</span> <span class="in">`amua_import_parameters_v4.csv`</span> → <span class="in">`n_deaths_headline`</span> <span class="pp">|</span></span>
+<span id="cb3-1013"><a href="#cb3-1013" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Deaths anchor <span class="in">`N_deaths`</span> = 1,014 <span class="pp">|</span> StatsSA MACOD 2022 pesticide-specific (X48+X68+X87+Y18); interim pending 2023 <span class="pp">|</span> <span class="in">`amua_import_parameters_v4.csv`</span> → <span class="in">`n_deaths_headline`</span> <span class="pp">|</span></span>
 <span id="cb3-1014"><a href="#cb3-1014" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> CFR range 10–15% <span class="pp">|</span> StatsSA MACOD + stratified cohort <span class="pp">|</span> <span class="in">`cfr_headline_lo/mid/hi`</span> <span class="pp">|</span></span>
 <span id="cb3-1015"><a href="#cb3-1015" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Perfect coordination: η = 0.50, k = 3.5, full 957 <span class="pp">|</span> User-confirmed for v3 <span class="pp">|</span> inline <span class="in">`coord_presets$perfect`</span> <span class="pp">|</span></span>
 <span id="cb3-1016"><a href="#cb3-1016" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Imperfect coordination: η = 0.15, k = 1.2, 50% × 957 <span class="pp">|</span> User-confirmed for v3 <span class="pp">|</span> inline <span class="in">`coord_presets$imperfect`</span> <span class="pp">|</span></span>
