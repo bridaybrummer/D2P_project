@@ -30,7 +30,7 @@ This chunk is intentionally self-contained (Mermaid only, no R dependencies) so 
 %%| label: fig-system-rca
 %%| fig-cap: "System-wide root cause analysis of pesticide-poisoning harm in South Africa, with each driver mapped to a D2P policy option. Green = addressed by a D2P option; grey-dashed = explicitly out of scope for D2P (real problem, but not the mandate of this workstream)."
 flowchart LR
-    HARM[Pesticide-poisoning<br/>harm in SA<br/>~2,620 deaths/yr<br/>~R2.34B/yr burden]:::harm
+    HARM[Pesticide-poisoning<br/>harm in SA<br/>~1,014 deaths/yr<br/>~R1.61B/yr burden]:::harm
 
     %% ===== Four root-cause domains =====
     HARM --> SURV[Surveillance gaps]:::dom
@@ -143,7 +143,7 @@ pick <- function(name) {
 }
 
 # ── Burden anchors ────────────────────────────────────────────────────────────
-N_deaths  <- pick("n_deaths_headline")               # 2,620 deaths/yr (StatsSA MACOD)
+N_deaths  <- pick("n_deaths_headline")               # 1,014 deaths/yr (StatsSA MACOD, pesticide-specific)
 c_morb    <- pick("c_morbidity_headline")            # R12,000 per morbidity case (HC)
 c_mort_HC <- pick("c_mortality_human_capital")       # R1,500,000 per death (human-capital)
 
@@ -156,10 +156,10 @@ cfr_grid  <- seq(0.075, 0.20, by = 0.005)            # continuous grid for line 
 # true cases helper — single source of truth for the denominator
 N_true_of <- function(cfr) N_deaths / cfr
 
-N_true_mid <- N_true_of(cfr_mid)                     # 20,960 cases/yr at mid CFR
+N_true_mid <- N_true_of(cfr_mid)                     # 8,112 cases/yr at mid CFR
 
 # ── Detection probabilities ───────────────────────────────────────────────────
-d_SQ      <- pick("d_status_quo")                    # 0.048 (NMC-only baseline)
+d_SQ      <- pick("d_status_quo")                    # 0.125 (NMC-only baseline)
 d_MVP     <- pick("d_surveillance_mvp")              # 0.189 (admin ceiling = S1 + S2)
 d_S1b_lo  <- pick("d_S1b_event_community_lo")        # 0.25
 d_S1b_mid <- pick("d_S1b_event_community_mid")       # 0.40
@@ -341,7 +341,7 @@ run_scenario_v3 <- function(
 
 ## Scenario A — Ceiling administrative surveillance + perfect coordination, no ban
 
-**Policy logic.** Get to the *administrative ceiling* (MVP detection = 18.9%) using only the existing NHLS/PIH feeds, then close the coordination loop **perfectly** so every detected case becomes a hotspot investigation that surfaces additional cluster members. **No chemical ban**. This is the cheapest credible policy bundle and answers: *"how much can we save without touching DALRRD's product register?"*
+**Policy logic.** Get to the *administrative ceiling* (MVP detection = 48.7%) using only the existing NHLS/PIH feeds, then close the coordination loop **perfectly** so every detected case becomes a hotspot investigation that surfaces additional cluster members. **No chemical ban**. This is the cheapest credible policy bundle and answers: *"how much can we save without touching DALRRD's product register?"*
 
 ```{r}
 #| label: A-run
@@ -958,7 +958,7 @@ ggplot(frontier, aes(spend)) +
 
 | Assumption | Source | Where to edit |
 |---|---|---|
-| Deaths anchor `N_deaths` = 2,620 | StatsSA MACOD 2023 X40–X49 | `amua_import_parameters_v4.csv` → `n_deaths_headline` |
+| Deaths anchor `N_deaths` = 1,014 | StatsSA MACOD 2022 pesticide-specific (X48+X68+X87+Y18); interim pending 2023 | `amua_import_parameters_v4.csv` → `n_deaths_headline` |
 | CFR range 10–15% | StatsSA MACOD + stratified cohort | `cfr_headline_lo/mid/hi` |
 | Perfect coordination: η = 0.50, k = 3.5, full 957 | User-confirmed for v3 | inline `coord_presets$perfect` |
 | Imperfect coordination: η = 0.15, k = 1.2, 50% × 957 | User-confirmed for v3 | inline `coord_presets$imperfect` |

@@ -93,7 +93,7 @@ Annual case counts across the three data streams (treated as mutually-exclusive)
 section_table(params, "burden parameters")
 ```
 
-**Interpretation.** Three administrative streams capture different severities. NMC (~1,013) counts clinically-notified cases (2023); NHLS (~1,779 severe inhibitions from ~10,626 BChE tests, 2023) counts severe laboratory cases; PIH (~1,158) counts clinician-initiated calls (2023). Each stream is independently sourced; the sum (~3,950) is the 2023 observed lower bound. The StatsSA-implied true annual burden is ~20,960 (mid-CFR scenario, `n_true_burden_from_statssa_mid`).
+**Interpretation.** Three administrative streams capture different severities. NMC (~1,013) counts clinically-notified cases (2023); NHLS (~1,779 severe inhibitions from ~10,626 BChE tests, 2023) counts severe laboratory cases; PIH (~1,158) counts clinician-initiated calls (2023). Each stream is independently sourced; the sum (~3,950) is the 2023 observed lower bound. The StatsSA-implied true annual burden is ~8,112 (mid-CFR scenario, `n_true_burden_from_statssa_mid`).
 
 ## 2. Case fatality rate
 
@@ -103,7 +103,7 @@ section_table(params, "burden parameters")
 section_table(params, "case fatality rate")
 ```
 
-**Stratified vs. headline.** Applying the stratified CFR row-by-row gives **~830 deaths/year**; applying the flat headline 12.5 % gives **~1,460 deaths/year**; the Stats SA Vital Registration triangulation gives **~960–2,620 deaths/year**. The headline figure is now anchored at **2,620 deaths/year** via **StatsSA MACOD 2023, Table 4.12 (X40-X49: Accidental poisoning by and exposure to noxious substance)** — CSV row `n_deaths_statssa_macod`, mirrored to `n_deaths_headline`. This is the **canonical truth source** for deaths and is updated as new StatsSA releases land; it supersedes the v1 advocacy range of 1,500–1,800. The full v2 → v3 rationale is in [`parameter_appraisal.qmd`](parameter_appraisal.qmd).
+**Stratified vs. headline.** Applying the stratified CFR row-by-row gives **~830 deaths/year**; applying the flat headline 12.5 % gives **~1,460 deaths/year**; the Stats SA Vital Registration triangulation using the broader X40-X49 category previously gave **~960–2,620 deaths/year**. The headline figure is now anchored at **1,014 deaths/year** via **StatsSA MACOD 2022, Table 4.12, pesticide-specific UCOD codes (X48 accidental + X68 intentional self-poisoning + X87 assault + Y18 undetermined intent)** — CSV row `n_deaths_statssa_macod`, mirrored to `n_deaths_headline`. This is the **canonical truth source** for deaths and is updated as new StatsSA releases land; it supersedes both the v1 advocacy range of 1,500–1,800 and the v2/v3 X40-X49 all-noxious-substance figure of 2,620 (which was not pesticide-specific). 2023 pesticide-specific data has not yet been released, so 2022 is used as an interim anchor. The full v2 → v3 rationale is in [`parameter_appraisal.qmd`](parameter_appraisal.qmd).
 
 ## 3. Per-case costs
 
@@ -131,7 +131,7 @@ section_table(params, "mortality cost")
 section_table(params, "total economic burden")
 ```
 
-The two totals (conservative ~R1.34B vs. headline ~R2.34B) bracket the plausible range. Advocacy products use the headline; academic outputs report both.
+The two totals (conservative ~R1.34B vs. headline ~R1.61B) bracket the plausible range. Advocacy products use the headline; academic outputs report both.
 
 ## 6. Response efficacy ($\eta$)
 
@@ -144,7 +144,7 @@ section_table(params, "response efficacy")
 
 ```{r}
 #| label: tbl-detection
-#| tbl-cap: "Per-option detection probability — all active rows derived on the per-case scale from NICD + NHLS + PIH 2023 stream counts ÷ StatsSA MACOD mid-burden (20,960). v1 hotspot-cluster rows retained as DEPRECATED for back-compat only. Full audit trail in the [Surveillance brief §6](posts/surveillance_policy.qmd#sec-decision-tree)."
+#| tbl-cap: "Per-option detection probability — all active rows derived on the per-case scale from NICD + NHLS + PIH 2023 stream counts ÷ StatsSA MACOD mid-burden (8,112, 2022 pesticide-specific anchor). v1 hotspot-cluster rows retained as DEPRECATED for back-compat only. Full audit trail in the [Surveillance brief §6](posts/surveillance_policy.qmd#sec-decision-tree)."
 section_table(params, "detection probabilities")
 ```
 

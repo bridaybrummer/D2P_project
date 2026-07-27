@@ -25,7 +25,7 @@ This document describes the **decision tree model** used to compare five policy 
 
 **Approach:** Compare 6 strategies (status quo + 5 options) on two dimensions:
 
-1. **Effectiveness:** Per-case detection probability — share of the implied true burden (~20,960 cases/yr, StatsSA-anchored) that the surveillance system actually sees
+1. **Effectiveness:** Per-case detection probability — share of the implied true burden (~8,112 cases/yr, StatsSA-anchored) that the surveillance system actually sees
 2. **Cost:** Annual implementation and operational costs (ZAR)
 
 **Output:** Cost-effectiveness ratios to inform policy prioritization
@@ -89,12 +89,12 @@ library(tidyverse)
 
 baseline_params <- tribble(
   ~Parameter, ~Value, ~Source,
-  "Implied true annual burden (mid-CFR)", "~20,960", "StatsSA MACOD 2023 ÷ 0.125",
-  "Status-quo per-case detection (P_detect)", "0.048 (~5%)", "1,013 NMC × 0.125 ÷ 2,620 StatsSA deaths",
+  "Implied true annual burden (mid-CFR)", "~8,112", "StatsSA MACOD 2022 (pesticide-specific X48+X68+X87+Y18) ÷ 0.125",
+  "Status-quo per-case detection (P_detect)", "0.125 (~12.5%)", "1,013 NMC × 0.125 ÷ 1,014 StatsSA deaths",
   "Severe BChE inhibitions/year", "~1,779", "NHLS LIS 2023",
   "Total BChE tests/year", "~10,626", "NHLS LIS 2023",
   "NMC notifications/year", "~1,013", "NICD NMC Annual Report 2023",
-  "Detection gap", "~19,947 cases (~95%)", "Implied burden − NMC notifications"
+  "Detection gap", "~7,099 cases (~87.5%)", "Implied burden − NMC notifications"
 )
 
 baseline_params %>%
@@ -123,13 +123,13 @@ Each option has an estimated **per-case detection probability** — the share of
 
 effectiveness_params <- tribble(
   ~Option, ~Detection_Probability, ~Cases_Detected, ~Rationale,
-  "Status Quo", "0.048", "~1,013 / 20,960", "NMC-only, StatsSA-anchored",
+  "Status Quo", "0.125", "~1,013 / 8,112", "NMC-only, StatsSA-anchored",
   "Option 1: NHLS MOU (legacy)", "0.052 (deprecated)", "—", "Now operational; no longer an active option",
   "Option 2: DALRRD data (legacy)", "0.058 (deprecated)", "—", "Coordination scope; see coordination brief",
-  "Option 3 / S2: BChE auto-notify", "0.133", "~2,792 / 20,960", "Adds 1,779 severe BChE/yr to NMC stream",
-  "Option 4 / S1: PIH MVD + dashboard", "0.104", "~2,171 / 20,960", "Adds 1,158 clinician calls/yr to NMC stream",
+  "Option 3 / S2: BChE auto-notify", "0.344", "~2,792 / 8,112", "Adds 1,779 severe BChE/yr to NMC stream",
+  "Option 4 / S1: PIH MVD + dashboard", "0.268", "~2,171 / 8,112", "Adds 1,158 clinician calls/yr to NMC stream",
   "Option 5: Provincial coordination (legacy)", "—", "—", "Response-side; see coordination brief",
-  "Surveillance MVP (S1 + S2)", "0.189", "~3,950 / 20,960", "Both streams combined; CSV-anchored"
+  "Surveillance MVP (S1 + S2)", "0.487", "~3,950 / 8,112", "Both streams combined; CSV-anchored"
 )
 
 effectiveness_params %>%
@@ -191,13 +191,13 @@ cost_params %>%
 #| fig-width: 8
 #| fig-height: 6
 
-# Create base case results data (per-case P_detect scale, anchored to StatsSA mid-burden 20,960)
+# Create base case results data (per-case P_detect scale, anchored to StatsSA mid-burden 8,112)
 base_case <- tribble(
   ~strategy_name, ~strategy_code, ~cost_annual, ~effectiveness,
-  "Status Quo", "SQ", 0, 0.048,
-  "S1: PIH MVD + dashboard", "S1", 62000, 0.104,
-  "S2: BChE auto-notify", "S2", 55000, 0.133,
-  "Surveillance MVP (S1+S2)", "MVP", 117000, 0.189
+  "Status Quo", "SQ", 0, 0.125,
+  "S1: PIH MVD + dashboard", "S1", 62000, 0.268,
+  "S2: BChE auto-notify", "S2", 55000, 0.344,
+  "Surveillance MVP (S1+S2)", "MVP", 117000, 0.487
 )
 
 # Create cost-effectiveness plot
@@ -208,7 +208,7 @@ ggplot(base_case, aes(x = cost_annual, y = effectiveness)) +
                linetype = "dashed", color = "red", alpha = 0.5) +
   scale_color_brewer(palette = "Set2") +
   scale_x_continuous(labels = scales::dollar_format(prefix = "R", suffix = "", scale = 1)) +
-  scale_y_continuous(limits = c(0, 0.25), breaks = seq(0, 0.25, 0.05),
+  scale_y_continuous(limits = c(0, 0.6), breaks = seq(0, 0.6, 0.1),
                      labels = scales::percent_format(accuracy = 1)) +
   labs(
     title = "Cost-Effectiveness of Surveillance Policy Options",
@@ -235,10 +235,10 @@ The **incremental cost-effectiveness ratio (ICER)** tells us how much it costs t
 
 icer_table <- tribble(
   ~Strategy, ~Cost, ~P_detect, ~Incremental_Cost, ~Incremental_pp, ~ICER,
-  "Status Quo", "R0", "0.048", "—", "—", "—",
-  "S1: PIH MVD + dashboard", "R62,000", "0.104", "R62,000", "+5.6 pp", "R11,071 per pp",
-  "S2: BChE auto-notify", "R55,000", "0.133", "−R7,000*", "+2.9 pp", "Dominates S1",
-  "Surveillance MVP (S1+S2)", "R117,000", "0.189", "R62,000", "+5.6 pp", "R11,071 per pp"
+  "Status Quo", "R0", "0.125", "—", "—", "—",
+  "S1: PIH MVD + dashboard", "R62,000", "0.268", "R62,000", "+14.3 pp", "R4,336 per pp",
+  "S2: BChE auto-notify", "R55,000", "0.344", "−R7,000*", "+7.6 pp", "Dominates S1",
+  "Surveillance MVP (S1+S2)", "R117,000", "0.487", "R62,000", "+14.3 pp", "R4,336 per pp"
 )
 
 icer_table %>%
@@ -261,8 +261,8 @@ icer_table %>%
 ## Interpretation
 
 - **S2 (BChE auto-notify) dominates S1** in isolation — it costs less and adds more detection. Both are recommended together (MVP) because they catch *different* patients (BChE-tested vs PIH-called).
-- **Best value:** ~R11,000 per percentage-point of additional per-case detection.
-- **MVP:** Triples the share of true cases entering the surveillance system (0.048 → 0.189) for ~R117k/yr operating.
+- **Best value:** ~R4,336 per percentage-point of additional per-case detection.
+- **MVP:** Nearly quadruples the share of true cases entering the surveillance system (0.125 → 0.487) for ~R117k/yr operating.
 :::
 
 ## Sensitivity Analysis
@@ -342,7 +342,7 @@ psa_results <- tibble(
     rnorm(n_sims, 117000, 25000)  # MVP
   ),
   effectiveness = c(
-    rnorm(n_sims, 0.048, 0.010),  # Status quo
+    rnorm(n_sims, 0.125, 0.010),  # Status quo
     rnorm(n_sims, 0.133, 0.020),  # S2
     rnorm(n_sims, 0.189, 0.025)   # MVP
   )

@@ -25,7 +25,7 @@ The model is designed to demonstrate two structural results:
 
 ## Burden
 
-StatsSA MACOD 2023 records 2,620 deaths/yr from acute pesticide poisoning (ICD-10 X40–X49). Applied to a mid case-fatality of 12.5 %, this implies ~20,960 true cases/yr. NMC currently notifies ~5 % of true cases. Terbufos (WHO Class Ia organophosphate) is the dominant agent in fatal paediatric events (Davies 2023) with an attributable fraction of 20–35 %.
+StatsSA MACOD 2022 records 1,014 pesticide-specific poisoning deaths/yr (X48+X68+X87+Y18; interim anchor pending 2023 release). Applied to a mid case-fatality of 12.5 %, this implies ~8,112 true cases/yr. NMC currently notifies ~12.5 % of true cases. Terbufos (WHO Class Ia organophosphate) is the dominant agent in fatal paediatric events (Davies 2023) with an attributable fraction of 20–35 %.
 
 ## Model
 
@@ -49,8 +49,8 @@ pick <- function(name) {
 }
 
 # Burden anchors
-N_true    <- pick("n_true_burden_from_statssa_mid")  # 20,960 true cases/yr
-N_deaths  <- pick("n_deaths_headline")               # 2,620 deaths/yr
+N_true    <- pick("n_true_burden_from_statssa_mid")  # 8,112 true cases/yr
+N_deaths  <- pick("n_deaths_headline")               # 1,014 deaths/yr
 c_morb    <- pick("c_morbidity_headline")            # R/morbidity case
 c_mort    <- pick("c_mortality_human_capital")       # R/death (YLL human-capital)
 

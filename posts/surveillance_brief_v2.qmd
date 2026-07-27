@@ -10,6 +10,19 @@ format:
     toc: true
     toc-depth: 2
     number-sections: false
+  pdf:
+    toc: true
+    number-sections: false
+    documentclass: article
+    geometry: margin=2.5cm
+    mermaid-format: png
+    output-file: "surveillance_brief_v2.pdf"
+  docx:
+    toc: true
+    number-sections: false
+    mermaid-format: png
+    output-file: "surveillance_brief_v2.docx"
+format-links: [pdf, docx]
 ---
 
 ```{r}

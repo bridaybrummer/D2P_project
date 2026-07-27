@@ -124,7 +124,7 @@ STYLES)
 
 # ---- INTRO: core problem + 4 grouped areas only (LR → tall → portrait) ------
 INTRO_LR <- paste0('flowchart LR
-    HARM["Pesticide-poisoning harm in SA<br/><5% of true burden recorded ·  ~R2.34B/yr burden"]:::harm
+    HARM["Pesticide-poisoning harm in SA<br/><15% of true burden recorded ·  ~R1.61B/yr burden"]:::harm
     HARM --> SG1["SURVEILLANCE GAPS"]:::dom
     HARM --> SG2["COORDINATION &<br/>RESPONSE GAPS"]:::dom
     HARM --> SG3["REGULATORY /<br/>BANNING GAPS"]:::dom
@@ -133,7 +133,7 @@ STYLES)
 
 # ---- PORTRAIT (flowchart TD, 4 side-by-side subgraph columns) ---------------
 MMD_PORTRAIT <- paste0('flowchart TD
-    HARM["Pesticide-poisoning harm in SA<br/>~2,620 deaths/yr · ~R2.34B/yr burden"]:::harm
+    HARM["Pesticide-poisoning harm in SA<br/>~1,014 deaths/yr · ~R1.61B/yr burden"]:::harm
 
     HARM --> SURV_H
     HARM --> COORD_H
@@ -214,7 +214,7 @@ STYLES)
 
 # ---- LANDSCAPE (flowchart LR, 4 horizontal band subgraphs) ------------------
 MMD_LANDSCAPE <- paste0('flowchart LR
-    HARM["Pesticide-poisoning harm in SA<br/>~2,620 deaths/yr · ~R2.34B/yr burden"]:::harm
+    HARM["Pesticide-poisoning harm in SA<br/>~1,014 deaths/yr · ~R1.61B/yr burden"]:::harm
 
     HARM --> SURV_H
     HARM --> COORD_H

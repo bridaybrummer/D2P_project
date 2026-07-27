@@ -10,6 +10,12 @@ format:
     toc: true
     toc-depth: 2
     number-sections: false
+  docx:
+    toc: true
+    number-sections: false
+    mermaid-format: png
+    output-file: "terbufos_policy.docx"
+format-links: [docx]
 ---
 
 ::: {.callout-important icon=false}
@@ -123,7 +129,7 @@ Terbufos is a **WHO Class Ia ("Extremely Hazardous")** organophosphate insectici
 ::: {.callout-note}
 ## DALRRD holds the lever — and bears almost none of the cost
 
-DALRRD itself bears **~R0 of the R2.34B annual burden**. That cost is borne by NDoH (~R70M hospital), NHLS (~R10M lab), and most heavily by **households (~R2.26B in OOP costs and lost lifetime earnings)**. DALRRD nevertheless holds the *only* lever — registration, restriction, recall — that prevents the underlying exposure. Action borne by DALRRD (~R1–3M/yr enforcement) retires household-borne mortality cost at a leverage ratio of roughly **1 : 500**. This is the single highest-leverage regulatory action on the SA pesticide-poisoning portfolio.
+DALRRD itself bears **~R0 of the R1.61B annual burden**. That cost is borne by NDoH (~R70M hospital), NHLS (~R10M lab), and most heavily by **households (~R1.53B in OOP costs and lost lifetime earnings)**. DALRRD nevertheless holds the *only* lever — registration, restriction, recall — that prevents the underlying exposure. Action borne by DALRRD (~R1–3M/yr enforcement) retires household-borne mortality cost at a leverage ratio of roughly **1 : 500**. This is the single highest-leverage regulatory action on the SA pesticide-poisoning portfolio.
 :::
 
 | Item | Status |

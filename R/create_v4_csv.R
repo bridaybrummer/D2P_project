@@ -56,9 +56,9 @@ notes_overrides <- tribble(
   "c_S3a_BChE_autonotify_op",
     "S2 BChE auto-notify operating: middleware hosting + maintenance | dist=gamma(25,2200) | NHLS IT (was c_S3a_BChE_autonotify_op in v3)",
   "d_option4_PIH_quarterly",
-    "S1 PIH MVD + dashboard per-case detection = (n_nmc_annual + n_pih_annual)/n_true_burden_from_statssa_mid = (1013+1158)/20960 | dist=beta(10,90) | Derived from StatsSA MACOD 2023 anchor (was d_option4_PIH_quarterly in v3)",
+    "S1 PIH MVD + dashboard per-case detection = (n_nmc_annual + n_pih_annual)/n_true_burden_from_statssa_mid = (1013+1158)/8112 | dist=beta(27,73) | Derived from StatsSA MACOD 2022 pesticide-specific anchor (was d_option4_PIH_quarterly in v3)",
   "d_option3_BChE_autonotify",
-    "S2 BChE auto-notify per-case detection = (n_nmc_annual + n_nhls_severe_annual)/n_true_burden_from_statssa_mid = (1013+1779)/20960 | dist=beta(13,87) | Derived from StatsSA MACOD 2023 anchor (was d_option3_BChE_autonotify in v3)",
+    "S2 BChE auto-notify per-case detection = (n_nmc_annual + n_nhls_severe_annual)/n_true_burden_from_statssa_mid = (1013+1779)/8112 | dist=beta(34,66) | Derived from StatsSA MACOD 2022 pesticide-specific anchor (was d_option3_BChE_autonotify in v3)",
   "c_surv_MVP_op",
     "Surveillance MVP annual operating = S1 PIH MVD (R82k, AfriTox harmonisation) + S2 BChE auto-notify (R55k) = R137k | dist=fixed(,) | Sum",
   "c_surv_MVP_setup",
@@ -67,7 +67,7 @@ notes_overrides <- tribble(
 
 # ── 3. Section-header text updates ───────────────────────────────────────
 header_subs <- c(
-  "DETECTION PROBABILITIES BY OPTION (per-case scale, anchored to StatsSA mid-burden 20,960)" =
+  "DETECTION PROBABILITIES BY OPTION (per-case scale, anchored to StatsSA mid-burden 8,112)" =
     "DETECTION PROBABILITIES BY OPTION (v4: d_S1_PIH_MVD, d_S2_BChE_autonotify — per-case, StatsSA-anchored)",
   "SURVEILLANCE OPTIONS — CANONICAL (S-taxonomy, refactored 2026)" =
     "SURVEILLANCE OPTIONS — CANONICAL (v4: S0 operational, S1 PIH MVD, S2 BChE auto-notify)",
@@ -302,6 +302,28 @@ v4 <- bind_rows(v4, deprecated_aliases)
 
 # ── 11. Write v4 ──────────────────────────────────────────────────────────
 write_csv(v4, out_file, na = "")
+
+# ── 11b. Append manually-maintained v4-only rows ──────────────────────────
+# These parameter blocks (S1b community-surveillance sensitivity, aldicarb
+# phase-out, DALY/GBD, terbufos personal decision tree, EHP/DALRRD costing)
+# were added directly to v4 in the past and have NO v3 source rows. They are
+# NOT part of the v3→v4 generation above, so they must be re-appended here on
+# every regeneration or they are silently lost. Source of truth for these
+# rows is amua_v4_manual_additions.csv — edit that file, not v4 directly.
+manual_file <- Filter(file.exists, c(
+  "amua_v4_manual_additions.csv",
+  "../amua_v4_manual_additions.csv"
+))[1]
+if (!is.na(manual_file)) {
+  manual_lines <- readLines(manual_file)
+  cat(manual_lines, file = out_file, sep = "\n", append = TRUE)
+  cat(sprintf("✓ Appended %d manual-only rows/comments from %s\n",
+              length(manual_lines), manual_file))
+} else {
+  warning("amua_v4_manual_additions.csv not found — v4-only parameter blocks (S1b, aldicarb, DALY, terbufos personal tree, EHP/DALRRD) were NOT appended!")
+}
+
+v4 <- read_csv(out_file, col_types = cols(.default = col_character()), show_col_types = FALSE)
 
 cat(sprintf(
   "✓ Written %d rows (%d non-header data rows) to %s\n",

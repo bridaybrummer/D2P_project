@@ -55,13 +55,13 @@ pick <- function(name) {
 }
 
 # ── Burden anchors (from StatsSA MACOD 2023) ──────────────────────────────────
-N_true    <- pick("n_true_burden_from_statssa_mid")   # 20,960 true cases/yr
-N_deaths  <- pick("n_deaths_headline")                # 2,620 deaths/yr
+N_true    <- pick("n_true_burden_from_statssa_mid")   # 8,112 true cases/yr
+N_deaths  <- pick("n_deaths_headline")                # 1,014 deaths/yr
 c_morb    <- pick("c_morbidity_headline")             # R12,000/morbidity case
 c_mort    <- pick("c_mortality_human_capital")        # R1,500,000/death (human-capital YLL)
 
 # ── Detection probabilities ────────────────────────────────────────────────────
-d_SQ       <- pick("d_status_quo")                    # 0.048  NMC-only
+d_SQ       <- pick("d_status_quo")                    # 0.125  NMC-only
 # S1 and S2 contribute independently; MVP = S1 + S2
 delta_S1   <- pick("n_pih_annual")   / N_true         # PIH MVD incremental
 delta_S2   <- pick("n_nhls_severe_annual") / N_true   # BChE auto-notify incremental
@@ -407,7 +407,7 @@ This scenario evaluates the sensitivity of NMB and deaths averted to k across th
 
 expand_grid(
   k = c(k_lo, k_mid, k_hi),
-  tier = c("MVP (d = 18.9%)", "S1b mid (d = 40%)")
+  tier = c("MVP (d = 48.7%)", "S1b mid (d = 40%)")
 ) |>
   mutate(
     d_val     = if_else(str_detect(tier, "MVP"), d_MVP, d_S1b_mid),
@@ -445,7 +445,7 @@ expand_grid(
 k_grid <- seq(1.0, 4.0, by = 0.1)
 
 s13_curve <- bind_rows(
-  tibble(k = k_grid, tier = "MVP (d = 18.9%)") |>
+  tibble(k = k_grid, tier = "MVP (d = 48.7%)") |>
     mutate(res = map(k, ~ run_scenario_v2(d_MVP, c_surv = c_MVP_op,
                                           c_coord = c_coord_FP, p_fp = 0,
                                           k_cluster = .x, coord_dynamic = TRUE))),

@@ -93,8 +93,8 @@ function start(name) {
 ```{ojs}
 //| echo: false
 
-viewof n_deaths_statssa_macod = Inputs.range([1000, 4000], {
-  step: 50,
+viewof n_deaths_statssa_macod = Inputs.range([500, 4000], {
+  step: 25,
   value: start("n_deaths_statssa_macod"),
   label: "Annual deaths (StatsSA MACOD) — n_deaths_statssa_macod ← canonical truth"
 })
@@ -206,7 +206,7 @@ ROI_wholesystem     = burden_avoided / c_full_package_wholesystem_operating
 
 // ---------- Stakeholder split of avoided burden ----------
 // Apply the canonical share table (NDoH ~R70M, NHLS ~R10M, OOP ~R10M,
-// household mortality ~R2.25B of the R2.34B headline burden) proportionally
+// household mortality ~R1.52B of the R1.61B headline burden) proportionally
 // to whatever total burden the user has built with the sliders.
 share_doh_frac     = 70e6  / 2340e6   // ~3.0%
 share_nhls_frac    = 10e6  / 2340e6   // ~0.4%
@@ -301,7 +301,7 @@ stakeholderTable = Inputs.table([
 })
 ```
 
-*Shares are applied proportionally from the canonical v3 stakeholder table (NDoH ~R70M, NHLS ~R10M, individuals OOP ~R10M, households mortality ~R2.25B of the R2.34B headline). Change any slider above to see how the same shares apply to a different total.*
+*Shares are applied proportionally from the canonical v3 stakeholder table (NDoH ~R70M, NHLS ~R10M, individuals OOP ~R10M, households mortality ~R1.52B of the R1.61B headline). Change any slider above to see how the same shares apply to a different total.*
 
 ### What changed from canonical v3?
 

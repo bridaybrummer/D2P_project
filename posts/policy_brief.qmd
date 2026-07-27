@@ -10,6 +10,12 @@ format:
     toc: true
     toc-depth: 2
     number-sections: false
+  docx:
+    toc: true
+    number-sections: false
+    mermaid-format: png
+    output-file: "policy_brief.docx"
+format-links: [docx]
 ---
 
 ::: {.callout-important icon=false}

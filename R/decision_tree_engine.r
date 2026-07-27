@@ -55,7 +55,7 @@ library(tidyverse)
 # Usage:
 #   params <- load_params()                       # default CSV path
 #   params <- load_params("path/to/other.csv")    # override
-#   params$d_status_quo                           # 0.048
+#   params$d_status_quo                           # 0.125
 # -----------------------------------------------------------------------------
 load_params <- function(csv_path = NULL) {
 

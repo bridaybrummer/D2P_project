@@ -50,7 +50,7 @@ tibble::tribble(
   tab_options(table.font.size = "small")
 ```
 
-### Who bears the R2.34B annual burden?
+### Who bears the R1.61B annual burden?
 
 ```{r}
 #| label: shared-params-stakeholder
@@ -81,7 +81,7 @@ stakeholder <- tibble::tribble(
 stakeholder |>
   gt() |>
   tab_header(title = "Annual burden by stakeholder (headline scenario, ZAR 2025)",
-             subtitle = "Each rand of the R2.34B falls on exactly one bearer") |>
+             subtitle = "Each rand of the R1.61B falls on exactly one bearer") |>
   cols_align("right", c(Value, Share)) |>
   tab_style(
     style = cell_text(weight = "bold"),
@@ -91,7 +91,7 @@ stakeholder |>
   tab_options(table.font.size = "small")
 ```
 
-**Reading the table.** ~96 % of the R2.34B is **mortality, borne by households and the wider economy** as lost lifetime earnings (1,500 deaths × R1.5M human-capital, undiscounted; sensitivity: R1.05M at 3 % discount). The directly-budgeted health-sector share is **R80M** (NDoH ~R70M hospital + NHLS ~R10M lab) — modest in absolute terms, but it is the only column that appears on a departmental budget line. DALRRD bears **R0** of the *burden* side by construction: their cost sits on the *intervention* side (enforcement, recalls, registration action).
+**Reading the table.** ~94 % of the R1.61B is **mortality, borne by households and the wider economy** as lost lifetime earnings (1,014 deaths × R1.5M human-capital, undiscounted; sensitivity: R1.05M at 3 % discount). The directly-budgeted health-sector share is **R80M** (NDoH ~R70M hospital + NHLS ~R10M lab) — modest in absolute terms, but it is the only column that appears on a departmental budget line. DALRRD bears **R0** of the *burden* side by construction: their cost sits on the *intervention* side (enforcement, recalls, registration action).
 
 
 For the full sourced parameter set (CFR by severity, UPFS tariffs, per-option costs, induced-demand components, DALY monetisation, NMB), see the **[Parameters Hub](../parameters_hub.html)**. For the v2 → v3 critical appraisal, see [`parameter_appraisal.qmd`](../parameter_appraisal.qmd).
@@ -134,6 +134,7 @@ option_costs |>
   opt_row_striping() |>
   tab_options(table.font.size = "small", row_group.font.weight = "bold")
 ```
+:::
 
 ::: {.callout-tip icon=false collapse="true"}
 ## Under the hood — models, packages, and formulae
@@ -148,7 +149,7 @@ $$
 C_{\text{burden}} \;=\; \underbrace{\sum_{s \in \{\text{PIH},\text{NHLS},\text{NMC}\}} n_s \cdot c^{\text{morb}}_s}_{\text{morbidity}} \;+\; \underbrace{n_{\text{deaths}} \cdot c^{\text{mort}}_{\text{HC}}}_{\text{mortality (human-capital)}}
 $$
 
-where $n_s$ = stream counts (rows `n_pih_annual`, `n_nhls_severe_annual`, `n_nmc_annual`), $c^{\text{morb}}_s$ = stratum-specific per-case morbidity costs (rows `c_morbidity_*`), $n_{\text{deaths}} = 2{,}620$ (`n_deaths_statssa_macod` — **StatsSA MACOD 2023 (X40-X49) is the canonical truth source for deaths and is updated as new StatsSA releases land**; `n_deaths_headline` mirrors it), $c^{\text{mort}}_{\text{HC}} = $ 25 productive years × R60k median income, undiscounted (`c_mortality_human_capital`). Stratified-CFR alternative (`C_burden_total_conservative` ≈ R1.34B) is supplied as a sensitivity.
+where $n_s$ = stream counts (rows `n_pih_annual`, `n_nhls_severe_annual`, `n_nmc_annual`), $c^{\text{morb}}_s$ = stratum-specific per-case morbidity costs (rows `c_morbidity_*`), $n_{\text{deaths}} = 1{,}014$ (`n_deaths_statssa_macod` — **StatsSA MACOD 2022, pesticide-specific UCOD codes (X48+X68+X87+Y18), is the canonical truth source for deaths and is updated as new StatsSA releases land**; `n_deaths_headline` mirrors it), $c^{\text{mort}}_{\text{HC}} = $ 25 productive years × R60k median income, undiscounted (`c_mortality_human_capital`). Stratified-CFR alternative (`C_burden_total_conservative` ≈ R1.34B) is supplied as a sensitivity.
 
 **Coordination decision tree (closed-form joint probability).**
 
@@ -177,5 +178,4 @@ with $P_{\text{detect}}$ pulled from `d_status_quo`, `d_option1_NHLS_MOU`, …, 
 **Probabilistic sensitivity analysis (PSA).** Each CSV row carries a `dist=<family>(<params>)` tag (`beta`, `gamma`, `fixed`) parsed by the analysis pipeline (`wrangling_v2.r`) for Monte Carlo PSA. Distributions follow standard health-economics conventions: gamma for costs (shape 25 → CV ≈ 0.20), beta for probabilities (parameterised on the sample-equivalent count), fixed for deterministic anchors and derived sums.
 
 **What this site does *not* do.** No mixed-effects regression, no machine-learning model, no causal-inference identification strategy, no Bayesian hierarchical model. The site is a transparent deterministic burden-and-decision-tree calculator with explicit PSA. Strength comes from auditability, not algorithmic complexity.
-:::
 :::

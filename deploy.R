@@ -116,6 +116,23 @@ deploy <- function(commit_msg = "Update site",
   }
 
   # -------------------------------------------------------------------------
+  # 2b. Render PDF + DOCX exports (website render only does HTML)
+  # -------------------------------------------------------------------------
+  step("Rendering PDF + DOCX exports...")
+  export_docs <- c("posts/surveillance_brief_v2.qmd")
+  for (doc in export_docs) {
+    for (fmt in c("pdf", "docx")) {
+      message("    ", doc, " -> ", fmt)
+      rc_exp <- system2("quarto", c("render", doc, "--to", fmt))
+      if (rc_exp != 0) {
+        message("    [WARN] ", fmt, " render failed. Ensure tinytex + chromium are installed:")
+        message("      quarto install tinytex")
+        message("      quarto install chromium")
+      }
+    }
+  }
+
+  # -------------------------------------------------------------------------
   # 3. Strip iCloud duplicate artifacts
   # -------------------------------------------------------------------------
   step("Removing iCloud duplicate artifacts from _site/...")

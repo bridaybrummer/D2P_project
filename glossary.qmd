@@ -96,7 +96,7 @@ This glossary translates the surveillance, clinical, and health-economics jargon
 
 ## 4. Estimating burden — the methods
 
-**Burden of disease.** The total impact in cases, deaths, healthy years lost, or money. Headline for this project: **~11,690 cases, ~1,500–1,800 deaths, ~R2.3B/year**.
+**Burden of disease.** The total impact in cases, deaths, healthy years lost, or money. Headline for this project: **~8,112 cases, 1,014 deaths, ~R1.61B/year** (StatsSA MACOD 2022, pesticide-specific UCOD codes X48+X68+X87+Y18; supersedes earlier ~11,690 cases / 1,500–1,800 deaths / R2.3B v1 figures and the later 20,960 / 2,620 / R2.34B figures, which used the broader X40-X49 category).
 
 **Mutually-exclusive sum.** When two data systems both record cases but cannot be linked patient-by-patient, the **safest assumption** is that they capture *different* people. Adding them up gives an upper bound. If linkage later finds duplicates, the number can be revised down. We use this for NMC + NHLS + PIH because none of the three currently share record IDs.
 
@@ -132,7 +132,7 @@ A flat 12.5% CFR applied to the total burden gives **~1,460 deaths**; the strati
 
 **Cost-effectiveness threshold (λ).** The most a health system is willing to pay to avert one DALY. SA's evidence-based figure is **~R38,500/DALY** (Edoka & Stacey, 2020). Below this = good value.
 
-**Narrow vs. whole-system cost.** *Narrow* = the cost of running the surveillance and coordination work itself (R237k/year for the Full Package). *Whole-system* = narrow + the **extra demand that better surveillance generates** elsewhere (more admissions detected, more lab tests, more EHP investigations, more DALRRD enforcement) — this comes to R1.19M/year. Both are tiny compared with the R2.3B burden.
+**Narrow vs. whole-system cost.** *Narrow* = the cost of running the surveillance and coordination work itself (R237k/year for the Full Package). *Whole-system* = narrow + the **extra demand that better surveillance generates** elsewhere (more admissions detected, more lab tests, more EHP investigations, more DALRRD enforcement) — this comes to R1.19M/year. Both are tiny compared with the R1.61B burden.
 
 **Induced demand.** The activity surveillance *creates* by finding cases that would otherwise have been missed. Real, but small relative to the avoided burden.
 
@@ -142,7 +142,7 @@ A flat 12.5% CFR applied to the total burden gives **~1,460 deaths**; the strati
 
 **Decision tree.** A model that maps out the consequences of choosing each option, weighted by probabilities. Used here to compare Status Quo, individual Options 1–6, and the Full Package. Built in **Amua**.
 
-**Detection probability ($d_i$).** The proportion of true pesticide-poisoning cases that this option catches and enters into the surveillance system. Status-quo per-case d ≈ 0.048 (1,013 NMC notifications ÷ ~20,960 implied true cases/yr); Surveillance MVP ≈ 0.19.
+**Detection probability ($d_i$).** The proportion of true pesticide-poisoning cases that this option catches and enters into the surveillance system. Status-quo per-case d ≈ 0.125 (1,013 NMC notifications ÷ ~8,112 implied true cases/yr); Surveillance MVP ≈ 0.49.
 
 **Response efficacy ($\eta$).** Of the cases that are detected and investigated, the proportion where the response actually prevents further cases. Base case **0.30**; sensitivity range **0.15–0.50**.
 

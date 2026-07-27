@@ -16,9 +16,9 @@ execute:
 ::: {.header-box}
 # The decision: approve ~R282 k/yr to make pesticide poisoning visible, actionable, and measurable
 
-**Three asks, one system, one budget line.** Lift case detection from <5% to ~19% (Surveillance MVP), close the response loop (Coordination Full Package), and measure the just-gazetted terbufos ban (8 May 2026) using the same upgraded system.
+**Three asks, one system, one budget line.** Lift case detection from ~12.5% to ~49% (Surveillance MVP), close the response loop (Coordination Full Package), and measure the just-gazetted terbufos ban (8 May 2026) using the same upgraded system.
 
-*Anchored to **≈20,960 poisonings · 2,620 deaths · R2.34 billion** lost every year (StatsSA MACOD 2023, X40–X49). Fewer than 1 in 20 cases is formally detected.*
+*Anchored to **≈8,112 poisonings · 1,014 deaths · R1.61 billion** lost every year (StatsSA MACOD 2022, pesticide-specific UCOD codes X48+X68+X87+Y18; interim pending 2023 release). Only about 1 in 8 cases is formally detected.*
 :::
 
 ::: {.acronyms}
@@ -28,7 +28,7 @@ execute:
 ## The problem in one line
 
 ::: {.key-stat}
-**South Africa is flying blind.** The country detects <5% of poisonings, the response loop is not closed, and the just-banned product — terbufos — cannot yet be confirmed to be retreating from the informal market. **Detection is the precondition for managing all three problems.**
+**South Africa is flying blind.** The country detects only ~1 in 8 poisonings, the response loop is not closed, and the just-banned product — terbufos — cannot yet be confirmed to be retreating from the informal market. **Detection is the precondition for managing all three problems.**
 :::
 
 ## Three briefs, three asks — sequenced
@@ -39,7 +39,7 @@ execute:
 ### [1 · Detect — Surveillance ★ *(first step)*](posts/surveillance_policy.qmd)
 **Ask:** Adopt the Surveillance MVP — PIH live dashboard + minimum viable dataset (S1) and NHLS BChE auto-notification (S2). The NHLS→NMC IT feed is already operational.
 **Cost:** ~R137,000/yr (+ R80k one-off setup).
-**Impact:** Per-case detection **<5% → ~19%** (4.8% → 18.9%; ≈4× uplift) within 12 weeks. Without this signal, Act and Restrict are guesswork.
+**Impact:** Per-case detection **~12.5% → ~49%** (12.5% → 48.7%; ≈4× uplift) within 12 weeks. Without this signal, Act and Restrict are guesswork.
 **Owner:** NDoH-led — NICD · NHLS · PIH.
 :::
 
@@ -74,18 +74,18 @@ execute:
 
 ---
 
-## Who bears the R2.34 billion
+## Who bears the R1.61 billion
 
 | Stakeholder | Annual burden borne | Share |
 |:------------|---------------------:|------:|
-| NDoH — public hospitals (UPFS ward + ICU + drugs) | ~R70M | 3.0 % |
-| NHLS — laboratory (BChE + GC-MS + repeat chem) | ~R10M | 0.4 % |
+| NDoH — public hospitals (UPFS ward + ICU + drugs) | ~R70M | 4.3 % |
+| NHLS — laboratory (BChE + GC-MS + repeat chem) | ~R10M | 0.6 % |
 | DALRRD — regulator | R0 (lever-holder) | 0 % |
-| Individuals — OOP + lost wages | ~R10M | 0.4 % |
-| Households / wider society — lost lifetime earnings | ~R2.25B | 96.2 % |
-| **Total** | **R2.34B** | **100 %** |
+| Individuals — OOP + lost wages | ~R10M | 0.6 % |
+| Households / wider society — lost lifetime earnings | ~R1.52B | 94.4 % |
+| **Total** | **R1.61B** | **100 %** |
 
-: Audited decomposition. Mortality (~96 %) falls on households via lost lifetime earnings (25 productive yr × R60k median income, undiscounted). The health-sector share is modest in absolute terms but is the only column on a departmental budget line — and the only one a Minister can act on directly. {.striped}
+: Audited decomposition. Mortality (~94 %) falls on households via lost lifetime earnings (25 productive yr × R60k median income, undiscounted). The health-sector share is modest in absolute terms but is the only column on a departmental budget line — and the only one a Minister can act on directly. {.striped}
 
 ---
 
@@ -125,7 +125,7 @@ execute:
 
 If the package is working a year after approval, the following should be visible — in the same surveillance system the package builds:
 
-- **P(case detected) ≥ 15%** (currently 4.8%; central target 18.9%).
+- **P(case detected) ≥ 25%** (currently ~12.5%; central target 48.7%).
 - **P(loop closed) ≥ 40%** on referred NMC notifications (currently ~1.1%; central target ~70%).
 - **≥3 NICD→DALRRD intelligence packages** issued and acknowledged.
 - **One published interim measurement** of the terbufos ban's effect on attributable serious cases.

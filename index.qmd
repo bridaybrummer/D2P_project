@@ -10,7 +10,7 @@ format:
 ::: {.hero-banner}
 ## A hidden public-health emergency — fix detection first {.hero-title}
 
-**≈20,960 poisonings · 2,620 deaths · R2.34 billion lost — every year.** Yet South Africa formally detects fewer than 1 in 20 cases. **Strengthen surveillance, close the response loop, measure the just-gazetted terbufos ban.**
+**≈8,112 poisonings · 1,014 deaths · R1.61 billion lost — every year.** Yet South Africa formally detects only ~1 in 8 cases. **Strengthen surveillance, close the response loop, measure the just-gazetted terbufos ban.**
 :::
 
 ::: {.acronyms}
@@ -19,27 +19,27 @@ format:
 
 ## The public-health problem in five lines
 
-- South Africa records **2,620 pesticide-poisoning deaths per year** (StatsSA MACOD 2023, X40–X49) and an estimated **20,960 poisonings**, costing **R2.34 billion** annually.
-- **Detection is < 5%**: NMC, NHLS, and PIH each see a slice of the burden; none sees the whole. Decision-makers act on the visible 1,013 NMC notifications while the other ~95% remain invisible.
+- South Africa records **1,014 pesticide-poisoning deaths per year** (StatsSA MACOD 2022, pesticide-specific UCOD codes X48+X68+X87+Y18; interim pending 2023 release) and an estimated **8,112 poisonings**, costing **R1.61 billion** annually.
+- **Detection is ~12.5%**: NMC, NHLS, and PIH each see a slice of the burden; none sees the whole. Decision-makers act on the visible 1,013 NMC notifications while most of the remainder stays invisible.
 - The **response loop is broken**: ~99% of notifications end without a recorded investigation, referral, or regulatory follow-up.
 - **One product** — **terbufos**, WHO Class Ia — dominated fatal paediatric pesticide poisoning (Davies 2023) and was freely registered until **8 May 2026, when Agriculture Minister Steenhuisen gazetted a full ban** under Act 36 of 1947. Enforcement and 24-month impact measurement are now the critical next steps.
-- **96% of the cost falls on households** (lost lifetime earnings), but the only people who can change the upstream exposure sit in DALRRD and NDoH.
+- **~95% of the cost falls on households** (lost lifetime earnings), but the only people who can change the upstream exposure sit in DALRRD and NDoH.
 
 ::: {.callout-important icon=false}
 ## Why surveillance is step one
-You cannot prioritise, target, or evaluate a response to a problem you cannot see. **Detection is the precondition for credible action on coordination and on terbufos.** The Surveillance MVP costs ~R137k/year, takes 12 weeks, and lifts per-case detection from 4.8% to 18.9% — a ≈4× uplift using assets that already exist (NMC, NHLS BChE, PIH).
+You cannot prioritise, target, or evaluate a response to a problem you cannot see. **Detection is the precondition for credible action on coordination and on terbufos.** The Surveillance MVP costs ~R137k/year, takes 12 weeks, and lifts per-case detection from 12.5% to 48.7% — a ≈4× uplift using assets that already exist (NMC, NHLS BChE, PIH).
 :::
 
 ## The headline numbers
 
 | Indicator | Value | Source |
 |:----------|------:|:-------|
-| Annual deaths (canonical) | **2,620** | StatsSA MACOD 2023, Table 4.12 (X40–X49) |
-| True annual burden (mid-CFR) | **~20,960 cases** | StatsSA ÷ 12.5 % CFR |
-| Currently detected (NMC) | **1,013 (4.8 %)** | NICD NMC Annual Report 2023 |
-| Annual economic burden | **R2.34 billion** | Morbidity (R90M) + mortality (R2.25B) |
-| Health-sector share (NDoH + NHLS) | **~R80M (3.4 %)** | Direct budget-line cost |
-| Household / societal share | **~R2.26B (96.6 %)** | OOP + lost lifetime earnings |
+| Annual deaths (canonical) | **1,014** | StatsSA MACOD 2022, Table 4.12 (X48+X68+X87+Y18; interim pending 2023 release) |
+| True annual burden (mid-CFR) | **~8,112 cases** | StatsSA ÷ 12.5 % CFR |
+| Currently detected (NMC) | **1,013 (~12.5 %)** | NICD NMC Annual Report 2023 |
+| Annual economic burden | **R1.61 billion** | Morbidity (R90M) + mortality (R1.52B) |
+| Health-sector share (NDoH + NHLS) | **~R80M (5.0 %)** | Direct budget-line cost |
+| Household / societal share | **~R1.53B (95.0 %)** | OOP + lost lifetime earnings |
 
 : All numbers pulled from the canonical [Parameters Hub](parameters_hub.qmd) — single source of truth ([`amua_import_parameters_v4.csv`](amua_import_parameters_v4.csv)). {.striped}
 
@@ -52,7 +52,7 @@ You cannot prioritise, target, or evaluate a response to a problem you cannot se
 
 **Surveillance brief.** Close the gap between NMC, NHLS, and PIH so cases are seen in days, not weeks. **You cannot act on what you cannot see.**
 
-**MVP — ~R137k/year, detection <5% → ~19% (4.8% → 18.9%, ≈4×), 12 weeks.**
+**MVP — ~R137k/year, detection ~12.5% → ~49% (12.5% → 48.7%, ≈4×), 12 weeks.**
 NHLS→NMC feed (live) + BChE auto-notify + PIH dashboard / minimum viable dataset.
 
 *Audience: NDoH, NICD, NHLS, MAC.*
@@ -96,7 +96,7 @@ flowchart LR
     style R fill:#ffd9b3,stroke:#cc8800,stroke-width:2px
 ```
 
-Three stages, one system. Each affordable on its own; each strictly more valuable paired with the others. **Total annual operating cost ~R282 k against an annual burden of R2.34 billion — modelled burden avoided ~R1.45 B/yr, a whole-system ratio of roughly 1,000 : 1 even after counting induced demand. The case still holds at half the modelled effect.**
+Three stages, one system. Each affordable on its own; each strictly more valuable paired with the others. **Total annual operating cost ~R282 k against an annual burden of R1.61 billion** — avoided-burden and deaths-averted figures below are recomputed at render time from the decision-tree model in [Coordination brief §6](posts/coordination_policy.qmd) and should not be taken from this static summary until re-rendered against the corrected StatsSA anchor.
 
 ## Decision required
 
@@ -111,7 +111,7 @@ Three stages, one system. Each affordable on its own; each strictly more valuabl
 
 If the package is working a year after approval, the following should be visible in the same surveillance system the package builds:
 
-- **P(case detected) ≥ 15%** (currently 4.8%; central target 18.9%).
+- **P(case detected) ≥ 25%** (currently ~12.5%; central target 48.7%).
 - **P(loop closed) ≥ 40%** on referred NMC notifications (currently ~1.1%; central target ~70%).
 - **≥3 NICD→DALRRD intelligence packages** issued and acknowledged.
 - **One published interim measurement** of the terbufos ban's effect on attributable serious cases.

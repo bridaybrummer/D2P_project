@@ -1,0 +1,57 @@
+# clinical confirmation, generating excess EHP investigation demand.,,,
+d_S1b_event_community_lo,0.25,"S1b event-based community surveillance P_detect lower bound: modest uplift above MVP (0.189); partial provincial coverage | dist=beta(25,75) | LMIC community surveillance analogues (IDSR pilot deployments)",detect.S1b
+d_S1b_event_community_mid,0.40,"S1b P_detect working value (~2× MVP): CHW mobile-reporting network covering ~50% of provinces + structured alert pipeline | dist=beta(40,60) | EWARN/APSED analogues scaled to SA context",detect.S1b
+d_S1b_event_community_hi,0.55,"S1b P_detect upper bound: ambitious full-provincial coverage; contingent on sustained CHW training and QA | dist=beta(55,45) | Optimistic; comparable to WHO-EWARN mature deployment",detect.S1b
+c_S1b_setup_lo,1000000,"S1b setup lower: mobile reporting app + pilot training in 2 provinces (one-off) | dist=gamma(25,40000) | Community surveillance analogues pilot-scale",costs.S1b
+c_S1b_setup_mid,2000000,"S1b setup working value: app development + national CHW training + protocol + data-cleaning infrastructure (one-off) | dist=gamma(25,80000) | LMIC community surveillance analogues national-scale",costs.S1b
+c_S1b_setup_hi,3500000,"S1b setup upper: full 9-province rollout including data warehouse and QA infrastructure (one-off) | dist=gamma(25,140000) | Upper bound",costs.S1b
+c_S1b_op_lo,800000,"S1b annual operating lower: maintained in 2 provinces only (~4 provincial coordinators + platform) | dist=gamma(25,32000) | Partial deployment",costs.S1b
+c_S1b_op_mid,1500000,"S1b annual operating working value: ~8 provincial coordinators (DPSA L8, R120k each) + national analyst + platform hosting + annual CHW refresher | dist=gamma(25,60000) | EWARN/IDSR analogues",costs.S1b
+c_S1b_op_hi,2500000,"S1b annual operating upper: full 9-province deployment with dedicated EHP nodes and enhanced data cleaning | dist=gamma(25,100000) | Full deployment upper",costs.S1b
+p_fp_S1b_lo,0.20,"S1b false positive rate lower: 20% of community alerts not confirmed as pesticide poisoning (well-trained reporters, urban-proximate) | dist=beta(20,80) | Community surveillance analogues high-quality",costs.S1b
+p_fp_S1b_mid,0.35,"S1b false positive rate working value: 35% of community alerts are not confirmed true pesticide cases; benchmark from IDSR roll-outs in SSA | dist=beta(35,65) | LMIC community surveillance consensus",costs.S1b
+p_fp_S1b_hi,0.50,"S1b false positive rate upper: 50% false positives in early phase before training consolidates | dist=beta(50,50) | Early-phase analogue",costs.S1b
+# Attributable fractions are literature-derived (sparse SA data); replace with S3 sentinel toxicology data when available.,,,
+frac_aldicarb_attributable_lo,0.05,"Aldicarb attributable fraction of fatal SA pesticide poisonings, lower | dist=fixed(,) | Sparse SA data; informal-market enforcement literature",aldi.burden
+frac_aldicarb_attributable_mid,0.12,"Aldicarb attributable fraction, working value | dist=beta(12,88) | Two-Step enforcement literature + informal-market SA case reports",aldi.burden
+frac_aldicarb_attributable_hi,0.20,"Aldicarb attributable fraction, upper | dist=fixed(,) | Worst-case informal-market scenario pre-enforcement",aldi.burden
+frac_aldicarb_burden_retired,0.85,"Fraction of aldicarb-attributable burden retired under formal enforcement of existing ban | dist=beta(85,15) | Already informally banned; formal enforcement achieves high compliance per Sri Lanka + EU analogues",aldi.burden
+# YLL values use a provisional mean-age-at-death. Replace yll_mean_age_at_death with StatsSA MACOD tabulation when available.,,,
+yll_life_expectancy,72,"Standard life expectancy at birth for YLL calculation (years) | dist=fixed(,) | StatsSA 2023 life tables",daly.gbd
+yll_mean_age_at_death,28,"Mean age at pesticide poisoning death SA (years; PROVISIONAL) | dist=fixed(,) | PROVISIONAL — replace with StatsSA MACOD age-sex distribution when tabulation available",daly.gbd
+yll_per_death_gbd,44,"YLL per death = yll_life_expectancy - yll_mean_age_at_death = 72-28 | dist=fixed(,) | Derived; provisional pending MACOD",daly.gbd
+yld_dw_severe,0.408,"GBD 2019 disability weight: acute severe pesticide poisoning | dist=fixed(,) | GBD 2019 Collaborators, Lancet 2020",daly.gbd
+yld_dw_mild,0.150,"GBD 2019 disability weight: acute mild-moderate pesticide poisoning | dist=fixed(,) | GBD 2019 Collaborators",daly.gbd
+yld_duration_severe,0.082,"Duration of acute severe episode (years) = ~1 month hospitalisation | dist=fixed(,) | Buckley 2021 median LoS",daly.gbd
+yld_duration_mild,0.019,"Duration of acute mild episode (years) = ~1 week recovery | dist=fixed(,) | Clinical consensus",daly.gbd
+yld_per_case_severe,0.033,"YLD per severe case = yld_dw_severe × yld_duration_severe = 0.408×0.082 | dist=fixed(,) | Derived",daly.gbd
+yld_per_case_mild,0.003,"YLD per mild case = yld_dw_mild × yld_duration_mild = 0.150×0.019 | dist=fixed(,) | Derived",daly.gbd
+p_severe_among_detected,0.45,"Proportion of detected cases classified as severe (NHLS BChE severe + NMC hospitalised share of all detected) | dist=beta(45,55) | NMC + NHLS burden split 2023",daly.gbd
+icer_per_daly_gdp,110000,"ICER threshold = 1× GDP per capita per DALY averted (R/DALY) | dist=fixed(,) | SA GDP per capita 2025; WHO cost-effectiveness threshold convention",daly.gbd
+c_mort_daly_icer,4840000,"Per-death cost under ICER-DALY approach = yll_per_death_gbd × icer_per_daly_gdp = 44×110000 | dist=fixed(,) | Derived",daly.gbd
+c_morb_daly_icer_severe,3630,"Per-severe-case cost under ICER-DALY approach = yld_per_case_severe × icer_per_daly_gdp = 0.033×110000 | dist=fixed(,) | Derived",daly.gbd
+c_morb_daly_icer_mild,330,"Per-mild-case cost under ICER-DALY approach = yld_per_case_mild × icer_per_daly_gdp = 0.003×110000 | dist=fixed(,) | Derived",daly.gbd
+# These parameters mirror the Amua tree drafted by the project team. They describe outcomes for a single individual over one year, rather than the population aggregate above. Used by R/terbufos_tree_personal.r and §6b of posts/terbufos_policy.qmd.,,,
+sa_population_ref,63100000,"SA population reference for converting per-individual expected values to annual national totals | dist=fixed(,) | StatsSA mid-year estimate 2025 (63,100,000)",terb.personal_tree
+p_p_exposed_sq,0.000332,"Status-quo annual probability an SA individual experiences a clinically-recognised pesticide poisoning = n_true_burden_from_statssa_mid / sa_population_ref = 20960/63100000 | dist=fixed(,) | Derived",terb.personal_tree
+p_p_exposed_ban,0.000332,"Annual poisoning probability under ban (held equal to SQ — the ban changes the AGENT mix, not the overall poisoning rate, until substitute-product behaviour is observed) | dist=fixed(,) | Working assumption",terb.personal_tree
+p_terbufos_among_poisoned_sq,0.5,"Share of poisoning events involving terbufos under status quo | dist=beta(50,50) | Davies 2023 paediatric dominance generalised; Amua draft",terb.personal_tree
+p_terbufos_among_poisoned_ban,0.1,"Residual share of poisoning events still involving terbufos after ban (informal stockpile + cross-border leakage) | dist=beta(10,90) | Sri Lanka post-ban residual; Amua draft",terb.personal_tree
+p_die_given_terbufos,0.125,"Case-fatality given exposure to terbufos | dist=beta(125,875) | NHLS severe-BChE cohort, Class Ia OP literature",terb.personal_tree
+p_hosp_given_terbufos,0.275,"Probability of hospitalisation (non-fatal) given exposure to terbufos | dist=beta(275,725) | Buckley 2021",terb.personal_tree
+p_asymp_given_terbufos,0.600,"Probability of asymptomatic / outpatient course given exposure to terbufos | dist=fixed(,) | Complement (1 - die - hosp)",terb.personal_tree
+p_die_given_other,0.010,"Case-fatality given exposure to non-terbufos pesticide | dist=beta(10,990) | Lower-toxicity substitutes",terb.personal_tree
+p_hosp_given_other,0.090,"Probability of hospitalisation given exposure to non-terbufos pesticide | dist=beta(90,910) | Lower-toxicity substitutes",terb.personal_tree
+p_asymp_given_other,0.900,"Probability of asymptomatic course given non-terbufos pesticide | dist=fixed(,) | Complement",terb.personal_tree
+p_background_mortality_personal,0,"Background mortality stub on the not-poisoned branch. Set to 0 so the tree isolates the pesticide-attributable signal; flip to a non-zero value (e.g. 0.01) only if you want all-cause mortality to appear in the rollup. | dist=fixed(,) | Design choice",terb.personal_tree
+c_personal_death,1500000,"Per-individual cost of a fatal outcome (human-capital, alias for c_mortality_human_capital) | dist=fixed(,) | = c_mortality_human_capital",terb.personal_tree
+c_personal_hospitalisation,80000,"Per-individual cost of a non-fatal hospitalisation (alias for c_morbidity_severe_NMC) | dist=fixed(,) | = c_morbidity_severe_NMC",terb.personal_tree
+c_personal_asymptomatic,500,"Per-individual cost of an asymptomatic / PIH-managed episode (alias for c_pih_call_only) | dist=fixed(,) | = c_pih_call_only",terb.personal_tree
+# === DEPRECATED ALIASES — v3 S-taxonomy names (use v4 names for all new work) ===,,,
+c_per_ehp_investigation_lo,2500,"EHP environmental investigation cost per alert (lower): travel + site visit + interviews + write-up | dist=gamma(25,100) | NDoH EHP unit costing",costs.coord_per_action
+c_per_ehp_investigation_mid,4000,"EHP environmental investigation cost per alert (working): travel + site visit + sampling + interviews + write-up + supervisor review | dist=gamma(25,160) | NDoH EHP unit costing",costs.coord_per_action
+c_per_ehp_investigation_hi,7000,"EHP environmental investigation cost per alert (upper): remote/rural site with overnight, full sampling panel, follow-up visit | dist=gamma(25,280) | NDoH EHP unit costing",costs.coord_per_action
+c_per_dalrrd_inspection_lo,6000,"DALRRD inspectorate site visit + sampling cost per referral (lower): urban, single-product, single visit | dist=gamma(25,240) | DALRRD inspectorate unit cost",costs.coord_per_action
+c_per_dalrrd_inspection_mid,12000,"DALRRD inspectorate site visit + sampling + enforcement letter per referral (working): mid-distance, single-site, sample dispatch, follow-up | dist=gamma(25,480) | DALRRD inspectorate unit cost",costs.coord_per_action
+c_per_dalrrd_inspection_hi,25000,"DALRRD inspectorate cost per referral (upper): rural/multi-site, full sampling, legal-letter and follow-up enforcement | dist=gamma(25,1000) | DALRRD inspectorate unit cost",costs.coord_per_action
+p_dalrrd_action_given_referral,0.30,"P(DALRRD inspectorate takes site action | confirmed EHP referral worth referring): includes both true positives and confirmed FPs warranting any inspection | dist=beta(30,70) | DALRRD inspectorate working assumption",costs.coord_per_action
